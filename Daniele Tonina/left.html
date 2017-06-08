@@ -1,0 +1,855 @@
+   <html>									
+   <script>									
+   function myScroll()						
+   {											
+    if (document.layers) {//for netscape		
+   	 x  = window.pageXOffset;				
+      y  = window.pageYOffset;				
+    }      									
+    else if (document.all) {//for IE			
+		 x = document.body.scrollLeft;			
+      y = document.body.scrollTop;			
+    }     									
+    parent.right.scrollTo(x,y);				
+   }     									
+   </script>									
+   <script language=JavaScript><!--		
+   if (document.layers) {					
+   document.captureEvents(Event.MOUSEMOVE);	
+   document.onmousemove = myScroll;			
+   }      									
+   //--></script>							
+   <body onscroll=myScroll()>				
+   <form name=leftform>						
+   <pre> 									
+C:\MD_SMWS_CODE\MD_SWMS_1200a\Stagr_Console\CsedMod.for
+	use RivVarMod
+<font style="background : #C0C0C0" color="#008080" >(+)
+</font>	IMPLICIT NONE
+	REAL, ALLOCATABLE, DIMENSION(:) :: QTOT
+	REAL, ALLOCATABLE, DIMENSION(:,:) :: RATIO, d, DUM1
+	REAL, ALLOCATABLE, DIMENSION(:,:) :: DHDN, DHDS, USTRESS, VSTRESS
+<font style="background : #C0C0C0" color="#008080" >(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+</font>!	REAL :: rsin, rcos, ux, uy, uxnew, uynew
+!	REAL, ALLOCATABLE, DIMENSION(:,:) :: CON
+	CONTAINS
+<font style="background : #C0C0C0" color="#0000FF" >(*)		SUBROUTINE alloc_csed()
+</font>	!		INTEGER, INTENT(IN) :: ns, nn, nz
+			INTEGER :: status
+			!Allocate REAL types
+			ALLOCATE(QTOT(ns), STAT = status)
+			ALLOCATE(RATIO(ns, nn), STAT = status)
+			ALLOCATE(d(ns, nn), STAT = status)
+!			ALLOCATE(QS(ns, nn), STAT = status)
+!			ALLOCATE(QN(ns, nn), STAT = status)
+			ALLOCATE(DUM1(ns, nn), STAT = status)
+			ALLOCATE(DHDN(ns, nn), STAT = status)
+			ALLOCATE(DHDS(ns, nn), STAT = status)
+			ALLOCATE(USTRESS(ns, nn), STAT = status)
+			ALLOCATE(VSTRESS(ns, nn), STAT = status)
+!			ALLOCATE(CON(ns, nn), STAT = status)
+<font style="background : #C0C0C0" color="#0000FF" >(*)		END SUBROUTINE alloc_csed
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+</font>
+<font style="background : #C0C0C0" color="#0000FF" >(*)		SUBROUTINE dealloc_csed()
+</font>			INTEGER :: status
+			!Allocate REAL types
+			DEALLOCATE(QTOT, STAT = status)
+			DEALLOCATE(RATIO, STAT = status)
+			DEALLOCATE(d, STAT = status)
+!			DEALLOCATE(QS, STAT = status)
+!			DEALLOCATE(QN, STAT = status)
+			DEALLOCATE(DUM1, STAT = status)
+			DEALLOCATE(DHDN, STAT = status)
+			DEALLOCATE(DHDS, STAT = status)
+			DEALLOCATE(USTRESS, STAT = status)
+			DEALLOCATE(VSTRESS, STAT = status)
+<font style="background : #C0C0C0" color="#0000FF" >(*)		END SUBROUTINE dealloc_csed
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+</font>!		
+		    
+			
+<font style="background : #C0C0C0" color="#0000FF" >(*)		SUBROUTINE csed(DT,nct,nsteps,newdt)
+</font>			REAL, INTENT(IN) :: DT
+			INTEGER, INTENT(IN) :: nct, nsteps
+			REAL, INTENT(INOUT) :: newdt
+!		parameter(ns=41,nn=25,nz=11)
+	!	   REAL mo,hav
+	!	   common taus(ns,nn),taun(ns,nn),hl(ns,nn),eta(ns,nn),rn(ns,nn),
+	!	  & ibc(ns,nn),r(ns),w(ns),cd,ds,dn,mo,q,hwt,urelax,erelax,
+	!	  & arelax,itm,hav,iplinc,xo(ns),yo(ns),uz(ns,nn,nz),vz(ns,nn,nz)
+	!	dimension RATIO(ns,nn),d(ns,nn),
+	!	 &	  QS(ns,nn),QN(ns,nn),DUM1(ns,nn),
+	!	 &	  DHDN(ns,nn),DHDS(ns,nn),USTRESS(ns,nn),
+	!	 &	  VSTRESS(ns,nn),QTOT(ns),CON(ns,nn)
+<font style="background : #C0C0C0" color="#008080" >(+)
+</font>			CHARACTER*20 RUNID
+			REAL :: CDune, VKC, GSW, PI, GAMC, TB, TC, G, RHO
+			REAL :: RAT, ZOSF, RHOFAC, DUM, GAMG, TAUG
+			REAL :: A2, DTAU, TAN1, TAN2, QTOTAL, SC, weight
+			REAL :: fac
+			REAL :: PLINC
+			INTEGER :: NM, I, J, ityp, ISMOO
+			
+	      REAL :: mintdt, maxtdt, tdt
+	      REAL :: tmpdepth
+
+<font style="background : #C0C0C0" color="#008080" >(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+</font>!			CALL alloc_csed()
+			runid='test 			  '
+			OPEN(7,FILE='seddat')
+			OPEN(10,FILE='top2')
+!			OPEN(11,FILE='topser')
+!			DIN=0.02
+            
+			CDune=.212
+			VKC=0.4
+			GSW=1.
+			NM=(NN+1)/2
+			PI=ACOS(-1.)
+			GAMC=SUBANGLEOFREPOSE*PI/180.
+			TC=(200.*(DIN**2))+(26.*DIN)+1.
+			G=980.
+			RHO=1.
+c	 WRITE(6,*) 'ENTER THE DUNE HEIGHT IN CM (0 FOR PLANE BED):'
+c	 READ(5,*) HD
+!			hd=0.
+			IF(HD.LE.0) THEN
+			 RAT=1.
+			 GO TO 600
+			ENDIF
+!			WRITE(6,*) 'ENTER THE AVERAGE DUNE WAVELENGTH IN CM:'
+!			READ(5,*) WD
+			IF(WD.LE.0) THEN
+			 WD=1.
+			ENDIF
+			ZOSF=.2*DIN
+			RAT=1.+(CDune/(2.*VKC**2.))*(HD/WD)*((ALOG(HD/(ZOSF)))-1.)**2.
+600			DO 610 I=1,ns
+			DO 610 J=1,nn
+			D(I,J)=DIN
+c	 hd=0.2*h(i,j)
+c	 wd=20*hd
+c	 RAT=1.+(CDune/(2.*VKC**2.))*(HD/WD)*((ALOG(HD/(ZOSF)))-1.)**2.
+			RATIO(I,J)=RAT
+			USTRESS(I,J)=taus(I,J)/RATIO(I,J)
+610			VSTRESS(I,J)=taun(I,J)/RATIO(I,J)
+<font style="background : #C0C0C0" color="#0000FF" >(*)c	 write(6,*) 'Yalin (0) or Engelund-Hansen (1):'
+</font>c	 read(5,*) ityp
+            write(6,*) 'itype', TRANSEQTYPE, 'sedsmoo',SEDSMOO,'din',din
+!			ityp=0
+			RHOFAC=1.65
+			DO 612 I=1,ns
+			DO 612 J=1,nn
+			IF(I.EQ.1) THEN
+			 DHDS(I,J)=(hl(2,J)-hl(1,J))/(ds*(rn(I,J)))
+			ELSE
+			 IF(I.EQ.ns) THEN
+			  DHDS(I,J)=(hl(ns,J)-hl(ns-1,J))/(ds*(RN(I,J)))
+			 ELSE
+			  DHDS(I,J)=(hl(I+1,J)-hl(I,J))/(ds*(RN(I,J)))
+			 ENDIF
+			ENDIF
+			IF(J.EQ.1) THEN
+			 DHDN(I,J)=(hl(I,2)-hl(I,1))/dn
+			ELSE
+			 IF(J.EQ.nn) THEN
+			  DHDN(I,J)=(hl(I,nn)-hl(I,nn-1))/dn
+			 ELSE
+			  DHDN(I,J)=(hl(I,J+1)-hl(I,J))/dn
+			 ENDIF
+			ENDIF
+			DUM=((DHDS(I,J)**2)+(DHDN(I,J)**2))**.5
+			GAMG=ATAN(DUM)
+			if(CalcGravCorr) then
+			    if(GRAVCORRTYPE == 0) then
+	              TAUG=1.0*TC*SIN(GAMG)/SIN(GAMC)
+	              TAN2= 0.
+	          else
+	              TAUG=0.
+!			        TC=(200.*(D(I,J)**2.))+(26.*D(I,J))+1.
+!	              TB=((USTRESS(I,J)**2)+(VSTRESS(I,J)**2))**.5
+!	              TAN2=GRAVFLATBEDCORRCOEF*((TC/TB)**.5)*DHDN(I,J)
+!	              write(6,*) i,j,tan2, tc, tb, dhdn(i,j)
+	          endif
+	      else
+	          TAUG = 0.
+	          TAN2 = 0.
+	      endif
+	      
+			IF(DUM.NE.0) THEN
+			USTRESS(I,J)=USTRESS(I,J)+(TAUG*(DHDS(I,J)/DUM))
+			VSTRESS(I,J)=VSTRESS(I,J)+(TAUG*(DHDN(I,J)/DUM))
+			ENDIF
+612			CONTINUE
+			
+<font style="background : #C0C0C0" color="#0000FF" >(*)		if (TRANSEQTYPE.eq.1) go to 700
+(+)
+(+)
+(+)
+(+)
+(+)
+</font>
+<font style="background : #C0C0C0" color="#FF0000" >(-)!!!!!  YALIN EQUATION   !!!!!
+(-)
+</font>			DO 615 I=1,ns
+			DO 615 J=1,nn
+			
+			TC=(200.*(D(I,J)**2.))+(26.*D(I,J))+1.
+			
+			A2=1.66*((TC/(1617.*D(I,J)))**.5)
+			TB=((USTRESS(I,J)**2)+(VSTRESS(I,J)**2))**.5
+			IF (TB.LE.TC.or.ibc(i,j).eq.0) THEN
+			 QS(I,J)=0.
+			 QN(I,J)=0.
+			 GO TO 615
+			ENDIF
+			DTAU=(TB-TC)/TC
+			DUM=1.-(ALOG(1.+(A2*DTAU)))/(A2*DTAU)
+			DUM=.635*D(I,J)*DUM*DTAU
+		    QS(I,J)=(DUM*((TB)**.5))
+			QS(I,J)=QS(I,J)*USTRESS(I,J)/(TB)
+			TAN1=VSTRESS(I,J)/USTRESS(I,J)
+<font style="background : #C0C0C0" color="#FF0000" >(-)			
+</font>			if(CalcGravCorr .AND. GRAVCORRTYPE == 1) then
+				TAN2=GRAVFLATBEDCORRCOEF*((TC/TB)**.5)*DHDN(I,J)
+<font style="background : #C0C0C0" color="#0000FF" >(*)			    QN(I,J)=QS(I,J)*(TAN1+TAN2)
+</font>		    else
+<font style="background : #C0C0C0" color="#0000FF" >(*)			    QN(I,J)=QS(I,J)*TAN1
+</font>		    ENDIF
+
+!			TAN2=GSW*1.50*((TC/TB)**.5)*DHDN(I,J)
+<font style="background : #C0C0C0" color="#0000FF" >(*)c	 TAN2=0.
+</font>!			write(6,*) i, j, tan1, tan2, qn(i,j)
+			IF(J.EQ.1.OR.J.EQ.nn) THEN
+			 QN(I,J)=0.
+			ENDIF
+615		 CONTINUE
+			go to 710
+<font style="background : #C0C0C0" color="#008080" >(+)
+</font>700		do 705 i=1,ns
+			do 705 j=1,nn
+<font style="background : #C0C0C0" color="#008080" >(+)
+(+)
+(+)
+</font>			!!!!! Engelund and Hansen !!!!
+			
+			TC=(200.*(D(I,J)**2.))+(26.*D(I,J))+1.
+			TB=((USTRESS(I,J)**2)+(VSTRESS(I,J)**2))**.5
+			IF (TB.LE.TC.or.ibc(i,j).eq.0) THEN
+			 QS(I,J)=0.
+			 QN(I,J)=0.
+			 GO TO 705
+			ENDIF
+			
+<font style="background : #C0C0C0" color="#008080" >(+)
+(+)
+(+)
+(+)
+</font>			fac = ((1.65*980.0*d(i,j)**3.)**0.5)*cd(i,j)
+			qs(i,j)=fac*(tb/tc)**2.5
+			qs(i,j)=qs(i,j)*ustress(i,j)/TB
+			TAN1 = VSTRESS(I,J)/USTRESS(I,J)
+			if(CalcGravCorr .AND. GRAVCORRTYPE == 1) then
+<font style="background : #C0C0C0" color="#0000FF" >(*)				TAN2=GRAVFLATBEDCORRCOEF*((TC/TB)**.5)*DHDN(I,J)
+(*)				QN(I,J) = QS(I,J)*(TAN1+TAN2)
+(*)		    else
+(*)			    qn(i,j)=qs(i,j)*TAN1
+(*)		    ENDIF
+(*)
+(+)
+</font>			if(j.eq.1.or.j.eq.nn) then
+			 qn(i,j)=0.
+<font style="background : #C0C0C0" color="#FF0000" >(-)!			 qs(i,j)=0. !change rmcd 12/7/04
+</font>			endif
+			
+705			continue
+<font style="background : #C0C0C0" color="#008080" >(+)
+</font>
+<font style="background : #C0C0C0" color="#008080" >(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+</font>710			QTOTAL=0.
+
+			DO 617 I=1,ns
+			QTOT(I)=0.
+			DO 616 J=2,nn
+616			QTOT(I)=QTOT(I)+(.5*dn)*(QS(I,J)+QS(I,J-1))
+			QTOTAL=QTOTAL+QTOT(I)/ns
+617			CONTINUE
+			DO 650 I=1,ns
+			DO 645 J=1,nn
+			    SC=rn(I,J)
+			    IF(I.le.SEDBCNODE) THEN
+	              CON(I,J)=0.
+c			        CON(I,J)=(QS(2,J)-QS(1,J))/(ds*SC)
+<font style="background : #C0C0C0" color="#0000FF" >(*)c	              GO TO 643
+</font>			        GO TO 645
+			    ELSEIF(I.EQ.SEDBCNODE) THEN
+			        CON(I,J)=(QS(i+1,J)-QS(i,J))/(ds*SC)
+			        GO TO 645
+			    ELSEIF(I.EQ.ns) THEN
+C	              CON(I,J)=(QS(I,J)-QS(I-1,J))/(ds*SC)
+c	              CON(I,J)=(QS(2,J)-QS(1,J))/(ds*SC)
+			         CON(I,J)=CON(I-1,J)
+			         GO TO 643
+			    ELSE
+			        CON(I,J)=(QS(I+1,J)-QS(I-1,J))/(2.*ds*SC)
+			    ENDIF
+			    
+643		            CON(I,J)=CON(I,J)-(QN(I,J)/(R(I)*SC))
+			
+			    IF(J.EQ.1) THEN
+			        CON(I,1)=CON(I,1)+(QN(I,2)-QN(I,1))/dn
+				    GO TO 645
+			    ELSE
+			        IF(J.EQ.nn) THEN
+			            CON(I,nn)=CON(I,nn)+(QN(I,nn)-QN(I,nn-1))/dn
+			            GO TO 645
+			        ENDIF
+			    
+<font style="background : #C0C0C0" color="#0000FF" >(*)			    CON(I,J)=CON(I,J)+(QN(I,J+1)-QN(I,J-1))/(2.*dn)
+</font>			    
+			    ENDIF
+645			CONTINUE
+650			CONTINUE
+<font style="background : #C0C0C0" color="#008080" >(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+</font>c			do 652 j=1,nn
+c652			con(1,j)=con(2,j)
+			DO 655 I=1,ns
+			DO 655 J=1,nn
+			CON(I,J)=1.54*CON(I,J)
+655			CONTINUE
+<font style="background : #C0C0C0" color="#008080" >(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+</font> !           write(6,*) 'con',(con(10,j),j=1,nn)
+!             write(6,*) 'rn',(rn(10,j),j=1,nn)
+            IF (SEDSMOO.ge.1) then
+			DO 670 ISMOO=1,SEDSMOO
+			DO 660 I=2,ns-1
+			DO 660 J=1,nn
+			if(ibc(i,j).eq.0) then
+			 dum1(i,j)=0.
+			 go to 660
+			endif
+			if(j.eq.1) then
+<font style="background : #C0C0C0" color="#FF0000" >(-)!             DUM1(I,1)=(.5*CON(I-1,1)+CON(I,1)+.5*CON(I+1,1))/2.
+</font>			 DUM1(I,1)=(CON(I-1,1)+CON(I,1)+CON(I+1,1)+con(I,j+1))/4.
+			elseif(j.eq.nn) then
+<font style="background : #C0C0C0" color="#FF0000" >(-)!             DUM1(I,nn)=(.5*CON(I-1,nn)+CON(I,nn)+.5*CON(I+1,nn))/2.
+</font>			 DUM1(I,NN)=(CON(I-1,nn)+CON(I,nn)+CON(I+1,nn)+con(i,nn-1))/4.
+			else
+			weight=1
+			if(con(i,j-1).ne.0) then
+			 weight=weight+SEDSMOOWGHT
+			endif
+			if(con(i,j+1).ne.0) then
+			 weight=weight+SEDSMOOWGHT
+			endif
+			if(con(i-1,j).ne.0) then
+			 weight=weight+SEDSMOOWGHT
+			endif
+			if(con(i+1,j).ne.0) then
+			 weight=weight+SEDSMOOWGHT
+			endif
+			 DUM1(I,J)=1.*CON(I,J)+SEDSMOOWGHT*CON(I+1,J)+SEDSMOOWGHT*CON(I-1,J)
+			 DUM1(I,J)=DUM1(I,J)+SEDSMOOWGHT*CON(I,J-1)+SEDSMOOWGHT*CON(I,J+1)
+			 DUM1(I,J)=DUM1(I,J)/weight
+			endif
+660			continue
+!            write(6,*) 'smooth pass', ismoo, (dum1(10,j),j=1,nn)
+			DO 670 I=2,ns-1
+			DO 670 J=1,nn
+670			CON(I,J)=DUM1(I,J)
+            endif
+!            write(6,*) 'con',(con(10,j),j=1,nn)
+!            write(6,*) 'rn',(rn(10,j),j=1,nn)
+!            pause
+c	 DO 685 ISMOO=1,2
+c	 DO 680 I=2,ns-1
+c	 DUM1(I,1)=(CON(I-1,1)+CON(I,1)+CON(I+1,1)+con(I,j+1))/4.
+c680	 DUM1(I,25)=(CON(I-1,nn)+CON(I,nn)+CON(I+1,nn)+con(i,nn-1))/4.
+c	 DO 685 I=2,ns-1
+c	 CON(I,1)=DUM1(I,1)
+c685	  CON(I,nn)=DUM1(I,nn)
+			DO 687 J=1,nn
+!			CON(ns,J)=(.2*CON(ns-1,J)+CON(ns,J))/1.2
+            con(ns,j)= con(ns-1,j)
+687			CON(1,J)=0.
+
+<font style="background : #C0C0C0" color="#008080" >(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+</font>!     FIND MINIMUM TIME STEP TO SATISFY CRITERIA FOR MAXIMUM ELEVATION CHANGE 
+!     AS A FUNTION OF DEPTH !9/24/06 - rmcd
+      mintdt = 1e12
+      maxtdt = -1e12
+            DO I = 1,ns
+                DO J = 1, nn
+                    IF(ibc(i,j).ne.0.and.con(i,j).ne.0) THEN
+                        tdt = abs((TSFracDepth*hl(i,j))/con(i,j))
+                        IF(tdt &lt; mintdt) THEN
+                            mintdt = tdt
+                        ENDIF
+                        IF(tdt > maxtdt) THEN
+                            maxtdt = tdt
+                        ENDIF
+                    ENDIF
+                ENDDO
+            ENDDO
+<font style="background : #C0C0C0" color="#008080" >(+)
+</font>            WRITE(6,*) 'Maxdt', maxtdt, 'Mindt', mintdt
+            newdt = 1.0*mintdt
+            
+<font style="background : #C0C0C0" color="#0000FF" >(*)			DO 720 I=1,ns
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+(+)
+</font>			DO 720 J=1,nn
+			if(ibc(i,j).eq.0) then
+			 con(i,j)=0.
+			endif
+			if(dt*con(i,j) > hl(i,j)) then
+<font style="background : #C0C0C0" color="#0000FF" >(*)			    write(6,*)'Error in Sediment Transport', i, j, hl(i,j)/con(i,j)
+(+)
+</font>			ENDIF
+			
+			tmpdepth = hl(i,j)+(dt*con(i,j))
+			if(tmpdepth &lt; hmin) then
+			    eta(i,j) = e(i,j)-hmin
+			    hl(i,j) = hmin
+			else
+			    eta(i,j)=eta(i,j)-(dt*con(i,j))
+			    hl(I,J)=hl(I,J)+(dt*con(I,J))
+			endif
+!			eta(i,j)=eta(i,j)-(dt*con(i,j))
+!			hl(I,J)=hl(I,J)+(dt*con(I,J))
+!			if(hl(i,j).le.2) then
+!			 hl(i,j)=2.
+!			endif
+720			CONTINUE
+
+!			    Write(11,2010) RUNID
+!			    write(11,*) Q,MO
+!			    write(11,*) R,W,eta
+!			    write(11,*) xo,yo
+<font style="background : #C0C0C0" color="#008080" >(+)
+(+)
+(+)
+</font>2000			if(nct.eq.nsteps) then
+			    WRITE(7,2010) RUNID
+			    WRITE(7,*) QS,QN,CON,hl,QTOT
+			    write(7,*) ((i,j,con(i,j),j=1,nn),i=10,15)
+<font style="background : #C0C0C0" color="#0000FF" >(*)			    write(10,*) hwt,erelax,urelax,arelax,itm,cd,q,mo
+(*)			    write(10,2010) runid
+(*)			    write(10,*) q,mo,hav
+(*)			    write(10,*) r,w,eta,ibc
+(*)			    write(10,*) xo,yo
+</font>			endif
+2010			format(A20)
+			 return
+<font style="background : #C0C0C0" color="#0000FF" >(*)		end subroutine csed
+</font>	END MODULE 
+
+   </pre>									
+   </form>									
+   </body>									
+   </html>									

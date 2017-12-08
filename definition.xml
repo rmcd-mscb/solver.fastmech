@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SolverDefinition
 	xmlns="www.iric.net/SolverDefinition/1.0"
-	name="fastmech" caption="FaSTMECH" version="1.0" copyright="Jonathan Nelson"
-	release="2009.11.01" homepage="http://www.google.co.jp/"
+	name="fastmech" caption="FaSTMECH" version="1.0.2" copyright="None"
+	release="2017.12.08" homepage="http://www.google.co.jp/"
 	executable="Fastmech.exe"
 	iterationtype="time"
 	gridtype="structured2d"
+  gridgenerators="center_and_width, gridgen"
 	>
 	<CalculationCondition>
 		<Tab name="Discharge" caption="Discharge">

@@ -169,142 +169,142 @@ ENDDO
 
 END SUBROUTINE
 
-SUBROUTINE INITHOTSTART2(InputFile)
-    USE iriclibf
-    IMPLICIT NONE
-!    INCLUDE "cgnswin_f.h"
-    INCLUDE "cgnslib_f.h"
-
-    CHARACTER(*), INTENT(IN) ::InputFile
-    
-    INTEGER :: FID
-    INTEGER :: i,j,k, IER
-    INTEGER :: NX, NY
-	REAL, ALLOCATABLE, DIMENSION(:) :: tmpreal4
-	INTEGER, ALLOCATABLE, DIMENSION(:) :: itemp
-	INTEGER :: count, countji
-	
-	!HOTSTART VARS
-	INTEGER :: nsols
-	
-    CALL cg_open_f(InputFile, MODE_MODIFY, FID, IER)
-    IF(IER .NE. 0) THEN
-        call cg_error_print_f()			
-    ENDIF
-
-    CALL CG_IRIC_GOTOSOL_F(FID, SolnIndex, NX, NY, IER)
-    ALLOCATE(tmpreal4(nx*ny), STAT = ier)
-    ALLOCATE(itemp(nx*ny), STAT = ier)
-    
-    
-    CALL cg_iRIC_Read_SolRealNode(SolnIndex, 'Elevation', tmpreal4, IER)
-!    DO I = 1, nx*ny
-!        IF( tmpreal4(i) < elevoffset) THEN
-!            elevoffset = tmpreal4(i)
-!        ENDIF
+!SUBROUTINE INITHOTSTART2(InputFile)
+!    USE iriclibf
+!    IMPLICIT NONE
+!!    INCLUDE "cgnswin_f.h"
+!    INCLUDE "cgnslib_f.h"
+!
+!    CHARACTER(*), INTENT(IN) ::InputFile
+!    
+!    INTEGER :: FID
+!    INTEGER :: i,j,k, IER
+!    INTEGER :: NX, NY
+!	REAL, ALLOCATABLE, DIMENSION(:) :: tmpreal4
+!	INTEGER, ALLOCATABLE, DIMENSION(:) :: itemp
+!	INTEGER :: count, countji
+!	
+!	!HOTSTART VARS
+!	INTEGER :: nsols
+!	
+!    CALL cg_open_f(InputFile, MODE_MODIFY, FID, IER)
+!    IF(IER .NE. 0) THEN
+!        call cg_error_print_f()			
+!    ENDIF
+!
+!    CALL CG_IRIC_GOTOSOL_F(FID, SolnIndex, NX, NY, IER)
+!    ALLOCATE(tmpreal4(nx*ny), STAT = ier)
+!    ALLOCATE(itemp(nx*ny), STAT = ier)
+!    
+!    
+!    CALL cg_iRIC_Read_SolRealNode(SolnIndex, 'Elevation', tmpreal4, IER)
+!!    DO I = 1, nx*ny
+!!        IF( tmpreal4(i) < elevoffset) THEN
+!!            elevoffset = tmpreal4(i)
+!!        ENDIF
+!!    ENDDO
+!    DO I= 1,NX
+!        DO J=1,NY
+!            COUNT = ((I-1)*NY)+J
+!            countji = ((j-1)*NX)+i
+!            ie(I,J) = (tmpreal4(countji) - elevoffset)*100.
+!        ENDDO
 !    ENDDO
-    DO I= 1,NX
-        DO J=1,NY
-            COUNT = ((I-1)*NY)+J
-            countji = ((j-1)*NX)+i
-            ie(I,J) = (tmpreal4(countji) - elevoffset)*100.
-        ENDDO
-    ENDDO
-    
-    CALL cg_iRIC_Read_SolRealNode(SolnIndex, 'roughness', tmpreal4, IER)
-    IF(ier.eq.0) THEN
-        DO I= 1,NX
-            DO J=1,NY
-                COUNT = ((I-1)*NY)+J
-                countji = ((j-1)*NX)+i
-			    cd2(i,j) = tmpreal4(countji)
-			    znaught2(i,j) = tmpreal4(countji)*100.
-            ENDDO
-        ENDDO
-    ENDIF
-    cdv2 = 0.0
-    CALL cg_iRIC_Read_SolRealNode(SolnIndex, 'vegroughness', tmpreal4, IER)
-    IF(ier.eq.0) THEN
-        DO I= 1,NX
-            DO J=1,NY
-                COUNT = ((I-1)*NY)+J
-                countji = ((j-1)*NX)+i
-			    cdv2(i,j) = tmpreal4(countji)
-            ENDDO
-        ENDDO
-    ENDIF
-
-    CALL cg_iRIC_Read_SolRealNode(SolnIndex, 'sandfraction', tmpreal4, IER)
-    IF(ier.eq.0) THEN
-        DO I= 1,NX
-            DO J=1,NY
-                COUNT = ((I-1)*NY)+J
-                countji = ((j-1)*NX)+i
-			    Fracs(i,j) = tmpreal4(countji)
-            ENDDO
-        ENDDO
-    ENDIF
-    CALL cg_iRIC_Read_SolRealNode(SolnIndex, 'sanddepth', tmpreal4, IER)
-    IF(ier.eq.0) THEN
-        DO I= 1,NX
-            DO J=1,NY
-                COUNT = ((I-1)*NY)+J
-                countji = ((j-1)*NX)+i
-			    hfine(i,j) = tmpreal4(countji)*100. !Convert to cm
-            ENDDO
-        ENDDO
-    ENDIF
-    
-    CALL cg_iRIC_Read_SolRealNode(SolnIndex, 'VelocityInitS', tmpreal4, IER)
-    IF(IER.ne.0) THEN
-        STOP 'No Initial Velocity in hotstart solution'
-        pause
-    ENDIF
-    DO I= 1,NX
-        DO J=1,NY
-            COUNT = ((I-1)*NY)+J
-            countji = ((j-1)*NX)+i
-			iu(i,j) = tmpreal4(countji)*100. !Convert to cm
-        ENDDO
-    ENDDO
-
-    CALL cg_iRIC_Read_SolRealNode(SolnIndex, 'VelocityInitN', tmpreal4, IER)
-    DO I= 1,NX
-        DO J=1,NY
-            COUNT = ((I-1)*NY)+J
-            countji = ((j-1)*NX)+i
-			iv(i,j) = tmpreal4(countji)*100. !Convert to cm
-        ENDDO
-    ENDDO
-
-    CALL cg_iRIC_Read_SolRealNode(SolnIndex, 'WaterSurfaceElevation', tmpreal4, IER)
-    DO I= 1,NX
-        DO J=1,NY
-            COUNT = ((I-1)*NY)+J
-            countji = ((j-1)*NX)+i
-			iwse(i,j) = (tmpreal4(countji) - elevoffset)*100. !Convert to cm
-			if(j == ny/2+1) then
-			    hav(i) = (tmpreal4(countji) - elevoffset)*100 !Convert to cm
-			ENDIF
-        ENDDO
-    ENDDO
-    IF(nx < ns) THEN
-        DO I = NX+1,NS
-            hav(i) = hav(nx)
-        ENDDO
-    ENDIF
-    
-    CALL cg_iRIC_Read_SolIntegerNode(SolnIndex, 'IBC', itemp, IER)
-    DO I= 1,NX
-        DO J=1,NY
-            COUNT = ((I-1)*NY)+J
-            countji = ((j-1)*NX)+i
-			iibc(i,j) = itemp(countji) 
-        ENDDO
-    ENDDO
-	CALL cg_close_f(FID, IER)
-
-    END SUBROUTINE INITHOTSTART2
+!    
+!    CALL cg_iRIC_Read_SolRealNode(SolnIndex, 'roughness', tmpreal4, IER)
+!    IF(ier.eq.0) THEN
+!        DO I= 1,NX
+!            DO J=1,NY
+!                COUNT = ((I-1)*NY)+J
+!                countji = ((j-1)*NX)+i
+!			    cd2(i,j) = tmpreal4(countji)
+!			    znaught2(i,j) = tmpreal4(countji)*100.
+!            ENDDO
+!        ENDDO
+!    ENDIF
+!    cdv2 = 0.0
+!    CALL cg_iRIC_Read_SolRealNode(SolnIndex, 'vegroughness', tmpreal4, IER)
+!    IF(ier.eq.0) THEN
+!        DO I= 1,NX
+!            DO J=1,NY
+!                COUNT = ((I-1)*NY)+J
+!                countji = ((j-1)*NX)+i
+!			    cdv2(i,j) = tmpreal4(countji)
+!            ENDDO
+!        ENDDO
+!    ENDIF
+!
+!    CALL cg_iRIC_Read_SolRealNode(SolnIndex, 'sandfraction', tmpreal4, IER)
+!    IF(ier.eq.0) THEN
+!        DO I= 1,NX
+!            DO J=1,NY
+!                COUNT = ((I-1)*NY)+J
+!                countji = ((j-1)*NX)+i
+!			    Fracs(i,j) = tmpreal4(countji)
+!            ENDDO
+!        ENDDO
+!    ENDIF
+!    CALL cg_iRIC_Read_SolRealNode(SolnIndex, 'sanddepth', tmpreal4, IER)
+!    IF(ier.eq.0) THEN
+!        DO I= 1,NX
+!            DO J=1,NY
+!                COUNT = ((I-1)*NY)+J
+!                countji = ((j-1)*NX)+i
+!			    hfine(i,j) = tmpreal4(countji)*100. !Convert to cm
+!            ENDDO
+!        ENDDO
+!    ENDIF
+!    
+!    CALL cg_iRIC_Read_SolRealNode(SolnIndex, 'VelocityInitS', tmpreal4, IER)
+!    IF(IER.ne.0) THEN
+!        STOP 'No Initial Velocity in hotstart solution'
+!        pause
+!    ENDIF
+!    DO I= 1,NX
+!        DO J=1,NY
+!            COUNT = ((I-1)*NY)+J
+!            countji = ((j-1)*NX)+i
+!			iu(i,j) = tmpreal4(countji)*100. !Convert to cm
+!        ENDDO
+!    ENDDO
+!
+!    CALL cg_iRIC_Read_SolRealNode(SolnIndex, 'VelocityInitN', tmpreal4, IER)
+!    DO I= 1,NX
+!        DO J=1,NY
+!            COUNT = ((I-1)*NY)+J
+!            countji = ((j-1)*NX)+i
+!			iv(i,j) = tmpreal4(countji)*100. !Convert to cm
+!        ENDDO
+!    ENDDO
+!
+!    CALL cg_iRIC_Read_SolRealNode(SolnIndex, 'WaterSurfaceElevation', tmpreal4, IER)
+!    DO I= 1,NX
+!        DO J=1,NY
+!            COUNT = ((I-1)*NY)+J
+!            countji = ((j-1)*NX)+i
+!			iwse(i,j) = (tmpreal4(countji) - elevoffset)*100. !Convert to cm
+!			if(j == ny/2+1) then
+!			    hav(i) = (tmpreal4(countji) - elevoffset)*100 !Convert to cm
+!			ENDIF
+!        ENDDO
+!    ENDDO
+!    IF(nx < ns) THEN
+!        DO I = NX+1,NS
+!            hav(i) = hav(nx)
+!        ENDDO
+!    ENDIF
+!    
+!    CALL cg_iRIC_Read_SolIntegerNode(SolnIndex, 'IBC', itemp, IER)
+!    DO I= 1,NX
+!        DO J=1,NY
+!            COUNT = ((I-1)*NY)+J
+!            countji = ((j-1)*NX)+i
+!			iibc(i,j) = itemp(countji) 
+!        ENDDO
+!    ENDDO
+!	CALL cg_close_f(FID, IER)
+!
+!    END SUBROUTINE INITHOTSTART2
     
     SUBROUTINE INITARRAYS()
     IMPLICIT NONE

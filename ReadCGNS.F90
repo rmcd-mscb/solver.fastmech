@@ -27,8 +27,12 @@ INTEGER :: IER, IRET
             pause
             return
         ENDIF
-        
-    CALL cg_iric_init_f(fid, ier)
+    if(solType == 1) then
+        call iric_initoption_f(IRIC_OPTION_DIVIDESOLUTIONS, ier)
+            if (ier /=0) STOP "*** Initialize option error***"   
+    endif
+    
+        CALL cg_iric_init_f(fid, ier)
          IF(IER .NE. 0) THEN
             call cg_error_print_f()
             pause

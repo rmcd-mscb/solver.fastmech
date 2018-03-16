@@ -35,8 +35,8 @@
 				<Tool Name="VFPostBuildEventTool"/>
 				<Tool Name="VFManifestTool" SuppressStartupBanner="true"/></Configuration>
 		<Configuration Name="Release|x64" DeleteExtensionsOnClean="*.obj;*.mod;*.pdb;*.asm;*.map;*.dyn;*.dpi;*.tmp;*.log;*.ilk;*.exe;$(TargetPath)">
-				<Tool Name="VFFortranCompilerTool" SuppressStartupBanner="true" AdditionalIncludeDirectories="libs_0727\." EnableRecursion="true" ReentrantCode="reentrancyThreaded" RealKIND="realKIND8" ModulePath="$(INTDIR)/" ObjectFile="$(INTDIR)/" Traceback="true" OutputCarriageControl="outputCCFortran" RuntimeLibrary="rtMultiThreadedDLL"/>
-				<Tool Name="VFLinkerTool" OutputFile="$(OUTDIR)/Fastmech.exe" LinkIncremental="linkIncrementalYes" SuppressStartupBanner="true" AdditionalLibraryDirectories="libs_0727\." SubSystem="subSystemConsole" HeapReserveSize="100000000" HeapCommitSize="100000000" StackReserveSize="1000000000" StackCommitSize="1000000000" AdditionalDependencies="cgnsdll.lib iriclib.lib"/>
+				<Tool Name="VFFortranCompilerTool" SuppressStartupBanner="true" AdditionalIncludeDirectories="libs\cgnslib-3.2.1\release\include\.;libs\iriclib-139cd84\release\include\." EnableRecursion="true" ReentrantCode="reentrancyThreaded" RealKIND="realKIND8" ModulePath="$(INTDIR)/" ObjectFile="$(INTDIR)/" Traceback="true" OutputCarriageControl="outputCCFortran" RuntimeLibrary="rtMultiThreadedDLL"/>
+				<Tool Name="VFLinkerTool" OutputFile="$(OUTDIR)/Fastmech.exe" LinkIncremental="linkIncrementalYes" SuppressStartupBanner="true" AdditionalLibraryDirectories="libs\cgnslib-3.2.1\release\lib\.;libs\iriclib-139cd84\release\lib\." SubSystem="subSystemConsole" HeapReserveSize="100000000" HeapCommitSize="100000000" StackReserveSize="1000000000" StackCommitSize="1000000000" AdditionalDependencies="iriclib.lib cgnsdll.lib"/>
 				<Tool Name="VFResourceCompilerTool"/>
 				<Tool Name="VFMidlTool" SuppressStartupBanner="true" TargetEnvironment="midlTargetAMD64" HeaderFileName="$(InputName).h" TypeLibraryName="$(IntDir)/$(InputName).tlb"/>
 				<Tool Name="VFCustomBuildTool"/>
@@ -136,7 +136,6 @@
 		<File RelativePath=".\Daniele Tonina\rough.for"/>
 		<File RelativePath=".\Daniele Tonina\roughnessinv.for"/>
 		<File RelativePath="Daniele Tonina\volfrac.for"/></Filter>
-		<Filter Name="Header Files" Filter="fi;fd"/>
 		<Filter Name="iRIC">
 		<File RelativePath=".\CalcCondMod.F90"/>
 		<File RelativePath=".\GridCondMod.F90"/>

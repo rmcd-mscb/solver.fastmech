@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SolverDefinition
 	xmlns="www.iric.net/SolverDefinition/1.0"
-	name="fastmech" caption="FaSTMECH" version="1.0" copyright="Jonathan Nelson"
-	release="2009.11.01" homepage="http://www.google.co.jp/"
+	name="fastmech" caption="FaSTMECH" version="1.0.2" copyright="None"
+	release="2017.12.08" homepage="http://www.google.co.jp/"
 	executable="Fastmech.exe"
 	iterationtype="time"
 	gridtype="structured2d"
+  gridgenerators="center_and_width, gridgen"
 	>
 	<CalculationCondition>
 		<Tab name="Discharge" caption="Discharge">
@@ -287,7 +288,7 @@
 								<Enumeration value="0" caption="Upstream Stage" />
 								<Enumeration value="1" caption="Uniform Slope" />
 								<Enumeration value="2" caption="1D Step-backwater" />
-								<Enumeration value="3" caption="Hot Start" />
+								<!--<Enumeration value="3" caption="Hot Start" />-->
 							</Enumerations>
 						</Definition>
 					</Item>
@@ -309,7 +310,7 @@
 							</Dependency>
 						</Definition>
 					</Item>
-					<Item name="FM_HydAttWS1DDisch" caption="1D Discharge">
+					<!--<Item name="FM_HydAttWS1DDisch" caption="1D Discharge">
 						<Definition conditionType="constant" valueType="real" option="false"
 							default="100">
 							<Dependency>
@@ -326,7 +327,7 @@
 								<Action type="enable" />
 							</Dependency>
 						</Definition>
-					</Item>
+					</Item>-->
 					<Item name="FM_HydAttWS1DCD" caption="1D Drag Coefficient">
 						<Definition conditionType="constant" valueType="real" option="false"
 							default=".003">
@@ -336,7 +337,7 @@
 							</Dependency>
 						</Definition>
 					</Item>
-					<Item name="FM_HydAttHSFile" caption="Hot Start File">
+					<!--<Item name="FM_HydAttHSFile" caption="Hot Start File">
 						<Definition conditionType="constant" valueType="filename" option="false"
 							default="file.cgn">
 							<Dependency>
@@ -349,7 +350,7 @@
 						<Definition conditionType="constant" valueType="integer" option="false"
 							default="1">
 						</Definition>
-					</Item>
+					</Item>-->
 				</Items>
 			</Content>
 		</Tab>
@@ -749,8 +750,8 @@
 							<Enumerations>
 								<Enumeration value="0" caption="Yalin" />
 								<Enumeration value="1" caption="Engelund-Hansen" />                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
-								<Enumeration value="2" caption="Wilcock-Kenworthy" />
-                <Enumeration value="3" caption="Meyer-Peter Muller" />
+								<!--<Enumeration value="2" caption="Wilcock-Kenworthy" />
+                <Enumeration value="3" caption="Meyer-Peter Muller" />-->
               </Enumerations>
 							<Dependency>
 								<Condition type="isEqual" target="FM_SedTrans" value="1" />

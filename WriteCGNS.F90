@@ -85,7 +85,7 @@ INTEGER :: tmpnx, tmpny
         ELSE !iRIC3D already exists so delete BaseIterative, ZoneIterative and Solutions
             IF(NBASES.ne.2) THEN
                 STOP 'Error in 3D CGNS FILE - Bases'
-                PAUSE
+                !PAUSE
             ENDIF
             
             BASES_ITER = 2 !Hardwired should be iRIC3D
@@ -96,7 +96,7 @@ INTEGER :: tmpnx, tmpny
             CALL cg_nzones_f(FID, BASES_ITER, NZONES, IER)
             IF(NZONES.ne.1) THEN
                 STOP 'Error in 3D CGNS File - Zones'
-                PAUSE
+                !PAUSE
             ENDIF
             CALL cg_goto_f(FID, BASES_ITER, ier, 'Zone_t', ZONES_ITER, 'end')
             !Delete existing solutions	    
@@ -184,7 +184,7 @@ INTEGER :: tmpnx, tmpny
 		CALL cg_nbases_f(FID, NBASES, IER)
 		IF(NBASES.ne.2) THEN
 		    STOP 'ERROR in 3D base node'
-		    PAUSE
+		    !PAUSE
 		ENDIF
 		! Building iRIC3D node 
 		BASES_ITER = 2

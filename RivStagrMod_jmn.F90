@@ -117,7 +117,7 @@ MODULE RivStagr4Mod_jmn
 		CALL einit(e, hl, eta, ibc, w, hav)
 		call uinit(u,v,hav,w,eta,q,ibc)
 		if(errorcode < 0) then
-			call write_error_CGNS(STR_IN)
+			!call write_error_CGNS(STR_IN)
             CALL dealloc_common2d()
             if(vbc) then
                 CALL DEALLOC_VELBC()
@@ -129,7 +129,7 @@ MODULE RivStagr4Mod_jmn
                 ENDIF
             endif
             CALL dealloc_working()
-            pause
+            !pause
  			return
 		endif
 	endif
@@ -579,7 +579,7 @@ MODULE RivStagr4Mod_jmn
         if(n.ge.1) then
         call tridag(am,bm,ccm,dm,em,n)
 		if(errorcode.eq.-1) then
-			call write_error_CGNS(STR_IN)
+			!call write_error_CGNS(STR_IN)
 			CALL dealloc_common2d()
             if(vbc) then
                 CALL DEALLOC_VELBC()
@@ -594,7 +594,7 @@ MODULE RivStagr4Mod_jmn
 			CALL dealloc_working()
 			WRITE(6,*) 'Error at dqs', 'i = ', i
 
-			pause
+			!pause
 			return
 		endif
         endif
@@ -630,7 +630,7 @@ MODULE RivStagr4Mod_jmn
 			if(n.ge.1) then
 				call tridag(am,bm,ccm,dm,em,n)
 		        if(errorcode.eq.-1) then
-			        call write_error_CGNS(STR_IN)
+			        !call write_error_CGNS(STR_IN)
 			        CALL dealloc_common2d()
                     if(vbc) then
                         CALL DEALLOC_VELBC()
@@ -645,7 +645,7 @@ MODULE RivStagr4Mod_jmn
 			        CALL dealloc_working()
 					        WRITE(6,*) 'Error at dqn'
 
-			        pause
+			        !pause
 			        return
 		        endif
             endif
@@ -731,7 +731,7 @@ MODULE RivStagr4Mod_jmn
 		qprms(iter) = sqrt(sumqpdiff/ns)
 		if(isnan(qprms(iter))) then
 			errorcode=-1
-			call write_error_CGNS(STR_IN)
+			!call write_error_CGNS(STR_IN)
 !			call dealloc_all()
            CALL dealloc_common2d()
             if(vbc) then
@@ -746,7 +746,7 @@ MODULE RivStagr4Mod_jmn
             endif
               CALL dealloc_working()
 		WRITE(6,*) 'Error at qprms'
- 			pause
+ 			!pause
 
 			return
 
@@ -760,7 +760,7 @@ MODULE RivStagr4Mod_jmn
 !			        CALL write_TimeStep_CGNS(STR_IN, nct, tottime) 
 !			        CALL write_timeiter_cgns(STR_IN)
                     CALL dealloc_all()
- 	                pause
+ 	                !pause
 
 	                return
 			    endif

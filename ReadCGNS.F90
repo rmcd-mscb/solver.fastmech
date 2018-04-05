@@ -24,22 +24,21 @@ INTEGER :: IER, IRET
     CALL cg_open_f(InputFile, CG_MODE_MODIFY, FID, IER)
         IF(IER .NE. 0) THEN
             call cg_error_print_f()
-            pause
+            !pause
             return
         ENDIF
-    if(solType == 1) then
-        call iric_initoption_f(IRIC_OPTION_DIVIDESOLUTIONS, ier)
-            if (ier /=0) STOP "*** Initialize option error***"   
-    endif
+        ! uncomment lines below for split solution
+        !call iric_initoption_f(IRIC_OPTION_DIVIDESOLUTIONS, ier)
+        !    if (ier /=0) STOP "*** Initialize option error***"   
     
         CALL cg_iric_init_f(fid, ier)
          IF(IER .NE. 0) THEN
             call cg_error_print_f()
-            pause
+            !pause
             return
         ENDIF
-   	call iric_initoption_f(IRIC_OPTION_CANCEL, ier)
-	if (ier /=0) STOP "*** Initialize option error***"
+        call iric_initoption_f(IRIC_OPTION_CANCEL, ier)
+	        if (ier /=0) STOP "*** Initialize option error***"
 
 !    CALL CGNS_Read_CalcCondtion_ForAlloc(FID, IER)
     CALL CGNS2_Read_CalcCondtion_ForAlloc(IER)

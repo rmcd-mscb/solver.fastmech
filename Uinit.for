@@ -26,6 +26,8 @@
 25      continue
 	  if(ibtot.eq.0) then
 		errorcode = -10
+          WRITE(6,*) 'At least one row of nodes are completely dry - '
+          WRITE(6,*) 'check water surface boundary condition'
 		return
 	  end if
         depave=depave/(ibtot)
@@ -104,8 +106,10 @@ c        endif
                 endif
 25          continue
 	      if(ibtot.eq.0) then
-		        errorcode = -10
-		        return
+              errorcode = -10
+              WRITE(6,*) 'At least one row of nodes are completely dry-'
+              WRITE(6,*) 'check water surface boundary condition'  
+              return
 	      end if
             depave=depave/(ibtot)
             twidth=deln*(ibtot)
@@ -171,8 +175,10 @@ c        endif
                 endif
 25          continue
 	      if(ibtot.eq.0) then
-		        errorcode = -10
-		        return
+              errorcode = -10
+              WRITE(6,*) 'At least one row of nodes are completely dry-'
+              WRITE(6,*) 'check water surface boundary condition'  
+              return
 	      end if
             depave=depave/(ibtot)
             twidth=deln*(ibtot)

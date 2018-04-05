@@ -2,7 +2,7 @@
 <SolverDefinition
 	xmlns="www.iric.net/SolverDefinition/1.0"
 	name="fastmech" caption="FaSTMECH" version="1.0.2" copyright="None"
-	release="2017.12.08" homepage="http://www.google.co.jp/"
+	release="2018.03.16" homepage="https://wwwbrr.cr.usgs.gov/gstl/index.html"
 	executable="Fastmech.exe"
 	iterationtype="time"
 	gridtype="structured2d"

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SolverDefinition
 	xmlns="www.iric.net/SolverDefinition/1.0"
-	name="fastmech" caption="FaSTMECH" version="1.0.2" copyright="None"
-	release="2018.03.16" homepage="https://wwwbrr.cr.usgs.gov/gstl/index.html"
+	name="fastmech" caption="FaSTMECH" version="1.1.0" copyright="None"
+	release="2018.06.04" homepage="https://wwwbrr.cr.usgs.gov/gstl/index.html"
 	executable="Fastmech.exe"
 	iterationtype="time"
 	gridtype="structured2d"
@@ -253,7 +253,7 @@
 							</Dependency>
 						</Definition>
 					</Item>
-					<Item name="FM_SolAttNSExtShow" caption="View Extension">
+					<!--<Item name="FM_SolAttNSExtShow" caption="View Extension">
 						<Definition conditionType="constant" valueType="integer" option="true"
 							default="0">
 							<Enumerations>
@@ -265,7 +265,7 @@
 								<Action type="enable" />
 							</Dependency>
 						</Definition>
-					</Item>
+					</Item>-->
 					<Item name="FM_HydAttVelBCDS" caption="Downstream Boundary Velocity">
 						<Definition conditionType="constant" valueType="integer" option="true"
 							default="0">
@@ -1189,15 +1189,15 @@
     <Item name="vegroughness" caption="Vegetation Roughness">
       <Definition position="node" valueType="real" default="0.003" option="false"/>
     </Item>
-    <Item name="minelevation" caption="Minimum_Elevation">
+    <!--<Item name="minelevation" caption="Minimum_Elevation">
 			<Definition position="node" valueType="real" default="0.002" option="false"/>
-		</Item>
+		</Item>-->
     <!--<Item name="depth" caption="Depth">
 			<Definition position="node" valueType="real" default="0.002" option="false"/>
 		</Item>-->
-		<Item name="grainsize" caption="Grainsize">
+		<!--<Item name="grainsize" caption="Grainsize">
 			<Definition position="node" valueType="real" default="0.002" option="false"/>
-		</Item>
+		</Item>-->
 		<Item name="sanddepth" caption="Sand_Depth">
 			<Definition position="node" valueType="real" default="0.003" option="false"/>
 		</Item>

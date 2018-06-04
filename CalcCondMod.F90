@@ -61,7 +61,7 @@ INTEGER :: SEDSMOO, RSSMOO, SEDSMOOWGHT, TRANSEQTYPE
 INTEGER :: SEDBCNODE, CALCGRAVCORR, GRAVCORRTYPE, SEDEQNODE
 REAL(KIND=mp) :: HD, WD, DIN, BCFRACTION, SUBANGLEOFREPOSE
 REAL(KIND=mp) :: TSFracDepth, GRAVFLATBEDCORRCOEF
-REAL(KIND=mp) :: SEDEQMULT
+!REAL(KIND=mp) :: SEDEQMULT
 LOGICAL :: CALCCSED, CALCSEDAUTO
 
 !Daniele Tonina Wilcock-Kenworthy transport function
@@ -362,7 +362,7 @@ CALL cg_iRIC_Read_Real_F('FM_HydAttCDMin', cdmin, ier)
 CALL cg_iRIC_Read_Real_F('FM_HydAttCDMax', cdmax, ier)
 
 CALL cg_iRIC_Read_Real_F('FM_SolAttNSExtSlope', nsextslope, ier)
-CALL CG_IRIC_READ_INTEGER_F('FM_SolAttNSExtShow', ShowGridExt, ier)
+!CALL CG_IRIC_READ_INTEGER_F('FM_SolAttNSExtShow', ShowGridExt, ier)
 CALL CG_IRIC_READ_INTEGER_F('FM_HydAttVelBCDS', vbcds, ier)
 CALL CG_IRIC_READ_INTEGER_F('FM_HydAttDryType', dryType, ier)
 CALL cg_iRIC_Read_Real_F('FM_HydAttDryMinDepth', hmin, ier) 
@@ -429,7 +429,7 @@ CALL CG_IRIC_READ_INTEGER_F('FM_SedBCNode', SEDBCNODE, ier)
 CALL CG_IRIC_READ_INTEGER_F('FM_SedBCFractionTaper', SEDEQNODE, ier)
     SEDEQNODE = SEDBCNODE+SEDEQNODE
 CALL cg_iRIC_Read_Real_F('FM_SedBCFraction', BCFRACTION, ier)
-CALL cg_iRIC_Read_Real_F('FM_SedBCEquiMult', SEDEQMULT, ier)
+!CALL cg_iRIC_Read_Real_F('FM_SedBCEquiMult', SEDEQMULT, ier)
 
 CALL CG_IRIC_READ_INTEGER_F('FM_SedCalcGravCorr', CALCGRAVCORR, ier)
 CALL CG_IRIC_READ_INTEGER_F('FM_SedGravCorrType', GRAVCORRTYPE, ier)

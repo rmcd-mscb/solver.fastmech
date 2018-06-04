@@ -1127,7 +1127,7 @@ MODULE RivStagr4Mod_jmn
     	do i=ns2+1,ns2+nsext
     	    do j = 1,nn
 	            eta(i,j)=eta2(ns2,j) - ((i-ns2)*ds*nsextslope)
-	            mineta(i,j)=mineta2(ns2,j) - ((i-ns2)*ds*nsextslope)
+	            !mineta(i,j)=mineta2(ns2,j) - ((i-ns2)*ds*nsextslope)
 	            if(ibc(i,j).ne.0) then
 	                mag = sqrt(u(ns2,j)**2.+v(ns2,j)**2.)
                     v(i,j) = v(i,j) - (i*(-v(ns2,j)/(ns2+nsext)))

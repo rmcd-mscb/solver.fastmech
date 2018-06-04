@@ -52,19 +52,19 @@ CONTAINS
         DO J=1,nn
             COUNT = ((I-1)*nn)+J
             countji = ((j-1)*ns2)+i
-!			cdv2(i,j) = tmpreal4(countji)
-            cdv2(i,j) = 0
+			cdv2(i,j) = tmpreal4(countji)
+            !cdv2(i,j) = 0
         ENDDO
     ENDDO
 
-    CALL cg_iRIC_Read_Grid_Real_Node_F('minelevation', tmpreal4, IER)
-    DO I= 1,ns2
-        DO J=1,nn
-            COUNT = ((I-1)*nn)+J
-            countji = ((j-1)*ns2)+i
-            mineta2(I,J) = (tmpreal4(countji) - elevoffset)*100.
-        ENDDO
-    ENDDO
+    !CALL cg_iRIC_Read_Grid_Real_Node_F('minelevation', tmpreal4, IER)
+    !DO I= 1,ns2
+    !    DO J=1,nn
+    !        COUNT = ((I-1)*nn)+J
+    !        countji = ((j-1)*ns2)+i
+    !        mineta2(I,J) = (tmpreal4(countji) - elevoffset)*100.
+    !    ENDDO
+    !ENDDO
 
     CALL cg_iRIC_Read_Grid_Real_Node_F('sandfraction', tmpreal4, IER)
     DO I= 1,ns2

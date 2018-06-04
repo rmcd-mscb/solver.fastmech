@@ -21,7 +21,7 @@ CHARACTER(250) :: ZONENAME, BASENAME, USERNAME
 
 INTEGER :: IER, IRET
 
-    CALL cg_open_f(InputFile, CG_MODE_MODIFY, FID, IER)
+    CALL cg_open_f(InputFile, CG_MODE_MODIFY, FID, IER) 
         IF(IER .NE. 0) THEN
             call cg_error_print_f()
             !pause

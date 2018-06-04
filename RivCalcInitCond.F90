@@ -345,7 +345,7 @@ END SUBROUTINE
 !   lengthen grid to elimate eddies at downstream end
             if(i.le.ns2) then
 	            eta(i,j)=eta2(i,j)
-	            mineta(i,j) = mineta2(i,j)
+	            !mineta(i,j) = mineta2(i,j)
 !	            ibc(i,j)=ibc2(i,j)
 !	            ribc(i,j) = ribc2(i,j)
 	            cd(i,j)=cd2(i,j)
@@ -354,7 +354,7 @@ END SUBROUTINE
 		        znaught(i,j)=znaught2(i,j)
 	        else
 	            eta(i,j)=eta2(ns2,j) - ((i-ns2)*ds*nsextslope)
-	            mineta(i,j)=mineta2(ns2,j) - ((i-ns2)*ds*nsextslope)
+	            !mineta(i,j)=mineta2(ns2,j) - ((i-ns2)*ds*nsextslope)
 !	            ibc(i,j)=ibc2(ns2,j)
 !	            ribc(i,j) = ribc2(ns2, j)
 	            cd(i,j)=cd2(ns2,j)

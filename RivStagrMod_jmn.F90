@@ -23,7 +23,10 @@ MODULE RivStagr4Mod_jmn
 	CONTAINS 
 	
 	SUBROUTINE STAGR4(STR_IN )
-		CHARACTER(*), INTENT(IN) :: STR_IN
+	IMPLICIT NONE
+    INCLUDE "iriclib_f.h"	
+    CHARACTER(*), INTENT(IN) :: STR_IN
+    
 	character*20 runid
 	INTEGER :: solIndex
 	INTEGER :: n, n2
@@ -301,7 +304,13 @@ MODULE RivStagr4Mod_jmn
 
 	    if(itm == 0) goto 601
 	    ITER_LOOP: DO iter = 1,itm  
-    
+!       Check if user cancelled simulation and if so exit            
+        CALL iric_check_cancel_f(errorcode)
+        IF(errorcode.eq.1) THEN
+            CALL dealloc_all()
+            return
+        ENDIF
+        
         IF(iwetdry.eq.1.and.MOD(iter,imod).eq.0.and.varDischType == 0.and.iter.lt.hiterstop.and.nct.lt.1)then
 !        IF(iwetdry.eq.1.and.MOD(iter,imod).eq.0.and.varDischType == 0)then
             CALL    UpdateWETTING(e, hl, u, v, eta, ibc, dsstage)
@@ -1064,7 +1073,9 @@ MODULE RivStagr4Mod_jmn
         else
          call dealloc_csed()
         endif
-
+        IF(FID > 0) THEN
+            CALL cg_close_f(FID, errorcode)
+        ENDIF
 	END SUBROUTINE
 	
 	SUBROUTINE updateIBC()

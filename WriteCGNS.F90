@@ -659,13 +659,13 @@ SUBROUTINE GETVELOCITYOUT(velXOut, velYOut)
 
 !				    ux = (u(i,j)*rcos - vout(i,j)*rsin)/100.
 !				    uy = (u(i,j)*rsin + vout(i,j)*rcos)/100.
-                    if(uvinterp == 0) then
+                    !if(uvinterp == 0) then
 				      ux = (u(i,j)*rcos - vout(i,j)*rsin)/100.
 				      uy = (u(i,j)*rsin + vout(i,j)*rcos)/100.
-				    else
-				      ux = (uout(i,j)*rcos - vout(i,j)*rsin)/100.
-				      uy = (uout(i,j)*rsin + vout(i,j)*rcos)/100.
-				    endif
+				    !else
+				    !  ux = (uout(i,j)*rcos - vout(i,j)*rsin)/100.
+				    !  uy = (uout(i,j)*rsin + vout(i,j)*rcos)/100.
+				    !endif
 				    xx = ux*fcos - uy*fsin
 				    yy = ux*fsin + uy*fcos
 				    velXOut(i,j) = xx

@@ -73,6 +73,13 @@ LOGICAL :: WKConstBndry
 
 INTEGER :: uvinterp
 
+! For Hot Stat
+integer :: i_re_flag_i, i_re_flag_o, n_rest, i_tmp_count
+real(8) :: opt_tmp(0:9)
+
+character(len = strMax) :: tmp_file_o(0:9), tmp_caption(0:9) &
+   ,tmp_file_i, tmp_dummy, tmp_pass
+
 CONTAINS
 
 SUBROUTINE ALLOC_VELBC(size)
@@ -116,7 +123,7 @@ IMPLICIT NONE
 INTEGER, INTENT(OUT) :: IER
 
 INTEGER :: status, i, j, count, ierror
-REAL*8 :: rwork(1)
+REAL*8 :: rwork(1), ttt
 REAL*4 :: tmpreal
 INTEGER, DIMENSION(1) :: tint
 REAL, DIMENSION(:), ALLOCATABLE :: treal
@@ -125,8 +132,17 @@ REAL(KIND=mp), DIMENSION(:), ALLOCATABLE :: xtmp, ytmp, ztmp
 REAL(KIND=mp), DIMENSION(:), ALLOCATABLE :: dischT, dischQ, stageT, StageQ, stageH
 INTEGER :: sizeDischTQ, sizeStageTQ, sizeStageHQ
 
-INTEGER :: ii, count2
-
+INTEGER :: ii, iii, count2
+!For hotstart
+i_tmp_count = 0
+  do ii=0,9
+     tmp_dummy = "tmp0.d"
+     write(tmp_dummy(4:4),'(i1)') ii
+     tmp_file_o(ii) = tmp_dummy
+     tmp_dummy = "outtime_tmp0"
+     write(tmp_dummy(12:12),'(i1)') ii
+     tmp_caption(ii) = tmp_dummy
+  end do
 
 !These are hard wired 
 IO_IBC= .TRUE.
@@ -479,6 +495,33 @@ CALL CG_IRIC_READ_INTEGER_F('FM_Sed_WK_ConstBndry', tmpint, ier)
     ELSE
         WKConstBndry = .FALSE.
     ENDIF
+   !
+   ! --- Parameters for Hot Start ---
+   !
+     CALL CG_IRIC_READ_INTEGER_F('write_flag', i_re_flag_o, ier)
+!     CALL CG_IRIC_READ_INTEGER_F('read_flag', i_re_flag_i, ier)
+     CALL CG_IRIC_READ_INTEGER_F('n_tempfile', n_rest, ier)
+     CALL CG_IRIC_READ_STRING_F('tmp_readfile', tmp_file_i, ier)
+     CALL CG_IRIC_READ_STRING_F('tmp_pass', tmp_pass, ier)
+
+     do ii=0,9
+        CALL CG_IRIC_READ_REAL_F(tmp_caption(ii), opt_tmp(ii), ier)
+     end do
+     !
+     do iii=1,n_rest
+        do ii=0,n_rest-1
+           if(opt_tmp(ii) /= opt_tmp(ii+1) &
+                .or.opt_tmp(ii+1) < opt_tmp(ii)+dt) then
+              if(opt_tmp(ii) > opt_tmp(ii+1)) then
+                 ttt = opt_tmp(ii)
+                 opt_tmp(ii) = opt_tmp(ii+1)
+                 opt_tmp(ii+1) = ttt
+              end if
+           else
+              opt_tmp(ii+1) = opt_tmp(ii+1)+dt
+           end if
+        end do
+     end do
 					    
 END SUBROUTINE
 

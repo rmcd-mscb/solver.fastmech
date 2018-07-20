@@ -697,8 +697,8 @@ INTEGER :: datatype, dim, dimvec
 INTEGER :: I
 CHARACTER(LEN=NAME_MAXLENGTH) :: arrayname
 
-!    CALL local_gotofschild(index, name, ier)
-!    IF(ier.ne.0) RETURN
+    !CALL local_gotofschild(index, name, ier)
+    !IF(ier.ne.0) RETURN
 
 !	// under this UserDefinedData_t, array with name "Value" will exists.
     CALL cg_narrays_f(narrays, ier)

@@ -738,6 +738,7 @@ MODULE RivStagr4Mod_jmn
 70      continue
 	
 		qprms(iter) = sqrt(sumqpdiff/ns)
+        write(*,*), 'after qprms'
 		if(isnan(qprms(iter))) then
 			errorcode=-1
 			!call write_error_CGNS(STR_IN)
@@ -803,7 +804,7 @@ MODULE RivStagr4Mod_jmn
                 endif
             enddo
         enddo
-        if (uvinterp == 0) then
+        !if (uvinterp == 0) then
 
         do  i=1,ns
             do  j=1,nn
@@ -839,44 +840,44 @@ MODULE RivStagr4Mod_jmn
                 taun(i,j)=dube*vout(i,j)
             enddo
         enddo
-    else
-        do  i=1,ns
-            do  j=1,nn
-!                if(ibc(i,j).eq.0.or.hl(i,j).le.hmin) then
-                if(ibc(i,j).ne.-1.or.hl(i,j).le.hmin) then
-                    uout(i,j)=0.
-                    vout(i,j)=0.
-                    go to 889
-                endif
-                if(i.eq.1) then 
-                    vout(i,j)=v(i,j)
-                    uout(i,j) = u(i,j)
-                    go to 889
-                endif
-
-                if(j.eq.nn) then
-                vout(i,j)=0.0
-                elseif(j.eq.1) then
-                vout(i,j) = 0.0
-!                elseif(ibc(i,j).ne.0.and.ibc(i,j+1).eq.0) then
-!                vout(i,j)=v(i,j)
-!                elseif(ibc(i,j).ne.0.and.ibc(i,j-1).eq.0) then
-!                vout(i,j)=v(i,j+1)
-                else
-                vout(i,j) = (v(i,j)+v(i,j-1))/2.
-                uout(i,j) = (u(i,j)+u(i-1,j))/2. 
-                endif
-                
-        889     if(i.eq.1) then
-                    dube=(cd(i,j))*sqrt(uout(i,j)**2+vout(i,j)**2)        
-                else
-                    dube=(cd(i,j)+cd(i-1,j))*.5*sqrt(uout(i,j)**2+vout(i,j)**2)
-                endif
-                taus(i,j)=dube*uout(i,j)
-                taun(i,j)=dube*vout(i,j)
-            enddo
-        enddo
-    endif
+!    else
+!        do  i=1,ns
+!            do  j=1,nn
+!!                if(ibc(i,j).eq.0.or.hl(i,j).le.hmin) then
+!                if(ibc(i,j).ne.-1.or.hl(i,j).le.hmin) then
+!                    uout(i,j)=0.
+!                    vout(i,j)=0.
+!                    go to 889
+!                endif
+!                if(i.eq.1) then 
+!                    vout(i,j)=v(i,j)
+!                    uout(i,j) = u(i,j)
+!                    go to 889
+!                endif
+!
+!                if(j.eq.nn) then
+!                vout(i,j)=0.0
+!                elseif(j.eq.1) then
+!                vout(i,j) = 0.0
+!!                elseif(ibc(i,j).ne.0.and.ibc(i,j+1).eq.0) then
+!!                vout(i,j)=v(i,j)
+!!                elseif(ibc(i,j).ne.0.and.ibc(i,j-1).eq.0) then
+!!                vout(i,j)=v(i,j+1)
+!                else
+!                vout(i,j) = (v(i,j)+v(i,j-1))/2.
+!                uout(i,j) = (u(i,j)+u(i-1,j))/2. 
+!                endif
+!                
+!        889     if(i.eq.1) then
+!                    dube=(cd(i,j))*sqrt(uout(i,j)**2+vout(i,j)**2)        
+!                else
+!                    dube=(cd(i,j)+cd(i-1,j))*.5*sqrt(uout(i,j)**2+vout(i,j)**2)
+!                endif
+!                taus(i,j)=dube*uout(i,j)
+!                taun(i,j)=dube*vout(i,j)
+!            enddo
+!        enddo
+!    endif
             solIndex = solIndex+1
             CALL CG_IRIC_WRITE_SOL_TIME_F(tottime, ier)
             CALL Write_CGNS2(tottime, q)
@@ -884,6 +885,31 @@ MODULE RivStagr4Mod_jmn
    ENDIF
 
         END DO ITER_LOOP
+        
+    	IF(i_re_flag_o.eq.1.and.nct.eq.0) THEN
+            IF(i_tmp_count <= n_rest) THEN
+                IF(iter.eq.opt_tmp(i_tmp_count)) THEN
+                    tmp_file_o(i_tmp_count)=trim(tmp_pass)//tmp_file_o(i_tmp_count)  !i110419
+                    open(502,file=tmp_file_o(i_tmp_count) &
+                         ,status='unknown',form='unformatted')
+                    !
+                    write(502) tottime,solIndex,dt
+                    write(502) ns,nn
+                    !
+                    write(502) ((eta(i,j),i=1,ns),j=1,nn)
+                    write(502) ((u(i,j),i=1,ns),j=1,nn)
+                    write(502) ((v(i,j),i=1,ns),j=1,nn)
+                    write(502) ((ibc(i,j),i=1,ns),j=1,nn)
+                    write(502) ((e(i,j),i=1,ns),j=1,nn)
+                    write(502) ((hl(i,j),i=1,ns),j=1,nn)
+                    write(502) (hav(i),i=1,ns)
+                    
+                    close(502)
+
+                    i_tmp_count = i_tmp_count +1
+                ENDIF
+            ENDIF
+        ENDIF
   
 64      format(25f7.3)
 !66      format(A15,I6,A25,F15.5)
@@ -904,7 +930,7 @@ MODULE RivStagr4Mod_jmn
             enddo
         enddo
 601 continue
-    if (uvinterp == 0) then
+    !if (uvinterp == 0) then
       do 87 i=1,ns
         do 87 j=1,nn
 !          if(ibc(i,j).eq.0.or.hl(i,j).le.hmin) then
@@ -937,44 +963,44 @@ MODULE RivStagr4Mod_jmn
         taus(i,j)=dube*u(i,j)
         taun(i,j)=dube*vout(i,j)
 87      continue
-    else
-         do  i=1,ns
-            do  j=1,nn
-!                if(ibc(i,j).eq.0.or.hl(i,j).le.hmin) then
-                if(ibc(i,j).ne.-1.or.hl(i,j).le.hmin) then
-                    uout(i,j)=0.
-                    vout(i,j)=0.
-                    go to 8888
-                endif
-                if(i.eq.1) then 
-                    vout(i,j)=v(i,j)
-                    uout(i,j) = u(i,j)
-                    go to 8888
-                endif
-
-                if(j.eq.nn) then
-                vout(i,j)=0.0
-                elseif(j.eq.1) then
-                vout(i,j) = 0.0
-!                elseif(ibc(i,j).ne.0.and.ibc(i,j+1).eq.0) then
-!                vout(i,j)=v(i,j)
-!                elseif(ibc(i,j).ne.0.and.ibc(i,j-1).eq.0) then
-!                vout(i,j)=v(i,j+1)
-                else
-                vout(i,j) = (v(i,j)+v(i,j-1))/2.
-                uout(i,j) = (u(i,j)+u(i-1,j))/2. 
-                endif
-                
-        8888     if(i.eq.1) then
-                    dube=(cd(i,j))*sqrt(uout(i,j)**2+vout(i,j)**2)        
-                else
-                    dube=(cd(i,j)+cd(i-1,j))*.5*sqrt(uout(i,j)**2+vout(i,j)**2)
-                endif
-                taus(i,j)=dube*uout(i,j)
-                taun(i,j)=dube*vout(i,j)
-            enddo
-        enddo
-    endif
+!    else
+!         do  i=1,ns
+!            do  j=1,nn
+!!                if(ibc(i,j).eq.0.or.hl(i,j).le.hmin) then
+!                if(ibc(i,j).ne.-1.or.hl(i,j).le.hmin) then
+!                    uout(i,j)=0.
+!                    vout(i,j)=0.
+!                    go to 8888
+!                endif
+!                if(i.eq.1) then 
+!                    vout(i,j)=v(i,j)
+!                    uout(i,j) = u(i,j)
+!                    go to 8888
+!                endif
+!
+!                if(j.eq.nn) then
+!                vout(i,j)=0.0
+!                elseif(j.eq.1) then
+!                vout(i,j) = 0.0
+!!                elseif(ibc(i,j).ne.0.and.ibc(i,j+1).eq.0) then
+!!                vout(i,j)=v(i,j)
+!!                elseif(ibc(i,j).ne.0.and.ibc(i,j-1).eq.0) then
+!!                vout(i,j)=v(i,j+1)
+!                else
+!                vout(i,j) = (v(i,j)+v(i,j-1))/2.
+!                uout(i,j) = (u(i,j)+u(i-1,j))/2. 
+!                endif
+!                
+!        8888     if(i.eq.1) then
+!                    dube=(cd(i,j))*sqrt(uout(i,j)**2+vout(i,j)**2)        
+!                else
+!                    dube=(cd(i,j)+cd(i-1,j))*.5*sqrt(uout(i,j)**2+vout(i,j)**2)
+!                endif
+!                taus(i,j)=dube*uout(i,j)
+!                taun(i,j)=dube*vout(i,j)
+!            enddo
+!        enddo
+!    endif
 !c        call vert
 	  if(CALCQUASI3D) then
 		call vert
@@ -1021,7 +1047,31 @@ MODULE RivStagr4Mod_jmn
 !!                        CALL Write_CGNS3D_MoveableBed(tottime, q)
                     ENDIF
 			        ptime = ptime+(iplinc*dt)
-			    endif
+                endif
+                IF(i_re_flag_o.eq.1.and.nct.ne.0) THEN
+                    IF(i_tmp_count <= n_rest) THEN
+                        IF(tottime.ge.opt_tmp(i_tmp_count)) THEN
+                            tmp_file_o(i_tmp_count)=trim(tmp_pass)//tmp_file_o(i_tmp_count)  !i110419
+                            open(502,file=tmp_file_o(i_tmp_count) &
+                                 ,status='unknown',form='unformatted')
+                            !
+                            write(502) tottime,solIndex,dt
+                            write(502) ns,nn
+                            !
+                            write(502) ((eta(i,j),i=1,ns),j=1,nn)
+                            write(502) ((u(i,j),i=1,ns),j=1,nn)
+                            write(502) ((v(i,j),i=1,ns),j=1,nn)
+                            write(502) ((ibc(i,j),i=1,ns),j=1,nn)
+                            write(502) ((e(i,j),i=1,ns),j=1,nn)
+                            write(502) ((hl(i,j),i=1,ns),j=1,nn)
+                            write(502) (hav(i),i=1,ns)
+                            
+                            close(502)
+
+                            i_tmp_count = i_tmp_count +1
+                        ENDIF
+                    ENDIF
+                ENDIF
 			endif  
 
 5000    ENDDO

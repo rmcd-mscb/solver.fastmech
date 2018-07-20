@@ -5,7 +5,7 @@
 !Allocate REAL common types
 ! Machine precision:
       INTEGER, PARAMETER :: mp = KIND(1.0D0) ! = KIND(1.0D0) for double precision.
-
+      integer,parameter :: strMax = 250
             REAL*8 :: ElevOffset=1e12
 			REAL :: ds,dn,mo,hwt
 			REAL(kind=mp) :: fcos, fsin
@@ -46,7 +46,7 @@
 	REAL, ALLOCATABLE, DIMENSION(:,:) :: taus, taun, hl, eta, rn, cd, cdv
 	REAL, ALLOCATABLE, DIMENSION(:,:) :: totcd, mineta
 	REAL, ALLOCATABLE, DIMENSION(:,:) :: znaught
-	REAL, ALLOCATABLE, DIMENSION(:,:) :: u, v, e, iu, iv, iwse, ie
+	REAL, ALLOCATABLE, DIMENSION(:,:) :: u, v, e, iu, iv, iwse, ie, ihl
 	REAL, ALLOCATABLE, DIMENSION(:,:) :: x, y
 	REAL, ALLOCATABLE, DIMENSION(:,:) :: harea
 
@@ -100,6 +100,7 @@
 			ALLOCATE(iu(ns2, nn), STAT = status)
 			ALLOCATE(ie(ns2, nn), STAT = status)
 			ALLOCATE(iwse(ns2, nn), STAT = status)
+              Allocate(ihl(ns2, nn), STAT = status)
 			Allocate(iibc(ns2, nn), STAT = status)
 		END SUBROUTINE
 
@@ -110,6 +111,7 @@
 			DEALLOCATE(iwse, STAT = status)
 			DEALLOCATE(ie, STAT = status)
 			DEALLOCATE(iibc, STAT = status)
+              DEALLOCATE(ihl, STAT = status)
 		END SUBROUTINE
 
 		SUBROUTINE alloc_common2D(ns2, nsext, nn)

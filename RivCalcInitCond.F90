@@ -16,6 +16,8 @@ INTEGER :: i,j, ier, count
 REAL(KIND=mp), DIMENSION(:), ALLOCATABLE :: tx, ty, ttopo
 REAL(KIND=mp) :: rcos, rsin, ux, uy, uxnew, uynew
 REAL(KIND=mp) :: tmpwselev, tmpq
+REAL(KIND=mp) :: ttime, dt2
+INTEGER :: nx2, ny2,icount
 
 !Calc Init Water Surface Elevation
 
@@ -106,70 +108,72 @@ ELSE IF(wsType.eq.2) THEN
     ENDDO
     
 ELSE IF(wstype.eq.3) THEN
-!    CALL INITHOTSTART2(CGNSHSFile)
+    CAll alloc_init2D(NS,NN)
+       open(501,file=tmp_file_i,status='old',iostat = ier,form='unformatted')
+       if(ier /= 0) then
+          write(6,*) 'Input file error!'
+          write(6,*) 'Temporary file for Hot Start does not exist'
+          pause
+          stop
+       end if
+       !
+       read(501) ttime,icount,dt2
+       !
+!       time=(icount-1)*dt2
+!       icount=time/dt
+       !
+       read(501) nx2, ny2
+       if(ns /= nx2.or.nn /= ny2) then
+          write(6,*) 'Number of grid is different between grid file and temporary file!'
+          pause
+          stop
+       end if
+       !
+!       read(501) ((x(i,j),i=0,nx2),j=0,ny2)
+        read(501) ((ie(i,j),i=1,nx2),j=1,ny2)
+        read(501) ((iu(i,j),i=1,nx2),j=1,ny2)
+        read(501) ((iv(i,j),i=1,nx2),j=1,ny2)
+        read(501) ((iibc(i,j),i=1,nx2),j=1,ny2)
+        read(501) ((iwse(i,j),i=1,nx2),j=1,ny2)
+        read(501) ((ihl(i,j),i=1,nx2),j=1,ny2)
+        read(501) (hav(i),i=1,nx2)
+        
+        Close(501)
     DO I = 1,NS
         DO J = 1,NN
-!		    if(i.le.ns2) then
-!		        ibc2(i,j) = iibc(i,j)
-!		        eta2(i,j) = ie(i,j)
-!		        e2(i,j) = iwse(i,j)
-!                u2(i,j) = iu(i,j)
-!                v2(i,j) = iv(i,j)
-!		    endif
-
-		    if(i.le.ns2) then
 			    u(i,j) = iu(i,j)
 			    v(i,j) = iv(i,j)
 			    e(i,j) = iwse(i,j)
 			    ibc(i,j) = iibc(i,j)
 			    eta(i,j) = ie(i,j)
-		    else 
-			    u(i,j) = u(ns2,j)
-			    v(i,j) = v(ns2,j)
-			    e(i,j) = e(ns2,j)
-			    ibc(i,j) = ibc(ns2,j)
-	            eta(i,j) = eta(ns2,j) - ((i-ns2)*ds*nsextslope)
-	            fracs(i,j) = fracs(ns2,j)
-	            hfine(i,j) = hfine(ns2,j)
-	            
-			    
-		    endif
-		    hl(i,j) = e(i,j)-eta(i,j)
+			    hl(i,j) = ihl(i,j)
 		    IF(j == nn/2+1) THEN
 		        hav(i) = e(i,j)
-		    ENDIF
-        if(ibc(i,j).eq.0.or.hl(i,j).le.hmin) then
-            if(dryType.eq.0) then !turn node off
-            if(ibc(i,j).ne.0) then
-                u(i,j) = 0
-                v(i,j) = 0
-            endif
-               ibc(i,j)=0
-            endif
-           hl(i,j)=hmin
-        endif
+		    ENDIF	    
         ENDDO
-    ENDDO       
-ENDIF
-
-DO i = 1,ns
-    DO j = 1,nn
-        IF(j == 1) THEN
-            ibc(i,j) = 0
-        ELSE IF(j == nn) THEN
-            ibc(i,j) = 0
+    ENDDO     
+     
+    CALL dealloc_init2D()
+    ENDIF
+    DO i = 1,ns
+            DO j = 1,nn
+                IF(j == 1) THEN
+                    ibc(i,j) = 0
+                ELSE IF(j == nn) THEN
+                    ibc(i,j) = 0
         
-        ELSE IF(e(i,j).gt.eta(i,j)) THEN
-            ibc(i,j) = -1
-        ELSE
-            ibc(i,j) = 0
-        ENDIF
-    ENDDO
-ENDDO
-
+                ELSE IF(e(i,j).gt.eta(i,j)) THEN
+                    ibc(i,j) = -1
+                ELSE
+                    ibc(i,j) = 0
+                ENDIF
+            ENDDO
+        ENDDO
 END SUBROUTINE
 
 !SUBROUTINE INITHOTSTART2(InputFile)
+!! This Module is here because iRIC Can't have more than 1 cgn file open
+!! So have to manually read hotstart cgn file
 !    USE iriclibf
 !    IMPLICIT NONE
 !!    INCLUDE "cgnswin_f.h"
@@ -177,26 +181,28 @@ END SUBROUTINE
 !
 !    CHARACTER(*), INTENT(IN) ::InputFile
 !    
-!    INTEGER :: FID
+!    INTEGER :: tFID
 !    INTEGER :: i,j,k, IER
 !    INTEGER :: NX, NY
-!	REAL, ALLOCATABLE, DIMENSION(:) :: tmpreal4
+!    REAL, ALLOCATABLE, DIMENSION(:) :: tmpreal4
 !	INTEGER, ALLOCATABLE, DIMENSION(:) :: itemp
+!    REAL, ALLOCATABLE, DIMENSION(:,:) :: tmpreal42
+!	INTEGER, ALLOCATABLE, DIMENSION(:,:) :: itemp2
 !	INTEGER :: count, countji
 !	
 !	!HOTSTART VARS
 !	INTEGER :: nsols
-!	
-!    CALL cg_open_f(InputFile, MODE_MODIFY, FID, IER)
+!	 write(*,*) 'start inithotstart'
+!    CALL cg_open_f(InputFile, MODE_READ, tFID, IER)
 !    IF(IER .NE. 0) THEN
 !        call cg_error_print_f()			
 !    ENDIF
 !
-!    CALL CG_IRIC_GOTOSOL_F(FID, SolnIndex, NX, NY, IER)
+!    CALL CG_IRIC_GOTOSOL_F(tFID, SolnIndex, NX, NY, IER)
 !    ALLOCATE(tmpreal4(nx*ny), STAT = ier)
 !    ALLOCATE(itemp(nx*ny), STAT = ier)
 !    
-!    
+!    write(*,*) 'before inithotstart elevation'
 !    CALL cg_iRIC_Read_SolRealNode(SolnIndex, 'Elevation', tmpreal4, IER)
 !!    DO I = 1, nx*ny
 !!        IF( tmpreal4(i) < elevoffset) THEN
@@ -207,10 +213,11 @@ END SUBROUTINE
 !        DO J=1,NY
 !            COUNT = ((I-1)*NY)+J
 !            countji = ((j-1)*NX)+i
+!            !ie(I,J) = (tmpreal4(countji) - elevoffset)*100.
 !            ie(I,J) = (tmpreal4(countji) - elevoffset)*100.
 !        ENDDO
 !    ENDDO
-!    
+!    write(*,*) 'after inithotstart elevation'
 !    CALL cg_iRIC_Read_SolRealNode(SolnIndex, 'roughness', tmpreal4, IER)
 !    IF(ier.eq.0) THEN
 !        DO I= 1,NX
@@ -302,8 +309,10 @@ END SUBROUTINE
 !			iibc(i,j) = itemp(countji) 
 !        ENDDO
 !    ENDDO
-!	CALL cg_close_f(FID, IER)
-!
+!    DEALLOCATE(tmpreal4, STAT = ier)
+!    DEALLOCATE(itemp, STAT = ier)
+!	CALL cg_close_f(tFID, IER)
+!    write(*,*) 'after inithotstart'
 !    END SUBROUTINE INITHOTSTART2
     
     SUBROUTINE INITARRAYS()

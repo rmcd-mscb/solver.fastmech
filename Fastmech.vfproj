@@ -180,7 +180,7 @@
 		<File RelativePath=".\CalcCondMod.F90"/>
 		<File RelativePath=".\GridCondMod.F90"/>
 		<File RelativePath=".\GridCoordMod.F90"/>
-		<File RelativePath=".\OldCode\iriclibf.f90"/>
+		<File RelativePath=".\iriclibf.f90"/>
 		<File RelativePath=".\ReadCGNS.F90"/>
 		<File RelativePath=".\WriteCGNS.F90"/></Filter>
 		<Filter Name="Jim1d Code">
@@ -217,6 +217,5 @@
 		<File RelativePath="stressDivMod.f90"/>
 		<File RelativePath=".\tridag.f90"/>
 		<File RelativePath=".\Uinit.f90"/>
-		<File RelativePath="Welcome.f90"/></Filter>
-		<File RelativePath="ReadMe.txt"/></Files>
+		<File RelativePath="Welcome.f90"/></Filter></Files>
 	<Globals/></VisualStudioProject>

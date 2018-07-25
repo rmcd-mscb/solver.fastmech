@@ -166,16 +166,16 @@
 				<Tool Name="VFManifestTool" SuppressStartupBanner="true"/></Configuration></Configurations>
 	<Files>
 		<Filter Name="DT_Wilcox_Kenworthy">
-		<File RelativePath="Daniele Tonina\betaCDFandINV.for"/>
-		<File RelativePath="Daniele Tonina\betavol.for"/>
-		<File RelativePath="Daniele Tonina\elevdt.for"/>
-		<File RelativePath=".\Daniele Tonina\functionrough.for"/>
-		<File RelativePath=".\Daniele Tonina\initdt.for"/>
-		<File RelativePath="Daniele Tonina\initHdt.for"/>
-		<File RelativePath="Daniele Tonina\initimeta.for"/>
-		<File RelativePath=".\Daniele Tonina\rough.for"/>
-		<File RelativePath=".\Daniele Tonina\roughnessinv.for"/>
-		<File RelativePath="Daniele Tonina\volfrac.for"/></Filter>
+		<File RelativePath=".\Daniele Tonina\betaCDFandINV.f90"/>
+		<File RelativePath=".\Daniele Tonina\betavol.f90"/>
+		<File RelativePath=".\Daniele Tonina\elevdt.f90"/>
+		<File RelativePath=".\Daniele Tonina\functionrough.f90"/>
+		<File RelativePath=".\Daniele Tonina\initdt.f90"/>
+		<File RelativePath=".\Daniele Tonina\initHdt.f90"/>
+		<File RelativePath=".\Daniele Tonina\initimeta.f90"/>
+		<File RelativePath=".\Daniele Tonina\rough.f90"/>
+		<File RelativePath=".\Daniele Tonina\roughnessinv.f90"/>
+		<File RelativePath=".\Daniele Tonina\volfrac.f90"/></Filter>
 		<Filter Name="iRIC">
 		<File RelativePath=".\CalcCondMod.F90"/>
 		<File RelativePath=".\GridCondMod.F90"/>
@@ -199,27 +199,24 @@
 		<File RelativePath=".\Jim1D Code\xFTSBoundCond.f90"/></Filter>
 		<Filter Name="Resource Files" Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe"/>
 		<Filter Name="Source Files" Filter="f90;for;f;fpp;ftn;def;odl;idl">
-		<File RelativePath="CsedMod.for"/>
-		<File RelativePath=".\CsedMod_DT.for"/>
+		<File RelativePath=".\CsedMod.f90"/>
+		<File RelativePath=".\CsedMod_DT.f90"/>
 		<File RelativePath="Einit.f90"/>
 		<File RelativePath="falveld.F90"/>
-		<File RelativePath="GeometryMod.F90"/>
-		<File RelativePath=".\Median.f90"/>
+		<File RelativePath=".\GeometryMod.F90"/>
 		<File RelativePath=".\RivCalcInitCond.F90"/>
 		<File RelativePath="RivConnectivityMod.F90"/>
 		<File RelativePath="RivRoughnessMod.F90"/>
 		<File RelativePath="RivStagrMod_jmn.F90"/>
-		<File RelativePath="RivVarMod.for"/>
+		<File RelativePath=".\RivVarMod.f90"/>
 		<File RelativePath="RivVarTimeMod.f90"/>
 		<File RelativePath="RivVarVertMod.f90"/>
-		<File RelativePath="RivVarWMod.for"/>
+		<File RelativePath=".\RivVarWMod.f90"/>
 		<File RelativePath=".\RivVertMod2.f90"/>
 		<File RelativePath="Stagr_Console.f90"/>
 		<File RelativePath="stressDivMod.f90"/>
-		<File RelativePath="tridag.for"/>
-		<File RelativePath="TSplineMod.for"/>
-		<File RelativePath="Uinit.for"/>
-		<File RelativePath=".\Vert.for"/>
+		<File RelativePath=".\tridag.f90"/>
+		<File RelativePath=".\Uinit.f90"/>
 		<File RelativePath="Welcome.f90"/></Filter>
 		<File RelativePath="ReadMe.txt"/></Files>
 	<Globals/></VisualStudioProject>

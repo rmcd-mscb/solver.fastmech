@@ -55,7 +55,7 @@ RivCalcInitCond.F90
 RivConnectivityMod.F90
 RivRoughnessMod.F90
 RivStagrMod_jmn.F90
-RivVarMod.for
+RivVarMod.f90
 RivVarTimeMod.f90
 RivVarVertMod.f90
 RivVarWMod.f90

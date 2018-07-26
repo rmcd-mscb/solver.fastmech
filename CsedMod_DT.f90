@@ -206,7 +206,7 @@
 			 WD=1.
 			ENDIF
 			ZOSF=.2*DIN
-			RAT=1.+(CDune/(2.*VKC**2.))*(HD/WD)*((ALOG(HD/(ZOSF)))-1.)**2.
+			RAT=1.+(CDune/(2.*VKC**2.))*(HD/WD)*((DLOG(HD/(ZOSF)))-1.)**2.
 600			DO 610 I=1,ns
 			DO 610 J=1,nn
 			D(I,J)=DIN
@@ -277,7 +277,7 @@
 			ENDIF
 			DUM=((DHDS(I,J)**2)+(DHDN(I,J)**2))**.5
 			GAMG=ATAN(DUM)
-			if(CalcGravCorr) then
+			if(CalcGravCorr == 1) then
 			    if(GRAVCORRTYPE == 0) then
 	              TAUG=1.0*TC*sin(GAMG)/sin(GAMC)
 	              TAN2= 0.

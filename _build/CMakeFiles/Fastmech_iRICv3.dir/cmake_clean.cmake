@@ -38,7 +38,7 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/Fastmech_iRICv3.dir/RivConnectivityMod.F90.o"
   "CMakeFiles/Fastmech_iRICv3.dir/RivRoughnessMod.F90.o"
   "CMakeFiles/Fastmech_iRICv3.dir/RivStagrMod_jmn.F90.o"
-  "CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.for.o"
+  "CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.f90.o"
   "CMakeFiles/Fastmech_iRICv3.dir/RivVarTimeMod.f90.o"
   "CMakeFiles/Fastmech_iRICv3.dir/RivVarVertMod.f90.o"
   "CMakeFiles/Fastmech_iRICv3.dir/RivVarWMod.f90.o"

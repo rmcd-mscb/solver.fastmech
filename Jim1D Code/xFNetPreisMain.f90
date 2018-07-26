@@ -13,9 +13,9 @@ use StpBckInputMod
 use StpBckOutputMod
 !use readNetCDFMod
 !use writeNetCDFMod
-USE DFLOGM
-use msflib
-use dflib
+!USE DFLOGM
+!use msflib
+!use dflib
 
 CONTAINS
 

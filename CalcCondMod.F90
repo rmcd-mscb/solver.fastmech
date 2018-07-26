@@ -332,7 +332,7 @@ CALL CG_IRIC_READ_INTEGER_F('FM_HydAttVarStgType', VarStageType, ier)
 CALL cg_iRIC_Read_Real_F('FM_HydAttVelDepthCoef', vdc, ier)
 CALL cg_iRIC_Read_Real_F('FM_HydAttVelAngleCoef', vac, ier)
 CALL CG_IRIC_READ_INTEGER_F('FM_HydAttVelBC', vbc, ier)
-IF(vbc) THEN
+IF(vbc == 1) THEN
    CALL CG_IRIC_READ_FUNCTIONALSIZE_F('FM_HydAttVarVelBC', tmpint, IER)
    Allocate(xtmp(tmpint), ytmp(tmpint), ztmp(tmpint), STAT=IER)
    CALL ALLOC_VELBC(tmpint)

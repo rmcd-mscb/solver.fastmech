@@ -26,7 +26,7 @@ MODULE RivVarTimeMod
     Type(point), ALLOCATABLE, DIMENSION(:) :: TSPts, RCPts
     Type(BoundingBox),  ALLOCATABLE, DIMENSION(:) :: RCBBx, TSBBx
     CHARACTER*32, ALLOCATABLE, DIMENSION(:) :: SolNames, SolNames1D, SolNames3D, GridNames3D
-    REAL*8, ALLOCATABLE, DIMENSION(:) :: TimeIncrements, DischIncrements
+    REAL, ALLOCATABLE, DIMENSION(:) :: TimeIncrements, DischIncrements
     INTEGER :: TSPrintCount = 0;
     INTEGER :: NumTimeSeries, NumRatingCurves
     
@@ -243,7 +243,7 @@ MODULE RivVarTimeMod
 	    REAL, INTENT(OUT) :: value
 	    INTEGER :: numSeg, i
         integer, parameter :: dim_num = 2
-        REAL(kind = 8), DIMENSION(2) :: p1, p2, q1, q2, v
+        REAL(kind = 16), DIMENSION(2) :: p1, p2, q1, q2, v
         TYPE(Segment) :: seg
         TYPE(Point) :: pnt
         INTEGER :: retval
@@ -285,7 +285,7 @@ MODULE RivVarTimeMod
 	    REAL, INTENT(IN) :: position
 	    REAL, INTENT(OUT) :: value
 	    INTEGER :: numSeg, i
-        REAL(kind = 8), DIMENSION(2) :: p1, p2, q1, q2, v
+        REAL(kind = 16), DIMENSION(2) :: p1, p2, q1, q2, v
         TYPE(Segment) :: seg
         TYPE(Point) :: pnt
         INTEGER :: retval

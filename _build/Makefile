@@ -443,13 +443,13 @@ RivStagrMod_jmn.F90.o:
 	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/RivStagrMod_jmn.F90.o
 .PHONY : RivStagrMod_jmn.F90.o
 
-RivVarMod.o: RivVarMod.for.o
+RivVarMod.o: RivVarMod.f90.o
 .PHONY : RivVarMod.o
 
 # target to build an object file
-RivVarMod.for.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.for.o
-.PHONY : RivVarMod.for.o
+RivVarMod.f90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.f90.o
+.PHONY : RivVarMod.f90.o
 
 RivVarTimeMod.o: RivVarTimeMod.f90.o
 .PHONY : RivVarTimeMod.o

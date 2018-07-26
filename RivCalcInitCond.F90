@@ -113,7 +113,8 @@ ELSE IF(wstype.eq.3) THEN
        if(ier /= 0) then
           write(6,*) 'Input file error!'
           write(6,*) 'Temporary file for Hot Start does not exist'
-          pause
+          write(6,*) 'Press Enter to continue'
+          read(6,*)
           stop
        end if
        !
@@ -125,7 +126,8 @@ ELSE IF(wstype.eq.3) THEN
        read(501) nx2, ny2
        if(ns /= nx2.or.nn /= ny2) then
           write(6,*) 'Number of grid is different between grid file and temporary file!'
-          pause
+          write(6,*) 'Press Enter to continue'
+          read(6,*)
           stop
        end if
        !

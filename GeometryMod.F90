@@ -37,8 +37,8 @@ logical function line_exp_is_degenerate_nd ( dim_num, p1, p2 )
   integer dim_num
 
 !  logical line_exp_is_degenerate_nd
-  real ( kind = 8 ) p1(dim_num)
-  real ( kind = 8 ) p2(dim_num)
+  real ( kind = 16 ) p1(dim_num)
+  real ( kind = 16 ) p2(dim_num)
 
   line_exp_is_degenerate_nd = ( all ( p1(1:dim_num) == p2(1:dim_num) ) )
 
@@ -76,9 +76,9 @@ logical function line_imp_is_degenerate_2d ( a, b, c )
 
   integer, parameter :: dim_num = 2
 
-  real ( kind = 8 ) a
-  real ( kind = 8 ) b
-  real ( kind = 8 ) c
+  real ( kind = 16 ) a
+  real ( kind = 16 ) b
+  real ( kind = 16 ) c
 !  logical line_imp_is_degenerate_2d
 
   line_imp_is_degenerate_2d = ( a * a + b * b == 0.0D+00 )
@@ -124,20 +124,20 @@ subroutine lines_exp_int_2d ( p1, p2, q1, q2, ival, p )
 
   integer, parameter :: dim_num = 2
 
-  real ( kind = 8 ) a1
-  real ( kind = 8 ) a2
-  real ( kind = 8 ) b1
-  real ( kind = 8 ) b2
-  real ( kind = 8 ) c1
-  real ( kind = 8 ) c2
+  real ( kind = 16 ) a1
+  real ( kind = 16 ) a2
+  real ( kind = 16 ) b1
+  real ( kind = 16 ) b2
+  real ( kind = 16 ) c1
+  real ( kind = 16 ) c2
   integer ival
   logical point_1
   logical point_2
-  real ( kind = 8 ) p(dim_num)
-  real ( kind = 8 ) p1(dim_num)
-  real ( kind = 8 ) p2(dim_num)
-  real ( kind = 8 ) q1(dim_num)
-  real ( kind = 8 ) q2(dim_num)
+  real ( kind = 16 ) p(dim_num)
+  real ( kind = 16 ) p1(dim_num)
+  real ( kind = 16 ) p2(dim_num)
+  real ( kind = 16 ) q1(dim_num)
+  real ( kind = 16 ) q2(dim_num)
 
   ival = 0
   p(1:dim_num) = 0.0D+00
@@ -224,13 +224,13 @@ subroutine line_exp2imp_2d ( p1, p2, a, b, c )
 
   integer, parameter :: dim_num = 2
 
-  real ( kind = 8 ) a
-  real ( kind = 8 ) b
-  real ( kind = 8 ) c
+  real ( kind = 16 ) a
+  real ( kind = 16 ) b
+  real ( kind = 16 ) c
 !  logical line_exp_is_degenerate_nd
-  real ( kind = 8 ) norm
-  real ( kind = 8 ) p1(dim_num)
-  real ( kind = 8 ) p2(dim_num)
+  real ( kind = 16 ) norm
+  real ( kind = 16 ) p1(dim_num)
+  real ( kind = 16 ) p2(dim_num)
 !
 !  Take care of degenerate cases.
 !
@@ -303,17 +303,17 @@ subroutine lines_imp_int_2d ( a1, b1, c1, a2, b2, c2, ival, p )
 
   integer, parameter :: dim_num = 2
 
-  real ( kind = 8 ) a(dim_num,dim_num+1)
-  real ( kind = 8 ) a1
-  real ( kind = 8 ) a2
-  real ( kind = 8 ) b1
-  real ( kind = 8 ) b2
-  real ( kind = 8 ) c1
-  real ( kind = 8 ) c2
+  real ( kind = 16 ) a(dim_num,dim_num+1)
+  real ( kind = 16 ) a1
+  real ( kind = 16 ) a2
+  real ( kind = 16 ) b1
+  real ( kind = 16 ) b2
+  real ( kind = 16 ) c1
+  real ( kind = 16 ) c2
   integer info
   integer ival
 !  logical line_imp_is_degenerate_2d
-  real ( kind = 8 ) p(dim_num)
+  real ( kind = 16 ) p(dim_num)
 
   p(1:dim_num) = 0.0D+00
 !
@@ -408,9 +408,9 @@ subroutine dmat_solve ( n, rhs_num, a, info )
   integer n
   integer rhs_num
 
-  real ( kind = 8 ) a(n,n+rhs_num)
-  real ( kind = 8 ) apivot
-  real ( kind = 8 ) factor
+  real ( kind = 16 ) a(n,n+rhs_num)
+  real ( kind = 16 ) apivot
+  real ( kind = 16 ) factor
   integer i
   integer info
   integer ipivot
@@ -488,9 +488,9 @@ subroutine d_swap ( x, y )
 !
   implicit none
 
-  real ( kind = 8 ) x
-  real ( kind = 8 ) y
-  real ( kind = 8 ) z
+  real ( kind = 16 ) x
+  real ( kind = 16 ) y
+  real ( kind = 16 ) z
 
   z = x
   x = y

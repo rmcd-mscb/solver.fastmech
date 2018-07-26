@@ -25,7 +25,7 @@ CMAKE_AR:FILEPATH=/usr/bin/ar
 
 //Choose the type of build, options are: None(CMAKE_CXX_FLAGS or
 // CMAKE_C_FLAGS used) Debug Release RelWithDebInfo MinSizeRel.
-CMAKE_BUILD_TYPE:STRING=
+CMAKE_BUILD_TYPE:STRING=Release
 
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
@@ -72,7 +72,7 @@ CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=OFF
 CMAKE_Fortran_COMPILER:FILEPATH=/usr/bin/f95
 
 //Flags for Fortran compiler.
-CMAKE_Fortran_FLAGS:STRING=
+CMAKE_Fortran_FLAGS:STRING=-fdefault-real-16
 
 //Flags used by the compiler during debug builds.
 CMAKE_Fortran_FLAGS_DEBUG:STRING=-g
@@ -251,6 +251,8 @@ CMAKE_AR-ADVANCED:INTERNAL=1
 CMAKE_BUILD_TOOL-ADVANCED:INTERNAL=1
 //What is the target build tool cmake is generating for.
 CMAKE_BUILD_TOOL:INTERNAL=/usr/bin/gmake
+//MODIFIED property for variable: CMAKE_BUILD_TYPE
+CMAKE_BUILD_TYPE-MODIFIED:INTERNAL=ON
 //This is the directory where this CMakeCache.txt was created
 CMAKE_CACHEFILE_DIR:INTERNAL=/home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build
 //Major version of cmake used to create the current loaded cache
@@ -299,12 +301,16 @@ CMAKE_EXPORT_COMPILE_COMMANDS-ADVANCED:INTERNAL=1
 CMAKE_Fortran_COMPILER-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_Fortran_FLAGS
 CMAKE_Fortran_FLAGS-ADVANCED:INTERNAL=1
+//MODIFIED property for variable: CMAKE_Fortran_FLAGS
+CMAKE_Fortran_FLAGS-MODIFIED:INTERNAL=ON
 //ADVANCED property for variable: CMAKE_Fortran_FLAGS_DEBUG
 CMAKE_Fortran_FLAGS_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_Fortran_FLAGS_MINSIZEREL
 CMAKE_Fortran_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_Fortran_FLAGS_RELEASE
 CMAKE_Fortran_FLAGS_RELEASE-ADVANCED:INTERNAL=1
+//MODIFIED property for variable: CMAKE_Fortran_FLAGS_RELEASE
+CMAKE_Fortran_FLAGS_RELEASE-MODIFIED:INTERNAL=ON
 //ADVANCED property for variable: CMAKE_Fortran_FLAGS_RELWITHDEBINFO
 CMAKE_Fortran_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //Name of generator.

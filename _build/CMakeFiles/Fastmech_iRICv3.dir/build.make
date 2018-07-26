@@ -637,20 +637,20 @@ CMakeFiles/Fastmech_iRICv3.dir/RivStagrMod_jmn.F90.o.provides: CMakeFiles/Fastme
 
 CMakeFiles/Fastmech_iRICv3.dir/RivStagrMod_jmn.F90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/RivStagrMod_jmn.F90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.for.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.for.o: ../RivVarMod.for
+CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.f90.o: ../RivVarMod.f90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_40)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.for.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/RivVarMod.for -o CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.for.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.f90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/RivVarMod.f90 -o CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.for.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.for.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.f90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.f90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.for.o.provides: CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.for.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.for.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.for.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.f90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.f90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.f90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.for.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.for.o
+CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.f90.o
 
 CMakeFiles/Fastmech_iRICv3.dir/RivVarTimeMod.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
 CMakeFiles/Fastmech_iRICv3.dir/RivVarTimeMod.f90.o: ../RivVarTimeMod.f90
@@ -828,7 +828,7 @@ Fastmech_iRICv3_OBJECTS = \
 "CMakeFiles/Fastmech_iRICv3.dir/RivConnectivityMod.F90.o" \
 "CMakeFiles/Fastmech_iRICv3.dir/RivRoughnessMod.F90.o" \
 "CMakeFiles/Fastmech_iRICv3.dir/RivStagrMod_jmn.F90.o" \
-"CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.for.o" \
+"CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.f90.o" \
 "CMakeFiles/Fastmech_iRICv3.dir/RivVarTimeMod.f90.o" \
 "CMakeFiles/Fastmech_iRICv3.dir/RivVarVertMod.f90.o" \
 "CMakeFiles/Fastmech_iRICv3.dir/RivVarWMod.f90.o" \
@@ -881,7 +881,7 @@ Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/RivCalcInitCond.F90.o
 Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/RivConnectivityMod.F90.o
 Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/RivRoughnessMod.F90.o
 Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/RivStagrMod_jmn.F90.o
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.for.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.f90.o
 Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/RivVarTimeMod.f90.o
 Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/RivVarVertMod.f90.o
 Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/RivVarWMod.f90.o
@@ -939,7 +939,7 @@ CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/RivCalcI
 CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/RivConnectivityMod.F90.o.requires
 CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/RivRoughnessMod.F90.o.requires
 CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/RivStagrMod_jmn.F90.o.requires
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.for.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.f90.o.requires
 CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/RivVarTimeMod.f90.o.requires
 CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/RivVarVertMod.f90.o.requires
 CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/RivVarWMod.f90.o.requires

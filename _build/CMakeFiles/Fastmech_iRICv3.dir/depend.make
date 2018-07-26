@@ -251,11 +251,11 @@ CMakeFiles/Fastmech_iRICv3.dir/RivStagrMod_jmn.F90.o.provides.build:
 	$(CMAKE_COMMAND) -E touch CMakeFiles/Fastmech_iRICv3.dir/RivStagrMod_jmn.F90.o.provides.build
 CMakeFiles/Fastmech_iRICv3.dir/build: CMakeFiles/Fastmech_iRICv3.dir/RivStagrMod_jmn.F90.o.provides.build
 
-CMakeFiles/Fastmech_iRICv3.dir/rivvarmod.mod.proxy: CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.for.o.provides
-CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.for.o.provides.build:
+CMakeFiles/Fastmech_iRICv3.dir/rivvarmod.mod.proxy: CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.f90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.f90.o.provides.build:
 	$(CMAKE_COMMAND) -E cmake_copy_f90_mod rivvarmod CMakeFiles/Fastmech_iRICv3.dir/rivvarmod.mod.stamp GNU
-	$(CMAKE_COMMAND) -E touch CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.for.o.provides.build
-CMakeFiles/Fastmech_iRICv3.dir/build: CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.for.o.provides.build
+	$(CMAKE_COMMAND) -E touch CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.f90.o.provides.build
+CMakeFiles/Fastmech_iRICv3.dir/build: CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.f90.o.provides.build
 
 CMakeFiles/Fastmech_iRICv3.dir/RivVarTimeMod.f90.o.requires: CMakeFiles/Fastmech_iRICv3.dir/geometrymod.mod.proxy
 CMakeFiles/Fastmech_iRICv3.dir/RivVarTimeMod.f90.o: CMakeFiles/Fastmech_iRICv3.dir/geometrymod.mod.stamp

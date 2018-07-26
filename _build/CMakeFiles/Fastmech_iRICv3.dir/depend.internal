@@ -76,8 +76,8 @@ CMakeFiles/Fastmech_iRICv3.dir/RivRoughnessMod.F90.o
 CMakeFiles/Fastmech_iRICv3.dir/RivStagrMod_jmn.F90.o
  /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/RivStagrMod_jmn.F90
  ../../../install/iriclib-864fb69/release/include/iriclib_f.h
-CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.for.o
- /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/RivVarMod.for
+CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.f90.o
+ /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/RivVarMod.f90
 CMakeFiles/Fastmech_iRICv3.dir/RivVarTimeMod.f90.o
  /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/RivVarTimeMod.f90
 CMakeFiles/Fastmech_iRICv3.dir/RivVarVertMod.f90.o

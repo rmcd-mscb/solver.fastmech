@@ -6,7 +6,8 @@ IMPLICIT NONE
 CONTAINS
 
 SUBROUTINE writeStpBwOutput(wse)
-    REAL, DIMENSION(:), INTENT(OUT) :: wse
+INTEGER, PARAMETER :: mp2 = KIND(1.0D0)
+    REAL(kind = mp2), DIMENSION(:), INTENT(OUT) :: wse
     INTEGER :: i        
     DO i = 1, nsc
         wse(i) = curxsc(i,1)

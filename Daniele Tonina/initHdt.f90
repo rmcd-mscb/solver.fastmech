@@ -30,9 +30,10 @@
 !
 !
 	IMPLICIT NONE
+    INTEGER, PARAMETER :: mp = KIND(1.0D0)
 	INTEGER IFLAG
-	REAL	Fs , Fsmin , hmax, abh, bbh 
-	REAL	TOL, H, XX
+	REAL(kind = mp)	Fs , Fsmin , hmax, abh, bbh 
+	REAL(kind = mp)	TOL, H, XX
 
  
 

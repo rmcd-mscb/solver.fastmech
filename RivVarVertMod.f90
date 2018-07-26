@@ -2,17 +2,17 @@
 	USE RivVarMod
 	USE CalcCond
 	IMPLICIT NONE
-	REAL, ALLOCATABLE, DIMENSION(:,:,:) :: ecoef, f1, f2, f3
-	REAL, ALLOCATABLE, DIMENSION(:,:) :: zeta0, fone, ftwo, theta, ustr2, rs, dum1a
-	REAL, ALLOCATABLE, DIMENSION(:) :: zeta, dzeta
+	REAL(kind = mp), ALLOCATABLE, DIMENSION(:,:,:) :: ecoef, f1, f2, f3
+	REAL(kind = mp), ALLOCATABLE, DIMENSION(:,:) :: zeta0, fone, ftwo, theta, ustr2, rs, dum1a
+	REAL(kind = mp), ALLOCATABLE, DIMENSION(:) :: zeta, dzeta
 !	REAL, ALLOCATABLE, DIMENSION(:,:) :: E_Corr, Strmln_Corr
 	
-	REAL :: PI, VKC, BETA, sczeta
-	REAL :: finc, finc1, finc2
-	REAL :: dzp, dth, scn, dthds, dthdn
-	REAL :: curv, curvn, curvs
-	REAL :: taux, vs, uu1, vv1, vv2, uu2, g1, g2
-	REAL :: zo
+	REAL(kind = mp) :: PI, VKC, BETA, sczeta
+	REAL(kind = mp) :: finc, finc1, finc2
+	REAL(kind = mp) :: dzp, dth, scn, dthds, dthdn
+	REAL(kind = mp) :: curv, curvn, curvs
+	REAL(kind = mp) :: taux, vs, uu1, vv1, vv2, uu2, g1, g2
+	REAL(kind = mp) :: zo
 	CONTAINS
 	SUBROUTINE alloc_vert()
 		INTEGER :: status

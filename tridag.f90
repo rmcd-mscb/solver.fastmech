@@ -5,8 +5,8 @@
 	CONTAINS
  	subroutine tridag(a,b,c,d,e,n)
 	INTEGER, INTENT(IN) :: n
- 	REAL, DIMENSION(n) :: a,b,c,d,e,wk2
-	REAL :: bet
+ 	REAL(kind = mp), DIMENSION(n) :: a,b,c,d,e,wk2
+	REAL(kind = mp) :: bet
 	INTEGER :: j
 	INTEGER(4) :: iret
 	errorcode = 0

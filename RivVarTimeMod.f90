@@ -4,7 +4,7 @@ MODULE RivVarTimeMod
 	IMPLICIT NONE
 	
 	TYPE point
-        REAL :: x, y
+        REAL(KIND=mp) :: x, y
     END TYPE point
     
     TYPE Segment
@@ -12,21 +12,21 @@ MODULE RivVarTimeMod
     END TYPE Segment
     
     TYPE BoundingBox
-        REAL :: xmin, ymin, xmax, ymax
+        REAL(KIND=mp) :: xmin, ymin, xmax, ymax
     END TYPE BoundingBox
 	
 
-	REAL, ALLOCATABLE, DIMENSION(:) :: stage, discharge, time_stage, time_discharge
+	REAL(KIND=mp), ALLOCATABLE, DIMENSION(:) :: stage, discharge, time_stage, time_discharge
 	INTEGER :: nstage, ndischarge
 	
 !!Variables for running FaSTMECH in time varying mode
-    REAL, ALLOCATABLE, DIMENSION(:) :: RatingCurves, TimeSeries
+    REAL(KIND=mp), ALLOCATABLE, DIMENSION(:) :: RatingCurves, TimeSeries
     INTEGER, ALLOCATABLE, DIMENSION(:) ::  RatingCurveType, TimeSeriesType
     INTEGER, ALLOCATABLE, DIMENSION(:) :: TimeSeriesPts, RatingCurvePts
     Type(point), ALLOCATABLE, DIMENSION(:) :: TSPts, RCPts
     Type(BoundingBox),  ALLOCATABLE, DIMENSION(:) :: RCBBx, TSBBx
     CHARACTER*32, ALLOCATABLE, DIMENSION(:) :: SolNames, SolNames1D, SolNames3D, GridNames3D
-    REAL, ALLOCATABLE, DIMENSION(:) :: TimeIncrements, DischIncrements
+    REAL(KIND=mp), ALLOCATABLE, DIMENSION(:) :: TimeIncrements, DischIncrements
     INTEGER :: TSPrintCount = 0;
     INTEGER :: NumTimeSeries, NumRatingCurves
     
@@ -34,7 +34,7 @@ MODULE RivVarTimeMod
 
     INTEGER :: VarDischType, DischTSNum, VarStageType, StageTSNum, StageRCNum
     
-    REAL :: VarDischStartTime, VarDischEndTime
+    REAL(KIND=mp) :: VarDischStartTime, VarDischEndTime
     
     
 !!  VarDischType:
@@ -92,7 +92,7 @@ MODULE RivVarTimeMod
     END SUBROUTINE
     SUBROUTINE initRatingCurves()
 	    IMPLICIT NONE
-	    REAL :: minx, maxx, miny, maxy
+	    REAL(KIND=mp) :: minx, maxx, miny, maxy
 	    INTEGER :: i,j
 	    Type(point) :: p1
 	    minx = 1e12
@@ -117,7 +117,7 @@ MODULE RivVarTimeMod
 
 	SUBROUTINE initTimeSeries()
 	    IMPLICIT NONE
-	    REAL :: minx, maxx, miny, maxy
+	    REAL(KIND=mp) :: minx, maxx, miny, maxy
 	    INTEGER :: i,j
 	    Type(point) :: p1
 	    minx = 1e12
@@ -239,11 +239,11 @@ MODULE RivVarTimeMod
 	SUBROUTINE getInterpRatingCurveValue(index, position, value)
 	    IMPLICIT NONE
 	    INTEGER, INTENT(IN) :: index
-	    REAL, INTENT(IN) :: position
-	    REAL, INTENT(OUT) :: value
+	    REAL(KIND=mp), INTENT(IN) :: position
+	    REAL(KIND=mp), INTENT(OUT) :: value
 	    INTEGER :: numSeg, i
         integer, parameter :: dim_num = 2
-        REAL(kind = 16), DIMENSION(2) :: p1, p2, q1, q2, v
+        REAL(KIND=mp), DIMENSION(2) :: p1, p2, q1, q2, v
         TYPE(Segment) :: seg
         TYPE(Point) :: pnt
         INTEGER :: retval
@@ -282,10 +282,10 @@ MODULE RivVarTimeMod
 	SUBROUTINE getInterpTimeSeriesValue(index, position, value)
 	    IMPLICIT NONE
 	    INTEGER, INTENT(IN) :: index
-	    REAL, INTENT(IN) :: position
-	    REAL, INTENT(OUT) :: value
+	    REAL(KIND=mp), INTENT(IN) :: position
+	    REAL(KIND=mp), INTENT(OUT) :: value
 	    INTEGER :: numSeg, i
-        REAL(kind = 16), DIMENSION(2) :: p1, p2, q1, q2, v
+        REAL(KIND=mp), DIMENSION(2) :: p1, p2, q1, q2, v
         TYPE(Segment) :: seg
         TYPE(Point) :: pnt
         INTEGER :: retval
@@ -368,7 +368,7 @@ MODULE RivVarTimeMod
 	SUBROUTINE setTimeSeries(dim, val)
 	    IMPLICIT NONE
 	    INTEGER, INTENT(IN) :: dim
-	    REAL, INTENT(IN) :: val(:)
+	    REAL(KIND=mp), INTENT(IN) :: val(:)
 	    INTEGER :: I, STATUS, count
 	    
 		ALLOCATE(TimeSeries(dim), STAT = status)
@@ -389,7 +389,7 @@ MODULE RivVarTimeMod
 	SUBROUTINE setRatingCurves(dim, val)
 	    IMPLICIT NONE
 	    INTEGER, INTENT(IN) :: dim
-	    REAL, INTENT(IN) :: val(:)
+	    REAL(KIND=mp), INTENT(IN) :: val(:)
 	    INTEGER :: I, STATUS, count
 	    
 		ALLOCATE(RatingCurves(dim), STAT = status)

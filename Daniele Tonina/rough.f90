@@ -22,11 +22,11 @@
 !	Drough = diameter for the roughness of the bed
 !
 	IMPLICIT NONE
-
-	REAL    Fs, Fsmin, droughmin, dref
-	REAL	hmax, h
-	REAL    drough, m, roughness
-	REAL P
+    INTEGER, PARAMETER :: mp = KIND(1.0D0)
+	REAL(kind = mp)    Fs, Fsmin, droughmin, dref
+	REAL(kind = mp)	hmax, h
+	REAL(kind = mp)    drough, m, roughness
+	REAL(kind = mp) P
 
 	IF (Fs.LE.Fsmin) THEN
 		

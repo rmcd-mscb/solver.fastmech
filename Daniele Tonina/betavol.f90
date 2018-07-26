@@ -33,15 +33,15 @@
 !
 !
 	IMPLICIT NONE
-
+    INTEGER, PARAMETER :: mp = KIND(1.0D0)
 	INTEGER i , IFLAG
-	REAL	hmax, abh, bbh
-	REAL    Vsandsurfmax, av, bv
-	REAL	hh1, hh2, a1, a2, EPS, CDF
- 	REAL	VVT,  VV,  std1, m1
-	REAL	VTS(100),  VTSbeta(100)
-	REAL	meandt, stdevdt
-	REAL, INTENT(IN) :: area
+	REAL(kind=mp)	hmax, abh, bbh
+	REAL(kind=mp)    Vsandsurfmax, av, bv
+	REAL(kind=mp)	hh1, hh2, a1, a2, EPS, CDF
+ 	REAL(kind=mp)	VVT,  VV,  std1, m1
+	REAL(kind=mp)	VTS(100),  VTSbeta(100)
+	REAL(kind=mp)	meandt, stdevdt
+	REAL(kind=mp), INTENT(IN) :: area
 
 
 	
@@ -103,10 +103,10 @@
 	real function  meandt(X,rows)
 	
 	IMPLICIT NONE
-
+    INTEGER, PARAMETER :: mp = KIND(1.0D0)
 	INTEGER i, rows
-	REAL  X(rows)
-	REAL sum
+	REAL(kind=mp)  X(rows)
+	REAL(kind=mp) sum
 	
 
 	sum=0.0
@@ -123,10 +123,10 @@
 	real function  stdevdt(X,rows)
 	
 	IMPLICIT NONE
-
+    INTEGER, PARAMETER :: mp = KIND(1.0D0)
 	INTEGER i, rows
-	REAL  X(rows), mean
-	REAL sum, RN, meandt
+	REAL(kind=mp)  X(rows), mean
+	REAL(kind=mp) sum, RN, meandt
 	
 	mean=meandt(X,rows)
 

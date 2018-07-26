@@ -1,6 +1,6 @@
 	Subroutine Matinv()
 	use support
-	real*8 rdum,cabs,cum,cnorm,cmult
+	real(kind = mp2) rdum,cabs,cum,cnorm,cmult
 	neq=2*nsc
 	do i=1,neq
 	cabs=-1.e9

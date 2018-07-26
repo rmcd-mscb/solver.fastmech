@@ -24,13 +24,13 @@
 !
 
 	IMPLICIT NONE
-	
+	INTEGER, PARAMETER :: mp = KIND(1.0D0)
 	INTEGER iflag
-	REAL	VS, Fsmin, eps
-	REAL	Fs, CDF, av, bv, X 
-	REAL	Vsandsub, Vsandsurf
-	REAL	Vsandsubmax, Vsandsurfmax
-	REAL	Vsandtotal, DV, VOID
+	REAL(kind = mp)	VS, Fsmin, eps
+	REAL(kind = mp)	Fs, CDF, av, bv, X 
+	REAL(kind = mp)	Vsandsub, Vsandsurf
+	REAL(kind = mp)	Vsandsubmax, Vsandsurfmax
+	REAL(kind = mp)	Vsandtotal, DV, VOID
 	
 	Vsandtotal=Vsandsub + Vsandsurf
 	DV=Vsandtotal-VS

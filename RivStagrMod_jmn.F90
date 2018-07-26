@@ -30,37 +30,37 @@ MODULE RivStagr4Mod_jmn
 	character*20 runid
 	INTEGER :: solIndex
 	INTEGER :: n, n2
-	REAL ::	pi, g, rho, vkc, ustar
-	REAL :: dinc
-	REAL :: area
-	REAL :: ba, bb, bc, be, bf, bg, bot, bot2
-	REAL :: be1, be2, bf1, bf2
-	REAL :: va, ta, tb, tc, td, te, tf 
-	REAL :: ua, uu, vv
-	REAL :: dube
-	REAL :: sumqpdiff
+	REAL(KIND=mp) ::	pi, g, rho, vkc, ustar
+	REAL(KIND=mp) :: dinc
+	REAL(KIND=mp) :: area
+	REAL(KIND=mp) :: ba, bb, bc, be, bf, bg, bot, bot2
+	REAL(KIND=mp) :: be1, be2, bf1, bf2
+	REAL(KIND=mp) :: va, ta, tb, tc, td, te, tf 
+	REAL(KIND=mp) :: ua, uu, vv
+	REAL(KIND=mp) :: dube
+	REAL(KIND=mp) :: sumqpdiff
 	INTEGER, PARAMETER :: num_string = 4
 	INTEGER :: i, j, nct, jswi, j1, j2, j3
-	REAL :: plinc
+	REAL(KIND=mp) :: plinc
 	LOGICAL :: lwet, doagain
 
 !	output vars
-	REAL :: rcos, rsin, ux, uy, uxnew, uynew, qx, qy
-	REAL :: dhav2
+	REAL(KIND=mp) :: rcos, rsin, ux, uy, uxnew, uynew, qx, qy
+	REAL(KIND=mp) :: dhav2
 
-	REAL :: rnr1, rnrm1, rnrm1j, rnrm1ij !Changed as per CD
-	REAL :: dsvpimj, dsvmimj, ekapimj, ekamimj
+	REAL(KIND=mp) :: rnr1, rnrm1, rnrm1j, rnrm1ij !Changed as per CD
+	REAL(KIND=mp) :: dsvpimj, dsvmimj, ekapimj, ekamimj
 	INTEGER :: ip, im, jp, jm
 	
-	REAL :: hlrewe
-    REAL :: dr
+	REAL(KIND=mp) :: hlrewe
+    REAL(KIND=mp) :: dr
     
 	INTEGER :: imod, iwetdry
 	INTEGER :: nclusters, nwetnodes, noldwetnodes
-	REAL :: nodechange
-	REAL :: dDisch, dStage, newStage, oldStage, newDisch, oldDisch, dsstage
+	REAL(KIND=mp) :: nodechange
+	REAL(KIND=mp) :: dDisch, dStage, newStage, oldStage, newDisch, oldDisch, dsstage
 !   tmpVars
-	REAL :: tmpLEV, tmpvardt
+	REAL(KIND=mp) :: tmpLEV, tmpvardt
 	INTEGER :: ier
 
 	CHARACTER(20) text
@@ -1184,7 +1184,7 @@ MODULE RivStagr4Mod_jmn
     IMPLICIT NONE
 
     INTEGER :: i,j
-    REAL :: mag
+    REAL(KIND=mp) :: mag
     	do i=ns2+1,ns2+nsext
     	    do j = 1,nn
 	            eta(i,j)=eta2(ns2,j) - ((i-ns2)*ds*nsextslope)
@@ -1346,18 +1346,18 @@ MODULE RivStagr4Mod_jmn
        
     SUBROUTINE Calc_Area(x, y, xo, yo, nm, dn, area)
          IMPLICIT NONE
-       REAL, INTENT (OUT), DIMENSION (:,:) :: area
-       REAL, INTENT(INOUT), DIMENSION(:,:):: x,y
-       REAL, INTENT (IN), DIMENSION (:) :: xo, yo
+       REAL(KIND=mp), INTENT (OUT), DIMENSION (:,:) :: area
+       REAL(KIND=mp), INTENT(INOUT), DIMENSION(:,:):: x,y
+       REAL(KIND=mp), INTENT (IN), DIMENSION (:) :: xo, yo
        INTEGER, INTENT(IN) :: nm
-       REAL, INTENT(IN) :: dn
+       REAL(KIND=mp), INTENT(IN) :: dn
        
         INTEGER :: I, J
-        REAL :: x1, x2, x3, x4
-        REAL :: y1, y2, y3, y4
-        REAL :: area1, area2
+        REAL(KIND=mp) :: x1, x2, x3, x4
+        REAL(KIND=mp) :: y1, y2, y3, y4
+        REAL(KIND=mp) :: area1, area2
         
-        REAL :: rsin, rcos, ux, uy, uxnew, uynew
+        REAL(KIND=mp) :: rsin, rcos, ux, uy, uxnew, uynew
         
         INTEGER :: icount
          do i=1,ns2

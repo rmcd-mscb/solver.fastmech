@@ -6,11 +6,11 @@
 CONTAINS 
 	SUBROUTINE EInit(e, hl, eta, ibc, w, hav)
 	IMPLICIT NONE
-	REAL, DIMENSION(ns, nn), INTENT(INOUT) :: e, hl
-	REAL, DIMENSION(ns, nn), INTENT(IN) :: eta
+	REAL(KIND=mp), DIMENSION(ns, nn), INTENT(INOUT) :: e, hl
+	REAL(KIND=mp), DIMENSION(ns, nn), INTENT(IN) :: eta
 	INTEGER, DIMENSION(ns, nn), INTENT(IN) :: ibc
-	REAL, DIMENSION(ns), INTENT(IN) :: hav, w
-	REAL :: deln, twidth, dz
+	REAL(KIND=mp), DIMENSION(ns), INTENT(IN) :: hav, w
+	REAL(KIND=mp) :: deln, twidth, dz
 	INTEGER :: i, j, ibtot, iinc
 		write(6,*) "WSE", lbwse, rbwse
 	DO 30 i = 1,ns
@@ -51,12 +51,12 @@ CONTAINS
 	
 	SUBROUTINE VarDischEInit(e, hl, u, v, eta, ibc, stageChange, dsstage)
 	IMPLICIT NONE
-	    REAL, DIMENSION(ns, nn), INTENT(INOUT) :: e, hl, u, v
+	    REAL(KIND=mp), DIMENSION(ns, nn), INTENT(INOUT) :: e, hl, u, v
 	    INTEGER, DIMENSION(ns, nn), INTENT(INOUT) :: ibc
-	    REAL, DIMENSION(ns, nn), INTENT(INOUT) :: eta
-	    REAL, INTENT(IN) :: stageChange
-	    REAL, INTENT(INOUT) :: dsstage
-	    REAL :: depth
+	    REAL(KIND=mp), DIMENSION(ns, nn), INTENT(INOUT) :: eta
+	    REAL(KIND=mp), INTENT(IN) :: stageChange
+	    REAL(KIND=mp), INTENT(INOUT) :: dsstage
+	    REAL(KIND=mp) :: depth
 	    INTEGER :: i, j
 
 		!First adjust stage for all previously wet nodes
@@ -111,10 +111,10 @@ CONTAINS
 	
 	SUBROUTINE UpdateWETTING(e, hl, u, v, eta, ibc, dsstage)
 	    IMPLICIT NONE
-	    REAL, DIMENSION(ns, nn), INTENT(INOUT) :: e, hl,u,v
+	    REAL(KIND=mp), DIMENSION(ns, nn), INTENT(INOUT) :: e, hl,u,v
 	    INTEGER, DIMENSION(ns, nn), INTENT(INOUT) :: ibc
-	    REAL, DIMENSION(ns, nn), INTENT(IN) :: eta
-	    REAL, INTENT(in) :: dsstage
+	    REAL(KIND=mp), DIMENSION(ns, nn), INTENT(IN) :: eta
+	    REAL(KIND=mp), INTENT(in) :: dsstage
 	    INTEGER :: I, J, IM, JP, JM, IP 
 	    INTEGER :: change = -1
 	    change = -1
@@ -240,9 +240,9 @@ CONTAINS
     
     SUBROUTINE CheckNodeContinuity(e, hl, u, v, eta, ibc)
 	    IMPLICIT NONE
-	    REAL, DIMENSION(ns, nn), INTENT(INOUT) :: e, hl,u,v
+	    REAL(KIND=mp), DIMENSION(ns, nn), INTENT(INOUT) :: e, hl,u,v
 	    INTEGER, DIMENSION(ns, nn), INTENT(INOUT) :: ibc
-	    REAL, DIMENSION(ns, nn), INTENT(IN) :: eta
+	    REAL(KIND=mp), DIMENSION(ns, nn), INTENT(IN) :: eta
 	    INTEGER :: I, J, IM, JP, JM, IP 
 	    INTEGER :: change = -1
 	    INTEGER :: Count = 0

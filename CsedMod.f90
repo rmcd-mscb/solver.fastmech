@@ -2,9 +2,9 @@
 	use RivVarMod
 	use CalcCond
 	IMPLICIT NONE
-	REAL, ALLOCATABLE, DIMENSION(:) :: QTOT
-	REAL, ALLOCATABLE, DIMENSION(:,:) :: RATIO, d, DUM1
-	REAL, ALLOCATABLE, DIMENSION(:,:) :: DHDN, DHDS, USTRESS, VSTRESS
+	REAL(KIND=mp), ALLOCATABLE, DIMENSION(:) :: QTOT
+	REAL(KIND=mp), ALLOCATABLE, DIMENSION(:,:) :: RATIO, d, DUM1
+	REAL(KIND=mp), ALLOCATABLE, DIMENSION(:,:) :: DHDN, DHDS, USTRESS, VSTRESS
 !	REAL :: rsin, rcos, ux, uy, uxnew, uynew
 !	REAL, ALLOCATABLE, DIMENSION(:,:) :: CON
 	CONTAINS
@@ -43,9 +43,9 @@
 		    
 			
 		SUBROUTINE csed(DT,nct,nsteps,newdt)
-			REAL, INTENT(IN) :: DT
+			REAL(KIND=mp), INTENT(IN) :: DT
 			INTEGER, INTENT(IN) :: nct, nsteps
-			REAL, INTENT(INOUT) :: newdt
+			REAL(KIND=mp), INTENT(INOUT) :: newdt
 !		parameter(ns=41,nn=25,nz=11)
 	!	   REAL mo,hav
 	!	   common taus(ns,nn),taun(ns,nn),hl(ns,nn),eta(ns,nn),rn(ns,nn),
@@ -56,15 +56,15 @@
 	!	 &	  DHDN(ns,nn),DHDS(ns,nn),USTRESS(ns,nn),
 	!	 &	  VSTRESS(ns,nn),QTOT(ns),CON(ns,nn)
 			CHARACTER*20 RUNID
-			REAL :: CDune, VKC, GSW, PI, GAMC, TB, TC, G, RHO
-			REAL :: RAT, ZOSF, RHOFAC, DUM, GAMG, TAUG
-			REAL :: A2, DTAU, TAN1, TAN2, QTOTAL, SC, weight
-			REAL :: fac
-			REAL :: PLINC
+			REAL(KIND=mp) :: CDune, VKC, GSW, PI, GAMC, TB, TC, G, RHO
+			REAL(KIND=mp) :: RAT, ZOSF, RHOFAC, DUM, GAMG, TAUG
+			REAL(KIND=mp) :: A2, DTAU, TAN1, TAN2, QTOTAL, SC, weight
+			REAL(KIND=mp) :: fac
+			REAL(KIND=mp) :: PLINC
 			INTEGER :: NM, I, J, ityp, ISMOO
 			
-	      REAL :: mintdt, maxtdt, tdt
-	      REAL :: tmpdepth
+	        REAL(KIND=mp) :: mintdt, maxtdt, tdt
+	        REAL(KIND=mp) :: tmpdepth
 		    REAL(KIND=8) :: tdd
 		    REAL(KIND =8) :: t, csf, p, s, ws, kv
 
@@ -440,11 +440,11 @@
       SUBROUTINE TCRIT2(D, KV, TC)
 !! Based on Shields 1984 all units in MKS.
       IMPLICIT NONE
-            REAL(KIND=8), INTENT(IN) :: D, KV
-            REAL, INTENT(OUT) :: TC
+            REAL(KIND=mp), INTENT(IN) :: D, KV
+            REAL(KIND=mp), INTENT(OUT) :: TC
             
-            REAL :: DSTAR, TAUCRIT
-            REAL :: RELDEN, G
+            REAL(KIND=mp) :: DSTAR, TAUCRIT
+            REAL(KIND=mp) :: RELDEN, G
             
             RELDEN = 1.650
             G = 9.81

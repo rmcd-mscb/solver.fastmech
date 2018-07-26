@@ -1,19 +1,20 @@
 Module Support
-real,allocatable,dimension(:)::jctelev,ojctelev,ellim
-real*8,allocatable,dimension(:)::rhs
+ INTEGER, PARAMETER :: mp2 = KIND(1.0D0)
+real(kind = mp2),allocatable,dimension(:)::jctelev,ojctelev,ellim
+real(kind = mp2),allocatable,dimension(:)::rhs
 integer,allocatable,dimension(:)::indxcrt,nsce,nscpte,nprjct,flwexst,oflwexst,oflwcrtcl,iloc &
 ,iactv,limsec
 integer,allocatable,dimension(:,:)::chbc,nochjcts,jctentrs,tsbcloc
-real,allocatable,dimension(:,:)::xsloc,xspts,xsecd,curxsc,oldxsc,plnxsc,oplnxsc,qsign,&
+real(kind = mp2),allocatable,dimension(:,:)::xsloc,xspts,xsecd,curxsc,oldxsc,plnxsc,oplnxsc,qsign,&
 	tmsrbc,wtbc
-real*8,allocatable,dimension (:,:)::	cm !coefmatrix
-real*8,allocatable,dimension (:,:)::	xend !locations of x-sec endpoints
-real :: ttime
+real(kind = mp2),allocatable,dimension (:,:)::	cm !coefmatrix
+real(kind = mp2),allocatable,dimension (:,:)::	xend !locations of x-sec endpoints
+real(kind = mp2) :: ttime
 integer,allocatable,dimension(:,:,:)::jctsecs
 integer(2) vwx,vwy
 integer nch,nsc,npt,nnd,nbcloc,ntsbc,ntbw,itersmx,dragtype
-real gg,thet,etol,rtgg,simstrt,simend,corstpmlt,voltol,rlxdschg,rlxstg
-REAL::prmt(4,8)
+real(kind = mp2) gg,thet,etol,rtgg,simstrt,simend,corstpmlt,voltol,rlxdschg,rlxstg
+REAL(kind = mp2)::prmt(4,8)
 
 
 INTEGER:: tstep

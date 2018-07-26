@@ -35,8 +35,8 @@ IMPLICIT NONE
     INTEGER :: SolnIndex
 
 INTEGER :: cdtype, roughnesstype, wstype
-REAL :: constcd, ONEDCD
-REAL :: cdmin, cdmax
+REAL(KIND=mp) :: constcd, ONEDCD
+REAL(KIND=mp) :: cdmin, cdmax
 
 INTEGER, PUBLIC :: nsext
 INTEGER :: ShowGridExt, vbcds
@@ -73,7 +73,7 @@ LOGICAL :: WKConstBndry
 
 INTEGER :: uvinterp
 
-! For Hot Stat
+! For Hot Start
 integer :: i_re_flag_i, i_re_flag_o, n_rest, i_tmp_count
 real(8) :: opt_tmp(0:9)
 

@@ -129,8 +129,8 @@ INTEGER :: tmpnx, tmpny
 
 		INTEGER, INTENT(IN) :: solIndex
 		REAL(KIND=mp), INTENT(IN) :: time, disch
-		REAL*8, ALLOCATABLE, DIMENSION(:,:,:) :: tx,  ty, tz, tmpreal4, tmpreal5
-		REAL, ALLOCATABLE, DIMENSION(:,:,:) :: tmpx3d, tmpy3d, tmpz3d
+		REAL(KIND=mp), ALLOCATABLE, DIMENSION(:,:,:) :: tx,  ty, tz, tmpreal4, tmpreal5
+		REAL(KIND=mp), ALLOCATABLE, DIMENSION(:,:,:) :: tmpx3d, tmpy3d, tmpz3d
 		INTEGER, ALLOCATABLE, DIMENSION(:,:,:) :: tmpint
 		INTEGER :: ier, tmpibc, i,j,k
         CHARACTER(LEN = 14) :: flowsol3D
@@ -243,8 +243,8 @@ INTEGER :: tmpnx, tmpny
   	SUBROUTINE Write_CGNS3D_MoveableBed(time, disch)
 		IMPLICIT NONE
 		REAL(KIND=mp), INTENT(IN) :: time, disch
-		REAL*8, ALLOCATABLE, DIMENSION(:,:,:) :: tx,  ty, tz, tmpreal4, tmpreal5
-		REAL, ALLOCATABLE, DIMENSION(:,:,:) :: tmpx3d, tmpy3d, tmpz3d
+		REAL(KIND=mp), ALLOCATABLE, DIMENSION(:,:,:) :: tx,  ty, tz, tmpreal4, tmpreal5
+		REAL(KIND=mp), ALLOCATABLE, DIMENSION(:,:,:) :: tmpx3d, tmpy3d, tmpz3d
 		INTEGER, ALLOCATABLE, DIMENSION(:,:,:) :: tmpint
 		INTEGER :: ier
 		
@@ -278,9 +278,9 @@ INTEGER :: tmpnx, tmpny
 		REAL(KIND=mp), INTENT(IN) :: time, disch
 		INTEGER :: IER, iret
 		INTEGER :: I,J
-		REAL*8, ALLOCATABLE, DIMENSION(:,:) :: tmpreal1,  tmpreal2 
-		REAL*8, ALLOCATABLE, DIMENSION(:,:,:) :: tmpreal1a,  tmpreal2a, tmpreal3, tmpreal4, tmpreal5
-		REAL, ALLOCATABLE, DIMENSION(:,:,:) :: tmpx3d, tmpy3d, tmpz3d
+		REAL(KIND=mp), ALLOCATABLE, DIMENSION(:,:) :: tmpreal1,  tmpreal2 
+		REAL(KIND=mp), ALLOCATABLE, DIMENSION(:,:,:) :: tmpreal1a,  tmpreal2a, tmpreal3, tmpreal4, tmpreal5
+		REAL(KIND=mp), ALLOCATABLE, DIMENSION(:,:,:) :: tmpx3d, tmpy3d, tmpz3d
 		INTEGER, ALLOCATABLE, DIMENSION(:,:,:) :: tmpint
 		INTEGER, ALLOCATABLE, DIMEnSION(:,:) :: tmp2dint
 !		CALL CG_IRIC_WRITE_SOL_TIME_F(time, ier)
@@ -438,7 +438,7 @@ INTEGER :: tmpnx, tmpny
 	
 	SUBROUTINE GET3DGRIDZOUT(gridz)
 	IMPLICIT NONE
-	REAL*8, DIMENSION(:,:,:), INTENT(OUT) :: gridz
+	REAL(KIND=mp), DIMENSION(:,:,:), INTENT(OUT) :: gridz
 	INTEGER :: I,J,K
 	DO k = 1,nz
 	    DO j= 1,nn
@@ -500,9 +500,9 @@ INTEGER :: tmpnx, tmpny
 	
 	SUBROUTINE GET3DVELOCITYOUT(ivelx, ively, ivelz)
 	IMPLICIT NONE
-	REAL*8, DIMENSION(:,:,:), INTENT(OUT) :: ivelx, ively, ivelz
+	REAL(KIND=mp), DIMENSION(:,:,:), INTENT(OUT) :: ivelx, ively, ivelz
 	INTEGER :: I,J,K
-	REAL*8 :: rcos, rsin, xx, yy, ux, uy
+	REAL(KIND=mp) :: rcos, rsin, xx, yy, ux, uy
 	
     DO i=1,ns2
     	rcos = cos(phirotation(i))
@@ -526,7 +526,7 @@ INTEGER :: tmpnx, tmpny
 	
 	SUBROUTINE GET3DVELOCITYSOUT(ivelx, ively, ivelz)
 	    IMPLICIT NONE
-	    REAL*8, DIMENSION(:,:,:), INTENT(OUT) :: ivelx, ively, ivelz
+	    REAL(KIND=mp), DIMENSION(:,:,:), INTENT(OUT) :: ivelx, ively, ivelz
 	    INTEGER :: i, j, k
     	
 	    DO j= 1,nn
@@ -543,7 +543,7 @@ INTEGER :: tmpnx, tmpny
 	
 	SUBROUTINE GET3DVELOCITYNOUT(ivelx, ively, ivelz)
 	    IMPLICIT NONE
-	    REAL*8, DIMENSION(:,:,:), INTENT(OUT) :: ivelx, ively, ivelz
+	    REAL(KIND=mp), DIMENSION(:,:,:), INTENT(OUT) :: ivelx, ively, ivelz
 	    INTEGER :: i, j, k
     	
 	    DO j= 1,nn
@@ -560,7 +560,7 @@ INTEGER :: tmpnx, tmpny
 
 	SUBROUTINE GET3DVELOCITYNMAGOUT(ively)
 	    IMPLICIT NONE
-	    REAL*8, DIMENSION(:,:,:), INTENT(OUT) :: ively
+	    REAL(KIND=mp), DIMENSION(:,:,:), INTENT(OUT) :: ively
 	    INTEGER :: i, j, k
     	
 	    DO j= 1,nn
@@ -575,7 +575,7 @@ INTEGER :: tmpnx, tmpny
 
 	SUBROUTINE GET3DVELOCITYSMAGOUT(ivelx)
 	    IMPLICIT NONE
-	    REAL*8, DIMENSION(:,:,:), INTENT(OUT) :: ivelx
+	    REAL(KIND=mp), DIMENSION(:,:,:), INTENT(OUT) :: ivelx
 	    INTEGER :: i, j, k
     	
 	    DO j= 1,nn
@@ -590,7 +590,7 @@ INTEGER :: tmpnx, tmpny
 
 	SUBROUTINE GETVELOCITYSNOUT(ivelx, ively)
 	    IMPLICIT NONE
-	    REAL*8, DIMENSION(:,:), INTENT(OUT) :: ivelx, ively
+	    REAL(KIND=mp), DIMENSION(:,:), INTENT(OUT) :: ivelx, ively
 	    INTEGER :: i, j
     	
 	    DO j= 1,nn
@@ -604,7 +604,7 @@ INTEGER :: tmpnx, tmpny
 
 	SUBROUTINE GETSHEARSTRESSSNOUT(issx, issy)
 	    IMPLICIT NONE
-	    REAL*8, DIMENSION(:,:), INTENT(OUT) :: issx, issy
+	    REAL(KIND=mp), DIMENSION(:,:), INTENT(OUT) :: issx, issy
 	    INTEGER :: i, j
     	
 	    DO j= 1,nn
@@ -618,9 +618,9 @@ INTEGER :: tmpnx, tmpny
 
 	SUBROUTINE GETSHEARSTRESSOUT(SSXOut, SSYOut)
 	    IMPLICIT NONE
-	    REAL*8, DIMENSION(:,:), INTENT(OUT) :: SSXOut, SSYOut
+	    REAL(KIND=mp), DIMENSION(:,:), INTENT(OUT) :: SSXOut, SSYOut
 	    INTEGER :: i,j,count
-	    REAL*8 :: rcos, rsin, xx, yy, ux, uy
+	    REAL(KIND=mp) :: rcos, rsin, xx, yy, ux, uy
     	
     	
         DO j= 1,nn
@@ -645,9 +645,9 @@ INTEGER :: tmpnx, tmpny
 
 SUBROUTINE GETVELOCITYOUT(velXOut, velYOut)
 	    IMPLICIT NONE
-	    REAL*8, DIMENSION(:,:), INTENT(OUT) :: velXOut, velYOut
+	    REAL(KIND=mp), DIMENSION(:,:), INTENT(OUT) :: velXOut, velYOut
 	    INTEGER :: i,j,count
-	    REAL*8 :: rcos, rsin, xx, yy, ux, uy
+	    REAL(KIND=mp) :: rcos, rsin, xx, yy, ux, uy
     	
     	
         DO j= 1,nn
@@ -679,9 +679,9 @@ SUBROUTINE GETVELOCITYOUT(velXOut, velYOut)
 
 SUBROUTINE GETTransportRateOUT(TRXOut, TRYOut)
 	    IMPLICIT NONE
-	    REAL*8, DIMENSION(:,:), INTENT(OUT) :: TRXOut, TRYOut
+	    REAL(KIND=mp), DIMENSION(:,:), INTENT(OUT) :: TRXOut, TRYOut
 	    INTEGER :: i,j,count
-	    REAL*8 :: rcos, rsin, xx, yy, ux, uy
+	    REAL(KIND=mp) :: rcos, rsin, xx, yy, ux, uy
     	
     	
         DO j= 1,nn
@@ -704,7 +704,7 @@ SUBROUTINE GETTransportRateOUT(TRXOut, TRYOut)
 	
 	SUBROUTINE GETINITVELOUT(ivelx, ively)
 	    IMPLICIT NONE
-	    REAL*8, DIMENSION(:,:), INTENT(OUT) :: ivelx, ively
+	    REAL(KIND=mp), DIMENSION(:,:), INTENT(OUT) :: ivelx, ively
 	    INTEGER :: i, j
     	
 	    DO j= 1,nn
@@ -718,9 +718,9 @@ SUBROUTINE GETTransportRateOUT(TRXOut, TRYOut)
 	
 	SUBROUTINE GETUNITDISCHOUT(ivelx, ively)
 	    IMPLICIT NONE
-	    REAL*8, DIMENSION(:,:), INTENT(OUT) :: ivelx, ively
+	    REAL(KIND=mp), DIMENSION(:,:), INTENT(OUT) :: ivelx, ively
 	    INTEGER :: i, j, count
- 	    REAL*8 :: rcos, rsin, xx, yy, ux, uy
+ 	    REAL(KIND=mp) :: rcos, rsin, xx, yy, ux, uy
        DO j= 1,nn
 		    DO i=1,ns2
  			    rcos = cos(phirotation(i))
@@ -749,7 +749,7 @@ SUBROUTINE GETTransportRateOUT(TRXOut, TRYOut)
 
 	SUBROUTINE GETSANDDEPTHOUT(sd)
 	    IMPLICIT NONE
-	    REAL*8, DIMENSION(:,:), INTENT(OUT) :: sd
+	    REAL(KIND=mp), DIMENSION(:,:), INTENT(OUT) :: sd
 	    INTEGER :: i, j
     	
 	    DO j= 1,nn
@@ -762,7 +762,7 @@ SUBROUTINE GETTransportRateOUT(TRXOut, TRYOut)
 	
 	SUBROUTINE GETLSUBHOUT(tlsub)
     IMPLICIT NONE
-    REAL*8, DIMENSION(:,:), INTENT(OUT) :: tlsub
+    REAL(KIND=mp), DIMENSION(:,:), INTENT(OUT) :: tlsub
     INTEGER :: i, j
 	
     DO j= 1,nn
@@ -776,7 +776,7 @@ SUBROUTINE GETTransportRateOUT(TRXOut, TRYOut)
 
 	SUBROUTINE getRSOut(irs)
 	    IMPLICIT NONE
-	    REAL*8, DIMENSION(:,:), INTENT(OUT) :: irs
+	    REAL(KIND=mp), DIMENSION(:,:), INTENT(OUT) :: irs
 	    INTEGER :: i, j
     	
 	    DO j= 1,nn
@@ -789,7 +789,7 @@ SUBROUTINE GETTransportRateOUT(TRXOut, TRYOut)
 	
 	SUBROUTINE getThetaOut(itheta)
 	    IMPLICIT NONE
-	    REAL*8, DIMENSION(:,:), INTENT(OUT) :: itheta
+	    REAL(KIND=mp), DIMENSION(:,:), INTENT(OUT) :: itheta
 	    INTEGER :: i, j
     	
 	    DO j= 1,nn
@@ -802,7 +802,7 @@ SUBROUTINE GETTransportRateOUT(TRXOut, TRYOut)
 	
 	SUBROUTINE GETSANDFRACOUT(sf)
 	    IMPLICIT NONE
-	    REAL*8, DIMENSION(:,:), INTENT(OUT) :: sf
+	    REAL(KIND=mp), DIMENSION(:,:), INTENT(OUT) :: sf
 	    INTEGER :: i, j
     	
 	    DO j= 1,nn
@@ -815,7 +815,7 @@ SUBROUTINE GETTransportRateOUT(TRXOut, TRYOut)
 	
 	SUBROUTINE GETCDOUT(tcd)
 	    IMPLICIT NONE
-	    REAL*8, DIMENSION(:,:), INTENT(OUT) :: tcd
+	    REAL(KIND=mp), DIMENSION(:,:), INTENT(OUT) :: tcd
 	    INTEGER :: i, j
     	
 	    DO j= 1,nn
@@ -828,7 +828,7 @@ SUBROUTINE GETTransportRateOUT(TRXOut, TRYOut)
 	
 	SUBROUTINE GETDEPTHOUT(depth)
 	    IMPLICIT NONE
-	    REAL*8, DIMENSION(:,:), INTENT(OUT) :: depth
+	    REAL(KIND=mp), DIMENSION(:,:), INTENT(OUT) :: depth
 	    INTEGER :: i, j
     	
 	    DO j= 1,nn
@@ -841,7 +841,7 @@ SUBROUTINE GETTransportRateOUT(TRXOut, TRYOut)
 	
 	SUBROUTINE GETHAREAOUT(htArea)
 	    IMPLICIT NONE
-	    REAL*8, DIMENSION(:,:), INTENT(OUT) :: htArea
+	    REAL(KIND=mp), DIMENSION(:,:), INTENT(OUT) :: htArea
 	    INTEGER :: i, j
     	
 	    DO j= 1,nn
@@ -854,7 +854,7 @@ SUBROUTINE GETTransportRateOUT(TRXOut, TRYOut)
 
 	SUBROUTINE GETWSEOUT(wse)
 	    IMPLICIT NONE
-	    REAL*8, DIMENSION(:,:), INTENT(OUT) :: wse
+	    REAL(KIND=mp), DIMENSION(:,:), INTENT(OUT) :: wse
 	    INTEGER :: i, j
     	
 	    DO j= 1,nn
@@ -867,7 +867,7 @@ SUBROUTINE GETTransportRateOUT(TRXOut, TRYOut)
 
 	SUBROUTINE GETELEVATIONOUT(elev)
 	    IMPLICIT NONE
-	    REAL*8, DIMENSION(:,:), INTENT(OUT) :: elev
+	    REAL(KIND=mp), DIMENSION(:,:), INTENT(OUT) :: elev
 	    INTEGER :: i, j
     	
 	    DO j= 1,nn
@@ -880,8 +880,8 @@ SUBROUTINE GETTransportRateOUT(TRXOut, TRYOut)
 
 	SUBROUTINE GETXYOUT(tx, ty)
 	    IMPLICIT NONE
-	    REAL*8, DIMENSION(:,:), INTENT(OUT) :: tx, ty
-	    REAL*8 :: xx, yy, ux, uy
+	    REAL(KIND=mp), DIMENSION(:,:), INTENT(OUT) :: tx, ty
+	    REAL(KIND=mp) :: xx, yy, ux, uy
 	    double precision :: rcos, rsin
 	    INTEGER :: i, j
 !        DO j= 1,nn
@@ -949,8 +949,8 @@ SUBROUTINE GETTransportRateOUT(TRXOut, TRYOut)
 	
 	SUBROUTINE getHelixOut(helix)
 	    IMPLICIT NONE
-	    REAL*8, DIMENSION(:,:), INTENT(OUT) :: helix
-	    REAL*8 :: xx, yy
+	    REAL(KIND=mp), DIMENSION(:,:), INTENT(OUT) :: helix
+	    REAL(KIND=mp) :: xx, yy
 	    INTEGER :: i, j
 	    DO j= 1,nn
 		    DO i=1,ns2
@@ -973,7 +973,7 @@ SUBROUTINE GETTransportRateOUT(TRXOut, TRYOut)
 	
 	SUBROUTINE GetStressDivOut(stressdiv)
 	    IMPLICIT NONE
-	    REAL*8, DIMENSION(:,:), INTENT(OUT) :: stressdiv
+	    REAL(KIND=mp), DIMENSION(:,:), INTENT(OUT) :: stressdiv
 	    INTEGER :: i, j
 	    DO j= 1,nn
 		    DO i=1,ns2

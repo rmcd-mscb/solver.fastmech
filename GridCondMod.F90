@@ -11,7 +11,7 @@ CONTAINS
 
 	INTEGER, INTENT(OUT) :: IER
 	INTEGER :: status, i, j, count, countji, ierror
-	REAL*8, ALLOCATABLE, DIMENSION(:) :: tmpreal4
+	REAL(KIND=mp), ALLOCATABLE, DIMENSION(:) :: tmpreal4
     
     
 !    CALL CG_IRIC_GOTOGC_F(FID, NX, NY, IER)

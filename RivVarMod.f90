@@ -6,14 +6,14 @@
 ! Machine precision:
       INTEGER, PARAMETER :: mp = KIND(1.0D0) ! = KIND(1.0D0) for double precision.
       integer,parameter :: strMax = 250
-            REAL*8 :: ElevOffset=1e12
-			REAL :: ds,dn,mo,hwt
+            REAL(kind=mp) :: ElevOffset=1e12
+			REAL(kind=mp) :: ds,dn,mo,hwt
 			REAL(kind=mp) :: fcos, fsin
-			REAL :: lbwse, rbwse, vdcds, vacds
+			REAL(kind=mp) :: lbwse, rbwse, vdcds, vacds
 !			REAL :: hrwdepth
 !			REAL ::	startLEV, endLEV
-			REAL :: totTime, vardt, ptime
-			REAL :: wmax
+			REAL(kind=mp) :: totTime, vardt, ptime
+			REAL(kind=mp) :: wmax
 			!Variables for CSed
 !			    REAL :: HD, WD, DIN
 !			    INTEGER :: SEDSMOO, SEDSMOOWGHT, TRANSEQTYPE, CALCCSED, SEDBCNODE
@@ -41,34 +41,34 @@
 			DOUBLE PRECISION:: xshift, yshift
 
 	INTEGER, ALLOCATABLE, DIMENSION(:,:) :: ibc, iibc, ribc, icon, tibc
-	REAL, ALLOCATABLE, DIMENSION(:) :: r, w, xo, yo, hav
-	REAL, ALLOCATABLE, DIMENSION(:,:) :: havn
-	REAL, ALLOCATABLE, DIMENSION(:,:) :: taus, taun, hl, eta, rn, cd, cdv
-	REAL, ALLOCATABLE, DIMENSION(:,:) :: totcd, mineta
-	REAL, ALLOCATABLE, DIMENSION(:,:) :: znaught
-	REAL, ALLOCATABLE, DIMENSION(:,:) :: u, v, e, iu, iv, iwse, ie, ihl
-	REAL, ALLOCATABLE, DIMENSION(:,:) :: x, y
-	REAL, ALLOCATABLE, DIMENSION(:,:) :: harea
+	REAL(kind=mp), ALLOCATABLE, DIMENSION(:) :: r, w, xo, yo, hav
+	REAL(kind=mp), ALLOCATABLE, DIMENSION(:,:) :: havn
+	REAL(kind=mp), ALLOCATABLE, DIMENSION(:,:) :: taus, taun, hl, eta, rn, cd, cdv
+	REAL(kind=mp), ALLOCATABLE, DIMENSION(:,:) :: totcd, mineta
+	REAL(kind=mp), ALLOCATABLE, DIMENSION(:,:) :: znaught
+	REAL(kind=mp), ALLOCATABLE, DIMENSION(:,:) :: u, v, e, iu, iv, iwse, ie, ihl
+	REAL(kind=mp), ALLOCATABLE, DIMENSION(:,:) :: x, y
+	REAL(kind=mp), ALLOCATABLE, DIMENSION(:,:) :: harea
 
 	DOUBLE PRECISION, ALLOCATABLE, DIMENSION(:,:,:) :: uz, vz, zz
-	REAL, ALLOCATABLE, DIMENSION(:,:) :: con, qs, qn
+	REAL(kind=mp), ALLOCATABLE, DIMENSION(:,:) :: con, qs, qn
 	
-	REAL, ALLOCATABLE, DIMENSION(:,:) :: Fracs, hfine
+	REAL(kind=mp), ALLOCATABLE, DIMENSION(:,:) :: Fracs, hfine
 
 !Allocate Seperate arrays to deal with extend lower boundary
 	INTEGER, ALLOCATABLE, DIMENSION(:,:) :: ibc2
-	REAL, ALLOCATABLE, DIMENSION(:) :: r2, w2, hav2
+	REAL(kind=mp), ALLOCATABLE, DIMENSION(:) :: r2, w2, hav2
 !	REAL, ALLOCATABLE, DIMENSION(:,:) :: hav2n
 	DOUBLE PRECISION, ALLOCATABLE, DIMENSION(:) :: xo2, yo2, phi2
 	DOUBLE PRECISION, ALLOCATABLE, DIMENSION(:) :: phirotation
-	REAL, ALLOCATABLE, DIMENSION(:,:) :: u2, v2, e2
-	REAL, ALLOCATABLE, DIMENSION(:,:) :: eta2, cd2, cdv2, znaught2, mineta2
+	REAL(kind=mp), ALLOCATABLE, DIMENSION(:,:) :: u2, v2, e2
+	REAL(kind=mp), ALLOCATABLE, DIMENSION(:,:) :: eta2, cd2, cdv2, znaught2, mineta2
 
 	INTEGER, ALLOCATABLE, DIMENSION(:,:) :: iedger, iedgel
 	INTEGER, ALLOCATABLE, DIMENSION(:,:) :: icountl, icountr
 	INTEGER, ALLOCATABLE, DIMENSION(:) :: iswitch
 	
-	REAL mo2
+	REAL(kind=mp) mo2
 
 	
 	
@@ -111,7 +111,7 @@
 			DEALLOCATE(iwse, STAT = status)
 			DEALLOCATE(ie, STAT = status)
 			DEALLOCATE(iibc, STAT = status)
-              DEALLOCATE(ihl, STAT = status)
+            DEALLOCATE(ihl, STAT = status)
 		END SUBROUTINE
 
 		SUBROUTINE alloc_common2D(ns2, nsext, nn)

@@ -29,10 +29,10 @@
 !
 !
 	IMPLICIT NONE
-
-	REAL	Fs , area ,  Fsmin , hmax , abh , bbh , H
-	REAL    vsandsurf, vsandsurfmax
-	REAL	HE
+    INTEGER, PARAMETER :: mp = KIND(1.0D0)
+	REAL(kind = mp)	Fs , area ,  Fsmin , hmax , abh , bbh , H
+	REAL(kind = mp)    vsandsurf, vsandsurfmax
+	REAL(kind = mp)	HE
 
  
 

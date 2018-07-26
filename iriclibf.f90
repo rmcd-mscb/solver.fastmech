@@ -6,7 +6,7 @@
 
 MODULE iriclibf
 IMPLICIT NONE
-
+INTEGER, PARAMETER :: mp = KIND(1.0D0)
 CHARACTER(LEN=21), PARAMETER :: CCNODE = 'CalculationConditions'
 CHARACTER(LEN=14), PARAMETER :: GCNODE = 'GridConditions'
 CHARACTER(LEN=12), PARAMETER :: SOLNODE = 'FlowSolution'
@@ -25,11 +25,11 @@ IMPLICIT NONE
 !! INCLUDE "cgnswin_f.h"
 INCLUDE "cgnslib_f.h"
 INTEGER, INTENT(IN) :: FID, NS, NN, NZ
-REAL, DIMENSION(:,:), INTENT(IN) :: X,Y
-REAL, DIMENSION(:,:,:), INTENT(IN) :: Z
+REAL(kind = mp), DIMENSION(:,:), INTENT(IN) :: X,Y
+REAL(kind = mp), DIMENSION(:,:,:), INTENT(IN) :: Z
 INTEGER, INTENT(OUT) :: IER
 INTEGER :: I,J,K, countkji, CID
-REAL, ALLOCATABLE, DIMENSION(:) :: tmp1, tmp2, tmp3
+REAL(kind = mp), ALLOCATABLE, DIMENSION(:) :: tmp1, tmp2, tmp3
 
 celldim = 3
 physdim = 3

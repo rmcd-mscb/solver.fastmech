@@ -2,10 +2,10 @@ MODULE ParamSetMod
 USE Support
 IMPLICIT NONE
 !INCLUDE "netcdf.inc"
-
+!INTEGER, PARAMETER :: mp2 = KIND(1.0D0)
 INTEGER::nprm, ndiams(4)
 !REAL::prmt(4,8), pdiams(4,20), gomfl(3), bcfl(3), cbfl
-REAL::tmpprmt(9), tmptime(2)
+REAL(kind = mp2)::tmpprmt(9), tmptime(2)
 INTEGER::nodebalindx, indxresist, k
 CONTAINS
 

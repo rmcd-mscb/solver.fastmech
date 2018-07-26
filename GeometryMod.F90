@@ -33,12 +33,12 @@ logical function line_exp_is_degenerate_nd ( dim_num, p1, p2 )
 !    is degenerate.
 !
   implicit none
-
+  INTEGER, PARAMETER :: mp = KIND(1.0D0)
   integer dim_num
 
 !  logical line_exp_is_degenerate_nd
-  real ( kind = 16 ) p1(dim_num)
-  real ( kind = 16 ) p2(dim_num)
+  real ( kind = mp ) p1(dim_num)
+  real ( kind = mp ) p2(dim_num)
 
   line_exp_is_degenerate_nd = ( all ( p1(1:dim_num) == p2(1:dim_num) ) )
 
@@ -73,12 +73,12 @@ logical function line_imp_is_degenerate_2d ( a, b, c )
 !    line is degenerate.
 !
   implicit none
-
+  INTEGER, PARAMETER :: mp = KIND(1.0D0)
   integer, parameter :: dim_num = 2
 
-  real ( kind = 16 ) a
-  real ( kind = 16 ) b
-  real ( kind = 16 ) c
+  real ( kind = mp ) a
+  real ( kind = mp ) b
+  real ( kind = mp ) c
 !  logical line_imp_is_degenerate_2d
 
   line_imp_is_degenerate_2d = ( a * a + b * b == 0.0D+00 )
@@ -121,23 +121,23 @@ subroutine lines_exp_int_2d ( p1, p2, q1, q2, ival, p )
 !    the intersection point.  Otherwise, P = 0.
 !
   implicit none
-
+  INTEGER, PARAMETER :: mp = KIND(1.0D0)
   integer, parameter :: dim_num = 2
 
-  real ( kind = 16 ) a1
-  real ( kind = 16 ) a2
-  real ( kind = 16 ) b1
-  real ( kind = 16 ) b2
-  real ( kind = 16 ) c1
-  real ( kind = 16 ) c2
+  real ( kind = mp ) a1
+  real ( kind = mp ) a2
+  real ( kind = mp ) b1
+  real ( kind = mp ) b2
+  real ( kind = mp ) c1
+  real ( kind = mp ) c2
   integer ival
   logical point_1
   logical point_2
-  real ( kind = 16 ) p(dim_num)
-  real ( kind = 16 ) p1(dim_num)
-  real ( kind = 16 ) p2(dim_num)
-  real ( kind = 16 ) q1(dim_num)
-  real ( kind = 16 ) q2(dim_num)
+  real ( kind = mp ) p(dim_num)
+  real ( kind = mp ) p1(dim_num)
+  real ( kind = mp ) p2(dim_num)
+  real ( kind = mp ) q1(dim_num)
+  real ( kind = mp ) q2(dim_num)
 
   ival = 0
   p(1:dim_num) = 0.0D+00
@@ -221,16 +221,16 @@ subroutine line_exp2imp_2d ( p1, p2, a, b, c )
 !    Output, real ( kind = 8 ) A, B, C, the implicit form of the line.
 !
   implicit none
-
+  INTEGER, PARAMETER :: mp = KIND(1.0D0)
   integer, parameter :: dim_num = 2
 
-  real ( kind = 16 ) a
-  real ( kind = 16 ) b
-  real ( kind = 16 ) c
+  real ( kind = mp ) a
+  real ( kind = mp ) b
+  real ( kind = mp ) c
 !  logical line_exp_is_degenerate_nd
-  real ( kind = 16 ) norm
-  real ( kind = 16 ) p1(dim_num)
-  real ( kind = 16 ) p2(dim_num)
+  real ( kind = mp ) norm
+  real ( kind = mp ) p1(dim_num)
+  real ( kind = mp ) p2(dim_num)
 !
 !  Take care of degenerate cases.
 !
@@ -300,20 +300,20 @@ subroutine lines_imp_int_2d ( a1, b1, c1, a2, b2, c2, ival, p )
 !    the intersection point.  Otherwise, P = 0.
 !
   implicit none
-
+  INTEGER, PARAMETER :: mp = KIND(1.0D0)
   integer, parameter :: dim_num = 2
 
-  real ( kind = 16 ) a(dim_num,dim_num+1)
-  real ( kind = 16 ) a1
-  real ( kind = 16 ) a2
-  real ( kind = 16 ) b1
-  real ( kind = 16 ) b2
-  real ( kind = 16 ) c1
-  real ( kind = 16 ) c2
+  real ( kind = mp ) a(dim_num,dim_num+1)
+  real ( kind = mp ) a1
+  real ( kind = mp ) a2
+  real ( kind = mp ) b1
+  real ( kind = mp ) b2
+  real ( kind = mp ) c1
+  real ( kind = mp ) c2
   integer info
   integer ival
 !  logical line_imp_is_degenerate_2d
-  real ( kind = 16 ) p(dim_num)
+  real ( kind = mp ) p(dim_num)
 
   p(1:dim_num) = 0.0D+00
 !
@@ -404,13 +404,13 @@ subroutine dmat_solve ( n, rhs_num, a, info )
 !    be computed.
 !
   implicit none
-
+  INTEGER, PARAMETER :: mp = KIND(1.0D0)
   integer n
   integer rhs_num
 
-  real ( kind = 16 ) a(n,n+rhs_num)
-  real ( kind = 16 ) apivot
-  real ( kind = 16 ) factor
+  real ( kind = mp ) a(n,n+rhs_num)
+  real ( kind = mp ) apivot
+  real ( kind = mp ) factor
   integer i
   integer info
   integer ipivot
@@ -487,10 +487,10 @@ subroutine d_swap ( x, y )
 !    Y have been interchanged.
 !
   implicit none
-
-  real ( kind = 16 ) x
-  real ( kind = 16 ) y
-  real ( kind = 16 ) z
+  INTEGER, PARAMETER :: mp = KIND(1.0D0)
+  real ( kind = mp ) x
+  real ( kind = mp ) y
+  real ( kind = mp ) z
 
   z = x
   x = y

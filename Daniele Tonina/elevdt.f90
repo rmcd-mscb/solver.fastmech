@@ -35,14 +35,14 @@
 !       END
 
 	IMPLICIT NONE
+    INTEGER, PARAMETER :: mp = KIND(1.0D0)
 
-
- 	REAL		VS, Fsmin, tol
-	REAL		Fs, CDF, av, bv, XX, abh, bbh
-	REAL		Vsandsub, Vsandsurf
-	REAL		Vsandsubmax, Vsandsurfmax
-	REAL		Vsandtotal, DV
-	REAL		area, hin, h, hmax, he
+ 	REAL(kind = mp)		VS, Fsmin, tol
+	REAL(kind = mp)		Fs, CDF, av, bv, XX, abh, bbh
+	REAL(kind = mp)		Vsandsub, Vsandsurf
+	REAL(kind = mp)		Vsandsubmax, Vsandsurfmax
+	REAL(kind = mp)		Vsandtotal, DV
+	REAL(kind = mp)		area, hin, h, hmax, he
 	INTEGER		Flag
 	
 

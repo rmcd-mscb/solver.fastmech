@@ -5,16 +5,17 @@ IMPLICIT NONE
 CONTAINS
 
 SUBROUTINE setStpBwInput(nsec, nsecpts, tmptopo, tmpx, tmpy, tmpcd1, q, wselev)
+INTEGER, PARAMETER :: mp2 = KIND(1.0D0)
     INTEGER, INTENT(IN) :: nsec, nsecpts
-    REAL, DIMENSION(:), INTENT(IN)  :: tmptopo, tmpx, tmpy
-    REAL, INTENT(IN) :: tmpcd1, q, wselev
+    REAL(kind = mp2), DIMENSION(:), INTENT(IN)  :: tmptopo, tmpx, tmpy
+    REAL(kind = mp2), INTENT(IN) :: tmpcd1, q, wselev
     
     INTEGER :: i,j, jp, k
     INTEGER :: npts, ns, nss, nps, nsp, nsf, counti, countij 
     INTEGER :: ncd, nnpt, npf, nonds, maxbw, nods, ntbc
     INTEGER :: nchx
     
-    REAL :: emin, eav
+    REAL(kind = mp2) :: emin, eav
     npts = nsec*nsecpts
 
 	CALL AllocateSecs(1, nsec, nsec, npts, 0, 0, 2)

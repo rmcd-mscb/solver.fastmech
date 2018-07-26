@@ -13,9 +13,9 @@
 
 
 	IMPLICIT NONE
-
-	REAL Droughmin, Dro, P
-	REAL FS, x0
+    INTEGER, PARAMETER :: mp = KIND(1.0D0)
+	REAL(kind = mp) Droughmin, Dro, P
+	REAL(kind = mp) FS, x0
 	
 	x0=0.5
 

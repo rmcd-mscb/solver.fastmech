@@ -7,8 +7,8 @@
 	SUBROUTINE ZOTOCDTWO()
 	IMPLICIT NONE
 	INTEGER :: i,j
-	REAL :: tmp1, tmp2
-	REAL :: vck = 0.4
+	REAL(kind = mp) :: tmp1, tmp2
+	REAL(kind = mp) :: vck = 0.4
 	    do i = 1,ns
 	        do j = 1,nn
 	            tmp1 = log(hl(i,j)/znaught(i,j)) - 1
@@ -90,7 +90,7 @@
     SUBROUTINE vert()
     IMPLICIT NONE
 	INTEGER :: i, j, k, ismoo
-	REAL :: tmp, tmp1, tmp2
+	REAL(kind = mp) :: tmp, tmp1, tmp2
 		call alloc_vert()
          pi=acos(-1.)
         vkc=0.4

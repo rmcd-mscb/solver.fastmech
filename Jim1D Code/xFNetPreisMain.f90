@@ -26,9 +26,9 @@ ENDSUBROUTINE
 
 SUBROUTINE NETPREIS2(ns, nn, topo, tx, ty, cd, q, stage, wse )
     INTEGER, INTENT(IN) :: ns, nn
-    REAL, DIMENSION(:), INTENT(IN)  :: topo, tx, ty
-    REAL, INTENT(IN) :: cd, q, stage
-    REAL, DIMENSION(:), INTENT(OUT) :: wse
+    REAL(kind = mp2), DIMENSION(:), INTENT(IN)  :: topo, tx, ty
+    REAL(kind = mp2), INTENT(IN) :: cd, q, stage
+    REAL(kind = mp2), DIMENSION(:), INTENT(OUT) :: wse
     
     
 common/RstDbg/rstrtset

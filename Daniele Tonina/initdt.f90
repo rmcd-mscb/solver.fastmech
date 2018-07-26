@@ -49,12 +49,13 @@
 !
 !
 	IMPLICIT NONE
+    INTEGER, PARAMETER :: mp = KIND(1.0D0)
 	INTEGER i , IFLAG
-	REAL	Fs , Fsmin , hmax , lsub , porosity , Lsubactdepth
-	REAL	Vsandsubmax , Vsandsurfmax , Vsandsub , Vsandsurf
-	REAL	area, DV, TOL, AV, BV, H, XX, dro, dref, Droughmin
-	REAL	Droughmax, x0, P
-	REAL roughnessinv
+	REAL(kind = mp)	Fs , Fsmin , hmax , lsub , porosity , Lsubactdepth
+	REAL(kind = mp)	Vsandsubmax , Vsandsurfmax , Vsandsub , Vsandsurf
+	REAL(kind = mp)	area, DV, TOL, AV, BV, H, XX, dro, dref, Droughmin
+	REAL(kind = mp)	Droughmax, x0, P
+	REAL(kind = mp) roughnessinv
 
 
 

@@ -320,7 +320,7 @@ END SUBROUTINE
     SUBROUTINE INITARRAYS()
     IMPLICIT NONE
     INTEGER :: i,j
-    REAL :: rcos, rsin, uu, vv
+    REAL(KIND=mp) :: rcos, rsin, uu, vv
 !    open(4,FILE='RadiusOfCurvature.txt')
     	IF (cdtype == 0) THEN	!Constant CD	
 			DO i = 1, ns2

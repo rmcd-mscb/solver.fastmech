@@ -69,7 +69,7 @@ subroutine StepBW(inddrcn,nc,q,zds)
 !  if inddrcn==1, usual step bw, compute ds>>us 
 !  if inddrcn==-1, ds wselev>us, compute us>>ds 
 use support
-real kds,kus
+real(kind = mp2) kds,kus
 
 	oflwcrtcl(nc)=1
 	nfrst=1

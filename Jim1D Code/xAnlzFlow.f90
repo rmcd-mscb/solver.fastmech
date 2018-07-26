@@ -8,7 +8,7 @@
 !	!    curxsc(ns,7)=discharge
 !  xsloc(i,5)=emin  ! xsloc( ,5) set to min ch elev
 	use Support
-	real kds
+	real(kind = mp2) kds
 	call ChLims(ic,nus,nds)
 !	print *,nus,nds
 		kds=curxsc(nds,6)**2

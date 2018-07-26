@@ -2,27 +2,27 @@
 	use RivVarMod
 	use RivVertMod
 	IMPLICIT NONE
-	REAL, ALLOCATABLE, DIMENSION(:) :: QTOT
-	REAL, ALLOCATABLE, DIMENSION(:,:) :: RATIO, d, DUM1
-	REAL, ALLOCATABLE, DIMENSION(:,:) :: DHDN, DHDS, USTRESS, VSTRESS
+	REAL(KIND=mp), ALLOCATABLE, DIMENSION(:) :: QTOT
+	REAL(KIND=mp), ALLOCATABLE, DIMENSION(:,:) :: RATIO, d, DUM1
+	REAL(KIND=mp), ALLOCATABLE, DIMENSION(:,:) :: DHDN, DHDS, USTRESS, VSTRESS
 	
-	REAL, ALLOCATABLE, DIMENSION(:,:) :: hmax, lsub, lsubactdepth !DT
-	REAL, ALLOCATABLE, DIMENSION(:,:) :: av ,bv, abh, bbh			  !DT
-	REAL, ALLOCATABLE, DIMENSION(:,:) :: imeta, dro, dref	  !DT
-	REAL, ALLOCATABLE, DIMENSION(:,:) :: Vsandsub, Vsandsurf		  !DT
-	REAL, ALLOCATABLE, DIMENSION(:,:) :: Vsandsubmax, Vsandsurfmax	  !DT
-	REAL, ALLOCATABLE, DIMENSION(:) :: FRACS0, HFINE0 !DT
+	REAL(KIND=mp), ALLOCATABLE, DIMENSION(:,:) :: hmax, lsub, lsubactdepth !DT
+	REAL(KIND=mp), ALLOCATABLE, DIMENSION(:,:) :: av ,bv, abh, bbh			  !DT
+	REAL(KIND=mp), ALLOCATABLE, DIMENSION(:,:) :: imeta, dro, dref	  !DT
+	REAL(KIND=mp), ALLOCATABLE, DIMENSION(:,:) :: Vsandsub, Vsandsurf		  !DT
+	REAL(KIND=mp), ALLOCATABLE, DIMENSION(:,:) :: Vsandsubmax, Vsandsurfmax	  !DT
+	REAL(KIND=mp), ALLOCATABLE, DIMENSION(:) :: FRACS0, HFINE0 !DT
 	
-	REAL, ALLOCATABLE, DIMENSION(:,:,:,:) :: TCS
-	REAL, ALLOCATABLE, DIMENSION(:,:,:) :: QSUSPN, QSUSPS, TOTCSZ
-	REAL, ALLOCATABLE, DIMENSION(:,:) :: QSUSP, TOTCS
-	REAL, ALLOCATABLE, DIMENSION(:) :: QSUSPXS, AVGCS
+	REAL(KIND=mp), ALLOCATABLE, DIMENSION(:,:,:,:) :: TCS
+	REAL(KIND=mp), ALLOCATABLE, DIMENSION(:,:,:) :: QSUSPN, QSUSPS, TOTCSZ
+	REAL(KIND=mp), ALLOCATABLE, DIMENSION(:,:) :: QSUSP, TOTCS
+	REAL(KIND=mp), ALLOCATABLE, DIMENSION(:) :: QSUSPXS, AVGCS
 	
       !! For Suspended Sediment Calculation
-      REAL, DIMENSION(8) :: sedsize, sedsizefrac
+      REAL(KIND=mp), DIMENSION(8) :: sedsize, sedsizefrac
       
       !! For Non-equilibrium sediment supply
-      REAL :: NONEQSMOOTH
+      REAL(KIND=mp) :: NONEQSMOOTH
       
 	CONTAINS
 	  SUBROUTINE alloc_csed3d_DT()
@@ -138,38 +138,38 @@
 		    
 			
 		SUBROUTINE csed_DT(DT,nct,nsteps,newdt)
-			REAL, INTENT(IN) :: DT
+			REAL(KIND=mp), INTENT(IN) :: DT
 			INTEGER, INTENT(IN) :: nct, nsteps
-			REAL, INTENT(INOUT) :: newdt
+			REAL(KIND=mp), INTENT(INOUT) :: newdt
 			CHARACTER*20 RUNID
-			REAL :: CDune, VKC, GSW, PI, GAMC, TB, TC, G, RHO
-			REAL :: RAT, ZOSF, RHOFAC, DUM, GAMG, TAUG
-			REAL :: A2, DTAU, TAN1, TAN2, QTOTAL, SC, weight
-			REAL :: fac
-			REAL :: PLINC
+			REAL(KIND=mp) :: CDune, VKC, GSW, PI, GAMC, TB, TC, G, RHO
+			REAL(KIND=mp) :: RAT, ZOSF, RHOFAC, DUM, GAMG, TAUG
+			REAL(KIND=mp) :: A2, DTAU, TAN1, TAN2, QTOTAL, SC, weight
+			REAL(KIND=mp) :: fac
+			REAL(KIND=mp) :: PLINC
 			INTEGER :: NM, I, J, K,ngc, ityp, ISMOO
 			
-	      REAL :: mintdt, maxtdt, tdt
-	      REAL :: tmpdepth
+	      REAL(KIND=mp) :: mintdt, maxtdt, tdt
+	      REAL(KIND=mp) :: tmpdepth
 	      
-		REAL(KIND =8) :: t, csf, p, s, ws, kv
-		REAL(KIND=8) :: tdd
+		REAL(KIND=mp) :: t, csf, p, s, ws, kv
+		REAL(KIND=mp) :: tdd
 
 !!             Daniele variables for sedmodel
 			
-			REAL :: bedporosity, he
-			REAL :: taustar_rs0 
-			REAL :: Wdensity, Sdensity, deltaD 
-			REAL :: taustar_rs, tau_rs         
-			REAL :: phi_sand, Wprime_sand, Qsand
-			REAL :: check, drough, ustar, vs
+			REAL(KIND=mp) :: bedporosity, he
+			REAL(KIND=mp) :: taustar_rs0 
+			REAL(KIND=mp) :: Wdensity, Sdensity, deltaD 
+			REAL(KIND=mp) :: taustar_rs, tau_rs         
+			REAL(KIND=mp) :: phi_sand, Wprime_sand, Qsand
+			REAL(KIND=mp) :: check, drough, ustar, vs
 
-        REAL, DIMENSION(8) :: cb
+        REAL(KIND=mp), DIMENSION(8) :: cb
         
-		REAL :: porosity, bedcoverage, gamma
-		REAL ::  sstc, ss, ca, ustart, rexp, za
-		REAL :: dz, tqsusp, csdepth, zcoord, h1, h2, tsusp
-        REAL :: cs_washload, tdz, tdn
+		REAL(KIND=mp) :: porosity, bedcoverage, gamma
+		REAL(KIND=mp) ::  sstc, ss, ca, ustart, rexp, za
+		REAL(KIND=mp) :: dz, tqsusp, csdepth, zcoord, h1, h2, tsusp
+        REAL(KIND=mp) :: cs_washload, tdz, tdn
 
         INTEGER :: ierr
             bedporosity = 0.3
@@ -1057,9 +1057,9 @@
         ! NOTE: for a sphere, p=6.0, csf=1.0; for natural sediments csf=0.7.
         ! Function by Francisco Simoes, March 1999.
 
-        REAL(KIND=8), INTENT(IN) :: d,nu,s,g,p,csf
-        REAL(KIND=8) :: dstar,logdstar,r1,r2,r3,tanhdstar,wstar
-        REAL(KIND=8), PARAMETER :: one=1.0
+        REAL(KIND=mp), INTENT(IN) :: d,nu,s,g,p,csf
+        REAL(KIND=mp) :: dstar,logdstar,r1,r2,r3,tanhdstar,wstar
+        REAL(KIND=mp), PARAMETER :: one=1.0
 
         dstar = (s-one)*g*d**3/(nu*nu)
         logdstar = LOG10(dstar)
@@ -1078,11 +1078,11 @@
       SUBROUTINE TCRIT(D, KV, TC)
 !! Based on Shields 1984 all units in MKS.
       IMPLICIT NONE
-            REAL(KIND=8), INTENT(IN) :: D, KV
-            REAL, INTENT(OUT) :: TC
+            REAL(KIND=mp), INTENT(IN) :: D, KV
+            REAL(KIND=mp), INTENT(OUT) :: TC
             
-            REAL :: DSTAR, TAUCRIT
-            REAL :: RELDEN, G
+            REAL(KIND=mp) :: DSTAR, TAUCRIT
+            REAL(KIND=mp) :: RELDEN, G
             
             RELDEN = 1.650
             G = 9.81

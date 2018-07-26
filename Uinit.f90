@@ -6,13 +6,13 @@
 	CONTAINS
 	  subroutine uinit(u,v,hav,w,eta,q,ibc)
 	  IMPLICIT NONE
-        REAL, DIMENSION(ns, nn), INTENT(INOUT) :: u, v
-	  REAL, DIMENSION(ns, nn), INTENT(IN) :: eta
-        INTEGER, DIMENSION(ns, nn), INTENT(IN) :: ibc
-	  REAL, DIMENSION(ns), INTENT(IN) ::w, hav	
-	  REAL, INTENT(IN) :: q
+      REAL(kind = mp), DIMENSION(ns, nn), INTENT(INOUT) :: u, v
+	  REAL(kind = mp), DIMENSION(ns, nn), INTENT(IN) :: eta
+      INTEGER, DIMENSION(ns, nn), INTENT(IN) :: ibc
+	  REAL(kind = mp), DIMENSION(ns), INTENT(IN) ::w, hav	
+	  REAL(kind = mp), INTENT(IN) :: q
 	  INTEGER :: i, j, ibtot, count
-	  REAL :: deln, depave, twidth, ubar, qpred
+	  REAL(kind = mp) :: deln, depave, twidth, ubar, qpred
         do 30 i=1,ns
         deln=w(i)/(nn-1)
         depave=0.
@@ -76,15 +76,15 @@
         
 	  subroutine VarDischUInit(u,v,w,eta,e,ibc, q, stageChange)
 	  IMPLICIT NONE
-        REAL, DIMENSION(ns, nn), INTENT(INOUT) :: u, v, e
-	  REAL, DIMENSION(ns), INTENT(IN) ::w
-	  REAL, DIMENSION(ns, nn), INTENT(IN) :: eta
-        INTEGER, DIMENSION(ns, nn), INTENT(INOUT) :: ibc
-	  REAL, INTENT(IN) :: stageChange	
-	  REAL, INTENT(IN) :: q
+      REAL(kind = mp), DIMENSION(ns, nn), INTENT(INOUT) :: u, v, e
+	  REAL(kind = mp), DIMENSION(ns), INTENT(IN) ::w
+	  REAL(kind = mp), DIMENSION(ns, nn), INTENT(IN) :: eta
+      INTEGER, DIMENSION(ns, nn), INTENT(INOUT) :: ibc
+	  REAL(kind = mp), INTENT(IN) :: stageChange	
+	  REAL(kind = mp), INTENT(IN) :: q
 	  
 	  INTEGER :: i, j, ibtot, count
-	  REAL :: deln, depave, twidth, ubar, qpred, depth
+	  REAL(kind = mp) :: deln, depave, twidth, ubar, qpred, depth
 	  
         do 30 i=1,1
             deln=w(i)/(nn-1)
@@ -145,14 +145,14 @@
         
 	  subroutine VarDischUBInit(u,v,w,eta,e,ibc, q)
 	  IMPLICIT NONE
-        REAL, DIMENSION(ns, nn), INTENT(INOUT) :: u, v, e
-	  REAL, DIMENSION(ns), INTENT(IN) ::w
-	  REAL, DIMENSION(ns, nn), INTENT(IN) :: eta
-        INTEGER, DIMENSION(ns, nn), INTENT(INOUT) :: ibc
-	  REAL, INTENT(IN) :: q
+      REAL(kind = mp), DIMENSION(ns, nn), INTENT(INOUT) :: u, v, e
+	  REAL(kind = mp), DIMENSION(ns), INTENT(IN) ::w
+	  REAL(kind = mp), DIMENSION(ns, nn), INTENT(IN) :: eta
+      INTEGER, DIMENSION(ns, nn), INTENT(INOUT) :: ibc
+	  REAL(kind = mp), INTENT(IN) :: q
 	  
 	  INTEGER :: i, j, ibtot, count
-	  REAL :: deln, depave, twidth, ubar, qpred, depth
+	  REAL(kind = mp) :: deln, depave, twidth, ubar, qpred, depth
 	  
         do 30 i=ns,ns
             deln=w(i)/(nn-1)
@@ -220,14 +220,14 @@
 
 	REAL FUNCTION GetDepthWieght(i, j, depave)
 		INTEGER, INTENT(IN):: i, j
-		REAL, INTENT(IN)::depave
+		REAL(kind = mp), INTENT(IN)::depave
 		GetDepthWieght = ((hav(i)-eta(i,j))**vdc)/depave
 	END FUNCTION
 
 	REAL FUNCTION GetVelocityWieght(i,nn)
 		INTEGER, INTENT(IN) :: i,nn
 		INTEGER :: count
-		REAL :: val
+		REAL(kind = mp) :: val
 		val = real(i)/real(nn)
 		count = 1
 		DO WHILE(vbcdist(count) <= val)
@@ -243,7 +243,7 @@
 	REAL FUNCTION GetAngleWieght(i,nn)
 	INTEGER, INTENT(IN) :: i, nn
 	INTEGER :: count
-	REAL :: val
+	REAL(kind = mp) :: val
 	val = real(i)/real(nn)
 	count = count - 1
 	DO WHILE (vbcdist(count) <= val)

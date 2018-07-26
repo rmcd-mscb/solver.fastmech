@@ -4,13 +4,13 @@
 	IMPLICIT NONE
 
 	INTEGER, ALLOCATABLE, DIMENSION(:) :: isw
-	REAL, ALLOCATABLE, DIMENSION(:) :: dea, eav, am, bm, ccm, dm, em, qp
-	REAL, ALLOCATABLE, DIMENSION(:) :: qprms
-!	REAL, ALLOCATABLE, DIMENSION(:,:) :: u, v, e
-	REAL, ALLOCATABLE, DIMENSION(:,:) :: dqsde, dqnde, qv, qu, dq, de
-	REAL, ALLOCATABLE, DIMENSION(:,:) :: dude, dvde, dqe, vout, uout, eka
-	REAL, ALLOCATABLE, DIMENSION(:,:) :: dsu, dne, dnq, dsv, dse, dsq
-	REAL, ALLOCATABLE, DIMENSION(:,:) :: dnu, dnv
+	REAL(kind = mp), ALLOCATABLE, DIMENSION(:) :: dea, eav, am, bm, ccm, dm, em, qp
+	REAL(kind = mp), ALLOCATABLE, DIMENSION(:) :: qprms
+!	REAL(kind = mp), ALLOCATABLE, DIMENSION(:,:) :: u, v, e
+	REAL(kind = mp), ALLOCATABLE, DIMENSION(:,:) :: dqsde, dqnde, qv, qu, dq, de
+	REAL(kind = mp), ALLOCATABLE, DIMENSION(:,:) :: dude, dvde, dqe, vout, uout, eka
+	REAL(kind = mp), ALLOCATABLE, DIMENSION(:,:) :: dsu, dne, dnq, dsv, dse, dsq
+	REAL(kind = mp), ALLOCATABLE, DIMENSION(:,:) :: dnu, dnv
 	INTEGER, ALLOCATABLE, DIMENSION(:,:) :: npos
 	CONTAINS
 	SUBROUTINE alloc_working()

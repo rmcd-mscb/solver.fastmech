@@ -16,7 +16,7 @@ SUBROUTINE CGNS2_READ_GRIDCOORD(IER)
 	INTEGER, INTENT(OUT) :: IER
 	INTEGER :: status, i, j, count, countji, ierror
 	INTEGER :: tmpnn, tmpns
-	REAL*8, ALLOCATABLE, DIMENSION(:,:) :: tmpx1, tmpy1
+	REAL(kind = mp), ALLOCATABLE, DIMENSION(:,:) :: tmpx1, tmpy1
 !	REAL*8, ALLOCATABLE, DIMENSION(:) :: tmpx, tmpy
 	
 	CALL CG_IRIC_GOTOGRIDCOORD2D_F(tmpns, tmpnn, IER)

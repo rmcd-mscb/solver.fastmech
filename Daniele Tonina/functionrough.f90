@@ -9,9 +9,9 @@
 ! Fs is the areal fraction of sand	
 
 
-
-	REAL A1, A2, P
-	REAL FS
+    INTEGER, PARAMETER :: mp = KIND(1.0D0)
+	REAL(kind = mp) A1, A2, P
+	REAL(kind = mp) FS
 	
 	x0=0.5
 

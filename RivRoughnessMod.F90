@@ -4,7 +4,7 @@ MODULE RivRoughnessMod
 	USE CalcCond
 	IMPLICIT NONE
 !	REAL, ALLOCATABLE, DIMENSION(:,:) :: ribc
-	REAL, ALLOCATABLE, DIMENSION(:) :: ribcvals
+	REAL(KIND=mp), ALLOCATABLE, DIMENSION(:) :: ribcvals
 	INTEGER :: numRoughnessRegions
 	
 !! ribc:         Is an array which specifies the region of the node
@@ -16,10 +16,10 @@ MODULE RivRoughnessMod
 	CONTAINS
 	    SUBROUTINE setRoughness(ns, nn, roughnessType, q, cd, znaught)
 	        INTEGER, INTENT(IN) :: ns, nn, roughnessType
-	        REAL, INTENT(IN) :: q
-	        REAL, INTENT(INOUT) :: cd(:,:), znaught(:,:)
+	        REAL(KIND=mp), INTENT(IN) :: q
+	        REAL(KIND=mp), INTENT(INOUT) :: cd(:,:), znaught(:,:)
 	        INTEGER :: i,j, tmpcd
-	        REAL :: ratingval
+	        REAL(KIND=mp) :: ratingval
 	        
 	        DO i = 1,ns
 	            DO j = 1, nn
@@ -103,7 +103,7 @@ MODULE RivRoughnessMod
 
         SUBROUTINE setRoughnessIBC(val)
         IMPLICIT NONE
-	        REAL, INTENT(IN) :: val(:)
+	        REAL(KIND=mp), INTENT(IN) :: val(:)
 	        INTEGER :: i, j, count, countji
 			DO i = 1, ns2
 				DO j = 1, nn
@@ -116,7 +116,7 @@ MODULE RivRoughnessMod
 
         SUBROUTINE setRoughnessIBCVals(val)
         IMPLICIT NONE
-	        REAL, INTENT(IN) :: val(:)
+	        REAL(KIND=mp), INTENT(IN) :: val(:)
 	        INTEGER :: i, j, count, status
 			DO i = 1, numRoughnessRegions
 			    SELECT CASE(roughnessType)

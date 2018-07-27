@@ -61,10 +61,10 @@
         u(i,j)=u(i,j)*q/qpred
 	  if(i.eq.1) then
 	      if(vbc == 1 .and. ibc(i,j).ne.0) then
-	          v(1,j) = u(1,j)*tand(GetAngleWieght(count, ibtot))
+	          v(1,j) = u(1,j)*tan(GetAngleWieght(count, ibtot))
 	          count = count+1
 	      else
-		        v(1,j)=u(1,j)*tand(vac)
+		        v(1,j)=u(1,j)*dtan(vac)
 		    endif
         else
         v(i,j)=0.
@@ -134,7 +134,7 @@
             do 28 j=1,nn
                 u(i,j)=u(i,j)*q/qpred
 	          if(i.eq.1) then
-		            v(1,j)=-1.*u(1,j)*tand(vac)
+		            v(1,j)=-1.*u(1,j)*dtan(vac)
                 else
                     v(i,j)=0.
                 endif
@@ -203,7 +203,7 @@
             do 28 j=1,nn
                 u(i,j)=u(i,j)*q/qpred
 	          if(i.eq.1) then
-		            v(1,j)=-1.*u(1,j)*tand(vacds)
+		            v(1,j)=-1.*u(1,j)*dtan(vacds)
                 else
                     v(i,j)=0.
                 endif

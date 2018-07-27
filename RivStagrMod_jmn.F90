@@ -80,7 +80,7 @@ MODULE RivStagr4Mod_jmn
 	CALL read_iRIC_CGNS(STR_IN)
 	   
 	   imod = hiterinterval
-	   if(hcalcwetting == .TRUE.) then
+	   if(hcalcwetting) then
 		iwetdry = 1
 	   else
 		iwetdry = 0
@@ -116,18 +116,18 @@ MODULE RivStagr4Mod_jmn
 !    CALL Delete_clusters(ibc, icon, nclusters, nwetnodes)
     noldwetnodes = nwetnodes
 
-	if(HotStart.eq..FALSE.) then 
+	if(HotStart.eqv..FALSE.) then
 		CALL einit(e, hl, eta, ibc, w, hav)
 		call uinit(u,v,hav,w,eta,q,ibc)
 		if(errorcode < 0) then
 			!call write_error_CGNS(STR_IN)
             CALL dealloc_common2d()
-            if(vbc) then
+            if(vbc == 1) then
                 CALL DEALLOC_VELBC()
             endif
             if(CALCQUASI3D) then
                 CALL dealloc_common3d()
-                if(TRANSEQTYPE) THEN
+                if(TRANSEQTYPE == 1) THEN
                     CAll dealloc_csed3d_dt()
                 ENDIF
             endif
@@ -186,7 +186,7 @@ MODULE RivStagr4Mod_jmn
              endif
         endif
         
-        if(CALCCSED.eq..FALSE.) then
+        if(CALCCSED.eqv..FALSE.) then
             vardt = dt
         endif
 
@@ -590,13 +590,13 @@ MODULE RivStagr4Mod_jmn
 		if(errorcode.eq.-1) then
 			!call write_error_CGNS(STR_IN)
 			CALL dealloc_common2d()
-            if(vbc) then
+            if(vbc == 1) then
                 CALL DEALLOC_VELBC()
             endif
 
             if(CALCQUASI3D) then
                 CALL dealloc_common3d()
-                if(TRANSEQTYPE) THEN
+                if(TRANSEQTYPE == 1) THEN
                     CAll dealloc_csed3d_dt()
                 ENDIF
             endif
@@ -641,13 +641,13 @@ MODULE RivStagr4Mod_jmn
 		        if(errorcode.eq.-1) then
 			        !call write_error_CGNS(STR_IN)
 			        CALL dealloc_common2d()
-                    if(vbc) then
+                    if(vbc == 1) then
                         CALL DEALLOC_VELBC()
                     endif
 
                     if(CALCQUASI3D) then
                         CALL dealloc_common3d()
-                        if(TRANSEQTYPE) THEN
+                        if(TRANSEQTYPE == 1) THEN
                             CAll dealloc_csed3d_dt()
                         ENDIF
                     endif
@@ -744,13 +744,13 @@ MODULE RivStagr4Mod_jmn
 			!call write_error_CGNS(STR_IN)
 !			call dealloc_all()
            CALL dealloc_common2d()
-            if(vbc) then
+            if(vbc == 1) then
                 CALL DEALLOC_VELBC()
             endif
 
             if(CALCQUASI3D) then
                 CALL dealloc_common3d()
-                if(TRANSEQTYPE) THEN
+                if(TRANSEQTYPE == 1) THEN
                     CAll dealloc_csed3d_dt()
                 ENDIF
             endif
@@ -1097,7 +1097,7 @@ MODULE RivStagr4Mod_jmn
 	IMPLICIT NONE
 		CALL dealloc_working()
 	    CALL dealloc_common2d()
-        if(vbc) then
+        if(vbc == 1) then
             CALL DEALLOC_VELBC()
         endif
 	   
@@ -1110,7 +1110,7 @@ MODULE RivStagr4Mod_jmn
 	
             if(CALCQUASI3D) then
                 CALL dealloc_common3d()
-                if(TRANSEQTYPE) THEN
+                if(TRANSEQTYPE == 1) THEN
                     CAll dealloc_csed3d_dt()
                 ENDIF
             endif

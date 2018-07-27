@@ -96,17 +96,18 @@
 
 	RETURN
 
-	END
+	END SUBROUTINE BETAVOL
 
 
 	
-	real function  meandt(X,rows)
+    function  meandt(X,rows) result(j)
 	
 	IMPLICIT NONE
     INTEGER, PARAMETER :: mp = KIND(1.0D0)
 	INTEGER i, rows
 	REAL(kind=mp)  X(rows)
 	REAL(kind=mp) sum
+	REAL(kind=mp) j
 	
 
 	sum=0.0
@@ -114,20 +115,22 @@
 		sum=sum+X(i)
 	ENDDO
 	
-	meandt=sum/real(rows)
+	j=sum/real(rows)
 	
 	RETURN
 
-	END
+	END function meandt
 
-	real function  stdevdt(X,rows)
+	function  stdevdt(X,rows) result(j)
 	
 	IMPLICIT NONE
     INTEGER, PARAMETER :: mp = KIND(1.0D0)
 	INTEGER i, rows
 	REAL(kind=mp)  X(rows), mean
 	REAL(kind=mp) sum, RN, meandt
-	
+	REAL(kind=mp) j
+
+
 	mean=meandt(X,rows)
 
 	sum=0.0
@@ -137,10 +140,10 @@
 
 	ENDDO
 	
-	RN=real((rows-1))
-	stdevdt=SQRT(sum/RN)
+!	RN=dble(rows-1))
+	j=SQRT(sum/dble(rows-1))
 	
 	
 	RETURN
 
-	END
+	END function stdevdt

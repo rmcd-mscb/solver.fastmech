@@ -65,8 +65,8 @@
 			
 	        REAL(KIND=mp) :: mintdt, maxtdt, tdt
 	        REAL(KIND=mp) :: tmpdepth
-		    REAL(KIND=8) :: tdd
-		    REAL(KIND =8) :: t, csf, p, s, ws, kv
+		    REAL(KIND=mp) :: tdd
+		    REAL(KIND =mp) :: t, csf, p, s, ws, kv
 
 !			CALL alloc_csed()
 			runid='test 			  '

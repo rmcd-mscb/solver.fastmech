@@ -17,9 +17,10 @@
     implicit none
       INTEGER(4) count, num, i, status
       CHARACTER(250) buf  
-      count = NARGS()
+!      count = NARGS()
       
-      CALL GETARG(1, buf, status)
+!      CALL GETARG(1, buf, status)
+      CALL GETARG(1, buf) !gnu fortran only take 2 args
           IF (status .lt. 0) THEN
             WRITE (*,*) 'GETARG error - exiting'
 !            EXIT

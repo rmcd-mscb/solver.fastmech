@@ -25,7 +25,7 @@ MODULE RivRoughnessMod
 	            DO j = 1, nn
 	                if(ribc(i,j) >= 0) then
 !	                write(6,*) ribc(i,j), ribcvals(ribc(i,j))
-                        if(AMod(cd(i,j), 1.) == 0) then
+                        if(DMod(cd(i,j), 1.0D0) == 0) then
   	                        ratingval = ribcvals(ribc(i,j)+1)
                         else if (roughnessType == 0) then
                             ratingval = cd(i,j)

@@ -123,10 +123,10 @@ IMPLICIT NONE
 INTEGER, INTENT(OUT) :: IER
 
 INTEGER :: status, i, j, count, ierror
-REAL*8 :: rwork(1), ttt
-REAL*4 :: tmpreal
+REAL(kind = mp) :: rwork(1), ttt
+REAL(kind = mp) :: tmpreal
 INTEGER, DIMENSION(1) :: tint
-REAL, DIMENSION(:), ALLOCATABLE :: treal
+REAL(kind = mp), DIMENSION(:), ALLOCATABLE :: treal
 INTEGER :: iwork(1), tmpint
 REAL(KIND=mp), DIMENSION(:), ALLOCATABLE :: xtmp, ytmp, ztmp
 REAL(KIND=mp), DIMENSION(:), ALLOCATABLE :: dischT, dischQ, stageT, StageQ, stageH

@@ -13,7 +13,7 @@
 	        do j = 1,nn
 	            tmp1 = log(hl(i,j)/znaught(i,j)) - 1
 !	            tmp2 = 
-	            cd(i,j) = ((1/vck)*tmp1)**-2
+	            cd(i,j) = ((1/vck)*tmp1)**(-2)
 	            if(cd(i,j) < cdmin)then  
 		            cd(i,j) = cdmin
 		        endif
@@ -234,7 +234,7 @@
          endif
         endif
         if(abs(rs(i,j)).lt.MinRS) then
-         rs(i,j)=MinRS*sign(1.,rs(i,j))
+         rs(i,j)=MinRS*dsign(1.0D0,rs(i,j))
         endif
         taux=ustr2(i,j)*hl(i,j)/(rn(i,j)*rs(i,j)) 
         vs=((ftwo(i,j)/fone(i,j))-f3(i,j,1))
@@ -280,7 +280,7 @@
         do 750 i=1,ns
         do 750 j=1,nn
         if(abs(rs(i,j)).lt.MinRS) then
-         rs(i,j)=MinRS*sign(1.,rs(i,j))
+         rs(i,j)=MinRS*dsign(1.0D0,rs(i,j))
         endif
         taux=ustr2(i,j)*hl(i,j)/(rn(i,j)*rs(i,j)) 
         vs=((ftwo(i,j)/fone(i,j))-f3(i,j,1))

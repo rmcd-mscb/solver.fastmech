@@ -48,7 +48,6 @@ SET(Fastmech_iRICv3_SOURCES
 CsedMod.f90
 CsedMod_DT.f90
 Einit.f90
-falveld.F90
 GeometryMod.F90
 Median.f90
 RivCalcInitCond.F90
@@ -79,11 +78,15 @@ include_directories("${IRIC_INC}")
 # library dependencies
 if(WIN32)
   find_library(CGNS_LIBRARY cgnsdll)
+  find_library(HDF5_LIBRARY hdf5)
+  find_library(IRICLIB_LIBRARY iriclib)
 else()
-  find_library(CGNS_LIBRARY cgns)
+  find_library(CGNS_LIBRARY libcgns)
+  find_library(HDF5_LIBRARY libhdf5)
+  find_library(IRICLIB_LIBRARY libiriclib)
 endif()
-find_library(HDF5_LIBRARY hdf5)
-find_library(IRICLIB_LIBRARY iriclib)
+#find_library(HDF5_LIBRARY hdf5)
+#find_library(IRICLIB_LIBRARY iriclib)
 SET(EXTRA_LIBS ${EXTRA_LIBS} ${IRICLIB_LIBRARY} ${CGNS_LIBRARY} ${HDF5_LIBRARY})
 
 # link

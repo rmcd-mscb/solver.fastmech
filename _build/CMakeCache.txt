@@ -72,7 +72,7 @@ CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=OFF
 CMAKE_Fortran_COMPILER:FILEPATH=/usr/bin/f95
 
 //Flags for Fortran compiler.
-CMAKE_Fortran_FLAGS:STRING=-fdefault-real-16
+CMAKE_Fortran_FLAGS:STRING=
 
 //Flags used by the compiler during debug builds.
 CMAKE_Fortran_FLAGS_DEBUG:STRING=-g
@@ -213,13 +213,13 @@ CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 CMAKE_STRIP:FILEPATH=/usr/bin/strip
 
 //If true, cmake will use relative paths in makefiles and projects.
-CMAKE_USE_RELATIVE_PATHS:BOOL=OFF
+CMAKE_USE_RELATIVE_PATHS:BOOL=ON
 
 //If this value is on, makefiles will be generated without the
 // .SILENT directive, and all commands will be echoed to the console
 // during the make.  This is useful for debugging only. With Visual
 // Studio IDE projects all commands are done without /nologo.
-CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
+CMAKE_VERBOSE_MAKEFILE:BOOL=ON
 
 //Value Computed by CMake
 Fastmech_iRICv3_BINARY_DIR:STATIC=/home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build
@@ -408,8 +408,12 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_USE_RELATIVE_PATHS
 CMAKE_USE_RELATIVE_PATHS-ADVANCED:INTERNAL=1
+//MODIFIED property for variable: CMAKE_USE_RELATIVE_PATHS
+CMAKE_USE_RELATIVE_PATHS-MODIFIED:INTERNAL=ON
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//MODIFIED property for variable: CMAKE_VERBOSE_MAKEFILE
+CMAKE_VERBOSE_MAKEFILE-MODIFIED:INTERNAL=ON
 //MODIFIED property for variable: HDF5_LIBRARY
 HDF5_LIBRARY-MODIFIED:INTERNAL=ON
 //MODIFIED property for variable: IRICLIB_LIBRARY

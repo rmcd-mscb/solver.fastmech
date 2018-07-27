@@ -16,6 +16,9 @@ SUFFIXES =
 
 .SUFFIXES: .hpux_make_needs_suffix_list
 
+# Produce verbose output by default.
+VERBOSE = 1
+
 # Suppress display of executed commands.
 $(VERBOSE).SILENT:
 
@@ -515,14 +518,6 @@ WriteCGNS.F90.o:
 	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/WriteCGNS.F90.o
 .PHONY : WriteCGNS.F90.o
 
-falveld.o: falveld.F90.o
-.PHONY : falveld.o
-
-# target to build an object file
-falveld.F90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/falveld.F90.o
-.PHONY : falveld.F90.o
-
 iriclibf.o: iriclibf.f90.o
 .PHONY : iriclibf.o
 
@@ -605,7 +600,6 @@ help:
 	@echo "... Uinit.o"
 	@echo "... Welcome.o"
 	@echo "... WriteCGNS.o"
-	@echo "... falveld.o"
 	@echo "... iriclibf.o"
 	@echo "... stressDivMod.o"
 	@echo "... tridag.o"

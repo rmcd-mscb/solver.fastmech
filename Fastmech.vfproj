@@ -35,7 +35,7 @@
 				<Tool Name="VFPostBuildEventTool"/>
 				<Tool Name="VFManifestTool" SuppressStartupBanner="true"/></Configuration>
 		<Configuration Name="Release|x64" DeleteExtensionsOnClean="*.obj;*.mod;*.pdb;*.asm;*.map;*.dyn;*.dpi;*.tmp;*.log;*.ilk;*.exe;$(TargetPath)">
-				<Tool Name="VFFortranCompilerTool" SuppressStartupBanner="true" AdditionalIncludeDirectories="libs_06_07_18\." EnableRecursion="true" ReentrantCode="reentrancyThreaded" RealKIND="realKIND8" ModulePath="$(INTDIR)/" ObjectFile="$(INTDIR)/" BuildDependencies="true" EmitBuildDependencies="true" Traceback="true" OutputCarriageControl="outputCCFortran" RuntimeLibrary="rtMultiThreadedDLL"/>
+				<Tool Name="VFFortranCompilerTool" AdditionalOptions="/stand:f95" SuppressStartupBanner="true" AdditionalIncludeDirectories="libs_06_07_18\." EnableRecursion="true" ReentrantCode="reentrancyThreaded" RealKIND="realKIND8" ModulePath="$(INTDIR)/" ObjectFile="$(INTDIR)/" BuildDependencies="true" EmitBuildDependencies="true" Traceback="true" OutputCarriageControl="outputCCFortran" RuntimeLibrary="rtMultiThreadedDLL"/>
 				<Tool Name="VFLinkerTool" OutputFile="$(OUTDIR)/Fastmech.exe" LinkIncremental="linkIncrementalYes" SuppressStartupBanner="true" AdditionalLibraryDirectories="libs_06_07_18\." SubSystem="subSystemConsole" HeapReserveSize="100000000" HeapCommitSize="100000000" StackReserveSize="1000000000" StackCommitSize="1000000000" AdditionalDependencies="cgnsdll_x64_ifort.lib iriclib_x64_ifort.lib"/>
 				<Tool Name="VFResourceCompilerTool"/>
 				<Tool Name="VFMidlTool" SuppressStartupBanner="true" TargetEnvironment="midlTargetAMD64" HeaderFileName="$(InputName).h" TypeLibraryName="$(IntDir)/$(InputName).tlb"/>

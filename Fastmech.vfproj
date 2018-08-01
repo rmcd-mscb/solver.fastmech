@@ -35,7 +35,7 @@
 				<Tool Name="VFPostBuildEventTool"/>
 				<Tool Name="VFManifestTool" SuppressStartupBanner="true"/></Configuration>
 		<Configuration Name="Release|x64" DeleteExtensionsOnClean="*.obj;*.mod;*.pdb;*.asm;*.map;*.dyn;*.dpi;*.tmp;*.log;*.ilk;*.exe;$(TargetPath)">
-				<Tool Name="VFFortranCompilerTool" AdditionalOptions="/stand:f95" SuppressStartupBanner="true" AdditionalIncludeDirectories="libs_06_07_18\." EnableRecursion="true" ReentrantCode="reentrancyThreaded" RealKIND="realKIND8" ModulePath="$(INTDIR)/" ObjectFile="$(INTDIR)/" BuildDependencies="true" EmitBuildDependencies="true" Traceback="true" OutputCarriageControl="outputCCFortran" RuntimeLibrary="rtMultiThreadedDLL"/>
+				<Tool Name="VFFortranCompilerTool" SuppressStartupBanner="true" AdditionalIncludeDirectories="libs_06_07_18\." EnableRecursion="true" ReentrantCode="reentrancyThreaded" RealKIND="realKIND8" ModulePath="$(INTDIR)/" ObjectFile="$(INTDIR)/" BuildDependencies="true" EmitBuildDependencies="true" Traceback="true" OutputCarriageControl="outputCCFortran" RuntimeLibrary="rtMultiThreadedDLL"/>
 				<Tool Name="VFLinkerTool" OutputFile="$(OUTDIR)/Fastmech.exe" LinkIncremental="linkIncrementalYes" SuppressStartupBanner="true" AdditionalLibraryDirectories="libs_06_07_18\." SubSystem="subSystemConsole" HeapReserveSize="100000000" HeapCommitSize="100000000" StackReserveSize="1000000000" StackCommitSize="1000000000" AdditionalDependencies="cgnsdll_x64_ifort.lib iriclib_x64_ifort.lib"/>
 				<Tool Name="VFResourceCompilerTool"/>
 				<Tool Name="VFMidlTool" SuppressStartupBanner="true" TargetEnvironment="midlTargetAMD64" HeaderFileName="$(InputName).h" TypeLibraryName="$(IntDir)/$(InputName).tlb"/>
@@ -165,56 +165,54 @@
 				<Tool Name="VFPostBuildEventTool"/>
 				<Tool Name="VFManifestTool" SuppressStartupBanner="true"/></Configuration></Configurations>
 	<Files>
-		<Filter Name="DT_Wilcox_Kenworthy">
-		<File RelativePath=".\Daniele Tonina\betaCDFandINV.f90"/>
-		<File RelativePath=".\Daniele Tonina\betavol.f90"/>
-		<File RelativePath=".\Daniele Tonina\elevdt.f90"/>
-		<File RelativePath=".\Daniele Tonina\functionrough.f90"/>
-		<File RelativePath=".\Daniele Tonina\initdt.f90"/>
-		<File RelativePath=".\Daniele Tonina\initHdt.f90"/>
-		<File RelativePath=".\Daniele Tonina\initimeta.f90"/>
-		<File RelativePath=".\Daniele Tonina\rough.f90"/>
-		<File RelativePath=".\Daniele Tonina\roughnessinv.f90"/>
-		<File RelativePath=".\Daniele Tonina\volfrac.f90"/></Filter>
-		<Filter Name="iRIC">
-		<File RelativePath=".\CalcCondMod.F90"/>
-		<File RelativePath=".\GridCondMod.F90"/>
-		<File RelativePath=".\GridCoordMod.F90"/>
-		<File RelativePath=".\iriclibf.f90"/>
-		<File RelativePath=".\ReadCGNS.F90"/>
-		<File RelativePath=".\WriteCGNS.F90"/></Filter>
-		<Filter Name="Jim1d Code">
-		<File RelativePath=".\Jim1D Code\ParmSet.f90"/>
-		<File RelativePath=".\Jim1D Code\StbBkwOutput.f90"/>
-		<File RelativePath=".\Jim1D Code\StpBkwInput.f90"/>
-		<File RelativePath=".\Jim1D Code\Support.f90"/>
-		<File RelativePath=".\Jim1D Code\xAnlzFlow.f90"/>
-		<File RelativePath=".\Jim1D Code\xFArea2.f90"/>
-		<File RelativePath=".\Jim1D Code\xFChPreis.f90"/>
-		<File RelativePath=".\Jim1D Code\xFInput.f90"/>
-		<File RelativePath=".\Jim1D Code\xFlowSupport.F90"/>
-		<File RelativePath=".\Jim1D Code\xFMatInv.f90"/>
-		<File RelativePath=".\Jim1D Code\xFNetInitConds.f90"/>
-		<File RelativePath=".\Jim1D Code\xFNetPreisMain.f90"/>
-		<File RelativePath=".\Jim1D Code\xFTSBoundCond.f90"/></Filter>
 		<Filter Name="Resource Files" Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe"/>
-		<Filter Name="Source Files" Filter="f90;for;f;fpp;ftn;def;odl;idl">
-		<File RelativePath=".\CsedMod.f90"/>
-		<File RelativePath=".\CsedMod_DT.f90"/>
-		<File RelativePath="Einit.f90"/>
-		<File RelativePath=".\GeometryMod.F90"/>
-		<File RelativePath=".\RivCalcInitCond.F90"/>
-		<File RelativePath="RivConnectivityMod.F90"/>
-		<File RelativePath="RivRoughnessMod.F90"/>
-		<File RelativePath="RivStagrMod_jmn.F90"/>
-		<File RelativePath=".\RivVarMod.f90"/>
-		<File RelativePath="RivVarTimeMod.f90"/>
-		<File RelativePath="RivVarVertMod.f90"/>
-		<File RelativePath=".\RivVarWMod.f90"/>
-		<File RelativePath=".\RivVertMod2.f90"/>
-		<File RelativePath="Stagr_Console.f90"/>
-		<File RelativePath="stressDivMod.f90"/>
-		<File RelativePath=".\tridag.f90"/>
-		<File RelativePath=".\Uinit.f90"/>
-		<File RelativePath="Welcome.f90"/></Filter></Files>
+		<Filter Name="src">
+		<File RelativePath=".\src\betaCDFandINV.f90"/>
+		<File RelativePath=".\src\betavol.f90"/>
+		<File RelativePath=".\src\CalcCondMod.F90"/>
+		<File RelativePath=".\src\CsedMod.f90"/>
+		<File RelativePath=".\src\CsedMod_DT.f90"/>
+		<File RelativePath=".\src\Einit.f90"/>
+		<File RelativePath=".\src\elevdt.f90"/>
+		<File RelativePath=".\src\functionrough.f90"/>
+		<File RelativePath=".\src\GeometryMod.F90"/>
+		<File RelativePath=".\src\GridCondMod.F90"/>
+		<File RelativePath=".\src\GridCoordMod.F90"/>
+		<File RelativePath=".\src\initdt.f90"/>
+		<File RelativePath=".\src\initHdt.f90"/>
+		<File RelativePath=".\src\initimeta.f90"/>
+		<File RelativePath=".\src\iriclibf.f90"/>
+		<File RelativePath=".\src\Median.f90"/>
+		<File RelativePath=".\src\ParmSet.f90"/>
+		<File RelativePath=".\src\ReadCGNS.F90"/>
+		<File RelativePath=".\src\RivCalcInitCond.F90"/>
+		<File RelativePath=".\src\RivConnectivityMod.F90"/>
+		<File RelativePath=".\src\RivRoughnessMod.F90"/>
+		<File RelativePath=".\src\RivStagrMod_jmn.F90"/>
+		<File RelativePath=".\src\RivVarMod.f90"/>
+		<File RelativePath=".\src\RivVarTimeMod.f90"/>
+		<File RelativePath=".\src\RivVarVertMod.f90"/>
+		<File RelativePath=".\src\RivVarWMod.f90"/>
+		<File RelativePath=".\src\RivVertMod2.f90"/>
+		<File RelativePath=".\src\rough.f90"/>
+		<File RelativePath=".\src\roughnessinv.f90"/>
+		<File RelativePath=".\src\Stagr_Console.f90"/>
+		<File RelativePath=".\src\StbBkwOutput.f90"/>
+		<File RelativePath=".\src\StpBkwInput.f90"/>
+		<File RelativePath=".\src\stressDivMod.f90"/>
+		<File RelativePath=".\src\Support.f90"/>
+		<File RelativePath=".\src\tridag.f90"/>
+		<File RelativePath=".\src\Uinit.f90"/>
+		<File RelativePath=".\src\volfrac.f90"/>
+		<File RelativePath=".\src\Welcome.f90"/>
+		<File RelativePath=".\src\WriteCGNS.F90"/>
+		<File RelativePath=".\src\xAnlzFlow.f90"/>
+		<File RelativePath=".\src\xFArea2.f90"/>
+		<File RelativePath=".\src\xFChPreis.f90"/>
+		<File RelativePath=".\src\xFInput.f90"/>
+		<File RelativePath=".\src\xFlowSupport.F90"/>
+		<File RelativePath=".\src\xFMatInv.f90"/>
+		<File RelativePath=".\src\xFNetInitConds.f90"/>
+		<File RelativePath=".\src\xFNetPreisMain.f90"/>
+		<File RelativePath=".\src\xFTSBoundCond.f90"/></Filter></Files>
 	<Globals/></VisualStudioProject>

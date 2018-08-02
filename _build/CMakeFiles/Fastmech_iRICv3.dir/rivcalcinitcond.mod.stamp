@@ -1,5 +1,5 @@
-GFORTRAN module version '10' created from /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/RivCalcInitCond.F90
-MD5:cd9fabf6233a69d17ea1a9fc38bbaf69 -- If you edit this, you'll get what you deserve.
+GFORTRAN module version '10' created from ../src/RivCalcInitCond.F90
+MD5:92996a86fbbc1e58d315e3ca37f6fcc6 -- If you edit this, you'll get what you deserve.
 
 (() () () () () () () () () () () () () () () () () () () () () () ()
 () () () ())
@@ -162,9 +162,9 @@ UNKNOWN IMPLICIT-SAVE 0 0 ALLOCATABLE DIMENSION) (REAL 16 0 0 0 REAL ())
 79 'cgns2_read_calccondition' 'calccond' '' 1 ((PROCEDURE UNKNOWN-INTENT
 MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 0 UNKNOWN ()) 80
 0 (81) () 0 () () () 0 0)
-82 'cgns2_read_calccondtion_foralloc' 'calccond' '' 1 ((PROCEDURE
-UNKNOWN-INTENT MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 0
-UNKNOWN ()) 83 0 (84) () 0 () () () 0 0)
+82 'cgns2_read_cc_foralloc' 'calccond' '' 1 ((PROCEDURE UNKNOWN-INTENT
+MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 0 UNKNOWN ()) 83
+0 (84) () 0 () () () 0 0)
 85 'cgns2_read_gridcoord' 'gridcoord' '' 1 ((PROCEDURE UNKNOWN-INTENT
 MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 0 UNKNOWN ()) 86
 0 (87) () 0 () () () 0 0)
@@ -1868,73 +1868,73 @@ CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') ()) 0 () () () 0 0)
 64 'calcgravcorr' 0 65 'calcgridmetrics' 0 66 'calcquasi3d' 0 67
 'calcquasi3drs' 0 68 'calcsedauto' 0 69 'calcwsinitcond' 0 70 'ccm' 0 71
 'cd' 0 72 'cd2' 0 73 'cdmax' 0 74 'cdmin' 0 75 'cdtype' 0 76 'cdv' 0 77
-'cdv2' 0 78 'cgns2_read_calccondition' 0 79
-'cgns2_read_calccondtion_foralloc' 0 82 'cgns2_read_gridcoord' 0 85
-'cgnsfileid' 0 88 'cgnshsfile' 0 89 'chbc' 0 90 'checkflowexist' 0 91
-'chi' 0 92 'cm' 0 93 'con' 0 94 'constcd' 0 95 'corstpmlt' 0 96 'csed_dt'
-0 97 'csedmod_dt_susp' 0 103 'curv' 0 104 'curvn' 0 105 'curvs' 0 106
-'curxsc' 0 107 'd' 0 108 'd_swap' 0 109 'dbgiternum' 0 113 'dbgtimestep'
-0 114 'de' 0 115 'dea' 0 116 'dealloc_common2d' 0 117 'dealloc_common3d'
-0 118 'dealloc_csed3d_dt' 0 119 'dealloc_csed_dt' 0 120 'dealloc_init2d'
-0 121 'dealloc_ratingcurves' 0 122 'dealloc_timeseries' 0 123
-'dealloc_tsnames' 0 124 'dealloc_velbc' 0 125 'dealloc_vert' 0 126
-'dealloc_working' 0 127 'debugstop' 0 128 'dg' 0 129 'dhdn' 0 130 'dhds'
-0 131 'din' 0 132 'discharge' 0 133 'dischincrements' 0 134 'dischtsnum'
-0 135 'dm' 0 136 'dmat_solve' 0 137 'dn' 0 143 'dne' 0 144 'dnq' 0 145
-'dnu' 0 146 'dnv' 0 147 'dq' 0 148 'dqe' 0 149 'dqnde' 0 150 'dqsde' 0
-151 'dragtype' 0 152 'dref' 0 153 'dro' 0 154 'drytype' 0 155 'ds' 0 156
-'dsand' 0 157 'dse' 0 158 'dsq' 0 159 'dsu' 0 160 'dsv' 0 161 'dt' 0 162
-'dth' 0 163 'dthdn' 0 164 'dthds' 0 165 'dude' 0 166 'dum1' 0 167 'dum1a'
-0 168 'dvde' 0 169 'dzeta' 0 170 'dzp' 0 171 'e' 0 172 'e2' 0 173 'eav'
-0 174 'ecoef' 0 175 'eka' 0 176 'elevoffset' 0 177 'ellim' 0 178 'em' 0
-179 'endlev' 0 180 'erelax' 0 181 'errorcode' 0 182 'eta' 0 183 'eta2' 0
-184 'etol' 0 185 'evc' 0 186 'f1' 0 187 'f2' 0 188 'f3' 0 189 'falveld'
-0 190 'fcos' 0 198 'finc' 0 199 'finc1' 0 200 'finc2' 0 201 'findchelbc'
-0 202 'flumebndry' 0 208 'flwexst' 0 209 'fone' 0 210 'fracs' 0 211
-'fracs0' 0 212 'fsin' 0 213 'fsmin' 0 214 'ftwo' 0 215 'g1' 0 216 'g2' 0
-217 'geometrymod' 0 218 'getinterpratingcurvevalue' 0 219
-'getinterptimeseriesvalue' 0 224 'getnumrc' 0 229 'getnumts' 0 230
-'getrcnumpts' 0 231 'getrcnumsegments' 0 234 'getrcpt' 0 237
-'getrcsegment' 0 242 'gettsnumpts' 0 247 'gettsnumsegments' 0 250
-'gettspt' 0 253 'gettssegment' 0 258 'gg' 0 263 'gravcorrtype' 0 264
-'gravflatbedcorrcoef' 0 265 'gridcoord' 0 266 'gridnames3d' 0 267 'harea'
-0 268 'hav' 0 269 'hav2' 0 270 'havn' 0 271 'hcalcwetting' 0 272 'hd' 0
-273 'hfine' 0 274 'hfine0' 0 275 'hiterinterval' 0 276 'hiterstop' 0 277
-'hl' 0 278 'hmax' 0 279 'hmin' 0 280 'hotstart' 0 281 'hwmin' 0 282 'hwt'
-0 283 'i_re_flag_i' 0 284 'i_re_flag_o' 0 285 'i_tmp_count' 0 286 'iactv'
-0 287 'ibc' 0 288 'ibc2' 0 289 'icon' 0 290 'icountl' 0 291 'icountr' 0
-292 'ie' 0 293 'iedgel' 0 294 'iedger' 0 295 'ihl' 0 296 'iibc' 0 297
-'iloc' 0 298 'imeta' 0 299 'indxcrt' 0 300 'indxresist' 0 301 'initarrays'
-0 302 'initratingcurves' 0 303 'inittimeseries' 0 304 'insegment' 0 305
-'interitm' 0 310 'io_3doutput' 0 311 'io_cd' 0 312 'io_depth' 0 313
-'io_elev' 0 314 'io_harea' 0 315 'io_helix' 0 316 'io_ibc' 0 317
-'io_initvel' 0 318 'io_keg' 0 319 'io_shearsn' 0 320 'io_shearxy' 0 321
-'io_stressdiv' 0 322 'io_unitdisch' 0 323 'io_velsn' 0 324 'io_velstrain'
-0 325 'io_velxy' 0 326 'io_vort' 0 327 'io_wse' 0 328 'iplinc' 0 329 'isw'
-0 330 'iswitch' 0 331 'iter' 0 332 'iterationout' 0 333 'iterplout' 0
-334 'itersmx' 0 335 'itm' 0 336 'iu' 0 337 'iv' 0 338 'iwse' 0 339
-'jctelev' 0 340 'jctentrs' 0 341 'jctsecs' 0 342 'k' 0 343 'kind' 0 344
-'lbwse' 0 345 'levbegiter' 0 346 'levchangeiter' 0 347 'levenditer' 0
-348 'levtype' 0 349 'limsec' 0 350 'line_exp2imp_2d' 0 351
-'line_exp_is_degenerate_nd' 0 358 'line_imp_is_degenerate_2d' 0 363
-'lines_exp_int_2d' 0 368 'lines_imp_int_2d' 0 376 'lsub' 0 386
-'lsubactdepth' 0 387 'maxinteritermult' 0 388 'mineta' 0 389 'mineta2' 0
-390 'minrs' 0 391 'mo' 0 392 'mo2' 0 393 'mp' 0 394 'mp2' 0 395 'n_rest'
-0 396 'nbcloc' 0 397 'nch' 0 398 'ndiams' 0 399 'ndischarge' 0 400
-'netpreis2' 0 401 'netpreis2b' 0 412 'netpreismain' 0 415 'nm' 0 416 'nn'
-0 417 'nna' 0 418 'nnd' 0 419 'nochjcts' 0 420 'nodebalindx' 0 421
-'noneqsmooth' 0 422 'normq' 0 423 'npos' 0 428 'nprjct' 0 429 'nprm' 0
-430 'npt' 0 431 'ns' 0 432 'ns2' 0 433 'ns2a' 0 434 'nsa' 0 435 'nsc' 0
-436 'nsce' 0 437 'nscpte' 0 438 'nsext' 0 439 'nsextslope' 0 440 'nstage'
-0 441 'nsteps' 0 442 'ntbw' 0 443 'ntsbc' 0 444 'numratingcurves' 0 445
-'numtimeseries' 0 446 'numvbcpts' 0 447 'nz' 0 448 'oflwcrtcl' 0 449
-'oflwexst' 0 450 'ojctelev' 0 451 'oldxsc' 0 452 'onedcd' 0 453 'oplnxsc'
-0 454 'opt_tmp' 0 455 'paramset' 0 456 'paramsetmod' 0 457 'phi2' 0 458
-'phi_prime' 0 459 'phirotation' 0 460 'pi' 0 461 'plnxsc' 0 462 'point'
-0 463 'prmt' 0 464 'ptime' 0 465 'q' 0 466 'qn' 0 467 'qp' 0 468 'qprms'
-0 469 'qs' 0 470 'qsign' 0 471 'qsusp' 0 472 'qsuspn' 0 473 'qsusps' 0
-474 'qsuspxs' 0 475 'qtot' 0 476 'qu' 0 477 'qv' 0 478 'r' 0 479 'r2' 0
-480 'ratingcurvepts' 0 481 'ratingcurves' 0 482 'ratingcurvetype' 0 483
+'cdv2' 0 78 'cgns2_read_calccondition' 0 79 'cgns2_read_cc_foralloc' 0
+82 'cgns2_read_gridcoord' 0 85 'cgnsfileid' 0 88 'cgnshsfile' 0 89 'chbc'
+0 90 'checkflowexist' 0 91 'chi' 0 92 'cm' 0 93 'con' 0 94 'constcd' 0
+95 'corstpmlt' 0 96 'csed_dt' 0 97 'csedmod_dt_susp' 0 103 'curv' 0 104
+'curvn' 0 105 'curvs' 0 106 'curxsc' 0 107 'd' 0 108 'd_swap' 0 109
+'dbgiternum' 0 113 'dbgtimestep' 0 114 'de' 0 115 'dea' 0 116
+'dealloc_common2d' 0 117 'dealloc_common3d' 0 118 'dealloc_csed3d_dt' 0
+119 'dealloc_csed_dt' 0 120 'dealloc_init2d' 0 121 'dealloc_ratingcurves'
+0 122 'dealloc_timeseries' 0 123 'dealloc_tsnames' 0 124 'dealloc_velbc'
+0 125 'dealloc_vert' 0 126 'dealloc_working' 0 127 'debugstop' 0 128 'dg'
+0 129 'dhdn' 0 130 'dhds' 0 131 'din' 0 132 'discharge' 0 133
+'dischincrements' 0 134 'dischtsnum' 0 135 'dm' 0 136 'dmat_solve' 0 137
+'dn' 0 143 'dne' 0 144 'dnq' 0 145 'dnu' 0 146 'dnv' 0 147 'dq' 0 148
+'dqe' 0 149 'dqnde' 0 150 'dqsde' 0 151 'dragtype' 0 152 'dref' 0 153
+'dro' 0 154 'drytype' 0 155 'ds' 0 156 'dsand' 0 157 'dse' 0 158 'dsq' 0
+159 'dsu' 0 160 'dsv' 0 161 'dt' 0 162 'dth' 0 163 'dthdn' 0 164 'dthds'
+0 165 'dude' 0 166 'dum1' 0 167 'dum1a' 0 168 'dvde' 0 169 'dzeta' 0 170
+'dzp' 0 171 'e' 0 172 'e2' 0 173 'eav' 0 174 'ecoef' 0 175 'eka' 0 176
+'elevoffset' 0 177 'ellim' 0 178 'em' 0 179 'endlev' 0 180 'erelax' 0
+181 'errorcode' 0 182 'eta' 0 183 'eta2' 0 184 'etol' 0 185 'evc' 0 186
+'f1' 0 187 'f2' 0 188 'f3' 0 189 'falveld' 0 190 'fcos' 0 198 'finc' 0
+199 'finc1' 0 200 'finc2' 0 201 'findchelbc' 0 202 'flumebndry' 0 208
+'flwexst' 0 209 'fone' 0 210 'fracs' 0 211 'fracs0' 0 212 'fsin' 0 213
+'fsmin' 0 214 'ftwo' 0 215 'g1' 0 216 'g2' 0 217 'geometrymod' 0 218
+'getinterpratingcurvevalue' 0 219 'getinterptimeseriesvalue' 0 224
+'getnumrc' 0 229 'getnumts' 0 230 'getrcnumpts' 0 231 'getrcnumsegments'
+0 234 'getrcpt' 0 237 'getrcsegment' 0 242 'gettsnumpts' 0 247
+'gettsnumsegments' 0 250 'gettspt' 0 253 'gettssegment' 0 258 'gg' 0 263
+'gravcorrtype' 0 264 'gravflatbedcorrcoef' 0 265 'gridcoord' 0 266
+'gridnames3d' 0 267 'harea' 0 268 'hav' 0 269 'hav2' 0 270 'havn' 0 271
+'hcalcwetting' 0 272 'hd' 0 273 'hfine' 0 274 'hfine0' 0 275
+'hiterinterval' 0 276 'hiterstop' 0 277 'hl' 0 278 'hmax' 0 279 'hmin' 0
+280 'hotstart' 0 281 'hwmin' 0 282 'hwt' 0 283 'i_re_flag_i' 0 284
+'i_re_flag_o' 0 285 'i_tmp_count' 0 286 'iactv' 0 287 'ibc' 0 288 'ibc2'
+0 289 'icon' 0 290 'icountl' 0 291 'icountr' 0 292 'ie' 0 293 'iedgel' 0
+294 'iedger' 0 295 'ihl' 0 296 'iibc' 0 297 'iloc' 0 298 'imeta' 0 299
+'indxcrt' 0 300 'indxresist' 0 301 'initarrays' 0 302 'initratingcurves'
+0 303 'inittimeseries' 0 304 'insegment' 0 305 'interitm' 0 310
+'io_3doutput' 0 311 'io_cd' 0 312 'io_depth' 0 313 'io_elev' 0 314
+'io_harea' 0 315 'io_helix' 0 316 'io_ibc' 0 317 'io_initvel' 0 318
+'io_keg' 0 319 'io_shearsn' 0 320 'io_shearxy' 0 321 'io_stressdiv' 0
+322 'io_unitdisch' 0 323 'io_velsn' 0 324 'io_velstrain' 0 325 'io_velxy'
+0 326 'io_vort' 0 327 'io_wse' 0 328 'iplinc' 0 329 'isw' 0 330 'iswitch'
+0 331 'iter' 0 332 'iterationout' 0 333 'iterplout' 0 334 'itersmx' 0
+335 'itm' 0 336 'iu' 0 337 'iv' 0 338 'iwse' 0 339 'jctelev' 0 340
+'jctentrs' 0 341 'jctsecs' 0 342 'k' 0 343 'kind' 0 344 'lbwse' 0 345
+'levbegiter' 0 346 'levchangeiter' 0 347 'levenditer' 0 348 'levtype' 0
+349 'limsec' 0 350 'line_exp2imp_2d' 0 351 'line_exp_is_degenerate_nd' 0
+358 'line_imp_is_degenerate_2d' 0 363 'lines_exp_int_2d' 0 368
+'lines_imp_int_2d' 0 376 'lsub' 0 386 'lsubactdepth' 0 387
+'maxinteritermult' 0 388 'mineta' 0 389 'mineta2' 0 390 'minrs' 0 391 'mo'
+0 392 'mo2' 0 393 'mp' 0 394 'mp2' 0 395 'n_rest' 0 396 'nbcloc' 0 397
+'nch' 0 398 'ndiams' 0 399 'ndischarge' 0 400 'netpreis2' 0 401
+'netpreis2b' 0 412 'netpreismain' 0 415 'nm' 0 416 'nn' 0 417 'nna' 0
+418 'nnd' 0 419 'nochjcts' 0 420 'nodebalindx' 0 421 'noneqsmooth' 0 422
+'normq' 0 423 'npos' 0 428 'nprjct' 0 429 'nprm' 0 430 'npt' 0 431 'ns'
+0 432 'ns2' 0 433 'ns2a' 0 434 'nsa' 0 435 'nsc' 0 436 'nsce' 0 437
+'nscpte' 0 438 'nsext' 0 439 'nsextslope' 0 440 'nstage' 0 441 'nsteps'
+0 442 'ntbw' 0 443 'ntsbc' 0 444 'numratingcurves' 0 445 'numtimeseries'
+0 446 'numvbcpts' 0 447 'nz' 0 448 'oflwcrtcl' 0 449 'oflwexst' 0 450
+'ojctelev' 0 451 'oldxsc' 0 452 'onedcd' 0 453 'oplnxsc' 0 454 'opt_tmp'
+0 455 'paramset' 0 456 'paramsetmod' 0 457 'phi2' 0 458 'phi_prime' 0
+459 'phirotation' 0 460 'pi' 0 461 'plnxsc' 0 462 'point' 0 463 'prmt' 0
+464 'ptime' 0 465 'q' 0 466 'qn' 0 467 'qp' 0 468 'qprms' 0 469 'qs' 0
+470 'qsign' 0 471 'qsusp' 0 472 'qsuspn' 0 473 'qsusps' 0 474 'qsuspxs'
+0 475 'qtot' 0 476 'qu' 0 477 'qv' 0 478 'r' 0 479 'r2' 0 480
+'ratingcurvepts' 0 481 'ratingcurves' 0 482 'ratingcurvetype' 0 483
 'ratio' 0 484 'rbwse' 0 485 'rcbbx' 0 486 'rcpts' 0 487 'rcstartpts' 0
 488 'restart' 0 489 'rhs' 0 495 'ribc' 0 496 'rivcalcinitcond' 0 497
 'rivvarmod' 0 498 'rivvartimemod' 0 499 'rivvarvertmod' 0 500 'rivvarwmod'

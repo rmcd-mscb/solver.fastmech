@@ -1,5 +1,5 @@
-GFORTRAN module version '10' created from /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/RivVarWMod.f90
-MD5:0b934781013f538e64a02d7c3d21ce5d -- If you edit this, you'll get what you deserve.
+GFORTRAN module version '10' created from ../src/RivVarWMod.f90
+MD5:46552842b618906509d9dacd4b338c11 -- If you edit this, you'll get what you deserve.
 
 (() () () () () () () () () () () () () () () () () () () () () () ()
 () () () ())
@@ -123,9 +123,9 @@ UNKNOWN IMPLICIT-SAVE 0 0 ALLOCATABLE DIMENSION) (REAL 16 0 0 0 REAL ())
 56 'cgns2_read_calccondition' 'calccond' '' 1 ((PROCEDURE UNKNOWN-INTENT
 MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 0 UNKNOWN ()) 57
 0 (58) () 0 () () () 0 0)
-59 'cgns2_read_calccondtion_foralloc' 'calccond' '' 1 ((PROCEDURE
-UNKNOWN-INTENT MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 0
-UNKNOWN ()) 60 0 (61) () 0 () () () 0 0)
+59 'cgns2_read_cc_foralloc' 'calccond' '' 1 ((PROCEDURE UNKNOWN-INTENT
+MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 0 UNKNOWN ()) 60
+0 (61) () 0 () () () 0 0)
 62 'cgnsfileid' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
 UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () ()
 () 0 0)
@@ -1227,9 +1227,9 @@ DIMENSION DUMMY) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () (1 0 ASSUMED_SHAPE
 41 'calccond' 0 42 'calccsed' 0 43 'calcgravcorr' 0 44 'calcquasi3d' 0
 45 'calcquasi3drs' 0 46 'calcsedauto' 0 47 'ccm' 0 48 'cd' 0 49 'cd2' 0
 50 'cdmax' 0 51 'cdmin' 0 52 'cdtype' 0 53 'cdv' 0 54 'cdv2' 0 55
-'cgns2_read_calccondition' 0 56 'cgns2_read_calccondtion_foralloc' 0 59
-'cgnsfileid' 0 62 'cgnshsfile' 0 63 'chi' 0 64 'con' 0 65 'constcd' 0 66
-'d_swap' 0 67 'dbgiternum' 0 71 'dbgtimestep' 0 72 'de' 0 73 'dea' 0 74
+'cgns2_read_calccondition' 0 56 'cgns2_read_cc_foralloc' 0 59 'cgnsfileid'
+0 62 'cgnshsfile' 0 63 'chi' 0 64 'con' 0 65 'constcd' 0 66 'd_swap' 0
+67 'dbgiternum' 0 71 'dbgtimestep' 0 72 'de' 0 73 'dea' 0 74
 'dealloc_common2d' 0 75 'dealloc_common3d' 0 76 'dealloc_init2d' 0 77
 'dealloc_ratingcurves' 0 78 'dealloc_timeseries' 0 79 'dealloc_tsnames'
 0 80 'dealloc_velbc' 0 81 'dealloc_working' 0 82 'debugstop' 0 83 'dg' 0

@@ -16,9 +16,6 @@ SUFFIXES =
 
 .SUFFIXES: .hpux_make_needs_suffix_list
 
-# Produce verbose output by default.
-VERBOSE = 1
-
 # Suppress display of executed commands.
 $(VERBOSE).SILENT:
 
@@ -158,389 +155,389 @@ Fastmech_iRICv3/fast:
 	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/build
 .PHONY : Fastmech_iRICv3/fast
 
-CalcCondMod.o: CalcCondMod.F90.o
-.PHONY : CalcCondMod.o
+src/CalcCondMod.o: src/CalcCondMod.F90.o
+.PHONY : src/CalcCondMod.o
 
 # target to build an object file
-CalcCondMod.F90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/CalcCondMod.F90.o
-.PHONY : CalcCondMod.F90.o
+src/CalcCondMod.F90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/CalcCondMod.F90.o
+.PHONY : src/CalcCondMod.F90.o
 
-CsedMod.o: CsedMod.f90.o
-.PHONY : CsedMod.o
-
-# target to build an object file
-CsedMod.f90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/CsedMod.f90.o
-.PHONY : CsedMod.f90.o
-
-CsedMod_DT.o: CsedMod_DT.f90.o
-.PHONY : CsedMod_DT.o
+src/CsedMod.o: src/CsedMod.f90.o
+.PHONY : src/CsedMod.o
 
 # target to build an object file
-CsedMod_DT.f90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/CsedMod_DT.f90.o
-.PHONY : CsedMod_DT.f90.o
+src/CsedMod.f90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/CsedMod.f90.o
+.PHONY : src/CsedMod.f90.o
 
-Daniele_Tonina/betaCDFandINV.o: Daniele_Tonina/betaCDFandINV.f90.o
-.PHONY : Daniele_Tonina/betaCDFandINV.o
-
-# target to build an object file
-Daniele_Tonina/betaCDFandINV.f90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/betaCDFandINV.f90.o
-.PHONY : Daniele_Tonina/betaCDFandINV.f90.o
-
-Daniele_Tonina/betavol.o: Daniele_Tonina/betavol.f90.o
-.PHONY : Daniele_Tonina/betavol.o
+src/CsedMod_DT.o: src/CsedMod_DT.f90.o
+.PHONY : src/CsedMod_DT.o
 
 # target to build an object file
-Daniele_Tonina/betavol.f90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/betavol.f90.o
-.PHONY : Daniele_Tonina/betavol.f90.o
+src/CsedMod_DT.f90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/CsedMod_DT.f90.o
+.PHONY : src/CsedMod_DT.f90.o
 
-Daniele_Tonina/elevdt.o: Daniele_Tonina/elevdt.f90.o
-.PHONY : Daniele_Tonina/elevdt.o
-
-# target to build an object file
-Daniele_Tonina/elevdt.f90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/elevdt.f90.o
-.PHONY : Daniele_Tonina/elevdt.f90.o
-
-Daniele_Tonina/functionrough.o: Daniele_Tonina/functionrough.f90.o
-.PHONY : Daniele_Tonina/functionrough.o
+src/Einit.o: src/Einit.f90.o
+.PHONY : src/Einit.o
 
 # target to build an object file
-Daniele_Tonina/functionrough.f90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/functionrough.f90.o
-.PHONY : Daniele_Tonina/functionrough.f90.o
+src/Einit.f90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/Einit.f90.o
+.PHONY : src/Einit.f90.o
 
-Daniele_Tonina/initHdt.o: Daniele_Tonina/initHdt.f90.o
-.PHONY : Daniele_Tonina/initHdt.o
-
-# target to build an object file
-Daniele_Tonina/initHdt.f90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/initHdt.f90.o
-.PHONY : Daniele_Tonina/initHdt.f90.o
-
-Daniele_Tonina/initdt.o: Daniele_Tonina/initdt.f90.o
-.PHONY : Daniele_Tonina/initdt.o
+src/GeometryMod.o: src/GeometryMod.F90.o
+.PHONY : src/GeometryMod.o
 
 # target to build an object file
-Daniele_Tonina/initdt.f90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/initdt.f90.o
-.PHONY : Daniele_Tonina/initdt.f90.o
+src/GeometryMod.F90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/GeometryMod.F90.o
+.PHONY : src/GeometryMod.F90.o
 
-Daniele_Tonina/initimeta.o: Daniele_Tonina/initimeta.f90.o
-.PHONY : Daniele_Tonina/initimeta.o
-
-# target to build an object file
-Daniele_Tonina/initimeta.f90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/initimeta.f90.o
-.PHONY : Daniele_Tonina/initimeta.f90.o
-
-Daniele_Tonina/rough.o: Daniele_Tonina/rough.f90.o
-.PHONY : Daniele_Tonina/rough.o
+src/GridCondMod.o: src/GridCondMod.F90.o
+.PHONY : src/GridCondMod.o
 
 # target to build an object file
-Daniele_Tonina/rough.f90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/rough.f90.o
-.PHONY : Daniele_Tonina/rough.f90.o
+src/GridCondMod.F90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/GridCondMod.F90.o
+.PHONY : src/GridCondMod.F90.o
 
-Daniele_Tonina/roughnessinv.o: Daniele_Tonina/roughnessinv.f90.o
-.PHONY : Daniele_Tonina/roughnessinv.o
-
-# target to build an object file
-Daniele_Tonina/roughnessinv.f90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/roughnessinv.f90.o
-.PHONY : Daniele_Tonina/roughnessinv.f90.o
-
-Daniele_Tonina/volfrac.o: Daniele_Tonina/volfrac.f90.o
-.PHONY : Daniele_Tonina/volfrac.o
+src/GridCoordMod.o: src/GridCoordMod.F90.o
+.PHONY : src/GridCoordMod.o
 
 # target to build an object file
-Daniele_Tonina/volfrac.f90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/volfrac.f90.o
-.PHONY : Daniele_Tonina/volfrac.f90.o
+src/GridCoordMod.F90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/GridCoordMod.F90.o
+.PHONY : src/GridCoordMod.F90.o
 
-Einit.o: Einit.f90.o
-.PHONY : Einit.o
-
-# target to build an object file
-Einit.f90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Einit.f90.o
-.PHONY : Einit.f90.o
-
-GeometryMod.o: GeometryMod.F90.o
-.PHONY : GeometryMod.o
+src/Median.o: src/Median.f90.o
+.PHONY : src/Median.o
 
 # target to build an object file
-GeometryMod.F90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/GeometryMod.F90.o
-.PHONY : GeometryMod.F90.o
+src/Median.f90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/Median.f90.o
+.PHONY : src/Median.f90.o
 
-GridCondMod.o: GridCondMod.F90.o
-.PHONY : GridCondMod.o
-
-# target to build an object file
-GridCondMod.F90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/GridCondMod.F90.o
-.PHONY : GridCondMod.F90.o
-
-GridCoordMod.o: GridCoordMod.F90.o
-.PHONY : GridCoordMod.o
+src/ParmSet.o: src/ParmSet.f90.o
+.PHONY : src/ParmSet.o
 
 # target to build an object file
-GridCoordMod.F90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/GridCoordMod.F90.o
-.PHONY : GridCoordMod.F90.o
+src/ParmSet.f90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/ParmSet.f90.o
+.PHONY : src/ParmSet.f90.o
 
-Jim1D_Code/ParmSet.o: Jim1D_Code/ParmSet.f90.o
-.PHONY : Jim1D_Code/ParmSet.o
-
-# target to build an object file
-Jim1D_Code/ParmSet.f90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/ParmSet.f90.o
-.PHONY : Jim1D_Code/ParmSet.f90.o
-
-Jim1D_Code/StbBkwOutput.o: Jim1D_Code/StbBkwOutput.f90.o
-.PHONY : Jim1D_Code/StbBkwOutput.o
+src/ReadCGNS.o: src/ReadCGNS.F90.o
+.PHONY : src/ReadCGNS.o
 
 # target to build an object file
-Jim1D_Code/StbBkwOutput.f90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/StbBkwOutput.f90.o
-.PHONY : Jim1D_Code/StbBkwOutput.f90.o
+src/ReadCGNS.F90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/ReadCGNS.F90.o
+.PHONY : src/ReadCGNS.F90.o
 
-Jim1D_Code/StpBkwInput.o: Jim1D_Code/StpBkwInput.f90.o
-.PHONY : Jim1D_Code/StpBkwInput.o
-
-# target to build an object file
-Jim1D_Code/StpBkwInput.f90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/StpBkwInput.f90.o
-.PHONY : Jim1D_Code/StpBkwInput.f90.o
-
-Jim1D_Code/Support.o: Jim1D_Code/Support.f90.o
-.PHONY : Jim1D_Code/Support.o
+src/RivCalcInitCond.o: src/RivCalcInitCond.F90.o
+.PHONY : src/RivCalcInitCond.o
 
 # target to build an object file
-Jim1D_Code/Support.f90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/Support.f90.o
-.PHONY : Jim1D_Code/Support.f90.o
+src/RivCalcInitCond.F90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/RivCalcInitCond.F90.o
+.PHONY : src/RivCalcInitCond.F90.o
 
-Jim1D_Code/xAnlzFlow.o: Jim1D_Code/xAnlzFlow.f90.o
-.PHONY : Jim1D_Code/xAnlzFlow.o
-
-# target to build an object file
-Jim1D_Code/xAnlzFlow.f90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xAnlzFlow.f90.o
-.PHONY : Jim1D_Code/xAnlzFlow.f90.o
-
-Jim1D_Code/xFArea2.o: Jim1D_Code/xFArea2.f90.o
-.PHONY : Jim1D_Code/xFArea2.o
+src/RivConnectivityMod.o: src/RivConnectivityMod.F90.o
+.PHONY : src/RivConnectivityMod.o
 
 # target to build an object file
-Jim1D_Code/xFArea2.f90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFArea2.f90.o
-.PHONY : Jim1D_Code/xFArea2.f90.o
+src/RivConnectivityMod.F90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/RivConnectivityMod.F90.o
+.PHONY : src/RivConnectivityMod.F90.o
 
-Jim1D_Code/xFChPreis.o: Jim1D_Code/xFChPreis.f90.o
-.PHONY : Jim1D_Code/xFChPreis.o
-
-# target to build an object file
-Jim1D_Code/xFChPreis.f90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFChPreis.f90.o
-.PHONY : Jim1D_Code/xFChPreis.f90.o
-
-Jim1D_Code/xFInput.o: Jim1D_Code/xFInput.f90.o
-.PHONY : Jim1D_Code/xFInput.o
+src/RivRoughnessMod.o: src/RivRoughnessMod.F90.o
+.PHONY : src/RivRoughnessMod.o
 
 # target to build an object file
-Jim1D_Code/xFInput.f90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFInput.f90.o
-.PHONY : Jim1D_Code/xFInput.f90.o
+src/RivRoughnessMod.F90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/RivRoughnessMod.F90.o
+.PHONY : src/RivRoughnessMod.F90.o
 
-Jim1D_Code/xFMatInv.o: Jim1D_Code/xFMatInv.f90.o
-.PHONY : Jim1D_Code/xFMatInv.o
-
-# target to build an object file
-Jim1D_Code/xFMatInv.f90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFMatInv.f90.o
-.PHONY : Jim1D_Code/xFMatInv.f90.o
-
-Jim1D_Code/xFNetInitConds.o: Jim1D_Code/xFNetInitConds.f90.o
-.PHONY : Jim1D_Code/xFNetInitConds.o
+src/RivStagrMod_jmn.o: src/RivStagrMod_jmn.F90.o
+.PHONY : src/RivStagrMod_jmn.o
 
 # target to build an object file
-Jim1D_Code/xFNetInitConds.f90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFNetInitConds.f90.o
-.PHONY : Jim1D_Code/xFNetInitConds.f90.o
+src/RivStagrMod_jmn.F90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/RivStagrMod_jmn.F90.o
+.PHONY : src/RivStagrMod_jmn.F90.o
 
-Jim1D_Code/xFNetPreisMain.o: Jim1D_Code/xFNetPreisMain.f90.o
-.PHONY : Jim1D_Code/xFNetPreisMain.o
-
-# target to build an object file
-Jim1D_Code/xFNetPreisMain.f90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFNetPreisMain.f90.o
-.PHONY : Jim1D_Code/xFNetPreisMain.f90.o
-
-Jim1D_Code/xFTSBoundCond.o: Jim1D_Code/xFTSBoundCond.f90.o
-.PHONY : Jim1D_Code/xFTSBoundCond.o
+src/RivVarMod.o: src/RivVarMod.f90.o
+.PHONY : src/RivVarMod.o
 
 # target to build an object file
-Jim1D_Code/xFTSBoundCond.f90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFTSBoundCond.f90.o
-.PHONY : Jim1D_Code/xFTSBoundCond.f90.o
+src/RivVarMod.f90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/RivVarMod.f90.o
+.PHONY : src/RivVarMod.f90.o
 
-Jim1D_Code/xFlowSupport.o: Jim1D_Code/xFlowSupport.F90.o
-.PHONY : Jim1D_Code/xFlowSupport.o
-
-# target to build an object file
-Jim1D_Code/xFlowSupport.F90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFlowSupport.F90.o
-.PHONY : Jim1D_Code/xFlowSupport.F90.o
-
-Median.o: Median.f90.o
-.PHONY : Median.o
+src/RivVarTimeMod.o: src/RivVarTimeMod.f90.o
+.PHONY : src/RivVarTimeMod.o
 
 # target to build an object file
-Median.f90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Median.f90.o
-.PHONY : Median.f90.o
+src/RivVarTimeMod.f90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/RivVarTimeMod.f90.o
+.PHONY : src/RivVarTimeMod.f90.o
 
-ReadCGNS.o: ReadCGNS.F90.o
-.PHONY : ReadCGNS.o
-
-# target to build an object file
-ReadCGNS.F90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/ReadCGNS.F90.o
-.PHONY : ReadCGNS.F90.o
-
-RivCalcInitCond.o: RivCalcInitCond.F90.o
-.PHONY : RivCalcInitCond.o
+src/RivVarVertMod.o: src/RivVarVertMod.f90.o
+.PHONY : src/RivVarVertMod.o
 
 # target to build an object file
-RivCalcInitCond.F90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/RivCalcInitCond.F90.o
-.PHONY : RivCalcInitCond.F90.o
+src/RivVarVertMod.f90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/RivVarVertMod.f90.o
+.PHONY : src/RivVarVertMod.f90.o
 
-RivConnectivityMod.o: RivConnectivityMod.F90.o
-.PHONY : RivConnectivityMod.o
-
-# target to build an object file
-RivConnectivityMod.F90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/RivConnectivityMod.F90.o
-.PHONY : RivConnectivityMod.F90.o
-
-RivRoughnessMod.o: RivRoughnessMod.F90.o
-.PHONY : RivRoughnessMod.o
+src/RivVarWMod.o: src/RivVarWMod.f90.o
+.PHONY : src/RivVarWMod.o
 
 # target to build an object file
-RivRoughnessMod.F90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/RivRoughnessMod.F90.o
-.PHONY : RivRoughnessMod.F90.o
+src/RivVarWMod.f90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/RivVarWMod.f90.o
+.PHONY : src/RivVarWMod.f90.o
 
-RivStagrMod_jmn.o: RivStagrMod_jmn.F90.o
-.PHONY : RivStagrMod_jmn.o
-
-# target to build an object file
-RivStagrMod_jmn.F90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/RivStagrMod_jmn.F90.o
-.PHONY : RivStagrMod_jmn.F90.o
-
-RivVarMod.o: RivVarMod.f90.o
-.PHONY : RivVarMod.o
+src/RivVertMod2.o: src/RivVertMod2.f90.o
+.PHONY : src/RivVertMod2.o
 
 # target to build an object file
-RivVarMod.f90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.f90.o
-.PHONY : RivVarMod.f90.o
+src/RivVertMod2.f90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/RivVertMod2.f90.o
+.PHONY : src/RivVertMod2.f90.o
 
-RivVarTimeMod.o: RivVarTimeMod.f90.o
-.PHONY : RivVarTimeMod.o
-
-# target to build an object file
-RivVarTimeMod.f90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/RivVarTimeMod.f90.o
-.PHONY : RivVarTimeMod.f90.o
-
-RivVarVertMod.o: RivVarVertMod.f90.o
-.PHONY : RivVarVertMod.o
+src/Stagr_Console.o: src/Stagr_Console.f90.o
+.PHONY : src/Stagr_Console.o
 
 # target to build an object file
-RivVarVertMod.f90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/RivVarVertMod.f90.o
-.PHONY : RivVarVertMod.f90.o
+src/Stagr_Console.f90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/Stagr_Console.f90.o
+.PHONY : src/Stagr_Console.f90.o
 
-RivVarWMod.o: RivVarWMod.f90.o
-.PHONY : RivVarWMod.o
-
-# target to build an object file
-RivVarWMod.f90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/RivVarWMod.f90.o
-.PHONY : RivVarWMod.f90.o
-
-RivVertMod2.o: RivVertMod2.f90.o
-.PHONY : RivVertMod2.o
+src/StbBkwOutput.o: src/StbBkwOutput.f90.o
+.PHONY : src/StbBkwOutput.o
 
 # target to build an object file
-RivVertMod2.f90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/RivVertMod2.f90.o
-.PHONY : RivVertMod2.f90.o
+src/StbBkwOutput.f90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/StbBkwOutput.f90.o
+.PHONY : src/StbBkwOutput.f90.o
 
-Stagr_Console.o: Stagr_Console.f90.o
-.PHONY : Stagr_Console.o
-
-# target to build an object file
-Stagr_Console.f90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Stagr_Console.f90.o
-.PHONY : Stagr_Console.f90.o
-
-Uinit.o: Uinit.f90.o
-.PHONY : Uinit.o
+src/StpBkwInput.o: src/StpBkwInput.f90.o
+.PHONY : src/StpBkwInput.o
 
 # target to build an object file
-Uinit.f90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Uinit.f90.o
-.PHONY : Uinit.f90.o
+src/StpBkwInput.f90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/StpBkwInput.f90.o
+.PHONY : src/StpBkwInput.f90.o
 
-Welcome.o: Welcome.f90.o
-.PHONY : Welcome.o
-
-# target to build an object file
-Welcome.f90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Welcome.f90.o
-.PHONY : Welcome.f90.o
-
-WriteCGNS.o: WriteCGNS.F90.o
-.PHONY : WriteCGNS.o
+src/Support.o: src/Support.f90.o
+.PHONY : src/Support.o
 
 # target to build an object file
-WriteCGNS.F90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/WriteCGNS.F90.o
-.PHONY : WriteCGNS.F90.o
+src/Support.f90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/Support.f90.o
+.PHONY : src/Support.f90.o
 
-iriclibf.o: iriclibf.f90.o
-.PHONY : iriclibf.o
-
-# target to build an object file
-iriclibf.f90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/iriclibf.f90.o
-.PHONY : iriclibf.f90.o
-
-stressDivMod.o: stressDivMod.f90.o
-.PHONY : stressDivMod.o
+src/Uinit.o: src/Uinit.f90.o
+.PHONY : src/Uinit.o
 
 # target to build an object file
-stressDivMod.f90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/stressDivMod.f90.o
-.PHONY : stressDivMod.f90.o
+src/Uinit.f90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/Uinit.f90.o
+.PHONY : src/Uinit.f90.o
 
-tridag.o: tridag.f90.o
-.PHONY : tridag.o
+src/Welcome.o: src/Welcome.f90.o
+.PHONY : src/Welcome.o
 
 # target to build an object file
-tridag.f90.o:
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/tridag.f90.o
-.PHONY : tridag.f90.o
+src/Welcome.f90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/Welcome.f90.o
+.PHONY : src/Welcome.f90.o
+
+src/WriteCGNS.o: src/WriteCGNS.F90.o
+.PHONY : src/WriteCGNS.o
+
+# target to build an object file
+src/WriteCGNS.F90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/WriteCGNS.F90.o
+.PHONY : src/WriteCGNS.F90.o
+
+src/betaCDFandINV.o: src/betaCDFandINV.f90.o
+.PHONY : src/betaCDFandINV.o
+
+# target to build an object file
+src/betaCDFandINV.f90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/betaCDFandINV.f90.o
+.PHONY : src/betaCDFandINV.f90.o
+
+src/betavol.o: src/betavol.f90.o
+.PHONY : src/betavol.o
+
+# target to build an object file
+src/betavol.f90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/betavol.f90.o
+.PHONY : src/betavol.f90.o
+
+src/elevdt.o: src/elevdt.f90.o
+.PHONY : src/elevdt.o
+
+# target to build an object file
+src/elevdt.f90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/elevdt.f90.o
+.PHONY : src/elevdt.f90.o
+
+src/functionrough.o: src/functionrough.f90.o
+.PHONY : src/functionrough.o
+
+# target to build an object file
+src/functionrough.f90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/functionrough.f90.o
+.PHONY : src/functionrough.f90.o
+
+src/initHdt.o: src/initHdt.f90.o
+.PHONY : src/initHdt.o
+
+# target to build an object file
+src/initHdt.f90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/initHdt.f90.o
+.PHONY : src/initHdt.f90.o
+
+src/initdt.o: src/initdt.f90.o
+.PHONY : src/initdt.o
+
+# target to build an object file
+src/initdt.f90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/initdt.f90.o
+.PHONY : src/initdt.f90.o
+
+src/initimeta.o: src/initimeta.f90.o
+.PHONY : src/initimeta.o
+
+# target to build an object file
+src/initimeta.f90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/initimeta.f90.o
+.PHONY : src/initimeta.f90.o
+
+src/iriclibf.o: src/iriclibf.f90.o
+.PHONY : src/iriclibf.o
+
+# target to build an object file
+src/iriclibf.f90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/iriclibf.f90.o
+.PHONY : src/iriclibf.f90.o
+
+src/rough.o: src/rough.f90.o
+.PHONY : src/rough.o
+
+# target to build an object file
+src/rough.f90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/rough.f90.o
+.PHONY : src/rough.f90.o
+
+src/roughnessinv.o: src/roughnessinv.f90.o
+.PHONY : src/roughnessinv.o
+
+# target to build an object file
+src/roughnessinv.f90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/roughnessinv.f90.o
+.PHONY : src/roughnessinv.f90.o
+
+src/stressDivMod.o: src/stressDivMod.f90.o
+.PHONY : src/stressDivMod.o
+
+# target to build an object file
+src/stressDivMod.f90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/stressDivMod.f90.o
+.PHONY : src/stressDivMod.f90.o
+
+src/tridag.o: src/tridag.f90.o
+.PHONY : src/tridag.o
+
+# target to build an object file
+src/tridag.f90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/tridag.f90.o
+.PHONY : src/tridag.f90.o
+
+src/volfrac.o: src/volfrac.f90.o
+.PHONY : src/volfrac.o
+
+# target to build an object file
+src/volfrac.f90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/volfrac.f90.o
+.PHONY : src/volfrac.f90.o
+
+src/xAnlzFlow.o: src/xAnlzFlow.f90.o
+.PHONY : src/xAnlzFlow.o
+
+# target to build an object file
+src/xAnlzFlow.f90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/xAnlzFlow.f90.o
+.PHONY : src/xAnlzFlow.f90.o
+
+src/xFArea2.o: src/xFArea2.f90.o
+.PHONY : src/xFArea2.o
+
+# target to build an object file
+src/xFArea2.f90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/xFArea2.f90.o
+.PHONY : src/xFArea2.f90.o
+
+src/xFChPreis.o: src/xFChPreis.f90.o
+.PHONY : src/xFChPreis.o
+
+# target to build an object file
+src/xFChPreis.f90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/xFChPreis.f90.o
+.PHONY : src/xFChPreis.f90.o
+
+src/xFInput.o: src/xFInput.f90.o
+.PHONY : src/xFInput.o
+
+# target to build an object file
+src/xFInput.f90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/xFInput.f90.o
+.PHONY : src/xFInput.f90.o
+
+src/xFMatInv.o: src/xFMatInv.f90.o
+.PHONY : src/xFMatInv.o
+
+# target to build an object file
+src/xFMatInv.f90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/xFMatInv.f90.o
+.PHONY : src/xFMatInv.f90.o
+
+src/xFNetInitConds.o: src/xFNetInitConds.f90.o
+.PHONY : src/xFNetInitConds.o
+
+# target to build an object file
+src/xFNetInitConds.f90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/xFNetInitConds.f90.o
+.PHONY : src/xFNetInitConds.f90.o
+
+src/xFNetPreisMain.o: src/xFNetPreisMain.f90.o
+.PHONY : src/xFNetPreisMain.o
+
+# target to build an object file
+src/xFNetPreisMain.f90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/xFNetPreisMain.f90.o
+.PHONY : src/xFNetPreisMain.f90.o
+
+src/xFTSBoundCond.o: src/xFTSBoundCond.f90.o
+.PHONY : src/xFTSBoundCond.o
+
+# target to build an object file
+src/xFTSBoundCond.f90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/xFTSBoundCond.f90.o
+.PHONY : src/xFTSBoundCond.f90.o
+
+src/xFlowSupport.o: src/xFlowSupport.F90.o
+.PHONY : src/xFlowSupport.o
+
+# target to build an object file
+src/xFlowSupport.F90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/xFlowSupport.F90.o
+.PHONY : src/xFlowSupport.F90.o
 
 # Help Target
 help:
@@ -555,54 +552,54 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... CalcCondMod.o"
-	@echo "... CsedMod.o"
-	@echo "... CsedMod_DT.o"
-	@echo "... Daniele_Tonina/betaCDFandINV.o"
-	@echo "... Daniele_Tonina/betavol.o"
-	@echo "... Daniele_Tonina/elevdt.o"
-	@echo "... Daniele_Tonina/functionrough.o"
-	@echo "... Daniele_Tonina/initHdt.o"
-	@echo "... Daniele_Tonina/initdt.o"
-	@echo "... Daniele_Tonina/initimeta.o"
-	@echo "... Daniele_Tonina/rough.o"
-	@echo "... Daniele_Tonina/roughnessinv.o"
-	@echo "... Daniele_Tonina/volfrac.o"
-	@echo "... Einit.o"
-	@echo "... GeometryMod.o"
-	@echo "... GridCondMod.o"
-	@echo "... GridCoordMod.o"
-	@echo "... Jim1D_Code/ParmSet.o"
-	@echo "... Jim1D_Code/StbBkwOutput.o"
-	@echo "... Jim1D_Code/StpBkwInput.o"
-	@echo "... Jim1D_Code/Support.o"
-	@echo "... Jim1D_Code/xAnlzFlow.o"
-	@echo "... Jim1D_Code/xFArea2.o"
-	@echo "... Jim1D_Code/xFChPreis.o"
-	@echo "... Jim1D_Code/xFInput.o"
-	@echo "... Jim1D_Code/xFMatInv.o"
-	@echo "... Jim1D_Code/xFNetInitConds.o"
-	@echo "... Jim1D_Code/xFNetPreisMain.o"
-	@echo "... Jim1D_Code/xFTSBoundCond.o"
-	@echo "... Jim1D_Code/xFlowSupport.o"
-	@echo "... Median.o"
-	@echo "... ReadCGNS.o"
-	@echo "... RivCalcInitCond.o"
-	@echo "... RivConnectivityMod.o"
-	@echo "... RivRoughnessMod.o"
-	@echo "... RivStagrMod_jmn.o"
-	@echo "... RivVarMod.o"
-	@echo "... RivVarTimeMod.o"
-	@echo "... RivVarVertMod.o"
-	@echo "... RivVarWMod.o"
-	@echo "... RivVertMod2.o"
-	@echo "... Stagr_Console.o"
-	@echo "... Uinit.o"
-	@echo "... Welcome.o"
-	@echo "... WriteCGNS.o"
-	@echo "... iriclibf.o"
-	@echo "... stressDivMod.o"
-	@echo "... tridag.o"
+	@echo "... src/CalcCondMod.o"
+	@echo "... src/CsedMod.o"
+	@echo "... src/CsedMod_DT.o"
+	@echo "... src/Einit.o"
+	@echo "... src/GeometryMod.o"
+	@echo "... src/GridCondMod.o"
+	@echo "... src/GridCoordMod.o"
+	@echo "... src/Median.o"
+	@echo "... src/ParmSet.o"
+	@echo "... src/ReadCGNS.o"
+	@echo "... src/RivCalcInitCond.o"
+	@echo "... src/RivConnectivityMod.o"
+	@echo "... src/RivRoughnessMod.o"
+	@echo "... src/RivStagrMod_jmn.o"
+	@echo "... src/RivVarMod.o"
+	@echo "... src/RivVarTimeMod.o"
+	@echo "... src/RivVarVertMod.o"
+	@echo "... src/RivVarWMod.o"
+	@echo "... src/RivVertMod2.o"
+	@echo "... src/Stagr_Console.o"
+	@echo "... src/StbBkwOutput.o"
+	@echo "... src/StpBkwInput.o"
+	@echo "... src/Support.o"
+	@echo "... src/Uinit.o"
+	@echo "... src/Welcome.o"
+	@echo "... src/WriteCGNS.o"
+	@echo "... src/betaCDFandINV.o"
+	@echo "... src/betavol.o"
+	@echo "... src/elevdt.o"
+	@echo "... src/functionrough.o"
+	@echo "... src/initHdt.o"
+	@echo "... src/initdt.o"
+	@echo "... src/initimeta.o"
+	@echo "... src/iriclibf.o"
+	@echo "... src/rough.o"
+	@echo "... src/roughnessinv.o"
+	@echo "... src/stressDivMod.o"
+	@echo "... src/tridag.o"
+	@echo "... src/volfrac.o"
+	@echo "... src/xAnlzFlow.o"
+	@echo "... src/xFArea2.o"
+	@echo "... src/xFChPreis.o"
+	@echo "... src/xFInput.o"
+	@echo "... src/xFMatInv.o"
+	@echo "... src/xFNetInitConds.o"
+	@echo "... src/xFNetPreisMain.o"
+	@echo "... src/xFTSBoundCond.o"
+	@echo "... src/xFlowSupport.o"
 .PHONY : help
 
 

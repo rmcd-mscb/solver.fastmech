@@ -1,5 +1,5 @@
-GFORTRAN module version '10' created from /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/tridag.f90
-MD5:3688549062d62eed522d8fc721e75d1c -- If you edit this, you'll get what you deserve.
+GFORTRAN module version '10' created from ../src/tridag.f90
+MD5:b5fd1006b1ed0c7d73caf7f237eeee68 -- If you edit this, you'll get what you deserve.
 
 (() () () () () () () () () () () () () () () () () () () () () () ()
 () () () ())
@@ -244,77 +244,77 @@ UNKNOWN IMPLICIT-SAVE 0 0) (REAL 16 0 0 0 REAL ()) 0 0 () () 0 () () ()
 0 0)
 93 'tridag' 'tridiag' '' 1 ((PROCEDURE UNKNOWN-INTENT MODULE-PROC DECL
 UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 0 UNKNOWN ()) 94 0 (95 96 97 98
-99 100) () 0 () () () 0 0)
-101 'tridiag' 'tridiag' '' 1 ((MODULE UNKNOWN-INTENT UNKNOWN-PROC
+99 100 101) () 0 () () () 0 0)
+102 'tridiag' 'tridiag' '' 1 ((MODULE UNKNOWN-INTENT UNKNOWN-PROC
 UNKNOWN UNKNOWN 0 0) (UNKNOWN 0 0 0 0 UNKNOWN ()) 0 0 () () 0 () () () 0
 0)
-102 'u' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+103 'u' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
 IMPLICIT-SAVE 0 0 ALLOCATABLE DIMENSION) (REAL 16 0 0 0 REAL ()) 0 0 ()
 (2 0 DEFERRED () () () ()) 0 () () () 0 0)
-103 'u2' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+104 'u2' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
 IMPLICIT-SAVE 0 0 ALLOCATABLE DIMENSION) (REAL 16 0 0 0 REAL ()) 0 0 ()
 (2 0 DEFERRED () () () ()) 0 () () () 0 0)
-104 'uz' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+105 'uz' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
 IMPLICIT-SAVE 0 0 ALLOCATABLE DIMENSION) (REAL 16 0 0 0 REAL ()) 0 0 ()
 (3 0 DEFERRED () () () () () ()) 0 () () () 0 0)
-105 'v' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+106 'v' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
 IMPLICIT-SAVE 0 0 ALLOCATABLE DIMENSION) (REAL 16 0 0 0 REAL ()) 0 0 ()
 (2 0 DEFERRED () () () ()) 0 () () () 0 0)
-106 'v2' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+107 'v2' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
 IMPLICIT-SAVE 0 0 ALLOCATABLE DIMENSION) (REAL 16 0 0 0 REAL ()) 0 0 ()
 (2 0 DEFERRED () () () ()) 0 () () () 0 0)
-107 'vacds' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
+108 'vacds' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
 UNKNOWN IMPLICIT-SAVE 0 0) (REAL 16 0 0 0 REAL ()) 0 0 () () 0 () () ()
 0 0)
-108 'vardt' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
+109 'vardt' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
 UNKNOWN IMPLICIT-SAVE 0 0) (REAL 16 0 0 0 REAL ()) 0 0 () () 0 () () ()
 0 0)
-109 'vdcds' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
+110 'vdcds' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
 UNKNOWN IMPLICIT-SAVE 0 0) (REAL 16 0 0 0 REAL ()) 0 0 () () 0 () () ()
 0 0)
-110 'vz' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+111 'vz' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
 IMPLICIT-SAVE 0 0 ALLOCATABLE DIMENSION) (REAL 16 0 0 0 REAL ()) 0 0 ()
 (3 0 DEFERRED () () () () () ()) 0 () () () 0 0)
-111 'w' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+112 'w' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
 IMPLICIT-SAVE 0 0 ALLOCATABLE DIMENSION) (REAL 16 0 0 0 REAL ()) 0 0 ()
 (1 0 DEFERRED () ()) 0 () () () 0 0)
-112 'w2' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+113 'w2' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
 IMPLICIT-SAVE 0 0 ALLOCATABLE DIMENSION) (REAL 16 0 0 0 REAL ()) 0 0 ()
 (1 0 DEFERRED () ()) 0 () () () 0 0)
-113 'wmax' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
+114 'wmax' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
 UNKNOWN IMPLICIT-SAVE 0 0) (REAL 16 0 0 0 REAL ()) 0 0 () () 0 () () ()
 0 0)
-114 'x' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+115 'x' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
 IMPLICIT-SAVE 0 0 ALLOCATABLE DIMENSION) (REAL 16 0 0 0 REAL ()) 0 0 ()
 (2 0 DEFERRED () () () ()) 0 () () () 0 0)
-115 'xo' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+116 'xo' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
 IMPLICIT-SAVE 0 0 ALLOCATABLE DIMENSION) (REAL 16 0 0 0 REAL ()) 0 0 ()
 (1 0 DEFERRED () ()) 0 () () () 0 0)
-116 'xo2' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
+117 'xo2' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
 UNKNOWN IMPLICIT-SAVE 0 0 ALLOCATABLE DIMENSION) (REAL 16 0 0 0 REAL ())
 0 0 () (1 0 DEFERRED () ()) 0 () () () 0 0)
-117 'xshift' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
+118 'xshift' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
 UNKNOWN IMPLICIT-SAVE 0 0) (REAL 16 0 0 0 REAL ()) 0 0 () () 0 () () ()
 0 0)
-118 'y' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+119 'y' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
 IMPLICIT-SAVE 0 0 ALLOCATABLE DIMENSION) (REAL 16 0 0 0 REAL ()) 0 0 ()
 (2 0 DEFERRED () () () ()) 0 () () () 0 0)
-119 'yo' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+120 'yo' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
 IMPLICIT-SAVE 0 0 ALLOCATABLE DIMENSION) (REAL 16 0 0 0 REAL ()) 0 0 ()
 (1 0 DEFERRED () ()) 0 () () () 0 0)
-120 'yo2' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
+121 'yo2' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
 UNKNOWN IMPLICIT-SAVE 0 0 ALLOCATABLE DIMENSION) (REAL 16 0 0 0 REAL ())
 0 0 () (1 0 DEFERRED () ()) 0 () () () 0 0)
-121 'yshift' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
+122 'yshift' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
 UNKNOWN IMPLICIT-SAVE 0 0) (REAL 16 0 0 0 REAL ()) 0 0 () () 0 () () ()
 0 0)
-122 'znaught' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
+123 'znaught' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
 UNKNOWN IMPLICIT-SAVE 0 0 ALLOCATABLE DIMENSION) (REAL 16 0 0 0 REAL ())
 0 0 () (2 0 DEFERRED () () () ()) 0 () () () 0 0)
-123 'znaught2' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
+124 'znaught2' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
 UNKNOWN IMPLICIT-SAVE 0 0 ALLOCATABLE DIMENSION) (REAL 16 0 0 0 REAL ())
 0 0 () (2 0 DEFERRED () () () ()) 0 () () () 0 0)
-124 'zz' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+125 'zz' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
 IMPLICIT-SAVE 0 0 ALLOCATABLE DIMENSION) (REAL 16 0 0 0 REAL ()) 0 0 ()
 (3 0 DEFERRED () () () () () ()) 0 () () () 0 0)
 5 'ns2' '' '' 4 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
@@ -355,6 +355,8 @@ CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') (VARIABLE (INTEGER 4 0 0 0
 INTEGER ()) 0 100 ())) 0 () () () 0 0)
 100 'n' '' '' 94 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
 INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
+101 'code' '' '' 94 ((VARIABLE INOUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+DUMMY) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
 )
 
 ('__convert_r8_r16' 0 2 'alloc_common2d' 0 3 'alloc_common3d' 0 8
@@ -372,8 +374,8 @@ INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
 'phirotation' 0 77 'ptime' 0 78 'qn' 0 79 'qs' 0 80 'r' 0 81 'r2' 0 82
 'rbwse' 0 83 'ribc' 0 84 'rivvarmod' 0 85 'rn' 0 86 'strmax' 0 87 'taun'
 0 88 'taus' 0 89 'tibc' 0 90 'totcd' 0 91 'tottime' 0 92 'tridag' 0 93
-'tridiag' 0 101 'u' 0 102 'u2' 0 103 'uz' 0 104 'v' 0 105 'v2' 0 106
-'vacds' 0 107 'vardt' 0 108 'vdcds' 0 109 'vz' 0 110 'w' 0 111 'w2' 0
-112 'wmax' 0 113 'x' 0 114 'xo' 0 115 'xo2' 0 116 'xshift' 0 117 'y' 0
-118 'yo' 0 119 'yo2' 0 120 'yshift' 0 121 'znaught' 0 122 'znaught2' 0
-123 'zz' 0 124)
+'tridiag' 0 102 'u' 0 103 'u2' 0 104 'uz' 0 105 'v' 0 106 'v2' 0 107
+'vacds' 0 108 'vardt' 0 109 'vdcds' 0 110 'vz' 0 111 'w' 0 112 'w2' 0
+113 'wmax' 0 114 'x' 0 115 'xo' 0 116 'xo2' 0 117 'xshift' 0 118 'y' 0
+119 'yo' 0 120 'yo2' 0 121 'yshift' 0 122 'znaught' 0 123 'znaught2' 0
+124 'zz' 0 125)

@@ -12,9 +12,6 @@ SUFFIXES =
 
 .SUFFIXES: .hpux_make_needs_suffix_list
 
-# Produce verbose output by default.
-VERBOSE = 1
-
 # Suppress display of executed commands.
 $(VERBOSE).SILENT:
 
@@ -55,829 +52,832 @@ include CMakeFiles/Fastmech_iRICv3.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Fastmech_iRICv3.dir/flags.make
 
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/betaCDFandINV.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/betaCDFandINV.f90.o: ../Daniele\ Tonina/betaCDFandINV.f90
+CMakeFiles/Fastmech_iRICv3.dir/src/betaCDFandINV.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/src/betaCDFandINV.f90.o: ../src/betaCDFandINV.f90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_1)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/betaCDFandINV.f90.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c "../Daniele Tonina/betaCDFandINV.f90" -o CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/betaCDFandINV.f90.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/src/betaCDFandINV.f90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../src/betaCDFandINV.f90 -o CMakeFiles/Fastmech_iRICv3.dir/src/betaCDFandINV.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/betaCDFandINV.f90.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/betaCDFandINV.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/src/betaCDFandINV.f90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/betaCDFandINV.f90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/betaCDFandINV.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/betaCDFandINV.f90.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/betaCDFandINV.f90.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/betaCDFandINV.f90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/betaCDFandINV.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/src/betaCDFandINV.f90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/betaCDFandINV.f90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/betaCDFandINV.f90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/betaCDFandINV.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/betaCDFandINV.f90.o
+CMakeFiles/Fastmech_iRICv3.dir/src/betaCDFandINV.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/src/betaCDFandINV.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/betavol.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/betavol.f90.o: ../Daniele\ Tonina/betavol.f90
+CMakeFiles/Fastmech_iRICv3.dir/src/betavol.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/src/betavol.f90.o: ../src/betavol.f90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_2)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/betavol.f90.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c "../Daniele Tonina/betavol.f90" -o CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/betavol.f90.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/src/betavol.f90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../src/betavol.f90 -o CMakeFiles/Fastmech_iRICv3.dir/src/betavol.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/betavol.f90.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/betavol.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/src/betavol.f90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/betavol.f90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/betavol.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/betavol.f90.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/betavol.f90.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/betavol.f90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/betavol.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/src/betavol.f90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/betavol.f90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/betavol.f90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/betavol.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/betavol.f90.o
+CMakeFiles/Fastmech_iRICv3.dir/src/betavol.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/src/betavol.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/elevdt.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/elevdt.f90.o: ../Daniele\ Tonina/elevdt.f90
+CMakeFiles/Fastmech_iRICv3.dir/src/elevdt.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/src/elevdt.f90.o: ../src/elevdt.f90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_3)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/elevdt.f90.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c "../Daniele Tonina/elevdt.f90" -o CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/elevdt.f90.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/src/elevdt.f90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../src/elevdt.f90 -o CMakeFiles/Fastmech_iRICv3.dir/src/elevdt.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/elevdt.f90.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/elevdt.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/src/elevdt.f90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/elevdt.f90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/elevdt.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/elevdt.f90.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/elevdt.f90.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/elevdt.f90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/elevdt.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/src/elevdt.f90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/elevdt.f90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/elevdt.f90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/elevdt.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/elevdt.f90.o
+CMakeFiles/Fastmech_iRICv3.dir/src/elevdt.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/src/elevdt.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/functionrough.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/functionrough.f90.o: ../Daniele\ Tonina/functionrough.f90
+CMakeFiles/Fastmech_iRICv3.dir/src/functionrough.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/src/functionrough.f90.o: ../src/functionrough.f90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_4)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/functionrough.f90.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c "../Daniele Tonina/functionrough.f90" -o CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/functionrough.f90.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/src/functionrough.f90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../src/functionrough.f90 -o CMakeFiles/Fastmech_iRICv3.dir/src/functionrough.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/functionrough.f90.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/functionrough.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/src/functionrough.f90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/functionrough.f90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/functionrough.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/functionrough.f90.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/functionrough.f90.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/functionrough.f90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/functionrough.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/src/functionrough.f90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/functionrough.f90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/functionrough.f90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/functionrough.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/functionrough.f90.o
+CMakeFiles/Fastmech_iRICv3.dir/src/functionrough.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/src/functionrough.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/initdt.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/initdt.f90.o: ../Daniele\ Tonina/initdt.f90
+CMakeFiles/Fastmech_iRICv3.dir/src/initdt.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/src/initdt.f90.o: ../src/initdt.f90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_5)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/initdt.f90.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c "../Daniele Tonina/initdt.f90" -o CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/initdt.f90.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/src/initdt.f90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../src/initdt.f90 -o CMakeFiles/Fastmech_iRICv3.dir/src/initdt.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/initdt.f90.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/initdt.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/src/initdt.f90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/initdt.f90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/initdt.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/initdt.f90.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/initdt.f90.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/initdt.f90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/initdt.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/src/initdt.f90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/initdt.f90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/initdt.f90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/initdt.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/initdt.f90.o
+CMakeFiles/Fastmech_iRICv3.dir/src/initdt.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/src/initdt.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/initHdt.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/initHdt.f90.o: ../Daniele\ Tonina/initHdt.f90
+CMakeFiles/Fastmech_iRICv3.dir/src/initHdt.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/src/initHdt.f90.o: ../src/initHdt.f90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_6)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/initHdt.f90.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c "../Daniele Tonina/initHdt.f90" -o CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/initHdt.f90.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/src/initHdt.f90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../src/initHdt.f90 -o CMakeFiles/Fastmech_iRICv3.dir/src/initHdt.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/initHdt.f90.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/initHdt.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/src/initHdt.f90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/initHdt.f90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/initHdt.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/initHdt.f90.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/initHdt.f90.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/initHdt.f90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/initHdt.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/src/initHdt.f90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/initHdt.f90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/initHdt.f90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/initHdt.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/initHdt.f90.o
+CMakeFiles/Fastmech_iRICv3.dir/src/initHdt.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/src/initHdt.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/initimeta.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/initimeta.f90.o: ../Daniele\ Tonina/initimeta.f90
+CMakeFiles/Fastmech_iRICv3.dir/src/initimeta.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/src/initimeta.f90.o: ../src/initimeta.f90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_7)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/initimeta.f90.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c "../Daniele Tonina/initimeta.f90" -o CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/initimeta.f90.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/src/initimeta.f90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../src/initimeta.f90 -o CMakeFiles/Fastmech_iRICv3.dir/src/initimeta.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/initimeta.f90.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/initimeta.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/src/initimeta.f90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/initimeta.f90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/initimeta.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/initimeta.f90.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/initimeta.f90.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/initimeta.f90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/initimeta.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/src/initimeta.f90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/initimeta.f90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/initimeta.f90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/initimeta.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/initimeta.f90.o
+CMakeFiles/Fastmech_iRICv3.dir/src/initimeta.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/src/initimeta.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/rough.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/rough.f90.o: ../Daniele\ Tonina/rough.f90
+CMakeFiles/Fastmech_iRICv3.dir/src/rough.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/src/rough.f90.o: ../src/rough.f90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_8)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/rough.f90.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c "../Daniele Tonina/rough.f90" -o CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/rough.f90.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/src/rough.f90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../src/rough.f90 -o CMakeFiles/Fastmech_iRICv3.dir/src/rough.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/rough.f90.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/rough.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/src/rough.f90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/rough.f90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/rough.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/rough.f90.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/rough.f90.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/rough.f90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/rough.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/src/rough.f90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/rough.f90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/rough.f90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/rough.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/rough.f90.o
+CMakeFiles/Fastmech_iRICv3.dir/src/rough.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/src/rough.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/roughnessinv.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/roughnessinv.f90.o: ../Daniele\ Tonina/roughnessinv.f90
+CMakeFiles/Fastmech_iRICv3.dir/src/roughnessinv.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/src/roughnessinv.f90.o: ../src/roughnessinv.f90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_9)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/roughnessinv.f90.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c "../Daniele Tonina/roughnessinv.f90" -o CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/roughnessinv.f90.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/src/roughnessinv.f90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../src/roughnessinv.f90 -o CMakeFiles/Fastmech_iRICv3.dir/src/roughnessinv.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/roughnessinv.f90.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/roughnessinv.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/src/roughnessinv.f90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/roughnessinv.f90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/roughnessinv.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/roughnessinv.f90.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/roughnessinv.f90.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/roughnessinv.f90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/roughnessinv.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/src/roughnessinv.f90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/roughnessinv.f90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/roughnessinv.f90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/roughnessinv.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/roughnessinv.f90.o
+CMakeFiles/Fastmech_iRICv3.dir/src/roughnessinv.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/src/roughnessinv.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/volfrac.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/volfrac.f90.o: ../Daniele\ Tonina/volfrac.f90
+CMakeFiles/Fastmech_iRICv3.dir/src/volfrac.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/src/volfrac.f90.o: ../src/volfrac.f90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_10)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/volfrac.f90.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c "../Daniele Tonina/volfrac.f90" -o CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/volfrac.f90.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/src/volfrac.f90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../src/volfrac.f90 -o CMakeFiles/Fastmech_iRICv3.dir/src/volfrac.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/volfrac.f90.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/volfrac.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/src/volfrac.f90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/volfrac.f90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/volfrac.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/volfrac.f90.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/volfrac.f90.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/volfrac.f90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/volfrac.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/src/volfrac.f90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/volfrac.f90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/volfrac.f90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/volfrac.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/volfrac.f90.o
+CMakeFiles/Fastmech_iRICv3.dir/src/volfrac.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/src/volfrac.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/CalcCondMod.F90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/CalcCondMod.F90.o: ../CalcCondMod.F90
+CMakeFiles/Fastmech_iRICv3.dir/src/CalcCondMod.F90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/src/CalcCondMod.F90.o: ../src/CalcCondMod.F90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_11)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/CalcCondMod.F90.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../CalcCondMod.F90 -o CMakeFiles/Fastmech_iRICv3.dir/CalcCondMod.F90.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/src/CalcCondMod.F90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../src/CalcCondMod.F90 -o CMakeFiles/Fastmech_iRICv3.dir/src/CalcCondMod.F90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/CalcCondMod.F90.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/CalcCondMod.F90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/src/CalcCondMod.F90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/CalcCondMod.F90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/CalcCondMod.F90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/CalcCondMod.F90.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/CalcCondMod.F90.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/CalcCondMod.F90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/CalcCondMod.F90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/src/CalcCondMod.F90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/CalcCondMod.F90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/CalcCondMod.F90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/CalcCondMod.F90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/CalcCondMod.F90.o
+CMakeFiles/Fastmech_iRICv3.dir/src/CalcCondMod.F90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/src/CalcCondMod.F90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/GridCondMod.F90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/GridCondMod.F90.o: ../GridCondMod.F90
+CMakeFiles/Fastmech_iRICv3.dir/src/GridCondMod.F90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/src/GridCondMod.F90.o: ../src/GridCondMod.F90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_12)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/GridCondMod.F90.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../GridCondMod.F90 -o CMakeFiles/Fastmech_iRICv3.dir/GridCondMod.F90.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/src/GridCondMod.F90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../src/GridCondMod.F90 -o CMakeFiles/Fastmech_iRICv3.dir/src/GridCondMod.F90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/GridCondMod.F90.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/GridCondMod.F90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/src/GridCondMod.F90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/GridCondMod.F90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/GridCondMod.F90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/GridCondMod.F90.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/GridCondMod.F90.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/GridCondMod.F90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/GridCondMod.F90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/src/GridCondMod.F90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/GridCondMod.F90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/GridCondMod.F90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/GridCondMod.F90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/GridCondMod.F90.o
+CMakeFiles/Fastmech_iRICv3.dir/src/GridCondMod.F90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/src/GridCondMod.F90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/GridCoordMod.F90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/GridCoordMod.F90.o: ../GridCoordMod.F90
+CMakeFiles/Fastmech_iRICv3.dir/src/GridCoordMod.F90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/src/GridCoordMod.F90.o: ../src/GridCoordMod.F90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_13)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/GridCoordMod.F90.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../GridCoordMod.F90 -o CMakeFiles/Fastmech_iRICv3.dir/GridCoordMod.F90.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/src/GridCoordMod.F90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../src/GridCoordMod.F90 -o CMakeFiles/Fastmech_iRICv3.dir/src/GridCoordMod.F90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/GridCoordMod.F90.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/GridCoordMod.F90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/src/GridCoordMod.F90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/GridCoordMod.F90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/GridCoordMod.F90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/GridCoordMod.F90.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/GridCoordMod.F90.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/GridCoordMod.F90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/GridCoordMod.F90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/src/GridCoordMod.F90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/GridCoordMod.F90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/GridCoordMod.F90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/GridCoordMod.F90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/GridCoordMod.F90.o
+CMakeFiles/Fastmech_iRICv3.dir/src/GridCoordMod.F90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/src/GridCoordMod.F90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/iriclibf.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/iriclibf.f90.o: ../iriclibf.f90
+CMakeFiles/Fastmech_iRICv3.dir/src/iriclibf.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/src/iriclibf.f90.o: ../src/iriclibf.f90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_14)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/iriclibf.f90.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../iriclibf.f90 -o CMakeFiles/Fastmech_iRICv3.dir/iriclibf.f90.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/src/iriclibf.f90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../src/iriclibf.f90 -o CMakeFiles/Fastmech_iRICv3.dir/src/iriclibf.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/iriclibf.f90.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/iriclibf.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/src/iriclibf.f90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/iriclibf.f90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/iriclibf.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/iriclibf.f90.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/iriclibf.f90.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/iriclibf.f90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/iriclibf.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/src/iriclibf.f90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/iriclibf.f90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/iriclibf.f90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/iriclibf.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/iriclibf.f90.o
+CMakeFiles/Fastmech_iRICv3.dir/src/iriclibf.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/src/iriclibf.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/ReadCGNS.F90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/ReadCGNS.F90.o: ../ReadCGNS.F90
+CMakeFiles/Fastmech_iRICv3.dir/src/ReadCGNS.F90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/src/ReadCGNS.F90.o: ../src/ReadCGNS.F90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_15)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/ReadCGNS.F90.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../ReadCGNS.F90 -o CMakeFiles/Fastmech_iRICv3.dir/ReadCGNS.F90.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/src/ReadCGNS.F90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../src/ReadCGNS.F90 -o CMakeFiles/Fastmech_iRICv3.dir/src/ReadCGNS.F90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/ReadCGNS.F90.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/ReadCGNS.F90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/src/ReadCGNS.F90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/ReadCGNS.F90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/ReadCGNS.F90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/ReadCGNS.F90.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/ReadCGNS.F90.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/ReadCGNS.F90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/ReadCGNS.F90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/src/ReadCGNS.F90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/ReadCGNS.F90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/ReadCGNS.F90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/ReadCGNS.F90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/ReadCGNS.F90.o
+CMakeFiles/Fastmech_iRICv3.dir/src/ReadCGNS.F90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/src/ReadCGNS.F90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/WriteCGNS.F90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/WriteCGNS.F90.o: ../WriteCGNS.F90
+CMakeFiles/Fastmech_iRICv3.dir/src/WriteCGNS.F90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/src/WriteCGNS.F90.o: ../src/WriteCGNS.F90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_16)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/WriteCGNS.F90.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../WriteCGNS.F90 -o CMakeFiles/Fastmech_iRICv3.dir/WriteCGNS.F90.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/src/WriteCGNS.F90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../src/WriteCGNS.F90 -o CMakeFiles/Fastmech_iRICv3.dir/src/WriteCGNS.F90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/WriteCGNS.F90.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/WriteCGNS.F90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/src/WriteCGNS.F90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/WriteCGNS.F90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/WriteCGNS.F90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/WriteCGNS.F90.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/WriteCGNS.F90.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/WriteCGNS.F90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/WriteCGNS.F90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/src/WriteCGNS.F90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/WriteCGNS.F90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/WriteCGNS.F90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/WriteCGNS.F90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/WriteCGNS.F90.o
+CMakeFiles/Fastmech_iRICv3.dir/src/WriteCGNS.F90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/src/WriteCGNS.F90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/ParmSet.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/ParmSet.f90.o: ../Jim1D\ Code/ParmSet.f90
+CMakeFiles/Fastmech_iRICv3.dir/src/ParmSet.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/src/ParmSet.f90.o: ../src/ParmSet.f90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_17)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/ParmSet.f90.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c "../Jim1D Code/ParmSet.f90" -o CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/ParmSet.f90.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/src/ParmSet.f90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../src/ParmSet.f90 -o CMakeFiles/Fastmech_iRICv3.dir/src/ParmSet.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/ParmSet.f90.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/ParmSet.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/src/ParmSet.f90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/ParmSet.f90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/ParmSet.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/ParmSet.f90.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/ParmSet.f90.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/ParmSet.f90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/ParmSet.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/src/ParmSet.f90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/ParmSet.f90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/ParmSet.f90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/ParmSet.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/ParmSet.f90.o
+CMakeFiles/Fastmech_iRICv3.dir/src/ParmSet.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/src/ParmSet.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/StbBkwOutput.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/StbBkwOutput.f90.o: ../Jim1D\ Code/StbBkwOutput.f90
+CMakeFiles/Fastmech_iRICv3.dir/src/StbBkwOutput.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/src/StbBkwOutput.f90.o: ../src/StbBkwOutput.f90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_18)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/StbBkwOutput.f90.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c "../Jim1D Code/StbBkwOutput.f90" -o CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/StbBkwOutput.f90.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/src/StbBkwOutput.f90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../src/StbBkwOutput.f90 -o CMakeFiles/Fastmech_iRICv3.dir/src/StbBkwOutput.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/StbBkwOutput.f90.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/StbBkwOutput.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/src/StbBkwOutput.f90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/StbBkwOutput.f90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/StbBkwOutput.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/StbBkwOutput.f90.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/StbBkwOutput.f90.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/StbBkwOutput.f90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/StbBkwOutput.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/src/StbBkwOutput.f90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/StbBkwOutput.f90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/StbBkwOutput.f90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/StbBkwOutput.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/StbBkwOutput.f90.o
+CMakeFiles/Fastmech_iRICv3.dir/src/StbBkwOutput.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/src/StbBkwOutput.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/StpBkwInput.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/StpBkwInput.f90.o: ../Jim1D\ Code/StpBkwInput.f90
+CMakeFiles/Fastmech_iRICv3.dir/src/StpBkwInput.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/src/StpBkwInput.f90.o: ../src/StpBkwInput.f90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_19)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/StpBkwInput.f90.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c "../Jim1D Code/StpBkwInput.f90" -o CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/StpBkwInput.f90.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/src/StpBkwInput.f90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../src/StpBkwInput.f90 -o CMakeFiles/Fastmech_iRICv3.dir/src/StpBkwInput.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/StpBkwInput.f90.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/StpBkwInput.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/src/StpBkwInput.f90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/StpBkwInput.f90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/StpBkwInput.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/StpBkwInput.f90.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/StpBkwInput.f90.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/StpBkwInput.f90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/StpBkwInput.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/src/StpBkwInput.f90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/StpBkwInput.f90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/StpBkwInput.f90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/StpBkwInput.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/StpBkwInput.f90.o
+CMakeFiles/Fastmech_iRICv3.dir/src/StpBkwInput.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/src/StpBkwInput.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/Support.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/Support.f90.o: ../Jim1D\ Code/Support.f90
+CMakeFiles/Fastmech_iRICv3.dir/src/Support.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/src/Support.f90.o: ../src/Support.f90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_20)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/Support.f90.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c "../Jim1D Code/Support.f90" -o CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/Support.f90.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/src/Support.f90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../src/Support.f90 -o CMakeFiles/Fastmech_iRICv3.dir/src/Support.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/Support.f90.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/Support.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/src/Support.f90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/Support.f90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/Support.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/Support.f90.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/Support.f90.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/Support.f90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/Support.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/src/Support.f90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/Support.f90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/Support.f90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/Support.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/Support.f90.o
+CMakeFiles/Fastmech_iRICv3.dir/src/Support.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/src/Support.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xAnlzFlow.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xAnlzFlow.f90.o: ../Jim1D\ Code/xAnlzFlow.f90
+CMakeFiles/Fastmech_iRICv3.dir/src/xAnlzFlow.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/src/xAnlzFlow.f90.o: ../src/xAnlzFlow.f90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_21)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xAnlzFlow.f90.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c "../Jim1D Code/xAnlzFlow.f90" -o CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xAnlzFlow.f90.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/src/xAnlzFlow.f90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../src/xAnlzFlow.f90 -o CMakeFiles/Fastmech_iRICv3.dir/src/xAnlzFlow.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xAnlzFlow.f90.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xAnlzFlow.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/src/xAnlzFlow.f90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/xAnlzFlow.f90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xAnlzFlow.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xAnlzFlow.f90.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xAnlzFlow.f90.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xAnlzFlow.f90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/xAnlzFlow.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/src/xAnlzFlow.f90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/xAnlzFlow.f90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/xAnlzFlow.f90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xAnlzFlow.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xAnlzFlow.f90.o
+CMakeFiles/Fastmech_iRICv3.dir/src/xAnlzFlow.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/src/xAnlzFlow.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFArea2.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFArea2.f90.o: ../Jim1D\ Code/xFArea2.f90
+CMakeFiles/Fastmech_iRICv3.dir/src/xFArea2.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/src/xFArea2.f90.o: ../src/xFArea2.f90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_22)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFArea2.f90.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c "../Jim1D Code/xFArea2.f90" -o CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFArea2.f90.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/src/xFArea2.f90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../src/xFArea2.f90 -o CMakeFiles/Fastmech_iRICv3.dir/src/xFArea2.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFArea2.f90.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFArea2.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/src/xFArea2.f90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/xFArea2.f90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFArea2.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFArea2.f90.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFArea2.f90.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFArea2.f90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/xFArea2.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/src/xFArea2.f90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/xFArea2.f90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/xFArea2.f90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFArea2.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFArea2.f90.o
+CMakeFiles/Fastmech_iRICv3.dir/src/xFArea2.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/src/xFArea2.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFChPreis.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFChPreis.f90.o: ../Jim1D\ Code/xFChPreis.f90
+CMakeFiles/Fastmech_iRICv3.dir/src/xFChPreis.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/src/xFChPreis.f90.o: ../src/xFChPreis.f90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_23)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFChPreis.f90.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c "../Jim1D Code/xFChPreis.f90" -o CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFChPreis.f90.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/src/xFChPreis.f90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../src/xFChPreis.f90 -o CMakeFiles/Fastmech_iRICv3.dir/src/xFChPreis.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFChPreis.f90.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFChPreis.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/src/xFChPreis.f90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/xFChPreis.f90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFChPreis.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFChPreis.f90.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFChPreis.f90.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFChPreis.f90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/xFChPreis.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/src/xFChPreis.f90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/xFChPreis.f90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/xFChPreis.f90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFChPreis.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFChPreis.f90.o
+CMakeFiles/Fastmech_iRICv3.dir/src/xFChPreis.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/src/xFChPreis.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFInput.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFInput.f90.o: ../Jim1D\ Code/xFInput.f90
+CMakeFiles/Fastmech_iRICv3.dir/src/xFInput.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/src/xFInput.f90.o: ../src/xFInput.f90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_24)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFInput.f90.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c "../Jim1D Code/xFInput.f90" -o CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFInput.f90.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/src/xFInput.f90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../src/xFInput.f90 -o CMakeFiles/Fastmech_iRICv3.dir/src/xFInput.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFInput.f90.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFInput.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/src/xFInput.f90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/xFInput.f90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFInput.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFInput.f90.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFInput.f90.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFInput.f90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/xFInput.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/src/xFInput.f90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/xFInput.f90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/xFInput.f90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFInput.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFInput.f90.o
+CMakeFiles/Fastmech_iRICv3.dir/src/xFInput.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/src/xFInput.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFlowSupport.F90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFlowSupport.F90.o: ../Jim1D\ Code/xFlowSupport.F90
+CMakeFiles/Fastmech_iRICv3.dir/src/xFlowSupport.F90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/src/xFlowSupport.F90.o: ../src/xFlowSupport.F90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_25)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFlowSupport.F90.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c "../Jim1D Code/xFlowSupport.F90" -o CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFlowSupport.F90.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/src/xFlowSupport.F90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../src/xFlowSupport.F90 -o CMakeFiles/Fastmech_iRICv3.dir/src/xFlowSupport.F90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFlowSupport.F90.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFlowSupport.F90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/src/xFlowSupport.F90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/xFlowSupport.F90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFlowSupport.F90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFlowSupport.F90.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFlowSupport.F90.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFlowSupport.F90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/xFlowSupport.F90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/src/xFlowSupport.F90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/xFlowSupport.F90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/xFlowSupport.F90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFlowSupport.F90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFlowSupport.F90.o
+CMakeFiles/Fastmech_iRICv3.dir/src/xFlowSupport.F90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/src/xFlowSupport.F90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFMatInv.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFMatInv.f90.o: ../Jim1D\ Code/xFMatInv.f90
+CMakeFiles/Fastmech_iRICv3.dir/src/xFMatInv.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/src/xFMatInv.f90.o: ../src/xFMatInv.f90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_26)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFMatInv.f90.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c "../Jim1D Code/xFMatInv.f90" -o CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFMatInv.f90.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/src/xFMatInv.f90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../src/xFMatInv.f90 -o CMakeFiles/Fastmech_iRICv3.dir/src/xFMatInv.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFMatInv.f90.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFMatInv.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/src/xFMatInv.f90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/xFMatInv.f90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFMatInv.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFMatInv.f90.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFMatInv.f90.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFMatInv.f90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/xFMatInv.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/src/xFMatInv.f90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/xFMatInv.f90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/xFMatInv.f90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFMatInv.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFMatInv.f90.o
+CMakeFiles/Fastmech_iRICv3.dir/src/xFMatInv.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/src/xFMatInv.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFNetInitConds.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFNetInitConds.f90.o: ../Jim1D\ Code/xFNetInitConds.f90
+CMakeFiles/Fastmech_iRICv3.dir/src/xFNetInitConds.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/src/xFNetInitConds.f90.o: ../src/xFNetInitConds.f90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_27)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFNetInitConds.f90.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c "../Jim1D Code/xFNetInitConds.f90" -o CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFNetInitConds.f90.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/src/xFNetInitConds.f90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../src/xFNetInitConds.f90 -o CMakeFiles/Fastmech_iRICv3.dir/src/xFNetInitConds.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFNetInitConds.f90.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFNetInitConds.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/src/xFNetInitConds.f90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/xFNetInitConds.f90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFNetInitConds.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFNetInitConds.f90.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFNetInitConds.f90.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFNetInitConds.f90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/xFNetInitConds.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/src/xFNetInitConds.f90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/xFNetInitConds.f90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/xFNetInitConds.f90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFNetInitConds.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFNetInitConds.f90.o
+CMakeFiles/Fastmech_iRICv3.dir/src/xFNetInitConds.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/src/xFNetInitConds.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFNetPreisMain.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFNetPreisMain.f90.o: ../Jim1D\ Code/xFNetPreisMain.f90
+CMakeFiles/Fastmech_iRICv3.dir/src/xFNetPreisMain.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/src/xFNetPreisMain.f90.o: ../src/xFNetPreisMain.f90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_28)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFNetPreisMain.f90.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c "../Jim1D Code/xFNetPreisMain.f90" -o CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFNetPreisMain.f90.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/src/xFNetPreisMain.f90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../src/xFNetPreisMain.f90 -o CMakeFiles/Fastmech_iRICv3.dir/src/xFNetPreisMain.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFNetPreisMain.f90.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFNetPreisMain.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/src/xFNetPreisMain.f90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/xFNetPreisMain.f90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFNetPreisMain.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFNetPreisMain.f90.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFNetPreisMain.f90.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFNetPreisMain.f90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/xFNetPreisMain.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/src/xFNetPreisMain.f90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/xFNetPreisMain.f90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/xFNetPreisMain.f90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFNetPreisMain.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFNetPreisMain.f90.o
+CMakeFiles/Fastmech_iRICv3.dir/src/xFNetPreisMain.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/src/xFNetPreisMain.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFTSBoundCond.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFTSBoundCond.f90.o: ../Jim1D\ Code/xFTSBoundCond.f90
+CMakeFiles/Fastmech_iRICv3.dir/src/xFTSBoundCond.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/src/xFTSBoundCond.f90.o: ../src/xFTSBoundCond.f90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_29)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFTSBoundCond.f90.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c "../Jim1D Code/xFTSBoundCond.f90" -o CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFTSBoundCond.f90.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/src/xFTSBoundCond.f90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../src/xFTSBoundCond.f90 -o CMakeFiles/Fastmech_iRICv3.dir/src/xFTSBoundCond.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFTSBoundCond.f90.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFTSBoundCond.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/src/xFTSBoundCond.f90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/xFTSBoundCond.f90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFTSBoundCond.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFTSBoundCond.f90.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFTSBoundCond.f90.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFTSBoundCond.f90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/xFTSBoundCond.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/src/xFTSBoundCond.f90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/xFTSBoundCond.f90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/xFTSBoundCond.f90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFTSBoundCond.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFTSBoundCond.f90.o
+CMakeFiles/Fastmech_iRICv3.dir/src/xFTSBoundCond.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/src/xFTSBoundCond.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/CsedMod.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/CsedMod.f90.o: ../CsedMod.f90
+CMakeFiles/Fastmech_iRICv3.dir/src/CsedMod.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/src/CsedMod.f90.o: ../src/CsedMod.f90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_30)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/CsedMod.f90.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../CsedMod.f90 -o CMakeFiles/Fastmech_iRICv3.dir/CsedMod.f90.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/src/CsedMod.f90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../src/CsedMod.f90 -o CMakeFiles/Fastmech_iRICv3.dir/src/CsedMod.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/CsedMod.f90.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/CsedMod.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/src/CsedMod.f90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/CsedMod.f90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/CsedMod.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/CsedMod.f90.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/CsedMod.f90.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/CsedMod.f90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/CsedMod.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/src/CsedMod.f90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/CsedMod.f90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/CsedMod.f90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/CsedMod.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/CsedMod.f90.o
+CMakeFiles/Fastmech_iRICv3.dir/src/CsedMod.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/src/CsedMod.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/CsedMod_DT.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/CsedMod_DT.f90.o: ../CsedMod_DT.f90
+CMakeFiles/Fastmech_iRICv3.dir/src/CsedMod_DT.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/src/CsedMod_DT.f90.o: ../src/CsedMod_DT.f90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_31)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/CsedMod_DT.f90.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../CsedMod_DT.f90 -o CMakeFiles/Fastmech_iRICv3.dir/CsedMod_DT.f90.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/src/CsedMod_DT.f90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../src/CsedMod_DT.f90 -o CMakeFiles/Fastmech_iRICv3.dir/src/CsedMod_DT.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/CsedMod_DT.f90.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/CsedMod_DT.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/src/CsedMod_DT.f90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/CsedMod_DT.f90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/CsedMod_DT.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/CsedMod_DT.f90.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/CsedMod_DT.f90.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/CsedMod_DT.f90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/CsedMod_DT.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/src/CsedMod_DT.f90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/CsedMod_DT.f90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/CsedMod_DT.f90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/CsedMod_DT.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/CsedMod_DT.f90.o
+CMakeFiles/Fastmech_iRICv3.dir/src/CsedMod_DT.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/src/CsedMod_DT.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Einit.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/Einit.f90.o: ../Einit.f90
+CMakeFiles/Fastmech_iRICv3.dir/src/Einit.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/src/Einit.f90.o: ../src/Einit.f90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_32)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/Einit.f90.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../Einit.f90 -o CMakeFiles/Fastmech_iRICv3.dir/Einit.f90.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/src/Einit.f90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../src/Einit.f90 -o CMakeFiles/Fastmech_iRICv3.dir/src/Einit.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Einit.f90.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Einit.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/src/Einit.f90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/Einit.f90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/Einit.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/Einit.f90.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Einit.f90.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Einit.f90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/Einit.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/src/Einit.f90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/Einit.f90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/Einit.f90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/Einit.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/Einit.f90.o
+CMakeFiles/Fastmech_iRICv3.dir/src/Einit.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/src/Einit.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/GeometryMod.F90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/GeometryMod.F90.o: ../GeometryMod.F90
+CMakeFiles/Fastmech_iRICv3.dir/src/GeometryMod.F90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/src/GeometryMod.F90.o: ../src/GeometryMod.F90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_33)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/GeometryMod.F90.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../GeometryMod.F90 -o CMakeFiles/Fastmech_iRICv3.dir/GeometryMod.F90.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/src/GeometryMod.F90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../src/GeometryMod.F90 -o CMakeFiles/Fastmech_iRICv3.dir/src/GeometryMod.F90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/GeometryMod.F90.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/GeometryMod.F90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/src/GeometryMod.F90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/GeometryMod.F90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/GeometryMod.F90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/GeometryMod.F90.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/GeometryMod.F90.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/GeometryMod.F90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/GeometryMod.F90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/src/GeometryMod.F90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/GeometryMod.F90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/GeometryMod.F90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/GeometryMod.F90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/GeometryMod.F90.o
+CMakeFiles/Fastmech_iRICv3.dir/src/GeometryMod.F90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/src/GeometryMod.F90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Median.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/Median.f90.o: ../Median.f90
+CMakeFiles/Fastmech_iRICv3.dir/src/Median.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/src/Median.f90.o: ../src/Median.f90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_34)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/Median.f90.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../Median.f90 -o CMakeFiles/Fastmech_iRICv3.dir/Median.f90.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/src/Median.f90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../src/Median.f90 -o CMakeFiles/Fastmech_iRICv3.dir/src/Median.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Median.f90.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Median.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/src/Median.f90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/Median.f90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/Median.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/Median.f90.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Median.f90.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Median.f90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/Median.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/src/Median.f90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/Median.f90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/Median.f90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/Median.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/Median.f90.o
+CMakeFiles/Fastmech_iRICv3.dir/src/Median.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/src/Median.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/RivCalcInitCond.F90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/RivCalcInitCond.F90.o: ../RivCalcInitCond.F90
+CMakeFiles/Fastmech_iRICv3.dir/src/RivCalcInitCond.F90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/src/RivCalcInitCond.F90.o: ../src/RivCalcInitCond.F90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_35)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/RivCalcInitCond.F90.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../RivCalcInitCond.F90 -o CMakeFiles/Fastmech_iRICv3.dir/RivCalcInitCond.F90.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/src/RivCalcInitCond.F90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../src/RivCalcInitCond.F90 -o CMakeFiles/Fastmech_iRICv3.dir/src/RivCalcInitCond.F90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/RivCalcInitCond.F90.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/RivCalcInitCond.F90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/src/RivCalcInitCond.F90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/RivCalcInitCond.F90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/RivCalcInitCond.F90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/RivCalcInitCond.F90.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/RivCalcInitCond.F90.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/RivCalcInitCond.F90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/RivCalcInitCond.F90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/src/RivCalcInitCond.F90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/RivCalcInitCond.F90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/RivCalcInitCond.F90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/RivCalcInitCond.F90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/RivCalcInitCond.F90.o
+CMakeFiles/Fastmech_iRICv3.dir/src/RivCalcInitCond.F90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/src/RivCalcInitCond.F90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/RivConnectivityMod.F90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/RivConnectivityMod.F90.o: ../RivConnectivityMod.F90
+CMakeFiles/Fastmech_iRICv3.dir/src/RivConnectivityMod.F90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/src/RivConnectivityMod.F90.o: ../src/RivConnectivityMod.F90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_36)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/RivConnectivityMod.F90.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../RivConnectivityMod.F90 -o CMakeFiles/Fastmech_iRICv3.dir/RivConnectivityMod.F90.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/src/RivConnectivityMod.F90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../src/RivConnectivityMod.F90 -o CMakeFiles/Fastmech_iRICv3.dir/src/RivConnectivityMod.F90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/RivConnectivityMod.F90.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/RivConnectivityMod.F90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/src/RivConnectivityMod.F90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/RivConnectivityMod.F90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/RivConnectivityMod.F90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/RivConnectivityMod.F90.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/RivConnectivityMod.F90.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/RivConnectivityMod.F90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/RivConnectivityMod.F90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/src/RivConnectivityMod.F90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/RivConnectivityMod.F90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/RivConnectivityMod.F90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/RivConnectivityMod.F90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/RivConnectivityMod.F90.o
+CMakeFiles/Fastmech_iRICv3.dir/src/RivConnectivityMod.F90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/src/RivConnectivityMod.F90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/RivRoughnessMod.F90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/RivRoughnessMod.F90.o: ../RivRoughnessMod.F90
+CMakeFiles/Fastmech_iRICv3.dir/src/RivRoughnessMod.F90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/src/RivRoughnessMod.F90.o: ../src/RivRoughnessMod.F90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_37)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/RivRoughnessMod.F90.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../RivRoughnessMod.F90 -o CMakeFiles/Fastmech_iRICv3.dir/RivRoughnessMod.F90.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/src/RivRoughnessMod.F90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../src/RivRoughnessMod.F90 -o CMakeFiles/Fastmech_iRICv3.dir/src/RivRoughnessMod.F90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/RivRoughnessMod.F90.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/RivRoughnessMod.F90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/src/RivRoughnessMod.F90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/RivRoughnessMod.F90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/RivRoughnessMod.F90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/RivRoughnessMod.F90.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/RivRoughnessMod.F90.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/RivRoughnessMod.F90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/RivRoughnessMod.F90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/src/RivRoughnessMod.F90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/RivRoughnessMod.F90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/RivRoughnessMod.F90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/RivRoughnessMod.F90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/RivRoughnessMod.F90.o
+CMakeFiles/Fastmech_iRICv3.dir/src/RivRoughnessMod.F90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/src/RivRoughnessMod.F90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/RivStagrMod_jmn.F90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/RivStagrMod_jmn.F90.o: ../RivStagrMod_jmn.F90
+CMakeFiles/Fastmech_iRICv3.dir/src/RivStagrMod_jmn.F90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/src/RivStagrMod_jmn.F90.o: ../src/RivStagrMod_jmn.F90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_38)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/RivStagrMod_jmn.F90.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../RivStagrMod_jmn.F90 -o CMakeFiles/Fastmech_iRICv3.dir/RivStagrMod_jmn.F90.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/src/RivStagrMod_jmn.F90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../src/RivStagrMod_jmn.F90 -o CMakeFiles/Fastmech_iRICv3.dir/src/RivStagrMod_jmn.F90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/RivStagrMod_jmn.F90.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/RivStagrMod_jmn.F90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/src/RivStagrMod_jmn.F90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/RivStagrMod_jmn.F90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/RivStagrMod_jmn.F90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/RivStagrMod_jmn.F90.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/RivStagrMod_jmn.F90.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/RivStagrMod_jmn.F90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/RivStagrMod_jmn.F90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/src/RivStagrMod_jmn.F90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/RivStagrMod_jmn.F90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/RivStagrMod_jmn.F90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/RivStagrMod_jmn.F90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/RivStagrMod_jmn.F90.o
+CMakeFiles/Fastmech_iRICv3.dir/src/RivStagrMod_jmn.F90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/src/RivStagrMod_jmn.F90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.f90.o: ../RivVarMod.f90
+CMakeFiles/Fastmech_iRICv3.dir/src/RivVarMod.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/src/RivVarMod.f90.o: ../src/RivVarMod.f90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_39)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.f90.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../RivVarMod.f90 -o CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.f90.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/src/RivVarMod.f90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../src/RivVarMod.f90 -o CMakeFiles/Fastmech_iRICv3.dir/src/RivVarMod.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.f90.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/src/RivVarMod.f90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/RivVarMod.f90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.f90.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.f90.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.f90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/RivVarMod.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/src/RivVarMod.f90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/RivVarMod.f90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/RivVarMod.f90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.f90.o
+CMakeFiles/Fastmech_iRICv3.dir/src/RivVarMod.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/src/RivVarMod.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/RivVarTimeMod.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/RivVarTimeMod.f90.o: ../RivVarTimeMod.f90
+CMakeFiles/Fastmech_iRICv3.dir/src/RivVarTimeMod.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/src/RivVarTimeMod.f90.o: ../src/RivVarTimeMod.f90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_40)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/RivVarTimeMod.f90.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../RivVarTimeMod.f90 -o CMakeFiles/Fastmech_iRICv3.dir/RivVarTimeMod.f90.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/src/RivVarTimeMod.f90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../src/RivVarTimeMod.f90 -o CMakeFiles/Fastmech_iRICv3.dir/src/RivVarTimeMod.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/RivVarTimeMod.f90.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/RivVarTimeMod.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/src/RivVarTimeMod.f90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/RivVarTimeMod.f90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/RivVarTimeMod.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/RivVarTimeMod.f90.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/RivVarTimeMod.f90.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/RivVarTimeMod.f90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/RivVarTimeMod.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/src/RivVarTimeMod.f90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/RivVarTimeMod.f90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/RivVarTimeMod.f90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/RivVarTimeMod.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/RivVarTimeMod.f90.o
+CMakeFiles/Fastmech_iRICv3.dir/src/RivVarTimeMod.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/src/RivVarTimeMod.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/RivVarVertMod.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/RivVarVertMod.f90.o: ../RivVarVertMod.f90
+CMakeFiles/Fastmech_iRICv3.dir/src/RivVarVertMod.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/src/RivVarVertMod.f90.o: ../src/RivVarVertMod.f90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_41)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/RivVarVertMod.f90.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../RivVarVertMod.f90 -o CMakeFiles/Fastmech_iRICv3.dir/RivVarVertMod.f90.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/src/RivVarVertMod.f90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../src/RivVarVertMod.f90 -o CMakeFiles/Fastmech_iRICv3.dir/src/RivVarVertMod.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/RivVarVertMod.f90.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/RivVarVertMod.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/src/RivVarVertMod.f90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/RivVarVertMod.f90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/RivVarVertMod.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/RivVarVertMod.f90.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/RivVarVertMod.f90.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/RivVarVertMod.f90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/RivVarVertMod.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/src/RivVarVertMod.f90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/RivVarVertMod.f90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/RivVarVertMod.f90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/RivVarVertMod.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/RivVarVertMod.f90.o
+CMakeFiles/Fastmech_iRICv3.dir/src/RivVarVertMod.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/src/RivVarVertMod.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/RivVarWMod.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/RivVarWMod.f90.o: ../RivVarWMod.f90
+CMakeFiles/Fastmech_iRICv3.dir/src/RivVarWMod.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/src/RivVarWMod.f90.o: ../src/RivVarWMod.f90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_42)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/RivVarWMod.f90.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../RivVarWMod.f90 -o CMakeFiles/Fastmech_iRICv3.dir/RivVarWMod.f90.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/src/RivVarWMod.f90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../src/RivVarWMod.f90 -o CMakeFiles/Fastmech_iRICv3.dir/src/RivVarWMod.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/RivVarWMod.f90.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/RivVarWMod.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/src/RivVarWMod.f90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/RivVarWMod.f90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/RivVarWMod.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/RivVarWMod.f90.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/RivVarWMod.f90.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/RivVarWMod.f90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/RivVarWMod.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/src/RivVarWMod.f90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/RivVarWMod.f90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/RivVarWMod.f90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/RivVarWMod.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/RivVarWMod.f90.o
+CMakeFiles/Fastmech_iRICv3.dir/src/RivVarWMod.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/src/RivVarWMod.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/RivVertMod2.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/RivVertMod2.f90.o: ../RivVertMod2.f90
+CMakeFiles/Fastmech_iRICv3.dir/src/RivVertMod2.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/src/RivVertMod2.f90.o: ../src/RivVertMod2.f90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_43)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/RivVertMod2.f90.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../RivVertMod2.f90 -o CMakeFiles/Fastmech_iRICv3.dir/RivVertMod2.f90.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/src/RivVertMod2.f90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../src/RivVertMod2.f90 -o CMakeFiles/Fastmech_iRICv3.dir/src/RivVertMod2.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/RivVertMod2.f90.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/RivVertMod2.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/src/RivVertMod2.f90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/RivVertMod2.f90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/RivVertMod2.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/RivVertMod2.f90.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/RivVertMod2.f90.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/RivVertMod2.f90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/RivVertMod2.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/src/RivVertMod2.f90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/RivVertMod2.f90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/RivVertMod2.f90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/RivVertMod2.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/RivVertMod2.f90.o
+CMakeFiles/Fastmech_iRICv3.dir/src/RivVertMod2.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/src/RivVertMod2.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Stagr_Console.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/Stagr_Console.f90.o: ../Stagr_Console.f90
+CMakeFiles/Fastmech_iRICv3.dir/src/Stagr_Console.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/src/Stagr_Console.f90.o: ../src/Stagr_Console.f90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_44)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/Stagr_Console.f90.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../Stagr_Console.f90 -o CMakeFiles/Fastmech_iRICv3.dir/Stagr_Console.f90.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/src/Stagr_Console.f90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../src/Stagr_Console.f90 -o CMakeFiles/Fastmech_iRICv3.dir/src/Stagr_Console.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Stagr_Console.f90.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Stagr_Console.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/src/Stagr_Console.f90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/Stagr_Console.f90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/Stagr_Console.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/Stagr_Console.f90.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Stagr_Console.f90.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Stagr_Console.f90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/Stagr_Console.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/src/Stagr_Console.f90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/Stagr_Console.f90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/Stagr_Console.f90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/Stagr_Console.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/Stagr_Console.f90.o
+CMakeFiles/Fastmech_iRICv3.dir/src/Stagr_Console.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/src/Stagr_Console.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/stressDivMod.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/stressDivMod.f90.o: ../stressDivMod.f90
+CMakeFiles/Fastmech_iRICv3.dir/src/stressDivMod.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/src/stressDivMod.f90.o: ../src/stressDivMod.f90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_45)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/stressDivMod.f90.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../stressDivMod.f90 -o CMakeFiles/Fastmech_iRICv3.dir/stressDivMod.f90.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/src/stressDivMod.f90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../src/stressDivMod.f90 -o CMakeFiles/Fastmech_iRICv3.dir/src/stressDivMod.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/stressDivMod.f90.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/stressDivMod.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/src/stressDivMod.f90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/stressDivMod.f90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/stressDivMod.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/stressDivMod.f90.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/stressDivMod.f90.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/stressDivMod.f90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/stressDivMod.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/src/stressDivMod.f90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/stressDivMod.f90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/stressDivMod.f90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/stressDivMod.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/stressDivMod.f90.o
+CMakeFiles/Fastmech_iRICv3.dir/src/stressDivMod.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/src/stressDivMod.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/tridag.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/tridag.f90.o: ../tridag.f90
+CMakeFiles/Fastmech_iRICv3.dir/src/tridag.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/src/tridag.f90.o: ../src/tridag.f90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_46)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/tridag.f90.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../tridag.f90 -o CMakeFiles/Fastmech_iRICv3.dir/tridag.f90.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/src/tridag.f90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../src/tridag.f90 -o CMakeFiles/Fastmech_iRICv3.dir/src/tridag.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/tridag.f90.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/tridag.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/src/tridag.f90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/tridag.f90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/tridag.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/tridag.f90.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/tridag.f90.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/tridag.f90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/tridag.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/src/tridag.f90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/tridag.f90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/tridag.f90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/tridag.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/tridag.f90.o
+CMakeFiles/Fastmech_iRICv3.dir/src/tridag.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/src/tridag.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Uinit.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/Uinit.f90.o: ../Uinit.f90
+CMakeFiles/Fastmech_iRICv3.dir/src/Uinit.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/src/Uinit.f90.o: ../src/Uinit.f90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_47)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/Uinit.f90.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../Uinit.f90 -o CMakeFiles/Fastmech_iRICv3.dir/Uinit.f90.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/src/Uinit.f90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../src/Uinit.f90 -o CMakeFiles/Fastmech_iRICv3.dir/src/Uinit.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Uinit.f90.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Uinit.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/src/Uinit.f90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/Uinit.f90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/Uinit.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/Uinit.f90.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Uinit.f90.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Uinit.f90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/Uinit.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/src/Uinit.f90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/Uinit.f90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/Uinit.f90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/Uinit.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/Uinit.f90.o
+CMakeFiles/Fastmech_iRICv3.dir/src/Uinit.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/src/Uinit.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Welcome.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
-CMakeFiles/Fastmech_iRICv3.dir/Welcome.f90.o: ../Welcome.f90
+CMakeFiles/Fastmech_iRICv3.dir/src/Welcome.f90.o: CMakeFiles/Fastmech_iRICv3.dir/flags.make
+CMakeFiles/Fastmech_iRICv3.dir/src/Welcome.f90.o: ../src/Welcome.f90
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/_build/CMakeFiles $(CMAKE_PROGRESS_48)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/Welcome.f90.o"
-	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../Welcome.f90 -o CMakeFiles/Fastmech_iRICv3.dir/Welcome.f90.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building Fortran object CMakeFiles/Fastmech_iRICv3.dir/src/Welcome.f90.o"
+	/usr/bin/f95  $(Fortran_DEFINES) $(Fortran_FLAGS) -c ../src/Welcome.f90 -o CMakeFiles/Fastmech_iRICv3.dir/src/Welcome.f90.o
 
-CMakeFiles/Fastmech_iRICv3.dir/Welcome.f90.o.requires:
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Welcome.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/src/Welcome.f90.o.requires:
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/Welcome.f90.o.requires
 
-CMakeFiles/Fastmech_iRICv3.dir/Welcome.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/Welcome.f90.o.requires
-	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/Welcome.f90.o.provides.build
-.PHONY : CMakeFiles/Fastmech_iRICv3.dir/Welcome.f90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/Welcome.f90.o.provides: CMakeFiles/Fastmech_iRICv3.dir/src/Welcome.f90.o.requires
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/Welcome.f90.o.provides.build
+.PHONY : CMakeFiles/Fastmech_iRICv3.dir/src/Welcome.f90.o.provides
 
-CMakeFiles/Fastmech_iRICv3.dir/Welcome.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/Welcome.f90.o
+CMakeFiles/Fastmech_iRICv3.dir/src/Welcome.f90.o.provides.build: CMakeFiles/Fastmech_iRICv3.dir/src/Welcome.f90.o
 
 # Object files for target Fastmech_iRICv3
 Fastmech_iRICv3_OBJECTS = \
-"CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/betaCDFandINV.f90.o" \
-"CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/betavol.f90.o" \
-"CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/elevdt.f90.o" \
-"CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/functionrough.f90.o" \
-"CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/initdt.f90.o" \
-"CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/initHdt.f90.o" \
-"CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/initimeta.f90.o" \
-"CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/rough.f90.o" \
-"CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/roughnessinv.f90.o" \
-"CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/volfrac.f90.o" \
-"CMakeFiles/Fastmech_iRICv3.dir/CalcCondMod.F90.o" \
-"CMakeFiles/Fastmech_iRICv3.dir/GridCondMod.F90.o" \
-"CMakeFiles/Fastmech_iRICv3.dir/GridCoordMod.F90.o" \
-"CMakeFiles/Fastmech_iRICv3.dir/iriclibf.f90.o" \
-"CMakeFiles/Fastmech_iRICv3.dir/ReadCGNS.F90.o" \
-"CMakeFiles/Fastmech_iRICv3.dir/WriteCGNS.F90.o" \
-"CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/ParmSet.f90.o" \
-"CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/StbBkwOutput.f90.o" \
-"CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/StpBkwInput.f90.o" \
-"CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/Support.f90.o" \
-"CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xAnlzFlow.f90.o" \
-"CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFArea2.f90.o" \
-"CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFChPreis.f90.o" \
-"CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFInput.f90.o" \
-"CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFlowSupport.F90.o" \
-"CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFMatInv.f90.o" \
-"CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFNetInitConds.f90.o" \
-"CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFNetPreisMain.f90.o" \
-"CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFTSBoundCond.f90.o" \
-"CMakeFiles/Fastmech_iRICv3.dir/CsedMod.f90.o" \
-"CMakeFiles/Fastmech_iRICv3.dir/CsedMod_DT.f90.o" \
-"CMakeFiles/Fastmech_iRICv3.dir/Einit.f90.o" \
-"CMakeFiles/Fastmech_iRICv3.dir/GeometryMod.F90.o" \
-"CMakeFiles/Fastmech_iRICv3.dir/Median.f90.o" \
-"CMakeFiles/Fastmech_iRICv3.dir/RivCalcInitCond.F90.o" \
-"CMakeFiles/Fastmech_iRICv3.dir/RivConnectivityMod.F90.o" \
-"CMakeFiles/Fastmech_iRICv3.dir/RivRoughnessMod.F90.o" \
-"CMakeFiles/Fastmech_iRICv3.dir/RivStagrMod_jmn.F90.o" \
-"CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.f90.o" \
-"CMakeFiles/Fastmech_iRICv3.dir/RivVarTimeMod.f90.o" \
-"CMakeFiles/Fastmech_iRICv3.dir/RivVarVertMod.f90.o" \
-"CMakeFiles/Fastmech_iRICv3.dir/RivVarWMod.f90.o" \
-"CMakeFiles/Fastmech_iRICv3.dir/RivVertMod2.f90.o" \
-"CMakeFiles/Fastmech_iRICv3.dir/Stagr_Console.f90.o" \
-"CMakeFiles/Fastmech_iRICv3.dir/stressDivMod.f90.o" \
-"CMakeFiles/Fastmech_iRICv3.dir/tridag.f90.o" \
-"CMakeFiles/Fastmech_iRICv3.dir/Uinit.f90.o" \
-"CMakeFiles/Fastmech_iRICv3.dir/Welcome.f90.o"
+"CMakeFiles/Fastmech_iRICv3.dir/src/betaCDFandINV.f90.o" \
+"CMakeFiles/Fastmech_iRICv3.dir/src/betavol.f90.o" \
+"CMakeFiles/Fastmech_iRICv3.dir/src/elevdt.f90.o" \
+"CMakeFiles/Fastmech_iRICv3.dir/src/functionrough.f90.o" \
+"CMakeFiles/Fastmech_iRICv3.dir/src/initdt.f90.o" \
+"CMakeFiles/Fastmech_iRICv3.dir/src/initHdt.f90.o" \
+"CMakeFiles/Fastmech_iRICv3.dir/src/initimeta.f90.o" \
+"CMakeFiles/Fastmech_iRICv3.dir/src/rough.f90.o" \
+"CMakeFiles/Fastmech_iRICv3.dir/src/roughnessinv.f90.o" \
+"CMakeFiles/Fastmech_iRICv3.dir/src/volfrac.f90.o" \
+"CMakeFiles/Fastmech_iRICv3.dir/src/CalcCondMod.F90.o" \
+"CMakeFiles/Fastmech_iRICv3.dir/src/GridCondMod.F90.o" \
+"CMakeFiles/Fastmech_iRICv3.dir/src/GridCoordMod.F90.o" \
+"CMakeFiles/Fastmech_iRICv3.dir/src/iriclibf.f90.o" \
+"CMakeFiles/Fastmech_iRICv3.dir/src/ReadCGNS.F90.o" \
+"CMakeFiles/Fastmech_iRICv3.dir/src/WriteCGNS.F90.o" \
+"CMakeFiles/Fastmech_iRICv3.dir/src/ParmSet.f90.o" \
+"CMakeFiles/Fastmech_iRICv3.dir/src/StbBkwOutput.f90.o" \
+"CMakeFiles/Fastmech_iRICv3.dir/src/StpBkwInput.f90.o" \
+"CMakeFiles/Fastmech_iRICv3.dir/src/Support.f90.o" \
+"CMakeFiles/Fastmech_iRICv3.dir/src/xAnlzFlow.f90.o" \
+"CMakeFiles/Fastmech_iRICv3.dir/src/xFArea2.f90.o" \
+"CMakeFiles/Fastmech_iRICv3.dir/src/xFChPreis.f90.o" \
+"CMakeFiles/Fastmech_iRICv3.dir/src/xFInput.f90.o" \
+"CMakeFiles/Fastmech_iRICv3.dir/src/xFlowSupport.F90.o" \
+"CMakeFiles/Fastmech_iRICv3.dir/src/xFMatInv.f90.o" \
+"CMakeFiles/Fastmech_iRICv3.dir/src/xFNetInitConds.f90.o" \
+"CMakeFiles/Fastmech_iRICv3.dir/src/xFNetPreisMain.f90.o" \
+"CMakeFiles/Fastmech_iRICv3.dir/src/xFTSBoundCond.f90.o" \
+"CMakeFiles/Fastmech_iRICv3.dir/src/CsedMod.f90.o" \
+"CMakeFiles/Fastmech_iRICv3.dir/src/CsedMod_DT.f90.o" \
+"CMakeFiles/Fastmech_iRICv3.dir/src/Einit.f90.o" \
+"CMakeFiles/Fastmech_iRICv3.dir/src/GeometryMod.F90.o" \
+"CMakeFiles/Fastmech_iRICv3.dir/src/Median.f90.o" \
+"CMakeFiles/Fastmech_iRICv3.dir/src/RivCalcInitCond.F90.o" \
+"CMakeFiles/Fastmech_iRICv3.dir/src/RivConnectivityMod.F90.o" \
+"CMakeFiles/Fastmech_iRICv3.dir/src/RivRoughnessMod.F90.o" \
+"CMakeFiles/Fastmech_iRICv3.dir/src/RivStagrMod_jmn.F90.o" \
+"CMakeFiles/Fastmech_iRICv3.dir/src/RivVarMod.f90.o" \
+"CMakeFiles/Fastmech_iRICv3.dir/src/RivVarTimeMod.f90.o" \
+"CMakeFiles/Fastmech_iRICv3.dir/src/RivVarVertMod.f90.o" \
+"CMakeFiles/Fastmech_iRICv3.dir/src/RivVarWMod.f90.o" \
+"CMakeFiles/Fastmech_iRICv3.dir/src/RivVertMod2.f90.o" \
+"CMakeFiles/Fastmech_iRICv3.dir/src/Stagr_Console.f90.o" \
+"CMakeFiles/Fastmech_iRICv3.dir/src/stressDivMod.f90.o" \
+"CMakeFiles/Fastmech_iRICv3.dir/src/tridag.f90.o" \
+"CMakeFiles/Fastmech_iRICv3.dir/src/Uinit.f90.o" \
+"CMakeFiles/Fastmech_iRICv3.dir/src/Welcome.f90.o"
 
 # External object files for target Fastmech_iRICv3
 Fastmech_iRICv3_EXTERNAL_OBJECTS =
 
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/betaCDFandINV.f90.o
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/betavol.f90.o
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/elevdt.f90.o
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/functionrough.f90.o
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/initdt.f90.o
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/initHdt.f90.o
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/initimeta.f90.o
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/rough.f90.o
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/roughnessinv.f90.o
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/volfrac.f90.o
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/CalcCondMod.F90.o
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/GridCondMod.F90.o
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/GridCoordMod.F90.o
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/iriclibf.f90.o
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/ReadCGNS.F90.o
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/WriteCGNS.F90.o
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/ParmSet.f90.o
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/StbBkwOutput.f90.o
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/StpBkwInput.f90.o
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/Support.f90.o
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xAnlzFlow.f90.o
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFArea2.f90.o
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFChPreis.f90.o
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFInput.f90.o
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFlowSupport.F90.o
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFMatInv.f90.o
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFNetInitConds.f90.o
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFNetPreisMain.f90.o
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFTSBoundCond.f90.o
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/CsedMod.f90.o
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/CsedMod_DT.f90.o
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/Einit.f90.o
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/GeometryMod.F90.o
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/Median.f90.o
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/RivCalcInitCond.F90.o
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/RivConnectivityMod.F90.o
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/RivRoughnessMod.F90.o
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/RivStagrMod_jmn.F90.o
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.f90.o
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/RivVarTimeMod.f90.o
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/RivVarVertMod.f90.o
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/RivVarWMod.f90.o
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/RivVertMod2.f90.o
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/Stagr_Console.f90.o
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/stressDivMod.f90.o
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/tridag.f90.o
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/Uinit.f90.o
-Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/Welcome.f90.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/betaCDFandINV.f90.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/betavol.f90.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/elevdt.f90.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/functionrough.f90.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/initdt.f90.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/initHdt.f90.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/initimeta.f90.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/rough.f90.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/roughnessinv.f90.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/volfrac.f90.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/CalcCondMod.F90.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/GridCondMod.F90.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/GridCoordMod.F90.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/iriclibf.f90.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/ReadCGNS.F90.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/WriteCGNS.F90.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/ParmSet.f90.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/StbBkwOutput.f90.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/StpBkwInput.f90.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/Support.f90.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/xAnlzFlow.f90.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/xFArea2.f90.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/xFChPreis.f90.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/xFInput.f90.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/xFlowSupport.F90.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/xFMatInv.f90.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/xFNetInitConds.f90.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/xFNetPreisMain.f90.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/xFTSBoundCond.f90.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/CsedMod.f90.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/CsedMod_DT.f90.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/Einit.f90.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/GeometryMod.F90.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/Median.f90.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/RivCalcInitCond.F90.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/RivConnectivityMod.F90.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/RivRoughnessMod.F90.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/RivStagrMod_jmn.F90.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/RivVarMod.f90.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/RivVarTimeMod.f90.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/RivVarVertMod.f90.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/RivVarWMod.f90.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/RivVertMod2.f90.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/Stagr_Console.f90.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/stressDivMod.f90.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/tridag.f90.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/Uinit.f90.o
+Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/Welcome.f90.o
 Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/build.make
+Fastmech_iRICv3: /home/rmcd/git/iricdev_gcc/lib/install/iriclib-864fb69/release/libiriclib
+Fastmech_iRICv3: /home/rmcd/git/iricdev_gcc/lib/install/cgnslib-3.2.1/release/libcgns
+Fastmech_iRICv3: /home/rmcd/git/iricdev_gcc/lib/install/hdf5-1.8.14/release/lib/libhdf5
 Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking Fortran executable Fastmech_iRICv3"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Fastmech_iRICv3.dir/link.txt --verbose=$(VERBOSE)
@@ -886,54 +886,54 @@ Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/link.txt
 CMakeFiles/Fastmech_iRICv3.dir/build: Fastmech_iRICv3
 .PHONY : CMakeFiles/Fastmech_iRICv3.dir/build
 
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/betaCDFandINV.f90.o.requires
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/betavol.f90.o.requires
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/elevdt.f90.o.requires
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/functionrough.f90.o.requires
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/initdt.f90.o.requires
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/initHdt.f90.o.requires
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/initimeta.f90.o.requires
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/rough.f90.o.requires
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/roughnessinv.f90.o.requires
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/Daniele_Tonina/volfrac.f90.o.requires
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/CalcCondMod.F90.o.requires
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/GridCondMod.F90.o.requires
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/GridCoordMod.F90.o.requires
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/iriclibf.f90.o.requires
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/ReadCGNS.F90.o.requires
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/WriteCGNS.F90.o.requires
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/ParmSet.f90.o.requires
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/StbBkwOutput.f90.o.requires
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/StpBkwInput.f90.o.requires
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/Support.f90.o.requires
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xAnlzFlow.f90.o.requires
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFArea2.f90.o.requires
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFChPreis.f90.o.requires
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFInput.f90.o.requires
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFlowSupport.F90.o.requires
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFMatInv.f90.o.requires
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFNetInitConds.f90.o.requires
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFNetPreisMain.f90.o.requires
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/Jim1D_Code/xFTSBoundCond.f90.o.requires
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/CsedMod.f90.o.requires
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/CsedMod_DT.f90.o.requires
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/Einit.f90.o.requires
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/GeometryMod.F90.o.requires
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/Median.f90.o.requires
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/RivCalcInitCond.F90.o.requires
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/RivConnectivityMod.F90.o.requires
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/RivRoughnessMod.F90.o.requires
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/RivStagrMod_jmn.F90.o.requires
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/RivVarMod.f90.o.requires
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/RivVarTimeMod.f90.o.requires
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/RivVarVertMod.f90.o.requires
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/RivVarWMod.f90.o.requires
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/RivVertMod2.f90.o.requires
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/Stagr_Console.f90.o.requires
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/stressDivMod.f90.o.requires
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/tridag.f90.o.requires
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/Uinit.f90.o.requires
-CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/Welcome.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/src/betaCDFandINV.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/src/betavol.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/src/elevdt.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/src/functionrough.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/src/initdt.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/src/initHdt.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/src/initimeta.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/src/rough.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/src/roughnessinv.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/src/volfrac.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/src/CalcCondMod.F90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/src/GridCondMod.F90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/src/GridCoordMod.F90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/src/iriclibf.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/src/ReadCGNS.F90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/src/WriteCGNS.F90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/src/ParmSet.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/src/StbBkwOutput.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/src/StpBkwInput.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/src/Support.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/src/xAnlzFlow.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/src/xFArea2.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/src/xFChPreis.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/src/xFInput.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/src/xFlowSupport.F90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/src/xFMatInv.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/src/xFNetInitConds.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/src/xFNetPreisMain.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/src/xFTSBoundCond.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/src/CsedMod.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/src/CsedMod_DT.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/src/Einit.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/src/GeometryMod.F90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/src/Median.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/src/RivCalcInitCond.F90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/src/RivConnectivityMod.F90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/src/RivRoughnessMod.F90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/src/RivStagrMod_jmn.F90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/src/RivVarMod.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/src/RivVarTimeMod.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/src/RivVarVertMod.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/src/RivVarWMod.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/src/RivVertMod2.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/src/Stagr_Console.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/src/stressDivMod.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/src/tridag.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/src/Uinit.f90.o.requires
+CMakeFiles/Fastmech_iRICv3.dir/requires: CMakeFiles/Fastmech_iRICv3.dir/src/Welcome.f90.o.requires
 .PHONY : CMakeFiles/Fastmech_iRICv3.dir/requires
 
 CMakeFiles/Fastmech_iRICv3.dir/clean:

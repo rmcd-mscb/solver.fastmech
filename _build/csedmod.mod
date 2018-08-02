@@ -1,5 +1,5 @@
-GFORTRAN module version '10' created from /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/CsedMod.f90
-MD5:2480340d2ba64565e92a9695f26b097e -- If you edit this, you'll get what you deserve.
+GFORTRAN module version '10' created from ../src/CsedMod.f90
+MD5:6dfadd5a327a023a95608c222df76d56 -- If you edit this, you'll get what you deserve.
 
 (() () () () () () () () () () () () () () () () () () () () () () ()
 () () () ())
@@ -114,9 +114,9 @@ UNKNOWN IMPLICIT-SAVE 0 0 ALLOCATABLE DIMENSION) (REAL 16 0 0 0 REAL ())
 53 'cgns2_read_calccondition' 'calccond' '' 1 ((PROCEDURE UNKNOWN-INTENT
 MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 0 UNKNOWN ()) 54
 0 (55) () 0 () () () 0 0)
-56 'cgns2_read_calccondtion_foralloc' 'calccond' '' 1 ((PROCEDURE
-UNKNOWN-INTENT MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 0
-UNKNOWN ()) 57 0 (58) () 0 () () () 0 0)
+56 'cgns2_read_cc_foralloc' 'calccond' '' 1 ((PROCEDURE UNKNOWN-INTENT
+MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 0 UNKNOWN ()) 57
+0 (58) () 0 () () () 0 0)
 59 'cgnsfileid' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
 UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () ()
 () 0 0)
@@ -1177,10 +1177,10 @@ DIMENSION DUMMY) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () (1 0 ASSUMED_SHAPE
 'calccsed' 0 41 'calcgravcorr' 0 42 'calcquasi3d' 0 43 'calcquasi3drs' 0
 44 'calcsedauto' 0 45 'cd' 0 46 'cd2' 0 47 'cdmax' 0 48 'cdmin' 0 49
 'cdtype' 0 50 'cdv' 0 51 'cdv2' 0 52 'cgns2_read_calccondition' 0 53
-'cgns2_read_calccondtion_foralloc' 0 56 'cgnsfileid' 0 59 'cgnshsfile' 0
-60 'chi' 0 61 'con' 0 62 'constcd' 0 63 'csed' 0 64 'csedmod' 0 70 'd' 0
-71 'd_swap' 0 72 'dbgiternum' 0 76 'dbgtimestep' 0 77 'dealloc_common2d'
-0 78 'dealloc_common3d' 0 79 'dealloc_csed' 0 80 'dealloc_init2d' 0 81
+'cgns2_read_cc_foralloc' 0 56 'cgnsfileid' 0 59 'cgnshsfile' 0 60 'chi'
+0 61 'con' 0 62 'constcd' 0 63 'csed' 0 64 'csedmod' 0 70 'd' 0 71
+'d_swap' 0 72 'dbgiternum' 0 76 'dbgtimestep' 0 77 'dealloc_common2d' 0
+78 'dealloc_common3d' 0 79 'dealloc_csed' 0 80 'dealloc_init2d' 0 81
 'dealloc_ratingcurves' 0 82 'dealloc_timeseries' 0 83 'dealloc_tsnames'
 0 84 'dealloc_velbc' 0 85 'debugstop' 0 86 'dg' 0 87 'dhdn' 0 88 'dhds'
 0 89 'din' 0 90 'discharge' 0 91 'dischincrements' 0 92 'dischtsnum' 0

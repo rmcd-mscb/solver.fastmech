@@ -1,4 +1,4 @@
-GFORTRAN module version '10' created from /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/RivVarMod.f90
+GFORTRAN module version '10' created from ../src/RivVarMod.f90
 MD5:1057f3307080e59dacec0bc303f716c8 -- If you edit this, you'll get what you deserve.
 
 (() () () () () () () () () () () () () () () () () () () () () () () ()

@@ -1,5 +1,5 @@
-GFORTRAN module version '10' created from /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/CalcCondMod.F90
-MD5:ec7ae9977e421167ac98a706bb848c3c -- If you edit this, you'll get what you deserve.
+GFORTRAN module version '10' created from ../src/CalcCondMod.F90
+MD5:af71c180a0695d487787d563f9880cd3 -- If you edit this, you'll get what you deserve.
 
 (() () () () () () () () () () () () () () () () () () () () () () ()
 () () () ())
@@ -111,9 +111,9 @@ UNKNOWN IMPLICIT-SAVE 0 0 ALLOCATABLE DIMENSION) (REAL 16 0 0 0 REAL ())
 52 'cgns2_read_calccondition' 'calccond' '' 1 ((PROCEDURE UNKNOWN-INTENT
 MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 0 UNKNOWN ()) 53
 0 (54) () 0 () () () 0 0)
-55 'cgns2_read_calccondtion_foralloc' 'calccond' '' 1 ((PROCEDURE
-UNKNOWN-INTENT MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 0
-UNKNOWN ()) 56 0 (57) () 0 () () () 0 0)
+55 'cgns2_read_cc_foralloc' 'calccond' '' 1 ((PROCEDURE UNKNOWN-INTENT
+MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 0 UNKNOWN ()) 56
+0 (57) () 0 () () () 0 0)
 58 'cgnsfileid' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
 UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () ()
 () 0 0)
@@ -1124,18 +1124,18 @@ DIMENSION DUMMY) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () (1 0 ASSUMED_SHAPE
 'bcfraction' 0 37 'boundingbox' 0 38 'calccond' 0 39 'calccsed' 0 40
 'calcgravcorr' 0 41 'calcquasi3d' 0 42 'calcquasi3drs' 0 43 'calcsedauto'
 0 44 'cd' 0 45 'cd2' 0 46 'cdmax' 0 47 'cdmin' 0 48 'cdtype' 0 49 'cdv'
-0 50 'cdv2' 0 51 'cgns2_read_calccondition' 0 52
-'cgns2_read_calccondtion_foralloc' 0 55 'cgnsfileid' 0 58 'cgnshsfile' 0
-59 'chi' 0 60 'con' 0 61 'constcd' 0 62 'd_swap' 0 63 'dbgiternum' 0 67
-'dbgtimestep' 0 68 'dealloc_common2d' 0 69 'dealloc_common3d' 0 70
-'dealloc_init2d' 0 71 'dealloc_ratingcurves' 0 72 'dealloc_timeseries' 0
-73 'dealloc_tsnames' 0 74 'dealloc_velbc' 0 75 'debugstop' 0 76 'dg' 0
-77 'din' 0 78 'discharge' 0 79 'dischincrements' 0 80 'dischtsnum' 0 81
-'dmat_solve' 0 82 'dn' 0 88 'drytype' 0 89 'ds' 0 90 'dsand' 0 91 'dt' 0
-92 'e' 0 93 'e2' 0 94 'elevoffset' 0 95 'endlev' 0 96 'erelax' 0 97
-'errorcode' 0 98 'eta' 0 99 'eta2' 0 100 'evc' 0 101 'fcos' 0 102
-'flumebndry' 0 103 'fracs' 0 104 'fsin' 0 105 'fsmin' 0 106 'geometrymod'
-0 107 'getinterpratingcurvevalue' 0 108 'getinterptimeseriesvalue' 0 113
+0 50 'cdv2' 0 51 'cgns2_read_calccondition' 0 52 'cgns2_read_cc_foralloc'
+0 55 'cgnsfileid' 0 58 'cgnshsfile' 0 59 'chi' 0 60 'con' 0 61 'constcd'
+0 62 'd_swap' 0 63 'dbgiternum' 0 67 'dbgtimestep' 0 68 'dealloc_common2d'
+0 69 'dealloc_common3d' 0 70 'dealloc_init2d' 0 71 'dealloc_ratingcurves'
+0 72 'dealloc_timeseries' 0 73 'dealloc_tsnames' 0 74 'dealloc_velbc' 0
+75 'debugstop' 0 76 'dg' 0 77 'din' 0 78 'discharge' 0 79
+'dischincrements' 0 80 'dischtsnum' 0 81 'dmat_solve' 0 82 'dn' 0 88
+'drytype' 0 89 'ds' 0 90 'dsand' 0 91 'dt' 0 92 'e' 0 93 'e2' 0 94
+'elevoffset' 0 95 'endlev' 0 96 'erelax' 0 97 'errorcode' 0 98 'eta' 0
+99 'eta2' 0 100 'evc' 0 101 'fcos' 0 102 'flumebndry' 0 103 'fracs' 0
+104 'fsin' 0 105 'fsmin' 0 106 'geometrymod' 0 107
+'getinterpratingcurvevalue' 0 108 'getinterptimeseriesvalue' 0 113
 'getnumrc' 0 118 'getnumts' 0 119 'getrcnumpts' 0 120 'getrcnumsegments'
 0 123 'getrcpt' 0 126 'getrcsegment' 0 131 'gettsnumpts' 0 136
 'gettsnumsegments' 0 139 'gettspt' 0 142 'gettssegment' 0 147

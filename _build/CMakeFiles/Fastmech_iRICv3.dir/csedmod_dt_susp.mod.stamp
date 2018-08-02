@@ -1,5 +1,5 @@
-GFORTRAN module version '10' created from /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/CsedMod_DT.f90
-MD5:c7b73bbefe7a27ab6642ec05271ec6ed -- If you edit this, you'll get what you deserve.
+GFORTRAN module version '10' created from ../src/CsedMod_DT.f90
+MD5:6b06957ddd7d40bde8a6b7224601af73 -- If you edit this, you'll get what you deserve.
 
 (() () () () () () () () () () () () () () () () () () () () () () ()
 () () () ())
@@ -138,9 +138,9 @@ UNKNOWN IMPLICIT-SAVE 0 0 ALLOCATABLE DIMENSION) (REAL 16 0 0 0 REAL ())
 61 'cgns2_read_calccondition' 'calccond' '' 1 ((PROCEDURE UNKNOWN-INTENT
 MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 0 UNKNOWN ()) 62
 0 (63) () 0 () () () 0 0)
-64 'cgns2_read_calccondtion_foralloc' 'calccond' '' 1 ((PROCEDURE
-UNKNOWN-INTENT MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 0
-UNKNOWN ()) 65 0 (66) () 0 () () () 0 0)
+64 'cgns2_read_cc_foralloc' 'calccond' '' 1 ((PROCEDURE UNKNOWN-INTENT
+MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 0 UNKNOWN ()) 65
+0 (66) () 0 () () () 0 0)
 67 'cgnsfileid' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
 UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () ()
 () 0 0)
@@ -1415,38 +1415,38 @@ DIMENSION DUMMY) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () (1 0 ASSUMED_SHAPE
 0 45 'boundingbox' 0 46 'bv' 0 47 'calccond' 0 48 'calccsed' 0 49
 'calcgravcorr' 0 50 'calcquasi3d' 0 51 'calcquasi3drs' 0 52 'calcsedauto'
 0 53 'cd' 0 54 'cd2' 0 55 'cdmax' 0 56 'cdmin' 0 57 'cdtype' 0 58 'cdv'
-0 59 'cdv2' 0 60 'cgns2_read_calccondition' 0 61
-'cgns2_read_calccondtion_foralloc' 0 64 'cgnsfileid' 0 67 'cgnshsfile' 0
-68 'chi' 0 69 'con' 0 70 'constcd' 0 71 'csed_dt' 0 72 'csedmod_dt_susp'
-0 78 'curv' 0 79 'curvn' 0 80 'curvs' 0 81 'd' 0 82 'd_swap' 0 83
-'dbgiternum' 0 87 'dbgtimestep' 0 88 'dealloc_common2d' 0 89
-'dealloc_common3d' 0 90 'dealloc_csed3d_dt' 0 91 'dealloc_csed_dt' 0 92
-'dealloc_init2d' 0 93 'dealloc_ratingcurves' 0 94 'dealloc_timeseries' 0
-95 'dealloc_tsnames' 0 96 'dealloc_velbc' 0 97 'dealloc_vert' 0 98
-'debugstop' 0 99 'dg' 0 100 'dhdn' 0 101 'dhds' 0 102 'din' 0 103
-'discharge' 0 104 'dischincrements' 0 105 'dischtsnum' 0 106 'dmat_solve'
-0 107 'dn' 0 113 'dref' 0 114 'dro' 0 115 'drytype' 0 116 'ds' 0 117
-'dsand' 0 118 'dt' 0 119 'dth' 0 120 'dthdn' 0 121 'dthds' 0 122 'dum1'
-0 123 'dum1a' 0 124 'dzeta' 0 125 'dzp' 0 126 'e' 0 127 'e2' 0 128 'ecoef'
-0 129 'elevoffset' 0 130 'endlev' 0 131 'erelax' 0 132 'errorcode' 0 133
-'eta' 0 134 'eta2' 0 135 'evc' 0 136 'f1' 0 137 'f2' 0 138 'f3' 0 139
-'falveld' 0 140 'fcos' 0 148 'finc' 0 149 'finc1' 0 150 'finc2' 0 151
-'flumebndry' 0 152 'fone' 0 153 'fracs' 0 154 'fracs0' 0 155 'fsin' 0
-156 'fsmin' 0 157 'ftwo' 0 158 'g1' 0 159 'g2' 0 160 'geometrymod' 0 161
-'getinterpratingcurvevalue' 0 162 'getinterptimeseriesvalue' 0 167
-'getnumrc' 0 172 'getnumts' 0 173 'getrcnumpts' 0 174 'getrcnumsegments'
-0 177 'getrcpt' 0 180 'getrcsegment' 0 185 'gettsnumpts' 0 190
-'gettsnumsegments' 0 193 'gettspt' 0 196 'gettssegment' 0 201
-'gravcorrtype' 0 206 'gravflatbedcorrcoef' 0 207 'gridnames3d' 0 208
-'harea' 0 209 'hav' 0 210 'hav2' 0 211 'havn' 0 212 'hcalcwetting' 0 213
-'hd' 0 214 'hfine' 0 215 'hfine0' 0 216 'hiterinterval' 0 217 'hiterstop'
-0 218 'hl' 0 219 'hmax' 0 220 'hmin' 0 221 'hotstart' 0 222 'hwmin' 0
-223 'hwt' 0 224 'i_re_flag_i' 0 225 'i_re_flag_o' 0 226 'i_tmp_count' 0
-227 'ibc' 0 228 'ibc2' 0 229 'icon' 0 230 'icountl' 0 231 'icountr' 0
-232 'ie' 0 233 'iedgel' 0 234 'iedger' 0 235 'ihl' 0 236 'iibc' 0 237
-'imeta' 0 238 'initratingcurves' 0 239 'inittimeseries' 0 240 'insegment'
-0 241 'interitm' 0 246 'io_3doutput' 0 247 'io_cd' 0 248 'io_depth' 0
-249 'io_elev' 0 250 'io_harea' 0 251 'io_helix' 0 252 'io_ibc' 0 253
+0 59 'cdv2' 0 60 'cgns2_read_calccondition' 0 61 'cgns2_read_cc_foralloc'
+0 64 'cgnsfileid' 0 67 'cgnshsfile' 0 68 'chi' 0 69 'con' 0 70 'constcd'
+0 71 'csed_dt' 0 72 'csedmod_dt_susp' 0 78 'curv' 0 79 'curvn' 0 80
+'curvs' 0 81 'd' 0 82 'd_swap' 0 83 'dbgiternum' 0 87 'dbgtimestep' 0 88
+'dealloc_common2d' 0 89 'dealloc_common3d' 0 90 'dealloc_csed3d_dt' 0 91
+'dealloc_csed_dt' 0 92 'dealloc_init2d' 0 93 'dealloc_ratingcurves' 0 94
+'dealloc_timeseries' 0 95 'dealloc_tsnames' 0 96 'dealloc_velbc' 0 97
+'dealloc_vert' 0 98 'debugstop' 0 99 'dg' 0 100 'dhdn' 0 101 'dhds' 0
+102 'din' 0 103 'discharge' 0 104 'dischincrements' 0 105 'dischtsnum' 0
+106 'dmat_solve' 0 107 'dn' 0 113 'dref' 0 114 'dro' 0 115 'drytype' 0
+116 'ds' 0 117 'dsand' 0 118 'dt' 0 119 'dth' 0 120 'dthdn' 0 121 'dthds'
+0 122 'dum1' 0 123 'dum1a' 0 124 'dzeta' 0 125 'dzp' 0 126 'e' 0 127 'e2'
+0 128 'ecoef' 0 129 'elevoffset' 0 130 'endlev' 0 131 'erelax' 0 132
+'errorcode' 0 133 'eta' 0 134 'eta2' 0 135 'evc' 0 136 'f1' 0 137 'f2' 0
+138 'f3' 0 139 'falveld' 0 140 'fcos' 0 148 'finc' 0 149 'finc1' 0 150
+'finc2' 0 151 'flumebndry' 0 152 'fone' 0 153 'fracs' 0 154 'fracs0' 0
+155 'fsin' 0 156 'fsmin' 0 157 'ftwo' 0 158 'g1' 0 159 'g2' 0 160
+'geometrymod' 0 161 'getinterpratingcurvevalue' 0 162
+'getinterptimeseriesvalue' 0 167 'getnumrc' 0 172 'getnumts' 0 173
+'getrcnumpts' 0 174 'getrcnumsegments' 0 177 'getrcpt' 0 180
+'getrcsegment' 0 185 'gettsnumpts' 0 190 'gettsnumsegments' 0 193
+'gettspt' 0 196 'gettssegment' 0 201 'gravcorrtype' 0 206
+'gravflatbedcorrcoef' 0 207 'gridnames3d' 0 208 'harea' 0 209 'hav' 0
+210 'hav2' 0 211 'havn' 0 212 'hcalcwetting' 0 213 'hd' 0 214 'hfine' 0
+215 'hfine0' 0 216 'hiterinterval' 0 217 'hiterstop' 0 218 'hl' 0 219
+'hmax' 0 220 'hmin' 0 221 'hotstart' 0 222 'hwmin' 0 223 'hwt' 0 224
+'i_re_flag_i' 0 225 'i_re_flag_o' 0 226 'i_tmp_count' 0 227 'ibc' 0 228
+'ibc2' 0 229 'icon' 0 230 'icountl' 0 231 'icountr' 0 232 'ie' 0 233
+'iedgel' 0 234 'iedger' 0 235 'ihl' 0 236 'iibc' 0 237 'imeta' 0 238
+'initratingcurves' 0 239 'inittimeseries' 0 240 'insegment' 0 241
+'interitm' 0 246 'io_3doutput' 0 247 'io_cd' 0 248 'io_depth' 0 249
+'io_elev' 0 250 'io_harea' 0 251 'io_helix' 0 252 'io_ibc' 0 253
 'io_initvel' 0 254 'io_keg' 0 255 'io_shearsn' 0 256 'io_shearxy' 0 257
 'io_stressdiv' 0 258 'io_unitdisch' 0 259 'io_velsn' 0 260 'io_velstrain'
 0 261 'io_velxy' 0 262 'io_vort' 0 263 'io_wse' 0 264 'iplinc' 0 265

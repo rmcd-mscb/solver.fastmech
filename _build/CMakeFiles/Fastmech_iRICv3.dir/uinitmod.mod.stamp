@@ -1,5 +1,5 @@
-GFORTRAN module version '10' created from /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/Uinit.f90
-MD5:bf0879708e52f195cdd4fc256fff1803 -- If you edit this, you'll get what you deserve.
+GFORTRAN module version '10' created from ../src/Uinit.f90
+MD5:2de3573201225b3c571e69243d0c8fe2 -- If you edit this, you'll get what you deserve.
 
 (() () () () () () () () () () () () () () () () () () () () () () ()
 () () () ())
@@ -111,9 +111,9 @@ UNKNOWN IMPLICIT-SAVE 0 0 ALLOCATABLE DIMENSION) (REAL 16 0 0 0 REAL ())
 52 'cgns2_read_calccondition' 'calccond' '' 1 ((PROCEDURE UNKNOWN-INTENT
 MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 0 UNKNOWN ()) 53
 0 (54) () 0 () () () 0 0)
-55 'cgns2_read_calccondtion_foralloc' 'calccond' '' 1 ((PROCEDURE
-UNKNOWN-INTENT MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 0
-UNKNOWN ()) 56 0 (57) () 0 () () () 0 0)
+55 'cgns2_read_cc_foralloc' 'calccond' '' 1 ((PROCEDURE UNKNOWN-INTENT
+MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 0 UNKNOWN ()) 56
+0 (57) () 0 () () () 0 0)
 58 'cgnsfileid' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
 UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () ()
 () 0 0)
@@ -1260,61 +1260,60 @@ VARIABLE (INTEGER 4 0 0 0 INTEGER ()) 0 285 ())) 0 () () () 0 0)
 'bcfraction' 0 37 'boundingbox' 0 38 'calccond' 0 39 'calccsed' 0 40
 'calcgravcorr' 0 41 'calcquasi3d' 0 42 'calcquasi3drs' 0 43 'calcsedauto'
 0 44 'cd' 0 45 'cd2' 0 46 'cdmax' 0 47 'cdmin' 0 48 'cdtype' 0 49 'cdv'
-0 50 'cdv2' 0 51 'cgns2_read_calccondition' 0 52
-'cgns2_read_calccondtion_foralloc' 0 55 'cgnsfileid' 0 58 'cgnshsfile' 0
-59 'chi' 0 60 'con' 0 61 'constcd' 0 62 'd_swap' 0 63 'dbgiternum' 0 67
-'dbgtimestep' 0 68 'dealloc_common2d' 0 69 'dealloc_common3d' 0 70
-'dealloc_init2d' 0 71 'dealloc_ratingcurves' 0 72 'dealloc_timeseries' 0
-73 'dealloc_tsnames' 0 74 'dealloc_velbc' 0 75 'debugstop' 0 76 'dg' 0
-77 'din' 0 78 'discharge' 0 79 'dischincrements' 0 80 'dischtsnum' 0 81
-'dmat_solve' 0 82 'dn' 0 88 'drytype' 0 89 'ds' 0 90 'dsand' 0 91 'dt' 0
-92 'e' 0 93 'e2' 0 94 'elevoffset' 0 95 'endlev' 0 96 'erelax' 0 97
-'errorcode' 0 98 'eta' 0 99 'eta2' 0 100 'evc' 0 101 'fcos' 0 102
-'flumebndry' 0 103 'fracs' 0 104 'fsin' 0 105 'fsmin' 0 106 'geometrymod'
-0 107 'getanglewieght' 0 108 'getdepth' 0 112 'getdepthwieght' 0 116
-'getinterpratingcurvevalue' 0 121 'getinterptimeseriesvalue' 0 126
-'getnumrc' 0 131 'getnumts' 0 132 'getrcnumpts' 0 133 'getrcnumsegments'
-0 136 'getrcpt' 0 139 'getrcsegment' 0 144 'gettsnumpts' 0 149
-'gettsnumsegments' 0 152 'gettspt' 0 155 'gettssegment' 0 160
-'getvelocitywieght' 0 165 'gravcorrtype' 0 169 'gravflatbedcorrcoef' 0
-170 'gridnames3d' 0 171 'harea' 0 172 'hav' 0 173 'hav2' 0 174 'havn' 0
-175 'hcalcwetting' 0 176 'hd' 0 177 'hfine' 0 178 'hiterinterval' 0 179
-'hiterstop' 0 180 'hl' 0 181 'hmin' 0 182 'hotstart' 0 183 'hwmin' 0 184
-'hwt' 0 185 'i_re_flag_i' 0 186 'i_re_flag_o' 0 187 'i_tmp_count' 0 188
-'ibc' 0 189 'ibc2' 0 190 'icon' 0 191 'icountl' 0 192 'icountr' 0 193 'ie'
-0 194 'iedgel' 0 195 'iedger' 0 196 'ihl' 0 197 'iibc' 0 198
-'initratingcurves' 0 199 'inittimeseries' 0 200 'insegment' 0 201
-'interitm' 0 206 'io_3doutput' 0 207 'io_cd' 0 208 'io_depth' 0 209
-'io_elev' 0 210 'io_harea' 0 211 'io_helix' 0 212 'io_ibc' 0 213
-'io_initvel' 0 214 'io_keg' 0 215 'io_shearsn' 0 216 'io_shearxy' 0 217
-'io_stressdiv' 0 218 'io_unitdisch' 0 219 'io_velsn' 0 220 'io_velstrain'
-0 221 'io_velxy' 0 222 'io_vort' 0 223 'io_wse' 0 224 'iplinc' 0 225
-'iswitch' 0 226 'iter' 0 227 'iterationout' 0 228 'iterplout' 0 229 'itm'
-0 230 'iu' 0 231 'iv' 0 232 'iwse' 0 233 'kind' 0 234 'lbwse' 0 235
-'levbegiter' 0 236 'levchangeiter' 0 237 'levenditer' 0 238 'levtype' 0
-239 'line_exp2imp_2d' 0 240 'line_exp_is_degenerate_nd' 0 247
-'line_imp_is_degenerate_2d' 0 252 'lines_exp_int_2d' 0 257
-'lines_imp_int_2d' 0 265 'maxinteritermult' 0 275 'mineta' 0 276 'mineta2'
-0 277 'minrs' 0 278 'mo' 0 279 'mo2' 0 280 'mp' 0 281 'n_rest' 0 282
-'ndischarge' 0 283 'nm' 0 284 'nn' 0 285 'nna' 0 286 'ns' 0 287 'ns2' 0
-288 'ns2a' 0 289 'nsa' 0 290 'nsext' 0 291 'nsextslope' 0 292 'nstage' 0
-293 'nsteps' 0 294 'numratingcurves' 0 295 'numtimeseries' 0 296
-'numvbcpts' 0 297 'nz' 0 298 'onedcd' 0 299 'opt_tmp' 0 300 'phi2' 0 301
-'phi_prime' 0 302 'phirotation' 0 303 'point' 0 304 'ptime' 0 305 'q' 0
-306 'qn' 0 307 'qs' 0 308 'r' 0 309 'r2' 0 310 'ratingcurvepts' 0 311
-'ratingcurves' 0 312 'ratingcurvetype' 0 313 'rbwse' 0 314 'rcbbx' 0 315
-'rcpts' 0 316 'rcstartpts' 0 317 'ribc' 0 318 'rivvarmod' 0 319
-'rivvartimemod' 0 320 'rn' 0 321 'roughnesstype' 0 322 'rssmoo' 0 323
-'sedbcnode' 0 324 'sedeqnode' 0 325 'sedsmoo' 0 326 'sedsmoowght' 0 327
-'segment' 0 328 'setratingcurvenumpts' 0 329 'setratingcurves' 0 333
-'setratingcurvetype' 0 337 'settimeseries' 0 341 'settimeseriesnumpts' 0
-345 'settimeseriestype' 0 349 'showgridext' 0 353 'solnames' 0 354
-'solnames1d' 0 355 'solnames3d' 0 356 'solnindex' 0 357 'soltype' 0 358
-'stage' 0 359 'stagercnum' 0 360 'stagetsnum' 0 361 'startlev' 0 362
-'strmax' 0 363 'subangleofrepose' 0 364 'taun' 0 365 'taus' 0 366
-'taustar_rg0' 0 367 'taustar_rg1' 0 368 'taustar_rs1' 0 369 'tibc' 0 370
-'time_discharge' 0 371 'time_stage' 0 372 'timeincrements' 0 373
-'timeseries' 0 374 'timeseriespts' 0 375 'timeseriestype' 0 376
+0 50 'cdv2' 0 51 'cgns2_read_calccondition' 0 52 'cgns2_read_cc_foralloc'
+0 55 'cgnsfileid' 0 58 'cgnshsfile' 0 59 'chi' 0 60 'con' 0 61 'constcd'
+0 62 'd_swap' 0 63 'dbgiternum' 0 67 'dbgtimestep' 0 68 'dealloc_common2d'
+0 69 'dealloc_common3d' 0 70 'dealloc_init2d' 0 71 'dealloc_ratingcurves'
+0 72 'dealloc_timeseries' 0 73 'dealloc_tsnames' 0 74 'dealloc_velbc' 0
+75 'debugstop' 0 76 'dg' 0 77 'din' 0 78 'discharge' 0 79
+'dischincrements' 0 80 'dischtsnum' 0 81 'dmat_solve' 0 82 'dn' 0 88
+'drytype' 0 89 'ds' 0 90 'dsand' 0 91 'dt' 0 92 'e' 0 93 'e2' 0 94
+'elevoffset' 0 95 'endlev' 0 96 'erelax' 0 97 'errorcode' 0 98 'eta' 0
+99 'eta2' 0 100 'evc' 0 101 'fcos' 0 102 'flumebndry' 0 103 'fracs' 0
+104 'fsin' 0 105 'fsmin' 0 106 'geometrymod' 0 107 'getanglewieght' 0
+108 'getdepth' 0 112 'getdepthwieght' 0 116 'getinterpratingcurvevalue'
+0 121 'getinterptimeseriesvalue' 0 126 'getnumrc' 0 131 'getnumts' 0 132
+'getrcnumpts' 0 133 'getrcnumsegments' 0 136 'getrcpt' 0 139
+'getrcsegment' 0 144 'gettsnumpts' 0 149 'gettsnumsegments' 0 152
+'gettspt' 0 155 'gettssegment' 0 160 'getvelocitywieght' 0 165
+'gravcorrtype' 0 169 'gravflatbedcorrcoef' 0 170 'gridnames3d' 0 171
+'harea' 0 172 'hav' 0 173 'hav2' 0 174 'havn' 0 175 'hcalcwetting' 0 176
+'hd' 0 177 'hfine' 0 178 'hiterinterval' 0 179 'hiterstop' 0 180 'hl' 0
+181 'hmin' 0 182 'hotstart' 0 183 'hwmin' 0 184 'hwt' 0 185 'i_re_flag_i'
+0 186 'i_re_flag_o' 0 187 'i_tmp_count' 0 188 'ibc' 0 189 'ibc2' 0 190
+'icon' 0 191 'icountl' 0 192 'icountr' 0 193 'ie' 0 194 'iedgel' 0 195
+'iedger' 0 196 'ihl' 0 197 'iibc' 0 198 'initratingcurves' 0 199
+'inittimeseries' 0 200 'insegment' 0 201 'interitm' 0 206 'io_3doutput'
+0 207 'io_cd' 0 208 'io_depth' 0 209 'io_elev' 0 210 'io_harea' 0 211
+'io_helix' 0 212 'io_ibc' 0 213 'io_initvel' 0 214 'io_keg' 0 215
+'io_shearsn' 0 216 'io_shearxy' 0 217 'io_stressdiv' 0 218 'io_unitdisch'
+0 219 'io_velsn' 0 220 'io_velstrain' 0 221 'io_velxy' 0 222 'io_vort' 0
+223 'io_wse' 0 224 'iplinc' 0 225 'iswitch' 0 226 'iter' 0 227
+'iterationout' 0 228 'iterplout' 0 229 'itm' 0 230 'iu' 0 231 'iv' 0 232
+'iwse' 0 233 'kind' 0 234 'lbwse' 0 235 'levbegiter' 0 236 'levchangeiter'
+0 237 'levenditer' 0 238 'levtype' 0 239 'line_exp2imp_2d' 0 240
+'line_exp_is_degenerate_nd' 0 247 'line_imp_is_degenerate_2d' 0 252
+'lines_exp_int_2d' 0 257 'lines_imp_int_2d' 0 265 'maxinteritermult' 0
+275 'mineta' 0 276 'mineta2' 0 277 'minrs' 0 278 'mo' 0 279 'mo2' 0 280
+'mp' 0 281 'n_rest' 0 282 'ndischarge' 0 283 'nm' 0 284 'nn' 0 285 'nna'
+0 286 'ns' 0 287 'ns2' 0 288 'ns2a' 0 289 'nsa' 0 290 'nsext' 0 291
+'nsextslope' 0 292 'nstage' 0 293 'nsteps' 0 294 'numratingcurves' 0 295
+'numtimeseries' 0 296 'numvbcpts' 0 297 'nz' 0 298 'onedcd' 0 299
+'opt_tmp' 0 300 'phi2' 0 301 'phi_prime' 0 302 'phirotation' 0 303 'point'
+0 304 'ptime' 0 305 'q' 0 306 'qn' 0 307 'qs' 0 308 'r' 0 309 'r2' 0 310
+'ratingcurvepts' 0 311 'ratingcurves' 0 312 'ratingcurvetype' 0 313
+'rbwse' 0 314 'rcbbx' 0 315 'rcpts' 0 316 'rcstartpts' 0 317 'ribc' 0
+318 'rivvarmod' 0 319 'rivvartimemod' 0 320 'rn' 0 321 'roughnesstype' 0
+322 'rssmoo' 0 323 'sedbcnode' 0 324 'sedeqnode' 0 325 'sedsmoo' 0 326
+'sedsmoowght' 0 327 'segment' 0 328 'setratingcurvenumpts' 0 329
+'setratingcurves' 0 333 'setratingcurvetype' 0 337 'settimeseries' 0 341
+'settimeseriesnumpts' 0 345 'settimeseriestype' 0 349 'showgridext' 0
+353 'solnames' 0 354 'solnames1d' 0 355 'solnames3d' 0 356 'solnindex' 0
+357 'soltype' 0 358 'stage' 0 359 'stagercnum' 0 360 'stagetsnum' 0 361
+'startlev' 0 362 'strmax' 0 363 'subangleofrepose' 0 364 'taun' 0 365
+'taus' 0 366 'taustar_rg0' 0 367 'taustar_rg1' 0 368 'taustar_rs1' 0 369
+'tibc' 0 370 'time_discharge' 0 371 'time_stage' 0 372 'timeincrements'
+0 373 'timeseries' 0 374 'timeseriespts' 0 375 'timeseriestype' 0 376
 'tmp_caption' 0 377 'tmp_dummy' 0 378 'tmp_file_i' 0 379 'tmp_file_o' 0
 380 'tmp_pass' 0 381 'tmpabh' 0 382 'tmpbbh' 0 383 'tmphmax' 0 384
 'tmplsub' 0 385 'tmplsubactdepth' 0 386 'totcd' 0 387 'tottime' 0 388

@@ -1,5 +1,5 @@
-GFORTRAN module version '10' created from /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/RivRoughnessMod.F90
-MD5:33a7206cc10d745f32c4fda948a02a28 -- If you edit this, you'll get what you deserve.
+GFORTRAN module version '10' created from ../src/RivRoughnessMod.F90
+MD5:1c5b0ef680a42343925c9a01ae38be34 -- If you edit this, you'll get what you deserve.
 
 (() () () () () () () () () () () () () () () () () () () () () () ()
 () () () ())
@@ -114,9 +114,9 @@ UNKNOWN IMPLICIT-SAVE 0 0 ALLOCATABLE DIMENSION) (REAL 16 0 0 0 REAL ())
 55 'cgns2_read_calccondition' 'calccond' '' 1 ((PROCEDURE UNKNOWN-INTENT
 MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 0 UNKNOWN ()) 56
 0 (57) () 0 () () () 0 0)
-58 'cgns2_read_calccondtion_foralloc' 'calccond' '' 1 ((PROCEDURE
-UNKNOWN-INTENT MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 0
-UNKNOWN ()) 59 0 (60) () 0 () () () 0 0)
+58 'cgns2_read_cc_foralloc' 'calccond' '' 1 ((PROCEDURE UNKNOWN-INTENT
+MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 0 UNKNOWN ()) 59
+0 (60) () 0 () () () 0 0)
 61 'cgnsfileid' 'rivvarmod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
 UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () ()
 () 0 0)
@@ -1173,8 +1173,8 @@ DIMENSION DUMMY) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () (1 0 ASSUMED_SHAPE
 'calccsed' 0 43 'calcgravcorr' 0 44 'calcquasi3d' 0 45 'calcquasi3drs' 0
 46 'calcsedauto' 0 47 'cd' 0 48 'cd2' 0 49 'cdmax' 0 50 'cdmin' 0 51
 'cdtype' 0 52 'cdv' 0 53 'cdv2' 0 54 'cgns2_read_calccondition' 0 55
-'cgns2_read_calccondtion_foralloc' 0 58 'cgnsfileid' 0 61 'cgnshsfile' 0
-62 'chi' 0 63 'con' 0 64 'constcd' 0 65 'd_swap' 0 66 'dbgiternum' 0 70
+'cgns2_read_cc_foralloc' 0 58 'cgnsfileid' 0 61 'cgnshsfile' 0 62 'chi'
+0 63 'con' 0 64 'constcd' 0 65 'd_swap' 0 66 'dbgiternum' 0 70
 'dbgtimestep' 0 71 'dealloc_common2d' 0 72 'dealloc_common3d' 0 73
 'dealloc_init2d' 0 74 'dealloc_ratingcurves' 0 75 'dealloc_roughness' 0
 76 'dealloc_timeseries' 0 77 'dealloc_tsnames' 0 78 'dealloc_velbc' 0 79

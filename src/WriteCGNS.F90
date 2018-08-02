@@ -1044,7 +1044,7 @@
                                 !								status = NF_PUT_ATT_TEXT(NCID, NF_GLOBAL, "r2d_ErrorText",85,
                                 !						 +"At least one row of nodes are completely dry - check water surface
                                 !						 + boundary condition")
-                                Write(errorstring, '(A100)') 'At least one row of nodes are completely dry - check water surface boundary condition'
+                                Write(errorstring, '(A100)') 'Error: at least on row of nodes is dry'
                                 dimvals(1) = len(errorstring)
                                 CALL cg_array_write_f('ErrorString', Character, 1, dimvals, errorstring, ier)
 

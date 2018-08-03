@@ -61,8 +61,8 @@ SET(CMAKE_TARGET_LINKED_INFO_FILES
 
 # The include file search paths:
 SET(CMAKE_C_TARGET_INCLUDE_PATH
-  "../../../install/cgnslib-3.2.1/release/include"
-  "../../../install/iriclib-864fb69/release/include"
+  "/home/rmcd/git/iricdev_gcc/lib/install/cgnslib-3.2.1/release/include"
+  "/home/rmcd/git/iricdev_gcc/lib/install/iriclib-864fb69/release/include"
   )
 SET(CMAKE_CXX_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
 SET(CMAKE_Fortran_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})

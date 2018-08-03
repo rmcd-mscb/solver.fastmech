@@ -875,9 +875,9 @@ Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/tridag.f90.o
 Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/Uinit.f90.o
 Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/src/Welcome.f90.o
 Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/build.make
-Fastmech_iRICv3: /home/rmcd/git/iricdev_gcc/lib/install/iriclib-864fb69/release/libiriclib
-Fastmech_iRICv3: /home/rmcd/git/iricdev_gcc/lib/install/cgnslib-3.2.1/release/libcgns
-Fastmech_iRICv3: /home/rmcd/git/iricdev_gcc/lib/install/hdf5-1.8.14/release/lib/libhdf5
+Fastmech_iRICv3: /home/rmcd/git/iricdev_gcc/lib/install/iriclib-864fb69/release/lib/libiriclib.so
+Fastmech_iRICv3: /home/rmcd/git/iricdev_gcc/lib/install/cgnslib-3.2.1/release/lib/libcgns.so
+Fastmech_iRICv3: /home/rmcd/git/iricdev_gcc/lib/install/hdf5-1.8.14/release/lib/libhdf5.so
 Fastmech_iRICv3: CMakeFiles/Fastmech_iRICv3.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking Fortran executable Fastmech_iRICv3"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Fastmech_iRICv3.dir/link.txt --verbose=$(VERBOSE)

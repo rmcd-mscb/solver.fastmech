@@ -15,10 +15,10 @@
 ########################
 
 //Path to a file.
-CGNS_INC:PATH=../../install/cgnslib-3.2.1/release/include
+CGNS_INC:PATH=/home/rmcd/git/iricdev_gcc/lib/install/cgnslib-3.2.1/release/include
 
 //Path to a library.
-CGNS_LIBRARY:FILEPATH=/home/rmcd/git/iricdev_gcc/lib/install/cgnslib-3.2.1/release/libcgns
+CGNS_LIBRARY:FILEPATH=/home/rmcd/git/iricdev_gcc/lib/install/cgnslib-3.2.1/release/lib/libcgns.so
 
 //Path to a program.
 CMAKE_AR:FILEPATH=/usr/bin/ar
@@ -228,13 +228,13 @@ Fastmech_iRICv3_BINARY_DIR:STATIC=/home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iR
 Fastmech_iRICv3_SOURCE_DIR:STATIC=/home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3
 
 //Path to a library.
-HDF5_LIBRARY:FILEPATH=/home/rmcd/git/iricdev_gcc/lib/install/hdf5-1.8.14/release/lib/libhdf5
+HDF5_LIBRARY:FILEPATH=/home/rmcd/git/iricdev_gcc/lib/install/hdf5-1.8.14/release/lib/libhdf5.so
 
 //Path to a library.
-IRICLIB_LIBRARY:FILEPATH=/home/rmcd/git/iricdev_gcc/lib/install/iriclib-864fb69/release/libiriclib
+IRICLIB_LIBRARY:FILEPATH=/home/rmcd/git/iricdev_gcc/lib/install/iriclib-864fb69/release/lib/libiriclib.so
 
 //Path to a file.
-IRIC_INC:PATH=../../install/iriclib-864fb69/release/include
+IRIC_INC:PATH=/home/rmcd/git/iricdev_gcc/lib/install/iriclib-864fb69/release/include
 
 
 ########################

@@ -302,7 +302,7 @@ ptime = totTime+iplinc*dt
         noldwetnodes = nwetnodes
     endif
 
-    if(itm == 0) then
+    if(itm /= 0) then
         ITER_LOOP: DO iter = 1,itm
             !       Check if user cancelled simulation and if so exit
             CALL iric_check_cancel_f(errorcode)

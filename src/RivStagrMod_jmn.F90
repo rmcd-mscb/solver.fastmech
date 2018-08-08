@@ -890,7 +890,7 @@ ptime = totTime+iplinc*dt
                 endif
             enddo
         enddo
-    else
+    endif
 
         !601 continue
         do i=1,ns
@@ -999,7 +999,7 @@ ptime = totTime+iplinc*dt
                 ENDIF
             ENDIF
         endif
-    endif
+    !endif
 ENDDO
 !       close(11)
 805 format(2f11.2,6f8.2)

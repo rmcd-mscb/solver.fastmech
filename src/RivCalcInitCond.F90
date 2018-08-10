@@ -4,7 +4,8 @@
     USE GridCoord
     USE CalcCond
     USE NetPreisMain
-
+    USE CSedMod_DT_SUSP
+    USE CSedMod
     IMPLICIT NONE
 
     CONTAINS
@@ -98,12 +99,47 @@
         else
             tmpwselev = wselev/100
         endif
+        !Check downstream Boundary, Jims 1D code will calculate a new wse if the given is too low
+        !added code block below to exit if user defined boundary stage is lower than
+        !downstream boundary elevation.  
+        count = 0
+        do j = 1,nn
+            if(wselev > eta(1,j)) count = count + 1
+        enddo
+        if(count == 0) then
+            write(*,*)'Downstream Boundary lower than topo'
+            CALL dealloc_Common2D()
+            Call dealloc_working()
+            if(TRANSEQTYPE == 2) then
+                call dealloc_csed_DT()
+            else
+                call dealloc_csed()
+            endif
+            STOP
+        endif
+
+        IF(CALCQUASI3D) THEN
+            CALL deALLOC_COMMON3D()
+            IF(TRANSEQTYPE == 2) THEN
+                CALL dealloc_csed3d_dt() !array for Daniele Tonina Wilcock-Kenworthy
+            ENDIF
+        ENDIF
         !    CALL NETPREIS2(ns, nn, ttopo, tx, ty, ONEDCD, tmpq/1e6, tmpwselev/100., hav )
         CALL NETPREIS2(ns, nn, ttopo, tx, ty, ONEDCD, tmpq, tmpwselev, hav )
         hav = hav*100
         DO I = 1,NS
             DO J = 1,NN
                 e(i,j) = hav(i)
+                IF(j == 1) THEN
+                    ibc(i,j) = 0
+                ELSE IF(j == nn) THEN
+                    ibc(i,j) = 0
+
+                ELSE IF(e(i,j).gt.eta(i,j)) THEN
+                    ibc(i,j) = -1
+                ELSE
+                    ibc(i,j) = 0
+                ENDIF
             ENDDO
         ENDDO
 
@@ -390,8 +426,8 @@
             dne(i,j)=dn
             dnq(i,j)=dn
         ENDDO
-        ENDDO
-        !    close(4)
+    ENDDO
+    !    close(4)
     END SUBROUTINE INITARRAYS
 
 

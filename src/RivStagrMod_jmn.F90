@@ -1027,7 +1027,7 @@ if(vbc == 1) then
     CALL DEALLOC_VELBC()
 endif
 
-CALL dealloc_init2d()
+!CALL dealloc_init2d()
 CALL dealloc_roughness()
 CALL dealloc_TimeSeries()
 CALL dealloc_RatingCurves()

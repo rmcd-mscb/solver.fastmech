@@ -26,7 +26,7 @@
 
     write(*,*) tmpns, nsext, tmpnn
     CALL alloc_common2D(tmpns, nsext, tmpnn)
-    CALL ALLOC_INIT2D(ns2, nn)
+    ! CALL ALLOC_INIT2D(ns2, nn)
     !	call alloc_csed_DT()
     CALL alloc_working()
 

@@ -9,9 +9,9 @@ module bmifastmech
      private
      type (fastmech_model) :: model
    contains
-     !procedure :: get_component_name => fm_component_name
-     !procedure :: get_input_var_names => fm_input_var_names
-     !procedure :: get_output_var_names => fm_output_var_names
+     procedure :: get_component_name => fm_component_name
+     procedure :: get_input_var_names => fm_input_var_names
+     procedure :: get_output_var_names => fm_output_var_names
      procedure :: initialize => fm_initialize
      !procedure :: finalize => fm_finalize
      !procedure :: get_start_time => fm_start_time
@@ -22,7 +22,7 @@ module bmifastmech
      !procedure :: update => fm_update
      !procedure :: update_frac => fm_update_frac
      !procedure :: update_until => fm_update_until
-     !procedure :: get_var_grid => fm_var_grid
+     procedure :: get_var_grid => fm_var_grid
      !procedure :: get_grid_type => fm_grid_type
      !procedure :: get_grid_rank => fm_grid_rank
      !procedure :: get_grid_shape => fm_grid_shape
@@ -40,12 +40,12 @@ module bmifastmech
      !procedure :: set_value_at_indices => fm_set_at_indices
    end type bmi_fastmech
 
-  !private :: fm_component_name, fm_input_var_names, fm_output_var_names
+  private :: fm_component_name, fm_input_var_names, fm_output_var_names
   !private :: fm_initialize, fm_finalize
   !private :: fm_start_time, fm_end_time, fm_current_time
   !private :: fm_time_step, fm_time_units
   !private :: fm_update, fm_update_frac, fm_update_until
-  !private :: fm_var_grid
+  private :: fm_var_grid
   !private :: fm_grid_type, fm_grid_rank, fm_grid_shape
   !private :: fm_grid_size, fm_grid_spacing, fm_grid_origin
   !private :: fm_var_type, fm_var_units, fm_var_itemsize, fm_var_nbytes
@@ -54,49 +54,60 @@ module bmifastmech
    private :: fm_initialize
 
   character (len=BMI_MAXCOMPNAMESTR), target :: &
-       component_name = "The 2D Heat Equation"
+       component_name = "Fastmech"
 
   ! Exchange items
-  integer, parameter :: input_item_count = 1
-  integer, parameter :: output_item_count = 1
+  integer, parameter :: input_item_count = 3
+  integer, parameter :: output_item_count = 10
   character (len=BMI_MAXVARNAMESTR), target, &
        dimension (input_item_count) :: &
-       input_items = (/'plate_surface__temperature'/)
+       input_items = (/'Elevation', &
+                       'roughness', &
+                       'vegroughness'/)
   character (len=BMI_MAXVARNAMESTR), target, &
        dimension (output_item_count) :: &
-       output_items = (/'plate_surface__temperature'/)
+       output_items = (/'Depth', &
+                        'Drag_Coefficient', &
+                        'Elevation', &
+                        'FMIBC', &
+                        'IBC', &
+                        'ShearStressX', &
+                        'ShearStressY', &
+                        'VelocityX', &
+                        'VelocityY', &
+                        'WaterSurfaceElevation'/)
 
 contains
 
-  !! Get the name of the model.
-  !function fm_component_name(self, name) result (bmi_status)
-  !  class (bmi_heat), intent (in) :: self
-  !  character (len=BMI_MAXCOMPNAMESTR), pointer, intent (out) :: name
-  !  integer :: bmi_status
-  !
-  !  name => component_name
-  !  bmi_status = BMI_SUCCESS
-  !end function fm_component_name
-  !
-  !! List input variables.
-  !function fm_input_var_names(self, names) result (bmi_status)
-  !  class (bmi_heat), intent (in) :: self
-  !  character (len=BMI_MAXVARNAMESTR), pointer, intent (out) :: names(:)
-  !  integer :: bmi_status
-  !
-  !  names => input_items
-  !  bmi_status = BMI_SUCCESS
-  !end function fm_input_var_names
-  !
-  !! List output variables.
-  !function fm_output_var_names(self, names) result (bmi_status)
-  !  class (bmi_heat), intent (in) :: self
-  !  character (len=BMI_MAXVARNAMESTR), pointer, intent (out) :: names(:)
-  !  integer :: bmi_status
-  !
-  !  names => output_items
-  !  bmi_status = BMI_SUCCESS
-  !end function fm_output_var_names
+  ! Get the name of the model.
+  function fm_component_name(self, name) result (bmi_status)
+    class (bmi_fastmech), intent (in) :: self
+    character (len=BMI_MAXCOMPNAMESTR), pointer, intent (out) :: name
+    integer :: bmi_status
+  
+    name => component_name
+    bmi_status = BMI_SUCCESS
+  end function fm_component_name
+  
+  ! List input variables.
+  function fm_input_var_names(self, names) result (bmi_status)
+    class (bmi_fastmech), intent (in) :: self
+    character (len=BMI_MAXVARNAMESTR), pointer, intent (out) :: names(:)
+    integer :: bmi_status
+  
+    names => input_items
+    bmi_status = BMI_SUCCESS
+  end function fm_input_var_names
+  
+  ! List output variables.
+  function fm_output_var_names(self, names) result (bmi_status)
+    class (bmi_fastmech), intent (in) :: self
+    character (len=BMI_MAXVARNAMESTR), pointer, intent (out) :: names(:)
+    integer :: bmi_status
+  
+    names => output_items
+    bmi_status = BMI_SUCCESS
+  end function fm_output_var_names
 
   ! BMI initializer.
   function fm_initialize(self, config_file) result (bmi_status)
@@ -114,7 +125,7 @@ contains
 
   !! BMI finalizer.
   !function fm_finalize(self) result (bmi_status)
-  !  class (bmi_heat), intent (inout) :: self
+  !  class (bmi_fastmech), intent (inout) :: self
   !  integer :: bmi_status
   !
   !  call cleanup(self%model)
@@ -123,7 +134,7 @@ contains
   !
   !! Model start time.
   !function fm_start_time(self, time) result (bmi_status)
-  !  class (bmi_heat), intent (in) :: self
+  !  class (bmi_fastmech), intent (in) :: self
   !  real, intent (out) :: time
   !  integer :: bmi_status
   !
@@ -133,7 +144,7 @@ contains
   !
   !! Model end time.
   !function fm_end_time(self, time) result (bmi_status)
-  !  class (bmi_heat), intent (in) :: self
+  !  class (bmi_fastmech), intent (in) :: self
   !  real, intent (out) :: time
   !  integer :: bmi_status
   !
@@ -143,7 +154,7 @@ contains
   !
   !! Model current time.
   !function fm_current_time(self, time) result (bmi_status)
-  !  class (bmi_heat), intent (in) :: self
+  !  class (bmi_fastmech), intent (in) :: self
   !  real, intent (out) :: time
   !  integer :: bmi_status
   !
@@ -153,7 +164,7 @@ contains
   !
   !! Model time step.
   !function fm_time_step(self, time_step) result (bmi_status)
-  !  class (bmi_heat), intent (in) :: self
+  !  class (bmi_fastmech), intent (in) :: self
   !  real, intent (out) :: time_step
   !  integer :: bmi_status
   !
@@ -163,7 +174,7 @@ contains
   !
   !! Model time units.
   !function fm_time_units(self, time_units) result (bmi_status)
-  !  class (bmi_heat), intent (in) :: self
+  !  class (bmi_fastmech), intent (in) :: self
   !  character (len=BMI_MAXUNITSSTR), intent (out) :: time_units
   !  integer :: bmi_status
   !
@@ -173,7 +184,7 @@ contains
   !
   !! Advance model by one time step.
   !function fm_update(self) result (bmi_status)
-  !  class (bmi_heat), intent (inout) :: self
+  !  class (bmi_fastmech), intent (inout) :: self
   !  integer :: bmi_status
   !
   !  call advance_in_time(self%model)
@@ -182,7 +193,7 @@ contains
   !
   !! Advance the model by a fraction of a time step.
   !function fm_update_frac(self, time_frac) result (bmi_status)
-  !  class (bmi_heat), intent (inout) :: self
+  !  class (bmi_fastmech), intent (inout) :: self
   !  real, intent (in) :: time_frac
   !  integer :: bmi_status
   !  real :: time_step
@@ -198,7 +209,7 @@ contains
   !
   !! Advance the model until the given time.
   !function fm_update_until(self, time) result (bmi_status)
-  !  class (bmi_heat), intent (inout) :: self
+  !  class (bmi_fastmech), intent (inout) :: self
   !  real, intent (in) :: time
   !  integer :: bmi_status
   !  real :: n_steps_real
@@ -215,26 +226,26 @@ contains
   !  bmi_status = BMI_SUCCESS
   !end function fm_update_until
   !
-  !! Get the grid id for a particular variable.
-  !function fm_var_grid(self, var_name, grid_id) result (bmi_status)
-  !  class (bmi_heat), intent (in) :: self
-  !  character (len=BMI_MAXVARNAMESTR), intent (in) :: var_name
-  !  integer, intent (out) :: grid_id
-  !  integer :: bmi_status
-  !
-  !  select case (var_name)
-  !  case ('plate_surface__temperature')
-  !     grid_id = 0
-  !     bmi_status = BMI_SUCCESS
-  !  case default
-  !     grid_id = -1
-  !     bmi_status = BMI_FAILURE
-  !  end select
-  !end function fm_var_grid
-  !
+  ! Get the grid id for a particular variable.
+  function fm_var_grid(self, var_name, grid_id) result (bmi_status)
+    class (bmi_fastmech), intent (in) :: self
+    character (len=BMI_MAXVARNAMESTR), intent (in) :: var_name
+    integer, intent (out) :: grid_id
+    integer :: bmi_status
+  
+    select case (var_name)
+    case ('plate_surface__temperature')
+       grid_id = 0
+       bmi_status = BMI_SUCCESS
+    case default
+       grid_id = -1
+       bmi_status = BMI_FAILURE
+    end select
+  end function fm_var_grid
+  
   !! The type of a variable's grid.
   !function fm_grid_type(self, grid_id, grid_type) result (bmi_status)
-  !  class (bmi_heat), intent (in) :: self
+  !  class (bmi_fastmech), intent (in) :: self
   !  integer, intent (in) :: grid_id
   !  character (len=*), intent (out) :: grid_type
   !  integer :: bmi_status
@@ -251,7 +262,7 @@ contains
   !
   !! The number of dimensions of a grid.
   !function fm_grid_rank(self, grid_id, rank) result (bmi_status)
-  !  class (bmi_heat), intent (in) :: self
+  !  class (bmi_fastmech), intent (in) :: self
   !  integer, intent (in) :: grid_id
   !  integer, intent (out) :: rank
   !  integer :: bmi_status
@@ -268,7 +279,7 @@ contains
   !
   !! The dimensions of a grid.
   !function fm_grid_shape(self, grid_id, shape) result (bmi_status)
-  !  class (bmi_heat), intent (in) :: self
+  !  class (bmi_fastmech), intent (in) :: self
   !  integer, intent (in) :: grid_id
   !  integer, dimension(:), intent (out) :: shape
   !  integer :: bmi_status
@@ -285,7 +296,7 @@ contains
   !
   !! The total number of elements in a grid.
   !function fm_grid_size(self, grid_id, size) result (bmi_status)
-  !  class (bmi_heat), intent (in) :: self
+  !  class (bmi_fastmech), intent (in) :: self
   !  integer, intent (in) :: grid_id
   !  integer, intent (out) :: size
   !  integer :: bmi_status
@@ -302,7 +313,7 @@ contains
   !
   !! The distance between nodes of a grid.
   !function fm_grid_spacing(self, grid_id, spacing) result (bmi_status)
-  !  class (bmi_heat), intent (in) :: self
+  !  class (bmi_fastmech), intent (in) :: self
   !  integer, intent (in) :: grid_id
   !  real, dimension(:), intent (out) :: spacing
   !  integer :: bmi_status
@@ -319,7 +330,7 @@ contains
   !
   !! Coordinates of grid origin.
   !function fm_grid_origin(self, grid_id, origin) result (bmi_status)
-  !  class (bmi_heat), intent (in) :: self
+  !  class (bmi_fastmech), intent (in) :: self
   !  integer, intent (in) :: grid_id
   !  real, dimension(:), intent (out) :: origin
   !  integer :: bmi_status
@@ -335,7 +346,7 @@ contains
   !
   !! The data type of the variable, as a string.
   !function fm_var_type(self, var_name, type) result (bmi_status)
-  !  class (bmi_heat), intent (in) :: self
+  !  class (bmi_fastmech), intent (in) :: self
   !  character (len=BMI_MAXVARNAMESTR), intent (in) :: var_name
   !  character (len=BMI_MAXUNITSSTR), intent (out) :: type
   !  integer :: bmi_status
@@ -352,7 +363,7 @@ contains
   !
   !! The units of the given variable.
   !function fm_var_units(self, var_name, units) result (bmi_status)
-  !  class (bmi_heat), intent (in) :: self
+  !  class (bmi_fastmech), intent (in) :: self
   !  character (len=BMI_MAXVARNAMESTR), intent (in) :: var_name
   !  character (len=BMI_MAXUNITSSTR), intent (out) :: units
   !  integer :: bmi_status
@@ -369,7 +380,7 @@ contains
   !
   !! Memory use per array element.
   !function fm_var_itemsize(self, var_name, size) result (bmi_status)
-  !  class (bmi_heat), intent (in) :: self
+  !  class (bmi_fastmech), intent (in) :: self
   !  character (len=BMI_MAXVARNAMESTR), intent (in) :: var_name
   !  integer, intent (out) :: size
   !  integer :: bmi_status
@@ -386,7 +397,7 @@ contains
   !
   !! The size of the given variable.
   !function fm_var_nbytes(self, var_name, size) result (bmi_status)
-  !  class (bmi_heat), intent (in) :: self
+  !  class (bmi_fastmech), intent (in) :: self
   !  character (len=BMI_MAXVARNAMESTR), intent (in) :: var_name
   !  integer, intent (out) :: size
   !  integer :: bmi_status
@@ -407,7 +418,7 @@ contains
   !
   !! Get a copy of a variable's values, flattened.
   !function fm_get(self, var_name, dest) result (bmi_status)
-  !  class (bmi_heat), intent (in) :: self
+  !  class (bmi_fastmech), intent (in) :: self
   !  character (len=*), intent (in) :: var_name
   !  real, pointer, intent (inout) :: dest(:)
   !  integer :: bmi_status
@@ -429,7 +440,7 @@ contains
   !
   !! Get a reference to a variable's values, flattened.
   !function fm_get_ref(self, var_name, dest) result (bmi_status)
-  !  class (bmi_heat), intent (in) :: self
+  !  class (bmi_fastmech), intent (in) :: self
   !  character (len=*), intent (in) :: var_name
   !  real, pointer, intent (inout) :: dest(:)
   !  integer :: bmi_status
@@ -450,7 +461,7 @@ contains
   !
   !! Get values of a variable at the given locations.
   !function fm_get_at_indices(self, var_name, dest, indices) result (bmi_status)
-  !  class (bmi_heat), intent (in) :: self
+  !  class (bmi_fastmech), intent (in) :: self
   !  character (len=*), intent (in) :: var_name
   !  real, pointer, intent (inout) :: dest(:)
   !  integer, intent (in) :: indices(:)
@@ -476,7 +487,7 @@ contains
   !
   !! Set new values.
   !function fm_set(self, var_name, src) result (bmi_status)
-  !  class (bmi_heat), intent (inout) :: self
+  !  class (bmi_fastmech), intent (inout) :: self
   !  character (len=*), intent (in) :: var_name
   !  real, intent (in) :: src(:)
   !  integer :: bmi_status
@@ -492,7 +503,7 @@ contains
   !
   !! Set new values at particular locations.
   !function fm_set_at_indices(self, var_name, indices, src) result (bmi_status)
-  !  class (bmi_heat), intent (inout) :: self
+  !  class (bmi_fastmech), intent (inout) :: self
   !  character (len=*), intent (in) :: var_name
   !  integer, intent (in) :: indices(:)
   !  real, intent (in) :: src(:)

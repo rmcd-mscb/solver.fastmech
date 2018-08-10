@@ -6,6 +6,8 @@
     ! Machine precision:
     INTEGER, PARAMETER :: mp = KIND(1.0D0) ! = KIND(1.0D0) for double precision.
     integer,parameter :: strMax = 250
+    INTEGER :: nclusters, nwetnodes, noldwetnodes
+
     REAL(kind=mp) :: ElevOffset=1e12
     REAL(kind=mp) :: ds,dn,mo,hwt
     REAL(kind=mp) :: fcos, fsin
@@ -27,10 +29,13 @@
     !Allocate INTEGER common types
     INTEGER :: iter
     INTEGER :: nm
-    INTEGER :: nsteps
+    INTEGER :: nsteps, nct
     INTEGER :: numVBCPts
-    !			INTEGER :: hiterinterval, hiterstop
     INTEGER :: errorcode
+    LOGICAL :: FLUMEBNDRY
+    REAL(KIND=mp) :: dDisch, dStage, newStage, oldStage, newDisch, oldDisch, dsstage
+
+
     !			INTEGER :: LEVEndIter, LEVBegIter, LEVChangeIter
     !!			INTEGER :: LEVType
     !!			INTEGER :: dryType
@@ -261,4 +266,170 @@
     !				DEALLOCATE(vbcang, STAT = status)
     !			END IF
     END SUBROUTINE
+
+    SUBROUTINE Calc_Area(x, y, xo, yo, nm, dn, area)
+    IMPLICIT NONE
+    REAL(KIND=mp), INTENT (OUT), DIMENSION (:,:) :: area
+    REAL(KIND=mp), INTENT(INOUT), DIMENSION(:,:):: x,y
+    REAL(KIND=mp), INTENT (IN), DIMENSION (:) :: xo, yo
+    INTEGER, INTENT(IN) :: nm
+    REAL(KIND=mp), INTENT(IN) :: dn
+
+    INTEGER :: I, J
+    REAL(KIND=mp) :: x1, x2, x3, x4
+    REAL(KIND=mp) :: y1, y2, y3, y4
+    REAL(KIND=mp) :: area1, area2
+
+    REAL(KIND=mp) :: rsin, rcos, ux, uy, uxnew, uynew
+
+    INTEGER :: icount
+    do i=1,ns2
+        rcos=cos(phirotation(i))
+        rsin=sin(phirotation(i))
+
+        do j=1,nn
+            x(i,j)=xo(i)+(nm-j)*dn*sin(phirotation(i))
+            y(i,j)=yo(i)+(j-nm)*dn*cos(phirotation(i))
+        enddo
+    enddo
+    ! Loop through the mesh and calculate areas for each point except the edges of the mesh
+
+    do i=2,ns-1
+        do j=2,nn-1
+            x1=(x(i-1,j-1)+x(i-1,j)+x(i,j)+x(i,j-1))/4.
+            x2=(x(i-1,j)+x(i-1,j+1)+x(i,j+1)+x(i,j))/4.
+            x3=(x(i,j)+x(i,j+1)+x(i+1,j+1)+x(i+1,j))/4.
+            x4=(x(i,j-1)+x(i,j)+x(i+1,j)+x(i+1,j-1))/4.
+            y1=(y(i-1,j-1)+y(i-1,j)+y(i,j)+y(i,j-1))/4.
+            y2=(y(i-1,j)+y(i-1,j+1)+y(i,j+1)+y(i,j))/4.
+            y3=(y(i,j)+y(i,j+1)+y(i+1,j+1)+y(i+1,j))/4.
+            y4=(y(i,j-1)+y(i,j)+y(i+1,j)+y(i+1,j-1))/4.
+            !c          using area of a triangle algorithm in standard mathmatical tables book page 362
+            !c          0.5*(x1*y2+x2*y3+x3*y1-y1*x2-y2*x3-y3*x1)
+            !c          Where in the first case x1=>x1,x2=>x4,x3=>x2
+            !c          Where in the second case x1=>x3,x2=>x2,x3=>x4
+            area1=0.5*(x1*y4+x4*y2+x2*Y1-y1*x4-y4*x2-y2*x1)
+            area2=0.5*(x3*y2+x2*y4+x4*y3-y3*x2-y2*x4-y4*x3)
+            area(i,j)=area1+area2
+            !c           WRITE(9,*) i,j,x1,x2,x3,x4,y1,y2,y3,y4,area1,area2  ! debug
+        end do
+    end do
+
+    !C Loop through the mesh and estimate the cell areas for the edge of the mesh
+    !C and write the node number,x coord, y coord, and area out to a file
+
+    icount=0
+    ! c       WRITE(9,*)'node,x,y,area'
+
+    do i=1,ns
+        do j=1,nn
+            icount=icount+1
+            !c       deal with left edge of the mesh (take area from interior)
+            IF(j.eq.1)then
+                IF(i.eq.1)then
+                    area(i,j)=area(2,2)
+                ELSEIF(i.eq.ns)then
+                    area(i,j)=area(ns-1,2)
+                else
+                    area(i,j)=area(i,2)
+                endif
+                !c       deal with right edge of the mesh (take area from interior)
+            ELSEIF(j.eq.nn)then
+                IF(i.eq.1)then
+                    area(i,j)=area(2,nn-1)
+                ELSEIF(i.eq.ns)then
+                    area(i,j)=area(ns-1,nn-1)
+                else
+                    area(i,j)=area(i,nn-1)
+                endif
+            ENDIF
+            !c       deal with the interior ends of the mesh (top and bottom of the mesh) areas
+            IF(i.eq.1)then
+                IF(j.gt.1.and.j.lt.nn)then
+                    area(i,j)=area(2,j)
+                endif
+            ELSEIF(i.eq.ns)then
+                IF(j.gt.1.and.j.lt.nn)then
+                    area(i,j)=area(ns-1,j)
+                endif
+            ENDIF
+
+            !!c       write out the x coordinates ,y coordinates, and area values
+            !        x(i,j)=x(i,j)+offsetx
+            !        y(i,j)=y(i,j)+offsety
+            !        WRITE(9,210) icount,x(i,j),y(i,j),area(i,j)
+
+        end do
+    end do
+    END SUBROUTINE Calc_Area
+    
+    SUBROUTINE updateIBC()
+    IMPLICIT NONE
+    INTEGER :: i,j
+    tibc = ibc
+    do i = 1,ns
+        do j = 1,nn
+            if(ibc(i,j).gt.0) then
+                tibc(i,j) = -1
+                !	        else if(j == 1) then
+                !!	            ibc(i,j) = 1
+                !	        else if(j == nn) then
+                !!	            ibc(i,j) = 2
+            endif
+
+        enddo
+    enddo
+    DO i = 2,ns-1
+        Do j = 2, nn-1
+            if(ibc(i,j).ne.0.and.ibc(i-1,j).eq.0) then
+                tibc(i,j)=4
+                !	        elseif(ibc(i,j).eq.-1.and.ibc(i,j-1).eq.0)then
+                !	            tibc(i,j)=1
+                !	        elseif(ibc(i,j).eq.-1.and.ibc(i,j+1).eq.0)then
+                !	            tibc(i,j)=2
+            endif
+            !	        if(ibc(i,j).eq.-1.and.ibc(i+1,j).eq.0) then
+            !	            tibc(i+1,j)=6
+            !	        endif
+        ENDDO
+    ENDDO
+    !Enforce Lateral boundary nodes
+    if(FLUMEBNDRY) then
+        Do i = 1, ns
+            tibc(i,1) = 1;
+            tibc(i,nn) = 2;
+        ENDDO
+    else
+        Do i = 1, ns
+            tibc(i,1) = 0
+            u(i,1) = 0;
+            v(i,1) = 0;
+
+            tibc(i,nn) = 0
+            u(i,nn) = 0;
+            v(i,nn) = 0;
+        ENDDO
+    endif
+
+    ibc = tibc
+
+    END SUBROUTINE updateIBC
+
+    !SUBROUTINE RESETGRIDEXTENSION()
+    !IMPLICIT NONE
+    !
+    !INTEGER :: i,j
+    !REAL(KIND=mp) :: mag
+    !do i=ns2+1,ns2+nsext
+    !    do j = 1,nn
+    !        eta(i,j)=eta2(ns2,j) - ((i-ns2)*ds*nsextslope)
+    !        !mineta(i,j)=mineta2(ns2,j) - ((i-ns2)*ds*nsextslope)
+    !        if(ibc(i,j).ne.0) then
+    !            mag = sqrt(u(ns2,j)**2.+v(ns2,j)**2.)
+    !            v(i,j) = v(i,j) - (i*(-v(ns2,j)/(ns2+nsext)))
+    !            u(i,j) = sqrt(mag**2. - v(i,j)**2.)
+    !        endif
+    !    enddo
+    !enddo
+    !END SUBROUTINE RESETGRIDEXTENSION
     END MODULE RivVarMod

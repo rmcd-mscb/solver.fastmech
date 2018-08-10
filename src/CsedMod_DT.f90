@@ -175,9 +175,9 @@
     bedporosity = 0.3
 
     runid='test     '
-    OPEN(7,FILE='seddat')
-    OPEN(10,FILE='top2')
-    OPEN(12,FILE='SedFlux')
+    !OPEN(7,FILE='seddat')
+    !OPEN(10,FILE='top2')
+    !OPEN(12,FILE='SedFlux')
     !			OPEN(11,FILE='topser')
     !			DIN=0.02
 
@@ -586,13 +586,13 @@
         !                                For WK model the second order is not used but we used a mass balance on the fluxes
         !                                this is for accounting for the limited material in a cell
 
-        DO 1650 I=1,ns
-            DO 1645 J=1,nn
+        DO I=1,ns
+            DO J=1,nn
                 ! moved from bottom of Do loop on 24 October 2012
                 ! if dry nothing change
                 IF(ibc(i,j).EQ.0) THEN
                     CON(i,j) = 0.0
-                    GOTO 1645
+                    cycle
                 ENDIF
                 ! end moved from bottom of Do loop on 24 October 2012
 
@@ -640,13 +640,13 @@
 
                     !                   CON(I,J)=(QS(2,J)-QS(1,J))/(ds*SC)
                     !                    GO TO 643
-                    GO TO 1645
+                    cycle
 
                 ELSEIF(I.EQ.ns) THEN
                     !                 CON(I,J)=(QS(I,J)-QS(I-1,J))/(ds*SC)
                     !                 CON(I,J)=(QS(2,J)-QS(1,J))/(ds*SC)
                     CON(I,J)=CON(I-1,J)
-                    GO TO 1643
+                    !GO TO 1643
                 ELSE
 
                     ! sediment entering along s negative=deposition
@@ -665,13 +665,13 @@
 
 
                 ! sediment entering along n
-1643            IF(J.EQ.1) THEN
+            IF(J.EQ.1) THEN
                     check=QN(I,2)/dn
                     if (check.LT.0.0) then
                         CON(I,1)=CON(I,1)+check*harea(I,2)
                     endif
                     CON(I,J)=CON(I,J)/(harea(i,j))  ! added 24 January 2012 correct for the lateral nodes
-                    GO TO 1645
+                    cycle
                 ELSE
                     IF(J.EQ.nn) THEN
                         check=QN(I,nn-1)/dn
@@ -679,7 +679,7 @@
                             CON(I,nn)=CON(I,nn)-check*harea(I,nn-1)
                         endif
                         CON(I,J)=CON(I,J)/(harea(i,j))  ! added 24 January 2012 correct for the lateral nodes
-                        GO TO 1645
+                        cycle
                     ENDIF
                     check=QN(I,J+1)/dn
                     if (check.LT.0.0) then
@@ -695,8 +695,8 @@
                 IF(ibc(i,j).EQ.0) THEN
                     CON(i,j) = 0.0
                 ENDIF
-1645        CONTINUE
-1650    CONTINUE
+1645        enddo
+1650    enddo
 
         !     End the Exner for WK
 
@@ -723,8 +723,8 @@
         !
         !            CLOSE(11)
 
-        DO 650 I=1,ns
-            DO 645 J=1,nn
+        DO I=1,ns
+            DO J=1,nn
                 SC=rn(I,J)
                 IF(I.lt.SEDBCNODE) THEN
 
@@ -732,13 +732,13 @@
 
                     !                   CON(I,J)=(QS(2,J)-QS(1,J))/(ds*SC)
                     !                    GO TO 643
-                    GO TO 645
+                    cycle
 
                 ELSEIF(I.EQ.ns) THEN
                     !                 CON(I,J)=(QS(I,J)-QS(I-1,J))/(ds*SC)
                     !                 CON(I,J)=(QS(2,J)-QS(1,J))/(ds*SC)
                     CON(I,J)=CON(I-1,J)
-                    GO TO 643
+                    !GO TO 643
                 ELSE
                     CON(I,J)=(QS(I+1,J)-QS(I-1,J))/(2.*ds*SC)
                 ENDIF
@@ -747,19 +747,19 @@
 
                 IF(J.EQ.1) THEN
                     CON(I,1)=CON(I,1)+(QN(I,2)-QN(I,1))/dn
-                    GO TO 645
+                    cycle
                 ELSE
 
                     IF(J.EQ.nn) THEN
                         CON(I,nn)=CON(I,nn)+(QN(I,nn)-QN(I,nn-1))/dn
-                        GO TO 645
+                        cycle
                     ENDIF
 
                     CON(I,J)=CON(I,J)+(QN(I,J+1)-QN(I,J-1))/(2.*dn)  !end equation 26 in Nelson&Smith AGU12
 
                 ENDIF
-645         CONTINUE
-650     CONTINUE
+645         enddo
+650     enddo
         !            DO 630 I=1,ns
         !            DO 630 J=1,nn
         !               SC=rn(I,J)
@@ -815,11 +815,11 @@
         DO  J=2,nn
             QTOT(I)=QTOT(I)+(.5*dn)*(QS(I,J)+QS(I,J-1))
         ENDDO
-        WRITE(12,*) I, QTOT(i)
+        !WRITE(12,*) I, QTOT(i)
         QTOTAL=QTOTAL+QTOT(I)/ns
     ENDDO
-    WRITE(12,*) 'AVERAGE', QTOTAL
-    CLOSE(12)
+    !WRITE(12,*) 'AVERAGE', QTOTAL
+    !CLOSE(12)
 
     !			do 652 j=1,nn
     !652			con(1,j)=con(2,j)
@@ -1036,18 +1036,18 @@
         CALL ZOTOCDTWO()
     endif
 
-    if (TRANSEQTYPE.eq.2) go to 2000         !Daniele
-
-2000 if(nct.eq.nsteps) then
-        WRITE(7,2010) RUNID
-        WRITE(7,*) QS,QN,CON,hl,QTOT
-        write(7,*) ((i,j,con(i,j),j=1,nn),i=10,15)
-        !			    write(10,*) hwt,erelax,urelax,arelax,itm,cd,q,mo
-        !			    write(10,2010) runid
-        !			    write(10,*) q,mo,hav
-        !			    write(10,*) r,w,eta,ibc
-        !			    write(10,*) xo,yo
-    endif
+!    if (TRANSEQTYPE.eq.2) go to 2000         !Daniele
+!
+!2000 if(nct.eq.nsteps) then
+!        !WRITE(7,2010) RUNID
+!        !WRITE(7,*) QS,QN,CON,hl,QTOT
+!        !write(7,*) ((i,j,con(i,j),j=1,nn),i=10,15)
+!        !			    write(10,*) hwt,erelax,urelax,arelax,itm,cd,q,mo
+!        !			    write(10,2010) runid
+!        !			    write(10,*) q,mo,hav
+!        !			    write(10,*) r,w,eta,ibc
+!        !			    write(10,*) xo,yo
+!    endif
 2010 format(A20)
     return
     end subroutine csed_DT

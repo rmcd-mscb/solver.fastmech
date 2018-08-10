@@ -70,8 +70,8 @@
 
     !			CALL alloc_csed()
     runid='test         '
-    OPEN(7,FILE='seddat')
-    OPEN(10,FILE='top2')
+    !OPEN(7,FILE='seddat')
+    !OPEN(10,FILE='top2')
     !			OPEN(11,FILE='topser')
     !			DIN=0.02
 
@@ -432,17 +432,17 @@
     !			    write(11,*) Q,MO
     !			    write(11,*) R,W,eta
     !			    write(11,*) xo,yo
-2000 if(nct.eq.nsteps) then
-        WRITE(7,2010) RUNID
-        WRITE(7,*) QS,QN,CON,hl,QTOT
-        write(7,*) ((i,j,con(i,j),j=1,nn),i=10,15)
-        write(10,*) hwt,erelax,urelax,arelax,itm,cd,q,mo
-        write(10,2010) runid
-        write(10,*) q,mo,hav
-        write(10,*) r,w,eta,ibc
-        write(10,*) xo,yo
-    endif
-2010 format(A20)
+!2000 if(nct.eq.nsteps) then
+!        WRITE(7,2010) RUNID
+!        WRITE(7,*) QS,QN,CON,hl,QTOT
+!        write(7,*) ((i,j,con(i,j),j=1,nn),i=10,15)
+!        write(10,*) hwt,erelax,urelax,arelax,itm,cd,q,mo
+!        write(10,2010) runid
+!        write(10,*) q,mo,hav
+!        write(10,*) r,w,eta,ibc
+!        write(10,*) xo,yo
+!    endif
+!2010 format(A20)
     return
     end subroutine csed
 

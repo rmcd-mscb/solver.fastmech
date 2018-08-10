@@ -191,6 +191,7 @@
 		<File RelativePath=".\src\RivCalcInitCond.F90"/>
 		<File RelativePath=".\src\RivConnectivityMod.F90"/>
 		<File RelativePath=".\src\RivRoughnessMod.F90"/>
+		<File RelativePath=".\src\RivStagrMod_bmi.f90"/>
 		<File RelativePath=".\src\RivStagrMod_jmn.F90"/>
 		<File RelativePath=".\src\RivVarMod.f90"/>
 		<File RelativePath=".\src\RivVarTimeMod.f90"/>

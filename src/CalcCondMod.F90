@@ -10,7 +10,6 @@
     REAL(KIND=mp), ALLOCATABLE, DIMENSION(:) :: vbcdist, vbcvel, vbcang
 
     LOGICAL :: HotStart
-    LOGICAL :: FLUMEBNDRY
 
 
     INTEGER :: itm, interitm, iplinc
@@ -44,8 +43,8 @@
     REAL :: nsextslope
 
     !Wetting and Drying
-    INTEGER :: dryType, hiterInterval, hiterstop
-    LOGICAL :: hcalcwetting
+    INTEGER :: dryType, hiterInterval, hiterstop, imod
+    LOGICAL :: iwetdry
     REAL(KIND=mp) :: hmin, hwmin
 
     !LEV
@@ -386,12 +385,13 @@
     CALL cg_iRIC_Read_Real_F('FM_HydAttWetMinDepth', hwmin, ier)
     hwmin = hwmin*100.
     CALL CG_IRIC_READ_INTEGER_F('FM_HydAttWetIterInterval', hiterInterval, ier)
+    imod = hiterinterval
     CALL CG_IRIC_READ_INTEGER_F('FM_HydAttWetIterStop', hiterstop, ier)
     CALL CG_IRIC_READ_INTEGER_F('FM_HydAttCalcWetting', tmpint, ier)
     IF(tmpint == 1) THEN
-        hcalcwetting = .TRUE.
+        iwetdry = .TRUE.
     ELSE
-        hcalcwetting = .FALSE.
+        iwetdry = .FALSE.
     ENDIF
 
     CALL CG_IRIC_READ_INTEGER_F('FM_HydAttLEVType', LEVType, ier)

@@ -1,5 +1,13 @@
 # Remove fortran modules provided by this target.
 FILE(REMOVE
+  "bmif.mod"
+  "BMIF.mod"
+  "CMakeFiles/Fastmech_iRICv3.dir/bmif.mod.stamp"
+
+  "bmifastmech.mod"
+  "BMIFASTMECH.mod"
+  "CMakeFiles/Fastmech_iRICv3.dir/bmifastmech.mod.stamp"
+
   "calccond.mod"
   "CALCCOND.mod"
   "CMakeFiles/Fastmech_iRICv3.dir/calccond.mod.stamp"
@@ -15,6 +23,14 @@ FILE(REMOVE
   "einitmod.mod"
   "EINITMOD.mod"
   "CMakeFiles/Fastmech_iRICv3.dir/einitmod.mod.stamp"
+
+  "fastmech.mod"
+  "FASTMECH.mod"
+  "CMakeFiles/Fastmech_iRICv3.dir/fastmech.mod.stamp"
+
+  "fm_helpers.mod"
+  "FM_HELPERS.mod"
+  "CMakeFiles/Fastmech_iRICv3.dir/fm_helpers.mod.stamp"
 
   "geometrymod.mod"
   "GEOMETRYMOD.mod"
@@ -63,6 +79,10 @@ FILE(REMOVE
   "rivstagr4mod_jmn.mod"
   "RIVSTAGR4MOD_JMN.mod"
   "CMakeFiles/Fastmech_iRICv3.dir/rivstagr4mod_jmn.mod.stamp"
+
+  "rivstagrmod_bmi.mod"
+  "RIVSTAGRMOD_BMI.mod"
+  "CMakeFiles/Fastmech_iRICv3.dir/rivstagrmod_bmi.mod.stamp"
 
   "rivvarmod.mod"
   "RIVVARMOD.mod"

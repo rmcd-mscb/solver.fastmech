@@ -47,6 +47,11 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/Fastmech_iRICv3.dir/src/tridag.f90.o"
   "CMakeFiles/Fastmech_iRICv3.dir/src/Uinit.f90.o"
   "CMakeFiles/Fastmech_iRICv3.dir/src/Welcome.f90.o"
+  "CMakeFiles/Fastmech_iRICv3.dir/src/bmi.f90.o"
+  "CMakeFiles/Fastmech_iRICv3.dir/src/bmi_Fastmech.f90.o"
+  "CMakeFiles/Fastmech_iRICv3.dir/src/fastmech.f90.o"
+  "CMakeFiles/Fastmech_iRICv3.dir/src/RivStagrMod_bmi.f90.o"
+  "CMakeFiles/Fastmech_iRICv3.dir/src/fm_helpers.f90.o"
   "Fastmech_iRICv3.pdb"
   "Fastmech_iRICv3"
 )

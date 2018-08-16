@@ -47,7 +47,7 @@ contains
     SUBROUTINE Get_GRID_2D_COORD(ctype, tmp)
     IMPLICIT NONE
     CHARACTER(LEN=*) :: ctype
-    REAL(KIND=mp), DIMENSION(:), INTENT(OUT) :: tmp
+    REAL, DIMENSION(:), INTENT(OUT) :: tmp !changed this to just real but could create problems
     REAL(KIND=mp) :: xx, yy, ux, uy
     double precision :: rcos, rsin
     INTEGER :: i, j, count, ier
@@ -80,7 +80,7 @@ contains
     SUBROUTINE Get_GRID_3D_COORD(ctype, tmpx)
     IMPLICIT NONE
     CHARACTER(LEN=*) :: ctype
-    Double Precision, DIMENSION(:), INTENT(OUT) :: tmpx
+    real, DIMENSION(:), INTENT(OUT) :: tmpx
     INTEGER :: i, j, k, ier
     Double Precision :: xx, yy, ux, uy
     double precision :: rcos, rsin

@@ -29,6 +29,9 @@ CMakeFiles/Fastmech_iRICv3.dir/src/RivConnectivityMod.F90.o
  /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/src/RivConnectivityMod.F90
 CMakeFiles/Fastmech_iRICv3.dir/src/RivRoughnessMod.F90.o
  /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/src/RivRoughnessMod.F90
+CMakeFiles/Fastmech_iRICv3.dir/src/RivStagrMod_bmi.f90.o
+ /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/src/RivStagrMod_bmi.f90
+ /home/rmcd/git/iricdev_gcc/lib/install/iriclib-864fb69/release/include/iriclib_f.h
 CMakeFiles/Fastmech_iRICv3.dir/src/RivStagrMod_jmn.F90.o
  /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/src/RivStagrMod_jmn.F90
  /home/rmcd/git/iricdev_gcc/lib/install/iriclib-864fb69/release/include/iriclib_f.h
@@ -61,8 +64,16 @@ CMakeFiles/Fastmech_iRICv3.dir/src/betaCDFandINV.f90.o
  /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/src/betaCDFandINV.f90
 CMakeFiles/Fastmech_iRICv3.dir/src/betavol.f90.o
  /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/src/betavol.f90
+CMakeFiles/Fastmech_iRICv3.dir/src/bmi.f90.o
+ /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/src/bmi.f90
+CMakeFiles/Fastmech_iRICv3.dir/src/bmi_Fastmech.f90.o
+ /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/src/bmi_Fastmech.f90
 CMakeFiles/Fastmech_iRICv3.dir/src/elevdt.f90.o
  /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/src/elevdt.f90
+CMakeFiles/Fastmech_iRICv3.dir/src/fastmech.f90.o
+ /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/src/fastmech.f90
+CMakeFiles/Fastmech_iRICv3.dir/src/fm_helpers.f90.o
+ /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/src/fm_helpers.f90
 CMakeFiles/Fastmech_iRICv3.dir/src/functionrough.f90.o
  /home/rmcd/git/iricdev_gcc/lib/src/Fastmech_iRIC_v3/src/functionrough.f90
 CMakeFiles/Fastmech_iRICv3.dir/src/initHdt.f90.o

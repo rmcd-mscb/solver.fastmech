@@ -18,6 +18,7 @@
     USE RivRoughnessMod
     USE RivVarTimeMod
     USE RivConnectivityMod
+    USE fm_helpers
     IMPLICIT NONE
 
     CONTAINS
@@ -30,7 +31,7 @@
     !character*20 runid
     INTEGER :: solIndex
     INTEGER :: n, n2
-    REAL(KIND=mp) :: g, rho, vkc, ustar
+    REAL(KIND=mp) :: ustar
     REAL(KIND=mp) :: dinc
     REAL(KIND=mp) :: area
     REAL(KIND=mp) :: ba, bb, bc, be, bf, bg, bot, bot2
@@ -135,7 +136,7 @@
         CALL Z0TOCD() !Calculate cd from 2-part profile
     endif
 
-    nsteps = (VarDischEndTime-VarDischStartTime)/dt
+    nsteps = (VarDischEndTime-VarDischStartTime)/fmdt
 
     if(IterationOut) Then
         if(itm > nsteps) then
@@ -159,7 +160,7 @@
     oldDisch = q
     nct = -1
     totTime = VarDischStartTime
-    ptime = totTime+iplinc*dt
+    ptime = totTime+iplinc*fmdt
 
 4   do while(totTime <= VarDischEndTime)
         nct = nct+1
@@ -172,15 +173,15 @@
         ENDIF
 
         if(nct == 0) then
-            vardt = dt
+            vardt = fmdt
         else
-            if(vardt > dt) then
-                vardt = dt
+            if(vardt > fmdt) then
+                vardt = fmdt
             endif
         endif
 
         if(CALCCSED.eqv..FALSE.) then
-            vardt = dt
+            vardt = fmdt
         endif
 
         oldDisch = q
@@ -253,7 +254,7 @@
         ENDDO
 
         write(*,*)
-        Write(*,*) 'Variabledt', tmpvardt, 'DT', dt
+        Write(*,*) 'Variabledt', tmpvardt, 'DT', fmdt
         write(*,*) 'TIME STEP', nct, 'TIME', tottime, 'PrintTime', ptime
         write(*,*)
         IF(CALCQUASI3D) THEN
@@ -846,7 +847,7 @@
                         open(502,file=tmp_file_o(i_tmp_count) &
                             ,status='unknown',form='unformatted')
                         !
-                        write(502) tottime,solIndex,dt
+                        write(502) tottime,solIndex,fmdt
                         write(502) ns,nn
                         !
                         write(502) ((eta(i,j),i=1,ns),j=1,nn)
@@ -964,7 +965,7 @@
                         !                    ELSEIF(CALCQUASI3D.and.IO_3DOUTPUT.and.CALCCSED) THEN
                         !!                        CALL Write_CGNS3D_MoveableBed(tottime, q)
                     ENDIF
-                    ptime = ptime+(iplinc*dt)
+                    ptime = ptime+(iplinc*fmdt)
                 endif
                 IF(i_re_flag_o.eq.1.and.nct.ne.0) THEN
                     IF(i_tmp_count <= n_rest) THEN
@@ -973,7 +974,7 @@
                             open(502,file=tmp_file_o(i_tmp_count) &
                                 ,status='unknown',form='unformatted')
                             !
-                            write(502) tottime,solIndex,dt
+                            write(502) tottime,solIndex,fmdt
                             write(502) ns,nn
                             !
                             write(502) ((eta(i,j),i=1,ns),j=1,nn)
@@ -1000,8 +1001,8 @@
     !        write(3,*) u,vout
     !        write(3,*) e
     CALL dealloc_all()
-    IF(FID > 0) THEN
-        CALL cg_close_f(FID, IER)
+    IF(CGNSFILEID > 0) THEN
+        CALL cg_close_f(CGNSFILEID, IER)
     ENDIF
 
     !	close(2)
@@ -1011,40 +1012,7 @@
 
     END SUBROUTINE STAGR4
 
-    SUBROUTINE dealloc_all()
-    IMPLICIT NONE
-    CALL dealloc_working()
-    CALL dealloc_common2d()
-    if(vbc == 1) then
-        CALL DEALLOC_VELBC()
-    endif
 
-    CALL dealloc_init2d()
-    CALL dealloc_roughness()
-    CALL dealloc_TimeSeries()
-    CALL dealloc_RatingCurves()
-    CALL dealloc_TSNames()
-
-
-    if(CALCQUASI3D) then
-        CALL dealloc_common3d()
-        if(TRANSEQTYPE == 1) THEN
-            CAll dealloc_csed3d_dt()
-        ENDIF
-    endif
-    !	    if(CALCCSED == 1) then
-    !	        call dealloc_csed()
-    !	        call dealloc_csed_DT()
-    !	    endif
-    if(TRANSEQTYPE == 2) then
-        call dealloc_csed_DT()
-    else
-        call dealloc_csed()
-    endif
-    IF(FID > 0) THEN
-        CALL cg_close_f(FID, errorcode)
-    ENDIF
-    END SUBROUTINE dealloc_all
 
 
 

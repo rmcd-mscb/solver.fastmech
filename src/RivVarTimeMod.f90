@@ -34,7 +34,7 @@
 
     INTEGER :: VarDischType, DischTSNum, VarStageType, StageTSNum, StageRCNum
 
-    REAL(KIND=mp) :: VarDischStartTime, VarDischEndTime
+    REAL(KIND=mp), target :: VarDischStartTime, VarDischEndTime
 
 
     !!  VarDischType:

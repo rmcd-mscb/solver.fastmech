@@ -177,6 +177,7 @@
 		<File RelativePath=".\src\Einit.f90"/>
 		<File RelativePath=".\src\elevdt.f90"/>
 		<File RelativePath=".\src\fastmech.f90"/>
+		<File RelativePath=".\src\fm_helpers.f90"/>
 		<File RelativePath=".\src\functionrough.f90"/>
 		<File RelativePath=".\src\GeometryMod.F90"/>
 		<File RelativePath=".\src\GridCondMod.F90"/>

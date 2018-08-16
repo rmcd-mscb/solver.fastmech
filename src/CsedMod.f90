@@ -56,7 +56,7 @@
     !	 &	  DHDN(ns,nn),DHDS(ns,nn),USTRESS(ns,nn),
     !	 &	  VSTRESS(ns,nn),QTOT(ns),CON(ns,nn)
     CHARACTER(LEN=20) RUNID
-    REAL(KIND=mp) :: CDune, VKC, GSW, PI, GAMC, TB, TC, G, RHO
+    REAL(KIND=mp) :: CDune, GSW, PI, GAMC, TB, TC, G, RHO
     REAL(KIND=mp) :: RAT, ZOSF, RHOFAC, DUM, GAMG, TAUG
     REAL(KIND=mp) :: A2, DTAU, TAN1, TAN2, QTOTAL, SC, weight
     REAL(KIND=mp) :: fac
@@ -67,7 +67,7 @@
     REAL(KIND=mp) :: tmpdepth
     REAL(KIND=mp) :: tdd
     REAL(KIND =mp) :: t, csf, p, s, ws, kv
-
+    REAL(kind = mp) :: vkc = 0.4
     !			CALL alloc_csed()
     runid='test         '
     !OPEN(7,FILE='seddat')
@@ -76,7 +76,7 @@
     !			DIN=0.02
 
     CDune=.212
-    VKC=0.4
+    !VKC=0.4
     GSW=1.
     NM=(NN+1)/2
     PI=ACOS(-1.)

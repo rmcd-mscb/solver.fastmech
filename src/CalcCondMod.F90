@@ -4,7 +4,7 @@
     IMPLICIT NONE
 
     REAL(KIND=mp) :: erelax, urelax, arelax
-    REAL(KIND=mp) :: dt, q
+    REAL(KIND=mp), target :: fmdt, q
     REAL(KIND=mp) :: vdc, vac
     REAL(KIND=mp) :: wselev, wsupelev, wsslope
     REAL(KIND=mp), ALLOCATABLE, DIMENSION(:) :: vbcdist, vbcvel, vbcang
@@ -12,7 +12,7 @@
     LOGICAL :: HotStart
 
 
-    INTEGER :: itm, interitm, iplinc
+    INTEGER, target :: itm, interitm, iplinc
     INTEGER :: debugstop, DbgTimeStep, DbgIterNum
     INTEGER :: vbc
     INTEGER :: solType
@@ -106,7 +106,8 @@
 
     CALL CG_IRIC_READ_INTEGER_f('FM_SolAttNSExt', nsext, ier)
     CALL CG_IRIC_READ_INTEGER_f('FM_SolAttItm', itm, ier)
-    CALL CG_IRIC_READ_INTEGER_F('FM_Quasi3D_NZ', nz, ier)
+    CALL CG_IRIC_READ_INTEGER_F('FM_Quasi3D_NZ', tmpint, ier)
+    nz = tmpint
     CALL CG_IRIC_READ_INTEGER_F('FM_Quasi3D', tmpint, ier)
     IF(tmpint == 1) THEN
         CALCQUASI3D = .TRUE.
@@ -228,7 +229,7 @@
 
     CALL CG_IRIC_READ_INTEGER_F('FM_SolAttItm', itm, ier)
 
-    CALL cg_iRIC_Read_Real_F('FM_SolAttDT', dt, ier)
+    CALL cg_iRIC_Read_Real_F('FM_SolAttDT', fmdt, ier)
 
     CALL CG_IRIC_READ_INTEGER_F('FM_SolAttInterItm', interitm, ier)
 
@@ -511,14 +512,14 @@
     do iii=1,n_rest
         do ii=0,n_rest-1
             if(opt_tmp(ii) /= opt_tmp(ii+1) &
-                .or.opt_tmp(ii+1) < opt_tmp(ii)+dt) then
+                .or.opt_tmp(ii+1) < opt_tmp(ii)+fmdt) then
             if(opt_tmp(ii) > opt_tmp(ii+1)) then
                 ttt = opt_tmp(ii)
                 opt_tmp(ii) = opt_tmp(ii+1)
                 opt_tmp(ii+1) = ttt
             end if
             else
-                opt_tmp(ii+1) = opt_tmp(ii+1)+dt
+                opt_tmp(ii+1) = opt_tmp(ii+1)+fmdt
             end if
         end do
     end do

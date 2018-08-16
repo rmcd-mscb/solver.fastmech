@@ -142,7 +142,7 @@
     INTEGER, INTENT(IN) :: nct, nsteps
     REAL(KIND=mp), INTENT(INOUT) :: newdt
     CHARACTER(LEN=20) RUNID
-    REAL(KIND=mp) :: CDune, VKC, GSW, PI, GAMC, TB, TC, G, RHO
+    REAL(KIND=mp) :: CDune, GSW, PI, GAMC, TB, TC, G, RHO
     REAL(KIND=mp) :: RAT, ZOSF, RHOFAC, DUM, GAMG, TAUG
     REAL(KIND=mp) :: A2, DTAU, TAN1, TAN2, QTOTAL, SC, weight
     REAL(KIND=mp) :: fac
@@ -170,7 +170,7 @@
     REAL(KIND=mp) ::  sstc, ss, ca, ustart, rexp, za
     REAL(KIND=mp) :: dz, tqsusp, csdepth, zcoord, h1, h2, tsusp
     REAL(KIND=mp) :: cs_washload, tdz, tdn
-
+    REAL(kind = mp) :: vkc = 0.4
     INTEGER :: ierr
     bedporosity = 0.3
 
@@ -183,7 +183,7 @@
 
     !            count = 0
     CDune=.212
-    VKC=0.4
+    !VKC=0.4
     GSW=1.
     NM=(NN+1)/2
     PI=ACOS(-1.)

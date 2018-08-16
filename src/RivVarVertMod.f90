@@ -7,7 +7,7 @@
     REAL(kind = mp), ALLOCATABLE, DIMENSION(:) :: zeta, dzeta
     !	REAL, ALLOCATABLE, DIMENSION(:,:) :: E_Corr, Strmln_Corr
 
-    REAL(kind = mp) :: PI, VKC, BETA, sczeta
+    REAL(kind = mp) :: PI, BETA, sczeta
     REAL(kind = mp) :: finc, finc1, finc2
     REAL(kind = mp) :: dzp, dth, scn, dthds, dthdn
     REAL(kind = mp) :: curv, curvn, curvs

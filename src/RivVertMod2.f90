@@ -8,12 +8,12 @@
     IMPLICIT NONE
     INTEGER :: i,j
     REAL(kind = mp) :: tmp1, tmp2
-    REAL(kind = mp) :: vck = 0.4
+    REAL(kind = mp) :: vkc = 0.4
     do i = 1,ns
         do j = 1,nn
             tmp1 = log(hl(i,j)/znaught(i,j)) - 1
             !	            tmp2 =
-            cd(i,j) = ((1/vck)*tmp1)**(-2)
+            cd(i,j) = ((1/vkc)*tmp1)**(-2)
             if(cd(i,j) < cdmin)then
                 cd(i,j) = cdmin
             endif
@@ -30,11 +30,11 @@
 
     SUBROUTINE Z0TOCD()
     INTEGER :: i, j, k
+    REAL(kind = mp) :: vkc = 0.4
     !	cdmin = 0.001
     !	cdmax = 0.1
     call alloc_vert()
     pi=acos(-1.)
-    vkc=0.4
     beta=6.24
     DO i=1,ns
         DO j=1,nn
@@ -92,9 +92,9 @@
     IMPLICIT NONE
     INTEGER :: i, j, k, ismoo
     REAL(kind = mp) :: tmp, tmp1, tmp2
+    REAL(kind = mp) :: vkc = 0.4
     call alloc_vert()
     pi=acos(-1.)
-    vkc=0.4
     beta=6.24
     DO i=1,ns
         DO j=1,nn

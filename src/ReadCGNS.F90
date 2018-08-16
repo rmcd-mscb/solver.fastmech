@@ -27,6 +27,7 @@
         !pause
         return
     ENDIF
+    CGNSFILEID = FID
     ! uncomment lines below for split solution
     !call iric_initoption_f(IRIC_OPTION_DIVIDESOLUTIONS, ier)
     !    if (ier /=0) STOP "*** Initialize option error***"

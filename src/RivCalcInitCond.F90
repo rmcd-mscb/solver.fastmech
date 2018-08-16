@@ -121,7 +121,7 @@
         read(501) ttime,icount,dt2
         !
         !       time=(icount-1)*dt2
-        !       icount=time/dt
+        !       icount=time/fmdt
         !
         read(501) nx2, ny2
         if(ns /= nx2.or.nn /= ny2) then

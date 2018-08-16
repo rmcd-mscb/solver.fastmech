@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{6989167D-11E4-40FE-8C1A-2192A86A7E90}") = "Fastmech", "Fastmech.vfproj", "{A5C72860-2261-469F-AED2-570AF6CE8CAD}"
 EndProject
+Project("{6989167D-11E4-40FE-8C1A-2192A86A7E90}") = "GetValuesTest", "GetValuesTest\GetValuesTest.vfproj", "{4C3D954D-9833-49A1-9896-82F791DC5B0D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug_NewLibs|Win32 = Debug_NewLibs|Win32
@@ -45,6 +47,28 @@ Global
 		{A5C72860-2261-469F-AED2-570AF6CE8CAD}.Release|x64.Build.0 = Release|x64
 		{A5C72860-2261-469F-AED2-570AF6CE8CAD}.Release|x86.ActiveCfg = Release|Win32
 		{A5C72860-2261-469F-AED2-570AF6CE8CAD}.Release|x86.Build.0 = Release|Win32
+		{4C3D954D-9833-49A1-9896-82F791DC5B0D}.Debug_NewLibs|Win32.ActiveCfg = Debug|Win32
+		{4C3D954D-9833-49A1-9896-82F791DC5B0D}.Debug_NewLibs|Win32.Build.0 = Debug|Win32
+		{4C3D954D-9833-49A1-9896-82F791DC5B0D}.Debug_NewLibs|x64.ActiveCfg = Release|Win32
+		{4C3D954D-9833-49A1-9896-82F791DC5B0D}.Debug_NewLibs|x64.Build.0 = Release|Win32
+		{4C3D954D-9833-49A1-9896-82F791DC5B0D}.Debug_NewLibs|x86.ActiveCfg = Debug|Win32
+		{4C3D954D-9833-49A1-9896-82F791DC5B0D}.Debug_NewLibs|x86.Build.0 = Debug|Win32
+		{4C3D954D-9833-49A1-9896-82F791DC5B0D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4C3D954D-9833-49A1-9896-82F791DC5B0D}.Debug|Win32.Build.0 = Debug|Win32
+		{4C3D954D-9833-49A1-9896-82F791DC5B0D}.Debug|x64.ActiveCfg = Debug|x64
+		{4C3D954D-9833-49A1-9896-82F791DC5B0D}.Debug|x86.ActiveCfg = Debug|Win32
+		{4C3D954D-9833-49A1-9896-82F791DC5B0D}.Debug|x86.Build.0 = Debug|Win32
+		{4C3D954D-9833-49A1-9896-82F791DC5B0D}.Release_NewLibs|Win32.ActiveCfg = Release|Win32
+		{4C3D954D-9833-49A1-9896-82F791DC5B0D}.Release_NewLibs|Win32.Build.0 = Release|Win32
+		{4C3D954D-9833-49A1-9896-82F791DC5B0D}.Release_NewLibs|x64.ActiveCfg = Release|Win32
+		{4C3D954D-9833-49A1-9896-82F791DC5B0D}.Release_NewLibs|x64.Build.0 = Release|Win32
+		{4C3D954D-9833-49A1-9896-82F791DC5B0D}.Release_NewLibs|x86.ActiveCfg = Release|Win32
+		{4C3D954D-9833-49A1-9896-82F791DC5B0D}.Release_NewLibs|x86.Build.0 = Release|Win32
+		{4C3D954D-9833-49A1-9896-82F791DC5B0D}.Release|Win32.ActiveCfg = Release|Win32
+		{4C3D954D-9833-49A1-9896-82F791DC5B0D}.Release|Win32.Build.0 = Release|Win32
+		{4C3D954D-9833-49A1-9896-82F791DC5B0D}.Release|x64.ActiveCfg = Release|Win32
+		{4C3D954D-9833-49A1-9896-82F791DC5B0D}.Release|x86.ActiveCfg = Release|Win32
+		{4C3D954D-9833-49A1-9896-82F791DC5B0D}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

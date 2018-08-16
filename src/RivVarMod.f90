@@ -5,6 +5,7 @@
     !Allocate REAL common types
     ! Machine precision:
     INTEGER, PARAMETER :: mp = KIND(1.0D0) ! = KIND(1.0D0) for double precision.
+    REAL(kind = mp) :: g, rho, vkc
     integer,parameter :: strMax = 250
     INTEGER :: nclusters, nwetnodes, noldwetnodes
 
@@ -48,10 +49,11 @@
     INTEGER, ALLOCATABLE, DIMENSION(:,:) :: ibc, iibc, ribc, icon, tibc
     REAL(kind=mp), ALLOCATABLE, DIMENSION(:) :: r, w, xo, yo, hav
     REAL(kind=mp), ALLOCATABLE, DIMENSION(:,:) :: havn
-    REAL(kind=mp), ALLOCATABLE, DIMENSION(:,:) :: taus, taun, hl, eta, rn, cd, cdv
-    REAL(kind=mp), ALLOCATABLE, DIMENSION(:,:) :: totcd, mineta
+    REAL(kind=mp), ALLOCATABLE, target, DIMENSION(:,:) :: taus, taun, hl, eta, rn, cd, cdv, totcd
+    REAL(kind=mp), ALLOCATABLE, DIMENSION(:,:) :: mineta
     REAL(kind=mp), ALLOCATABLE, DIMENSION(:,:) :: znaught
-    REAL(kind=mp), ALLOCATABLE, DIMENSION(:,:) :: u, v, e, iu, iv, iwse, ie, ihl
+    REAL(kind=mp), ALLOCATABLE, target, DIMENSION(:,:) :: u, v, e
+    REAL(kind=mp), ALLOCATABLE, DIMENSION(:,:) :: iu, iv, iwse, ie, ihl
     REAL(kind=mp), ALLOCATABLE, DIMENSION(:,:) :: x, y
     REAL(kind=mp), ALLOCATABLE, DIMENSION(:,:) :: harea
 
@@ -77,8 +79,8 @@
 
 
 
-    INTEGER, PUBLIC :: ns2
-    INTEGER, PUBLIC :: ns, nn, nz
+    INTEGER, target :: ns2
+    INTEGER, target :: ns, nn, nz
     INTEGER, PUBLIC :: ns2a, nsa, nna !Added for CD Code (rmcd 12/25/02)
 
     INTEGER :: CGNSFILEID

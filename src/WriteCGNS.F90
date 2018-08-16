@@ -982,91 +982,91 @@
     END DO
 
     END SUBROUTINE
-    SUBROUTINE write_error_CGNS(OutputFile)
-    !		USE USER32
-    IMPLICIT NONE
-    !        INCLUDE "cgnswin_f.h"
-    INCLUDE "cgnslib_f.h"
-
-    CHARACTER(*), INTENT(IN) :: OutputFile
-    CHARACTER(250) :: ZONENAME, BASENAME, USERNAME
-
-    INTEGER :: FID, BID, ZID, IER, iret
-    INTEGER :: NUSER_DATA, USER_ITER, NZONES, ZONES_ITER
-    INTEGER :: NBASES, BASES_ITER
-    INTEGER :: CELLDIM, PHYSDIM
-    INTEGER, DIMENSION(3,3) :: isize
-    INTEGER, DIMENSION(3) :: irmin, irmax
-    INTEGER, DIMENSION(6) :: irinddata
-    CHARACTER(LEN = 250) :: name, errorstring
-    INTEGER ::namelen
-    INTEGER, DIMENSION(1) :: dimvals
-    !		namelen = len(InputFile)
-    !		name = TRIM(InputFile(1:namelen-3)//'cgns')
-    FID = CGNSFILEID
-    !		CALL cg_open_f(OutputFile, MODE_MODIFY, FID, IER)
-    !			IF(IER .NE. 0) THEN
-    !!				iret = MESSAGEBOX(0, "CGNS ERROR"C, "Error"C, MB_OK)
-    !			ENDIF
-    CALL cg_open_f(OutputFile, MODE_MODIFY, FID, IER)
-    IF(IER .NE. 0) THEN
-        call cg_error_print_f()
-    ENDIF
-    BID = 1
-    CALL cg_nbases_f(FID, NBASES, IER)
-    DO BASES_ITER = 1, NBASES
-        CALL cg_base_read_f(FID, BASES_ITER, BASENAME, CELLDIM, PHYSDIM, IER)
-
-        SELECT CASE(TRIM(BASENAME))
-        CASE('iRIC')
-            CALL cg_nzones_f(FID, BASES_ITER, NZONES, IER)
-            DO ZONES_ITER = 1, NZONES
-                CALL cg_zone_read_f(FID, BASES_ITER, ZONES_ITER, ZONENAME, isize, IER)
-
-                SELECT CASE(TRIM(ZONENAME))
-                CASE('iRICZone')
-                    CALL cg_goto_f(FID, BASES_ITER, IER, 'Zone_t', ZONES_ITER, 'end')
-                    CALL cg_nuser_data_f(NUSER_DATA, IER)
-                    DO USER_ITER = 1, NUSER_DATA
-                        CALL cg_user_data_read_f(USER_ITER, USERNAME, IER)
-
-                        SELECT CASE(TRIM(USERNAME))
-                        CASE('Error')
-                            call cg_goto_f(FID, BASES_ITER, IER, 'Zone_t', ZONES_ITER,'UserDefinedData_t', USER_ITER, 'end')
-                            dimvals(1) = 1
-                            CALL cg_array_write_f('ErrorCode', Integer, 1, 1, errorcode, ier)
-                            SELECT CASE (errorcode)
-                            CASE (-1)
-                                Write(errorstring, '(A70,I5)') 'Error: Parameters chosen do not result in convergence at iteration:', iter
-                                dimvals(1) = len(errorstring)
-                                CALL cg_array_write_f('ErrorString', Character, 1, dimvals, errorstring, ier)
-                            CASE (-10)
-                                !								status = NF_PUT_ATT_TEXT(NCID, NF_GLOBAL, "r2d_ErrorText",85,
-                                !						 +"At least one row of nodes are completely dry - check water surface
-                                !						 + boundary condition")
-                                Write(errorstring, '(A100)') 'Error: at least on row of nodes is dry'
-                                dimvals(1) = len(errorstring)
-                                CALL cg_array_write_f('ErrorString', Character, 1, dimvals, errorstring, ier)
-
-                                CASE DEFAULT
-                                !								status = NF_PUT_ATT_TEXT(NCID, NF_GLOBAL, "r2d_ErrorText",
-                                !						 +		23, "An unkown error occured")
-                                Write(errorstring, '(A70)') 'An unkown error occured'
-                                dimvals(1) = len(errorstring)
-                                CALL cg_array_write_f('ErrorString', Character, 1, dimvals, errorstring, ier)
-                            END SELECT
-                            !                                CALL cg_close_f(FID, IER)
-                            return
-                        END SELECT
-
-                    ENDDO
-                END SELECT
-            ENDDO
-        END SELECT
-    ENDDO
-
-    CALL cg_close_f(FID, IER)
-
-    END SUBROUTINE
+    !SUBROUTINE write_error_CGNS(OutputFile)
+    !!		USE USER32
+    !IMPLICIT NONE
+    !!        INCLUDE "cgnswin_f.h"
+    !INCLUDE "cgnslib_f.h"
+    !
+    !CHARACTER(*), INTENT(IN) :: OutputFile
+    !CHARACTER(250) :: ZONENAME, BASENAME, USERNAME
+    !
+    !INTEGER :: FID, BID, ZID, IER, iret
+    !INTEGER :: NUSER_DATA, USER_ITER, NZONES, ZONES_ITER
+    !INTEGER :: NBASES, BASES_ITER
+    !INTEGER :: CELLDIM, PHYSDIM
+    !INTEGER, DIMENSION(3,3) :: isize
+    !INTEGER, DIMENSION(3) :: irmin, irmax
+    !INTEGER, DIMENSION(6) :: irinddata
+    !CHARACTER(LEN = 250) :: name, errorstring
+    !INTEGER ::namelen
+    !INTEGER, DIMENSION(1) :: dimvals
+    !!		namelen = len(InputFile)
+    !!		name = TRIM(InputFile(1:namelen-3)//'cgns')
+    !FID = CGNSFILEID
+    !!		CALL cg_open_f(OutputFile, MODE_MODIFY, FID, IER)
+    !!			IF(IER .NE. 0) THEN
+    !!!				iret = MESSAGEBOX(0, "CGNS ERROR"C, "Error"C, MB_OK)
+    !!			ENDIF
+    !CALL cg_open_f(OutputFile, MODE_MODIFY, FID, IER)
+    !IF(IER .NE. 0) THEN
+    !    call cg_error_print_f()
+    !ENDIF
+    !BID = 1
+    !CALL cg_nbases_f(FID, NBASES, IER)
+    !DO BASES_ITER = 1, NBASES
+    !    CALL cg_base_read_f(FID, BASES_ITER, BASENAME, CELLDIM, PHYSDIM, IER)
+    !
+    !    SELECT CASE(TRIM(BASENAME))
+    !    CASE('iRIC')
+    !        CALL cg_nzones_f(FID, BASES_ITER, NZONES, IER)
+    !        DO ZONES_ITER = 1, NZONES
+    !            CALL cg_zone_read_f(FID, BASES_ITER, ZONES_ITER, ZONENAME, isize, IER)
+    !
+    !            SELECT CASE(TRIM(ZONENAME))
+    !            CASE('iRICZone')
+    !                CALL cg_goto_f(FID, BASES_ITER, IER, 'Zone_t', ZONES_ITER, 'end')
+    !                CALL cg_nuser_data_f(NUSER_DATA, IER)
+    !                DO USER_ITER = 1, NUSER_DATA
+    !                    CALL cg_user_data_read_f(USER_ITER, USERNAME, IER)
+    !
+    !                    SELECT CASE(TRIM(USERNAME))
+    !                    CASE('Error')
+    !                        call cg_goto_f(FID, BASES_ITER, IER, 'Zone_t', ZONES_ITER,'UserDefinedData_t', USER_ITER, 'end')
+    !                        dimvals(1) = 1
+    !                        CALL cg_array_write_f('ErrorCode', Integer, 1, 1, errorcode, ier)
+    !                        SELECT CASE (errorcode)
+    !                        CASE (-1)
+    !                            Write(errorstring, '(A70,I5)') 'Error: Parameters chosen do not result in convergence at iteration:', iter
+    !                            dimvals(1) = len(errorstring)
+    !                            CALL cg_array_write_f('ErrorString', Character, 1, dimvals, errorstring, ier)
+    !                        CASE (-10)
+    !                            !								status = NF_PUT_ATT_TEXT(NCID, NF_GLOBAL, "r2d_ErrorText",85,
+    !                            !						 +"At least one row of nodes are completely dry - check water surface
+    !                            !						 + boundary condition")
+    !                            Write(errorstring, '(A100)') 'Error: at least on row of nodes is dry'
+    !                            dimvals(1) = len(errorstring)
+    !                            CALL cg_array_write_f('ErrorString', Character, 1, dimvals, errorstring, ier)
+    !
+    !                            CASE DEFAULT
+    !                            !								status = NF_PUT_ATT_TEXT(NCID, NF_GLOBAL, "r2d_ErrorText",
+    !                            !						 +		23, "An unkown error occured")
+    !                            Write(errorstring, '(A70)') 'An unkown error occured'
+    !                            dimvals(1) = len(errorstring)
+    !                            CALL cg_array_write_f('ErrorString', Character, 1, dimvals, errorstring, ier)
+    !                        END SELECT
+    !                        !                                CALL cg_close_f(FID, IER)
+    !                        return
+    !                    END SELECT
+    !
+    !                ENDDO
+    !            END SELECT
+    !        ENDDO
+    !    END SELECT
+    !ENDDO
+    !
+    !CALL cg_close_f(FID, IER)
+    !
+    !END SUBROUTINE
 
     END MODULE

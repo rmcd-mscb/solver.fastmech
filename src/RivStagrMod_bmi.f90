@@ -14,6 +14,11 @@
     
     call initialize_from_file(model, str_in)
     
+    do while (model%t < model%t_end)
+        call advance_in_time(model)
+    end do
+    
+    call cleanup(model)
     
     END SUBROUTINE STAGRBMI
 

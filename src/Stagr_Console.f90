@@ -20,6 +20,7 @@
     logical :: lookForBMI=.FALSE.
     logical :: fileExist
     CHARACTER(LEN=250) buf
+    CHARACTER(LEN=250) file
     
     !Check if arguments are found
     count = COMMAND_ARGUMENT_COUNT()
@@ -27,27 +28,33 @@
     if(count > 0) then
         !      CALL GETARG(1, buf, status)
         do cptArg=1,count
-        CALL get_command_argument(1, buf) !gnu fortran only take 2 args
-        select case(adjustl(buf))
-        case("--BMI")
+        CALL get_command_argument(cptArg, buf) !gnu fortran only take 2 args
+        select case(buf)
+        case('--BMI')
             lookForBMI = .TRUE.
+            write(*,*)'BMI = ', lookForBMI
         case default
-            inquire(file=buf, exist=fileExist)
+            inquire(file=adjustl(buf), exist=fileExist)
             if(.not.fileExist)then
                 write(*,*)'file ', buf, ' not found'
                 stop
+            else
+                file = adjustl(buf)
             endif
-            call stagr4(buf)
+            !call stagr4(buf)
+            write(*,*)'file name: ', file
         end select
+        enddo
         if(lookForBMI) then
-            inquire(file=buf, exist=fileExist)
+            inquire(file=file, exist=fileExist)
             if(.not.fileExist)then
                 write(*,*)'file ', buf, ' not found'
                 stop
             endif
-            call STAGRBMI(buf)
+            call STAGRBMI(file)
+        else
+            Call stagr4(file)
         endif
-        end do
     endif
 
     ! Variables

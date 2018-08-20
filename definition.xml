@@ -1348,7 +1348,7 @@
 			<Definition position="node" valueType="real" default="0.003" option="false"/>
 		</Item>
     <Item name="vegroughness" caption="Vegetation Roughness">
-      <Definition position="node" valueType="real" default="0.003" option="false"/>
+      <Definition position="node" valueType="real" default="0.000" option="false"/>
     </Item>
     <!--<Item name="minelevation" caption="Minimum_Elevation">
 			<Definition position="node" valueType="real" default="0.002" option="false"/>

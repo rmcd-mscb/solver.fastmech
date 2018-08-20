@@ -10,12 +10,12 @@
             <DataModel ZScale="1" isExpanded="false">
                 <GridType checkState="2" isExpanded="true" name="fastmech">
                     <LookupTables>
-                        <LookupTable name="Depth" autoRange="true" autoMin="-0.0001" autoMax="0.0001" manualMin="0" manualMax="0" colorMap="0"/>
-                        <LookupTable name="Elevation" autoRange="true" autoMin="-0.0001" autoMax="0.0001" manualMin="0" manualMax="0" colorMap="0"/>
-                        <LookupTable name="FMIBC" autoRange="true" autoMin="-0.0001" autoMax="0.0001" manualMin="0" manualMax="0" colorMap="0"/>
-                        <LookupTable name="IBC" autoRange="true" autoMin="-0.0001" autoMax="0.0001" manualMin="0" manualMax="0" colorMap="0"/>
-                        <LookupTable name="Velocity (magnitude)" autoRange="true" autoMin="-0.0001" autoMax="0.0001" manualMin="0" manualMax="0" colorMap="0"/>
-                        <LookupTable name="WaterSurfaceElevation" autoRange="true" autoMin="-0.0001" autoMax="0.0001" manualMin="0" manualMax="0" colorMap="0"/>
+                        <LookupTable name="Depth" autoRange="true" autoMin="0" autoMax="0.71" manualMin="0" manualMax="0" colorMap="0"/>
+                        <LookupTable name="Elevation" autoRange="true" autoMin="9.29" autoMax="10.19" manualMin="0" manualMax="0" colorMap="0"/>
+                        <LookupTable name="FMIBC" autoRange="true" autoMin="-1" autoMax="0" manualMin="0" manualMax="0" colorMap="0"/>
+                        <LookupTable name="IBC" autoRange="true" autoMin="0" autoMax="1" manualMin="0" manualMax="0" colorMap="0"/>
+                        <LookupTable name="Velocity (magnitude)" autoRange="true" autoMin="0" autoMax="0.825999" manualMin="0" manualMax="0" colorMap="0"/>
+                        <LookupTable name="WaterSurfaceElevation" autoRange="true" autoMin="9.99804" autoMax="10.0842" manualMin="0" manualMax="0" colorMap="0"/>
                     </LookupTables>
                     <ParticleLookupTables/>
                     <GeoData checkState="2" isExpanded="true">
@@ -45,13 +45,13 @@
                                     <LookupTable autoRange="true" autoMin="0" autoMax="0.71" manualMin="0" manualMax="0" colorMap="0"/>
                                 </ScalarGroup>
                                 <ScalarGroup checkState="0" isExpanded="true" solution="WaterSurfaceElevation" contour="3" numberOfDivisions="15" fillUpper="true" fillLower="true" opacityPercent="50" scalarBarVisible="true" scalarBarOrientation="0" scalarBarQuadrant="0" scalarBarNumberOfLabels="8" scalarBarWidth="0.1" scalarBarHeight="0.3" scalarBarPositionX="0.8" scalarBarPositionY="0.1" scalarBarLabelFormat="%-#6.3g" scalarBarFontFamily="0" scalarBarFontColor="#000000" scalarBarFontSize="10" scalarBarFontIsBold="false" scalarBarFontIsItalic="false" scalarBarFontIsShadow="false" scalarBarFontFamily="0" scalarBarFontColor="#000000" scalarBarFontSize="10" scalarBarFontIsBold="false" scalarBarFontIsItalic="false" scalarBarFontIsShadow="false" regionMode="0" regionIMin="0" regionIMax="0" regionJMin="0" regionJMax="0">
-                                    <LookupTable autoRange="true" autoMin="9.99803" autoMax="10.0843" manualMin="0" manualMax="0" colorMap="0"/>
+                                    <LookupTable autoRange="true" autoMin="9.99804" autoMax="10.0842" manualMin="0" manualMax="0" colorMap="0"/>
                                 </ScalarGroup>
                                 <ScalarGroup checkState="0" isExpanded="true" solution="Elevation" contour="3" numberOfDivisions="15" fillUpper="true" fillLower="true" opacityPercent="50" scalarBarVisible="true" scalarBarOrientation="0" scalarBarQuadrant="0" scalarBarNumberOfLabels="8" scalarBarWidth="0.1" scalarBarHeight="0.3" scalarBarPositionX="0.8" scalarBarPositionY="0.1" scalarBarLabelFormat="%-#6.3g" scalarBarFontFamily="0" scalarBarFontColor="#000000" scalarBarFontSize="10" scalarBarFontIsBold="false" scalarBarFontIsItalic="false" scalarBarFontIsShadow="false" scalarBarFontFamily="0" scalarBarFontColor="#000000" scalarBarFontSize="10" scalarBarFontIsBold="false" scalarBarFontIsItalic="false" scalarBarFontIsShadow="false" regionMode="0" regionIMin="0" regionIMax="0" regionJMin="0" regionJMax="0">
                                     <LookupTable autoRange="true" autoMin="9.29" autoMax="10.19" manualMin="0" manualMax="0" colorMap="0"/>
                                 </ScalarGroup>
                                 <ScalarGroup checkState="0" isExpanded="true" solution="Velocity (magnitude)" contour="3" numberOfDivisions="15" fillUpper="true" fillLower="true" opacityPercent="50" scalarBarVisible="true" scalarBarOrientation="0" scalarBarQuadrant="0" scalarBarNumberOfLabels="8" scalarBarWidth="0.1" scalarBarHeight="0.3" scalarBarPositionX="0.8" scalarBarPositionY="0.1" scalarBarLabelFormat="%-#6.3g" scalarBarFontFamily="0" scalarBarFontColor="#000000" scalarBarFontSize="10" scalarBarFontIsBold="false" scalarBarFontIsItalic="false" scalarBarFontIsShadow="false" scalarBarFontFamily="0" scalarBarFontColor="#000000" scalarBarFontSize="10" scalarBarFontIsBold="false" scalarBarFontIsItalic="false" scalarBarFontIsShadow="false" regionMode="0" regionIMin="0" regionIMax="0" regionJMin="0" regionJMax="0">
-                                    <LookupTable autoRange="true" autoMin="0" autoMax="0.826036" manualMin="0" manualMax="0" colorMap="0"/>
+                                    <LookupTable autoRange="true" autoMin="0" autoMax="0.825999" manualMin="0" manualMax="0" colorMap="0"/>
                                 </ScalarGroup>
                             </Contours>
                             <ArrowGroup checkState="2" isExpanded="true" attribute="" samplingMode="1" samplingRate="1" samplingNumber="100" colorMode="0" customColor="#000000" colorAttribute="" lengthMode="0" standardValue="1" legendLength="100" minimumValue="0.001" arrowSize="8" arrowLineWidth="1" visible="true" orientation="0" quadrant="0" numberOfLabels="8" width="0.1" height="0.3" positionX="0.8" positionY="0.1" labelFormat="%-#6.3g" titleTextFontFamily="0" titleTextFontColor="#000000" titleTextFontSize="10" titleTextFontIsBold="false" titleTextFontIsItalic="false" titleTextFontIsShadow="false" labelTextFontFamily="0" labelTextFontColor="#000000" labelTextFontSize="10" labelTextFontIsBold="false" labelTextFontIsItalic="false" labelTextFontIsShadow="false" regionMode="0" iSampleRate="1" jSampleRate="1" regionIMin="0" regionIMax="200" regionJMin="0" regionJMax="10"/>
@@ -83,12 +83,12 @@
             <DataModel ZScale="1" isExpanded="false">
                 <GridType checkState="2" isExpanded="true" name="fastmech">
                     <LookupTables>
-                        <LookupTable name="Depth" autoRange="true" autoMin="-0.0001" autoMax="0.0001" manualMin="0" manualMax="0" colorMap="0"/>
-                        <LookupTable name="Elevation" autoRange="true" autoMin="-0.0001" autoMax="0.0001" manualMin="0" manualMax="0" colorMap="0"/>
-                        <LookupTable name="FMIBC" autoRange="true" autoMin="-0.0001" autoMax="0.0001" manualMin="0" manualMax="0" colorMap="0"/>
-                        <LookupTable name="IBC" autoRange="true" autoMin="-0.0001" autoMax="0.0001" manualMin="0" manualMax="0" colorMap="0"/>
-                        <LookupTable name="Velocity (magnitude)" autoRange="true" autoMin="-0.0001" autoMax="0.0001" manualMin="0" manualMax="0" colorMap="0"/>
-                        <LookupTable name="WaterSurfaceElevation" autoRange="true" autoMin="-0.0001" autoMax="0.0001" manualMin="0" manualMax="0" colorMap="0"/>
+                        <LookupTable name="Depth" autoRange="true" autoMin="0" autoMax="0.71" manualMin="0" manualMax="0" colorMap="0"/>
+                        <LookupTable name="Elevation" autoRange="true" autoMin="9.29" autoMax="10.19" manualMin="0" manualMax="0" colorMap="0"/>
+                        <LookupTable name="FMIBC" autoRange="true" autoMin="-1" autoMax="0" manualMin="0" manualMax="0" colorMap="0"/>
+                        <LookupTable name="IBC" autoRange="true" autoMin="0" autoMax="1" manualMin="0" manualMax="0" colorMap="0"/>
+                        <LookupTable name="Velocity (magnitude)" autoRange="true" autoMin="0" autoMax="0.825999" manualMin="0" manualMax="0" colorMap="0"/>
+                        <LookupTable name="WaterSurfaceElevation" autoRange="true" autoMin="9.99804" autoMax="10.0842" manualMin="0" manualMax="0" colorMap="0"/>
                     </LookupTables>
                     <ParticleLookupTables/>
                     <GeoData checkState="2" isExpanded="true">
@@ -118,13 +118,13 @@
                                     <LookupTable autoRange="true" autoMin="0" autoMax="0.71" manualMin="0" manualMax="0" colorMap="0"/>
                                 </ScalarGroup>
                                 <ScalarGroup checkState="0" isExpanded="true" solution="WaterSurfaceElevation" contour="3" numberOfDivisions="15" fillUpper="true" fillLower="true" opacityPercent="50" scalarBarVisible="true" scalarBarOrientation="0" scalarBarQuadrant="1" scalarBarNumberOfLabels="8" scalarBarWidth="0.1" scalarBarHeight="0.3" scalarBarPositionX="0.8" scalarBarPositionY="0.1" scalarBarLabelFormat="%-#6.3g" scalarBarFontFamily="0" scalarBarFontColor="#000000" scalarBarFontSize="10" scalarBarFontIsBold="false" scalarBarFontIsItalic="false" scalarBarFontIsShadow="false" scalarBarFontFamily="0" scalarBarFontColor="#000000" scalarBarFontSize="10" scalarBarFontIsBold="false" scalarBarFontIsItalic="false" scalarBarFontIsShadow="false" regionMode="0" regionIMin="0" regionIMax="0" regionJMin="0" regionJMax="0">
-                                    <LookupTable autoRange="true" autoMin="9.99803" autoMax="10.0843" manualMin="0" manualMax="0" colorMap="0"/>
+                                    <LookupTable autoRange="true" autoMin="9.99804" autoMax="10.0842" manualMin="0" manualMax="0" colorMap="0"/>
                                 </ScalarGroup>
                                 <ScalarGroup checkState="0" isExpanded="true" solution="Elevation" contour="3" numberOfDivisions="15" fillUpper="true" fillLower="true" opacityPercent="50" scalarBarVisible="true" scalarBarOrientation="0" scalarBarQuadrant="0" scalarBarNumberOfLabels="8" scalarBarWidth="0.1" scalarBarHeight="0.3" scalarBarPositionX="0.8" scalarBarPositionY="0.1" scalarBarLabelFormat="%-#6.3g" scalarBarFontFamily="0" scalarBarFontColor="#000000" scalarBarFontSize="10" scalarBarFontIsBold="false" scalarBarFontIsItalic="false" scalarBarFontIsShadow="false" scalarBarFontFamily="0" scalarBarFontColor="#000000" scalarBarFontSize="10" scalarBarFontIsBold="false" scalarBarFontIsItalic="false" scalarBarFontIsShadow="false" regionMode="0" regionIMin="0" regionIMax="0" regionJMin="0" regionJMax="0">
                                     <LookupTable autoRange="true" autoMin="9.29" autoMax="10.19" manualMin="0" manualMax="0" colorMap="0"/>
                                 </ScalarGroup>
                                 <ScalarGroup checkState="0" isExpanded="true" solution="Velocity (magnitude)" contour="3" numberOfDivisions="15" fillUpper="true" fillLower="true" opacityPercent="50" scalarBarVisible="true" scalarBarOrientation="0" scalarBarQuadrant="0" scalarBarNumberOfLabels="8" scalarBarWidth="0.1" scalarBarHeight="0.3" scalarBarPositionX="0.8" scalarBarPositionY="0.1" scalarBarLabelFormat="%-#6.3g" scalarBarFontFamily="0" scalarBarFontColor="#000000" scalarBarFontSize="10" scalarBarFontIsBold="false" scalarBarFontIsItalic="false" scalarBarFontIsShadow="false" scalarBarFontFamily="0" scalarBarFontColor="#000000" scalarBarFontSize="10" scalarBarFontIsBold="false" scalarBarFontIsItalic="false" scalarBarFontIsShadow="false" regionMode="0" regionIMin="0" regionIMax="0" regionJMin="0" regionJMax="0">
-                                    <LookupTable autoRange="true" autoMin="0" autoMax="0.826036" manualMin="0" manualMax="0" colorMap="0"/>
+                                    <LookupTable autoRange="true" autoMin="0" autoMax="0.825999" manualMin="0" manualMax="0" colorMap="0"/>
                                 </ScalarGroup>
                             </Contours>
                             <ArrowGroup checkState="2" isExpanded="true" attribute="" samplingMode="1" samplingRate="1" samplingNumber="100" colorMode="0" customColor="#000000" colorAttribute="" lengthMode="0" standardValue="1" legendLength="100" minimumValue="0.001" arrowSize="8" arrowLineWidth="1" visible="true" orientation="0" quadrant="0" numberOfLabels="8" width="0.1" height="0.3" positionX="0.8" positionY="0.1" labelFormat="%-#6.3g" titleTextFontFamily="0" titleTextFontColor="#000000" titleTextFontSize="10" titleTextFontIsBold="false" titleTextFontIsItalic="false" titleTextFontIsShadow="false" labelTextFontFamily="0" labelTextFontColor="#000000" labelTextFontSize="10" labelTextFontIsBold="false" labelTextFontIsItalic="false" labelTextFontIsShadow="false" regionMode="0" iSampleRate="1" jSampleRate="1" regionIMin="0" regionIMax="200" regionJMin="0" regionJMax="10"/>
@@ -153,7 +153,7 @@
         </PostProcessor>
     </PostProcessors>
     <Backgrounds/>
-    <PreProcessorWindow backgroundColor="#ffffff" visible="true" maximized="true" left="0" top="0" width="2533" height="1248">
+    <PreProcessorWindow backgroundColor="#ffffff" visible="true" maximized="false" left="0" top="0" width="700" height="500">
         <Camera positionX="10.114" positionY="-1.57301" positionZ="200" focalpointX="10.114" focalpointY="-1.57301" focalpointZ="0" roll="0" parallelscale="31.294" parallelprojection="true"/>
         <DataModel isExpanded="false" mappingMode="0" geoMappingMode="0" tempAutoRegion="1" tempStreamWiseLength="4" tempCrossStreamLength="1" numExpansion="3" weightExponent="1">
             <BackgroundImages checkState="2" isExpanded="true"/>
@@ -217,7 +217,7 @@
             <TmsBackground checkState="2" isExpanded="true" target=""/>
         </DataModel>
     </PreProcessorWindow>
-    <SolverConsoleWindow visible="true" maximized="false" left="30" top="30" width="700" height="500" backgroundColor="#c8c8c8"/>
+    <SolverConsoleWindow visible="true" maximized="true" left="0" top="0" width="2533" height="1274" backgroundColor="#c8c8c8"/>
     <PostProcessorFactory>
         <WindowCount name="post2dwindow" value="2"/>
     </PostProcessorFactory>

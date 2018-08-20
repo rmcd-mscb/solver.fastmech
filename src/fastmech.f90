@@ -22,9 +22,9 @@
 
     type :: fastmech_model
         integer, pointer :: itermax
-        real, pointer :: dt
-        real, pointer :: t
-        real, pointer :: t_end
+        real(kind=mp), pointer :: dt
+        real(kind=mp), pointer :: t
+        real(kind=mp), pointer :: t_end
         integer, pointer :: n_x, n_y, n_z
         real(kind=mp), pointer, dimension(:,:) :: fm_elevation, fm_depth, fm_wse
         real(kind=mp), pointer, dimension(:,:) :: fm_velocity_x, fm_velocity_y, fm_shearstress_x, fm_shearstress_y

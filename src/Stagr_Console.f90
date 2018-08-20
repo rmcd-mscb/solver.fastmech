@@ -21,10 +21,10 @@
 
     !      CALL GETARG(1, buf, status)
     CALL GETARG(1, buf) !gnu fortran only take 2 args
-    IF (status .lt. 0) THEN
-        WRITE (*,*) 'GETARG error - exiting'
-        !            EXIT
-    END IF
+    !IF (status .lt. 0) THEN
+    !    WRITE (*,*) 'GETARG error - exiting'
+    !    !            EXIT
+    !END IF
     CALL STAGR4(buf)
 
     ! Variables

@@ -175,9 +175,9 @@
     bedporosity = 0.3
 
     runid='test     '
-    OPEN(7,FILE='seddat')
-    OPEN(10,FILE='top2')
-    OPEN(12,FILE='SedFlux')
+    !OPEN(7,FILE='seddat')
+    !OPEN(10,FILE='top2')
+    !OPEN(12,FILE='SedFlux')
     !			OPEN(11,FILE='topser')
     !			DIN=0.02
 
@@ -818,8 +818,8 @@
         WRITE(12,*) I, QTOT(i)
         QTOTAL=QTOTAL+QTOT(I)/ns
     ENDDO
-    WRITE(12,*) 'AVERAGE', QTOTAL
-    CLOSE(12)
+    !WRITE(12,*) 'AVERAGE', QTOTAL
+    !CLOSE(12)
 
     !			do 652 j=1,nn
     !652			con(1,j)=con(2,j)

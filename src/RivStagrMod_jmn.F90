@@ -258,8 +258,7 @@ ptime = totTime+iplinc*dt
     DO i = 1,10
         write(*,*)
     ENDDO
-
-    write(*,*)
+    tmpvardt = 0
     Write(*,*) 'Variabledt', tmpvardt, 'DT', dt
     write(*,*) 'TIME STEP', nct, 'TIME', tottime, 'PrintTime', ptime
     write(*,*)
@@ -930,7 +929,6 @@ ptime = totTime+iplinc*dt
         !c        call vert
         if(CALCQUASI3D) then
             call vert
-
         endif
         if(CALCCSED) then
             if(TRANSEQTYPE == 2) then
@@ -1014,7 +1012,7 @@ ENDIF
 
 !	close(2)
 !	close(4)
-close(9)
+!close(9)
 !        write(3,*) uz,vz
 
 END SUBROUTINE STAGR4

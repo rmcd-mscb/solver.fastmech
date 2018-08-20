@@ -164,7 +164,6 @@
             ustr2(i,j)=(taus(i,j)**2.+taun(i,j)**2.)**0.5
         ENDDO
     ENDDO
-
     DO i=1,ns
         DO j=1,nn
             if(i.eq.1) then
@@ -261,43 +260,43 @@
         ENDDO
     ENDDO
     !        return
-    IF(RSSMOO.gt.0) THEN
-        DO  ISMOO=1,RSSMOO
-            DO  I=2,ns-1
-                DO  J=1,nn
-                    if(j.eq.1) then
-                        DUM1a(I,1)=(rs(I-1,1)+rs(I,1)+rs(I+1,1)+rs(I,j+1))/4.
-                    elseif(j.eq.nn) then
-                        DUM1a(I,nn)=(rs(I-1,nn)+rs(I,nn)+rs(I+1,nn)+rs(i,nn-1))/4.
-                    else
-                        DUM1a(I,J)=rs(I,J)+SEDSMOOWGHT*rs(I+1,J)+SEDSMOOWGHT*rs(I-1,J)
-                        DUM1a(I,J)=DUM1a(I,J)+SEDSMOOWGHT*rs(I,J-1)+SEDSMOOWGHT*rs(I,J+1)
-                        DUM1a(I,J)=DUM1a(I,J)/5.
-                    endif
-                ENDDO
-            ENDDO
-            DO I=2,ns-1
-                DO J=1,nn
-                    rs(I,J)=DUM1a(I,J)
-                ENDDO
-            ENDDO
-        ENDDO
-
-
-        do i=1,ns
-            do j=1,nn
-                if(abs(rs(i,j)).lt.MinRS) then
-                    rs(i,j)=MinRS*dsign(1.0D0,rs(i,j))
-                endif
-                taux=ustr2(i,j)*hl(i,j)/(rn(i,j)*rs(i,j))
-                vs=((ftwo(i,j)/fone(i,j))-f3(i,j,1))
-                taux=taux*vs
-                taus(i,j)=taus(i,j)-taux*sin(theta(i,j))
-                taun(i,j)=taun(i,j)+taux*cos(theta(i,j))
-            ENDDO
-        ENDDO
-
-    ENDIF
+    !IF(RSSMOO.gt.0) THEN
+    !    DO  ISMOO=1,RSSMOO
+    !        DO  I=2,ns-1
+    !            DO  J=1,nn
+    !                if(j.eq.1) then
+    !                    DUM1a(I,1)=(rs(I-1,1)+rs(I,1)+rs(I+1,1)+rs(I,j+1))/4.
+    !                elseif(j.eq.nn) then
+    !                    DUM1a(I,nn)=(rs(I-1,nn)+rs(I,nn)+rs(I+1,nn)+rs(i,nn-1))/4.
+    !                else
+    !                    DUM1a(I,J)=rs(I,J)+SEDSMOOWGHT*rs(I+1,J)+SEDSMOOWGHT*rs(I-1,J)
+    !                    DUM1a(I,J)=DUM1a(I,J)+SEDSMOOWGHT*rs(I,J-1)+SEDSMOOWGHT*rs(I,J+1)
+    !                    DUM1a(I,J)=DUM1a(I,J)/5.
+    !                endif
+    !            ENDDO
+    !        ENDDO
+    !        DO I=2,ns-1
+    !            DO J=1,nn
+    !                rs(I,J)=DUM1a(I,J)
+    !            ENDDO
+    !        ENDDO
+    !    ENDDO
+    !
+    !
+    !    do i=1,ns
+    !        do j=1,nn
+    !            if(abs(rs(i,j)).lt.MinRS) then
+    !                rs(i,j)=MinRS*dsign(1.0D0,rs(i,j))
+    !            endif
+    !            taux=ustr2(i,j)*hl(i,j)/(rn(i,j)*rs(i,j))
+    !            vs=((ftwo(i,j)/fone(i,j))-f3(i,j,1))
+    !            taux=taux*vs
+    !            taus(i,j)=taus(i,j)-taux*sin(theta(i,j))
+    !            taun(i,j)=taun(i,j)+taux*cos(theta(i,j))
+    !        ENDDO
+    !    ENDDO
+    !
+    !ENDIF
 
     END SUBROUTINE vert
 

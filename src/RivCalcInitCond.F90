@@ -116,7 +116,7 @@
                 call dealloc_csed()
             endif
             STOP
-        endif
+        
 
         IF(CALCQUASI3D) THEN
             CALL deALLOC_COMMON3D()
@@ -124,6 +124,7 @@
                 CALL dealloc_csed3d_dt() !array for Daniele Tonina Wilcock-Kenworthy
             ENDIF
         ENDIF
+        endif
         !    CALL NETPREIS2(ns, nn, ttopo, tx, ty, ONEDCD, tmpq/1e6, tmpwselev/100., hav )
         CALL NETPREIS2(ns, nn, ttopo, tx, ty, ONEDCD, tmpq, tmpwselev, hav )
         hav = hav*100

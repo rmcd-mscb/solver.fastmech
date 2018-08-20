@@ -434,7 +434,7 @@
     CALL cg_iRIC_Read_Real_F('FM_SedDuneWL', WD, ier)
     WD = WD * 100.
 
-    CALL CG_IRIC_READ_INTEGER_F('FM_RsSmoothLvl', RSSMOO, ier)
+    !CALL CG_IRIC_READ_INTEGER_F('FM_RsSmoothLvl', RSSMOO, ier)
     CALL CG_IRIC_READ_INTEGER_F('FM_SedSmoothLvl', SEDSMOO, ier)
     CALL CG_IRIC_READ_INTEGER_F('FM_SedSmoothWeight', SEDSMOOWGHT, ier)
 

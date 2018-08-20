@@ -141,6 +141,15 @@ CMakeFiles/Fastmech_iRICv3.dir/src/RivRoughnessMod.F90.o.provides.build:
 	$(CMAKE_COMMAND) -E cmake_copy_f90_mod rivroughnessmod CMakeFiles/Fastmech_iRICv3.dir/rivroughnessmod.mod.stamp GNU
 	$(CMAKE_COMMAND) -E touch CMakeFiles/Fastmech_iRICv3.dir/src/RivRoughnessMod.F90.o.provides.build
 CMakeFiles/Fastmech_iRICv3.dir/build: CMakeFiles/Fastmech_iRICv3.dir/src/RivRoughnessMod.F90.o.provides.build
+CMakeFiles/Fastmech_iRICv3.dir/src/RivStagrMod_bmi.f90.o: /home/rmcd/git/iricdev_gcc/lib/install/iriclib-864fb69/release/include/iriclib_f.h
+
+CMakeFiles/Fastmech_iRICv3.dir/src/RivStagrMod_bmi.f90.o.requires: CMakeFiles/Fastmech_iRICv3.dir/fastmech.mod.proxy
+CMakeFiles/Fastmech_iRICv3.dir/src/RivStagrMod_bmi.f90.o: CMakeFiles/Fastmech_iRICv3.dir/fastmech.mod.stamp
+CMakeFiles/Fastmech_iRICv3.dir/rivstagrmod_bmi.mod.proxy: CMakeFiles/Fastmech_iRICv3.dir/src/RivStagrMod_bmi.f90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/RivStagrMod_bmi.f90.o.provides.build:
+	$(CMAKE_COMMAND) -E cmake_copy_f90_mod rivstagrmod_bmi CMakeFiles/Fastmech_iRICv3.dir/rivstagrmod_bmi.mod.stamp GNU
+	$(CMAKE_COMMAND) -E touch CMakeFiles/Fastmech_iRICv3.dir/src/RivStagrMod_bmi.f90.o.provides.build
+CMakeFiles/Fastmech_iRICv3.dir/build: CMakeFiles/Fastmech_iRICv3.dir/src/RivStagrMod_bmi.f90.o.provides.build
 CMakeFiles/Fastmech_iRICv3.dir/src/RivStagrMod_jmn.F90.o: /home/rmcd/git/iricdev_gcc/lib/install/iriclib-864fb69/release/include/iriclib_f.h
 
 CMakeFiles/Fastmech_iRICv3.dir/src/RivStagrMod_jmn.F90.o.requires: CMakeFiles/Fastmech_iRICv3.dir/calccond.mod.proxy
@@ -151,6 +160,8 @@ CMakeFiles/Fastmech_iRICv3.dir/src/RivStagrMod_jmn.F90.o.requires: CMakeFiles/Fa
 CMakeFiles/Fastmech_iRICv3.dir/src/RivStagrMod_jmn.F90.o: CMakeFiles/Fastmech_iRICv3.dir/csedmod_dt_susp.mod.stamp
 CMakeFiles/Fastmech_iRICv3.dir/src/RivStagrMod_jmn.F90.o.requires: CMakeFiles/Fastmech_iRICv3.dir/einitmod.mod.proxy
 CMakeFiles/Fastmech_iRICv3.dir/src/RivStagrMod_jmn.F90.o: CMakeFiles/Fastmech_iRICv3.dir/einitmod.mod.stamp
+CMakeFiles/Fastmech_iRICv3.dir/src/RivStagrMod_jmn.F90.o.requires: CMakeFiles/Fastmech_iRICv3.dir/fm_helpers.mod.proxy
+CMakeFiles/Fastmech_iRICv3.dir/src/RivStagrMod_jmn.F90.o: CMakeFiles/Fastmech_iRICv3.dir/fm_helpers.mod.stamp
 CMakeFiles/Fastmech_iRICv3.dir/src/RivStagrMod_jmn.F90.o.requires: CMakeFiles/Fastmech_iRICv3.dir/readcgns.mod.proxy
 CMakeFiles/Fastmech_iRICv3.dir/src/RivStagrMod_jmn.F90.o: CMakeFiles/Fastmech_iRICv3.dir/readcgns.mod.stamp
 CMakeFiles/Fastmech_iRICv3.dir/src/RivStagrMod_jmn.F90.o.requires: CMakeFiles/Fastmech_iRICv3.dir/rivconnectivitymod.mod.proxy
@@ -229,6 +240,8 @@ CMakeFiles/Fastmech_iRICv3.dir/build: CMakeFiles/Fastmech_iRICv3.dir/src/RivVert
 
 CMakeFiles/Fastmech_iRICv3.dir/src/Stagr_Console.f90.o.requires: CMakeFiles/Fastmech_iRICv3.dir/rivstagr4mod_jmn.mod.proxy
 CMakeFiles/Fastmech_iRICv3.dir/src/Stagr_Console.f90.o: CMakeFiles/Fastmech_iRICv3.dir/rivstagr4mod_jmn.mod.stamp
+CMakeFiles/Fastmech_iRICv3.dir/src/Stagr_Console.f90.o.requires: CMakeFiles/Fastmech_iRICv3.dir/rivstagrmod_bmi.mod.proxy
+CMakeFiles/Fastmech_iRICv3.dir/src/Stagr_Console.f90.o: CMakeFiles/Fastmech_iRICv3.dir/rivstagrmod_bmi.mod.stamp
 
 CMakeFiles/Fastmech_iRICv3.dir/src/StbBkwOutput.f90.o.requires: CMakeFiles/Fastmech_iRICv3.dir/support.mod.proxy
 CMakeFiles/Fastmech_iRICv3.dir/src/StbBkwOutput.f90.o: CMakeFiles/Fastmech_iRICv3.dir/support.mod.stamp
@@ -282,6 +295,84 @@ CMakeFiles/Fastmech_iRICv3.dir/build: CMakeFiles/Fastmech_iRICv3.dir/src/WriteCG
 
 
 
+CMakeFiles/Fastmech_iRICv3.dir/bmif.mod.proxy: CMakeFiles/Fastmech_iRICv3.dir/src/bmi.f90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/bmi.f90.o.provides.build:
+	$(CMAKE_COMMAND) -E cmake_copy_f90_mod bmif CMakeFiles/Fastmech_iRICv3.dir/bmif.mod.stamp GNU
+	$(CMAKE_COMMAND) -E touch CMakeFiles/Fastmech_iRICv3.dir/src/bmi.f90.o.provides.build
+CMakeFiles/Fastmech_iRICv3.dir/build: CMakeFiles/Fastmech_iRICv3.dir/src/bmi.f90.o.provides.build
+
+CMakeFiles/Fastmech_iRICv3.dir/src/bmi_Fastmech.f90.o.requires: CMakeFiles/Fastmech_iRICv3.dir/bmif.mod.proxy
+CMakeFiles/Fastmech_iRICv3.dir/src/bmi_Fastmech.f90.o: CMakeFiles/Fastmech_iRICv3.dir/bmif.mod.stamp
+CMakeFiles/Fastmech_iRICv3.dir/src/bmi_Fastmech.f90.o.requires: CMakeFiles/Fastmech_iRICv3.dir/fastmech.mod.proxy
+CMakeFiles/Fastmech_iRICv3.dir/src/bmi_Fastmech.f90.o: CMakeFiles/Fastmech_iRICv3.dir/fastmech.mod.stamp
+CMakeFiles/Fastmech_iRICv3.dir/bmifastmech.mod.proxy: CMakeFiles/Fastmech_iRICv3.dir/src/bmi_Fastmech.f90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/bmi_Fastmech.f90.o.provides.build:
+	$(CMAKE_COMMAND) -E cmake_copy_f90_mod bmifastmech CMakeFiles/Fastmech_iRICv3.dir/bmifastmech.mod.stamp GNU
+	$(CMAKE_COMMAND) -E touch CMakeFiles/Fastmech_iRICv3.dir/src/bmi_Fastmech.f90.o.provides.build
+CMakeFiles/Fastmech_iRICv3.dir/build: CMakeFiles/Fastmech_iRICv3.dir/src/bmi_Fastmech.f90.o.provides.build
+
+
+CMakeFiles/Fastmech_iRICv3.dir/src/fastmech.f90.o.requires: CMakeFiles/Fastmech_iRICv3.dir/calccond.mod.proxy
+CMakeFiles/Fastmech_iRICv3.dir/src/fastmech.f90.o: CMakeFiles/Fastmech_iRICv3.dir/calccond.mod.stamp
+CMakeFiles/Fastmech_iRICv3.dir/src/fastmech.f90.o.requires: CMakeFiles/Fastmech_iRICv3.dir/csedmod.mod.proxy
+CMakeFiles/Fastmech_iRICv3.dir/src/fastmech.f90.o: CMakeFiles/Fastmech_iRICv3.dir/csedmod.mod.stamp
+CMakeFiles/Fastmech_iRICv3.dir/src/fastmech.f90.o.requires: CMakeFiles/Fastmech_iRICv3.dir/csedmod_dt_susp.mod.proxy
+CMakeFiles/Fastmech_iRICv3.dir/src/fastmech.f90.o: CMakeFiles/Fastmech_iRICv3.dir/csedmod_dt_susp.mod.stamp
+CMakeFiles/Fastmech_iRICv3.dir/src/fastmech.f90.o.requires: CMakeFiles/Fastmech_iRICv3.dir/einitmod.mod.proxy
+CMakeFiles/Fastmech_iRICv3.dir/src/fastmech.f90.o: CMakeFiles/Fastmech_iRICv3.dir/einitmod.mod.stamp
+CMakeFiles/Fastmech_iRICv3.dir/src/fastmech.f90.o.requires: CMakeFiles/Fastmech_iRICv3.dir/fm_helpers.mod.proxy
+CMakeFiles/Fastmech_iRICv3.dir/src/fastmech.f90.o: CMakeFiles/Fastmech_iRICv3.dir/fm_helpers.mod.stamp
+CMakeFiles/Fastmech_iRICv3.dir/src/fastmech.f90.o.requires: CMakeFiles/Fastmech_iRICv3.dir/readcgns.mod.proxy
+CMakeFiles/Fastmech_iRICv3.dir/src/fastmech.f90.o: CMakeFiles/Fastmech_iRICv3.dir/readcgns.mod.stamp
+CMakeFiles/Fastmech_iRICv3.dir/src/fastmech.f90.o.requires: CMakeFiles/Fastmech_iRICv3.dir/rivconnectivitymod.mod.proxy
+CMakeFiles/Fastmech_iRICv3.dir/src/fastmech.f90.o: CMakeFiles/Fastmech_iRICv3.dir/rivconnectivitymod.mod.stamp
+CMakeFiles/Fastmech_iRICv3.dir/src/fastmech.f90.o.requires: CMakeFiles/Fastmech_iRICv3.dir/rivroughnessmod.mod.proxy
+CMakeFiles/Fastmech_iRICv3.dir/src/fastmech.f90.o: CMakeFiles/Fastmech_iRICv3.dir/rivroughnessmod.mod.stamp
+CMakeFiles/Fastmech_iRICv3.dir/src/fastmech.f90.o.requires: CMakeFiles/Fastmech_iRICv3.dir/rivvarmod.mod.proxy
+CMakeFiles/Fastmech_iRICv3.dir/src/fastmech.f90.o: CMakeFiles/Fastmech_iRICv3.dir/rivvarmod.mod.stamp
+CMakeFiles/Fastmech_iRICv3.dir/src/fastmech.f90.o.requires: CMakeFiles/Fastmech_iRICv3.dir/rivvartimemod.mod.proxy
+CMakeFiles/Fastmech_iRICv3.dir/src/fastmech.f90.o: CMakeFiles/Fastmech_iRICv3.dir/rivvartimemod.mod.stamp
+CMakeFiles/Fastmech_iRICv3.dir/src/fastmech.f90.o.requires: CMakeFiles/Fastmech_iRICv3.dir/rivvarvertmod.mod.proxy
+CMakeFiles/Fastmech_iRICv3.dir/src/fastmech.f90.o: CMakeFiles/Fastmech_iRICv3.dir/rivvarvertmod.mod.stamp
+CMakeFiles/Fastmech_iRICv3.dir/src/fastmech.f90.o.requires: CMakeFiles/Fastmech_iRICv3.dir/rivvarwmod.mod.proxy
+CMakeFiles/Fastmech_iRICv3.dir/src/fastmech.f90.o: CMakeFiles/Fastmech_iRICv3.dir/rivvarwmod.mod.stamp
+CMakeFiles/Fastmech_iRICv3.dir/src/fastmech.f90.o.requires: CMakeFiles/Fastmech_iRICv3.dir/rivvertmod.mod.proxy
+CMakeFiles/Fastmech_iRICv3.dir/src/fastmech.f90.o: CMakeFiles/Fastmech_iRICv3.dir/rivvertmod.mod.stamp
+CMakeFiles/Fastmech_iRICv3.dir/src/fastmech.f90.o.requires: CMakeFiles/Fastmech_iRICv3.dir/stressdivmod.mod.proxy
+CMakeFiles/Fastmech_iRICv3.dir/src/fastmech.f90.o: CMakeFiles/Fastmech_iRICv3.dir/stressdivmod.mod.stamp
+CMakeFiles/Fastmech_iRICv3.dir/src/fastmech.f90.o.requires: CMakeFiles/Fastmech_iRICv3.dir/tridiag.mod.proxy
+CMakeFiles/Fastmech_iRICv3.dir/src/fastmech.f90.o: CMakeFiles/Fastmech_iRICv3.dir/tridiag.mod.stamp
+CMakeFiles/Fastmech_iRICv3.dir/src/fastmech.f90.o.requires: CMakeFiles/Fastmech_iRICv3.dir/uinitmod.mod.proxy
+CMakeFiles/Fastmech_iRICv3.dir/src/fastmech.f90.o: CMakeFiles/Fastmech_iRICv3.dir/uinitmod.mod.stamp
+CMakeFiles/Fastmech_iRICv3.dir/src/fastmech.f90.o.requires: CMakeFiles/Fastmech_iRICv3.dir/writecgns.mod.proxy
+CMakeFiles/Fastmech_iRICv3.dir/src/fastmech.f90.o: CMakeFiles/Fastmech_iRICv3.dir/writecgns.mod.stamp
+CMakeFiles/Fastmech_iRICv3.dir/fastmech.mod.proxy: CMakeFiles/Fastmech_iRICv3.dir/src/fastmech.f90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/fastmech.f90.o.provides.build:
+	$(CMAKE_COMMAND) -E cmake_copy_f90_mod fastmech CMakeFiles/Fastmech_iRICv3.dir/fastmech.mod.stamp GNU
+	$(CMAKE_COMMAND) -E touch CMakeFiles/Fastmech_iRICv3.dir/src/fastmech.f90.o.provides.build
+CMakeFiles/Fastmech_iRICv3.dir/build: CMakeFiles/Fastmech_iRICv3.dir/src/fastmech.f90.o.provides.build
+
+CMakeFiles/Fastmech_iRICv3.dir/src/fm_helpers.f90.o.requires: CMakeFiles/Fastmech_iRICv3.dir/calccond.mod.proxy
+CMakeFiles/Fastmech_iRICv3.dir/src/fm_helpers.f90.o: CMakeFiles/Fastmech_iRICv3.dir/calccond.mod.stamp
+CMakeFiles/Fastmech_iRICv3.dir/src/fm_helpers.f90.o.requires: CMakeFiles/Fastmech_iRICv3.dir/csedmod.mod.proxy
+CMakeFiles/Fastmech_iRICv3.dir/src/fm_helpers.f90.o: CMakeFiles/Fastmech_iRICv3.dir/csedmod.mod.stamp
+CMakeFiles/Fastmech_iRICv3.dir/src/fm_helpers.f90.o.requires: CMakeFiles/Fastmech_iRICv3.dir/csedmod_dt_susp.mod.proxy
+CMakeFiles/Fastmech_iRICv3.dir/src/fm_helpers.f90.o: CMakeFiles/Fastmech_iRICv3.dir/csedmod_dt_susp.mod.stamp
+CMakeFiles/Fastmech_iRICv3.dir/src/fm_helpers.f90.o.requires: CMakeFiles/Fastmech_iRICv3.dir/rivcalcinitcond.mod.proxy
+CMakeFiles/Fastmech_iRICv3.dir/src/fm_helpers.f90.o: CMakeFiles/Fastmech_iRICv3.dir/rivcalcinitcond.mod.stamp
+CMakeFiles/Fastmech_iRICv3.dir/src/fm_helpers.f90.o.requires: CMakeFiles/Fastmech_iRICv3.dir/rivroughnessmod.mod.proxy
+CMakeFiles/Fastmech_iRICv3.dir/src/fm_helpers.f90.o: CMakeFiles/Fastmech_iRICv3.dir/rivroughnessmod.mod.stamp
+CMakeFiles/Fastmech_iRICv3.dir/src/fm_helpers.f90.o.requires: CMakeFiles/Fastmech_iRICv3.dir/rivvarmod.mod.proxy
+CMakeFiles/Fastmech_iRICv3.dir/src/fm_helpers.f90.o: CMakeFiles/Fastmech_iRICv3.dir/rivvarmod.mod.stamp
+CMakeFiles/Fastmech_iRICv3.dir/src/fm_helpers.f90.o.requires: CMakeFiles/Fastmech_iRICv3.dir/rivvartimemod.mod.proxy
+CMakeFiles/Fastmech_iRICv3.dir/src/fm_helpers.f90.o: CMakeFiles/Fastmech_iRICv3.dir/rivvartimemod.mod.stamp
+CMakeFiles/Fastmech_iRICv3.dir/src/fm_helpers.f90.o.requires: CMakeFiles/Fastmech_iRICv3.dir/rivvarwmod.mod.proxy
+CMakeFiles/Fastmech_iRICv3.dir/src/fm_helpers.f90.o: CMakeFiles/Fastmech_iRICv3.dir/rivvarwmod.mod.stamp
+CMakeFiles/Fastmech_iRICv3.dir/fm_helpers.mod.proxy: CMakeFiles/Fastmech_iRICv3.dir/src/fm_helpers.f90.o.provides
+CMakeFiles/Fastmech_iRICv3.dir/src/fm_helpers.f90.o.provides.build:
+	$(CMAKE_COMMAND) -E cmake_copy_f90_mod fm_helpers CMakeFiles/Fastmech_iRICv3.dir/fm_helpers.mod.stamp GNU
+	$(CMAKE_COMMAND) -E touch CMakeFiles/Fastmech_iRICv3.dir/src/fm_helpers.f90.o.provides.build
+CMakeFiles/Fastmech_iRICv3.dir/build: CMakeFiles/Fastmech_iRICv3.dir/src/fm_helpers.f90.o.provides.build
 
 
 

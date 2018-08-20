@@ -1,9 +1,13 @@
 # The fortran modules provided by this target.
 provides
+ bmif
+ bmifastmech
  calccond
  csedmod
  csedmod_dt_susp
  einitmod
+ fastmech
+ fm_helpers
  geometrymod
  gridcond
  gridcoord
@@ -16,6 +20,7 @@ provides
  rivconnectivitymod
  rivroughnessmod
  rivstagr4mod_jmn
+ rivstagrmod_bmi
  rivvarmod
  rivvartimemod
  rivvarvertmod

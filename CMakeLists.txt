@@ -54,6 +54,11 @@ SET(SOURCES
 "src/tridag.f90"
 "src/Uinit.f90"
 "src/Welcome.f90"
+"src/bmi.f90"
+"src/bmi_Fastmech.f90"
+"src/fastmech.f90"
+"src/RivStagrMod_bmi.f90"
+"src/fm_helpers.f90"
 )
 
 # executable

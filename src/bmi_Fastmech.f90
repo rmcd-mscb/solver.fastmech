@@ -62,20 +62,22 @@
     integer, parameter :: output_item_count = 10
     character (len=BMI_MAXVARNAMESTR), target, &
         dimension (input_item_count) :: &
-        input_items = (/'Elevation', &
-        'roughness', &
+        input_items = (/ &
+        'Elevation   ', &
+        'roughness   ', &
         'vegroughness'/)
     character (len=BMI_MAXVARNAMESTR), target, &
         dimension (output_item_count) :: &
-        output_items = (/'Depth', &
-        'Drag_Coefficient', &
-        'Elevation', &
-        'FMIBC', &
-        'IBC', &
-        'ShearStressX', &
-        'ShearStressY', &
-        'VelocityX', &
-        'VelocityY', &
+        output_items = (/ &
+        'Depth                ', &
+        'Drag_Coefficient     ', &
+        'Elevation            ', &
+        'FMIBC                ', &
+        'IBC                  ', &
+        'ShearStressX         ', &
+        'ShearStressY         ', &
+        'VelocityX            ', &
+        'VelocityY            ', &
         'WaterSurfaceElevation'/)
 
     contains

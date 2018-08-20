@@ -259,6 +259,14 @@ src/RivRoughnessMod.F90.o:
 	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/RivRoughnessMod.F90.o
 .PHONY : src/RivRoughnessMod.F90.o
 
+src/RivStagrMod_bmi.o: src/RivStagrMod_bmi.f90.o
+.PHONY : src/RivStagrMod_bmi.o
+
+# target to build an object file
+src/RivStagrMod_bmi.f90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/RivStagrMod_bmi.f90.o
+.PHONY : src/RivStagrMod_bmi.f90.o
+
 src/RivStagrMod_jmn.o: src/RivStagrMod_jmn.F90.o
 .PHONY : src/RivStagrMod_jmn.o
 
@@ -379,6 +387,22 @@ src/betavol.f90.o:
 	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/betavol.f90.o
 .PHONY : src/betavol.f90.o
 
+src/bmi.o: src/bmi.f90.o
+.PHONY : src/bmi.o
+
+# target to build an object file
+src/bmi.f90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/bmi.f90.o
+.PHONY : src/bmi.f90.o
+
+src/bmi_Fastmech.o: src/bmi_Fastmech.f90.o
+.PHONY : src/bmi_Fastmech.o
+
+# target to build an object file
+src/bmi_Fastmech.f90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/bmi_Fastmech.f90.o
+.PHONY : src/bmi_Fastmech.f90.o
+
 src/elevdt.o: src/elevdt.f90.o
 .PHONY : src/elevdt.o
 
@@ -386,6 +410,22 @@ src/elevdt.o: src/elevdt.f90.o
 src/elevdt.f90.o:
 	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/elevdt.f90.o
 .PHONY : src/elevdt.f90.o
+
+src/fastmech.o: src/fastmech.f90.o
+.PHONY : src/fastmech.o
+
+# target to build an object file
+src/fastmech.f90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/fastmech.f90.o
+.PHONY : src/fastmech.f90.o
+
+src/fm_helpers.o: src/fm_helpers.f90.o
+.PHONY : src/fm_helpers.o
+
+# target to build an object file
+src/fm_helpers.f90.o:
+	$(MAKE) -f CMakeFiles/Fastmech_iRICv3.dir/build.make CMakeFiles/Fastmech_iRICv3.dir/src/fm_helpers.f90.o
+.PHONY : src/fm_helpers.f90.o
 
 src/functionrough.o: src/functionrough.f90.o
 .PHONY : src/functionrough.o
@@ -565,6 +605,7 @@ help:
 	@echo "... src/RivCalcInitCond.o"
 	@echo "... src/RivConnectivityMod.o"
 	@echo "... src/RivRoughnessMod.o"
+	@echo "... src/RivStagrMod_bmi.o"
 	@echo "... src/RivStagrMod_jmn.o"
 	@echo "... src/RivVarMod.o"
 	@echo "... src/RivVarTimeMod.o"
@@ -580,7 +621,11 @@ help:
 	@echo "... src/WriteCGNS.o"
 	@echo "... src/betaCDFandINV.o"
 	@echo "... src/betavol.o"
+	@echo "... src/bmi.o"
+	@echo "... src/bmi_Fastmech.o"
 	@echo "... src/elevdt.o"
+	@echo "... src/fastmech.o"
+	@echo "... src/fm_helpers.o"
 	@echo "... src/functionrough.o"
 	@echo "... src/initHdt.o"
 	@echo "... src/initdt.o"

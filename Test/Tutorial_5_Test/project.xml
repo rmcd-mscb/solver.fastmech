@@ -161,7 +161,7 @@
         </PostProcessor>
     </PostProcessors>
     <Backgrounds/>
-    <PreProcessorWindow backgroundColor="#ffffff" visible="true" maximized="true" left="0" top="0" width="2533" height="1274">
+    <PreProcessorWindow backgroundColor="#ffffff" visible="true" maximized="false" left="0" top="0" width="2576" height="1215">
         <Camera positionX="74.4072" positionY="0.433013" positionZ="200" focalpointX="74.4072" focalpointY="0.433013" focalpointZ="0" roll="0" parallelscale="81.1686" parallelprojection="true"/>
         <DataModel isExpanded="false" mappingMode="0" geoMappingMode="1" tempAutoRegion="0" tempStreamWiseLength="5" tempCrossStreamLength="5" numExpansion="3" weightExponent="2">
             <BackgroundImages checkState="2" isExpanded="true"/>
@@ -225,7 +225,7 @@
             <TmsBackground checkState="2" isExpanded="true" target=""/>
         </DataModel>
     </PreProcessorWindow>
-    <SolverConsoleWindow visible="true" maximized="false" left="30" top="30" width="700" height="500" backgroundColor="#c8c8c8"/>
+    <SolverConsoleWindow visible="true" maximized="true" left="0" top="0" width="2533" height="1274" backgroundColor="#c8c8c8"/>
     <PostProcessorFactory>
         <WindowCount name="post2dwindow" value="1"/>
         <WindowCount name="post3dwindow" value="1"/>

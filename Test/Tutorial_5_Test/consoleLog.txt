@@ -1,0 +1,145 @@
+**********************************************************************
+                                                                     *
+                                                                     *
+                          FASTMECH                                   *
+ Flow And Sediment Transport and Morphological Evolution of CHannels *
+ *    *   *        *             *            *             **       *
+                                                                     *
+   Developed by National Research Program, U.S. Geological Survey    *
+                                                                     *
+**********************************************************************
+        201           0          11
+WSE  0.000000000000000E+000  0.000000000000000E+000
+
+
+
+
+
+
+
+
+
+
+
+Variabledt  7.054779254339582E-312 DT   600.000000000000     
+TIME STEP           0 TIME  0.000000000000000E+000 PrintTime
+  3600.00000000000     
+
+Quasi-3D Calculation is on
+
+Sediment-transport is on
+Time-stepping method is fixed
+Old wet nodes:            0  New wet nodes:         1809
+
+Discharge   2.50000000000000      Change Discharge  0.000000000000000E+000
+Stage   10.0000000000000      Change Stage  0.000000000000000E+000
+
+Iteration:            1  Mean Error on Discharge:   24.1587133163595     
+Iteration:            2  Mean Error on Discharge:   41.1645174834693     
+Iteration:            3  Mean Error on Discharge:   49.5639898266956     
+Iteration:            4  Mean Error on Discharge:   51.9213230326218     
+Iteration:            5  Mean Error on Discharge:   51.0429545230074     
+Iteration:            6  Mean Error on Discharge:   48.7963225881213     
+Iteration:            7  Mean Error on Discharge:   46.3212729530446     
+Iteration:            8  Mean Error on Discharge:   44.1529711912977     
+Iteration:            9  Mean Error on Discharge:   42.2569884266441     
+Iteration:           10  Mean Error on Discharge:   40.3156897262536     
+Iteration:           11  Mean Error on Discharge:   38.1655541259588     
+Iteration:           12  Mean Error on Discharge:   35.7811313780428     
+Iteration:           13  Mean Error on Discharge:   33.1747656353276     
+Iteration:           14  Mean Error on Discharge:   30.3141601214308     
+Iteration:           15  Mean Error on Discharge:   27.2167637907885     
+Iteration:           16  Mean Error on Discharge:   24.0627048503100     
+Iteration:           17  Mean Error on Discharge:   21.1541556121190     
+Iteration:           18  Mean Error on Discharge:   18.7027611278194     
+Iteration:           19  Mean Error on Discharge:   16.8053672818896     
+Iteration:           20  Mean Error on Discharge:   15.4224426839009     
+Iteration:           21  Mean Error on Discharge:   14.3888199924202     
+Iteration:           22  Mean Error on Discharge:   13.5396716482209     
+Iteration:           23  Mean Error on Discharge:   12.7620658708776     
+Iteration:           24  Mean Error on Discharge:   11.9911721664311     
+Iteration:           25  Mean Error on Discharge:   11.1887028939087     
+Iteration:           26  Mean Error on Discharge:   10.3114342262247     
+Iteration:           27  Mean Error on Discharge:   9.32361558018212     
+Iteration:           28  Mean Error on Discharge:   8.20522168209286     
+Iteration:           29  Mean Error on Discharge:   6.97235891750711     
+Iteration:           30  Mean Error on Discharge:   5.71593108461634     
+Iteration:           31  Mean Error on Discharge:   4.54776503363579     
+Iteration:           32  Mean Error on Discharge:   3.54462890445504     
+Iteration:           33  Mean Error on Discharge:   2.73015258141576     
+Iteration:           34  Mean Error on Discharge:   2.09522235744459     
+Iteration:           35  Mean Error on Discharge:   1.64330340122228     
+Iteration:           36  Mean Error on Discharge:   1.40630075811880     
+Iteration:           37  Mean Error on Discharge:   1.37973526467776     
+Iteration:           38  Mean Error on Discharge:   1.48294681263657     
+Iteration:           39  Mean Error on Discharge:   1.62833479039439     
+Iteration:           40  Mean Error on Discharge:   1.77164136763865     
+Iteration:           41  Mean Error on Discharge:   1.90826086069271     
+Iteration:           42  Mean Error on Discharge:   2.05043126029214     
+Iteration:           43  Mean Error on Discharge:   2.20884516048311     
+Iteration:           44  Mean Error on Discharge:   2.39063462419451     
+Iteration:           45  Mean Error on Discharge:   2.59625282094272     
+Iteration:           46  Mean Error on Discharge:   2.81916747953620     
+Iteration:           47  Mean Error on Discharge:   3.04404165565963     
+Iteration:           48  Mean Error on Discharge:   3.24543807908694     
+Iteration:           49  Mean Error on Discharge:   3.39495992631663     
+Iteration:           50  Mean Error on Discharge:   3.47178243007137     
+Iteration:           51  Mean Error on Discharge:   3.47214627741975     
+Iteration:           52  Mean Error on Discharge:   3.40920763106922     
+Iteration:           53  Mean Error on Discharge:   3.30261129330899     
+Iteration:           54  Mean Error on Discharge:   3.17322388242956     
+Iteration:           55  Mean Error on Discharge:   3.03779918189368     
+Iteration:           56  Mean Error on Discharge:   2.90747633487859     
+Iteration:           57  Mean Error on Discharge:   2.78834996177672     
+Iteration:           58  Mean Error on Discharge:   2.68347908001402     
+Iteration:           59  Mean Error on Discharge:   2.59379938092633     
+Iteration:           60  Mean Error on Discharge:   2.51873388510478     
+Iteration:           61  Mean Error on Discharge:   2.45538237840209     
+Iteration:           62  Mean Error on Discharge:   2.39672694241402     
+Iteration:           63  Mean Error on Discharge:   2.33252453260402     
+Iteration:           64  Mean Error on Discharge:   2.25299856984407     
+Iteration:           65  Mean Error on Discharge:   2.15326190607807     
+Iteration:           66  Mean Error on Discharge:   2.03498877784522     
+Iteration:           67  Mean Error on Discharge:   1.90471876332683     
+Iteration:           68  Mean Error on Discharge:   1.77085778688856     
+Iteration:           69  Mean Error on Discharge:   1.64129910406075     
+Iteration:           70  Mean Error on Discharge:   1.52193357977149     
+Iteration:           71  Mean Error on Discharge:   1.41555194542934     
+Iteration:           72  Mean Error on Discharge:   1.32055475960598     
+Iteration:           73  Mean Error on Discharge:   1.23112394074571     
+Iteration:           74  Mean Error on Discharge:   1.14022535814243     
+Iteration:           75  Mean Error on Discharge:   1.04411741670072     
+Iteration:           76  Mean Error on Discharge:  0.943583340327306     
+Iteration:           77  Mean Error on Discharge:  0.842822285909548     
+Iteration:           78  Mean Error on Discharge:  0.747664234166464     
+Iteration:           79  Mean Error on Discharge:  0.663878147653602     
+Iteration:           80  Mean Error on Discharge:  0.596053113691308     
+Iteration:           81  Mean Error on Discharge:  0.547412307674063     
+Iteration:           82  Mean Error on Discharge:  0.520052846464534     
+Iteration:           83  Mean Error on Discharge:  0.514410933658004     
+Iteration:           84  Mean Error on Discharge:  0.527772071303974     
+Iteration:           85  Mean Error on Discharge:  0.553834932597740     
+Iteration:           86  Mean Error on Discharge:  0.584181618292174     
+Iteration:           87  Mean Error on Discharge:  0.610640856209406     
+Iteration:           88  Mean Error on Discharge:  0.627141508668578     
+Iteration:           89  Mean Error on Discharge:  0.630868321707474     
+Iteration:           90  Mean Error on Discharge:  0.622654280361881     
+Iteration:           91  Mean Error on Discharge:  0.606739949066692     
+Iteration:           92  Mean Error on Discharge:  0.588925053993105     
+Iteration:           93  Mean Error on Discharge:  0.573845805673764     
+Iteration:           94  Mean Error on Discharge:  0.563432703367182     
+Iteration:           95  Mean Error on Discharge:  0.557107757010805     
+Iteration:           96  Mean Error on Discharge:  0.553162107141698     
+Iteration:           97  Mean Error on Discharge:  0.550069780703790     
+Iteration:           98  Mean Error on Discharge:  0.547042246789553     
+Iteration:           99  Mean Error on Discharge:  0.543849043096507     
+Iteration:          100  Mean Error on Discharge:  0.540394859192911     forrtl: severe (157): Program Exception - access violation
+Image              PC                Routine            Line        Source             
+Fastmech.exe       00007FF6BC333D3B  Unknown               Unknown  Unknown
+Fastmech.exe       00007FF6BC3809A6  Unknown               Unknown  Unknown
+Fastmech.exe       00007FF6BC3945AB  Unknown               Unknown  Unknown
+Fastmech.exe       00007FF6BC3A5C5E  Unknown               Unknown  Unknown
+Fastmech.exe       00007FF6BC3A6E51  Unknown               Unknown  Unknown
+KERNEL32.DLL       00007FFCD1B01FE4  Unknown               Unknown  Unknown
+ntdll.dll          00007FFCD2C1CB31  Unknown               Unknown  Unknown
+

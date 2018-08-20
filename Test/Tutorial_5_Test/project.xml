@@ -10,19 +10,19 @@
             <DataModel ZScale="1" isExpanded="false">
                 <GridType checkState="2" isExpanded="true" name="fastmech">
                     <LookupTables>
-                        <LookupTable name="Depth" autoRange="true" autoMin="0" autoMax="1.06736" manualMin="0" manualMax="0" colorMap="0"/>
-                        <LookupTable name="Elevation" autoRange="true" autoMin="8.99779" autoMax="10.19" manualMin="0" manualMax="0" colorMap="0"/>
-                        <LookupTable name="Erosion Rate" autoRange="true" autoMin="-0.000419571" autoMax="0.000926205" manualMin="0" manualMax="0" colorMap="0"/>
-                        <LookupTable name="FMIBC" autoRange="true" autoMin="-1" autoMax="0" manualMin="0" manualMax="0" colorMap="0"/>
-                        <LookupTable name="Helix Strength" autoRange="true" autoMin="-57.1274" autoMax="52.866" manualMin="0" manualMax="0" colorMap="0"/>
-                        <LookupTable name="IBC" autoRange="true" autoMin="0" autoMax="1" manualMin="0" manualMax="0" colorMap="0"/>
-                        <LookupTable name="SedFlux (magnitude)" autoRange="true" autoMin="-8.26514e-05" autoMax="0.000117349" manualMin="0" manualMax="0" colorMap="0"/>
-                        <LookupTable name="ShearStress (magnitude)" autoRange="true" autoMin="0" autoMax="3.97932" manualMin="0" manualMax="0" colorMap="0"/>
-                        <LookupTable name="UnitDischarge (magnitude)" autoRange="true" autoMin="0" autoMax="0.686422" manualMin="0" manualMax="0" colorMap="0"/>
-                        <LookupTable name="Velocity (magnitude)" autoRange="true" autoMin="0" autoMax="0.739781" manualMin="0" manualMax="0" colorMap="0"/>
-                        <LookupTable name="VelocityInitN" autoRange="true" autoMin="-0.106003" autoMax="0.0870083" manualMin="0" manualMax="0" colorMap="0"/>
-                        <LookupTable name="VelocityInitS" autoRange="true" autoMin="0" autoMax="0.73704" manualMin="0" manualMax="0" colorMap="0"/>
-                        <LookupTable name="WaterSurfaceElevation" autoRange="true" autoMin="9.99986" autoMax="10.1913" manualMin="0" manualMax="0" colorMap="0"/>
+                        <LookupTable name="Depth" autoRange="true" autoMin="-0.0001" autoMax="0.0001" manualMin="0" manualMax="0" colorMap="0"/>
+                        <LookupTable name="Elevation" autoRange="true" autoMin="-0.0001" autoMax="0.0001" manualMin="0" manualMax="0" colorMap="0"/>
+                        <LookupTable name="Erosion Rate" autoRange="true" autoMin="-0.0001" autoMax="0.0001" manualMin="0" manualMax="0" colorMap="0"/>
+                        <LookupTable name="FMIBC" autoRange="true" autoMin="-0.0001" autoMax="0.0001" manualMin="0" manualMax="0" colorMap="0"/>
+                        <LookupTable name="Helix Strength" autoRange="true" autoMin="-0.0001" autoMax="0.0001" manualMin="0" manualMax="0" colorMap="0"/>
+                        <LookupTable name="IBC" autoRange="true" autoMin="-0.0001" autoMax="0.0001" manualMin="0" manualMax="0" colorMap="0"/>
+                        <LookupTable name="SedFlux (magnitude)" autoRange="true" autoMin="-0.0001" autoMax="0.0001" manualMin="0" manualMax="0" colorMap="0"/>
+                        <LookupTable name="ShearStress (magnitude)" autoRange="true" autoMin="-0.0001" autoMax="0.0001" manualMin="0" manualMax="0" colorMap="0"/>
+                        <LookupTable name="UnitDischarge (magnitude)" autoRange="true" autoMin="-0.0001" autoMax="0.0001" manualMin="0" manualMax="0" colorMap="0"/>
+                        <LookupTable name="Velocity (magnitude)" autoRange="true" autoMin="-0.0001" autoMax="0.0001" manualMin="0" manualMax="0" colorMap="0"/>
+                        <LookupTable name="VelocityInitN" autoRange="true" autoMin="-0.0001" autoMax="0.0001" manualMin="0" manualMax="0" colorMap="0"/>
+                        <LookupTable name="VelocityInitS" autoRange="true" autoMin="-0.0001" autoMax="0.0001" manualMin="0" manualMax="0" colorMap="0"/>
+                        <LookupTable name="WaterSurfaceElevation" autoRange="true" autoMin="-0.0001" autoMax="0.0001" manualMin="0" manualMax="0" colorMap="0"/>
                     </LookupTables>
                     <ParticleLookupTables/>
                     <GeoData checkState="2" isExpanded="true">
@@ -101,7 +101,7 @@
                                 </Particles>
                             </ParticleGroup>
                             <CellFlagGroup checkState="2" isExpanded="true" opacityPercent="50"/>
-                            <GraphGroup checkState="2" isExpanded="true" direction="0" region="0" regionStart="0" regionEnd="200" regionSkip="1" regionIndices="" offsetDirection="1" drawGridLine="true" gridColor="#a0a0a4" gridWidth="1" gridPattern="65535" solution="" scale="1" graphColor="#000000" graphWidth="1" graphPattern="65535" valueFix="0"/>
+                            <GraphGroup checkState="2" isExpanded="true" direction="0" region="0" regionStart="0" regionEnd="200" regionSkip="1" regionIndices="0" offsetDirection="1" drawGridLine="true" gridColor="#a0a0a4" gridWidth="1" gridPattern="65535" solution="" scale="1" graphColor="#000000" graphWidth="1" graphPattern="65535" valueFix="0"/>
                         </Zone>
                     </Zones>
                 </GridType>
@@ -113,15 +113,15 @@
                 <TmsBackground checkState="2" isExpanded="true" target=""/>
             </DataModel>
         </PostProcessor>
-        <PostProcessor type="post3dwindow" index="1" backgroundColor="#ffffff" visible="true" maximized="true" left="0" top="0" width="2533" height="1243">
+        <PostProcessor type="post3dwindow" index="1" backgroundColor="#ffffff" visible="true" maximized="false" left="0" top="0" width="2533" height="1243">
             <Camera positionX="5.95272" positionY="-226.403" positionZ="234.363" focalpointX="74.402" focalpointY="0.433013" focalpointZ="28.7912" roll="25.4311" parallelscale="81.1882" parallelprojection="true"/>
             <DataModel ZScale="3" isExpanded="false">
                 <GridType checkState="2" isExpanded="true" name="fastmech">
                     <LookupTables>
-                        <LookupTable name="IBC" autoRange="true" autoMin="0" autoMax="1" manualMin="0" manualMax="0" colorMap="0"/>
-                        <LookupTable name="NVelocity" autoRange="true" autoMin="-0.317275" autoMax="0.2523" manualMin="0" manualMax="0" colorMap="0"/>
-                        <LookupTable name="SVelocity" autoRange="true" autoMin="0" autoMax="0.998951" manualMin="0" manualMax="0" colorMap="0"/>
-                        <LookupTable name="Velocity (magnitude)" autoRange="true" autoMin="0" autoMax="0.999125" manualMin="0" manualMax="0" colorMap="0"/>
+                        <LookupTable name="IBC" autoRange="true" autoMin="-0.0001" autoMax="0.0001" manualMin="0" manualMax="0" colorMap="0"/>
+                        <LookupTable name="NVelocity" autoRange="true" autoMin="-0.0001" autoMax="0.0001" manualMin="0" manualMax="0" colorMap="0"/>
+                        <LookupTable name="SVelocity" autoRange="true" autoMin="-0.0001" autoMax="0.0001" manualMin="0" manualMax="0" colorMap="0"/>
+                        <LookupTable name="Velocity (magnitude)" autoRange="true" autoMin="-0.0001" autoMax="0.0001" manualMin="0" manualMax="0" colorMap="0"/>
                     </LookupTables>
                     <ParticleLookupTables/>
                     <Zones>
@@ -161,7 +161,7 @@
         </PostProcessor>
     </PostProcessors>
     <Backgrounds/>
-    <PreProcessorWindow backgroundColor="#ffffff" visible="true" maximized="false" left="0" top="0" width="2576" height="1215">
+    <PreProcessorWindow backgroundColor="#ffffff" visible="true" maximized="true" left="0" top="0" width="2533" height="1274">
         <Camera positionX="74.4072" positionY="0.433013" positionZ="200" focalpointX="74.4072" focalpointY="0.433013" focalpointZ="0" roll="0" parallelscale="81.1686" parallelprojection="true"/>
         <DataModel isExpanded="false" mappingMode="0" geoMappingMode="1" tempAutoRegion="0" tempStreamWiseLength="5" tempCrossStreamLength="5" numExpansion="3" weightExponent="2">
             <BackgroundImages checkState="2" isExpanded="true"/>
@@ -225,7 +225,7 @@
             <TmsBackground checkState="2" isExpanded="true" target=""/>
         </DataModel>
     </PreProcessorWindow>
-    <SolverConsoleWindow visible="true" maximized="false" left="30" top="60" width="700" height="500" backgroundColor="#c8c8c8"/>
+    <SolverConsoleWindow visible="true" maximized="false" left="30" top="30" width="700" height="500" backgroundColor="#c8c8c8"/>
     <PostProcessorFactory>
         <WindowCount name="post2dwindow" value="1"/>
         <WindowCount name="post3dwindow" value="1"/>

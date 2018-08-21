@@ -26,7 +26,7 @@
 				<Tool Name="VFManifestTool" SuppressStartupBanner="true"/></Configuration>
 		<Configuration Name="Debug|x64">
 				<Tool Name="VFFortranCompilerTool" SuppressStartupBanner="true" DebugInformationFormat="debugEnabled" Optimization="optimizeDisabled" AdditionalIncludeDirectories="..\libs_06_07_18\." EnableRecursion="true" ReentrantCode="reentrancyThreaded" WarnInterfaces="true" RealKIND="realKIND8" Traceback="true" BoundsCheck="true" StackFrameCheck="true" RuntimeLibrary="rtMultiThreadedDebugDLL"/>
-				<Tool Name="VFLinkerTool" LinkIncremental="linkIncrementalNo" SuppressStartupBanner="true" AdditionalLibraryDirectories="..\libs_06_07_18\.;C:\Users\rmcd\Documents\Fortran\Fastmech_BMI_Branch\src\." GenerateDebugInformation="true" SubSystem="subSystemConsole" HeapReserveSize="100000000" HeapCommitSize="100000000" StackReserveSize="1000000000" StackCommitSize="1000000000" AdditionalDependencies="cgnsdll_x64_ifort.lib iriclib_x64_ifort.lib"/>
+				<Tool Name="VFLinkerTool" LinkIncremental="linkIncrementalNo" SuppressStartupBanner="true" AdditionalLibraryDirectories="..\libs_06_07_18\." GenerateDebugInformation="true" SubSystem="subSystemConsole" HeapReserveSize="100000000" HeapCommitSize="100000000" StackReserveSize="1000000000" StackCommitSize="1000000000" AdditionalDependencies="cgnsdll_x64_ifort.lib iriclib_x64_ifort.lib"/>
 				<Tool Name="VFResourceCompilerTool"/>
 				<Tool Name="VFMidlTool" SuppressStartupBanner="true" TargetEnvironment="midlTargetAMD64"/>
 				<Tool Name="VFCustomBuildTool"/>
@@ -35,8 +35,8 @@
 				<Tool Name="VFPostBuildEventTool"/>
 				<Tool Name="VFManifestTool" SuppressStartupBanner="true"/></Configuration>
 		<Configuration Name="Release|x64">
-				<Tool Name="VFFortranCompilerTool" SuppressStartupBanner="true" RuntimeLibrary="rtMultiThreadedDLL"/>
-				<Tool Name="VFLinkerTool" LinkIncremental="linkIncrementalNo" SuppressStartupBanner="true" SubSystem="subSystemConsole"/>
+				<Tool Name="VFFortranCompilerTool" SuppressStartupBanner="true" AdditionalIncludeDirectories=".\..\libs_06_07_18\.;C:\Users\rmcd\Documents\Fortran\Fastmech_BMI_Branch\libs_06_07_18\." EnableRecursion="true" ReentrantCode="reentrancyThreaded" RealKIND="realKIND8" RuntimeLibrary="rtMultiThreadedDLL"/>
+				<Tool Name="VFLinkerTool" LinkIncremental="linkIncrementalNo" SuppressStartupBanner="true" AdditionalLibraryDirectories="..\libs_06_07_18\." SubSystem="subSystemConsole" AdditionalDependencies="cgnsdll_x64_ifort.lib iriclib_x64_ifort.lib"/>
 				<Tool Name="VFResourceCompilerTool"/>
 				<Tool Name="VFMidlTool" SuppressStartupBanner="true" TargetEnvironment="midlTargetAMD64"/>
 				<Tool Name="VFCustomBuildTool"/>
@@ -74,6 +74,8 @@
 		<File RelativePath="..\src\RivCalcInitCond.F90"/>
 		<File RelativePath="..\src\RivConnectivityMod.F90"/>
 		<File RelativePath="..\src\RivRoughnessMod.F90"/>
+		<File RelativePath="..\src\RivStagrMod_bmi.f90"/>
+		<File RelativePath="..\src\RivStagrMod_jmn.F90"/>
 		<File RelativePath="..\src\RivVarMod.f90"/>
 		<File RelativePath="..\src\RivVarTimeMod.f90"/>
 		<File RelativePath="..\src\RivVarVertMod.f90"/>

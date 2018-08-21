@@ -68,8 +68,9 @@
     return
     entry SetBW(mbw)
     ntbw=mbw
-    allocate(cm(2*nsc,mbw))
-    allocate(rhs(2*nsc))
+     allocate(rhs(2*nsc))
+     allocate(cm(2*nsc,ntbw))
+   
     allocate(iloc(2*nsc))
     end subroutine AllocateSecs
     end Module Support

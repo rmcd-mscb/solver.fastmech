@@ -8,7 +8,7 @@ program conflicting_instances_test
   type (bmi_fastmech) :: m1
   type (bmi_fastmech) :: m2
   character (len=BMI_MAXVARNAMESTR) :: &
-       cfg_file1 = ".\..\TestBMI\Test1.cgn", cfg_file2 = ".\..\TestBMI\Test2.cgn"
+       cfg_file1 = ".\..\TestBMI\Case2.cgn", cfg_file2 = ".\..\TestBMI\Case2a.cgn"
   integer :: s
   integer :: grid_id1, grid_id2
   character (len=BMI_MAXVARNAMESTR), pointer :: names1(:), names2(:)

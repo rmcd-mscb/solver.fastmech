@@ -1,0 +1,2259 @@
+file name: 
+Case1.cgn                                                                      
+                                                                               
+                                                                               
+             
+**********************************************************************
+                                                                     *
+                                                                     *
+                          FASTMECH                                   *
+ Flow And Sediment Transport and Morphological Evolution of CHannels *
+ *    *   *        *             *            *             **       *
+                                                                     *
+   Developed by National Research Program, U.S. Geological Survey    *
+                                                                     *
+**********************************************************************
+        301           0          16
+WSE  0.000000000000000E+000  0.000000000000000E+000
+
+
+
+
+
+
+
+
+
+
+
+Variabledt  3.003975333026514E-307 DT   1.00000000000000     
+TIME STEP           0 TIME  0.000000000000000E+000 PrintTime
+  1.00000000000000     
+
+Quasi-3D Calculation is off
+
+Sediment-transport is off
+
+Discharge   2.50000000000000      Change Discharge  0.000000000000000E+000
+Stage   10.0000000000000      Change Stage  0.000000000000000E+000
+
+Iteration:            1  Mean Error on Discharge:  0.620894723554786     
+Iteration:            2  Mean Error on Discharge:   1.21941600372679     
+Iteration:            3  Mean Error on Discharge:   1.79198351798233     
+Iteration:            4  Mean Error on Discharge:   2.33948405490437     
+Iteration:            5  Mean Error on Discharge:   2.86302422043818     
+Iteration:            6  Mean Error on Discharge:   3.36398388851258     
+Iteration:            7  Mean Error on Discharge:   3.84396267191859     
+Iteration:            8  Mean Error on Discharge:   4.30473716452246     
+Iteration:            9  Mean Error on Discharge:   4.74809319267850     
+Iteration:           10  Mean Error on Discharge:   5.17585417880666     
+Iteration:           11  Mean Error on Discharge:   5.59012301230042     
+Iteration:           12  Mean Error on Discharge:   5.99297463513892     
+Iteration:           13  Mean Error on Discharge:   6.38638990114018     
+Iteration:           14  Mean Error on Discharge:   6.77220590914037     
+Iteration:           15  Mean Error on Discharge:   7.15207597943444     
+Iteration:           16  Mean Error on Discharge:   7.52737911931817     
+Iteration:           17  Mean Error on Discharge:   7.89923682032068     
+Iteration:           18  Mean Error on Discharge:   8.26860247657341     
+Iteration:           19  Mean Error on Discharge:   8.63577473435526     
+Iteration:           20  Mean Error on Discharge:   8.99987880628608     
+Iteration:           21  Mean Error on Discharge:   9.35916150650608     
+Iteration:           22  Mean Error on Discharge:   9.71068838281001     
+Iteration:           23  Mean Error on Discharge:   10.0511346511017     
+Iteration:           24  Mean Error on Discharge:   10.3793693545428     
+Iteration:           25  Mean Error on Discharge:   10.6944443956819     
+Iteration:           26  Mean Error on Discharge:   10.9962820993441     
+Iteration:           27  Mean Error on Discharge:   11.2849486130778     
+Iteration:           28  Mean Error on Discharge:   11.5605107440635     
+Iteration:           29  Mean Error on Discharge:   11.8229972684061     
+Iteration:           30  Mean Error on Discharge:   12.0724673011839     
+Iteration:           31  Mean Error on Discharge:   12.3090924577725     
+Iteration:           32  Mean Error on Discharge:   12.5331469569635     
+Iteration:           33  Mean Error on Discharge:   12.7449996906337     
+Iteration:           34  Mean Error on Discharge:   12.9450898736675     
+Iteration:           35  Mean Error on Discharge:   13.1339250144885     
+Iteration:           36  Mean Error on Discharge:   13.3107191514037     
+Iteration:           37  Mean Error on Discharge:   13.4740670673064     
+Iteration:           38  Mean Error on Discharge:   13.6221241065306     
+Iteration:           39  Mean Error on Discharge:   13.7542042996636     
+Iteration:           40  Mean Error on Discharge:   13.8707974563492     
+Iteration:           41  Mean Error on Discharge:   13.9729250671537     
+Iteration:           42  Mean Error on Discharge:   14.0620631440031     
+Iteration:           43  Mean Error on Discharge:   14.1397322164916     
+Iteration:           44  Mean Error on Discharge:   14.2074441810482     
+Iteration:           45  Mean Error on Discharge:   14.2666699886799     
+Iteration:           46  Mean Error on Discharge:   14.3188386796642     
+Iteration:           47  Mean Error on Discharge:   14.3653270070421     
+Iteration:           48  Mean Error on Discharge:   14.4074479841225     
+Iteration:           49  Mean Error on Discharge:   14.4464384932916     
+Iteration:           50  Mean Error on Discharge:   14.4834489101263     
+Iteration:           51  Mean Error on Discharge:   14.5195314629671     
+Iteration:           52  Mean Error on Discharge:   14.5556288192069     
+Iteration:           53  Mean Error on Discharge:   14.5925631678758     
+Iteration:           54  Mean Error on Discharge:   14.6309345677921     
+Iteration:           55  Mean Error on Discharge:   14.6711445903565     
+Iteration:           56  Mean Error on Discharge:   14.7128429510712     
+Iteration:           57  Mean Error on Discharge:   14.7549629239246     
+Iteration:           58  Mean Error on Discharge:   14.7969350596611     
+Iteration:           59  Mean Error on Discharge:   14.8377033919476     
+Iteration:           60  Mean Error on Discharge:   14.8761912263299     
+Iteration:           61  Mean Error on Discharge:   14.9118956279335     
+Iteration:           62  Mean Error on Discharge:   14.9445388193885     
+Iteration:           63  Mean Error on Discharge:   14.9739121954278     
+Iteration:           64  Mean Error on Discharge:   14.9998042862381     
+Iteration:           65  Mean Error on Discharge:   15.0219831181575     
+Iteration:           66  Mean Error on Discharge:   15.0402033543500     
+Iteration:           67  Mean Error on Discharge:   15.0542354877432     
+Iteration:           68  Mean Error on Discharge:   15.0638867732478     
+Iteration:           69  Mean Error on Discharge:   15.0689349781414     
+Iteration:           70  Mean Error on Discharge:   15.0686105601430     
+Iteration:           71  Mean Error on Discharge:   15.0622406060717     
+Iteration:           72  Mean Error on Discharge:   15.0493111809071     
+Iteration:           73  Mean Error on Discharge:   15.0293527754598     
+Iteration:           74  Mean Error on Discharge:   15.0018730016828     
+Iteration:           75  Mean Error on Discharge:   14.9664444560488     
+Iteration:           76  Mean Error on Discharge:   14.9228331175627     
+Iteration:           77  Mean Error on Discharge:   14.8711490250828     
+Iteration:           78  Mean Error on Discharge:   14.8118893382236     
+Iteration:           79  Mean Error on Discharge:   14.7458496317844     
+Iteration:           80  Mean Error on Discharge:   14.6740801172879     
+Iteration:           81  Mean Error on Discharge:   14.5977371601000     
+Iteration:           82  Mean Error on Discharge:   14.5180373024292     
+Iteration:           83  Mean Error on Discharge:   14.4362282343406     
+Iteration:           84  Mean Error on Discharge:   14.3535531293494     
+Iteration:           85  Mean Error on Discharge:   14.2712170051440     
+Iteration:           86  Mean Error on Discharge:   14.1903466403753     
+Iteration:           87  Mean Error on Discharge:   14.1119549756418     
+Iteration:           88  Mean Error on Discharge:   14.0369054620137     
+Iteration:           89  Mean Error on Discharge:   13.9658812102369     
+Iteration:           90  Mean Error on Discharge:   13.8993485174480     
+Iteration:           91  Mean Error on Discharge:   13.8373963997570     
+Iteration:           92  Mean Error on Discharge:   13.7794477320445     
+Iteration:           93  Mean Error on Discharge:   13.7246686258589     
+Iteration:           94  Mean Error on Discharge:   13.6722379096670     
+Iteration:           95  Mean Error on Discharge:   13.6213095435160     
+Iteration:           96  Mean Error on Discharge:   13.5706456233564     
+Iteration:           97  Mean Error on Discharge:   13.5190649889160     
+Iteration:           98  Mean Error on Discharge:   13.4654925304075     
+Iteration:           99  Mean Error on Discharge:   13.4094538823503     
+Iteration:          100  Mean Error on Discharge:   13.3507397437398     
+Iteration:          101  Mean Error on Discharge:   13.2893290103539     
+Iteration:          102  Mean Error on Discharge:   13.2252724766391     
+Iteration:          103  Mean Error on Discharge:   13.1586370908767     
+Iteration:          104  Mean Error on Discharge:   13.0894721753961     
+Iteration:          105  Mean Error on Discharge:   13.0178011293971     
+Iteration:          106  Mean Error on Discharge:   12.9436482363087     
+Iteration:          107  Mean Error on Discharge:   12.8670776938285     
+Iteration:          108  Mean Error on Discharge:   12.7881594106221     
+Iteration:          109  Mean Error on Discharge:   12.7069200127358     
+Iteration:          110  Mean Error on Discharge:   12.6232850710978     
+Iteration:          111  Mean Error on Discharge:   12.5370248994484     
+Iteration:          112  Mean Error on Discharge:   12.4477003865872     
+Iteration:          113  Mean Error on Discharge:   12.3550101054583     
+Iteration:          114  Mean Error on Discharge:   12.2589373756035     
+Iteration:          115  Mean Error on Discharge:   12.1596776335002     
+Iteration:          116  Mean Error on Discharge:   12.0575460693693     
+Iteration:          117  Mean Error on Discharge:   11.9529658883698     
+Iteration:          118  Mean Error on Discharge:   11.8464297622990     
+Iteration:          119  Mean Error on Discharge:   11.7384857898768     
+Iteration:          120  Mean Error on Discharge:   11.6297234923191     
+Iteration:          121  Mean Error on Discharge:   11.5207572856800     
+Iteration:          122  Mean Error on Discharge:   11.4122105083930     
+Iteration:          123  Mean Error on Discharge:   11.3046995239887     
+Iteration:          124  Mean Error on Discharge:   11.1988143676842     
+Iteration:          125  Mean Error on Discharge:   11.0950868184001     
+Iteration:          126  Mean Error on Discharge:   10.9939460473121     
+Iteration:          127  Mean Error on Discharge:   10.8957479646328     
+Iteration:          128  Mean Error on Discharge:   10.8006621848781     
+Iteration:          129  Mean Error on Discharge:   10.7085718333520     
+Iteration:          130  Mean Error on Discharge:   10.6192902191387     
+Iteration:          131  Mean Error on Discharge:   10.5325435386810     
+Iteration:          132  Mean Error on Discharge:   10.4481315983526     
+Iteration:          133  Mean Error on Discharge:   10.3656754024868     
+Iteration:          134  Mean Error on Discharge:   10.2847730563093     
+Iteration:          135  Mean Error on Discharge:   10.2049557015871     
+Iteration:          136  Mean Error on Discharge:   10.1256496935155     
+Iteration:          137  Mean Error on Discharge:   10.0462189909795     
+Iteration:          138  Mean Error on Discharge:   9.96603628915319     
+Iteration:          139  Mean Error on Discharge:   9.88448397245450     
+Iteration:          140  Mean Error on Discharge:   9.80098496351758     
+Iteration:          141  Mean Error on Discharge:   9.71502665152252     
+Iteration:          142  Mean Error on Discharge:   9.62618334786016     
+Iteration:          143  Mean Error on Discharge:   9.53414428874958     
+Iteration:          144  Mean Error on Discharge:   9.43873676396463     
+Iteration:          145  Mean Error on Discharge:   9.33993532457709     
+Iteration:          146  Mean Error on Discharge:   9.23785195597170     
+Iteration:          147  Mean Error on Discharge:   9.13269097372601     
+Iteration:          148  Mean Error on Discharge:   9.02472879457303     
+Iteration:          149  Mean Error on Discharge:   8.91428606691943     
+Iteration:          150  Mean Error on Discharge:   8.80175658829031     
+Iteration:          151  Mean Error on Discharge:   8.68766659753589     
+Iteration:          152  Mean Error on Discharge:   8.57260766197541     
+Iteration:          153  Mean Error on Discharge:   8.45719524510743     
+Iteration:          154  Mean Error on Discharge:   8.34202621750499     
+Iteration:          155  Mean Error on Discharge:   8.22765971923310     
+Iteration:          156  Mean Error on Discharge:   8.11461827838145     
+Iteration:          157  Mean Error on Discharge:   8.00334528914197     
+Iteration:          158  Mean Error on Discharge:   7.89420034734218     
+Iteration:          159  Mean Error on Discharge:   7.78745395548451     
+Iteration:          160  Mean Error on Discharge:   7.68328227526322     
+Iteration:          161  Mean Error on Discharge:   7.58175313622877     
+Iteration:          162  Mean Error on Discharge:   7.48279626684803     
+Iteration:          163  Mean Error on Discharge:   7.38631086711683     
+Iteration:          164  Mean Error on Discharge:   7.29212345948917     
+Iteration:          165  Mean Error on Discharge:   7.19996287842507     
+Iteration:          166  Mean Error on Discharge:   7.10944146901772     
+Iteration:          167  Mean Error on Discharge:   7.02002672907515     
+Iteration:          168  Mean Error on Discharge:   6.93118429887842     
+Iteration:          169  Mean Error on Discharge:   6.84257258937315     
+Iteration:          170  Mean Error on Discharge:   6.75392302710631     
+Iteration:          171  Mean Error on Discharge:   6.66502061730046     
+Iteration:          172  Mean Error on Discharge:   6.57567041044721     
+Iteration:          173  Mean Error on Discharge:   6.48570813022698     
+Iteration:          174  Mean Error on Discharge:   6.39499886577766     
+Iteration:          175  Mean Error on Discharge:   6.30343516448211     
+Iteration:          176  Mean Error on Discharge:   6.21093228376029     
+Iteration:          177  Mean Error on Discharge:   6.11738314606312     
+Iteration:          178  Mean Error on Discharge:   6.02265493297827     
+Iteration:          179  Mean Error on Discharge:   5.92668447091486     
+Iteration:          180  Mean Error on Discharge:   5.82944424023236     
+Iteration:          181  Mean Error on Discharge:   5.73093219437987     
+Iteration:          182  Mean Error on Discharge:   5.63117080285055     
+Iteration:          183  Mean Error on Discharge:   5.53019657840778     
+Iteration:          184  Mean Error on Discharge:   5.42805319180579     
+Iteration:          185  Mean Error on Discharge:   5.32476766371857     
+Iteration:          186  Mean Error on Discharge:   5.22035982955072     
+Iteration:          187  Mean Error on Discharge:   5.11499737984763     
+Iteration:          188  Mean Error on Discharge:   5.00893741504018     
+Iteration:          189  Mean Error on Discharge:   4.90251888112168     
+Iteration:          190  Mean Error on Discharge:   4.79615320169935     
+Iteration:          191  Mean Error on Discharge:   4.69029156559375     
+Iteration:          192  Mean Error on Discharge:   4.58541072680541     
+Iteration:          193  Mean Error on Discharge:   4.48197373359011     
+Iteration:          194  Mean Error on Discharge:   4.38040015188287     
+Iteration:          195  Mean Error on Discharge:   4.28094530838795     
+Iteration:          196  Mean Error on Discharge:   4.18388934461056     
+Iteration:          197  Mean Error on Discharge:   4.08950572420049     
+Iteration:          198  Mean Error on Discharge:   3.99797937869103     
+Iteration:          199  Mean Error on Discharge:   3.90937613514651     
+Iteration:          200  Mean Error on Discharge:   3.82361398633973     
+Iteration:          201  Mean Error on Discharge:   3.74046729022666     
+Iteration:          202  Mean Error on Discharge:   3.65954550305155     
+Iteration:          203  Mean Error on Discharge:   3.58032496373848     
+Iteration:          204  Mean Error on Discharge:   3.50231976079597     
+Iteration:          205  Mean Error on Discharge:   3.42504893112656     
+Iteration:          206  Mean Error on Discharge:   3.34805405745724     
+Iteration:          207  Mean Error on Discharge:   3.27091068919570     
+Iteration:          208  Mean Error on Discharge:   3.19323944428929     
+Iteration:          209  Mean Error on Discharge:   3.11471573773817     
+Iteration:          210  Mean Error on Discharge:   3.03507560176804     
+Iteration:          211  Mean Error on Discharge:   2.95411467193227     
+Iteration:          212  Mean Error on Discharge:   2.87170402934925     
+Iteration:          213  Mean Error on Discharge:   2.78784946727453     
+Iteration:          214  Mean Error on Discharge:   2.70265024334847     
+Iteration:          215  Mean Error on Discharge:   2.61628922168130     
+Iteration:          216  Mean Error on Discharge:   2.52902688545168     
+Iteration:          217  Mean Error on Discharge:   2.44119273665729     
+Iteration:          218  Mean Error on Discharge:   2.35318036631581     
+Iteration:          219  Mean Error on Discharge:   2.26543633764243     
+Iteration:          220  Mean Error on Discharge:   2.17845469906070     
+Iteration:          221  Mean Error on Discharge:   2.09275573255100     
+Iteration:          222  Mean Error on Discharge:   2.00883963717276     
+Iteration:          223  Mean Error on Discharge:   1.92724212717347     
+Iteration:          224  Mean Error on Discharge:   1.84852204882252     
+Iteration:          225  Mean Error on Discharge:   1.77323423493194     
+Iteration:          226  Mean Error on Discharge:   1.70189510360495     
+Iteration:          227  Mean Error on Discharge:   1.63494932333759     
+Iteration:          228  Mean Error on Discharge:   1.57268165700791     
+Iteration:          229  Mean Error on Discharge:   1.51529004248669     
+Iteration:          230  Mean Error on Discharge:   1.46292471837069     
+Iteration:          231  Mean Error on Discharge:   1.41566327721393     
+Iteration:          232  Mean Error on Discharge:   1.37351314345024     
+Iteration:          233  Mean Error on Discharge:   1.33640814179588     
+Iteration:          234  Mean Error on Discharge:   1.30422133316148     
+Iteration:          235  Mean Error on Discharge:   1.27678888606592     
+Iteration:          236  Mean Error on Discharge:   1.25393873769654     
+Iteration:          237  Mean Error on Discharge:   1.23552878206438     
+Iteration:          238  Mean Error on Discharge:   1.22146574408672     
+Iteration:          239  Mean Error on Discharge:   1.21172084761882     
+Iteration:          240  Mean Error on Discharge:   1.20631007157245     
+Iteration:          241  Mean Error on Discharge:   1.20524889151397     
+Iteration:          242  Mean Error on Discharge:   1.20853381884899     
+Iteration:          243  Mean Error on Discharge:   1.21613890294469     
+Iteration:          244  Mean Error on Discharge:   1.22802203974418     
+Iteration:          245  Mean Error on Discharge:   1.24412062363500     
+Iteration:          246  Mean Error on Discharge:   1.26435142700417     
+Iteration:          247  Mean Error on Discharge:   1.28860580453421     
+Iteration:          248  Mean Error on Discharge:   1.31674732485833     
+Iteration:          249  Mean Error on Discharge:   1.34861387616860     
+Iteration:          250  Mean Error on Discharge:   1.38402282310613     
+Iteration:          251  Mean Error on Discharge:   1.42277598024360     
+Iteration:          252  Mean Error on Discharge:   1.46466107308221     
+Iteration:          253  Mean Error on Discharge:   1.50945698894531     
+Iteration:          254  Mean Error on Discharge:   1.55693548305312     
+Iteration:          255  Mean Error on Discharge:   1.60686595884401     
+Iteration:          256  Mean Error on Discharge:   1.65901911425780     
+Iteration:          257  Mean Error on Discharge:   1.71317543115007     
+Iteration:          258  Mean Error on Discharge:   1.76916743472683     
+Iteration:          259  Mean Error on Discharge:   1.82688188591689     
+Iteration:          260  Mean Error on Discharge:   1.88610784819178     
+Iteration:          261  Mean Error on Discharge:   1.94657327671228     
+Iteration:          262  Mean Error on Discharge:   2.00796776147432     
+Iteration:          263  Mean Error on Discharge:   2.06997130251189     
+Iteration:          264  Mean Error on Discharge:   2.13227193287249     
+Iteration:          265  Mean Error on Discharge:   2.19458235205297     
+Iteration:          266  Mean Error on Discharge:   2.25665560292033     
+Iteration:          267  Mean Error on Discharge:   2.31828044552040     
+Iteration:          268  Mean Error on Discharge:   2.37928082691932     
+Iteration:          269  Mean Error on Discharge:   2.43953874451865     
+Iteration:          270  Mean Error on Discharge:   2.49898585929705     
+Iteration:          271  Mean Error on Discharge:   2.55760722692586     
+Iteration:          272  Mean Error on Discharge:   2.61545181961221     
+Iteration:          273  Mean Error on Discharge:   2.67262714971053     
+Iteration:          274  Mean Error on Discharge:   2.72928463688692     
+Iteration:          275  Mean Error on Discharge:   2.78558726957479     
+Iteration:          276  Mean Error on Discharge:   2.84171248798311     
+Iteration:          277  Mean Error on Discharge:   2.89784320795156     
+Iteration:          278  Mean Error on Discharge:   2.95416387735667     
+Iteration:          279  Mean Error on Discharge:   3.01084549024633     
+Iteration:          280  Mean Error on Discharge:   3.06802880889338     
+Iteration:          281  Mean Error on Discharge:   3.12583360923576     
+Iteration:          282  Mean Error on Discharge:   3.18432131893845     
+Iteration:          283  Mean Error on Discharge:   3.24350947112462     
+Iteration:          284  Mean Error on Discharge:   3.30334815328584     
+Iteration:          285  Mean Error on Discharge:   3.36374603395300     
+Iteration:          286  Mean Error on Discharge:   3.42457812284524     
+Iteration:          287  Mean Error on Discharge:   3.48568528281442     
+Iteration:          288  Mean Error on Discharge:   3.54688503851175     
+Iteration:          289  Mean Error on Discharge:   3.60798285201423     
+Iteration:          290  Mean Error on Discharge:   3.66878030793130     
+Iteration:          291  Mean Error on Discharge:   3.72908317737431     
+Iteration:          292  Mean Error on Discharge:   3.78871095740334     
+Iteration:          293  Mean Error on Discharge:   3.84750666254376     
+Iteration:          294  Mean Error on Discharge:   3.90534707905628     
+Iteration:          295  Mean Error on Discharge:   3.96212338246851     
+Iteration:          296  Mean Error on Discharge:   4.01775881341331     
+Iteration:          297  Mean Error on Discharge:   4.07218829234875     
+Iteration:          298  Mean Error on Discharge:   4.12535815662183     
+Iteration:          299  Mean Error on Discharge:   4.17722735987314     
+Iteration:          300  Mean Error on Discharge:   4.22777362111415     
+Iteration:          301  Mean Error on Discharge:   4.27699833809761     
+Iteration:          302  Mean Error on Discharge:   4.32493589989957     
+Iteration:          303  Mean Error on Discharge:   4.37164615382391     
+Iteration:          304  Mean Error on Discharge:   4.41719954463248     
+Iteration:          305  Mean Error on Discharge:   4.46169419265376     
+Iteration:          306  Mean Error on Discharge:   4.50523881797491     
+Iteration:          307  Mean Error on Discharge:   4.54794428826716     
+Iteration:          308  Mean Error on Discharge:   4.58991998915984     
+Iteration:          309  Mean Error on Discharge:   4.63126023169480     
+Iteration:          310  Mean Error on Discharge:   4.67205276174131     
+Iteration:          311  Mean Error on Discharge:   4.71238028374791     
+Iteration:          312  Mean Error on Discharge:   4.75232352146996     
+Iteration:          313  Mean Error on Discharge:   4.79196309233255     
+Iteration:          314  Mean Error on Discharge:   4.83137559467326     
+Iteration:          315  Mean Error on Discharge:   4.87063127971938     
+Iteration:          316  Mean Error on Discharge:   4.90978785120718     
+Iteration:          317  Mean Error on Discharge:   4.94889467039377     
+Iteration:          318  Mean Error on Discharge:   4.98797280130864     
+Iteration:          319  Mean Error on Discharge:   5.02702359181228     
+Iteration:          320  Mean Error on Discharge:   5.06601826300700     
+Iteration:          321  Mean Error on Discharge:   5.10489294931768     
+Iteration:          322  Mean Error on Discharge:   5.14355146229831     
+Iteration:          323  Mean Error on Discharge:   5.18186883329585     
+Iteration:          324  Mean Error on Discharge:   5.21969844205763     
+Iteration:          325  Mean Error on Discharge:   5.25687486589695     
+Iteration:          326  Mean Error on Discharge:   5.29323069066927     
+Iteration:          327  Mean Error on Discharge:   5.32860738269768     
+Iteration:          328  Mean Error on Discharge:   5.36285909687424     
+Iteration:          329  Mean Error on Discharge:   5.39586748788284     
+Iteration:          330  Mean Error on Discharge:   5.42752803118203     
+Iteration:          331  Mean Error on Discharge:   5.45775769435260     
+Iteration:          332  Mean Error on Discharge:   5.48647801766872     
+Iteration:          333  Mean Error on Discharge:   5.51363066808578     
+Iteration:          334  Mean Error on Discharge:   5.53917945203061     
+Iteration:          335  Mean Error on Discharge:   5.56310020335310     
+Iteration:          336  Mean Error on Discharge:   5.58539009366779     
+Iteration:          337  Mean Error on Discharge:   5.60606998385081     
+Iteration:          338  Mean Error on Discharge:   5.62518805388977     
+Iteration:          339  Mean Error on Discharge:   5.64281559820886     
+Iteration:          340  Mean Error on Discharge:   5.65904549445212     
+Iteration:          341  Mean Error on Discharge:   5.67401165922531     
+Iteration:          342  Mean Error on Discharge:   5.68787768536297     
+Iteration:          343  Mean Error on Discharge:   5.70077504866841     
+Iteration:          344  Mean Error on Discharge:   5.71282582659348     
+Iteration:          345  Mean Error on Discharge:   5.72413657113175     
+Iteration:          346  Mean Error on Discharge:   5.73480035014925     
+Iteration:          347  Mean Error on Discharge:   5.74490119285797     
+Iteration:          348  Mean Error on Discharge:   5.75451315305495     
+Iteration:          349  Mean Error on Discharge:   5.76369923284107     
+Iteration:          350  Mean Error on Discharge:   5.77251095960122     
+Iteration:          351  Mean Error on Discharge:   5.78098423742251     
+Iteration:          352  Mean Error on Discharge:   5.78913435443461     
+Iteration:          353  Mean Error on Discharge:   5.79695776636836     
+Iteration:          354  Mean Error on Discharge:   5.80442547358224     
+Iteration:          355  Mean Error on Discharge:   5.81148139521028     
+Iteration:          356  Mean Error on Discharge:   5.81805376654900     
+Iteration:          357  Mean Error on Discharge:   5.82403763295482     
+Iteration:          358  Mean Error on Discharge:   5.82931123059823     
+Iteration:          359  Mean Error on Discharge:   5.83373189953062     
+Iteration:          360  Mean Error on Discharge:   5.83715262983139     
+Iteration:          361  Mean Error on Discharge:   5.83942752442007     
+Iteration:          362  Mean Error on Discharge:   5.84042705155653     
+Iteration:          363  Mean Error on Discharge:   5.84005824822116     
+Iteration:          364  Mean Error on Discharge:   5.83823563838743     
+Iteration:          365  Mean Error on Discharge:   5.83487158702245     
+Iteration:          366  Mean Error on Discharge:   5.82989202482090     
+Iteration:          367  Mean Error on Discharge:   5.82323847377165     
+Iteration:          368  Mean Error on Discharge:   5.81488435497593     
+Iteration:          369  Mean Error on Discharge:   5.80482090224292     
+Iteration:          370  Mean Error on Discharge:   5.79306600791807     
+Iteration:          371  Mean Error on Discharge:   5.77966549279231     
+Iteration:          372  Mean Error on Discharge:   5.76468392106391     
+Iteration:          373  Mean Error on Discharge:   5.74820441647025     
+Iteration:          374  Mean Error on Discharge:   5.73032544664373     
+Iteration:          375  Mean Error on Discharge:   5.71115287363055     
+Iteration:          376  Mean Error on Discharge:   5.69081426850014     
+Iteration:          377  Mean Error on Discharge:   5.66946038045466     
+Iteration:          378  Mean Error on Discharge:   5.64723128524978     
+Iteration:          379  Mean Error on Discharge:   5.62423841621061     
+Iteration:          380  Mean Error on Discharge:   5.60058020595120     
+Iteration:          381  Mean Error on Discharge:   5.57633724497564     
+Iteration:          382  Mean Error on Discharge:   5.55157450157476     
+Iteration:          383  Mean Error on Discharge:   5.52634048420891     
+Iteration:          384  Mean Error on Discharge:   5.50066668183353     
+Iteration:          385  Mean Error on Discharge:   5.47456677832780     
+Iteration:          386  Mean Error on Discharge:   5.44803634744509     
+Iteration:          387  Mean Error on Discharge:   5.42105600174418     
+Iteration:          388  Mean Error on Discharge:   5.39358872442380     
+Iteration:          389  Mean Error on Discharge:   5.36557718339513     
+Iteration:          390  Mean Error on Discharge:   5.33695611598599     
+Iteration:          391  Mean Error on Discharge:   5.30763571592963     
+Iteration:          392  Mean Error on Discharge:   5.27752517134696     
+Iteration:          393  Mean Error on Discharge:   5.24651771931615     
+Iteration:          394  Mean Error on Discharge:   5.21450380588500     
+Iteration:          395  Mean Error on Discharge:   5.18136842177143     
+Iteration:          396  Mean Error on Discharge:   5.14700921133170     
+Iteration:          397  Mean Error on Discharge:   5.11135395014218     
+Iteration:          398  Mean Error on Discharge:   5.07434901496723     
+Iteration:          399  Mean Error on Discharge:   5.03593114667101     
+Iteration:          400  Mean Error on Discharge:   4.99603873694639     
+Iteration:          401  Mean Error on Discharge:   4.95462937133174     
+Iteration:          402  Mean Error on Discharge:   4.91167611576221     
+Iteration:          403  Mean Error on Discharge:   4.86718124184960     
+Iteration:          404  Mean Error on Discharge:   4.82116282995928     
+Iteration:          405  Mean Error on Discharge:   4.77366813206793     
+Iteration:          406  Mean Error on Discharge:   4.72476012504860     
+Iteration:          407  Mean Error on Discharge:   4.67451413203066     
+Iteration:          408  Mean Error on Discharge:   4.62301504260542     
+Iteration:          409  Mean Error on Discharge:   4.57035247508796     
+Iteration:          410  Mean Error on Discharge:   4.51662139508286     
+Iteration:          411  Mean Error on Discharge:   4.46192118977699     
+Iteration:          412  Mean Error on Discharge:   4.40635781728550     
+Iteration:          413  Mean Error on Discharge:   4.35005212862617     
+Iteration:          414  Mean Error on Discharge:   4.29314182448832     
+Iteration:          415  Mean Error on Discharge:   4.23577196363954     
+Iteration:          416  Mean Error on Discharge:   4.17808759467599     
+Iteration:          417  Mean Error on Discharge:   4.12022254654196     
+Iteration:          418  Mean Error on Discharge:   4.06230096026881     
+Iteration:          419  Mean Error on Discharge:   4.00443774262224     
+Iteration:          420  Mean Error on Discharge:   3.94673842879303     
+Iteration:          421  Mean Error on Discharge:   3.88929785248355     
+Iteration:          422  Mean Error on Discharge:   3.83220478998267     
+Iteration:          423  Mean Error on Discharge:   3.77552979045874     
+Iteration:          424  Mean Error on Discharge:   3.71932908245379     
+Iteration:          425  Mean Error on Discharge:   3.66364789799205     
+Iteration:          426  Mean Error on Discharge:   3.60850693812202     
+Iteration:          427  Mean Error on Discharge:   3.55390303018626     
+Iteration:          428  Mean Error on Discharge:   3.49981336728986     
+Iteration:          429  Mean Error on Discharge:   3.44620686128695     
+Iteration:          430  Mean Error on Discharge:   3.39304896023709     
+Iteration:          431  Mean Error on Discharge:   3.34031017529143     
+Iteration:          432  Mean Error on Discharge:   3.28795869732475     
+Iteration:          433  Mean Error on Discharge:   3.23595904372684     
+Iteration:          434  Mean Error on Discharge:   3.18426517837347     
+Iteration:          435  Mean Error on Discharge:   3.13282496709213     
+Iteration:          436  Mean Error on Discharge:   3.08159670744795     
+Iteration:          437  Mean Error on Discharge:   3.03055094495170     
+Iteration:          438  Mean Error on Discharge:   2.97968024320215     
+Iteration:          439  Mean Error on Discharge:   2.92899980062348     
+Iteration:          440  Mean Error on Discharge:   2.87855120748174     
+Iteration:          441  Mean Error on Discharge:   2.82840633346834     
+Iteration:          442  Mean Error on Discharge:   2.77864533166600     
+Iteration:          443  Mean Error on Discharge:   2.72935205213626     
+Iteration:          444  Mean Error on Discharge:   2.68061253629562     
+Iteration:          445  Mean Error on Discharge:   2.63251059246498     
+Iteration:          446  Mean Error on Discharge:   2.58512690073941     
+Iteration:          447  Mean Error on Discharge:   2.53854307993073     
+Iteration:          448  Mean Error on Discharge:   2.49284719565600     
+Iteration:          449  Mean Error on Discharge:   2.44812551212199     
+Iteration:          450  Mean Error on Discharge:   2.40446235331716     
+Iteration:          451  Mean Error on Discharge:   2.36193785984455     
+Iteration:          452  Mean Error on Discharge:   2.32062675270398     
+Iteration:          453  Mean Error on Discharge:   2.28059271722205     
+Iteration:          454  Mean Error on Discharge:   2.24188261003403     
+Iteration:          455  Mean Error on Discharge:   2.20452426101652     
+Iteration:          456  Mean Error on Discharge:   2.16852497633712     
+Iteration:          457  Mean Error on Discharge:   2.13387474651949     
+Iteration:          458  Mean Error on Discharge:   2.10054904376477     
+Iteration:          459  Mean Error on Discharge:   2.06851124794775     
+Iteration:          460  Mean Error on Discharge:   2.03771709249478     
+Iteration:          461  Mean Error on Discharge:   2.00811994986602     
+Iteration:          462  Mean Error on Discharge:   1.97967567454027     
+Iteration:          463  Mean Error on Discharge:   1.95234616899026     
+Iteration:          464  Mean Error on Discharge:   1.92610059258192     
+Iteration:          465  Mean Error on Discharge:   1.90092996424292     
+Iteration:          466  Mean Error on Discharge:   1.87684031049315     
+Iteration:          467  Mean Error on Discharge:   1.85383818586380     
+Iteration:          468  Mean Error on Discharge:   1.83193466578578     
+Iteration:          469  Mean Error on Discharge:   1.81114201485328     
+Iteration:          470  Mean Error on Discharge:   1.79147519631769     
+Iteration:          471  Mean Error on Discharge:   1.77295643297232     
+Iteration:          472  Mean Error on Discharge:   1.75561352692253     
+Iteration:          473  Mean Error on Discharge:   1.73948008126503     
+Iteration:          474  Mean Error on Discharge:   1.72459666278063     
+Iteration:          475  Mean Error on Discharge:   1.71100442851731     
+Iteration:          476  Mean Error on Discharge:   1.69874867519138     
+Iteration:          477  Mean Error on Discharge:   1.68785122029638     
+Iteration:          478  Mean Error on Discharge:   1.67830965063558     
+Iteration:          479  Mean Error on Discharge:   1.67009627628276     
+Iteration:          480  Mean Error on Discharge:   1.66316064938829     
+Iteration:          481  Mean Error on Discharge:   1.65743288501569     
+Iteration:          482  Mean Error on Discharge:   1.65282928120156     
+Iteration:          483  Mean Error on Discharge:   1.64925865560509     
+Iteration:          484  Mean Error on Discharge:   1.64662518626073     
+Iteration:          485  Mean Error on Discharge:   1.64483429038108     
+Iteration:          486  Mean Error on Discharge:   1.64380144631094     
+Iteration:          487  Mean Error on Discharge:   1.64345876891762     
+Iteration:          488  Mean Error on Discharge:   1.64375509227854     
+Iteration:          489  Mean Error on Discharge:   1.64466258272695     
+Iteration:          490  Mean Error on Discharge:   1.64616535884800     
+Iteration:          491  Mean Error on Discharge:   1.64825184907898     
+Iteration:          492  Mean Error on Discharge:   1.65091890130954     
+Iteration:          493  Mean Error on Discharge:   1.65417028232426     
+Iteration:          494  Mean Error on Discharge:   1.65801508557373     
+Iteration:          495  Mean Error on Discharge:   1.66247627010359     
+Iteration:          496  Mean Error on Discharge:   1.66758851558879     
+Iteration:          497  Mean Error on Discharge:   1.67339900499218     
+Iteration:          498  Mean Error on Discharge:   1.67996160939837     
+Iteration:          499  Mean Error on Discharge:   1.68733855864990     
+Iteration:          500  Mean Error on Discharge:   1.69559669134221     
+Iteration:          501  Mean Error on Discharge:   1.70479063961734     
+Iteration:          502  Mean Error on Discharge:   1.71496277613547     
+Iteration:          503  Mean Error on Discharge:   1.72614177808255     
+Iteration:          504  Mean Error on Discharge:   1.73834021090021     
+Iteration:          505  Mean Error on Discharge:   1.75155257392740     
+Iteration:          506  Mean Error on Discharge:   1.76575463696329     
+Iteration:          507  Mean Error on Discharge:   1.78090264229198     
+Iteration:          508  Mean Error on Discharge:   1.79693409714677     
+Iteration:          509  Mean Error on Discharge:   1.81376813032485     
+Iteration:          510  Mean Error on Discharge:   1.83130610477570     
+Iteration:          511  Mean Error on Discharge:   1.84943664737398     
+Iteration:          512  Mean Error on Discharge:   1.86803883312664     
+Iteration:          513  Mean Error on Discharge:   1.88698705964544     
+Iteration:          514  Mean Error on Discharge:   1.90615324875244     
+Iteration:          515  Mean Error on Discharge:   1.92540996354038     
+Iteration:          516  Mean Error on Discharge:   1.94463319944157     
+Iteration:          517  Mean Error on Discharge:   1.96370704740675     
+Iteration:          518  Mean Error on Discharge:   1.98252493040922     
+Iteration:          519  Mean Error on Discharge:   2.00099925805296     
+Iteration:          520  Mean Error on Discharge:   2.01906155773764     
+Iteration:          521  Mean Error on Discharge:   2.03666809078155     
+Iteration:          522  Mean Error on Discharge:   2.05379651133640     
+Iteration:          523  Mean Error on Discharge:   2.07044598959438     
+Iteration:          524  Mean Error on Discharge:   2.08663490350708     
+Iteration:          525  Mean Error on Discharge:   2.10239776150621     
+Iteration:          526  Mean Error on Discharge:   2.11778328534220     
+Iteration:          527  Mean Error on Discharge:   2.13284770945414     
+Iteration:          528  Mean Error on Discharge:   2.14764902324318     
+Iteration:          529  Mean Error on Discharge:   2.16224379826826     
+Iteration:          530  Mean Error on Discharge:   2.17668533569741     
+Iteration:          531  Mean Error on Discharge:   2.19102062386716     
+Iteration:          532  Mean Error on Discharge:   2.20528886144950     
+Iteration:          533  Mean Error on Discharge:   2.21952168982473     
+Iteration:          534  Mean Error on Discharge:   2.23374068685968     
+Iteration:          535  Mean Error on Discharge:   2.24795860095201     
+Iteration:          536  Mean Error on Discharge:   2.26218056410548     
+Iteration:          537  Mean Error on Discharge:   2.27640461554075     
+Iteration:          538  Mean Error on Discharge:   2.29062201370521     
+Iteration:          539  Mean Error on Discharge:   2.30481810992572     
+Iteration:          540  Mean Error on Discharge:   2.31897279145172     
+Iteration:          541  Mean Error on Discharge:   2.33305952936478     
+Iteration:          542  Mean Error on Discharge:   2.34704674976135     
+Iteration:          543  Mean Error on Discharge:   2.36089584489776     
+Iteration:          544  Mean Error on Discharge:   2.37455935318779     
+Iteration:          545  Mean Error on Discharge:   2.38798248297643     
+Iteration:          546  Mean Error on Discharge:   2.40111479621612     
+Iteration:          547  Mean Error on Discharge:   2.41390892760740     
+Iteration:          548  Mean Error on Discharge:   2.42632098459270     
+Iteration:          549  Mean Error on Discharge:   2.43830307660519     
+Iteration:          550  Mean Error on Discharge:   2.44981394870218     
+Iteration:          551  Mean Error on Discharge:   2.46081728538999     
+Iteration:          552  Mean Error on Discharge:   2.47128519998561     
+Iteration:          553  Mean Error on Discharge:   2.48119711049203     
+Iteration:          554  Mean Error on Discharge:   2.49053931838294     
+Iteration:          555  Mean Error on Discharge:   2.49930576525395     
+Iteration:          556  Mean Error on Discharge:   2.50749761061877     
+Iteration:          557  Mean Error on Discharge:   2.51512336527098     
+Iteration:          558  Mean Error on Discharge:   2.52219768015233     
+Iteration:          559  Mean Error on Discharge:   2.52874173562152     
+Iteration:          560  Mean Error on Discharge:   2.53477995172433     
+Iteration:          561  Mean Error on Discharge:   2.54034007354181     
+Iteration:          562  Mean Error on Discharge:   2.54544972470883     
+Iteration:          563  Mean Error on Discharge:   2.55013678249426     
+Iteration:          564  Mean Error on Discharge:   2.55442605033863     
+Iteration:          565  Mean Error on Discharge:   2.55833802281757     
+Iteration:          566  Mean Error on Discharge:   2.56188845559794     
+Iteration:          567  Mean Error on Discharge:   2.56508715830571     
+Iteration:          568  Mean Error on Discharge:   2.56793776021211     
+Iteration:          569  Mean Error on Discharge:   2.57043746435611     
+Iteration:          570  Mean Error on Discharge:   2.57257787114592     
+Iteration:          571  Mean Error on Discharge:   2.57434591306341     
+Iteration:          572  Mean Error on Discharge:   2.57572458959690     
+Iteration:          573  Mean Error on Discharge:   2.57669442824168     
+Iteration:          574  Mean Error on Discharge:   2.57723258266587     
+Iteration:          575  Mean Error on Discharge:   2.57731370913172     
+Iteration:          576  Mean Error on Discharge:   2.57690816249138     
+Iteration:          577  Mean Error on Discharge:   2.57598650938176     
+Iteration:          578  Mean Error on Discharge:   2.57452414842122     
+Iteration:          579  Mean Error on Discharge:   2.57250076946287     
+Iteration:          580  Mean Error on Discharge:   2.56990227165145     
+Iteration:          581  Mean Error on Discharge:   2.56671770089690     
+Iteration:          582  Mean Error on Discharge:   2.56293887305426     
+Iteration:          583  Mean Error on Discharge:   2.55856414112614     
+Iteration:          584  Mean Error on Discharge:   2.55359617482946     
+Iteration:          585  Mean Error on Discharge:   2.54804332240968     
+Iteration:          586  Mean Error on Discharge:   2.54191870795777     
+Iteration:          587  Mean Error on Discharge:   2.53524111525724     
+Iteration:          588  Mean Error on Discharge:   2.52803547963081     
+Iteration:          589  Mean Error on Discharge:   2.52033149621331     
+Iteration:          590  Mean Error on Discharge:   2.51216423394947     
+Iteration:          591  Mean Error on Discharge:   2.50357375236893     
+Iteration:          592  Mean Error on Discharge:   2.49460416359224     
+Iteration:          593  Mean Error on Discharge:   2.48530214395538     
+Iteration:          594  Mean Error on Discharge:   2.47571616604073     
+Iteration:          595  Mean Error on Discharge:   2.46589483227714     
+Iteration:          596  Mean Error on Discharge:   2.45588319996276     
+Iteration:          597  Mean Error on Discharge:   2.44572142325387     
+Iteration:          598  Mean Error on Discharge:   2.43544291390604     
+Iteration:          599  Mean Error on Discharge:   2.42507195350629     
+Iteration:          600  Mean Error on Discharge:   2.41462085592023     
+Iteration:          601  Mean Error on Discharge:   2.40409011332747     
+Iteration:          602  Mean Error on Discharge:   2.39346804409050     
+Iteration:          603  Mean Error on Discharge:   2.38273029905298     
+Iteration:          604  Mean Error on Discharge:   2.37183994694330     
+Iteration:          605  Mean Error on Discharge:   2.36074621288152     
+Iteration:          606  Mean Error on Discharge:   2.34939223364795     
+Iteration:          607  Mean Error on Discharge:   2.33771775689965     
+Iteration:          608  Mean Error on Discharge:   2.32566030345766     
+Iteration:          609  Mean Error on Discharge:   2.31315931772206     
+Iteration:          610  Mean Error on Discharge:   2.30015802493278     
+Iteration:          611  Mean Error on Discharge:   2.28660581805155     
+Iteration:          612  Mean Error on Discharge:   2.27246062634135     
+Iteration:          613  Mean Error on Discharge:   2.25768933158574     
+Iteration:          614  Mean Error on Discharge:   2.24227039401951     
+Iteration:          615  Mean Error on Discharge:   2.22619590065074     
+Iteration:          616  Mean Error on Discharge:   2.20947115253608     
+Iteration:          617  Mean Error on Discharge:   2.19211525010292     
+Iteration:          618  Mean Error on Discharge:   2.17416075804585     
+Iteration:          619  Mean Error on Discharge:   2.15565239061629     
+Iteration:          620  Mean Error on Discharge:   2.13664680510726     
+Iteration:          621  Mean Error on Discharge:   2.11721159680973     
+Iteration:          622  Mean Error on Discharge:   2.09742297079765     
+Iteration:          623  Mean Error on Discharge:   2.07736653935105     
+Iteration:          624  Mean Error on Discharge:   2.05713330229455     
+Iteration:          625  Mean Error on Discharge:   2.03681699382341     
+Iteration:          626  Mean Error on Discharge:   2.01651263757817     
+Iteration:          627  Mean Error on Discharge:   1.99631326665537     
+Iteration:          628  Mean Error on Discharge:   1.97630811614074     
+Iteration:          629  Mean Error on Discharge:   1.95657921940240     
+Iteration:          630  Mean Error on Discharge:   1.93719883772067     
+Iteration:          631  Mean Error on Discharge:   1.91822670630335     
+Iteration:          632  Mean Error on Discharge:   1.89970733373484     
+Iteration:          633  Mean Error on Discharge:   1.88166730238361     
+Iteration:          634  Mean Error on Discharge:   1.86411499307647     
+Iteration:          635  Mean Error on Discharge:   1.84703754995927     
+Iteration:          636  Mean Error on Discharge:   1.83040348913014     
+Iteration:          637  Mean Error on Discharge:   1.81416117899819     
+Iteration:          638  Mean Error on Discharge:   1.79824647149260     
+Iteration:          639  Mean Error on Discharge:   1.78258342159594     
+Iteration:          640  Mean Error on Discharge:   1.76708848645865     
+Iteration:          641  Mean Error on Discharge:   1.75167347495476     
+Iteration:          642  Mean Error on Discharge:   1.73624861185455     
+Iteration:          643  Mean Error on Discharge:   1.72072625901209     
+Iteration:          644  Mean Error on Discharge:   1.70502396581281     
+Iteration:          645  Mean Error on Discharge:   1.68906785542893     
+Iteration:          646  Mean Error on Discharge:   1.67279537585740     
+Iteration:          647  Mean Error on Discharge:   1.65615831427836     
+Iteration:          648  Mean Error on Discharge:   1.63912447146429     
+Iteration:          649  Mean Error on Discharge:   1.62167995587758     
+Iteration:          650  Mean Error on Discharge:   1.60382921897414     
+Iteration:          651  Mean Error on Discharge:   1.58559662015531     
+Iteration:          652  Mean Error on Discharge:   1.56702503376332     
+Iteration:          653  Mean Error on Discharge:   1.54817597916289     
+Iteration:          654  Mean Error on Discharge:   1.52912788209185     
+Iteration:          655  Mean Error on Discharge:   1.50997307131369     
+Iteration:          656  Mean Error on Discharge:   1.49081894092192     
+Iteration:          657  Mean Error on Discharge:   1.47178240976375     
+Iteration:          658  Mean Error on Discharge:   1.45298726629120     
+Iteration:          659  Mean Error on Discharge:   1.43456058317914     
+Iteration:          660  Mean Error on Discharge:   1.41662848041067     
+Iteration:          661  Mean Error on Discharge:   1.39931281122868     
+Iteration:          662  Mean Error on Discharge:   1.38272804557683     
+Iteration:          663  Mean Error on Discharge:   1.36697694243456     
+Iteration:          664  Mean Error on Discharge:   1.35214716268353     
+Iteration:          665  Mean Error on Discharge:   1.33830815010456     
+Iteration:          666  Mean Error on Discharge:   1.32550863088647     
+Iteration:          667  Mean Error on Discharge:   1.31377515907075     
+Iteration:          668  Mean Error on Discharge:   1.30311103081041     
+Iteration:          669  Mean Error on Discharge:   1.29349611167573     
+Iteration:          670  Mean Error on Discharge:   1.28488598253757     
+Iteration:          671  Mean Error on Discharge:   1.27721492319890     
+Iteration:          672  Mean Error on Discharge:   1.27040201462681     
+Iteration:          673  Mean Error on Discharge:   1.26435380560453     
+Iteration:          674  Mean Error on Discharge:   1.25896885905026     
+Iteration:          675  Mean Error on Discharge:   1.25414157415309     
+Iteration:          676  Mean Error on Discharge:   1.24976565990468     
+Iteration:          677  Mean Error on Discharge:   1.24573753730041     
+Iteration:          678  Mean Error on Discharge:   1.24195980349387     
+Iteration:          679  Mean Error on Discharge:   1.23834425709055     
+Iteration:          680  Mean Error on Discharge:   1.23481455990750     
+Iteration:          681  Mean Error on Discharge:   1.23130819041848     
+Iteration:          682  Mean Error on Discharge:   1.22777879921976     
+Iteration:          683  Mean Error on Discharge:   1.22419722006134     
+Iteration:          684  Mean Error on Discharge:   1.22055253094700     
+Iteration:          685  Mean Error on Discharge:   1.21685104834150     
+Iteration:          686  Mean Error on Discharge:   1.21311710073004     
+Iteration:          687  Mean Error on Discharge:   1.20939038632943     
+Iteration:          688  Mean Error on Discharge:   1.20572491905385     
+Iteration:          689  Mean Error on Discharge:   1.20218598396520     
+Iteration:          690  Mean Error on Discharge:   1.19884753042867     
+Iteration:          691  Mean Error on Discharge:   1.19578863801818     
+Iteration:          692  Mean Error on Discharge:   1.19309029455550     
+Iteration:          693  Mean Error on Discharge:   1.19083195755175     
+Iteration:          694  Mean Error on Discharge:   1.18908753557020     
+Iteration:          695  Mean Error on Discharge:   1.18792292000803     
+Iteration:          696  Mean Error on Discharge:   1.18739287456022     
+Iteration:          697  Mean Error on Discharge:   1.18753886755083     
+Iteration:          698  Mean Error on Discharge:   1.18838756366729     
+Iteration:          699  Mean Error on Discharge:   1.18995013698038     
+Iteration:          700  Mean Error on Discharge:   1.19222189402266     
+Iteration:          701  Mean Error on Discharge:   1.19518285571915     
+Iteration:          702  Mean Error on Discharge:   1.19879904526130     
+Iteration:          703  Mean Error on Discharge:   1.20302413505717     
+Iteration:          704  Mean Error on Discharge:   1.20780145389105     
+Iteration:          705  Mean Error on Discharge:   1.21306515205766     
+Iteration:          706  Mean Error on Discharge:   1.21874262407861     
+Iteration:          707  Mean Error on Discharge:   1.22475795433050     
+Iteration:          708  Mean Error on Discharge:   1.23103399630925     
+Iteration:          709  Mean Error on Discharge:   1.23749443606132     
+Iteration:          710  Mean Error on Discharge:   1.24406550707700     
+Iteration:          711  Mean Error on Discharge:   1.25067739279086     
+Iteration:          712  Mean Error on Discharge:   1.25726543796890     
+Iteration:          713  Mean Error on Discharge:   1.26377127412746     
+Iteration:          714  Mean Error on Discharge:   1.27014378455656     
+Iteration:          715  Mean Error on Discharge:   1.27633996928584     
+Iteration:          716  Mean Error on Discharge:   1.28232547291466     
+Iteration:          717  Mean Error on Discharge:   1.28807521586109     
+Iteration:          718  Mean Error on Discharge:   1.29357362540724     
+Iteration:          719  Mean Error on Discharge:   1.29881487592558     
+Iteration:          720  Mean Error on Discharge:   1.30380225250422     
+Iteration:          721  Mean Error on Discharge:   1.30854759164282     
+Iteration:          722  Mean Error on Discharge:   1.31307039032841     
+Iteration:          723  Mean Error on Discharge:   1.31739644727817     
+Iteration:          724  Mean Error on Discharge:   1.32155655147606     
+Iteration:          725  Mean Error on Discharge:   1.32558456495061     
+Iteration:          726  Mean Error on Discharge:   1.32951575616940     
+Iteration:          727  Mean Error on Discharge:   1.33338485073171     
+Iteration:          728  Mean Error on Discharge:   1.33722442326272     
+Iteration:          729  Mean Error on Discharge:   1.34106331860056     
+Iteration:          730  Mean Error on Discharge:   1.34492535096344     
+Iteration:          731  Mean Error on Discharge:   1.34882829380764     
+Iteration:          732  Mean Error on Discharge:   1.35278336047521     
+Iteration:          733  Mean Error on Discharge:   1.35679484759834     
+Iteration:          734  Mean Error on Discharge:   1.36086038865698     
+Iteration:          735  Mean Error on Discharge:   1.36497134916928     
+Iteration:          736  Mean Error on Discharge:   1.36911334026355     
+Iteration:          737  Mean Error on Discharge:   1.37326730735963     
+Iteration:          738  Mean Error on Discharge:   1.37741060924550     
+Iteration:          739  Mean Error on Discharge:   1.38151811562075     
+Iteration:          740  Mean Error on Discharge:   1.38556311125070     
+Iteration:          741  Mean Error on Discharge:   1.38951788337374     
+Iteration:          742  Mean Error on Discharge:   1.39335502036463     
+Iteration:          743  Mean Error on Discharge:   1.39704813987691     
+Iteration:          744  Mean Error on Discharge:   1.40057253802710     
+Iteration:          745  Mean Error on Discharge:   1.40390572248818     
+Iteration:          746  Mean Error on Discharge:   1.40702781889685     
+Iteration:          747  Mean Error on Discharge:   1.40992190495244     
+Iteration:          748  Mean Error on Discharge:   1.41257425703071     
+Iteration:          749  Mean Error on Discharge:   1.41497451990386     
+Iteration:          750  Mean Error on Discharge:   1.41711584005012     
+Iteration:          751  Mean Error on Discharge:   1.41899488648792     
+Iteration:          752  Mean Error on Discharge:   1.42061181902228     
+Iteration:          753  Mean Error on Discharge:   1.42197011805911     
+Iteration:          754  Mean Error on Discharge:   1.42307632259718     
+Iteration:          755  Mean Error on Discharge:   1.42393965663460     
+Iteration:          756  Mean Error on Discharge:   1.42457165811023     
+Iteration:          757  Mean Error on Discharge:   1.42498549722301     
+Iteration:          758  Mean Error on Discharge:   1.42519545791300     
+Iteration:          759  Mean Error on Discharge:   1.42521635413028     
+Iteration:          760  Mean Error on Discharge:   1.42506277775990     
+Iteration:          761  Mean Error on Discharge:   1.42474847220674     
+Iteration:          762  Mean Error on Discharge:   1.42428579184679     
+Iteration:          763  Mean Error on Discharge:   1.42368515861024     
+Iteration:          764  Mean Error on Discharge:   1.42295474862910     
+Iteration:          765  Mean Error on Discharge:   1.42210030382898     
+Iteration:          766  Mean Error on Discharge:   1.42112498249669     
+Iteration:          767  Mean Error on Discharge:   1.42002943737171     
+Iteration:          768  Mean Error on Discharge:   1.41881201030263     
+Iteration:          769  Mean Error on Discharge:   1.41746901030004     
+Iteration:          770  Mean Error on Discharge:   1.41599506620997     
+Iteration:          771  Mean Error on Discharge:   1.41438358636054     
+Iteration:          772  Mean Error on Discharge:   1.41262736793105     
+Iteration:          773  Mean Error on Discharge:   1.41071896344687     
+Iteration:          774  Mean Error on Discharge:   1.40865113879149     
+Iteration:          775  Mean Error on Discharge:   1.40641733536820     
+Iteration:          776  Mean Error on Discharge:   1.40401187261411     
+Iteration:          777  Mean Error on Discharge:   1.40143021829823     
+Iteration:          778  Mean Error on Discharge:   1.39866931214279     
+Iteration:          779  Mean Error on Discharge:   1.39572753961415     
+Iteration:          780  Mean Error on Discharge:   1.39260493956138     
+Iteration:          781  Mean Error on Discharge:   1.38930319070517     
+Iteration:          782  Mean Error on Discharge:   1.38582560737626     
+Iteration:          783  Mean Error on Discharge:   1.38217703402110     
+Iteration:          784  Mean Error on Discharge:   1.37836379903823     
+Iteration:          785  Mean Error on Discharge:   1.37439355188082     
+Iteration:          786  Mean Error on Discharge:   1.37027508814809     
+Iteration:          787  Mean Error on Discharge:   1.36601816145127     
+Iteration:          788  Mean Error on Discharge:   1.36163323268697     
+Iteration:          789  Mean Error on Discharge:   1.35713114124984     
+Iteration:          790  Mean Error on Discharge:   1.35252284689244     
+Iteration:          791  Mean Error on Discharge:   1.34781916112601     
+Iteration:          792  Mean Error on Discharge:   1.34303034181182     
+Iteration:          793  Mean Error on Discharge:   1.33816578381288     
+Iteration:          794  Mean Error on Discharge:   1.33323367986173     
+Iteration:          795  Mean Error on Discharge:   1.32824091357270     
+Iteration:          796  Mean Error on Discharge:   1.32319273711455     
+Iteration:          797  Mean Error on Discharge:   1.31809265074814     
+Iteration:          798  Mean Error on Discharge:   1.31294235542821     
+Iteration:          799  Mean Error on Discharge:   1.30774185765402     
+Iteration:          800  Mean Error on Discharge:   1.30248951921032     
+Iteration:          801  Mean Error on Discharge:   1.29718224364507     
+Iteration:          802  Mean Error on Discharge:   1.29181575267418     
+Iteration:          803  Mean Error on Discharge:   1.28638490894101     
+Iteration:          804  Mean Error on Discharge:   1.28088406154479     
+Iteration:          805  Mean Error on Discharge:   1.27530742202351     
+Iteration:          806  Mean Error on Discharge:   1.26964945246962     
+Iteration:          807  Mean Error on Discharge:   1.26390522413493     
+Iteration:          808  Mean Error on Discharge:   1.25807077287629     
+Iteration:          809  Mean Error on Discharge:   1.25214343696078     
+Iteration:          810  Mean Error on Discharge:   1.24612207350500     
+Iteration:          811  Mean Error on Discharge:   1.24000714747906     
+Iteration:          812  Mean Error on Discharge:   1.23380098889216     
+Iteration:          813  Mean Error on Discharge:   1.22750771996269     
+Iteration:          814  Mean Error on Discharge:   1.22113336162708     
+Iteration:          815  Mean Error on Discharge:   1.21468558936123     
+Iteration:          816  Mean Error on Discharge:   1.20817359889985     
+Iteration:          817  Mean Error on Discharge:   1.20160798154345     
+Iteration:          818  Mean Error on Discharge:   1.19500042919383     
+Iteration:          819  Mean Error on Discharge:   1.18836342345184     
+Iteration:          820  Mean Error on Discharge:   1.18170996998313     
+Iteration:          821  Mean Error on Discharge:   1.17505322988072     
+Iteration:          822  Mean Error on Discharge:   1.16840620872117     
+Iteration:          823  Mean Error on Discharge:   1.16178144177699     
+Iteration:          824  Mean Error on Discharge:   1.15519068720650     
+Iteration:          825  Mean Error on Discharge:   1.14864467737578     
+Iteration:          826  Mean Error on Discharge:   1.14215281322294     
+Iteration:          827  Mean Error on Discharge:   1.13572300899182     
+Iteration:          828  Mean Error on Discharge:   1.12936152976504     
+Iteration:          829  Mean Error on Discharge:   1.12307281522275     
+Iteration:          830  Mean Error on Discharge:   1.11685949780977     
+Iteration:          831  Mean Error on Discharge:   1.11072248675246     
+Iteration:          832  Mean Error on Discharge:   1.10466097230971     
+Iteration:          833  Mean Error on Discharge:   1.09867245146283     
+Iteration:          834  Mean Error on Discharge:   1.09275301297751     
+Iteration:          835  Mean Error on Discharge:   1.08689749264296     
+Iteration:          836  Mean Error on Discharge:   1.08109967958839     
+Iteration:          837  Mean Error on Discharge:   1.07535266686866     
+Iteration:          838  Mean Error on Discharge:   1.06964912109451     
+Iteration:          839  Mean Error on Discharge:   1.06398145834731     
+Iteration:          840  Mean Error on Discharge:   1.05834220259647     
+Iteration:          841  Mean Error on Discharge:   1.05272425415505     
+Iteration:          842  Mean Error on Discharge:   1.04712114341618     
+Iteration:          843  Mean Error on Discharge:   1.04152726708232     
+Iteration:          844  Mean Error on Discharge:   1.03593816181071     
+Iteration:          845  Mean Error on Discharge:   1.03035064925957     
+Iteration:          846  Mean Error on Discharge:   1.02476290039036     
+Iteration:          847  Mean Error on Discharge:   1.01917463421089     
+Iteration:          848  Mean Error on Discharge:   1.01358717061529     
+Iteration:          849  Mean Error on Discharge:   1.00800335477891     
+Iteration:          850  Mean Error on Discharge:   1.00242759073627     
+Iteration:          851  Mean Error on Discharge:  0.996865698150723     
+Iteration:          852  Mean Error on Discharge:  0.991324768724485     
+Iteration:          853  Mean Error on Discharge:  0.985812832733225     
+Iteration:          854  Mean Error on Discharge:  0.980338676833375     
+Iteration:          855  Mean Error on Discharge:  0.974911603234838     
+Iteration:          856  Mean Error on Discharge:  0.969541130917334     
+Iteration:          857  Mean Error on Discharge:  0.964236675494942     
+Iteration:          858  Mean Error on Discharge:  0.959007255806622     
+Iteration:          859  Mean Error on Discharge:  0.953861216464294     
+Iteration:          860  Mean Error on Discharge:  0.948805982419558     
+Iteration:          861  Mean Error on Discharge:  0.943847825921841     
+Iteration:          862  Mean Error on Discharge:  0.938991720955690     
+Iteration:          863  Mean Error on Discharge:  0.934241205107914     
+Iteration:          864  Mean Error on Discharge:  0.929598294829413     
+Iteration:          865  Mean Error on Discharge:  0.925063509885378     
+Iteration:          866  Mean Error on Discharge:  0.920635926537545     
+Iteration:          867  Mean Error on Discharge:  0.916313145728221     
+Iteration:          868  Mean Error on Discharge:  0.912091544156324     
+Iteration:          869  Mean Error on Discharge:  0.907966180617638     
+Iteration:          870  Mean Error on Discharge:  0.903931171625780     
+Iteration:          871  Mean Error on Discharge:  0.899979798132501     
+Iteration:          872  Mean Error on Discharge:  0.896104636884576     
+Iteration:          873  Mean Error on Discharge:  0.892297821481488     
+Iteration:          874  Mean Error on Discharge:  0.888551189855782     
+Iteration:          875  Mean Error on Discharge:  0.884856512039484     
+Iteration:          876  Mean Error on Discharge:  0.881205668903806     
+Iteration:          877  Mean Error on Discharge:  0.877590828534505     
+Iteration:          878  Mean Error on Discharge:  0.874004615140574     
+Iteration:          879  Mean Error on Discharge:  0.870440270356070     
+Iteration:          880  Mean Error on Discharge:  0.866891806051708     
+Iteration:          881  Mean Error on Discharge:  0.863354139982498     
+Iteration:          882  Mean Error on Discharge:  0.859823232789523     
+Iteration:          883  Mean Error on Discharge:  0.856296202114736     
+Iteration:          884  Mean Error on Discharge:  0.852771364066319     
+Iteration:          885  Mean Error on Discharge:  0.849248326415702     
+Iteration:          886  Mean Error on Discharge:  0.845727933604074     
+Iteration:          887  Mean Error on Discharge:  0.842212182995047     
+Iteration:          888  Mean Error on Discharge:  0.838704237963886     
+Iteration:          889  Mean Error on Discharge:  0.835208357368045     
+Iteration:          890  Mean Error on Discharge:  0.831729551388596     
+Iteration:          891  Mean Error on Discharge:  0.828273534054498     
+Iteration:          892  Mean Error on Discharge:  0.824846492417595     
+Iteration:          893  Mean Error on Discharge:  0.821454835654616     
+Iteration:          894  Mean Error on Discharge:  0.818104991449137     
+Iteration:          895  Mean Error on Discharge:  0.814803171864468     
+Iteration:          896  Mean Error on Discharge:  0.811555175623490     
+Iteration:          897  Mean Error on Discharge:  0.808366208315899     
+Iteration:          898  Mean Error on Discharge:  0.805240709160719     
+Iteration:          899  Mean Error on Discharge:  0.802182206312957     
+Iteration:          900  Mean Error on Discharge:  0.799193235714391     
+Iteration:          901  Mean Error on Discharge:  0.796275253602158     
+Iteration:          902  Mean Error on Discharge:  0.793428702455165     
+Iteration:          903  Mean Error on Discharge:  0.790652897864535     
+Iteration:          904  Mean Error on Discharge:  0.787946077728209     
+Iteration:          905  Mean Error on Discharge:  0.785305543760365     
+Iteration:          906  Mean Error on Discharge:  0.782727767503945     
+Iteration:          907  Mean Error on Discharge:  0.780208462061867     
+Iteration:          908  Mean Error on Discharge:  0.777742675601039     
+Iteration:          909  Mean Error on Discharge:  0.775324987202472     
+Iteration:          910  Mean Error on Discharge:  0.772949675703755     
+Iteration:          911  Mean Error on Discharge:  0.770610867823863     
+Iteration:          912  Mean Error on Discharge:  0.768302711050016     
+Iteration:          913  Mean Error on Discharge:  0.766019549682532     
+Iteration:          914  Mean Error on Discharge:  0.763756093581634     
+Iteration:          915  Mean Error on Discharge:  0.761507581599845     
+Iteration:          916  Mean Error on Discharge:  0.759269935311816     
+Iteration:          917  Mean Error on Discharge:  0.757039897345396     
+Iteration:          918  Mean Error on Discharge:  0.754815153019639     
+Iteration:          919  Mean Error on Discharge:  0.752594442575541     
+Iteration:          920  Mean Error on Discharge:  0.750377592116268     
+Iteration:          921  Mean Error on Discharge:  0.748165546074044     
+Iteration:          922  Mean Error on Discharge:  0.745960385275511     
+Iteration:          923  Mean Error on Discharge:  0.743765279390741     
+Iteration:          924  Mean Error on Discharge:  0.741584393612700     
+Iteration:          925  Mean Error on Discharge:  0.739422730107249     
+Iteration:          926  Mean Error on Discharge:  0.737286009344919     
+Iteration:          927  Mean Error on Discharge:  0.735180512817669     
+Iteration:          928  Mean Error on Discharge:  0.733112893496071     
+Iteration:          929  Mean Error on Discharge:  0.731089980155830     
+Iteration:          930  Mean Error on Discharge:  0.729118578989672     
+Iteration:          931  Mean Error on Discharge:  0.727205286380705     
+Iteration:          932  Mean Error on Discharge:  0.725356309573730     
+Iteration:          933  Mean Error on Discharge:  0.723577312239184     
+Iteration:          934  Mean Error on Discharge:  0.721873283299915     
+Iteration:          935  Mean Error on Discharge:  0.720248434113047     
+Iteration:          936  Mean Error on Discharge:  0.718706119901619     
+Iteration:          937  Mean Error on Discharge:  0.717248793486729     
+Iteration:          938  Mean Error on Discharge:  0.715877996306987     
+Iteration:          939  Mean Error on Discharge:  0.714594373984911     
+Iteration:          940  Mean Error on Discharge:  0.713397709074778     
+Iteration:          941  Mean Error on Discharge:  0.712286964467856     
+Iteration:          942  Mean Error on Discharge:  0.711260402645421     
+Iteration:          943  Mean Error on Discharge:  0.710315614376109     
+Iteration:          944  Mean Error on Discharge:  0.709449650270787     
+Iteration:          945  Mean Error on Discharge:  0.708659150543851     
+Iteration:          946  Mean Error on Discharge:  0.707940462895247     
+Iteration:          947  Mean Error on Discharge:  0.707289779433118     
+Iteration:          948  Mean Error on Discharge:  0.706703270527424     
+Iteration:          949  Mean Error on Discharge:  0.706177219235177     
+Iteration:          950  Mean Error on Discharge:  0.705708146954574     
+Iteration:          951  Mean Error on Discharge:  0.705292943345821     
+Iteration:          952  Mean Error on Discharge:  0.704928984611113     
+Iteration:          953  Mean Error on Discharge:  0.704614225444127     
+Iteration:          954  Mean Error on Discharge:  0.704347281052808     
+Iteration:          955  Mean Error on Discharge:  0.704127478543283     
+Iteration:          956  Mean Error on Discharge:  0.703954892323403     
+Iteration:          957  Mean Error on Discharge:  0.703830342385813     
+Iteration:          958  Mean Error on Discharge:  0.703755363092134     
+Iteration:          959  Mean Error on Discharge:  0.703732145294885     
+Iteration:          960  Mean Error on Discharge:  0.703763452841429     
+Iteration:          961  Mean Error on Discharge:  0.703852522160055     
+Iteration:          962  Mean Error on Discharge:  0.704002890371710     
+Iteration:          963  Mean Error on Discharge:  0.704218276321792     
+Iteration:          964  Mean Error on Discharge:  0.704502427658649     
+Iteration:          965  Mean Error on Discharge:  0.704858957701215     
+Iteration:          966  Mean Error on Discharge:  0.705291203338113     
+Iteration:          967  Mean Error on Discharge:  0.705802091941679     
+Iteration:          968  Mean Error on Discharge:  0.706394024494236     
+Iteration:          969  Mean Error on Discharge:  0.707068780710972     
+Iteration:          970  Mean Error on Discharge:  0.707827448837187     
+Iteration:          971  Mean Error on Discharge:  0.708670381815921     
+Iteration:          972  Mean Error on Discharge:  0.709597181375411     
+Iteration:          973  Mean Error on Discharge:  0.710606704196647     
+Iteration:          974  Mean Error on Discharge:  0.711697092212810     
+Iteration:          975  Mean Error on Discharge:  0.712865822424930     
+Iteration:          976  Mean Error on Discharge:  0.714109768368777     
+Iteration:          977  Mean Error on Discharge:  0.715425281073917     
+Iteration:          978  Mean Error on Discharge:  0.716808282082850     
+Iteration:          979  Mean Error on Discharge:  0.718254347903622     
+Iteration:          980  Mean Error on Discharge:  0.719758798137585     
+Iteration:          981  Mean Error on Discharge:  0.721316794369229     
+Iteration:          982  Mean Error on Discharge:  0.722923432204363     
+Iteration:          983  Mean Error on Discharge:  0.724573827650145     
+Iteration:          984  Mean Error on Discharge:  0.726263197791388     
+Iteration:          985  Mean Error on Discharge:  0.727986934637304     
+Iteration:          986  Mean Error on Discharge:  0.729740670761167     
+Iteration:          987  Mean Error on Discharge:  0.731520335772788     
+Iteration:          988  Mean Error on Discharge:  0.733322202519884     
+Iteration:          989  Mean Error on Discharge:  0.735142922205432     
+Iteration:          990  Mean Error on Discharge:  0.736979546658689     
+Iteration:          991  Mean Error on Discharge:  0.738829536437770     
+Iteration:          992  Mean Error on Discharge:  0.740690758018664     
+Iteration:          993  Mean Error on Discharge:  0.742561465554072     
+Iteration:          994  Mean Error on Discharge:  0.744440267136585     
+Iteration:          995  Mean Error on Discharge:  0.746326081109932     
+Iteration:          996  Mean Error on Discharge:  0.748218080431541     
+Iteration:          997  Mean Error on Discharge:  0.750115625354200     
+Iteration:          998  Mean Error on Discharge:  0.752018191031213     
+Iteration:          999  Mean Error on Discharge:  0.753925294793528     
+Iteration:         1000  Mean Error on Discharge:  0.755836420929682     
+
+
+
+
+
+
+
+
+
+
+
+Variabledt  3.003975333026514E-307 DT   1.00000000000000     
+TIME STEP           1 TIME   1.00000000000000      PrintTime
+  1.00000000000000     
+
+Quasi-3D Calculation is off
+
+Sediment-transport is off
+
+Discharge   2.50000000000000      Change Discharge  0.000000000000000E+000
+Stage   10.0000000000000      Change Stage  0.000000000000000E+000
+
+Iteration:            1  Mean Error on Discharge:  0.757750949416907     
+Iteration:            2  Mean Error on Discharge:  0.759668088347478     
+Iteration:            3  Mean Error on Discharge:  0.761586817668826     
+Iteration:            4  Mean Error on Discharge:  0.763505842947957     
+Iteration:            5  Mean Error on Discharge:  0.765423562125715     
+Iteration:            6  Mean Error on Discharge:  0.767338045471137     
+Iteration:            7  Mean Error on Discharge:  0.769247029189837     
+Iteration:            8  Mean Error on Discharge:  0.771147922003330     
+Iteration:            9  Mean Error on Discharge:  0.773037824082875     
+Iteration:           10  Mean Error on Discharge:  0.774913555856928     
+Iteration:           11  Mean Error on Discharge:  0.776771695910600     
+Iteration:           12  Mean Error on Discharge:  0.778608625048335     
+Iteration:           13  Mean Error on Discharge:  0.780420574446759     
+Iteration:           14  Mean Error on Discharge:  0.782203676354459     
+Iteration:           15  Mean Error on Discharge:  0.783954014848591     
+Iteration:           16  Mean Error on Discharge:  0.785667675136545     
+Iteration:           17  Mean Error on Discharge:  0.787340789981573     
+Iteration:           18  Mean Error on Discharge:  0.788969582269773     
+Iteration:           19  Mean Error on Discharge:  0.790550403330702     
+Iteration:           20  Mean Error on Discharge:  0.792079766130756     
+Iteration:           21  Mean Error on Discharge:  0.793554372749568     
+Iteration:           22  Mean Error on Discharge:  0.794971136804609     
+Iteration:           23  Mean Error on Discharge:  0.796327199894167     
+Iteration:           24  Mean Error on Discharge:  0.797619942385505     
+Iteration:           25  Mean Error on Discharge:  0.798846988638418     
+Iteration:           26  Mean Error on Discharge:  0.800006207432905     
+Iteration:           27  Mean Error on Discharge:  0.801095705580019     
+Iteration:           28  Mean Error on Discharge:  0.802113814994869     
+Iteration:           29  Mean Error on Discharge:  0.803059077935852     
+Iteration:           30  Mean Error on Discharge:  0.803930226888113     
+Iteration:           31  Mean Error on Discharge:  0.804726159824503     
+Iteration:           32  Mean Error on Discharge:  0.805445912428283     
+Iteration:           33  Mean Error on Discharge:  0.806088628084094     
+Iteration:           34  Mean Error on Discharge:  0.806653526481868     
+Iteration:           35  Mean Error on Discharge:  0.807139871493023     
+Iteration:           36  Mean Error on Discharge:  0.807546943260648     
+Iteration:           37  Mean Error on Discharge:  0.807874009630610     
+Iteration:           38  Mean Error on Discharge:  0.808120302111113     
+Iteration:           39  Mean Error on Discharge:  0.808284996581605     
+Iteration:           40  Mean Error on Discharge:  0.808367198462219     
+Iteration:           41  Mean Error on Discharge:  0.808365933968508     
+Iteration:           42  Mean Error on Discharge:  0.808280146932237     
+Iteration:           43  Mean Error on Discharge:  0.808108702732701     
+Iteration:           44  Mean Error on Discharge:  0.807850392689097     
+Iteration:           45  Mean Error on Discharge:  0.807503948080835     
+Iteration:           46  Mean Error on Discharge:  0.807068056373226     
+Iteration:           47  Mean Error on Discharge:  0.806541379136921     
+Iteration:           48  Mean Error on Discharge:  0.805922573205348     
+Iteration:           49  Mean Error on Discharge:  0.805210311983635     
+Iteration:           50  Mean Error on Discharge:  0.804403306527912     
+Iteration:           51  Mean Error on Discharge:  0.803500324488335     
+Iteration:           52  Mean Error on Discharge:  0.802500211678844     
+Iteration:           53  Mean Error on Discharge:  0.801401906383336     
+Iteration:           54  Mean Error on Discharge:  0.800204453454536     
+Iteration:           55  Mean Error on Discharge:  0.798907015340276     
+Iteration:           56  Mean Error on Discharge:  0.797508880301444     
+Iteration:           57  Mean Error on Discharge:  0.796009467887044     
+Iteration:           58  Mean Error on Discharge:  0.794408331808160     
+Iteration:           59  Mean Error on Discharge:  0.792705160404772     
+Iteration:           60  Mean Error on Discharge:  0.790899774921069     
+Iteration:           61  Mean Error on Discharge:  0.788992125725508     
+Iteration:           62  Mean Error on Discharge:  0.786982286845434     
+Iteration:           63  Mean Error on Discharge:  0.784870449328617     
+Iteration:           64  Mean Error on Discharge:  0.782656912658524     
+Iteration:           65  Mean Error on Discharge:  0.780342075312358     
+Iteration:           66  Mean Error on Discharge:  0.777926424375211     
+Iteration:           67  Mean Error on Discharge:  0.775410524308817     
+Iteration:           68  Mean Error on Discharge:  0.772795004537459     
+Iteration:           69  Mean Error on Discharge:  0.770080549983735     
+Iteration:           70  Mean Error on Discharge:  0.767267889312458     
+Iteration:           71  Mean Error on Discharge:  0.764357784129916     
+Iteration:           72  Mean Error on Discharge:  0.761351019428240     
+Iteration:           73  Mean Error on Discharge:  0.758248395561198     
+Iteration:           74  Mean Error on Discharge:  0.755050721996128     
+Iteration:           75  Mean Error on Discharge:  0.751758813117045     
+Iteration:           76  Mean Error on Discharge:  0.748373486144896     
+Iteration:           77  Mean Error on Discharge:  0.744895561493646     
+Iteration:           78  Mean Error on Discharge:  0.741325865368605     
+Iteration:           79  Mean Error on Discharge:  0.737665234772397     
+Iteration:           80  Mean Error on Discharge:  0.733914523366323     
+Iteration:           81  Mean Error on Discharge:  0.730074610018615     
+Iteration:           82  Mean Error on Discharge:  0.726146407355155     
+Iteration:           83  Mean Error on Discharge:  0.722130871061673     
+Iteration:           84  Mean Error on Discharge:  0.718029009131420     
+Iteration:           85  Mean Error on Discharge:  0.713841890974616     
+Iteration:           86  Mean Error on Discharge:  0.709570654113215     
+Iteration:           87  Mean Error on Discharge:  0.705216510865496     
+Iteration:           88  Mean Error on Discharge:  0.700780752884722     
+Iteration:           89  Mean Error on Discharge:  0.696264753868480     
+Iteration:           90  Mean Error on Discharge:  0.691669969185368     
+Iteration:           91  Mean Error on Discharge:  0.686997937181554     
+Iteration:           92  Mean Error on Discharge:  0.682250274987439     
+Iteration:           93  Mean Error on Discharge:  0.677428674930411     
+Iteration:           94  Mean Error on Discharge:  0.672534897964709     
+Iteration:           95  Mean Error on Discharge:  0.667570767863318     
+Iteration:           96  Mean Error on Discharge:  0.662538163913497     
+Iteration:           97  Mean Error on Discharge:  0.657439013236328     
+Iteration:           98  Mean Error on Discharge:  0.652275283109315     
+Iteration:           99  Mean Error on Discharge:  0.647048973275867     
+Iteration:          100  Mean Error on Discharge:  0.641762108728108     
+
+
+
+
+
+
+
+
+
+
+
+Variabledt  3.003975333026514E-307 DT   1.00000000000000     
+TIME STEP           2 TIME   2.00000000000000      PrintTime
+  1.00000000000000     
+
+Quasi-3D Calculation is off
+
+Sediment-transport is off
+
+Discharge   2.50000000000000      Change Discharge  0.000000000000000E+000
+Stage   10.0000000000000      Change Stage  0.000000000000000E+000
+
+Iteration:            1  Mean Error on Discharge:  0.636416732569756     
+Iteration:            2  Mean Error on Discharge:  0.631014899840497     
+Iteration:            3  Mean Error on Discharge:  0.625558671025745     
+Iteration:            4  Mean Error on Discharge:  0.620050108253410     
+Iteration:            5  Mean Error on Discharge:  0.614491271249260     
+Iteration:            6  Mean Error on Discharge:  0.608884213452445     
+Iteration:            7  Mean Error on Discharge:  0.603230979483788     
+Iteration:            8  Mean Error on Discharge:  0.597533604008202     
+Iteration:            9  Mean Error on Discharge:  0.591794110985090     
+Iteration:           10  Mean Error on Discharge:  0.586014514675071     
+Iteration:           11  Mean Error on Discharge:  0.580196821653737     
+Iteration:           12  Mean Error on Discharge:  0.574343033965302     
+Iteration:           13  Mean Error on Discharge:  0.568455153977875     
+Iteration:           14  Mean Error on Discharge:  0.562535189914997     
+Iteration:           15  Mean Error on Discharge:  0.556585162626717     
+Iteration:           16  Mean Error on Discharge:  0.550607113232070     
+Iteration:           17  Mean Error on Discharge:  0.544603111409988     
+Iteration:           18  Mean Error on Discharge:  0.538575264066418     
+Iteration:           19  Mean Error on Discharge:  0.532525724067545     
+Iteration:           20  Mean Error on Discharge:  0.526456698793646     
+Iteration:           21  Mean Error on Discharge:  0.520370457901930     
+Iteration:           22  Mean Error on Discharge:  0.514269340424638     
+Iteration:           23  Mean Error on Discharge:  0.508155760688644     
+Iteration:           24  Mean Error on Discharge:  0.502032212923581     
+Iteration:           25  Mean Error on Discharge:  0.495901274454106     
+Iteration:           26  Mean Error on Discharge:  0.489765606179268     
+Iteration:           27  Mean Error on Discharge:  0.483627954863279     
+Iteration:           28  Mean Error on Discharge:  0.477491151782579     
+Iteration:           29  Mean Error on Discharge:  0.471358109869104     
+Iteration:           30  Mean Error on Discharge:  0.465231820644886     
+Iteration:           31  Mean Error on Discharge:  0.459115351135642     
+Iteration:           32  Mean Error on Discharge:  0.453011839727134     
+Iteration:           33  Mean Error on Discharge:  0.446924490788316     
+Iteration:           34  Mean Error on Discharge:  0.440856571277527     
+Iteration:           35  Mean Error on Discharge:  0.434811407137824     
+Iteration:           36  Mean Error on Discharge:  0.428792380330858     
+Iteration:           37  Mean Error on Discharge:  0.422802926680942     
+Iteration:           38  Mean Error on Discharge:  0.416846534487524     
+Iteration:           39  Mean Error on Discharge:  0.410926743994229     
+Iteration:           40  Mean Error on Discharge:  0.405047148377035     
+Iteration:           41  Mean Error on Discharge:  0.399211394417586     
+Iteration:           42  Mean Error on Discharge:  0.393423187808446     
+Iteration:           43  Mean Error on Discharge:  0.387686296934948     
+Iteration:           44  Mean Error on Discharge:  0.382004554863225     
+Iteration:           45  Mean Error on Discharge:  0.376381865502623     
+Iteration:           46  Mean Error on Discharge:  0.370822210051994     
+Iteration:           47  Mean Error on Discharge:  0.365329653834711     
+Iteration:           48  Mean Error on Discharge:  0.359908353277739     
+Iteration:           49  Mean Error on Discharge:  0.354562563665271     
+Iteration:           50  Mean Error on Discharge:  0.349296646948818     
+Iteration:           51  Mean Error on Discharge:  0.344115079178765     
+Iteration:           52  Mean Error on Discharge:  0.339022457584592     
+Iteration:           53  Mean Error on Discharge:  0.334023506826392     
+Iteration:           54  Mean Error on Discharge:  0.329123083997138     
+Iteration:           55  Mean Error on Discharge:  0.324326181916044     
+Iteration:           56  Mean Error on Discharge:  0.319637930283203     
+Iteration:           57  Mean Error on Discharge:  0.315063594932543     
+Iteration:           58  Mean Error on Discharge:  0.310608571725841     
+Iteration:           59  Mean Error on Discharge:  0.306278377365734     
+Iteration:           60  Mean Error on Discharge:  0.302078637424143     
+Iteration:           61  Mean Error on Discharge:  0.298015069122412     
+Iteration:           62  Mean Error on Discharge:  0.294093457509269     
+Iteration:           63  Mean Error on Discharge:  0.290319630981071     
+Iteration:           64  Mean Error on Discharge:  0.286699429108001     
+Iteration:           65  Mean Error on Discharge:  0.283238665213736     
+Iteration:           66  Mean Error on Discharge:  0.279943085123949     
+Iteration:           67  Mean Error on Discharge:  0.276818321497722     
+Iteration:           68  Mean Error on Discharge:  0.273869844850135     
+Iteration:           69  Mean Error on Discharge:  0.271102911599107     
+Iteration:           70  Mean Error on Discharge:  0.268522510271745     
+Iteration:           71  Mean Error on Discharge:  0.266133306845345     
+Iteration:           72  Mean Error on Discharge:  0.263939590003287     
+Iteration:           73  Mean Error on Discharge:  0.261945218271742     
+Iteration:           74  Mean Error on Discharge:  0.260153569330010     
+Iteration:           75  Mean Error on Discharge:  0.258567493044784     
+Iteration:           76  Mean Error on Discharge:  0.257189269794726     
+Iteration:           77  Mean Error on Discharge:  0.256020575285113     
+Iteration:           78  Mean Error on Discharge:  0.255062449637604     
+Iteration:           79  Mean Error on Discharge:  0.254315281915510     
+Iteration:           80  Mean Error on Discharge:  0.253778795892356     
+Iteration:           81  Mean Error on Discharge:  0.253452046701410     
+Iteration:           82  Mean Error on Discharge:  0.253333427814209     
+Iteration:           83  Mean Error on Discharge:  0.253420687019174     
+Iteration:           84  Mean Error on Discharge:  0.253710949935693     
+Iteration:           85  Mean Error on Discharge:  0.254200751995699     
+Iteration:           86  Mean Error on Discharge:  0.254886077448487     
+Iteration:           87  Mean Error on Discharge:  0.255762404298534     
+Iteration:           88  Mean Error on Discharge:  0.256824753934652     
+Iteration:           89  Mean Error on Discharge:  0.258067744124334     
+Iteration:           90  Mean Error on Discharge:  0.259485644012008     
+Iteration:           91  Mean Error on Discharge:  0.261072429791211     
+Iteration:           92  Mean Error on Discharge:  0.262821840791664     
+Iteration:           93  Mean Error on Discharge:  0.264727431306559     
+Iteration:           94  Mean Error on Discharge:  0.266782621372094     
+Iteration:           95  Mean Error on Discharge:  0.268980744445733     
+Iteration:           96  Mean Error on Discharge:  0.271315090735955     
+Iteration:           97  Mean Error on Discharge:  0.273778945967477     
+Iteration:           98  Mean Error on Discharge:  0.276365625503694     
+Iteration:           99  Mean Error on Discharge:  0.279068503774059     
+Iteration:          100  Mean Error on Discharge:  0.281881039111141     
+
+
+
+
+
+
+
+
+
+
+
+Variabledt  3.003975333026514E-307 DT   1.00000000000000     
+TIME STEP           3 TIME   3.00000000000000      PrintTime
+  1.00000000000000     
+
+Quasi-3D Calculation is off
+
+Sediment-transport is off
+
+Discharge   2.50000000000000      Change Discharge  0.000000000000000E+000
+Stage   10.0000000000000      Change Stage  0.000000000000000E+000
+
+Iteration:            1  Mean Error on Discharge:  0.284796794220864     
+Iteration:            2  Mean Error on Discharge:  0.287809451552161     
+Iteration:            3  Mean Error on Discharge:  0.290912828438535     
+Iteration:            4  Mean Error on Discharge:  0.294100885970541     
+Iteration:            5  Mean Error on Discharge:  0.297367734080044     
+Iteration:            6  Mean Error on Discharge:  0.300707636559053     
+Iteration:            7  Mean Error on Discharge:  0.304115013243044     
+Iteration:            8  Mean Error on Discharge:  0.307584440540736     
+Iteration:            9  Mean Error on Discharge:  0.311110650641382     
+Iteration:           10  Mean Error on Discharge:  0.314688528912378     
+Iteration:           11  Mean Error on Discharge:  0.318313112022104     
+Iteration:           12  Mean Error on Discharge:  0.321979585588841     
+Iteration:           13  Mean Error on Discharge:  0.325683280403505     
+Iteration:           14  Mean Error on Discharge:  0.329419667300693     
+Iteration:           15  Mean Error on Discharge:  0.333184354475963     
+Iteration:           16  Mean Error on Discharge:  0.336973083435719     
+Iteration:           17  Mean Error on Discharge:  0.340781725286072     
+Iteration:           18  Mean Error on Discharge:  0.344606277217345     
+Iteration:           19  Mean Error on Discharge:  0.348442859243380     
+Iteration:           20  Mean Error on Discharge:  0.352287711227818     
+Iteration:           21  Mean Error on Discharge:  0.356137190222853     
+Iteration:           22  Mean Error on Discharge:  0.359987768126424     
+Iteration:           23  Mean Error on Discharge:  0.363836029644970     
+Iteration:           24  Mean Error on Discharge:  0.367678670531026     
+Iteration:           25  Mean Error on Discharge:  0.371512496048345     
+Iteration:           26  Mean Error on Discharge:  0.375334419188254     
+Iteration:           27  Mean Error on Discharge:  0.379141460089320     
+Iteration:           28  Mean Error on Discharge:  0.382930744634473     
+Iteration:           29  Mean Error on Discharge:  0.386699502865418     
+Iteration:           30  Mean Error on Discharge:  0.390445067653584     
+Iteration:           31  Mean Error on Discharge:  0.394164872909873     
+Iteration:           32  Mean Error on Discharge:  0.397856451556850     
+Iteration:           33  Mean Error on Discharge:  0.401517433143372     
+Iteration:           34  Mean Error on Discharge:  0.405145540989436     
+Iteration:           35  Mean Error on Discharge:  0.408738588786409     
+Iteration:           36  Mean Error on Discharge:  0.412294477816852     
+Iteration:           37  Mean Error on Discharge:  0.415811192219714     
+Iteration:           38  Mean Error on Discharge:  0.419286794870127     
+Iteration:           39  Mean Error on Discharge:  0.422719422700383     
+Iteration:           40  Mean Error on Discharge:  0.426107281816934     
+Iteration:           41  Mean Error on Discharge:  0.429448642428617     
+Iteration:           42  Mean Error on Discharge:  0.432741833701451     
+Iteration:           43  Mean Error on Discharge:  0.435985238628311     
+Iteration:           44  Mean Error on Discharge:  0.439177288978408     
+Iteration:           45  Mean Error on Discharge:  0.442316460417319     
+Iteration:           46  Mean Error on Discharge:  0.445401267875930     
+Iteration:           47  Mean Error on Discharge:  0.448430261240486     
+Iteration:           48  Mean Error on Discharge:  0.451402021428117     
+Iteration:           49  Mean Error on Discharge:  0.454315156903499     
+Iteration:           50  Mean Error on Discharge:  0.457168300682653     
+Iteration:           51  Mean Error on Discharge:  0.459960107860618     
+Iteration:           52  Mean Error on Discharge:  0.462689253688968     
+Iteration:           53  Mean Error on Discharge:  0.465354432218339     
+Iteration:           54  Mean Error on Discharge:  0.467954355511227     
+Iteration:           55  Mean Error on Discharge:  0.470487753419328     
+Iteration:           56  Mean Error on Discharge:  0.472953373909118     
+Iteration:           57  Mean Error on Discharge:  0.475349983908876     
+Iteration:           58  Mean Error on Discharge:  0.477676370639933     
+Iteration:           59  Mean Error on Discharge:  0.479931343385374     
+Iteration:           60  Mean Error on Discharge:  0.482113735640442     
+Iteration:           61  Mean Error on Discharge:  0.484222407333414     
+Iteration:           62  Mean Error on Discharge:  0.486256248010532     
+Iteration:           63  Mean Error on Discharge:  0.488214179512674     
+Iteration:           64  Mean Error on Discharge:  0.490095158941190     
+Iteration:           65  Mean Error on Discharge:  0.491898181649211     
+Iteration:           66  Mean Error on Discharge:  0.493622284166601     
+Iteration:           67  Mean Error on Discharge:  0.495266546982945     
+Iteration:           68  Mean Error on Discharge:  0.496830097118299     
+Iteration:           69  Mean Error on Discharge:  0.498312110418930     
+Iteration:           70  Mean Error on Discharge:  0.499711813524386     
+Iteration:           71  Mean Error on Discharge:  0.501028485462719     
+Iteration:           72  Mean Error on Discharge:  0.502261458842266     
+Iteration:           73  Mean Error on Discharge:  0.503410120620482     
+Iteration:           74  Mean Error on Discharge:  0.504473912443033     
+Iteration:           75  Mean Error on Discharge:  0.505452330557356     
+Iteration:           76  Mean Error on Discharge:  0.506344925317712     
+Iteration:           77  Mean Error on Discharge:  0.507151300317238     
+Iteration:           78  Mean Error on Discharge:  0.507871111163351     
+Iteration:           79  Mean Error on Discharge:  0.508504063932325     
+Iteration:           80  Mean Error on Discharge:  0.509049913411961     
+Iteration:           81  Mean Error on Discharge:  0.509508461133982     
+Iteration:           82  Mean Error on Discharge:  0.509879553270849     
+Iteration:           83  Mean Error on Discharge:  0.510163078457877     
+Iteration:           84  Mean Error on Discharge:  0.510358965601380     
+Iteration:           85  Mean Error on Discharge:  0.510467181732348     
+Iteration:           86  Mean Error on Discharge:  0.510487729962049     
+Iteration:           87  Mean Error on Discharge:  0.510420647592100     
+Iteration:           88  Mean Error on Discharge:  0.510266004425437     
+Iteration:           89  Mean Error on Discharge:  0.510023901319745     
+Iteration:           90  Mean Error on Discharge:  0.509694469015437     
+Iteration:           91  Mean Error on Discharge:  0.509277867262509     
+Iteration:           92  Mean Error on Discharge:  0.508774284261952     
+Iteration:           93  Mean Error on Discharge:  0.508183936427606     
+Iteration:           94  Mean Error on Discharge:  0.507507068464757     
+Iteration:           95  Mean Error on Discharge:  0.506743953436776     
+Iteration:           96  Mean Error on Discharge:  0.505894893943174     
+Iteration:           97  Mean Error on Discharge:  0.504960222930918     
+Iteration:           98  Mean Error on Discharge:  0.503940304715548     
+Iteration:           99  Mean Error on Discharge:  0.502835536265122     
+Iteration:          100  Mean Error on Discharge:  0.501646348598416     
+
+
+
+
+
+
+
+
+
+
+
+Variabledt  3.003975333026514E-307 DT   1.00000000000000     
+TIME STEP           4 TIME   4.00000000000000      PrintTime
+  1.00000000000000     
+
+Quasi-3D Calculation is off
+
+Sediment-transport is off
+
+Discharge   2.50000000000000      Change Discharge  0.000000000000000E+000
+Stage   10.0000000000000      Change Stage  0.000000000000000E+000
+
+Iteration:            1  Mean Error on Discharge:  0.500373208240404     
+Iteration:            2  Mean Error on Discharge:  0.499016618677909     
+Iteration:            3  Mean Error on Discharge:  0.497577121759202     
+Iteration:            4  Mean Error on Discharge:  0.496055298949300     
+Iteration:            5  Mean Error on Discharge:  0.494451772533874     
+Iteration:            6  Mean Error on Discharge:  0.492767206519034     
+Iteration:            7  Mean Error on Discharge:  0.491002307233616     
+Iteration:            8  Mean Error on Discharge:  0.489157823754305     
+Iteration:            9  Mean Error on Discharge:  0.487234547989074     
+Iteration:           10  Mean Error on Discharge:  0.485233314441989     
+Iteration:           11  Mean Error on Discharge:  0.483154999654684     
+Iteration:           12  Mean Error on Discharge:  0.481000521328137     
+Iteration:           13  Mean Error on Discharge:  0.478770837137728     
+Iteration:           14  Mean Error on Discharge:  0.476466943262480     
+Iteration:           15  Mean Error on Discharge:  0.474089872656449     
+Iteration:           16  Mean Error on Discharge:  0.471640693096284     
+Iteration:           17  Mean Error on Discharge:  0.469120505043915     
+Iteration:           18  Mean Error on Discharge:  0.466530439296695     
+Iteration:           19  Mean Error on Discharge:  0.463871654247026     
+Iteration:           20  Mean Error on Discharge:  0.461145334387577     
+Iteration:           21  Mean Error on Discharge:  0.458352687377701     
+Iteration:           22  Mean Error on Discharge:  0.455494941646741     
+Iteration:           23  Mean Error on Discharge:  0.452573344079152     
+Iteration:           24  Mean Error on Discharge:  0.449589157860564     
+Iteration:           25  Mean Error on Discharge:  0.446543660382123     
+Iteration:           26  Mean Error on Discharge:  0.443438141470022     
+Iteration:           27  Mean Error on Discharge:  0.440273901541713     
+Iteration:           28  Mean Error on Discharge:  0.437052250352491     
+Iteration:           29  Mean Error on Discharge:  0.433774505793264     
+Iteration:           30  Mean Error on Discharge:  0.430441992965976     
+Iteration:           31  Mean Error on Discharge:  0.427056043508220     
+Iteration:           32  Mean Error on Discharge:  0.423617995161246     
+Iteration:           33  Mean Error on Discharge:  0.420129191569615     
+Iteration:           34  Mean Error on Discharge:  0.416590982296277     
+Iteration:           35  Mean Error on Discharge:  0.413004723030062     
+Iteration:           36  Mean Error on Discharge:  0.409371775959645     
+Iteration:           37  Mean Error on Discharge:  0.405693510284439     
+Iteration:           38  Mean Error on Discharge:  0.401971302830536     
+Iteration:           39  Mean Error on Discharge:  0.398206538738442     
+Iteration:           40  Mean Error on Discharge:  0.394400612189233     
+Iteration:           41  Mean Error on Discharge:  0.390554927136538     
+Iteration:           42  Mean Error on Discharge:  0.386670898013938     
+Iteration:           43  Mean Error on Discharge:  0.382749950390224     
+Iteration:           44  Mean Error on Discharge:  0.378793521549045     
+Iteration:           45  Mean Error on Discharge:  0.374803060973730     
+Iteration:           46  Mean Error on Discharge:  0.370780030716293     
+Iteration:           47  Mean Error on Discharge:  0.366725905642790     
+Iteration:           48  Mean Error on Discharge:  0.362642173628727     
+Iteration:           49  Mean Error on Discharge:  0.358530335562988     
+Iteration:           50  Mean Error on Discharge:  0.354391905273957     
+Iteration:           51  Mean Error on Discharge:  0.350228409366171     
+Iteration:           52  Mean Error on Discharge:  0.346041386987339     
+Iteration:           53  Mean Error on Discharge:  0.341832389581200     
+Iteration:           54  Mean Error on Discharge:  0.337602980671635     
+Iteration:           55  Mean Error on Discharge:  0.333354735318226     
+Iteration:           56  Mean Error on Discharge:  0.329089240012792     
+Iteration:           57  Mean Error on Discharge:  0.324808092550480     
+Iteration:           58  Mean Error on Discharge:  0.320512901986797     
+Iteration:           59  Mean Error on Discharge:  0.316205288521610     
+Iteration:           60  Mean Error on Discharge:  0.311886883843892     
+Iteration:           61  Mean Error on Discharge:  0.307559331554046     
+Iteration:           62  Mean Error on Discharge:  0.303224287800329     
+Iteration:           63  Mean Error on Discharge:  0.298883422150825     
+Iteration:           64  Mean Error on Discharge:  0.294538418718756     
+Iteration:           65  Mean Error on Discharge:  0.290190977554573     
+Iteration:           66  Mean Error on Discharge:  0.285842816314813     
+Iteration:           67  Mean Error on Discharge:  0.281495672223064     
+Iteration:           68  Mean Error on Discharge:  0.277151304318839     
+Iteration:           69  Mean Error on Discharge:  0.272811495997872     
+Iteration:           70  Mean Error on Discharge:  0.268478057843491     
+Iteration:           71  Mean Error on Discharge:  0.264152830745943     
+Iteration:           72  Mean Error on Discharge:  0.259837689304890     
+Iteration:           73  Mean Error on Discharge:  0.255534545508825     
+Iteration:           74  Mean Error on Discharge:  0.251245352684308     
+Iteration:           75  Mean Error on Discharge:  0.246972109707569     
+Iteration:           76  Mean Error on Discharge:  0.242716865469345     
+Iteration:           77  Mean Error on Discharge:  0.238481723585126     
+Iteration:           78  Mean Error on Discharge:  0.234268847341453     
+Iteration:           79  Mean Error on Discharge:  0.230080464868462     
+Iteration:           80  Mean Error on Discharge:  0.225918874527764     
+Iteration:           81  Mean Error on Discharge:  0.221786450502727     
+Iteration:           82  Mean Error on Discharge:  0.217685648575288     
+Iteration:           83  Mean Error on Discharge:  0.213619012072189     
+Iteration:           84  Mean Error on Discharge:  0.209589177930705     
+Iteration:           85  Mean Error on Discharge:  0.205598882918313     
+Iteration:           86  Mean Error on Discharge:  0.201650969980760     
+Iteration:           87  Mean Error on Discharge:  0.197748394248129     
+Iteration:           88  Mean Error on Discharge:  0.193894229332613     
+Iteration:           89  Mean Error on Discharge:  0.190091673331239     
+Iteration:           90  Mean Error on Discharge:  0.186344054535669     
+Iteration:           91  Mean Error on Discharge:  0.182654836707562     
+Iteration:           92  Mean Error on Discharge:  0.179027623733611     
+Iteration:           93  Mean Error on Discharge:  0.175466163451976     
+Iteration:           94  Mean Error on Discharge:  0.171974350351592     
+Iteration:           95  Mean Error on Discharge:  0.168556226690117     
+Iteration:           96  Mean Error on Discharge:  0.165215981936270     
+Iteration:           97  Mean Error on Discharge:  0.161957951246068     
+Iteration:           98  Mean Error on Discharge:  0.158786609805073     
+Iteration:           99  Mean Error on Discharge:  0.155706564552245     
+Iteration:          100  Mean Error on Discharge:  0.152722542582818     
+
+
+
+
+
+
+
+
+
+
+
+Variabledt  3.003975333026514E-307 DT   1.00000000000000     
+TIME STEP           5 TIME   5.00000000000000      PrintTime
+  1.00000000000000     
+
+Quasi-3D Calculation is off
+
+Sediment-transport is off
+
+Discharge   2.50000000000000      Change Discharge  0.000000000000000E+000
+Stage   10.0000000000000      Change Stage  0.000000000000000E+000
+
+Iteration:            1  Mean Error on Discharge:  0.149839375426242     
+Iteration:            2  Mean Error on Discharge:  0.147061978766209     
+Iteration:            3  Mean Error on Discharge:  0.144395327124065     
+Iteration:            4  Mean Error on Discharge:  0.141844423094208     
+Iteration:            5  Mean Error on Discharge:  0.139414260826224     
+Iteration:            6  Mean Error on Discharge:  0.137109783600575     
+Iteration:            7  Mean Error on Discharge:  0.134935835546465     
+Iteration:            8  Mean Error on Discharge:  0.132897107802318     
+Iteration:            9  Mean Error on Discharge:  0.130998079716912     
+Iteration:           10  Mean Error on Discharge:  0.129242956022086     
+Iteration:           11  Mean Error on Discharge:  0.127635601259595     
+Iteration:           12  Mean Error on Discharge:  0.126179473090980     
+Iteration:           13  Mean Error on Discharge:  0.124877556431146     
+Iteration:           14  Mean Error on Discharge:  0.123732300590177     
+Iteration:           15  Mean Error on Discharge:  0.122745561750700     
+Iteration:           16  Mean Error on Discharge:  0.121918553120244     
+Iteration:           17  Mean Error on Discharge:  0.121251804959683     
+Iteration:           18  Mean Error on Discharge:  0.120745136660596     
+Iteration:           19  Mean Error on Discharge:  0.120397640954757     
+Iteration:           20  Mean Error on Discharge:  0.120207684029110     
+Iteration:           21  Mean Error on Discharge:  0.120172918651698     
+Iteration:           22  Mean Error on Discharge:  0.120290311802189     
+Iteration:           23  Mean Error on Discharge:  0.120556185054800     
+Iteration:           24  Mean Error on Discharge:  0.120966266223772     
+Iteration:           25  Mean Error on Discharge:  0.121515750228470     
+Iteration:           26  Mean Error on Discharge:  0.122199366695631     
+Iteration:           27  Mean Error on Discharge:  0.123011451905493     
+Iteration:           28  Mean Error on Discharge:  0.123946022607072     
+Iteration:           29  Mean Error on Discharge:  0.124996849425500     
+Iteration:           30  Mean Error on Discharge:  0.126157527863601     
+Iteration:           31  Mean Error on Discharge:  0.127421545249718     
+Iteration:           32  Mean Error on Discharge:  0.128782342368554     
+Iteration:           33  Mean Error on Discharge:  0.130233368899282     
+Iteration:           34  Mean Error on Discharge:  0.131768132149429     
+Iteration:           35  Mean Error on Discharge:  0.133380238895618     
+Iteration:           36  Mean Error on Discharge:  0.135063430640709     
+Iteration:           37  Mean Error on Discharge:  0.136811611388750     
+Iteration:           38  Mean Error on Discharge:  0.138618870891461     
+Iteration:           39  Mean Error on Discharge:  0.140479501230129     
+Iteration:           40  Mean Error on Discharge:  0.142388008879870     
+Iteration:           41  Mean Error on Discharge:  0.144339122458665     
+Iteration:           42  Mean Error on Discharge:  0.146327796831630     
+Iteration:           43  Mean Error on Discharge:  0.148349214168671     
+Iteration:           44  Mean Error on Discharge:  0.150398782510609     
+Iteration:           45  Mean Error on Discharge:  0.152472132339992     
+Iteration:           46  Mean Error on Discharge:  0.154565111638766     
+Iteration:           47  Mean Error on Discharge:  0.156673779740604     
+Iteration:           48  Mean Error on Discharge:  0.158794400396467     
+Iteration:           49  Mean Error on Discharge:  0.160923434284933     
+Iteration:           50  Mean Error on Discharge:  0.163057531006785     
+Iteration:           51  Mean Error on Discharge:  0.165193521419945     
+Iteration:           52  Mean Error on Discharge:  0.167328409809227     
+Iteration:           53  Mean Error on Discharge:  0.169459365908826     
+Iteration:           54  Mean Error on Discharge:  0.171583717304010     
+Iteration:           55  Mean Error on Discharge:  0.173698942095402     
+Iteration:           56  Mean Error on Discharge:  0.175802661862553     
+Iteration:           57  Mean Error on Discharge:  0.177892634947110     
+Iteration:           58  Mean Error on Discharge:  0.179966750062536     
+Iteration:           59  Mean Error on Discharge:  0.182023020227311     
+Iteration:           60  Mean Error on Discharge:  0.184059577010687     
+Iteration:           61  Mean Error on Discharge:  0.186074665074774     
+Iteration:           62  Mean Error on Discharge:  0.188066636993047     
+Iteration:           63  Mean Error on Discharge:  0.190033948323431     
+Iteration:           64  Mean Error on Discharge:  0.191975152913313     
+Iteration:           65  Mean Error on Discharge:  0.193888898414229     
+Iteration:           66  Mean Error on Discharge:  0.195773921985102     
+Iteration:           67  Mean Error on Discharge:  0.197629046164685     
+Iteration:           68  Mean Error on Discharge:  0.199453174896182     
+Iteration:           69  Mean Error on Discharge:  0.201245289689575     
+Iteration:           70  Mean Error on Discharge:  0.203004445909906     
+Iteration:           71  Mean Error on Discharge:  0.204729769182165     
+Iteration:           72  Mean Error on Discharge:  0.206420451907430     
+Iteration:           73  Mean Error on Discharge:  0.208075749886600     
+Iteration:           74  Mean Error on Discharge:  0.209694979049128     
+Iteration:           75  Mean Error on Discharge:  0.211277512288043     
+Iteration:           76  Mean Error on Discharge:  0.212822776403416     
+Iteration:           77  Mean Error on Discharge:  0.214330249157502     
+Iteration:           78  Mean Error on Discharge:  0.215799456445741     
+Iteration:           79  Mean Error on Discharge:  0.217229969587953     
+Iteration:           80  Mean Error on Discharge:  0.218621402749084     
+Iteration:           81  Mean Error on Discharge:  0.219973410477462     
+Iteration:           82  Mean Error on Discharge:  0.221285685382250     
+Iteration:           83  Mean Error on Discharge:  0.222557955944014     
+Iteration:           84  Mean Error on Discharge:  0.223789984460306     
+Iteration:           85  Mean Error on Discharge:  0.224981565126081     
+Iteration:           86  Mean Error on Discharge:  0.226132522247241     
+Iteration:           87  Mean Error on Discharge:  0.227242708584045     
+Iteration:           88  Mean Error on Discharge:  0.228312003819823     
+Iteration:           89  Mean Error on Discharge:  0.229340313149444     
+Iteration:           90  Mean Error on Discharge:  0.230327565989752     
+Iteration:           91  Mean Error on Discharge:  0.231273714751053     
+Iteration:           92  Mean Error on Discharge:  0.232178733774447     
+Iteration:           93  Mean Error on Discharge:  0.233042618301516     
+Iteration:           94  Mean Error on Discharge:  0.233865383532675     
+Iteration:           95  Mean Error on Discharge:  0.234647063750613     
+Iteration:           96  Mean Error on Discharge:  0.235387711498367     
+Iteration:           97  Mean Error on Discharge:  0.236087396801829     
+Iteration:           98  Mean Error on Discharge:  0.236746206427003     
+Iteration:           99  Mean Error on Discharge:  0.237364243163142     
+Iteration:          100  Mean Error on Discharge:  0.237941625123725     
+
+
+
+
+
+
+
+
+
+
+
+Variabledt  3.003975333026514E-307 DT   1.00000000000000     
+TIME STEP           6 TIME   6.00000000000000      PrintTime
+  1.00000000000000     
+
+Quasi-3D Calculation is off
+
+Sediment-transport is off
+
+Discharge   2.50000000000000      Change Discharge  0.000000000000000E+000
+Stage   10.0000000000000      Change Stage  0.000000000000000E+000
+
+Iteration:            1  Mean Error on Discharge:  0.238478485058334     
+Iteration:            2  Mean Error on Discharge:  0.238974969669592     
+Iteration:            3  Mean Error on Discharge:  0.239431238930631     
+Iteration:            4  Mean Error on Discharge:  0.239847465399946     
+Iteration:            5  Mean Error on Discharge:  0.240223833531736     
+Iteration:            6  Mean Error on Discharge:  0.240560538981314     
+Iteration:            7  Mean Error on Discharge:  0.240857787906389     
+Iteration:            8  Mean Error on Discharge:  0.241115796266295     
+Iteration:            9  Mean Error on Discharge:  0.241334789122210     
+Iteration:           10  Mean Error on Discharge:  0.241514999942519     
+Iteration:           11  Mean Error on Discharge:  0.241656669918050     
+Iteration:           12  Mean Error on Discharge:  0.241760047292615     
+Iteration:           13  Mean Error on Discharge:  0.241825386714577     
+Iteration:           14  Mean Error on Discharge:  0.241852948615373     
+Iteration:           15  Mean Error on Discharge:  0.241842998620924     
+Iteration:           16  Mean Error on Discharge:  0.241795807001623     
+Iteration:           17  Mean Error on Discharge:  0.241711648166267     
+Iteration:           18  Mean Error on Discharge:  0.241590800204825     
+Iteration:           19  Mean Error on Discharge:  0.241433544484274     
+Iteration:           20  Mean Error on Discharge:  0.241240165301058     
+Iteration:           21  Mean Error on Discharge:  0.241010949592925     
+Iteration:           22  Mean Error on Discharge:  0.240746186712072     
+Iteration:           23  Mean Error on Discharge:  0.240446168260667     
+Iteration:           24  Mean Error on Discharge:  0.240111187988902     
+Iteration:           25  Mean Error on Discharge:  0.239741541753991     
+Iteration:           26  Mean Error on Discharge:  0.239337527531610     
+Iteration:           27  Mean Error on Discharge:  0.238899445514617     
+Iteration:           28  Mean Error on Discharge:  0.238427598236028     
+Iteration:           29  Mean Error on Discharge:  0.237922290753423     
+Iteration:           30  Mean Error on Discharge:  0.237383830880337     
+Iteration:           31  Mean Error on Discharge:  0.236812529459607     
+Iteration:           32  Mean Error on Discharge:  0.236208700646726     
+Iteration:           33  Mean Error on Discharge:  0.235572662340147     
+Iteration:           34  Mean Error on Discharge:  0.234904736433979     
+Iteration:           35  Mean Error on Discharge:  0.234205249279068     
+Iteration:           36  Mean Error on Discharge:  0.233474532254009     
+Iteration:           37  Mean Error on Discharge:  0.232712921527642     
+Iteration:           38  Mean Error on Discharge:  0.231920759152843     
+Iteration:           39  Mean Error on Discharge:  0.231098393181057     
+Iteration:           40  Mean Error on Discharge:  0.230246178084292     
+Iteration:           41  Mean Error on Discharge:  0.229364475123803     
+Iteration:           42  Mean Error on Discharge:  0.228453652695994     
+Iteration:           43  Mean Error on Discharge:  0.227514086651326     
+Iteration:           44  Mean Error on Discharge:  0.226546160582572     
+Iteration:           45  Mean Error on Discharge:  0.225550266079457     
+Iteration:           46  Mean Error on Discharge:  0.224526802947414     
+Iteration:           47  Mean Error on Discharge:  0.223476179388880     
+Iteration:           48  Mean Error on Discharge:  0.222398812146333     
+Iteration:           49  Mean Error on Discharge:  0.221295126607116     
+Iteration:           50  Mean Error on Discharge:  0.220165556870278     
+Iteration:           51  Mean Error on Discharge:  0.219010545805721     
+Iteration:           52  Mean Error on Discharge:  0.217830544960876     
+Iteration:           53  Mean Error on Discharge:  0.216626014622276     
+Iteration:           54  Mean Error on Discharge:  0.215397423715167     
+Iteration:           55  Mean Error on Discharge:  0.214145249715920     
+Iteration:           56  Mean Error on Discharge:  0.212869978652275     
+Iteration:           57  Mean Error on Discharge:  0.211572104920412     
+Iteration:           58  Mean Error on Discharge:  0.210252130927974     
+Iteration:           59  Mean Error on Discharge:  0.208910567264031     
+Iteration:           60  Mean Error on Discharge:  0.207547932450584     
+Iteration:           61  Mean Error on Discharge:  0.206164752848432     
+Iteration:           62  Mean Error on Discharge:  0.204761562555502     
+Iteration:           63  Mean Error on Discharge:  0.203338903324153     
+Iteration:           64  Mean Error on Discharge:  0.201897324502125     
+Iteration:           65  Mean Error on Discharge:  0.200437382688091     
+Iteration:           66  Mean Error on Discharge:  0.198959642947753     
+Iteration:           67  Mean Error on Discharge:  0.197464677356458     
+Iteration:           68  Mean Error on Discharge:  0.195953065716722     
+Iteration:           69  Mean Error on Discharge:  0.194425395069555     
+Iteration:           70  Mean Error on Discharge:  0.192882260819389     
+Iteration:           71  Mean Error on Discharge:  0.191324266358145     
+Iteration:           72  Mean Error on Discharge:  0.189752023331007     
+Iteration:           73  Mean Error on Discharge:  0.188166151861556     
+Iteration:           74  Mean Error on Discharge:  0.186567280800520     
+Iteration:           75  Mean Error on Discharge:  0.184956047993749     
+Iteration:           76  Mean Error on Discharge:  0.183333100564371     
+Iteration:           77  Mean Error on Discharge:  0.181699095203762     
+Iteration:           78  Mean Error on Discharge:  0.180054698465920     
+Iteration:           79  Mean Error on Discharge:  0.178400587059762     
+Iteration:           80  Mean Error on Discharge:  0.176737448134265     
+Iteration:           81  Mean Error on Discharge:  0.175065979551573     
+Iteration:           82  Mean Error on Discharge:  0.173386890143701     
+Iteration:           83  Mean Error on Discharge:  0.171700899949021     
+Iteration:           84  Mean Error on Discharge:  0.170008740425266     
+Iteration:           85  Mean Error on Discharge:  0.168311154636528     
+Iteration:           86  Mean Error on Discharge:  0.166608897412417     
+Iteration:           87  Mean Error on Discharge:  0.164902735478404     
+Iteration:           88  Mean Error on Discharge:  0.163193447556685     
+Iteration:           89  Mean Error on Discharge:  0.161481824435044     
+Iteration:           90  Mean Error on Discharge:  0.159768669024116     
+Iteration:           91  Mean Error on Discharge:  0.158054796375335     
+Iteration:           92  Mean Error on Discharge:  0.156341033678953     
+Iteration:           93  Mean Error on Discharge:  0.154628220253543     
+Iteration:           94  Mean Error on Discharge:  0.152917207517384     
+Iteration:           95  Mean Error on Discharge:  0.151208858954513     
+Iteration:           96  Mean Error on Discharge:  0.149504050078275     
+Iteration:           97  Mean Error on Discharge:  0.147803668397125     
+Iteration:           98  Mean Error on Discharge:  0.146108613386942     
+Iteration:           99  Mean Error on Discharge:  0.144419796473153     
+Iteration:          100  Mean Error on Discharge:  0.142738141025237     
+
+
+
+
+
+
+
+
+
+
+
+Variabledt  3.003975333026514E-307 DT   1.00000000000000     
+TIME STEP           7 TIME   7.00000000000000      PrintTime
+  1.00000000000000     
+
+Quasi-3D Calculation is off
+
+Sediment-transport is off
+
+Discharge   2.50000000000000      Change Discharge  0.000000000000000E+000
+Stage   10.0000000000000      Change Stage  0.000000000000000E+000
+
+Iteration:            1  Mean Error on Discharge:  0.141064582364695     
+Iteration:            2  Mean Error on Discharge:  0.139400067786270     
+Iteration:            3  Mean Error on Discharge:  0.137745556590641     
+Iteration:            4  Mean Error on Discharge:  0.136102020542544     
+Iteration:            5  Mean Error on Discharge:  0.134470442548662     
+Iteration:            6  Mean Error on Discharge:  0.132851818152386     
+Iteration:            7  Mean Error on Discharge:  0.131247154976024     
+Iteration:            8  Mean Error on Discharge:  0.129657472792021     
+Iteration:            9  Mean Error on Discharge:  0.128083804003323     
+Iteration:           10  Mean Error on Discharge:  0.126527192531014     
+Iteration:           11  Mean Error on Discharge:  0.124988694186065     
+Iteration:           12  Mean Error on Discharge:  0.123469376324496     
+Iteration:           13  Mean Error on Discharge:  0.121970317454508     
+Iteration:           14  Mean Error on Discharge:  0.120492606703101     
+Iteration:           15  Mean Error on Discharge:  0.119037343118302     
+Iteration:           16  Mean Error on Discharge:  0.117605634782712     
+Iteration:           17  Mean Error on Discharge:  0.116198597713995     
+Iteration:           18  Mean Error on Discharge:  0.114817354528439     
+Iteration:           19  Mean Error on Discharge:  0.113463032844713     
+Iteration:           20  Mean Error on Discharge:  0.112136763406691     
+Iteration:           21  Mean Error on Discharge:  0.110839677906605     
+Iteration:           22  Mean Error on Discharge:  0.109572906493044     
+Iteration:           23  Mean Error on Discharge:  0.108337574952102     
+Iteration:           24  Mean Error on Discharge:  0.107134801554813     
+Iteration:           25  Mean Error on Discharge:  0.105965693569213     
+Iteration:           26  Mean Error on Discharge:  0.104831343441468     
+Iteration:           27  Mean Error on Discharge:  0.103732824656934     
+Iteration:           28  Mean Error on Discharge:  0.102671187301731     
+Iteration:           29  Mean Error on Discharge:  0.101647453342158     
+Iteration:           30  Mean Error on Discharge:  0.100662611660835     
+Iteration:           31  Mean Error on Discharge:  9.971761289226977E-002
+Iteration:           32  Mean Error on Discharge:  9.881336410071531E-002
+Iteration:           33  Mean Error on Discharge:  9.795072335700870E-002
+Iteration:           34  Mean Error on Discharge:  9.713049427605559E-002
+Iteration:           35  Mean Error on Discharge:  9.635342058253532E-002
+Iteration:           36  Mean Error on Discharge:  9.562018077737433E-002
+Iteration:           37  Mean Error on Discharge:  9.493138298106737E-002
+Iteration:           38  Mean Error on Discharge:  9.428756003210623E-002
+Iteration:           39  Mean Error on Discharge:  9.368916491898839E-002
+Iteration:           40  Mean Error on Discharge:  9.313656662280349E-002
+Iteration:           41  Mean Error on Discharge:  9.263004644357355E-002
+Iteration:           42  Mean Error on Discharge:  9.216979487794520E-002
+Iteration:           43  Mean Error on Discharge:  9.175590910793460E-002
+Iteration:           44  Mean Error on Discharge:  9.138839115095861E-002
+Iteration:           45  Mean Error on Discharge:  9.106714671004798E-002
+Iteration:           46  Mean Error on Discharge:  9.079198475078393E-002
+Iteration:           47  Mean Error on Discharge:  9.056261781807687E-002
+Iteration:           48  Mean Error on Discharge:  9.037866309212017E-002
+Iteration:           49  Mean Error on Discharge:  9.023964416915860E-002
+Iteration:           50  Mean Error on Discharge:  9.014499353938264E-002
+Iteration:           51  Mean Error on Discharge:  9.009405572186492E-002
+Iteration:           52  Mean Error on Discharge:  9.008609100544279E-002
+Iteration:           53  Mean Error on Discharge:  9.012027973497386E-002
+Iteration:           54  Mean Error on Discharge:  9.019572707466200E-002
+Iteration:           55  Mean Error on Discharge:  9.031146817469871E-002
+Iteration:           56  Mean Error on Discharge:  9.046647366379841E-002
+Iteration:           57  Mean Error on Discharge:  9.065965538881142E-002
+Iteration:           58  Mean Error on Discharge:  9.088987232311645E-002
+Iteration:           59  Mean Error on Discharge:  9.115593656781464E-002
+Iteration:           60  Mean Error on Discharge:  9.145661937373240E-002
+Iteration:           61  Mean Error on Discharge:  9.179065711747433E-002
+Iteration:           62  Mean Error on Discharge:  9.215675717121481E-002
+Iteration:           63  Mean Error on Discharge:  9.255360361290958E-002
+Iteration:           64  Mean Error on Discharge:  9.297986273118732E-002
+Iteration:           65  Mean Error on Discharge:  9.343418828695663E-002
+Iteration:           66  Mean Error on Discharge:  9.391522650124075E-002
+Iteration:           67  Mean Error on Discharge:  9.442162074678113E-002
+Iteration:           68  Mean Error on Discharge:  9.495201592391742E-002
+Iteration:           69  Mean Error on Discharge:  9.550506251264686E-002
+Iteration:           70  Mean Error on Discharge:  9.607942030346660E-002
+Iteration:           71  Mean Error on Discharge:  9.667376179657476E-002
+Iteration:           72  Mean Error on Discharge:  9.728677527764303E-002
+Iteration:           73  Mean Error on Discharge:  9.791716757773836E-002
+Iteration:           74  Mean Error on Discharge:  9.856366652760114E-002
+Iteration:           75  Mean Error on Discharge:  9.922502311858364E-002
+Iteration:           76  Mean Error on Discharge:  9.990001338408519E-002
+Iteration:           77  Mean Error on Discharge:  0.100587440016418     
+Iteration:           78  Mean Error on Discharge:  0.101286133734749     
+Iteration:           79  Mean Error on Discharge:  0.101994954420135     
+Iteration:           80  Mean Error on Discharge:  0.102712792033790     
+Iteration:           81  Mean Error on Discharge:  0.103438567334652     
+Iteration:           82  Mean Error on Discharge:  0.104171232435808     
+Iteration:           83  Mean Error on Discharge:  0.104909771120173     
+Iteration:           84  Mean Error on Discharge:  0.105653199072680     
+Iteration:           85  Mean Error on Discharge:  0.106400563948787     
+Iteration:           86  Mean Error on Discharge:  0.107150945316512     
+Iteration:           87  Mean Error on Discharge:  0.107903454485288     
+Iteration:           88  Mean Error on Discharge:  0.108657234234200     
+Iteration:           89  Mean Error on Discharge:  0.109411458451544     
+Iteration:           90  Mean Error on Discharge:  0.110165331697099     
+Iteration:           91  Mean Error on Discharge:  0.110918088697768     
+Iteration:           92  Mean Error on Discharge:  0.111668993786808     
+Iteration:           93  Mean Error on Discharge:  0.112417340296120     
+Iteration:           94  Mean Error on Discharge:  0.113162449910572     
+Iteration:           95  Mean Error on Discharge:  0.113903672003205     
+Iteration:           96  Mean Error on Discharge:  0.114640382873979     
+Iteration:           97  Mean Error on Discharge:  0.115371985249726     
+Iteration:           98  Mean Error on Discharge:  0.116097907216887     
+Iteration:           99  Mean Error on Discharge:  0.116817601768753     
+Iteration:          100  Mean Error on Discharge:  0.117530545992741     
+
+
+
+
+
+
+
+
+
+
+
+Variabledt  3.003975333026514E-307 DT   1.00000000000000     
+TIME STEP           8 TIME   8.00000000000000      PrintTime
+  1.00000000000000     
+
+Quasi-3D Calculation is off
+
+Sediment-transport is off
+
+Discharge   2.50000000000000      Change Discharge  0.000000000000000E+000
+Stage   10.0000000000000      Change Stage  0.000000000000000E+000
+
+Iteration:            1  Mean Error on Discharge:  0.118236240367491     
+Iteration:            2  Mean Error on Discharge:  0.118934208060639     
+Iteration:            3  Mean Error on Discharge:  0.119623994241140     
+Iteration:            4  Mean Error on Discharge:  0.120305165408785     
+Iteration:            5  Mean Error on Discharge:  0.120977308743022     
+Iteration:            6  Mean Error on Discharge:  0.121640031472845     
+Iteration:            7  Mean Error on Discharge:  0.122292960268880     
+Iteration:            8  Mean Error on Discharge:  0.122935740658462     
+Iteration:            9  Mean Error on Discharge:  0.123568036464199     
+Iteration:           10  Mean Error on Discharge:  0.124189529266596     
+Iteration:           11  Mean Error on Discharge:  0.124799917884501     
+Iteration:           12  Mean Error on Discharge:  0.125398917884978     
+Iteration:           13  Mean Error on Discharge:  0.125986261111235     
+Iteration:           14  Mean Error on Discharge:  0.126561695230877     
+Iteration:           15  Mean Error on Discharge:  0.127124983303028     
+Iteration:           16  Mean Error on Discharge:  0.127675903185132     
+Iteration:           17  Mean Error on Discharge:  0.128214247414656     
+Iteration:           18  Mean Error on Discharge:  0.128739822794655     
+Iteration:           19  Mean Error on Discharge:  0.129252449948199     
+Iteration:           20  Mean Error on Discharge:  0.129751962957833     
+Iteration:           21  Mean Error on Discharge:  0.130238209015525     
+Iteration:           22  Mean Error on Discharge:  0.130711048081801     
+Iteration:           23  Mean Error on Discharge:  0.131170352553162     
+Iteration:           24  Mean Error on Discharge:  0.131616006936923     
+Iteration:           25  Mean Error on Discharge:  0.132047907532896     
+Iteration:           26  Mean Error on Discharge:  0.132465962121432     
+Iteration:           27  Mean Error on Discharge:  0.132870089657543     
+Iteration:           28  Mean Error on Discharge:  0.133260219970926     
+Iteration:           29  Mean Error on Discharge:  0.133636293471895     
+Iteration:           30  Mean Error on Discharge:  0.133998260863240     
+Iteration:           31  Mean Error on Discharge:  0.134346082858197     
+Iteration:           32  Mean Error on Discharge:  0.134679729904682     
+Iteration:           33  Mean Error on Discharge:  0.134999181916096     
+Iteration:           34  Mean Error on Discharge:  0.135304428008808     
+Iteration:           35  Mean Error on Discharge:  0.135595466246682     
+Iteration:           36  Mean Error on Discharge:  0.135872303392717     
+Iteration:           37  Mean Error on Discharge:  0.136134954667979     
+Iteration:           38  Mean Error on Discharge:  0.136383443517914     
+Iteration:           39  Mean Error on Discharge:  0.136617801385937     
+Iteration:           40  Mean Error on Discharge:  0.136838067494299     
+Iteration:           41  Mean Error on Discharge:  0.137044288631919     
+Iteration:           42  Mean Error on Discharge:  0.137236518948982     
+Iteration:           43  Mean Error on Discharge:  0.137414819757873     
+Iteration:           44  Mean Error on Discharge:  0.137579259340019     
+Iteration:           45  Mean Error on Discharge:  0.137729912758180     
+Iteration:           46  Mean Error on Discharge:  0.137866861673624     
+Iteration:           47  Mean Error on Discharge:  0.137990194167668     
+Iteration:           48  Mean Error on Discharge:  0.138100004422829     
+Iteration:           49  Mean Error on Discharge:  0.138196392988783     
+Iteration:           50  Mean Error on Discharge:  0.138279466156823     
+Iteration:           51  Mean Error on Discharge:  0.138349335970876     
+Iteration:           52  Mean Error on Discharge:  0.138406120046645     
+Iteration:           53  Mean Error on Discharge:  0.138449941476133     
+Iteration:           54  Mean Error on Discharge:  0.138480928457915     
+Iteration:           55  Mean Error on Discharge:  0.138499214362306     
+Iteration:           56  Mean Error on Discharge:  0.138504937665499     
+Iteration:           57  Mean Error on Discharge:  0.138498241452041     
+Iteration:           58  Mean Error on Discharge:  0.138479273437912     
+Iteration:           59  Mean Error on Discharge:  0.138448185795143     
+Iteration:           60  Mean Error on Discharge:  0.138405134996265     
+Iteration:           61  Mean Error on Discharge:  0.138350281662808     
+Iteration:           62  Mean Error on Discharge:  0.138283790410024     
+Iteration:           63  Mean Error on Discharge:  0.138205829692433     
+Iteration:           64  Mean Error on Discharge:  0.138116571649092     
+Iteration:           65  Mean Error on Discharge:  0.138016191948198     
+Iteration:           66  Mean Error on Discharge:  0.137904869631023     
+Iteration:           67  Mean Error on Discharge:  0.137782786955175     
+Iteration:           68  Mean Error on Discharge:  0.137650129237363     
+Iteration:           69  Mean Error on Discharge:  0.137507084695843     
+Iteration:           70  Mean Error on Discharge:  0.137353844292856     
+Iteration:           71  Mean Error on Discharge:  0.137190601577336     
+Iteration:           72  Mean Error on Discharge:  0.137017552528187     
+Iteration:           73  Mean Error on Discharge:  0.136834895398381     
+Iteration:           74  Mean Error on Discharge:  0.136642830560126     
+Iteration:           75  Mean Error on Discharge:  0.136441560351219     
+Iteration:           76  Mean Error on Discharge:  0.136231288922660     
+Iteration:           77  Mean Error on Discharge:  0.136012222087554     
+Iteration:           78  Mean Error on Discharge:  0.135784567171204     
+Iteration:           79  Mean Error on Discharge:  0.135548532862289     
+Iteration:           80  Mean Error on Discharge:  0.135304329064956     
+Iteration:           81  Mean Error on Discharge:  0.135052166751645     
+Iteration:           82  Mean Error on Discharge:  0.134792257816454     
+Iteration:           83  Mean Error on Discharge:  0.134524814928816     
+Iteration:           84  Mean Error on Discharge:  0.134250051387403     
+Iteration:           85  Mean Error on Discharge:  0.133968180974023     
+Iteration:           86  Mean Error on Discharge:  0.133679417774894     
+Iteration:           87  Mean Error on Discharge:  0.133383976137821     
+Iteration:           88  Mean Error on Discharge:  0.133082070414173     
+Iteration:           89  Mean Error on Discharge:  0.132773914863272     
+Iteration:           90  Mean Error on Discharge:  0.132459723489631     
+Iteration:           91  Mean Error on Discharge:  0.132139709634878     
+Iteration:           92  Mean Error on Discharge:  0.131814086668354     
+Iteration:           93  Mean Error on Discharge:  0.131483066961699     
+Iteration:           94  Mean Error on Discharge:  0.131146862078750     
+Iteration:           95  Mean Error on Discharge:  0.130805682602822     
+Iteration:           96  Mean Error on Discharge:  0.130459737993752     
+Iteration:           97  Mean Error on Discharge:  0.130109236447453     
+Iteration:           98  Mean Error on Discharge:  0.129754384758433     
+Iteration:           99  Mean Error on Discharge:  0.129395388185579     
+Iteration:          100  Mean Error on Discharge:  0.129032450321448     
+
+
+
+
+
+
+
+
+
+
+
+Variabledt  3.003975333026514E-307 DT   1.00000000000000     
+TIME STEP           9 TIME   9.00000000000000      PrintTime
+  1.00000000000000     
+
+Quasi-3D Calculation is off
+
+Sediment-transport is off
+
+Discharge   2.50000000000000      Change Discharge  0.000000000000000E+000
+Stage   10.0000000000000      Change Stage  0.000000000000000E+000
+
+Iteration:            1  Mean Error on Discharge:  0.128665772965296     
+Iteration:            2  Mean Error on Discharge:  0.128295556000048     
+Iteration:            3  Mean Error on Discharge:  0.127921997273396     
+Iteration:            4  Mean Error on Discharge:  0.127545292503615     
+Iteration:            5  Mean Error on Discharge:  0.127165635102460     
+Iteration:            6  Mean Error on Discharge:  0.126783216151477     
+Iteration:            7  Mean Error on Discharge:  0.126398224260581     
+Iteration:            8  Mean Error on Discharge:  0.126010845479677     
+Iteration:            9  Mean Error on Discharge:  0.125621263209769     
+Iteration:           10  Mean Error on Discharge:  0.125229658119776     
+Iteration:           11  Mean Error on Discharge:  0.124836208074735     
+Iteration:           12  Mean Error on Discharge:  0.124441088065981     
+Iteration:           13  Mean Error on Discharge:  0.124044470126273     
+Iteration:           14  Mean Error on Discharge:  0.123646523282257     
+Iteration:           15  Mean Error on Discharge:  0.123247413500514     
+Iteration:           16  Mean Error on Discharge:  0.122847303639284     
+Iteration:           17  Mean Error on Discharge:  0.122446353405679     
+Iteration:           18  Mean Error on Discharge:  0.122044719318380     
+Iteration:           19  Mean Error on Discharge:  0.121642554675637     
+Iteration:           20  Mean Error on Discharge:  0.121240009528628     
+Iteration:           21  Mean Error on Discharge:  0.120837230660050     
+Iteration:           22  Mean Error on Discharge:  0.120434361567960     
+Iteration:           23  Mean Error on Discharge:  0.120031542454862     
+Iteration:           24  Mean Error on Discharge:  0.119628910221959     
+Iteration:           25  Mean Error on Discharge:  0.119226598468578     
+Iteration:           26  Mean Error on Discharge:  0.118824737496649     
+Iteration:           27  Mean Error on Discharge:  0.118423454320140     
+Iteration:           28  Mean Error on Discharge:  0.118022872679268     
+Iteration:           29  Mean Error on Discharge:  0.117623113059342     
+Iteration:           30  Mean Error on Discharge:  0.117224292713956     
+Iteration:           31  Mean Error on Discharge:  0.116826525710424     
+Iteration:           32  Mean Error on Discharge:  0.116429922929013     
+Iteration:           33  Mean Error on Discharge:  0.116034592107354     
+Iteration:           34  Mean Error on Discharge:  0.115640637883432     
+Iteration:           35  Mean Error on Discharge:  0.115248161837386     
+Iteration:           36  Mean Error on Discharge:  0.114857262536476     
+Iteration:           37  Mean Error on Discharge:  0.114468035583167     
+Iteration:           38  Mean Error on Discharge:  0.114080573666159     
+Iteration:           39  Mean Error on Discharge:  0.113694966614394     
+Iteration:           40  Mean Error on Discharge:  0.113311301453880     
+Iteration:           41  Mean Error on Discharge:  0.112929662467314     
+Iteration:           42  Mean Error on Discharge:  0.112550131256346     
+Iteration:           43  Mean Error on Discharge:  0.112172786806360     
+Iteration:           44  Mean Error on Discharge:  0.111797705553578     
+Iteration:           45  Mean Error on Discharge:  0.111424961454224     
+Iteration:           46  Mean Error on Discharge:  0.111054626055502     
+Iteration:           47  Mean Error on Discharge:  0.110686768567988     
+Iteration:           48  Mean Error on Discharge:  0.110321455939113     
+Iteration:           49  Mean Error on Discharge:  0.109958752927310     
+Iteration:           50  Mean Error on Discharge:  0.109598722176344     
+Iteration:           51  Mean Error on Discharge:  0.109241424289445     
+Iteration:           52  Mean Error on Discharge:  0.108886917902731     
+Iteration:           53  Mean Error on Discharge:  0.108535259757452     
+Iteration:           54  Mean Error on Discharge:  0.108186504772157     
+Iteration:           55  Mean Error on Discharge:  0.107840706088118     
+Iteration:           56  Mean Error on Discharge:  0.107497915195936     
+Iteration:           57  Mean Error on Discharge:  0.107158181943550     
+Iteration:           58  Mean Error on Discharge:  0.106821554613091     
+Iteration:           59  Mean Error on Discharge:  0.106488079977679     
+Iteration:           60  Mean Error on Discharge:  0.106157803354485     
+Iteration:           61  Mean Error on Discharge:  0.105830768653988     
+Iteration:           62  Mean Error on Discharge:  0.105507018425269     
+Iteration:           63  Mean Error on Discharge:  0.105186593897417     
+Iteration:           64  Mean Error on Discharge:  0.104869535016959     
+Iteration:           65  Mean Error on Discharge:  0.104555880481481     
+Iteration:           66  Mean Error on Discharge:  0.104245667769437     
+Iteration:           67  Mean Error on Discharge:  0.103938933166252     
+Iteration:           68  Mean Error on Discharge:  0.103635711786791     
+Iteration:           69  Mean Error on Discharge:  0.103336037594225     
+Iteration:           70  Mean Error on Discharge:  0.103039943415309     
+Iteration:           71  Mean Error on Discharge:  0.102747460952113     
+Iteration:           72  Mean Error on Discharge:  0.102458620790104     
+Iteration:           73  Mean Error on Discharge:  0.102173452402672     
+Iteration:           74  Mean Error on Discharge:  0.101891984151984     
+Iteration:           75  Mean Error on Discharge:  0.101614243286263     
+Iteration:           76  Mean Error on Discharge:  0.101340255933508     
+Iteration:           77  Mean Error on Discharge:  0.101070047091742     
+Iteration:           78  Mean Error on Discharge:  0.100803640615967     
+Iteration:           79  Mean Error on Discharge:  0.100541059201997     
+Iteration:           80  Mean Error on Discharge:  0.100282324367380     
+Iteration:           81  Mean Error on Discharge:  0.100027456429647     
+Iteration:           82  Mean Error on Discharge:  9.977647448216302E-002
+Iteration:           83  Mean Error on Discharge:  9.952939636779597E-002
+Iteration:           84  Mean Error on Discharge:  9.928623865060046E-002
+Iteration:           85  Mean Error on Discharge:  9.904701658576684E-002
+Iteration:           86  Mean Error on Discharge:  9.881174408793168E-002
+Iteration:           87  Mean Error on Discharge:  9.858043369801320E-002
+Iteration:           88  Mean Error on Discharge:  9.835309654871391E-002
+Iteration:           89  Mean Error on Discharge:  9.812974232871337E-002
+Iteration:           90  Mean Error on Discharge:  9.791037924573819E-002
+Iteration:           91  Mean Error on Discharge:  9.769501398856258E-002
+Iteration:           92  Mean Error on Discharge:  9.748365168788838E-002
+Iteration:           93  Mean Error on Discharge:  9.727629587696332E-002
+Iteration:           94  Mean Error on Discharge:  9.707294845148365E-002
+Iteration:           95  Mean Error on Discharge:  9.687360962911321E-002
+Iteration:           96  Mean Error on Discharge:  9.667827791411608E-002
+Iteration:           97  Mean Error on Discharge:  9.648695007287987E-002
+Iteration:           98  Mean Error on Discharge:  9.629962101240518E-002
+Iteration:           99  Mean Error on Discharge:  9.611628384507118E-002
+Iteration:          100  Mean Error on Discharge:  9.593692956586879E-002
+
+
+
+
+
+
+
+
+
+
+
+Variabledt  3.003975333026514E-307 DT   1.00000000000000     
+TIME STEP          10 TIME   10.0000000000000      PrintTime
+  1.00000000000000     
+
+Quasi-3D Calculation is off
+
+Sediment-transport is off
+
+Discharge   2.50000000000000      Change Discharge  0.000000000000000E+000
+Stage   10.0000000000000      Change Stage  0.000000000000000E+000
+
+Iteration:            1  Mean Error on Discharge:  9.576154775221218E-002
+Iteration:            2  Mean Error on Discharge:  9.559012575558154E-002
+Iteration:            3  Mean Error on Discharge:  9.542264896348955E-002
+Iteration:            4  Mean Error on Discharge:  9.525910074152337E-002
+Iteration:            5  Mean Error on Discharge:  9.509946240256312E-002
+Iteration:            6  Mean Error on Discharge:  9.494371317893499E-002
+Iteration:            7  Mean Error on Discharge:  9.479183019756088E-002
+Iteration:            8  Mean Error on Discharge:  9.464378845822288E-002
+Iteration:            9  Mean Error on Discharge:  9.449956081500516E-002
+Iteration:           10  Mean Error on Discharge:  9.435911796094734E-002
+Iteration:           11  Mean Error on Discharge:  9.422242841599357E-002
+Iteration:           12  Mean Error on Discharge:  9.408945851830566E-002
+Iteration:           13  Mean Error on Discharge:  9.396017241903769E-002
+Iteration:           14  Mean Error on Discharge:  9.383453208068032E-002
+Iteration:           15  Mean Error on Discharge:  9.371249727909012E-002
+Iteration:           16  Mean Error on Discharge:  9.359402560929068E-002
+Iteration:           17  Mean Error on Discharge:  9.347907249515403E-002
+Iteration:           18  Mean Error on Discharge:  9.336759120299269E-002
+Iteration:           19  Mean Error on Discharge:  9.325953285909271E-002
+Iteration:           20  Mean Error on Discharge:  9.315484647118438E-002
+Iteration:           21  Mean Error on Discharge:  9.305347895378865E-002
+Iteration:           22  Mean Error on Discharge:  9.295537515739313E-002
+Iteration:           23  Mean Error on Discharge:  9.286047790135739E-002
+Iteration:           24  Mean Error on Discharge:  9.276872801045910E-002
+Iteration:           25  Mean Error on Discharge:  9.268006435497186E-002
+Iteration:           26  Mean Error on Discharge:  9.259442363243331E-002
+Iteration:           27  Mean Error on Discharge:  9.251174156253897E-002
+Iteration:           28  Mean Error on Discharge:  9.243195145349475E-002
+Iteration:           29  Mean Error on Discharge:  9.235498436319446E-002
+Iteration:           30  Mean Error on Discharge:  9.228077015691755E-002
+Iteration:           31  Mean Error on Discharge:  9.220923698139438E-002
+Iteration:           32  Mean Error on Discharge:  9.214031140444132E-002
+Iteration:           33  Mean Error on Discharge:  9.207391848233937E-002
+Iteration:           34  Mean Error on Discharge:  9.200998183022560E-002
+Iteration:           35  Mean Error on Discharge:  9.194842369507826E-002
+Iteration:           36  Mean Error on Discharge:  9.188916503083408E-002
+Iteration:           37  Mean Error on Discharge:  9.183212557525509E-002
+Iteration:           38  Mean Error on Discharge:  9.177722392826168E-002
+Iteration:           39  Mean Error on Discharge:  9.172437763150459E-002
+Iteration:           40  Mean Error on Discharge:  9.167350324913985E-002
+Iteration:           41  Mean Error on Discharge:  9.162451644987060E-002
+Iteration:           42  Mean Error on Discharge:  9.157733209040568E-002
+Iteration:           43  Mean Error on Discharge:  9.153186430056380E-002
+Iteration:           44  Mean Error on Discharge:  9.148802657015921E-002
+Iteration:           45  Mean Error on Discharge:  9.144573183785405E-002
+Iteration:           46  Mean Error on Discharge:  9.140489258193701E-002
+Iteration:           47  Mean Error on Discharge:  9.136542091293509E-002
+Iteration:           48  Mean Error on Discharge:  9.132722866786008E-002
+Iteration:           49  Mean Error on Discharge:  9.129022750572349E-002
+Iteration:           50  Mean Error on Discharge:  9.125432900390791E-002
+Iteration:           51  Mean Error on Discharge:  9.121944475501020E-002
+Iteration:           52  Mean Error on Discharge:  9.118548646369171E-002
+Iteration:           53  Mean Error on Discharge:  9.115236604316231E-002
+Iteration:           54  Mean Error on Discharge:  9.111999571094950E-002
+Iteration:           55  Mean Error on Discharge:  9.108828808374753E-002
+Iteration:           56  Mean Error on Discharge:  9.105715627104415E-002
+Iteration:           57  Mean Error on Discharge:  9.102651396742192E-002
+Iteration:           58  Mean Error on Discharge:  9.099627554338048E-002
+Iteration:           59  Mean Error on Discharge:  9.096635613453845E-002
+Iteration:           60  Mean Error on Discharge:  9.093667172911546E-002
+Iteration:           61  Mean Error on Discharge:  9.090713925358108E-002
+Iteration:           62  Mean Error on Discharge:  9.087767665635446E-002
+Iteration:           63  Mean Error on Discharge:  9.084820298950833E-002
+Iteration:           64  Mean Error on Discharge:  9.081863847019911E-002
+Iteration:           65  Mean Error on Discharge:  9.078890457810342E-002
+Iteration:           66  Mean Error on Discharge:  9.075892416141325E-002
+Iteration:           67  Mean Error on Discharge:  9.072862146556306E-002
+Iteration:           68  Mean Error on Discharge:  9.069792221867580E-002
+Iteration:           69  Mean Error on Discharge:  9.066675370229089E-002
+Iteration:           70  Mean Error on Discharge:  9.063504482067752E-002
+Iteration:           71  Mean Error on Discharge:  9.060272616882409E-002
+Iteration:           72  Mean Error on Discharge:  9.056973009917096E-002
+Iteration:           73  Mean Error on Discharge:  9.053599078700804E-002
+Iteration:           74  Mean Error on Discharge:  9.050144429440610E-002
+Iteration:           75  Mean Error on Discharge:  9.046602863243280E-002
+Iteration:           76  Mean Error on Discharge:  9.042968382135047E-002
+Iteration:           77  Mean Error on Discharge:  9.039235194849461E-002
+Iteration:           78  Mean Error on Discharge:  9.035397722345850E-002
+Iteration:           79  Mean Error on Discharge:  9.031450603034008E-002
+Iteration:           80  Mean Error on Discharge:  9.027388697681753E-002
+Iteration:           81  Mean Error on Discharge:  9.023207093994953E-002
+Iteration:           82  Mean Error on Discharge:  9.018901110868613E-002
+Iteration:           83  Mean Error on Discharge:  9.014466302320893E-002
+Iteration:           84  Mean Error on Discharge:  9.009898459106647E-002
+Iteration:           85  Mean Error on Discharge:  9.005193618451027E-002
+Iteration:           86  Mean Error on Discharge:  9.000348060272925E-002
+Iteration:           87  Mean Error on Discharge:  8.995358312852569E-002
+Iteration:           88  Mean Error on Discharge:  8.990221155231562E-002
+Iteration:           89  Mean Error on Discharge:  8.984933619684728E-002
+Iteration:           90  Mean Error on Discharge:  8.979492994002176E-002
+Iteration:           91  Mean Error on Discharge:  8.973896823575085E-002
+Iteration:           92  Mean Error on Discharge:  8.968142913272084E-002
+Iteration:           93  Mean Error on Discharge:  8.962229329091367E-002
+Iteration:           94  Mean Error on Discharge:  8.956154399559767E-002
+Iteration:           95  Mean Error on Discharge:  8.949916716867005E-002
+Iteration:           96  Mean Error on Discharge:  8.943515137709382E-002
+Iteration:           97  Mean Error on Discharge:  8.936948783829829E-002
+Iteration:           98  Mean Error on Discharge:  8.930217042253523E-002
+Iteration:           99  Mean Error on Discharge:  8.923319565210504E-002
+Iteration:          100  Mean Error on Discharge:  8.916256269758510E-002

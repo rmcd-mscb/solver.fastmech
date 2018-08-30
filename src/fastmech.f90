@@ -10,7 +10,7 @@
     use writecgns
     use rivvertmod
     use stressdivmod
-    !	use csedmod
+    use csedmod
     use uinitmod
     use tridiag
 

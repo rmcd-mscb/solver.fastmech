@@ -13,7 +13,7 @@
     !****************************************************************************
 
     program Stagr_Console
-    USE RivStagr4Mod_jmn
+    !USE RivStagr4Mod_jmn
     use RivStagrMod_bmi
     implicit none
     INTEGER(4) count, num, i, status, cptArg
@@ -53,7 +53,7 @@
             endif
             call STAGRBMI(file)
         else
-            Call stagr4(file)
+            !Call stagr4(file)
         endif
     endif
 

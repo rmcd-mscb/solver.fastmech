@@ -1,47 +1,36 @@
-    MODULE EInitMod
-    USE CalcCond
-    USE RivVarMod
+    MODULE EInitMod2
+    USE CalcCond2
+    USE RivVarMod2
     IMPLICIT NONE
 
     CONTAINS
-    SUBROUTINE EInit(e, hl, eta, ibc, w, hav)
+    SUBROUTINE EInit(rvo, cco, e, hl, eta, ibc, w, hav)
     IMPLICIT NONE
-    REAL(KIND=mp), DIMENSION(ns, nn), INTENT(INOUT) :: e, hl
-    REAL(KIND=mp), DIMENSION(ns, nn), INTENT(IN) :: eta
-    INTEGER, DIMENSION(ns, nn), INTENT(IN) :: ibc
-    REAL(KIND=mp), DIMENSION(ns), INTENT(IN) :: hav, w
+    type(rivvar), intent(inout) :: rvo
+    type(calccond), intent(inout) :: cco
+    REAL(KIND=mp), DIMENSION(:, :), INTENT(INOUT) :: e, hl
+    REAL(KIND=mp), DIMENSION(:, :), INTENT(IN) :: eta
+    INTEGER, DIMENSION(:, :), INTENT(IN) :: ibc
+    REAL(KIND=mp), DIMENSION(:), INTENT(IN) :: hav, w
     REAL(KIND=mp) :: deln, twidth, dz
     INTEGER :: i, j, ibtot, iinc
-    write(6,*) "WSE", lbwse, rbwse
-    DO 30 i = 1,ns
-        deln = w(i)/nn-1
+    !write(6,*) "WSE", lbwse, rbwse
+    DO 30 i = 1,rvo%ns
+        deln = w(i)/rvo%nn-1
         ibtot = 0
-        DO 25 j = 1,nn
+        DO 25 j = 1,rvo%nn
             IF(ibc(i,j).ne.0) THEN
                 ibtot = ibtot+1
             ENDIF
 25      CONTINUE
         twidth = deln*ibtot
-        dz = (lbwse - rbwse)/twidth
+        !dz = (lbwse - rbwse)/twidth
         iinc = 0
-        DO 27 j = 1,nn
-            !			IF(i.eq.ns.and.stagetype.eq.1) THEN
-            !				IF(ibc(i,j).ne.0) then
-            !					e(i,j) = rbwse + (iinc*deln)*dz
-            !					iinc = iinc + 1
-            !				ELSE
-            !					IF(j.lt.nn/2) THEN
-            !						e(i,j) = rbwse
-            !					ELSE
-            !						e(i,j) = lbwse
-            !					ENDIF
-            !				ENDIF
-            !			ELSE
+        DO 27 j = 1,rvo%nn
             e(i,j) = hav(i)
-            !			ENDIF
             hl(i,j) = e(i,j) - eta(i,j)
-            IF(hl(i,j).lt.hmin) THEN
-                hl(i,j) = hmin
+            IF(hl(i,j).lt.cco%hmin) THEN
+                hl(i,j) = cco%hmin
             ENDIF
 27      CONTINUE
 30  CONTINUE
@@ -49,26 +38,28 @@
     END SUBROUTINE EInit
 
 
-    SUBROUTINE VarDischEInit(e, hl, u, v, eta, ibc, stageChange, dsstage)
+    SUBROUTINE VarDischEInit(rvo, cco, e, hl, u, v, eta, ibc, stageChange, dsstage)
     IMPLICIT NONE
-    REAL(KIND=mp), DIMENSION(ns, nn), INTENT(INOUT) :: e, hl, u, v
-    INTEGER, DIMENSION(ns, nn), INTENT(INOUT) :: ibc
-    REAL(KIND=mp), DIMENSION(ns, nn), INTENT(INOUT) :: eta
+    type(rivvar), intent(inout) :: rvo
+    type(calccond), intent(inout) :: cco
+    REAL(KIND=mp), DIMENSION(:, :), INTENT(INOUT) :: e, hl, u, v
+    INTEGER, DIMENSION(:, :), INTENT(INOUT) :: ibc
+    REAL(KIND=mp), DIMENSION(:, :), INTENT(INOUT) :: eta
     REAL(KIND=mp), INTENT(IN) :: stageChange
     REAL(KIND=mp), INTENT(INOUT) :: dsstage
     REAL(KIND=mp) :: depth
     INTEGER :: i, j
 
     !First adjust stage for all previously wet nodes
-    DO i = 1,ns
-        DO j = 1, nn
+    DO i = 1,rvo%ns
+        DO j = 1, rvo%nn
             if(ibc(i,j).ne.0) then
                 e(i,j) = e(i,j) + stageChange
-                if(i.eq.ns) then
+                if(i.eq.rvo%ns) then
                     dsstage = e(i,j)
                 endif
                 depth = e(i,j) - eta(i,j)
-                if(depth > hmin) then
+                if(depth > cco%hmin) then
                     hl(i,j) = e(i,j) - eta(i,j)
                     !		                if(dryType.eq.1.and.hl(i,j).lt.hmin) then
                     !		                    hl(i,j) = hmin
@@ -77,7 +68,7 @@
 
                 else
                     !		                e(i,j) = eta(i,j)
-                    hl(i,j) = hmin
+                    hl(i,j) = cco%hmin
                     ibc(i,j) = 0
                     u(i,j) = 0.
                     v(i,j) = 0.
@@ -109,26 +100,28 @@
     RETURN
     END SUBROUTINE VarDischEInit
 
-    SUBROUTINE UpdateWETTING(e, hl, u, v, eta, ibc, dsstage)
+    SUBROUTINE UpdateWETTING(rvo, cco, e, hl, u, v, eta, ibc, dsstage)
     IMPLICIT NONE
-    REAL(KIND=mp), DIMENSION(ns, nn), INTENT(INOUT) :: e, hl,u,v
-    INTEGER, DIMENSION(ns, nn), INTENT(INOUT) :: ibc
-    REAL(KIND=mp), DIMENSION(ns, nn), INTENT(IN) :: eta
+    type(rivvar), intent(inout) :: rvo
+    type(calccond), intent(inout) :: cco
+    REAL(KIND=mp), DIMENSION(:, :), INTENT(INOUT) :: e, hl,u,v
+    INTEGER, DIMENSION(:, :), INTENT(INOUT) :: ibc
+    REAL(KIND=mp), DIMENSION(:, :), INTENT(IN) :: eta
     REAL(KIND=mp), INTENT(in) :: dsstage
     INTEGER :: I, J, IM, JP, JM, IP
     INTEGER :: change = -1
     change = -1
     do while (change == -1)  !CURRENTLY FORCED TO PASS ONLY ONCE THROUGH LOOP
         change = 1
-        do  i=ns,1,-1
-            do  j=2,nn-1
+        do  i=rvo%ns,1,-1
+            do  j=2,rvo%nn-1
                 IF(i.EQ.1) THEN
                     im=i
                 ELSE
                     im=i-1
                 END IF
-                IF(i.EQ.ns) THEN
-                    ip=ns
+                IF(i.EQ.rvo%ns) THEN
+                    ip=rvo%ns
                 ELSE
                     ip=i+1
                 ENDIF
@@ -136,7 +129,7 @@
                 jm=j-1
 
                 if (ibc(i,j).ne.0) then !added by rmcd to account for ibc == 4 or 6
-                    if(ibc(im,j).eq.0.and.e(i,j).gt.eta(im,j)+hwmin.and.i.gt.1)then
+                    if(ibc(im,j).eq.0.and.e(i,j).gt.eta(im,j)+cco%hwmin.and.i.gt.1)then
                         hl(im,j)=e(i,j)-eta(im,j)
                         e(im,j)=e(i,j)
                         ibc(im,j)=-1
@@ -144,8 +137,8 @@
                         v(im,j) = 0.
                         change = -1
                         !                        endif
-                    elseif(ibc(im,jp).eq.0.and.e(i,j).gt.eta(im,jp)+hwmin.and.i.gt.1)then
-                        if(jp < nn) then
+                    elseif(ibc(im,jp).eq.0.and.e(i,j).gt.eta(im,jp)+cco%hwmin.and.i.gt.1)then
+                        if(jp < rvo%nn) then
                             hl(im,jp)=e(i,j)-eta(im,jp)
                             e(im,jp)=e(i,j)
                             ibc(im,jp)=-1
@@ -154,7 +147,7 @@
                             change = -1
                         endif
                         !                        endif
-                    elseif(ibc(im,jm).eq.0.and.e(i,j).gt.eta(im,jm)+hwmin.and.i.gt.1)then
+                    elseif(ibc(im,jm).eq.0.and.e(i,j).gt.eta(im,jm)+cco%hwmin.and.i.gt.1)then
                         if(jm > 1) then
                             hl(im,jm)=e(i,j)-eta(im,jm)
                             e(im,jm)=e(i,j)
@@ -164,8 +157,8 @@
                             change = -1
                         endif
                         !                        endif
-                    elseif(ibc(i,jp).eq.0.and.e(i,j).gt.eta(i,jp)+hwmin.and.i.le.ns.and.i.gt.1)then
-                        if(jp < nn) then
+                    elseif(ibc(i,jp).eq.0.and.e(i,j).gt.eta(i,jp)+cco%hwmin.and.i.le.rvo%ns.and.i.gt.1)then
+                        if(jp < rvo%nn) then
                             hl(i,jp)=e(i,j)-eta(i,jp)
                             e(i,jp)=e(i,j)
                             ibc(i,jp)=-1
@@ -174,7 +167,7 @@
                             change = -1
                         endif
                         !                        endif
-                    elseif(ibc(i,jm).eq.0.and.e(i,j).gt.eta(i,jm)+hwmin.and.i.le.ns.and.i.gt.1)then
+                    elseif(ibc(i,jm).eq.0.and.e(i,j).gt.eta(i,jm)+cco%hwmin.and.i.le.rvo%ns.and.i.gt.1)then
                         if(jm > 1) then
                             hl(i,jm)=e(i,j)-eta(i,jm)
                             e(i,jm)=e(i,j)
@@ -184,8 +177,8 @@
                             change = -1
                         endif
                         !                        endif
-                    elseif(ibc(ip,jp).eq.0.and.e(i,j).gt.eta(ip,jp)+hwmin.AND.i .le. ns-2)then
-                        if(jp < nn) then
+                    elseif(ibc(ip,jp).eq.0.and.e(i,j).gt.eta(ip,jp)+cco%hwmin.AND.i .le. rvo%ns-2)then
+                        if(jp < rvo%nn) then
                             hl(ip,jp)=(e(i,j)-eta(ip,jp))
                             !                            e(ip,jp)=hl(ip,jp)+eta(ip,jp)
                             !                            if(i.eq.ns-1) then
@@ -199,7 +192,7 @@
                             change = -1
                         endif
                         !                        endif
-                    elseif(ibc(ip,j).eq.0.and.e(i,j).gt.eta(ip,j)+hwmin .AND.i .le. ns-2)then
+                    elseif(ibc(ip,j).eq.0.and.e(i,j).gt.eta(ip,j)+cco%hwmin .AND.i .le. rvo%ns-2)then
                         hl(ip,j)=(e(i,j)-eta(ip,j))
                         !                            e(ip,j)=hl(ip,j)+eta(ip,j)
                         !                            e(ip,j)=e(i,j)
@@ -214,7 +207,7 @@
                         change = -1
 
                         !                        endif
-                    elseif(ibc(ip,jm).eq.0.and.e(i,j).gt.eta(ip,jm)+hwmin .and.i .le. ns-2)then
+                    elseif(ibc(ip,jm).eq.0.and.e(i,j).gt.eta(ip,jm)+cco%hwmin .and.i .le. rvo%ns-2)then
                         if(jm > 1) then
                             hl(ip,jm)=(e(i,j)-eta(ip,jm))
                             !                           e(ip,jm)=hl(ip,jm)+eta(ip,jm)
@@ -238,90 +231,90 @@
     ENDDO
     END SUBROUTINE UpdateWETTING
 
-    SUBROUTINE CheckNodeContinuity(e, hl, u, v, eta, ibc)
-    IMPLICIT NONE
-    REAL(KIND=mp), DIMENSION(ns, nn), INTENT(INOUT) :: e, hl,u,v
-    INTEGER, DIMENSION(ns, nn), INTENT(INOUT) :: ibc
-    REAL(KIND=mp), DIMENSION(ns, nn), INTENT(IN) :: eta
-    INTEGER :: I, J, IM, JP, JM, IP
-    INTEGER :: change = -1
-    INTEGER :: Count = 0
-    change = -1
-    do while (change == -1)
-        change = 1
-        !	        do  i=ns,1,-1
-        do  i=1,ns
-            do  j=2,nn-1
-                IF(i.EQ.1) THEN
-                    im=i
-                ELSE
-                    im=i-1
-                END IF
-                IF(i.EQ.ns) THEN
-                    ip=ns
-                ELSE
-                    ip=i+1
-                ENDIF
-                jp=j+1
-                jm=j-1
-                if (ibc(i,j).ne.0) then !added by rmcd to account for ibc == 4 or 6
-                    Count = 0
-                    if(i.eq.ns) then
-                        if(ibc(im,j).ne.0) then
-                            Count = Count+3
-                        endif
-                        if(ibc(i,jp).ne.0) then
-                            Count = Count+1
-                        endif
-                        if(ibc(i,jm).ne.0) then
-                            Count = Count+1
-                        endif
-                        if(Count < 4) then
-                            u(i,j) = 0.
-                            v(i,j) = 0.
-                            ibc(i,j) = 0
-                            !		                        change = -1
-                        endif
-                    else if(i.eq.1) then
-                        if(ibc(ip,j).ne.0) then
-                            Count = Count+3
-                        endif
-                        if(ibc(i,jp).ne.0) then
-                            Count = Count+1
-                        endif
-                        if(ibc(i,jm).ne.0) then
-                            Count = Count+1
-                        endif
-                        if(Count < 4) then
-                            u(i,j) = 0.
-                            v(i,j) = 0.
-                            ibc(i,j) = 0
-                            !		                        change = -1
-                        endif
-                    else
-                        if(ibc(im,j).ne.0)then
-                            Count = Count+1
-                        endif
-                        if(ibc(ip,j).ne.0) then
-                            Count = Count+1
-                        endif
-                        if(ibc(i,jm).ne.0) then
-                            Count = Count+1
-                        endif
-                        if(ibc(i,jp).ne.0) then
-                            Count = Count+1
-                        endif
-                        if(count <= 1) then
-                            u(i,j) = 0.
-                            v(i,j) = 0.
-                            ibc(i,j) = 0
-                            !		                        change = -1
-                        endif
-                    endif
-                endif
-            enddo
-        enddo
-    enddo
-    END SUBROUTINE CheckNodeContinuity
+    !SUBROUTINE CheckNodeContinuity(e, hl, u, v, eta, ibc)
+    !IMPLICIT NONE
+    !REAL(KIND=mp), DIMENSION(ns, nn), INTENT(INOUT) :: e, hl,u,v
+    !INTEGER, DIMENSION(ns, nn), INTENT(INOUT) :: ibc
+    !REAL(KIND=mp), DIMENSION(ns, nn), INTENT(IN) :: eta
+    !INTEGER :: I, J, IM, JP, JM, IP
+    !INTEGER :: change = -1
+    !INTEGER :: Count = 0
+    !change = -1
+    !do while (change == -1)
+    !    change = 1
+    !    !	        do  i=ns,1,-1
+    !    do  i=1,ns
+    !        do  j=2,nn-1
+    !            IF(i.EQ.1) THEN
+    !                im=i
+    !            ELSE
+    !                im=i-1
+    !            END IF
+    !            IF(i.EQ.ns) THEN
+    !                ip=ns
+    !            ELSE
+    !                ip=i+1
+    !            ENDIF
+    !            jp=j+1
+    !            jm=j-1
+    !            if (ibc(i,j).ne.0) then !added by rmcd to account for ibc == 4 or 6
+    !                Count = 0
+    !                if(i.eq.ns) then
+    !                    if(ibc(im,j).ne.0) then
+    !                        Count = Count+3
+    !                    endif
+    !                    if(ibc(i,jp).ne.0) then
+    !                        Count = Count+1
+    !                    endif
+    !                    if(ibc(i,jm).ne.0) then
+    !                        Count = Count+1
+    !                    endif
+    !                    if(Count < 4) then
+    !                        u(i,j) = 0.
+    !                        v(i,j) = 0.
+    !                        ibc(i,j) = 0
+    !                        !		                        change = -1
+    !                    endif
+    !                else if(i.eq.1) then
+    !                    if(ibc(ip,j).ne.0) then
+    !                        Count = Count+3
+    !                    endif
+    !                    if(ibc(i,jp).ne.0) then
+    !                        Count = Count+1
+    !                    endif
+    !                    if(ibc(i,jm).ne.0) then
+    !                        Count = Count+1
+    !                    endif
+    !                    if(Count < 4) then
+    !                        u(i,j) = 0.
+    !                        v(i,j) = 0.
+    !                        ibc(i,j) = 0
+    !                        !		                        change = -1
+    !                    endif
+    !                else
+    !                    if(ibc(im,j).ne.0)then
+    !                        Count = Count+1
+    !                    endif
+    !                    if(ibc(ip,j).ne.0) then
+    !                        Count = Count+1
+    !                    endif
+    !                    if(ibc(i,jm).ne.0) then
+    !                        Count = Count+1
+    !                    endif
+    !                    if(ibc(i,jp).ne.0) then
+    !                        Count = Count+1
+    !                    endif
+    !                    if(count <= 1) then
+    !                        u(i,j) = 0.
+    !                        v(i,j) = 0.
+    !                        ibc(i,j) = 0
+    !                        !		                        change = -1
+    !                    endif
+    !                endif
+    !            endif
+    !        enddo
+    !    enddo
+    !enddo
+    !END SUBROUTINE CheckNodeContinuity
 
     END MODULE

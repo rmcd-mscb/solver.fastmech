@@ -1,14 +1,26 @@
-    MODULE StressDivMod
+    MODULE StressDivMod2
     use RivVarMod2
     USE CalcCond2
     IMPLICIT NONE
-    REAL, ALLOCATABLE, DIMENSION(:,:) :: DUM1
+    !REAL, ALLOCATABLE, DIMENSION(:,:) :: DUM1
     CONTAINS
-    SUBROUTINE StressDiv(ibc, qs, qn, taus, taun, con, rn, r)
-    REAL ::  SC, weight
+    SUBROUTINE StressDiv(rvo, cco, ibc, qs, qn, taus, taun, con, rn, r)
+    implicit none
+    type(rivvar), intent(in) :: rvo
+    type(calccond), intent(in) :: cco
+    REAL(kind=mp), ALLOCATABLE, DIMENSION(:,:) :: DUM1
+    real(kind=mp), dimension(:,:), intent(in) :: taus, taun, rn
+    real(kind=mp), dimension(:), intent(in) :: r
+    integer, dimension(:,:), intent(in) :: ibc
+    real(kind=mp), dimension(:,:), intent(inout) :: con, qs, qn
+    REAL(kind=mp) ::  SC, weight, ds, dn
     INTEGER :: I, J, ISMOO
-    CALL alloc_StressDiv()
-    allocate(dum1(
+    integer :: ns, nn, ier
+    ns = rvo%ns
+    nn = rvo%nn
+    ds = rvo%ds
+    dn = rvo%dn
+    allocate(dum1(ns, nn), stat=ier)
     DO I=1,ns
         DO J=1,nn
 
@@ -51,7 +63,7 @@
         ENDDO
     ENDDO
 
-    DO ISMOO=1,sedsmoo
+    DO ISMOO=1,cco%sedsmoo
         DO I=2,ns-1
             DO  J=1,nn
                 if(ibc(i,j).eq.0) then
@@ -89,23 +101,7 @@
             ENDDO
         ENDDO
     ENDDO
-    CALL dealloc_StressDiv
+    deallocate(dum1, stat=ier)
     end subroutine
-
-    SUBROUTINE alloc_StressDiv()
-    INTEGER :: status
-    !Allocate REAL types
-    !			ALLOCATE(QS(ns, nn), STAT = status)
-    !			ALLOCATE(QN(ns, nn), STAT = status)
-    ALLOCATE(DUM1(ns, nn), STAT = status)
-    END SUBROUTINE alloc_StressDiv
-
-    SUBROUTINE dealloc_StressDiv()
-    INTEGER :: status
-    !			DEALLOCATE(QS, STAT = status)
-    !			DEALLOCATE(QN, STAT = status)
-    DEALLOCATE(DUM1, STAT = status)
-    END SUBROUTINE dealloc_StressDiv
-
 
     END MODULE

@@ -1,6 +1,0 @@
-C:\Users\rmcd\Documents\Fortran\Fastmech_BMI_Branch\src\fastmech.f90(24): error #6590: This statement is not permitted as a statement within a derived-type-def.
-         use einitmod
----------^
-C:\Users\rmcd\Documents\Fortran\Fastmech_BMI_Branch\src\fastmech.f90(59): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [MODEL]
-    subroutine initialize_from_defaults(model)
-----------------------------------------^

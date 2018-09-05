@@ -220,10 +220,6 @@
             CALL VarDischEInit(e, hl, u, v, eta, ibc, dStage, dsstage)
         endif
 
-        !        if(vbcds == 1) then
-        !            CALL VarDischUBInit(u, v, w, eta, e, ibc, q)
-        !        endif
-
         !! TURN NODES ON - CHECK RE-WETTING !!
         Call UpdateWetting(e,hl,u,v,eta, ibc, dsstage)
 

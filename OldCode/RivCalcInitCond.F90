@@ -1,16 +1,19 @@
     MODULE RivCalcInitCond
-    USE RivVarMod
-    USE RivVarWMod
-    USE GridCoord
-    USE CalcCond
+    USE RivVarMod2
+    USE RivVarWMod2
+    !USE GridCoord
+    USE CalcCond2
     USE NetPreisMain
 
     IMPLICIT NONE
 
     CONTAINS
 
-    SUBROUTINE calcWSInitCond()
-
+    SUBROUTINE calcWSInitCond(rvo, rwvo, cco)
+    implicit none
+    type(rivvar), intent(inout) :: rvo
+    type(riv_w_var), intent(inout) :: rwvo
+    type(calccond), intent(inout) :: cco
     REAL(KIND=mp) :: tslope
     INTEGER :: i,j, ier, count
     REAL(KIND=mp), DIMENSION(:), ALLOCATABLE :: tx, ty, ttopo
@@ -18,69 +21,56 @@
     REAL(KIND=mp) :: tmpwselev, tmpq
     REAL(KIND=mp) :: ttime, dt2
     INTEGER :: nx2, ny2,icount
-
+    integer :: tmpns, tmpnn
     !Calc Init Water Surface Elevation
+    tmpns = rvo%ns
+    tmpnn = rvo%nn
+    IF(cco%wstype.eq.0) THEN !Constant slope using upper water surface elevation
 
-    IF(wsType.eq.0) THEN !Constant slope using upper water surface elevation
-
-        tslope = (wsupelev-wselev)/(ns*scals)
-        DO i = ns,1,-1
-            hav(i) = wselev +((scals*(ns-i))*tslope)
+        tslope = (cco%wsupelev-cco%wselev)/(tmpns*rvo%scals)
+        DO i = tmpns,1,-1
+            rvo%hav(i) = cco%wselev +((rvo%scals*(tmpns-i))*tslope)
         ENDDO
-        DO I = 1,NS
-            DO J = 1,NN
-                e(i,j) = hav(i)
+        DO I = 1,tmpns
+            DO J = 1,tmpnn
+                rvo%e(i,j) = rvo%hav(i)
             ENDDO
         ENDDO
 
-    ELSE IF(wsType.eq.1) THEN !Constant slope using given water surface slope
+    ELSE IF(cco%wstype.eq.1) THEN !Constant slope using given water surface slope
 
-        DO i = ns,1,-1
-            hav(i) = wselev +((scals*(ns-i))*wsslope)
+        DO i = tmpns,1,-1
+            rvo%hav(i) = cco%wselev +((rvo%scals*(tmpns-i))*wsslope)
         ENDDO
-        DO I = 1,NS
-            DO J = 1,NN
-                e(i,j) = hav(i)
+        DO I = 1,tmpns
+            DO J = 1,tmpnn
+                rvo%e(i,j) = rvo%hav(i)
             ENDDO
         ENDDO
 
-    ELSE IF(wsType.eq.2) THEN
+    ELSE IF(cco%wstype.eq.2) THEN
 
-        ALLOCATE(tx(ns*nn), ty(ns*nn), ttopo(ns*nn), STAT = ier)
-        do j=1,nn
-            do i=1,ns2+nsext
-                rcos=cos(phirotation(i))
-                rsin=sin(phirotation(i))
-                !                count = i + (j-1)*(ns2+nsext)
-                count = ((i-1)*nn)+j
-                ux = xo(i)+(dn)*(nm-j)*sin(phirotation(i))
-                uy = yo(i)-(dn)*(nm-j)*cos(phirotation(i))
-                uxnew=ux*fcos-uy*fsin
-                uynew=ux*fsin+uy*fcos
-                tx(count) = (uxnew+xshift)/100.
-                ty(count) = (uynew+yshift)/100.
-                If(i.le.ns2) THEN
-                    ttopo(count) = eta(i,j)/100.
+        ALLOCATE(tx(tmpns*tmpnn), ty(tmpns*tmpnn), ttopo(tmpns*tmpnn), STAT = ier)
+        do j=1,tmpnn
+            do i=1,rvo%ns2+rvo%nsext
+                rcos=cos(rvo%phirotation(i))
+                rsin=sin(rvo%phirotation(i))
+                !                count = i + (j-1)*(rvo%ns2+rvo%nsext)
+                count = ((i-1)*tmpnn)+j
+                ux = rvo%xo(i)+(rvo%dn)*(rvo%nm-j)*sin(rvo%phirotation(i))
+                uy = rvo%yo(i)-(rvo%dn)*(rvo%nm-j)*cos(rvo%phirotation(i))
+                uxnew=ux*rvo%fcos-uy*rvo%fsin
+                uynew=ux*rvo%fsin+uy*rvo%fcos
+                tx(count) = (uxnew+rvo%xshift)/100.
+                ty(count) = (uynew+rvo%yshift)/100.
+                If(i.le.rvo%ns2) THEN
+                    ttopo(count) = rvo%eta(i,j)/100.
                 ELSE
-                    ttopo(count) = eta(ns2,j)/100. - ((i-ns2)*ds*nsextslope)
+                    ttopo(count) = rvo%eta(rvo%ns2,j)/100. - ((i-rvo%ns2)*ds*nsextslope)
                 ENDIF
             enddo
         enddo
 
-        !    DO i = 1,ns
-        !        DO j = 1,nn
-        !            count = ((i-1))*nn +j
-        !            IF(i.le.ns2) THEN
-        !                ttopo(count) = eta(i,j)/100.
-        !                tx(count) = x(i,j)/100.
-        !                ty(count) = y(i,j)/100.
-        !            ELSE
-        !                ttopo(count) = eta(i,j)/100.
-        !                tx(count) = x(i,j)/100.
-        !                ty(count) = y(i,j)/100.
-        !
-        !        ENDDO
-        !    ENDDO
         if(varDischType == 1) then !Discharge Time Series
             CALL getInterpTimeSeriesValue(1, VarDischStartTime, tmpq)
         else
@@ -96,19 +86,19 @@
             tmpwselev = tmpwselev/100.
             !        newStage = (newStage-elevoffset) * 100.
         else
-            tmpwselev = wselev/100
+            tmpwselev = cco%wselev/100
         endif
-        !    CALL NETPREIS2(ns, nn, ttopo, tx, ty, ONEDCD, tmpq/1e6, tmpwselev/100., hav )
-        CALL NETPREIS2(ns, nn, ttopo, tx, ty, ONEDCD, tmpq, tmpwselev, hav )
-        hav = hav*100
-        DO I = 1,NS
-            DO J = 1,NN
-                e(i,j) = hav(i)
+        !    CALL NETPREIS2(tmpns, tmpnn, ttopo, tx, ty, ONEDCD, tmpq/1e6, tmpwselev/100., rvo%hav )
+        CALL NETPREIS2(tmpns, tmpnn, ttopo, tx, ty, ONEDCD, tmpq, tmpwselev, rvo%hav )
+        rvo%hav = rvo%hav*100
+        DO I = 1,tmpns
+            DO J = 1,tmpnn
+                rvo%e(i,j) = rvo%hav(i)
             ENDDO
         ENDDO
 
-    ELSE IF(wstype.eq.3) THEN
-        CAll alloc_init2D(NS,NN)
+    ELSE IF(cco%wstype.eq.3) THEN
+        CAll alloc_init2D(tmpns,tmpnn)
         open(501,file=tmp_file_i,status='old',iostat = ier,form='unformatted')
         if(ier /= 0) then
             write(6,*) 'Input file error!'
@@ -124,7 +114,7 @@
         !       icount=time/fmdt
         !
         read(501) nx2, ny2
-        if(ns /= nx2.or.nn /= ny2) then
+        if(tmpns /= nx2.or.tmpnn /= ny2) then
             write(6,*) 'Number of grid is different between grid file and temporary file!'
             write(6,*) 'Press Enter to continue'
             read(6,*)
@@ -138,33 +128,33 @@
         read(501) ((iibc(i,j),i=1,nx2),j=1,ny2)
         read(501) ((iwse(i,j),i=1,nx2),j=1,ny2)
         read(501) ((ihl(i,j),i=1,nx2),j=1,ny2)
-        read(501) (hav(i),i=1,nx2)
+        read(501) (rvo%hav(i),i=1,nx2)
 
         Close(501)
-        DO I = 1,NS
-            DO J = 1,NN
+        DO I = 1,tmpns
+            DO J = 1,tmpnn
                 u(i,j) = iu(i,j)
                 v(i,j) = iv(i,j)
-                e(i,j) = iwse(i,j)
+                rvo%e(i,j) = iwse(i,j)
                 ibc(i,j) = iibc(i,j)
-                eta(i,j) = ie(i,j)
+                rvo%eta(i,j) = ie(i,j)
                 hl(i,j) = ihl(i,j)
-                IF(j == nn/2+1) THEN
-                    hav(i) = e(i,j)
+                IF(j == tmpnn/2+1) THEN
+                    rvo%hav(i) = rvo%e(i,j)
                 ENDIF
             ENDDO
         ENDDO
 
         CALL dealloc_init2D()
     ENDIF
-    DO i = 1,ns
-        DO j = 1,nn
+    DO i = 1,tmpns
+        DO j = 1,tmpnn
             IF(j == 1) THEN
                 ibc(i,j) = 0
-            ELSE IF(j == nn) THEN
+            ELSE IF(j == tmpnn) THEN
                 ibc(i,j) = 0
 
-            ELSE IF(e(i,j).gt.eta(i,j)) THEN
+            ELSE IF(rvo%e(i,j).gt.rvo%eta(i,j)) THEN
                 ibc(i,j) = -1
             ELSE
                 ibc(i,j) = 0
@@ -293,13 +283,13 @@
     !            countji = ((j-1)*NX)+i
     !			iwse(i,j) = (tmpreal4(countji) - elevoffset)*100. !Convert to cm
     !			if(j == ny/2+1) then
-    !			    hav(i) = (tmpreal4(countji) - elevoffset)*100 !Convert to cm
+    !			    rvo%hav(i) = (tmpreal4(countji) - elevoffset)*100 !Convert to cm
     !			ENDIF
     !        ENDDO
     !    ENDDO
-    !    IF(nx < ns) THEN
-    !        DO I = NX+1,NS
-    !            hav(i) = hav(nx)
+    !    IF(nx < tmpns) THEN
+    !        DO I = NX+1,tmpns
+    !            rvo%hav(i) = rvo%hav(nx)
     !        ENDDO
     !    ENDIF
     !
@@ -323,8 +313,8 @@
     REAL(KIND=mp) :: rcos, rsin, uu, vv
     !    open(4,FILE='RadiusOfCurvature.txt')
     IF (cdtype == 0) THEN !Constant CD
-        DO i = 1, ns2
-            DO j = 1, nn
+        DO i = 1, rvo%ns2
+            DO j = 1, tmpnn
                 znaught2(i,j) = constcd*100.
                 cd2(i,j) = constcd
                 cdv2(i,j) = 0
@@ -332,30 +322,30 @@
         END DO
     ENDIF
 
-    do i=1,ns
-        rcos = cos(phirotation(i))
-        rsin = sin(phirotation(i))
+    do i=1,tmpns
+        rcos = cos(rvo%phirotation(i))
+        rsin = sin(rvo%phirotation(i))
 
         !    lengthen grid to eliminate eddies at downstream end
-        if(i.le.ns2) then
+        if(i.le.rvo%ns2) then
             r(i)=r2(i)
             w(i)=w2(i)
-            !	        hav(i)=hav2(i)
+            !	        rvo%hav(i)=hav2(i)
             !	        xo(i)=xo2(i)
             !	        yo(i)=yo2(i)
         else
             r(i) = r2(i)
-            !		   		r(i) = r2(ns2)+ (i-ns2)*dr
+            !		   		r(i) = r2(rvo%ns2)+ (i-rvo%ns2)*dr
 
-            w(i)=w2(ns2)
-            !	        hav(i)=hav2(ns2)
+            w(i)=w2(rvo%ns2)
+            !	        rvo%hav(i)=hav2(rvo%ns2)
         endif
 
         !
-        do  j=1,nn
+        do  j=1,tmpnn
             !   lengthen grid to elimate eddies at downstream end
-            if(i.le.ns2) then
-                eta(i,j)=eta2(i,j)
+            if(i.le.rvo%ns2) then
+                rvo%eta(i,j)=rvo%eta2(i,j)
                 !mineta(i,j) = mineta2(i,j)
                 !	            ibc(i,j)=ibc2(i,j)
                 !	            ribc(i,j) = ribc2(i,j)
@@ -364,16 +354,16 @@
                 totcd(i,j) = cd(i,j)+cdv(i,j)
                 znaught(i,j)=znaught2(i,j)
             else
-                eta(i,j)=eta2(ns2,j) - ((i-ns2)*ds*nsextslope)
-                !mineta(i,j)=mineta2(ns2,j) - ((i-ns2)*ds*nsextslope)
-                !	            ibc(i,j)=ibc2(ns2,j)
-                !	            ribc(i,j) = ribc2(ns2, j)
-                cd(i,j)=cd2(ns2,j)
-                cdv(i,j)=cdv2(ns2,j)
+                rvo%eta(i,j)=rvo%eta2(rvo%ns2,j) - ((i-rvo%ns2)*ds*nsextslope)
+                !mineta(i,j)=mineta2(rvo%ns2,j) - ((i-rvo%ns2)*ds*nsextslope)
+                !	            ibc(i,j)=ibc2(rvo%ns2,j)
+                !	            ribc(i,j) = ribc2(rvo%ns2, j)
+                cd(i,j)=cd2(rvo%ns2,j)
+                cdv(i,j)=cdv2(rvo%ns2,j)
                 totcd(i,j) = cd(i,j)+cdv(i,j)
-                znaught(i,j)=znaught2(ns2,j)
-                fracs(i,j) = fracs(ns2,j)
-                hfine(i,j) = hfine(ns2,j)
+                znaught(i,j)=znaught2(rvo%ns2,j)
+                fracs(i,j) = fracs(rvo%ns2,j)
+                hfine(i,j) = hfine(rvo%ns2,j)
             endif
             rn(i,j)=1.-(j-nm)*dn/r(i)
             !		    if(j.eq.1)then

@@ -25,8 +25,8 @@ contains
 
     if(CALCQUASI3D) then
         CALL dealloc_common3d()
-        if(TRANSEQTYPE == 1) THEN
-            CAll dealloc_csed3d_dt()
+        if(TRANSEQTYPE == 2) THEN
+            !CAll dealloc_csed3d_dt()
         ENDIF
     endif
     !	    if(CALCCSED == 1) then
@@ -34,7 +34,7 @@ contains
     !	        call dealloc_csed_DT()
     !	    endif
     if(TRANSEQTYPE == 2) then
-        call dealloc_csed_DT()
+        !call dealloc_csed_DT()
     else
         call dealloc_csed()
     endif

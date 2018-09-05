@@ -140,10 +140,10 @@
     class (bmi_fastmech), intent (in) :: self
     real, intent (out) :: time
     integer :: bmi_status
-    if(soltype == 0) then
+    if(self%model%t_calccond%soltype == 0) then
         time = 0
     else
-        time = vardischstarttime
+        time = self%model%t_rivvartime%vardischstarttime
     endif
     bmi_status = BMI_SUCCESS
     end function fm_start_time
@@ -247,7 +247,7 @@
     grid_id = 0
     bmi_status = BMI_SUCCESS
     case('VelocityX', 'VelocityY')
-        if(CALCQUASI3D) then
+        if(self%model%t_calccond%CALCQUASI3D) then
             grid_id = 1
         else
             grid_id = 0
@@ -350,12 +350,12 @@
     select case (grid_id)
     case (0)
         bmi_status = self%get_grid_size(grid_id, size)
-        CALL Get_GRID_2D_COORD('x', grid_x)
+        CALL Get_GRID_2D_COORD(self%model, 'x', grid_x)
         bmi_status = BMI_SUCCESS
 
     case(1)
         bmi_status = self%get_grid_size(grid_id, size)
-        CALL Get_GRID_3D_COORD('x', grid_x)
+        CALL Get_GRID_3D_COORD(self%model, 'x', grid_x)
         bmi_status = BMI_SUCCESS
         case default
         grid_x = -1.0
@@ -374,12 +374,12 @@
     select case (grid_id)
     case (0)
         bmi_status = self%get_grid_size(grid_id, size)
-        CALL Get_GRID_2D_COORD('y', grid_y)
+        CALL Get_GRID_2D_COORD(self%model,'y', grid_y)
         bmi_status = BMI_SUCCESS
 
     case(1)
         bmi_status = self%get_grid_size(grid_id, size)
-        CALL Get_GRID_3D_COORD('y', grid_y)
+        CALL Get_GRID_3D_COORD(self%model,'y', grid_y)
         bmi_status = BMI_SUCCESS
         case default
         grid_y = -1.0
@@ -399,12 +399,12 @@
     case (0)
         bmi_status = self%get_grid_size(grid_id, size)
         !ALLOCATE(grid_z(size), stat=ier)
-        CALL Get_GRID_2D_COORD('z', grid_z)
+        CALL Get_GRID_2D_COORD(self%model,'z', grid_z)
         bmi_status = BMI_SUCCESS
 
     case(1)
         bmi_status = self%get_grid_size(grid_id, size)
-        CALL Get_GRID_3D_COORD('z', grid_z)
+        CALL Get_GRID_3D_COORD(self%model,'z', grid_z)
         bmi_status = BMI_SUCCESS
         case default
         grid_z = -1.0

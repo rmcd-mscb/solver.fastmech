@@ -37,7 +37,7 @@
     REAL(KIND=mp) :: constcd, ONEDCD
     REAL(KIND=mp) :: cdmin, cdmax
 
-    INTEGER, PUBLIC :: nsext
+    !INTEGER, PUBLIC :: nsext
     INTEGER :: ShowGridExt, vbcds
 
     REAL :: nsextslope

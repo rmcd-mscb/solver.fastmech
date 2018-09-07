@@ -38,7 +38,7 @@ program conflicting_instances_test
   write(rowfmt2,'(a,i4,a)') '(', dims2(2), '(1x,f6.1))'
 
   write (*, "(a)") "Initial values, model 2:"
-  s = m2%get_value("plate_surface__temperature", z2)
+  s = m2%get_value("WaterSurfaceElevation", z2)
   call print_array(z2, dims2)
 
   write (*, "(a)") "Set new value in model 2; does it affect model 1?"

@@ -33,7 +33,7 @@ contains
             !CAll dealloc_csed3d_dt()
         ENDIF
     endif
-    if(cco%CALCCSED == 1) then
+    if(cco%CALCCSED) then
 
         if(cco%TRANSEQTYPE == 2) then
             !call dealloc_csed_DT()

@@ -31,12 +31,12 @@
         real(kind=mp), dimension(:,:), pointer :: taus, taun, hl, eta, rn, cd, cdv, totcd
         real(kind=mp), allocatable, dimension(:,:) :: mineta
         real(kind=mp), allocatable, dimension(:,:) :: znaught
-        real(kind=mp), dimension(:,:), pointer :: u, v, e
+        real(kind=mp), allocatable, dimension(:,:) :: u, v, e
         real(kind=mp), allocatable, dimension(:,:) :: iu, iv, iwse, ie, ihl
         real(kind=mp), allocatable, dimension(:,:) :: x, y
         real(kind=mp), allocatable, dimension(:,:) :: harea
 
-        double precision, allocatable, dimension(:,:,:) :: uz, vz, zz
+        real(kind=mp), allocatable, dimension(:,:,:) :: uz, vz, zz
         real(kind=mp), allocatable, dimension(:,:) :: con, qs, qn
 
         real(kind=mp), allocatable, dimension(:,:) :: fracs, hfine
@@ -44,8 +44,8 @@
         !allocate seperate arrays to deal with extend lower boundary
         integer, allocatable, dimension(:,:) :: ibc2
         real(kind=mp), allocatable, dimension(:) :: r2, w2, hav2
-        double precision, allocatable, dimension(:) :: xo2, yo2, phi2
-        double precision, allocatable, dimension(:) :: phirotation
+        real(kind=mp), allocatable, dimension(:) :: xo2, yo2, phi2
+        real(kind=mp), allocatable, dimension(:) :: phirotation
         real(kind=mp), allocatable, dimension(:,:) :: u2, v2, e2
         real(kind=mp), allocatable, dimension(:,:) :: eta2, cd2, cdv2, znaught2, mineta2
 
@@ -55,10 +55,10 @@
 
         real(kind=mp) mo2
 
-        integer, pointer :: ns2
-        integer, pointer :: ns, nn, nz
-        INTEGER, PUBLIC, pointer :: nsext
-        integer, pointer :: cgnsfileid
+        integer :: ns2
+        integer :: ns, nn, nz
+        INTEGER, PUBLIC :: nsext
+        integer :: cgnsfileid
 
         REAL(KIND=mp) :: stot, scals
 

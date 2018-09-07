@@ -1,16 +1,16 @@
 ! Test the lifecycle and time BMI methods.
 program irf_test
 
-  use bmiheatf
+    use bmifastmech
   implicit none
 
-  type (bmi_heat) :: m
+  type (bmi_fastmech) :: m
   integer :: s, i
   real :: time, time0, time1
   character (len=BMI_MAXUNITSSTR) :: time_units
 
   write (*,"(a)",advance="no") "Initializing..."
-  s = m%initialize("")
+  s = m%initialize(".\..\TestBMI\Test1.cgn")
   write (*,*) "Done."
 
   s = m%get_start_time(time0)

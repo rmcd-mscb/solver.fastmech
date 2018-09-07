@@ -515,16 +515,85 @@
     integer :: n_elements, s1, s2, grid_id
 
     select case (var_name)
-    case ('Elevation', 'roughness', 'vegroughness', &
-        'Depth', 'Drag_Coefficient','ShearStressX', &
-        'ShearStressY', 'WaterSurfaceElevation', &
-        'VelocityX', 'VelocityY')
+    case ('Elevation')
         tmpname = adjustl(var_name) !did it htis way because get_var_grid uses string the BMI_MAVARNAMESTR
         s1 = self%get_var_grid(tmpname, grid_id)
         s2 = self%get_grid_size(grid_id, n_elements)
         !n_elements = self%model%n_y * self%model%n_x
         allocate(dest(n_elements))
         dest = reshape(self%model%fm_elevation, [n_elements])
+        bmi_status = BMI_SUCCESS
+    case ('roughness')
+        tmpname = adjustl(var_name) !did it htis way because get_var_grid uses string the BMI_MAVARNAMESTR
+        s1 = self%get_var_grid(tmpname, grid_id)
+        s2 = self%get_grid_size(grid_id, n_elements)
+        !n_elements = self%model%n_y * self%model%n_x
+        allocate(dest(n_elements))
+        dest = reshape(self%model%fm_roughness, [n_elements])
+        bmi_status = BMI_SUCCESS
+    case ('vegroughness')
+        tmpname = adjustl(var_name) !did it htis way because get_var_grid uses string the BMI_MAVARNAMESTR
+        s1 = self%get_var_grid(tmpname, grid_id)
+        s2 = self%get_grid_size(grid_id, n_elements)
+        !n_elements = self%model%n_y * self%model%n_x
+        allocate(dest(n_elements))
+        dest = reshape(self%model%fm_vegroughness, [n_elements])
+        bmi_status = BMI_SUCCESS
+    case ('Depth')
+        tmpname = adjustl(var_name) !did it htis way because get_var_grid uses string the BMI_MAVARNAMESTR
+        s1 = self%get_var_grid(tmpname, grid_id)
+        s2 = self%get_grid_size(grid_id, n_elements)
+        !n_elements = self%model%n_y * self%model%n_x
+        allocate(dest(n_elements))
+        dest = reshape(self%model%fm_depth, [n_elements])
+        bmi_status = BMI_SUCCESS
+    case ('Drag_Coefficient')
+        tmpname = adjustl(var_name) !did it htis way because get_var_grid uses string the BMI_MAVARNAMESTR
+        s1 = self%get_var_grid(tmpname, grid_id)
+        s2 = self%get_grid_size(grid_id, n_elements)
+        !n_elements = self%model%n_y * self%model%n_x
+        allocate(dest(n_elements))
+        dest = reshape(self%model%fm_dragcoefficient, [n_elements])
+        bmi_status = BMI_SUCCESS
+    case ('ShearStressX')
+        tmpname = adjustl(var_name) !did it htis way because get_var_grid uses string the BMI_MAVARNAMESTR
+        s1 = self%get_var_grid(tmpname, grid_id)
+        s2 = self%get_grid_size(grid_id, n_elements)
+        !n_elements = self%model%n_y * self%model%n_x
+        allocate(dest(n_elements))
+        dest = reshape(self%model%fm_shearstress_x, [n_elements])
+        bmi_status = BMI_SUCCESS
+    case ('ShearStressY')
+        tmpname = adjustl(var_name) !did it htis way because get_var_grid uses string the BMI_MAVARNAMESTR
+        s1 = self%get_var_grid(tmpname, grid_id)
+        s2 = self%get_grid_size(grid_id, n_elements)
+        !n_elements = self%model%n_y * self%model%n_x
+        allocate(dest(n_elements))
+        dest = reshape(self%model%fm_shearstress_y, [n_elements])
+        bmi_status = BMI_SUCCESS
+    case ('WaterSurfaceElevation')
+        tmpname = adjustl(var_name) !did it htis way because get_var_grid uses string the BMI_MAVARNAMESTR
+        s1 = self%get_var_grid(tmpname, grid_id)
+        s2 = self%get_grid_size(grid_id, n_elements)
+        !n_elements = self%model%n_y * self%model%n_x
+        allocate(dest(n_elements))
+        dest = reshape(self%model%fm_wse, [n_elements])
+        bmi_status = BMI_SUCCESS
+    case ('VelocityX')
+        tmpname = adjustl(var_name) !did it htis way because get_var_grid uses string the BMI_MAVARNAMESTR
+        s1 = self%get_var_grid(tmpname, grid_id)
+        s2 = self%get_grid_size(grid_id, n_elements)
+        !n_elements = self%model%n_y * self%model%n_x
+        allocate(dest(n_elements))
+        dest = reshape(self%model%fm_velocity_x, [n_elements])
+        bmi_status = BMI_SUCCESS
+    case ('VelocityY')
+        tmpname = adjustl(var_name) !did it htis way because get_var_grid uses string the BMI_MAVARNAMESTR
+        s1 = self%get_var_grid(tmpname, grid_id)
+        s2 = self%get_grid_size(grid_id, n_elements)
+        !n_elements = self%model%n_y * self%model%n_x
+        allocate(dest(n_elements))
+        dest = reshape(self%model%fm_velocity_y, [n_elements])
         bmi_status = BMI_SUCCESS
     case default
         n_elements = 1

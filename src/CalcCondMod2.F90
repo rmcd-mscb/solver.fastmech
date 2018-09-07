@@ -14,7 +14,7 @@
         LOGICAL :: HotStart
 
 
-        INTEGER, pointer :: itm, interitm, iplinc
+        INTEGER :: itm, interitm, iplinc
         INTEGER :: debugstop, DbgTimeStep, DbgIterNum
         INTEGER :: vbc
         INTEGER :: solType
@@ -76,14 +76,30 @@
 
         ! For Hot Start
         integer :: i_re_flag_i, i_re_flag_o, n_rest, i_tmp_count
-        real(8) :: opt_tmp(0:9)
-
-        character(len = strMax) :: tmp_file_o(0:9), tmp_caption(0:9) &
-            ,tmp_file_i, tmp_dummy, tmp_pass
+        real(8), allocatable, dimension(:) :: opt_tmp
+        character(len = strMax), allocatable, dimension(:) :: tmp_file_o, tmp_caption
+        character(len = strMax) :: tmp_file_i, tmp_dummy, tmp_pass
     end type
 
     CONTAINS
-
+    subroutine alloc_hotstart(this)
+    implicit none
+    type (calccond), intent(inout) :: this
+    integer :: status
+    allocate(this%tmp_file_o(0:9), stat=status)
+    allocate(this%tmp_caption(0:9), stat=status)
+    allocate(this%opt_tmp(0:9), stat = status)
+    end subroutine alloc_hotstart
+    
+    subroutine dealloc_hotstart(this)
+    implicit none
+    type(calccond), intent(inout) :: this
+    integer :: status
+    deallocate(this%tmp_file_o, stat=status)
+    deallocate(this%tmp_caption, stat=status)
+    deallocate(this%opt_tmp, stat=status)
+    end subroutine dealloc_hotstart
+    
     SUBROUTINE ALLOC_VELBC(object, size)
     IMPLICIT NONE
     type(calccond), intent(inout) :: object
@@ -111,6 +127,7 @@
     INTEGER, INTENT(OUT) :: IER
     INTEGER :: tmpint
 
+    call alloc_hotstart(cc_object)
     CALL CG_IRIC_READ_INTEGER_f('FM_SolAttNSExt', cc_object%nsext, ier)
     CALL CG_IRIC_READ_INTEGER_f('FM_SolAttItm', cc_object%itm, ier)
     CALL CG_IRIC_READ_INTEGER_F('FM_Quasi3D_NZ', tmpint, ier)

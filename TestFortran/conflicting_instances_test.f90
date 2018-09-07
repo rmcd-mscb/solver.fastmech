@@ -29,7 +29,7 @@ program conflicting_instances_test
   write(rowfmt1,'(a,i4,a)') '(', dims1(2), '(1x,f6.1))'
 
   write (*, "(a)") "Initial values, model 1:"
-  s = m1%get_value("plate_surface__temperature", z1)
+  s = m1%get_value("WaterSurfaceElevation", z1)
   call print_array(z1, dims1)
 
   s = m2%get_output_var_names(names2)

@@ -19,7 +19,7 @@ contains
     if(cco%vbc == 1) then
         CALL DEALLOC_VELBC(cco)
     endif
-
+    call dealloc_hotstart(cco)
     CALL dealloc_init2d(rvo)
     !CALL dealloc_roughness()
     CALL dealloc_TimeSeries(rvto)

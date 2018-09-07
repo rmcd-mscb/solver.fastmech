@@ -365,6 +365,8 @@
     character(len = strmax), dimension(:), pointer :: tmp_file_o, tmp_caption
     character(len=strmax), pointer ::tmp_file_i, tmp_dummy, tmp_pass
     
+    tmpvardt = 0
+    
     cco => model%t_calccond
     rvto => model%t_rivvartime
     rvo => model%t_rivvar

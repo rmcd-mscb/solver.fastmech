@@ -508,12 +508,13 @@
     ! Get a copy of a variable's values, flattened.
     function fm_get(self, var_name, dest) result (bmi_status)
     class (bmi_fastmech), intent (in) :: self
+    !type(rivvar), pointer :: rvo
     character (len=*), intent (in) :: var_name
     character (len=BMI_MAXVARNAMESTR) :: tmpname
     real, pointer, intent (inout) :: dest(:)
     integer :: bmi_status
     integer :: n_elements, s1, s2, grid_id
-
+    !rvo => self%model%t_rivvar
     select case (var_name)
     case ('Elevation')
         tmpname = adjustl(var_name) !did it htis way because get_var_grid uses string the BMI_MAVARNAMESTR
@@ -521,7 +522,7 @@
         s2 = self%get_grid_size(grid_id, n_elements)
         !n_elements = self%model%n_y * self%model%n_x
         allocate(dest(n_elements))
-        dest = reshape(self%model%fm_elevation, [n_elements])
+        dest = reshape(self%model%fm_elevation+self%model%t_rivvar%elevoffset, [n_elements])
         bmi_status = BMI_SUCCESS
     case ('roughness')
         tmpname = adjustl(var_name) !did it htis way because get_var_grid uses string the BMI_MAVARNAMESTR
@@ -577,7 +578,7 @@
         s2 = self%get_grid_size(grid_id, n_elements)
         !n_elements = self%model%n_y * self%model%n_x
         allocate(dest(n_elements))
-        dest = reshape(self%model%fm_wse, [n_elements])
+        dest = reshape((self%model%fm_wse/100.0)+self%model%t_rivvar%elevoffset, [n_elements])
         bmi_status = BMI_SUCCESS
     case ('VelocityX')
         tmpname = adjustl(var_name) !did it htis way because get_var_grid uses string the BMI_MAVARNAMESTR
@@ -841,9 +842,17 @@
     end select
     if(bmi_status == BMI_SUCCESS) then
         call c_f_pointer(dest, dest_flattened, [n_elements])
+        select case (var_name)
+        case('WaterSurfaceElevation')
+        do i = 1, size (indices)
+            dest_flattened(indices(i)) = (src(i) - self%model%t_rivvar%elevoffset)*100
+        end do
+        case default
         do i = 1, size (indices)
             dest_flattened(indices(i)) = src(i)
         end do
+        end select
+
     endif
     end function fm_set_at_indices
 

@@ -4,9 +4,48 @@
         <CgnsFileEntry filename="Case1" comment=""/>
     </CgnsFileList>
     <MeasuredDatas/>
-    <PostProcessors/>
+    <PostProcessors>
+        <PostProcessor type="post2dwindow" index="1" backgroundColor="#ffffff" visible="true" maximized="false" left="30" top="30" width="700" height="500">
+            <Camera positionX="74.4072" positionY="0.433013" positionZ="200" focalpointX="74.4072" focalpointY="0.433013" focalpointZ="0" roll="0" parallelscale="81.1686" parallelprojection="true"/>
+            <DataModel ZScale="1" isExpanded="false">
+                <GridType checkState="2" isExpanded="true" name="fastmech">
+                    <LookupTables/>
+                    <ParticleLookupTables/>
+                    <GeoData checkState="2" isExpanded="true">
+                        <GeoDataGroup checkState="2" isExpanded="true" name="Elevation"/>
+                    </GeoData>
+                    <Zones/>
+                </GridType>
+                <Title checkState="2" isExpanded="true" title="" fontSize="20" color="#000000"/>
+                <Time checkState="2" isExpanded="true" format="0" color="#000000"/>
+                <DistanceMeasures checkState="2" isExpanded="true">
+                    <DistanceMeasure checkState="2" isExpanded="true" name="Measure1" defined="false" point1X="0" point1Y="0" point2X="0" point2Y="0" showLabel="true" labelMode="0" labelPosition="2" fontSize="12" customLabel="" showMarkers="true" markerSize="7" color="#000000"/>
+                </DistanceMeasures>
+                <TmsBackground checkState="2" isExpanded="true" target=""/>
+            </DataModel>
+        </PostProcessor>
+        <PostProcessor type="post2dwindow" index="2" backgroundColor="#ffffff" visible="true" maximized="false" left="730" top="0" width="271" height="267">
+            <Camera positionX="74.4072" positionY="0.433013" positionZ="200" focalpointX="74.4072" focalpointY="0.433013" focalpointZ="0" roll="0" parallelscale="25.8628" parallelprojection="true"/>
+            <DataModel ZScale="1" isExpanded="false">
+                <GridType checkState="2" isExpanded="true" name="fastmech">
+                    <LookupTables/>
+                    <ParticleLookupTables/>
+                    <GeoData checkState="2" isExpanded="true">
+                        <GeoDataGroup checkState="2" isExpanded="true" name="Elevation"/>
+                    </GeoData>
+                    <Zones/>
+                </GridType>
+                <Title checkState="2" isExpanded="true" title="" fontSize="20" color="#000000"/>
+                <Time checkState="2" isExpanded="true" format="0" color="#000000"/>
+                <DistanceMeasures checkState="2" isExpanded="true">
+                    <DistanceMeasure checkState="2" isExpanded="true" name="Measure1" defined="false" point1X="0" point1Y="0" point2X="0" point2Y="0" showLabel="true" labelMode="0" labelPosition="2" fontSize="12" customLabel="" showMarkers="true" markerSize="7" color="#000000"/>
+                </DistanceMeasures>
+                <TmsBackground checkState="2" isExpanded="true" target=""/>
+            </DataModel>
+        </PostProcessor>
+    </PostProcessors>
     <Backgrounds/>
-    <PreProcessorWindow backgroundColor="#ffffff" visible="true" maximized="true" left="0" top="0" width="2533" height="1248">
+    <PreProcessorWindow backgroundColor="#ffffff" visible="true" maximized="false" left="0" top="0" width="2533" height="1248">
         <Camera positionX="74.4072" positionY="0.433013" positionZ="200" focalpointX="74.4072" focalpointY="0.433013" focalpointZ="0" roll="0" parallelscale="81.1686" parallelprojection="true"/>
         <DataModel isExpanded="false" mappingMode="0" geoMappingMode="0" tempAutoRegion="1" tempStreamWiseLength="4" tempCrossStreamLength="1" numExpansion="3" weightExponent="1">
             <BackgroundImages checkState="2" isExpanded="true"/>
@@ -70,7 +109,7 @@
             <TmsBackground checkState="2" isExpanded="true" target=""/>
         </DataModel>
     </PreProcessorWindow>
-    <SolverConsoleWindow visible="true" maximized="false" left="30" top="30" width="700" height="500" backgroundColor="#c8c8c8"/>
+    <SolverConsoleWindow visible="false" maximized="false" left="30" top="30" width="2512" height="1222" backgroundColor="#c8c8c8"/>
     <PostProcessorFactory>
         <WindowCount name="post2dwindow" value="2"/>
     </PostProcessorFactory>

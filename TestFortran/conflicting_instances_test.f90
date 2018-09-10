@@ -44,7 +44,7 @@ program conflicting_instances_test
   write (*, "(a)") "Set new value in model 2; does it affect model 1?"
   s = m2%set_value_at_indices("WaterSurfaceElevation", & ! array ordered ji, changing downstream boundary by 0.1
       ![201, 402, 603, 804, 1005, 1206, 1407, 1608, 1809, 2010, 2211], &
-      [2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211], & 
+      [2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211], & ! array ordered ij, changing downstream boundary by 0.1
       [10.1, 10.1, 10.1, 10.1, 10.1, 10.1, 10.1, 10.1, 10.1, 10.1, 10.1])
   write (*, "(a)") "New values, model 2:"
   s = m2%get_value("WaterSurfaceElevation", z2)

@@ -24,9 +24,9 @@
         real(kind=mp) :: t
         real(kind=mp) :: t_end
         integer, pointer :: n_x, n_y, n_z
-        real(kind=mp), pointer, dimension(:,:) :: fm_elevation, fm_depth, fm_wse
-        real(kind=mp), pointer, dimension(:,:) :: fm_velocity_x, fm_velocity_y, fm_shearstress_x, fm_shearstress_y
-        real(kind=mp), pointer, dimension(:,:) :: fm_dragcoefficient, fm_roughness, fm_vegroughness
+        !real(kind=mp), pointer, dimension(:,:) :: fm_elevation, fm_depth, fm_wse
+        !real(kind=mp), pointer, dimension(:,:) :: fm_velocity_x, fm_velocity_y, rvo%taus, fm_shearstress_y
+        !real(kind=mp), pointer, dimension(:,:) :: fm_dragcoefficient, fm_roughness, fm_vegroughness
         type(rivvar) :: t_rivvar
         type(calccond) :: t_calccond
         type(riv_w_var) :: t_rivwvar
@@ -253,16 +253,16 @@
     model%n_x => rvo%ns2
     model%n_y => rvo%nn
     model%n_z => rvo%nz
-    model%fm_elevation => rvo%eta
-    model%fm_depth => rvo%hl
-    model%fm_wse => rvo%e
-    model%fm_velocity_x => rvo%u
-    model%fm_velocity_y => rvo%v
-    model%fm_shearstress_x => rvo%taus
-    model%fm_shearstress_y => rvo%taun
-    model%fm_dragcoefficient => rvo%totcd
-    model%fm_roughness => rvo%cd
-    model%fm_vegroughness => rvo%cdv
+    !model%fm_elevation => rvo%eta
+    !model%fm_depth => rvo%hl
+    !model%fm_wse => rvo%e
+    !model%fm_velocity_x => rvo%u
+    !model%fm_velocity_y => rvo%v
+    !model%fm_shearstress_x => rvo%taus
+    !model%fm_shearstress_y => rvo%taun
+    !model%rvo%totcd => rvo%totcd
+    !model%fm_roughness => rvo%cd
+    !model%fm_vegroughness => rvo%cdv
     !model%t = 0.
     !model%dt = 1.
     !model%dx = 1.
@@ -337,7 +337,7 @@
     logical, pointer :: calccsed, calcquasi3d, calcquasi3drs, calcsedauto
     real(kind=mp), pointer :: g, rho, vkc, dn
     real(kind=mp), pointer :: vardt, olddisch, q, oldstage, newstage, newdisch, ptime
-    real(kind=mp), pointer :: ddisch, dstage, dsstage, elevoffset
+    real(kind=mp), pointer :: ddisch, dstage, dsstage!, elevoffset
     real(kind=mp), dimension(:,:), pointer :: e, hl, u, v, eta, totcd, cd, cdv, taus, taun, rn
     real(kind=mp), dimension(:,:), pointer :: dude, dvde, vout, uout, eka
     real(kind=mp), dimension(:,:), pointer :: qs, qn, con, x, y, harea
@@ -480,7 +480,7 @@
     calcquasi3d => model%t_calccond%calcquasi3d
     calcquasi3drs => model%t_calccond%calcquasi3drs
     calcsedauto => model%t_calccond%calcsedauto
-    elevoffset => model%t_rivvar%elevoffset
+    !elevoffset => model%t_rivvar%elevoffset
     olddisch => model%t_rivvar%olddisch
     oldstage => model%t_rivvar%oldstage
     newstage => model%t_rivvar%newstage
@@ -621,7 +621,7 @@
 
     write(*,*)
     write(*,*) 'discharge', q/1e6, 'change discharge', ddisch/1e6
-    write(*,*) 'stage', newstage/100.+elevoffset, 'change stage', dstage/100.
+    write(*,*) 'stage', newstage/100., 'change stage', dstage/100.
     write(*,*)
 
     if(nct.ge.1) then
@@ -1341,7 +1341,7 @@
     type(fastmech_model), intent(in) :: model
     type(rivvar) :: rvo
     character(len=*) :: ctype
-    real, dimension(:), intent(out) :: tmp !changed this to just real but could create problems
+    real, pointer, intent(inout) :: tmp(:) !changed this to just real but could create problems
     real(kind=mp) :: xx, yy, ux, uy
     double precision :: rcos, rsin
     integer :: i, j, count, ier
@@ -1372,12 +1372,12 @@
     deallocate(tmpval, stat=ier)
     end subroutine get_grid_2d_coord
 
-    subroutine get_grid_3d_coord(model, ctype, tmpx)
+    subroutine get_grid_3d_coord(model, ctype, tmp)
     implicit none
     type(fastmech_model), intent(in) :: model
     type(rivvar) :: rvo
     character(len=*) :: ctype
-    real, dimension(:), intent(out) :: tmpx
+    real, pointer, intent(inout) :: tmp(:)
     integer :: i, j, k, ier
     double precision :: xx, yy, ux, uy
     double precision :: rcos, rsin
@@ -1401,14 +1401,14 @@
                 case('y')
                     tmpval(i,j,k) = (yy + rvo%yshift)/100.
                 case('z')
-                    tmpval(i,j,k) = (rvo%zz(i,j,k)/100.) + rvo%elevoffset
+                    tmpval(i,j,k) = (rvo%zz(i,j,k)/100.) !+ rvo%elevoffset
                 end select
                 !ty(i,j,k) = (yy + yshift)/100.
                 !tz(i,j,k) = (zz(i,j,k)/100.) + elevoffset
             end do
         end do
     end do
-    tmpx = reshape(tmpval, (/rvo%ns2*rvo%nn*rvo%nz/))
+    tmp = reshape(tmpval, (/rvo%ns2*rvo%nn*rvo%nz/))
     deallocate(tmpval, stat=ier)
     end subroutine get_grid_3d_coord
 

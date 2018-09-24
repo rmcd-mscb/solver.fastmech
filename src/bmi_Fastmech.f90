@@ -308,10 +308,10 @@
 
     select case (grid_id)
     case (0)
-        shape = [self%model%n_y, self%model%n_x]
+        shape = [self%model%n_x, self%model%n_y]
         bmi_status = BMI_SUCCESS
     case (1)
-        shape = [self%model%n_y, self%model%n_x, self%model%n_z]
+        shape = [self%model%n_x, self%model%n_y, self%model%n_z]
         bmi_status = BMI_SUCCESS
         case default
         shape = [-1, -1]
@@ -343,7 +343,7 @@
     function fm_grid_x(self, grid_id, grid_x) result (bmi_status)
     class (bmi_fastmech), intent (in) :: self
     integer, intent (in) :: grid_id
-    real, dimension(:), intent (out) :: grid_x
+    real, pointer, intent (inout) :: grid_x(:)
     integer :: bmi_status, ier
     integer :: size
 
@@ -367,7 +367,7 @@
     function fm_grid_y(self, grid_id, grid_y) result (bmi_status)
     class (bmi_fastmech), intent (in) :: self
     integer, intent (in) :: grid_id
-    real, dimension(:), intent (out) :: grid_y
+    real, pointer, intent (inout) :: grid_y(:)
     integer :: bmi_status, ier
     integer :: size
 
@@ -391,7 +391,7 @@
     function fm_grid_z(self, grid_id, grid_z) result (bmi_status)
     class (bmi_fastmech), intent (in) :: self
     integer, intent (in) :: grid_id
-    real, dimension(:), intent (out) :: grid_z
+    real, pointer, intent (inout) :: grid_z(:)
     integer :: bmi_status, ier
     integer :: size
 
@@ -522,7 +522,7 @@
         s2 = self%get_grid_size(grid_id, n_elements)
         !n_elements = self%model%n_y * self%model%n_x
         allocate(dest(n_elements))
-        dest = reshape(self%model%fm_elevation+self%model%t_rivvar%elevoffset, [n_elements])
+        dest = reshape(self%model%t_rivvar%eta, [n_elements])
         bmi_status = BMI_SUCCESS
     case ('roughness')
         tmpname = adjustl(var_name) !did it htis way because get_var_grid uses string the BMI_MAVARNAMESTR
@@ -530,7 +530,7 @@
         s2 = self%get_grid_size(grid_id, n_elements)
         !n_elements = self%model%n_y * self%model%n_x
         allocate(dest(n_elements))
-        dest = reshape(self%model%fm_roughness, [n_elements])
+        dest = reshape(self%model%t_rivvar%cd, [n_elements])
         bmi_status = BMI_SUCCESS
     case ('vegroughness')
         tmpname = adjustl(var_name) !did it htis way because get_var_grid uses string the BMI_MAVARNAMESTR
@@ -538,7 +538,7 @@
         s2 = self%get_grid_size(grid_id, n_elements)
         !n_elements = self%model%n_y * self%model%n_x
         allocate(dest(n_elements))
-        dest = reshape(self%model%fm_vegroughness, [n_elements])
+        dest = reshape(self%model%t_rivvar%cdv, [n_elements])
         bmi_status = BMI_SUCCESS
     case ('Depth')
         tmpname = adjustl(var_name) !did it htis way because get_var_grid uses string the BMI_MAVARNAMESTR
@@ -546,7 +546,7 @@
         s2 = self%get_grid_size(grid_id, n_elements)
         !n_elements = self%model%n_y * self%model%n_x
         allocate(dest(n_elements))
-        dest = reshape(self%model%fm_depth, [n_elements])
+        dest = reshape(self%model%t_rivvar%hl, [n_elements])
         bmi_status = BMI_SUCCESS
     case ('Drag_Coefficient')
         tmpname = adjustl(var_name) !did it htis way because get_var_grid uses string the BMI_MAVARNAMESTR
@@ -554,7 +554,7 @@
         s2 = self%get_grid_size(grid_id, n_elements)
         !n_elements = self%model%n_y * self%model%n_x
         allocate(dest(n_elements))
-        dest = reshape(self%model%fm_dragcoefficient, [n_elements])
+        dest = reshape(self%model%t_rivvar%totcd, [n_elements])
         bmi_status = BMI_SUCCESS
     case ('ShearStressX')
         tmpname = adjustl(var_name) !did it htis way because get_var_grid uses string the BMI_MAVARNAMESTR
@@ -562,7 +562,7 @@
         s2 = self%get_grid_size(grid_id, n_elements)
         !n_elements = self%model%n_y * self%model%n_x
         allocate(dest(n_elements))
-        dest = reshape(self%model%fm_shearstress_x, [n_elements])
+        dest = reshape(self%model%t_rivvar%taus, [n_elements])
         bmi_status = BMI_SUCCESS
     case ('ShearStressY')
         tmpname = adjustl(var_name) !did it htis way because get_var_grid uses string the BMI_MAVARNAMESTR
@@ -570,7 +570,7 @@
         s2 = self%get_grid_size(grid_id, n_elements)
         !n_elements = self%model%n_y * self%model%n_x
         allocate(dest(n_elements))
-        dest = reshape(self%model%fm_shearstress_y, [n_elements])
+        dest = reshape(self%model%t_rivvar%taun, [n_elements])
         bmi_status = BMI_SUCCESS
     case ('WaterSurfaceElevation')
         tmpname = adjustl(var_name) !did it htis way because get_var_grid uses string the BMI_MAVARNAMESTR
@@ -578,7 +578,7 @@
         s2 = self%get_grid_size(grid_id, n_elements)
         !n_elements = self%model%n_y * self%model%n_x
         allocate(dest(n_elements))
-        dest = reshape((self%model%fm_wse/100.0)+self%model%t_rivvar%elevoffset, [n_elements])
+        dest = reshape(self%model%t_rivvar%e, [n_elements])
         bmi_status = BMI_SUCCESS
     case ('VelocityX')
         tmpname = adjustl(var_name) !did it htis way because get_var_grid uses string the BMI_MAVARNAMESTR
@@ -586,7 +586,7 @@
         s2 = self%get_grid_size(grid_id, n_elements)
         !n_elements = self%model%n_y * self%model%n_x
         allocate(dest(n_elements))
-        dest = reshape(self%model%fm_velocity_x, [n_elements])
+        dest = reshape(self%model%t_rivvar%u, [n_elements])
         bmi_status = BMI_SUCCESS
     case ('VelocityY')
         tmpname = adjustl(var_name) !did it htis way because get_var_grid uses string the BMI_MAVARNAMESTR
@@ -594,7 +594,7 @@
         s2 = self%get_grid_size(grid_id, n_elements)
         !n_elements = self%model%n_y * self%model%n_x
         allocate(dest(n_elements))
-        dest = reshape(self%model%fm_velocity_y, [n_elements])
+        dest = reshape(self%model%t_rivvar%v, [n_elements])
         bmi_status = BMI_SUCCESS
     case default
         n_elements = 1
@@ -620,43 +620,43 @@
 
     select case (var_name)
     case ("Elevation")
-        src = c_loc (self%model%fm_elevation(1,1))
+        src = c_loc (self%model%t_rivvar%eta(1,1))
         call c_f_pointer(src, dest, [n_elements])
         bmi_status = BMI_SUCCESS
     case ("Depth")
-        src = c_loc (self%model%fm_depth(1,1))
+        src = c_loc (self%model%t_rivvar%hl(1,1))
         call c_f_pointer(src, dest, [n_elements])
         bmi_status = BMI_SUCCESS
     case ("WaterSurfaceElevation")
-        src = c_loc (self%model%fm_wse(1,1))
+        src = c_loc (self%model%t_rivvar%e(1,1))
         call c_f_pointer(src, dest, [n_elements])
         bmi_status = BMI_SUCCESS
     case ("DragCoefficient")
-        src = c_loc (self%model%fm_dragcoefficient(1,1))
+        src = c_loc (self%model%t_rivvar%totcd(1,1))
         call c_f_pointer(src, dest, [n_elements])
         bmi_status = BMI_SUCCESS
     case ("roughness")
-        src = c_loc (self%model%fm_roughness(1,1))
+        src = c_loc (self%model%t_rivvar%cd(1,1))
         call c_f_pointer(src, dest, [n_elements])
         bmi_status = BMI_SUCCESS
     case ("vegroughness")
-        src = c_loc (self%model%fm_vegroughness(1,1))
+        src = c_loc (self%model%t_rivvar%cdv(1,1))
         call c_f_pointer(src, dest, [n_elements])
         bmi_status = BMI_SUCCESS
     case ("VelocityX")
-        src = c_loc (self%model%fm_velocity_x(1,1))
+        src = c_loc (self%model%t_rivvar%u(1,1))
         call c_f_pointer(src, dest, [n_elements])
         bmi_status = BMI_SUCCESS
     case ("VelocityY")
-        src = c_loc (self%model%fm_velocity_y(1,1))
+        src = c_loc (self%model%t_rivvar%v(1,1))
         call c_f_pointer(src, dest, [n_elements])
         bmi_status = BMI_SUCCESS
     case ("ShearStressX")
-        src = c_loc (self%model%fm_shearstress_x(1,1))
+        src = c_loc (self%model%t_rivvar%taus(1,1))
         call c_f_pointer(src, dest, [n_elements])
         bmi_status = BMI_SUCCESS
     case ("ShearStressY")
-        src = c_loc (self%model%fm_shearstress_y(1,1))
+        src = c_loc (self%model%t_rivvar%taun(1,1))
         call c_f_pointer(src, dest, [n_elements])
         bmi_status = BMI_SUCCESS
 
@@ -682,34 +682,34 @@
 
     select case (var_name)
     case ("Elevation")
-        src = c_loc (self%model%fm_elevation(1,1))
+        src = c_loc (self%model%t_rivvar%eta(1,1))
         bmi_status = BMI_SUCCESS
     case ("Depth")
-        src = c_loc (self%model%fm_depth(1,1))
+        src = c_loc (self%model%t_rivvar%hl(1,1))
         bmi_status = BMI_SUCCESS
     case ("WaterSurfaceElevation")
-        src = c_loc (self%model%fm_wse(1,1))
+        src = c_loc (self%model%t_rivvar%e(1,1))
         bmi_status = BMI_SUCCESS
     case ("DragCoefficient")
-        src = c_loc (self%model%fm_dragcoefficient(1,1))
+        src = c_loc (self%model%t_rivvar%totcd(1,1))
         bmi_status = BMI_SUCCESS
     case ("roughness")
-        src = c_loc (self%model%fm_roughness(1,1))
+        src = c_loc (self%model%t_rivvar%cd(1,1))
         bmi_status = BMI_SUCCESS
     case ("vegroughness")
-        src = c_loc (self%model%fm_vegroughness(1,1))
+        src = c_loc (self%model%t_rivvar%cdv(1,1))
         bmi_status = BMI_SUCCESS
     case ("VelocityX")
-        src = c_loc (self%model%fm_velocity_x(1,1))
+        src = c_loc (self%model%t_rivvar%u(1,1))
         bmi_status = BMI_SUCCESS
     case ("VelocityY")
-        src = c_loc (self%model%fm_velocity_y(1,1))
+        src = c_loc (self%model%t_rivvar%v(1,1))
         bmi_status = BMI_SUCCESS
     case ("ShearStressX")
-        src = c_loc (self%model%fm_shearstress_x(1,1))
+        src = c_loc (self%model%t_rivvar%taus(1,1))
         bmi_status = BMI_SUCCESS
     case ("ShearStressY")
-        src = c_loc (self%model%fm_shearstress_y(1,1))
+        src = c_loc (self%model%t_rivvar%taun(1,1))
         bmi_status = BMI_SUCCESS
     case default
         bmi_status = BMI_FAILURE
@@ -751,40 +751,41 @@
     integer :: dims(2)
     integer :: bmi_status
     integer :: n_elements, s1, s2, grid_id
+    integer :: i
     tmpname = adjustl(var_name) !did it htis way because get_var_grid uses string with length BMI_MAVARNAMESTR
     s1 = self%get_var_grid(tmpname, grid_id)
     s2 = self%get_grid_shape(grid_id, dims)
 
     select case (var_name)
     case ("Elevation")
-        self%model%fm_elevation = reshape(src, dims)
+        self%model%t_rivvar%eta = reshape(src, dims)
         bmi_status = BMI_SUCCESS
     case ("Depth")
-        self%model%fm_depth = reshape(src, dims)
+        self%model%t_rivvar%hl = reshape(src, dims)
         bmi_status = BMI_SUCCESS
     case ("WaterSurfaceElevation")
-        self%model%fm_wse = reshape(src, dims)
+        self%model%t_rivvar%e = reshape(src, dims)
         bmi_status = BMI_SUCCESS
     case ("DragCoefficient")
-        self%model%fm_dragcoefficient = reshape(src, dims)
+        self%model%t_rivvar%totcd = reshape(src, dims)
         bmi_status = BMI_SUCCESS
     case ("roughness")
-        self%model%fm_roughness = reshape(src, dims)
+        self%model%t_rivvar%cd = reshape(src, dims)
         bmi_status = BMI_SUCCESS
     case ("vegroughness")
-        self%model%fm_vegroughness = reshape(src, dims)
+        self%model%t_rivvar%cdv = reshape(src, dims)
         bmi_status = BMI_SUCCESS
     case ("VelocityX")
-        self%model%fm_velocity_x = reshape(src, dims)
+        self%model%t_rivvar%u = reshape(src, dims)
         bmi_status = BMI_SUCCESS
     case ("VelocityY")
-        self%model%fm_velocity_y = reshape(src, dims)
+        self%model%t_rivvar%v = reshape(src, dims)
         bmi_status = BMI_SUCCESS
     case ("ShearStressX")
-        self%model%fm_shearstress_x = reshape(src, dims)
+        self%model%t_rivvar%taus = reshape(src, dims)
         bmi_status = BMI_SUCCESS
     case ("ShearStressy")
-        self%model%fm_shearstress_y = reshape(src, dims)
+        self%model%t_rivvar%taun = reshape(src, dims)
         bmi_status = BMI_SUCCESS
     case default
         bmi_status = BMI_FAILURE
@@ -808,51 +809,43 @@
 
     select case (var_name)
     case ("Elevation")
-        dest = c_loc (self%model%fm_elevation(1,1))
+        dest = c_loc (self%model%t_rivvar%eta(1,1))
         bmi_status = BMI_SUCCESS
     case ("Depth")
-        dest = c_loc (self%model%fm_depth(1,1))
+        dest = c_loc (self%model%t_rivvar%hl(1,1))
         bmi_status = BMI_SUCCESS
     case ("WaterSurfaceElevation")
-        dest = c_loc (self%model%fm_wse(1,1))
+        dest = c_loc (self%model%t_rivvar%e(1,1))
         bmi_status = BMI_SUCCESS
     case ("DragCoefficient")
-        dest = c_loc (self%model%fm_dragcoefficient(1,1))
+        dest = c_loc (self%model%t_rivvar%totcd(1,1))
         bmi_status = BMI_SUCCESS
     case ("roughness")
-        dest = c_loc (self%model%fm_roughness(1,1))
+        dest = c_loc (self%model%t_rivvar%cd(1,1))
         bmi_status = BMI_SUCCESS
     case ("vegroughness")
-        dest = c_loc (self%model%fm_vegroughness(1,1))
+        dest = c_loc (self%model%t_rivvar%cdv(1,1))
         bmi_status = BMI_SUCCESS
     case ("VelocityX")
-        dest = c_loc (self%model%fm_velocity_x(1,1))
+        dest = c_loc (self%model%t_rivvar%u(1,1))
         bmi_status = BMI_SUCCESS
     case ("VelocityY")
-        dest = c_loc (self%model%fm_velocity_y(1,1))
+        dest = c_loc (self%model%t_rivvar%v(1,1))
         bmi_status = BMI_SUCCESS
     case ("ShearStressX")
-        dest = c_loc (self%model%fm_shearstress_x(1,1))
+        dest = c_loc (self%model%t_rivvar%taus(1,1))
         bmi_status = BMI_SUCCESS
     case ("ShearStressY")
-        dest = c_loc (self%model%fm_shearstress_y(1,1))
+        dest = c_loc (self%model%t_rivvar%taun(1,1))
         bmi_status = BMI_SUCCESS
     case default
         bmi_status = BMI_FAILURE
     end select
     if(bmi_status == BMI_SUCCESS) then
         call c_f_pointer(dest, dest_flattened, [n_elements])
-        select case (var_name)
-        case('WaterSurfaceElevation')
-        do i = 1, size (indices)
-            dest_flattened(indices(i)) = (src(i) - self%model%t_rivvar%elevoffset)*100
-        end do
-        case default
         do i = 1, size (indices)
             dest_flattened(indices(i)) = src(i)
         end do
-        end select
-
     endif
     end function fm_set_at_indices
 

@@ -224,7 +224,7 @@ module bmif
        import :: bmi
        class (bmi), intent (in) :: self
        integer, intent (in) :: grid_id
-       real, dimension(:), intent (out) :: grid_x
+       real, pointer, intent (inout) :: grid_x(:)
        integer :: bmi_status
      end function bmi_get_grid_x
      
@@ -233,7 +233,7 @@ module bmif
        import :: bmi
        class (bmi), intent (in) :: self
        integer, intent (in) :: grid_id
-       real, dimension(:), intent (out) :: grid_y
+       real, pointer, intent (inout) :: grid_y(:)
        integer :: bmi_status
      end function bmi_get_grid_y
      
@@ -242,7 +242,7 @@ module bmif
        import :: bmi
        class (bmi), intent (in) :: self
        integer, intent (in) :: grid_id
-       real, dimension(:), intent (out) :: grid_z
+       real, pointer, intent (inout) :: grid_z(:)
        integer :: bmi_status
      end function bmi_get_grid_z
      

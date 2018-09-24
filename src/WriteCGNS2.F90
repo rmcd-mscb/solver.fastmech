@@ -407,7 +407,7 @@
     DO k = 1,rvo%nz
         DO j= 1,rvo%nn
             DO i=1,rvo%ns2
-                gridz(i,j,k) = (rvo%zz(i,j,k)/100.) + rvo%elevoffset
+                gridz(i,j,k) = (rvo%zz(i,j,k)/100.) !+ rvo%elevoffset
             END DO
         END DO
     END DO
@@ -852,7 +852,7 @@
 
     DO j= 1,rvo%nn
         DO i=1,rvo%ns2
-            wse(i,j) = (rvo%e(i,j)/100.) + rvo%elevoffset
+            wse(i,j) = (rvo%e(i,j)/100.) !+ rvo%elevoffset
         END DO
     END DO
 
@@ -866,7 +866,7 @@
 
     DO j= 1,rvo%nn
         DO i=1,rvo%ns2
-            elev(i,j) = (rvo%eta(i,j)/100.) + rvo%elevoffset
+            elev(i,j) = (rvo%eta(i,j)/100.) !+ rvo%elevoffset
         END DO
     END DO
 
@@ -918,7 +918,7 @@
 
                 tx(i,j,k) = (xx + rvo%xshift)/100.
                 ty(i,j,k) = (yy + rvo%yshift)/100.
-                tz(i,j,k) = (rvo%zz(i,j,k)/100.) + rvo%elevoffset
+                tz(i,j,k) = (rvo%zz(i,j,k)/100.) !+ rvo%elevoffset
             END DO
         END DO
     END DO

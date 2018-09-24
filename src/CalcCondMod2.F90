@@ -324,7 +324,8 @@
         DO ii = 1, sizeStageTQ
             count2 = (ii-1)*2
             treal(count2+1) = stageT(ii)
-            treal(count2+2) = (stageH(ii)-rv_object%elevOffset)*100.
+            !treal(count2+2) = (stageH(ii)-rv_object%elevOffset)*100.
+            treal(count2+2) = (stageH(ii))*100.
         ENDDO
         Call SetRatingCurves(rvt_object, (2*sizeStageTQ), treal)
         tint(1) = 0
@@ -344,7 +345,9 @@
         DO ii = 1, sizeStageHQ
             count2 = (ii-1)*2
             treal(count2+1) = stageQ(ii)
-            treal(count2+2) = (stageH(ii) - rv_object%elevoffset)*100
+            !treal(count2+2) = (stageH(ii) - rv_object%elevoffset)*100
+            treal(count2+2) = (stageH(ii))*100
+
         ENDDO
         Call SetRatingCurves(rvt_object, (2*sizeStageHQ), treal)
         tint(1) = 1
@@ -380,9 +383,13 @@
     ENDIF
 
     CALL cg_iRIC_Read_Real_F('FM_HydAttWS', cc_object%wselev, ier)
-    cc_object%wselev=(cc_object%wselev - rv_object%elevoffset)*100.
+    !cc_object%wselev=(cc_object%wselev - rv_object%elevoffset)*100.
+    cc_object%wselev=(cc_object%wselev)*100.
+
     CALL cg_iRIC_Read_Real_F('FM_HydAttWS2', cc_object%wsupelev, ier)
-    cc_object%wsupelev=(cc_object%wsupelev - rv_object%elevoffset)*100.
+    !cc_object%wsupelev=(cc_object%wsupelev - rv_object%elevoffset)*100.
+    cc_object%wsupelev=(cc_object%wsupelev)*100.
+
     CALL cg_iRIC_Read_Real_F('FM_HydAttWSSlope', cc_object%wsslope, ier)
     CALL CG_IRIC_READ_INTEGER_F('FM_HydAttWSType', cc_object%wstype, ier)
     IF(cc_object%wstype == 3) THEN

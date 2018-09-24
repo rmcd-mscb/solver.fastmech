@@ -1,10 +1,10 @@
 ! Test the basic info BMI methods.
 program info_test
 
-  use bmiheatf
+    use bmifastmech
   implicit none
 
-  type (bmi_heat) :: m
+  type (bmi_fastmech) :: m
   integer :: s
   character (len=BMI_MAXCOMPNAMESTR), pointer :: name
   character (len=BMI_MAXVARNAMESTR), pointer :: names(:)

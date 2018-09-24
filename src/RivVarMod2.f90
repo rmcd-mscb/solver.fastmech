@@ -9,7 +9,7 @@
         real(kind = mp) :: g, rho, vkc
         integer :: nclusters, nwetnodes, noldwetnodes
 
-        real(kind=mp) :: elevoffset=1e12
+        !real(kind=mp) :: elevoffset=1e12
         real(kind=mp) :: ds,dn,mo!,hwt
         real(kind=mp) :: fcos, fsin
         !real(kind=mp) :: lbwse, rbwse, vdcds, vacds

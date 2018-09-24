@@ -21,19 +21,21 @@
     ALLOCATE(tmpreal4(object%ns2*object%nn), STAT=IER)
 
     CALL cg_iRIC_Read_Grid_Real_Node_F('Elevation', tmpreal4, IER)
-    DO I = 1, object%ns2*object%nn
-        IF( tmpreal4(i) < object%elevoffset) THEN
-            object%elevoffset = tmpreal4(i)
-        ENDIF
-        IF(object%elevoffset < 0) THEN
-            object%elevoffset = 0
-        ENDIF
-    ENDDO
+    !DO I = 1, object%ns2*object%nn
+    !    IF( tmpreal4(i) < object%elevoffset) THEN
+    !        object%elevoffset = tmpreal4(i)
+    !    ENDIF
+    !    !IF(object%elevoffset < 0) THEN
+    !    !    object%elevoffset = 0
+    !    !ENDIF
+    !ENDDO
     DO I= 1,object%ns2
         DO J=1,object%nn
             COUNT = ((I-1)*object%nn)+J
             countji = ((j-1)*object%ns2)+i
-            object%eta2(I,J) = (tmpreal4(countji) - object%elevoffset)*100.
+            !object%eta2(I,J) = (tmpreal4(countji) - object%elevoffset)*100.
+            object%eta2(I,J) = (tmpreal4(countji))*100.d0
+
         ENDDO
     ENDDO
 

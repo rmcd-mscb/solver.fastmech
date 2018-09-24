@@ -25,8 +25,8 @@
 				<Tool Name="VFPostBuildEventTool"/>
 				<Tool Name="VFManifestTool" SuppressStartupBanner="true"/></Configuration>
 		<Configuration Name="Debug|x64" DeleteExtensionsOnClean="*.obj;*.mod;*.pdb;*.asm;*.map;*.dyn;*.dpi;*.tmp;*.log;*.ilk;*.exe;$(TargetPath)">
-				<Tool Name="VFFortranCompilerTool" SuppressStartupBanner="true" DebugInformationFormat="debugEnabled" Optimization="optimizeDisabled" AdditionalIncludeDirectories="libs_06_07_18\." EnableRecursion="true" ReentrantCode="reentrancyThreaded" EmitDiagnosticsToFile="true" RealKIND="realKIND8" ModulePath="$(INTDIR)/" ObjectFile="$(INTDIR)/" RuntimeLibrary="rtMultiThreadedDebugDLL"/>
-				<Tool Name="VFLinkerTool" OutputFile="$(OUTDIR)/Fastmech.exe" ShowProgress="linkProgressAll" LinkIncremental="linkIncrementalYes" SuppressStartupBanner="true" AdditionalLibraryDirectories="libs_06_07_18\." GenerateDebugInformation="true" ProgramDatabaseFile="$(OUTDIR)/Stagr_Console.pdb" SubSystem="subSystemConsole" HeapReserveSize="100000000" HeapCommitSize="100000000" StackReserveSize="1000000000" StackCommitSize="1000000000" AdditionalDependencies="cgnsdll_x64_ifort.lib iriclib_x64_ifort.lib"/>
+				<Tool Name="VFFortranCompilerTool" SuppressStartupBanner="true" DebugInformationFormat="debugEnabled" Optimization="optimizeDisabled" AdditionalIncludeDirectories="./fmbmi/x64/Debug" EnableRecursion="true" ReentrantCode="reentrancyThreaded" EmitDiagnosticsToFile="true" RealKIND="realKIND8" ModulePath="$(INTDIR)/" ObjectFile="$(INTDIR)/" RuntimeLibrary="rtMultiThreadedDebugDLL"/>
+				<Tool Name="VFLinkerTool" OutputFile="$(OUTDIR)/Fastmech.exe" ShowProgress="linkProgressAll" LinkIncremental="linkIncrementalYes" SuppressStartupBanner="true" AdditionalLibraryDirectories="./fmbmi/x64/Debug" GenerateDebugInformation="true" ProgramDatabaseFile="$(OUTDIR)/Stagr_Console.pdb" SubSystem="subSystemConsole" HeapReserveSize="100000000" HeapCommitSize="100000000" StackReserveSize="1000000000" StackCommitSize="1000000000" AdditionalDependencies="fmbmi.lib"/>
 				<Tool Name="VFResourceCompilerTool"/>
 				<Tool Name="VFMidlTool" SuppressStartupBanner="true" TargetEnvironment="midlTargetAMD64" HeaderFileName="$(InputName).h" TypeLibraryName="$(IntDir)/$(InputName).tlb"/>
 				<Tool Name="VFCustomBuildTool"/>
@@ -167,53 +167,5 @@
 	<Files>
 		<Filter Name="Resource Files" Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe"/>
 		<Filter Name="src">
-		<File RelativePath=".\src\betaCDFandINV.f90"/>
-		<File RelativePath=".\src\betavol.f90"/>
-		<File RelativePath=".\src\bmi.f90"/>
-		<File RelativePath=".\src\bmi_Fastmech.f90"/>
-		<File RelativePath=".\src\CalcCondMod2.F90"/>
-		<File RelativePath=".\src\CsedMod2.f90"/>
-		<File RelativePath=".\src\Einit2.f90"/>
-		<File RelativePath=".\src\elevdt.f90"/>
-		<File RelativePath=".\src\fastmech.f90"/>
-		<File RelativePath=".\src\fm_helpers2.f90"/>
-		<File RelativePath=".\src\functionrough.f90"/>
-		<File RelativePath=".\src\GeometryMod.F90"/>
-		<File RelativePath=".\src\global.f90"/>
-		<File RelativePath=".\src\GridCondMod2.F90"/>
-		<File RelativePath=".\src\initdt.f90"/>
-		<File RelativePath=".\src\initHdt.f90"/>
-		<File RelativePath=".\src\initimeta.f90"/>
-		<File RelativePath=".\src\iriclibf.f90"/>
-		<File RelativePath=".\src\Median.f90"/>
-		<File RelativePath=".\src\ParmSet.f90"/>
-		<File RelativePath=".\src\RivCalcInitCond2.F90"/>
-		<File RelativePath=".\src\RivConnectivityMod2.F90"/>
-		<File RelativePath=".\src\RivStagrMod_bmi.f90"/>
-		<File RelativePath=".\src\RivVarMod2.f90"/>
-		<File RelativePath=".\src\RivVarTimeMod2.f90"/>
-		<File RelativePath=".\src\RivVarVertMod2.f90"/>
-		<File RelativePath=".\src\RivVarWMod2.f90"/>
-		<File RelativePath=".\src\RivVertMod2.f90"/>
-		<File RelativePath=".\src\rough.f90"/>
-		<File RelativePath=".\src\roughnessinv.f90"/>
-		<File RelativePath=".\src\Stagr_Console.f90"/>
-		<File RelativePath=".\src\StbBkwOutput.f90"/>
-		<File RelativePath=".\src\StpBkwInput.f90"/>
-		<File RelativePath=".\src\stressDivMod2.f90"/>
-		<File RelativePath=".\src\Support.f90"/>
-		<File RelativePath=".\src\tridag2.f90"/>
-		<File RelativePath=".\src\Uinit2.f90"/>
-		<File RelativePath=".\src\volfrac.f90"/>
-		<File RelativePath=".\src\Welcome.f90"/>
-		<File RelativePath=".\src\WriteCGNS2.F90"/>
-		<File RelativePath=".\src\xAnlzFlow.f90"/>
-		<File RelativePath=".\src\xFArea2.f90"/>
-		<File RelativePath=".\src\xFChPreis.f90"/>
-		<File RelativePath=".\src\xFInput.f90"/>
-		<File RelativePath=".\src\xFlowSupport.F90"/>
-		<File RelativePath=".\src\xFMatInv.f90"/>
-		<File RelativePath=".\src\xFNetInitConds.f90"/>
-		<File RelativePath=".\src\xFNetPreisMain.f90"/>
-		<File RelativePath=".\src\xFTSBoundCond.f90"/></Filter></Files>
+		<File RelativePath=".\src\Stagr_Console.f90"/></Filter></Files>
 	<Globals/></VisualStudioProject>

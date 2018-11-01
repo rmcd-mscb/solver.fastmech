@@ -31,7 +31,7 @@
         real(kind=mp), dimension(:,:), pointer :: taus, taun, hl, eta, rn, cd, cdv, totcd
         real(kind=mp), allocatable, dimension(:,:) :: mineta
         real(kind=mp), allocatable, dimension(:,:) :: znaught
-        real(kind=mp), allocatable, dimension(:,:) :: u, v, e
+        real(kind=mp), dimension(:,:), pointer :: u, v, e
         real(kind=mp), allocatable, dimension(:,:) :: iu, iv, iwse, ie, ihl
         real(kind=mp), allocatable, dimension(:,:) :: x, y
         real(kind=mp), allocatable, dimension(:,:) :: harea

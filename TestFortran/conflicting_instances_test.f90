@@ -1,4 +1,4 @@
-! Do two instances of bmi_heat conflict?
+! Do two instances of bmi_fastmech conflict?
 program conflicting_instances_test
 
   use bmifastmech

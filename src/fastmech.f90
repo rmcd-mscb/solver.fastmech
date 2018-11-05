@@ -2334,6 +2334,40 @@
         endif
     end associate
     end subroutine solve_fm
+    
+    !subroutine unrotate_vec_vals(model, tmp)
+    !implicit none
+    !type(fastmech_ model), intent(in) :: model
+    !type(rivvar) :: rvo
+    !type(riv_w_var) ::rwvo
+    !real,dimension(:), intent(inout) :: tmp(:) !changed this to just real but could create problems
+    !real(kind=mp) :: xx, yy, ux, uy
+    !double precision :: rcos, rsin
+    !integer :: i, j, count, ier
+    !real(kind=mp), allocatable, dimension(:,:) :: tmpval
+    !rvo =  model%t_rivvar
+    !rwvo = model%t_rivwvar
+    !allocate(tmpval(rvo%ns2,rvo%nn), stat=ier)
+    !
+    !
+    !end subroutine unrotate_vec_vals
+
+    !subroutine rotate_vec_vals(model, tmp)
+    !implicit none
+    !type(fastmech_ model), intent(in) :: model
+    !type(rivvar) :: rvo
+    !type(riv_w_var) ::rwvo
+    !real,dimension(:), intent(inout) :: tmp(:) !changed this to just real but could create problems
+    !real(kind=mp) :: xx, yy, ux, uy
+    !double precision :: rcos, rsin
+    !integer :: i, j, count, ier
+    !real(kind=mp), allocatable, dimension(:,:) :: tmpval
+    !rvo =  model%t_rivvar
+    !rwvo = model%t_rivwvar
+    !allocate(tmpval(rvo%ns2,rvo%nn), stat=ier)
+    !
+    !
+    !end subroutine rotate_vec_vals
 
     subroutine get_grid_2d_ssvec(model, ctype, tmp)
     implicit none

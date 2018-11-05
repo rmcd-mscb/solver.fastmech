@@ -687,23 +687,23 @@
         dest = reshape(self%model%t_rivvar%totcd, [self%model%n_x*self%model%n_y])
         bmi_status = BMI_SUCCESS
     case('ShearStressX')
-        call get_grid_2d_ssvec(self%model, 'ShearStressX', dest)
-        !dest = reshape(self%model%t_rivvar%taus, [self%model%n_x*self%model%n_y])
+        !call get_grid_2d_ssvec(self%model, 'ShearStressX', dest)
+        dest = reshape(self%model%t_rivvar%taus, [self%model%n_x*self%model%n_y])
         bmi_status = BMI_SUCCESS
     case('ShearStressY')
-        call get_grid_2d_ssvec(self%model, 'ShearStressY', dest)
-        !dest = reshape(self%model%t_rivvar%taun, [self%model%n_x*self%model%n_y])
+        !call get_grid_2d_ssvec(self%model, 'ShearStressY', dest)
+        dest = reshape(self%model%t_rivvar%taun, [self%model%n_x*self%model%n_y])
         bmi_status = BMI_SUCCESS
     case('WaterSurfaceElevation')
         dest = reshape(self%model%t_rivvar%e, [self%model%n_x*self%model%n_y])
         bmi_status = BMI_SUCCESS
     case('VelocityX')
-        call get_grid_2d_velvec(self%model, 'VelocityX', dest)
-        !dest = reshape(self%model%t_rivvar%u, [self%model%n_x*self%model%n_y])
+        !call get_grid_2d_velvec(self%model, 'VelocityX', dest)
+        dest = reshape(self%model%t_rivvar%u, [self%model%n_x*self%model%n_y])
         bmi_status = BMI_SUCCESS
     case('VelocityY')
-        call get_grid_2d_velvec(self%model, 'VelocityY', dest)
-        !dest = reshape(self%model%t_rivwvar%vout, [self%model%n_x*self%model%n_y])
+        !call get_grid_2d_velvec(self%model, 'VelocityY', dest)
+        dest = reshape(self%model%t_rivwvar%vout, [self%model%n_x*self%model%n_y])
         bmi_status = BMI_SUCCESS
     case('IBC')
         dest = reshape(self%model%t_rivvar%ibc, [self%model%n_x*self%model%n_y])

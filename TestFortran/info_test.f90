@@ -1,13 +1,14 @@
 ! Test the basic info BMI methods.
 program info_test
 
+    use bmif
     use bmifastmech
   implicit none
 
   type (bmi_fastmech) :: m
   integer :: s
-  character (len=BMI_MAXCOMPNAMESTR), pointer :: name
-  character (len=BMI_MAXVARNAMESTR), pointer :: names(:)
+  character (len=BMI_MAX_COMPONENT_NAME), pointer :: name
+  character (len=BMI_MAX_COMPONENT_NAME), pointer :: names(:)
 
   write (*,"(a)") "Component info"
 

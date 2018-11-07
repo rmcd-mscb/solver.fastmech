@@ -48,7 +48,7 @@ program set_value_test
       locations2(i) = countij
   enddo
 
-  write (*, "(a)") "Set values at three locations:"
+  write (*, "(a)") "Adjust downstream stage by .1 m :"
   !locations = [2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211]
   values = [10.1, 10.1, 10.1, 10.1, 10.1, 10.1, 10.1, 10.1, 10.1, 10.1, 10.1]*100.d0
   write (*,*) "Locations: ", locations2
@@ -68,4 +68,5 @@ program set_value_test
   s = m%finalize()
   write (*,*) "Done"
 
+  deallocate(z,y)
 end program set_value_test

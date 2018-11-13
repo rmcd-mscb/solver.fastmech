@@ -556,34 +556,35 @@
     select case (var_name)
 
     case('Elevation')
-        var_size = sizeof(self%model%t_rivvar%eta(1,1))
+        !var_size = sizeof(self%model%t_rivvar%eta(1,1))
+        var_size = sizeof(self%model%fm_elevation(1,1))
         bmi_status = BMI_SUCCESS
     case('roughness')
-        var_size = sizeof(self%model%t_rivvar%cd(1,1))
+        var_size = sizeof(self%model%fm_roughness(1,1))
         bmi_status = BMI_SUCCESS
     case('vegroughness')
-        var_size = sizeof(self%model%t_rivvar%cdv(1,1))
+        var_size = sizeof(self%model%fm_vegroughness(1,1))
         bmi_status = BMI_SUCCESS
     case('Depth')
-        var_size = sizeof(self%model%t_rivvar%hl(1,1))
+        var_size = sizeof(self%model%fm_depth(1,1))
         bmi_status = BMI_SUCCESS
     case('Drag_Coefficient')
-        var_size = sizeof(self%model%t_rivvar%totcd(1,1))
+        var_size = sizeof(self%model%fm_dragcoefficient(1,1))
         bmi_status = BMI_SUCCESS
     case('ShearStressX')
-        var_size = sizeof(self%model%t_rivvar%taus(1,1))
+        var_size = sizeof(self%model%fm_shearstress_x(1,1))
         bmi_status = BMI_SUCCESS
     case('ShearStressY')
-        var_size = sizeof(self%model%t_rivvar%taun(1,1))
+        var_size = sizeof(self%model%fm_shearstress_y(1,1))
         bmi_status = BMI_SUCCESS
     case('WaterSurfaceElevation')
-        var_size = sizeof(self%model%t_rivvar%e(1,1))
+        var_size = sizeof(self%model%fm_wse(1,1))
         bmi_status = BMI_SUCCESS
     case('VelocityX')
-        var_size = sizeof(self%model%t_rivvar%u(1,1))
+        var_size = sizeof(self%model%fm_velocity_x(1,1))
         bmi_status = BMI_SUCCESS
     case('VelocityY')
-        var_size = sizeof(self%model%t_rivwvar%vout(1,1))
+        var_size = sizeof(self%model%fm_velocity_y(1,1))
         bmi_status = BMI_SUCCESS
     case('IBC')
         var_size = sizeof(self%model%t_rivvar%ibc(1,1))
@@ -675,35 +676,35 @@
         dest = reshape(self%model%t_rivvar%eta, [self%model%n_x*self%model%n_y])
         bmi_status = BMI_SUCCESS
     case('roughness')
-        dest = reshape(self%model%t_rivvar%cd, [self%model%n_x*self%model%n_y])
+        dest = reshape(self%model%fm_roughness, [self%model%n_x*self%model%n_y])
         bmi_status = BMI_SUCCESS
     case('vegroughness')
-        dest = reshape(self%model%t_rivvar%cdv, [self%model%n_x*self%model%n_y])
+        dest = reshape(self%model%fm_vegroughness, [self%model%n_x*self%model%n_y])
         bmi_status = BMI_SUCCESS
     case('Depth')
-        dest = reshape(self%model%t_rivvar%hl, [self%model%n_x*self%model%n_y])
+        dest = reshape(self%model%fm_depth, [self%model%n_x*self%model%n_y])
         bmi_status = BMI_SUCCESS
     case('Drag_Coefficient')
-        dest = reshape(self%model%t_rivvar%totcd, [self%model%n_x*self%model%n_y])
+        dest = reshape(self%model%fm_dragcoefficient, [self%model%n_x*self%model%n_y])
         bmi_status = BMI_SUCCESS
     case('ShearStressX')
         !call get_grid_2d_ssvec(self%model, 'ShearStressX', dest)
-        dest = reshape(self%model%t_rivvar%taus, [self%model%n_x*self%model%n_y])
+        dest = reshape(self%model%fm_shearstress_x, [self%model%n_x*self%model%n_y])
         bmi_status = BMI_SUCCESS
     case('ShearStressY')
         !call get_grid_2d_ssvec(self%model, 'ShearStressY', dest)
-        dest = reshape(self%model%t_rivvar%taun, [self%model%n_x*self%model%n_y])
+        dest = reshape(self%model%fm_shearstress_y, [self%model%n_x*self%model%n_y])
         bmi_status = BMI_SUCCESS
     case('WaterSurfaceElevation')
-        dest = reshape(self%model%t_rivvar%e, [self%model%n_x*self%model%n_y])
+        dest = reshape(self%model%fm_wse, [self%model%n_x*self%model%n_y])
         bmi_status = BMI_SUCCESS
     case('VelocityX')
         !call get_grid_2d_velvec(self%model, 'VelocityX', dest)
-        dest = reshape(self%model%t_rivvar%u, [self%model%n_x*self%model%n_y])
+        dest = reshape(self%model%fm_velocity_x, [self%model%n_x*self%model%n_y])
         bmi_status = BMI_SUCCESS
     case('VelocityY')
         !call get_grid_2d_velvec(self%model, 'VelocityY', dest)
-        dest = reshape(self%model%t_rivwvar%vout, [self%model%n_x*self%model%n_y])
+        dest = reshape(self%model%fm_velocity_y, [self%model%n_x*self%model%n_y])
         bmi_status = BMI_SUCCESS
     case('IBC')
         dest = reshape(self%model%t_rivvar%ibc, [self%model%n_x*self%model%n_y])
@@ -771,47 +772,47 @@
         call c_f_pointer(src, dest, [n_elements])
         bmi_status = BMI_SUCCESS
     case('roughness')
-        src = c_loc(self%model%t_rivvar%cd(1,1))
+        src = c_loc(self%model%fm_roughness(1,1))
         n_elements = self%model%n_y * self%model%n_x
         call c_f_pointer(src, dest, [n_elements])
         bmi_status = BMI_SUCCESS
     case('vegroughness')
-        src = c_loc(self%model%t_rivvar%cdv(1,1))
+        src = c_loc(self%model%fm_vegroughness(1,1))
         n_elements = self%model%n_y * self%model%n_x
         call c_f_pointer(src, dest, [n_elements])
         bmi_status = BMI_SUCCESS
     case('Depth')
-        src = c_loc(self%model%t_rivvar%hl(1,1))
+        src = c_loc(self%model%fm_depth(1,1))
         n_elements = self%model%n_y * self%model%n_x
         call c_f_pointer(src, dest, [n_elements])
         bmi_status = BMI_SUCCESS
     case('Drag_Coefficient')
-        src = c_loc(self%model%t_rivvar%totcd(1,1))
+        src = c_loc(self%model%fm_dragcoefficient(1,1))
         n_elements = self%model%n_y * self%model%n_x
         call c_f_pointer(src, dest, [n_elements])
         bmi_status = BMI_SUCCESS
     case('ShearStressX')
-        src = c_loc(self%model%t_rivvar%taus(1,1))
+        src = c_loc(self%model%fm_shearstress_x(1,1))
         n_elements = self%model%n_y * self%model%n_x
         call c_f_pointer(src, dest, [n_elements])
         bmi_status = BMI_SUCCESS
     case('ShearStressY')
-        src = c_loc(self%model%t_rivvar%taun(1,1))
+        src = c_loc(self%model%fm_shearstress_y(1,1))
         n_elements = self%model%n_y * self%model%n_x
         call c_f_pointer(src, dest, [n_elements])
         bmi_status = BMI_SUCCESS
     case('WaterSurfaceElevation')
-        src = c_loc(self%model%t_rivvar%e(1,1))
+        src = c_loc(self%model%fm_wse(1,1))
         n_elements = self%model%n_y * self%model%n_x
         call c_f_pointer(src, dest, [n_elements])
         bmi_status = BMI_SUCCESS
     case('VelocityX')
-        src = c_loc(self%model%t_rivvar%u(1,1))
+        src = c_loc(self%model%fm_velocity_x(1,1))
         n_elements = self%model%n_y * self%model%n_x
         call c_f_pointer(src, dest, [n_elements])
         bmi_status = BMI_SUCCESS
     case('VelocityY')
-        src = c_loc(self%model%t_rivwvar%vout(1,1))
+        src = c_loc(self%model%fm_velocity_y(1,1))
         n_elements = self%model%n_y * self%model%n_x
         call c_f_pointer(src, dest, [n_elements])
         bmi_status = BMI_SUCCESS
@@ -894,7 +895,7 @@
          end do
          bmi_status = BMI_SUCCESS          
       case('roughness')
-         src = c_loc(self%model%t_rivvar%cd(1,1))
+         src = c_loc(self%model%fm_roughness(1,1))
          call c_f_pointer(src, src_flattened, [self%model%n_y * self%model%n_x])
          n_elements = size(indices)
          do i = 1, n_elements
@@ -902,7 +903,7 @@
          end do
          bmi_status = BMI_SUCCESS          
       case('vegroughness')
-         src = c_loc(self%model%t_rivvar%cdv(1,1))
+         src = c_loc(self%model%fm_vegroughness(1,1))
          call c_f_pointer(src, src_flattened, [self%model%n_y * self%model%n_x])
          n_elements = size(indices)
          do i = 1, n_elements
@@ -910,7 +911,7 @@
          end do
          bmi_status = BMI_SUCCESS          
       case('Depth')
-         src = c_loc(self%model%t_rivvar%hl(1,1))
+         src = c_loc(self%model%fm_depth(1,1))
          call c_f_pointer(src, src_flattened, [self%model%n_y * self%model%n_x])
          n_elements = size(indices)
          do i = 1, n_elements
@@ -918,7 +919,7 @@
          end do
          bmi_status = BMI_SUCCESS          
       case('Drag_Coefficient')
-         src = c_loc(self%model%t_rivvar%totcd(1,1))
+         src = c_loc(self%model%fm_dragcoefficient(1,1))
          call c_f_pointer(src, src_flattened, [self%model%n_y * self%model%n_x])
          n_elements = size(indices)
          do i = 1, n_elements
@@ -926,7 +927,7 @@
          end do
          bmi_status = BMI_SUCCESS          
       case('ShearStressX')
-         src = c_loc(self%model%t_rivvar%taus(1,1))
+         src = c_loc(self%model%fm_shearstress_x(1,1))
          call c_f_pointer(src, src_flattened, [self%model%n_y * self%model%n_x])
          n_elements = size(indices)
          do i = 1, n_elements
@@ -934,7 +935,7 @@
          end do
          bmi_status = BMI_SUCCESS          
       case('ShearStressY')
-         src = c_loc(self%model%t_rivvar%taun(1,1))
+         src = c_loc(self%model%fm_shearstress_y(1,1))
          call c_f_pointer(src, src_flattened, [self%model%n_y * self%model%n_x])
          n_elements = size(indices)
          do i = 1, n_elements
@@ -942,7 +943,7 @@
          end do
          bmi_status = BMI_SUCCESS          
       case('WaterSurfaceElevation')
-         src = c_loc(self%model%t_rivvar%e(1,1))
+         src = c_loc(self%model%fm_wse(1,1))
          call c_f_pointer(src, src_flattened, [self%model%n_y * self%model%n_x])
          n_elements = size(indices)
          do i = 1, n_elements
@@ -950,7 +951,7 @@
          end do
          bmi_status = BMI_SUCCESS          
       case('VelocityX')
-         src = c_loc(self%model%t_rivvar%u(1,1))
+         src = c_loc(self%model%fm_velocity_x(1,1))
          call c_f_pointer(src, src_flattened, [self%model%n_y * self%model%n_x])
          n_elements = size(indices)
          do i = 1, n_elements
@@ -958,7 +959,7 @@
          end do
          bmi_status = BMI_SUCCESS          
       case('VelocityY')
-         src = c_loc(self%model%t_rivwvar%vout(1,1))
+         src = c_loc(self%model%fm_velocity_y(1,1))
          call c_f_pointer(src, src_flattened, [self%model%n_y * self%model%n_x])
          n_elements = size(indices)
          do i = 1, n_elements
@@ -1018,31 +1019,31 @@
           self%model%t_rivvar%eta = reshape(src, [self%model%n_y, self%model%n_x])
           bmi_status = BMI_SUCCESS
       case('roughness')
-          self%model%t_rivvar%cd = reshape(src, [self%model%n_y, self%model%n_x])
+          self%model%fm_roughness = reshape(src, [self%model%n_y, self%model%n_x])
           bmi_status = BMI_SUCCESS
       case('vegroughness')
-          self%model%t_rivvar%cdv = reshape(src, [self%model%n_y, self%model%n_x])
+          self%model%fm_vegroughness = reshape(src, [self%model%n_y, self%model%n_x])
           bmi_status = BMI_SUCCESS
       case('Depth')
-          self%model%t_rivvar%hl = reshape(src, [self%model%n_y, self%model%n_x])
+          self%model%fm_depth = reshape(src, [self%model%n_y, self%model%n_x])
           bmi_status = BMI_SUCCESS
       case('Drag_Coefficient')
-          self%model%t_rivvar%totcd = reshape(src, [self%model%n_y, self%model%n_x])
+          self%model%fm_dragcoefficient = reshape(src, [self%model%n_y, self%model%n_x])
           bmi_status = BMI_SUCCESS
       case('ShearStressX')
-          self%model%t_rivvar%taus = reshape(src, [self%model%n_y, self%model%n_x])
+          self%model%fm_shearstress_x = reshape(src, [self%model%n_y, self%model%n_x])
           bmi_status = BMI_SUCCESS
       case('ShearStressY')
-          self%model%t_rivvar%taun = reshape(src, [self%model%n_y, self%model%n_x])
+          self%model%fm_shearstress_y = reshape(src, [self%model%n_y, self%model%n_x])
           bmi_status = BMI_SUCCESS
       case('WaterSurfaceElevation')
-          self%model%t_rivvar%e = reshape(src, [self%model%n_y, self%model%n_x])
+          self%model%fm_wse = reshape(src, [self%model%n_y, self%model%n_x])
           bmi_status = BMI_SUCCESS
       case('VelocityX')
-          self%model%t_rivvar%u = reshape(src, [self%model%n_y, self%model%n_x])
+          self%model%fm_velocity_x = reshape(src, [self%model%n_y, self%model%n_x])
           bmi_status = BMI_SUCCESS
       case('VelocityY')
-          self%model%t_rivwvar%vout = reshape(src, [self%model%n_y, self%model%n_x])
+          self%model%fm_velocity_y = reshape(src, [self%model%n_y, self%model%n_x])
           bmi_status = BMI_SUCCESS
 
       case default
@@ -1121,63 +1122,63 @@
          end do
          bmi_status = BMI_SUCCESS
       case('roughness')
-         dest = c_loc(self%model%t_rivvar%cd(1,1))
+         dest = c_loc(self%model%fm_roughness(1,1))
          call c_f_pointer(dest, dest_flattened, [self%model%n_y * self%model%n_x])
          do i = 1, size(indices)
             dest_flattened(indices(i)) = src(i)
          end do
          bmi_status = BMI_SUCCESS
       case('vegroughness')
-         dest = c_loc(self%model%t_rivvar%cdv(1,1))
+         dest = c_loc(self%model%fm_vegroughness(1,1))
          call c_f_pointer(dest, dest_flattened, [self%model%n_y * self%model%n_x])
          do i = 1, size(indices)
             dest_flattened(indices(i)) = src(i)
          end do
          bmi_status = BMI_SUCCESS
       case('Depth')
-         dest = c_loc(self%model%t_rivvar%hl(1,1))
+         dest = c_loc(self%model%fm_depth(1,1))
          call c_f_pointer(dest, dest_flattened, [self%model%n_y * self%model%n_x])
          do i = 1, size(indices)
             dest_flattened(indices(i)) = src(i)
          end do
          bmi_status = BMI_SUCCESS
       case('Drag_Coefficient')
-         dest = c_loc(self%model%t_rivvar%totcd(1,1))
+         dest = c_loc(self%model%fm_dragcoefficient(1,1))
          call c_f_pointer(dest, dest_flattened, [self%model%n_y * self%model%n_x])
          do i = 1, size(indices)
             dest_flattened(indices(i)) = src(i)
          end do
          bmi_status = BMI_SUCCESS
       case('ShearStressX')
-         dest = c_loc(self%model%t_rivvar%taus(1,1))
+         dest = c_loc(self%model%fm_shearstress_x(1,1))
          call c_f_pointer(dest, dest_flattened, [self%model%n_y * self%model%n_x])
          do i = 1, size(indices)
             dest_flattened(indices(i)) = src(i)
          end do
          bmi_status = BMI_SUCCESS
       case('ShearStressY')
-         dest = c_loc(self%model%t_rivvar%taun(1,1))
+         dest = c_loc(self%model%fm_shearstress_y(1,1))
          call c_f_pointer(dest, dest_flattened, [self%model%n_y * self%model%n_x])
          do i = 1, size(indices)
             dest_flattened(indices(i)) = src(i)
          end do
          bmi_status = BMI_SUCCESS
       case('WaterSurfaceElevation')
-         dest = c_loc(self%model%t_rivvar%e(1,1))
+         dest = c_loc(self%model%fm_wse(1,1))
          call c_f_pointer(dest, dest_flattened, [self%model%n_y * self%model%n_x])
          do i = 1, size(indices)
             dest_flattened(indices(i)) = src(i)
          end do
          bmi_status = BMI_SUCCESS
       case('VelocityX')
-         dest = c_loc(self%model%t_rivvar%u(1,1))
+         dest = c_loc(self%model%fm_velocity_x(1,1))
          call c_f_pointer(dest, dest_flattened, [self%model%n_y * self%model%n_x])
          do i = 1, size(indices)
             dest_flattened(indices(i)) = src(i)
          end do
          bmi_status = BMI_SUCCESS
       case('VelocityY')
-         dest = c_loc(self%model%t_rivwvar%vout(1,1))
+         dest = c_loc(self%model%fm_velocity_y(1,1))
          call c_f_pointer(dest, dest_flattened, [self%model%n_y * self%model%n_x])
          do i = 1, size(indices)
             dest_flattened(indices(i)) = src(i)

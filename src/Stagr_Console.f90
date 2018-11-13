@@ -22,7 +22,7 @@
     logical :: fileExist
     CHARACTER(LEN=250) buf
     CHARACTER(LEN=250) file
-    real :: time0,time1,time
+    double precision :: time0,time1,time
     
     !Check if arguments are found
     count = COMMAND_ARGUMENT_COUNT()

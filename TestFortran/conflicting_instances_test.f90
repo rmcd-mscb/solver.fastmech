@@ -14,8 +14,8 @@
     character (len=BMI_MAX_VAR_NAME), pointer :: names1(:), names2(:)
     integer :: grid_size1, grid_size2, dims1(2), dims2(2), locations(11), locations2(11)
     integer :: countij, countji, i, j
-    real :: values(11)
-    real, allocatable :: z1(:), z2(:)
+    double precision :: values(11)
+    double precision, allocatable :: z1(:), z2(:)
     character(len=30) :: rowfmt1, rowfmt2
 
     write(*, "(a, a10, a10)") "Configuration files: ", cfg_file1, cfg_file2
@@ -34,7 +34,7 @@
     write (*, "(a)") "Initial values, model 1:"
     allocate(z1(grid_size1))
     s = m1%get_value("WaterSurfaceElevation", z1)
-    call print_array(z1, dims1)
+    call print_array_d(z1, dims1)
 
     s = m2%get_output_var_names(names2)
     s = m2%get_var_grid(names2(1), grid_id2)
@@ -45,7 +45,7 @@
     write (*, "(a)") "Initial values, model 2:"
     allocate(z2(grid_size2))
     s = m2%get_value("WaterSurfaceElevation", z2)
-    call print_array(z2, dims2)
+    call print_array_d(z2, dims2)
     !added this because without it after setting new BC below the model crashes
     !I could have just set the new BC to be a smaller adjustment...
       write (*,"(a)",advance="no") "Setting new values..."
@@ -72,20 +72,20 @@
         values)
     write (*, "(a)") "New values, model 2:"
     s = m2%get_value("WaterSurfaceElevation", z2)
-    call print_array(z2, dims2)
+    call print_array_d(z2, dims2)
     write (*, "(a)") "New values, model 1:"
     s = m1%get_value("WaterSurfaceElevation", z1)
-    call print_array(z1, dims1)
+    call print_array_d(z1, dims1)
 
     write (*, "(a)") "Update both models by one time step..."
     s = m1%update()
     s = m2%update()
     write (*, "(a)") "Updated values, model 1:"
     s = m1%get_value("WaterSurfaceElevation", z1)
-    call print_array(z1, dims1)
+    call print_array_d(z1, dims1)
     write (*, "(a)") "Updated values, model 2:"
     s = m2%get_value("WaterSurfaceElevation", z2)
-    call print_array(z2, dims2)
+    call print_array_d(z2, dims2)
 
     write (*,"(a)", advance="no") "Finalizing..."
     s = m1%finalize()

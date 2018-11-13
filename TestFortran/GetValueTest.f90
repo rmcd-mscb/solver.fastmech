@@ -24,9 +24,9 @@
     integer :: s, i, j, grid_id, countji, countij
     character (len=BMI_MAX_VAR_NAME), pointer :: names(:)
     integer :: dims(2), locations(11),locations2(11)
-    real, allocatable :: z(:), twse(:), telev(:), tdepth(:)
-    real, pointer :: p_tdepth(:)
-    real :: time
+    double precision, allocatable :: z(:), twse(:), telev(:), tdepth(:)
+    double precision, pointer :: p_tdepth(:)
+    double precision :: time
     ! Body of GetValueTest
 
 
@@ -45,7 +45,7 @@
     allocate(z(dims(1)*dims(2)))
     write (*, "(a)") "Initial values:"
     s = m%get_value("Elevation", z)
-    call print_array(z, dims)
+    call print_array_d(z, dims)
     write (*, "(a, i5)") "Shape of returned values:", shape(z)
 
     write (*,"(a)") "Running (using get_value)..."
@@ -54,7 +54,7 @@
         s = m%get_value("Elevation", z)
         s = m%get_current_time(time)
         write (*,"(a, f6.1)") "Current time:", time
-        call print_array(z, dims)
+        call print_array_d(z, dims)
     end do
     write (*,"(a)") "Done."
 
@@ -86,7 +86,7 @@
         s = m%update()
         s = m%get_current_time(time)
         write (*,"(a, f6.1)") "Current time:", time
-        call print_array(p_tdepth, dims)
+        call print_array_d(p_tdepth, dims)
     end do
     write (*,"(a)") "Done."
 

@@ -27,6 +27,7 @@
         real(kind=mp), pointer, dimension(:,:) :: fm_elevation, fm_depth, fm_wse
         real(kind=mp), pointer, dimension(:,:) :: fm_velocity_x, fm_velocity_y, fm_shearstress_x, fm_shearstress_y
         real(kind=mp), pointer, dimension(:,:) :: fm_dragcoefficient, fm_roughness, fm_vegroughness
+        integer, pointer, dimension(:,:) :: fm_ibc
         type(rivvar) :: t_rivvar
         type(calccond) :: t_calccond
         type(riv_w_var) :: t_rivwvar
@@ -263,6 +264,7 @@
     model%fm_dragcoefficient => rvo%totcd
     model%fm_roughness => rvo%cd
     model%fm_vegroughness => rvo%cdv
+    model%fm_ibc => rvo%ibc
     !model%t = 0.
     !model%dt = 1.
     !model%dx = 1.

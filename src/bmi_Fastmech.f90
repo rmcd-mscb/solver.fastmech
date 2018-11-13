@@ -587,7 +587,7 @@
         var_size = sizeof(self%model%fm_velocity_y(1,1))
         bmi_status = BMI_SUCCESS
     case('IBC')
-        var_size = sizeof(self%model%t_rivvar%ibc(1,1))
+        var_size = sizeof(self%model%fm_ibc(1,1))
         bmi_status = BMI_SUCCESS
         case default
         var_size = -1
@@ -626,7 +626,7 @@
 
     select case(var_name)
     case("IBC")
-        dest = reshape(self%model%t_rivvar%ibc, [self%model%n_x*self%model%n_y])
+        dest = reshape(self%model%fm_ibc, [self%model%n_x*self%model%n_y])
         bmi_status = BMI_SUCCESS
         case default
         dest = [-1]
@@ -707,7 +707,7 @@
         dest = reshape(self%model%fm_velocity_y, [self%model%n_x*self%model%n_y])
         bmi_status = BMI_SUCCESS
     case('IBC')
-        dest = reshape(self%model%t_rivvar%ibc, [self%model%n_x*self%model%n_y])
+        dest = reshape(self%model%fm_ibc, [self%model%n_x*self%model%n_y])
         bmi_status = BMI_SUCCESS
 
         case default
@@ -727,7 +727,7 @@
 
     select case(var_name)
     case('IBC')
-        src = c_loc(self%model%t_rivvar%ibc(1,1))
+        src = c_loc(self%model%fm_ibc(1,1))
         n_elements = self%model%n_y * self%model%n_x
         call c_f_pointer(src, dest, [n_elements])
         bmi_status = BMI_SUCCESS
@@ -835,7 +835,7 @@
     
       select case(var_name)
       case('IBC')
-         src = c_loc(self%model%t_rivvar%ibc(1,1))
+         src = c_loc(self%model%fm_ibc(1,1))
          call c_f_pointer(src, src_flattened, [self%model%n_y * self%model%n_x])
          n_elements = size(indices)
          do i = 1, n_elements
@@ -981,7 +981,7 @@
     
       select case(var_name)
       case("IBC")
-         self%model%t_rivvar%ibc = reshape(src, [self%model%n_y, self%model%n_x])
+         self%model%fm_ibc = reshape(src, [self%model%n_y, self%model%n_x])
          bmi_status = BMI_SUCCESS
       case default
          bmi_status = BMI_FAILURE
@@ -1065,7 +1065,7 @@
     
       select case(var_name)
       case('IBC')
-         dest = c_loc(self%model%t_rivvar%ibc(1,1))
+         dest = c_loc(self%model%fm_ibc(1,1))
          call c_f_pointer(dest, dest_flattened, [self%model%n_y * self%model%n_x])
          do i = 1, size(indices)
             dest_flattened(indices(i)) = src(i)
@@ -1115,7 +1115,7 @@
     
       select case(var_name)
       case('IBC')
-         dest = c_loc(self%model%t_rivvar%ibc(1,1))
+         dest = c_loc(self%model%fm_ibc(1,1))
          call c_f_pointer(dest, dest_flattened, [self%model%n_y * self%model%n_x])
          do i = 1, size(indices)
             dest_flattened(indices(i)) = src(i)

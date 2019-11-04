@@ -168,7 +168,7 @@ nct = -1
 totTime = VarDischStartTime
 ptime = totTime+iplinc*dt
 
-4   do while(totTime <= VarDischEndTime)
+do while(totTime <= VarDischEndTime)
     nct = nct+1
 
     if(nct > 0.and.solType == 0) then
@@ -1006,9 +1006,9 @@ ENDDO
 !        write(3,*) u,vout
 !        write(3,*) e
 CALL dealloc_all()
-IF(FID > 0) THEN
-    CALL cg_close_f(FID, IER)
-ENDIF
+!IF(FID > 0) THEN
+!    CALL cg_close_f(FID, IER)
+!ENDIF
 
 !	close(2)
 !	close(4)

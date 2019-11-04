@@ -102,29 +102,29 @@
         !Check downstream Boundary, Jims 1D code will calculate a new wse if the given is too low
         !added code block below to exit if user defined boundary stage is lower than
         !downstream boundary elevation.  
-        count = 0
-        do j = 1,nn
-            if(wselev > eta(1,j)) count = count + 1
-        enddo
-        if(count == 0) then
-            write(*,*)'Downstream Boundary lower than topo'
-            CALL dealloc_Common2D()
-            Call dealloc_working()
-            if(TRANSEQTYPE == 2) then
-                call dealloc_csed_DT()
-            else
-                call dealloc_csed()
-            endif
-            STOP
-        
-
-        IF(CALCQUASI3D) THEN
-            CALL deALLOC_COMMON3D()
-            IF(TRANSEQTYPE == 2) THEN
-                CALL dealloc_csed3d_dt() !array for Daniele Tonina Wilcock-Kenworthy
-            ENDIF
-        ENDIF
-        endif
+        !count = 0
+        !do j = 1,nn
+        !    if(wselev > eta(1,j)) count = count + 1
+        !enddo
+        !if(count == 0) then
+        !    write(*,*)'Downstream Boundary lower than topo'
+        !    CALL dealloc_Common2D()
+        !    Call dealloc_working()
+        !    if(TRANSEQTYPE == 2) then
+        !        call dealloc_csed_DT()
+        !    else
+        !        call dealloc_csed()
+        !    endif
+        !    STOP
+        !
+        !
+        !    IF(CALCQUASI3D) THEN
+        !        CALL deALLOC_COMMON3D()
+        !        IF(TRANSEQTYPE == 2) THEN
+        !            CALL dealloc_csed3d_dt() !array for Daniele Tonina Wilcock-Kenworthy
+        !        ENDIF
+        !    ENDIF
+        !endif
         !    CALL NETPREIS2(ns, nn, ttopo, tx, ty, ONEDCD, tmpq/1e6, tmpwselev/100., hav )
         CALL NETPREIS2(ns, nn, ttopo, tx, ty, ONEDCD, tmpq, tmpwselev, hav )
         hav = hav*100

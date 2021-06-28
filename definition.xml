@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SolverDefinition
 	xmlns="www.iric.net/SolverDefinition/1.0"
-	name="fastmech" caption="FaSTMECH" version="1.1.1" copyright="None"
+	name="fastmech" caption="FaSTMECH" version="1.1.2"  copyright="None"
 	release="2018.08.20" homepage="https://wwwbrr.cr.usgs.gov/gstl/index.html"
 	executable="Fastmech.exe"
 	iterationtype="time"
 	gridtype="structured2d"
-  gridgenerators="center_and_width, gridgen"
+	gridgenerators="center_and_width, gridgen"
 	>
 	<CalculationCondition>
 		<Tab name="Discharge" caption="Discharge">
@@ -288,7 +288,7 @@
 								<Enumeration value="0" caption="Upstream Stage" />
 								<Enumeration value="1" caption="Uniform Slope" />
 								<Enumeration value="2" caption="1D Step-backwater" />
-								<Enumeration value="3" caption="Hot Start" />
+								<!--<Enumeration value="3" caption="Hot Start" />-->
 							</Enumerations>
 						</Definition>
 					</Item>
@@ -349,169 +349,8 @@
 					<Item name="FM_HydAttSolIndex" caption="Hot Start Time-Step">
 						<Definition conditionType="constant" valueType="integer" option="false"
 							default="1">
-              <Dependency>
-                <Condition type="isEqual" target="FM_HydAttWSType" value="3" />
-                <Action type="enable" />
-              </Dependency>
 						</Definition>
 					</Item>-->
-          <Item name="write_flag" caption="Output temporary files">
-            <Definition conditionType="constant" valueType="integer" option="true" default="0">
-              <Enumerations>
-                <Enumeration value="0" caption="No"/>
-                <Enumeration value="1" caption="Yes"/>
-              </Enumerations>
-              <!--<Dependency>
-                <Condition type="and">
-                  <Condition type="isEqual" target="edition" value="1"/>
-                  <Condition type="isEqual" target="j_conf" value="0"/>
-                </Condition>
-              </Dependency>-->
-            </Definition>
-          </Item>
-          <Item name="tmp_pass" caption="Temporary File Path">
-            <Definition conditionType="constant" valueType="string" option="false" default="Write Path">
-              <Dependency>
-                <Condition type="isEqual" target="write_flag" value="1"/>
-                <Action type="enable"/>
-              </Dependency>
-            </Definition>
-          </Item>
-          <Item name="n_tempfile" caption="Number of temporary files">
-            <Definition conditionType="constant" valueType="integer" option="true" default="0">
-              <Enumerations>
-                <Enumeration value="0" caption="1"/>
-                <Enumeration value="1" caption="2"/>
-                <Enumeration value="2" caption="3"/>
-                <Enumeration value="3" caption="4"/>
-                <Enumeration value="4" caption="5"/>
-                <Enumeration value="5" caption="6"/>
-                <Enumeration value="6" caption="7"/>
-                <Enumeration value="7" caption="8"/>
-                <Enumeration value="8" caption="9"/>
-                <Enumeration value="9" caption="10"/>
-              </Enumerations>
-              <Dependency>
-                <Condition type="isEqual" target="write_flag" value="1"/>
-                <Action type="enable"/>
-              </Dependency>
-            </Definition>
-          </Item>
-          <Item name="outtime_tmp0" caption="Output time of temp file 0(iteration# or second)">
-            <Definition conditionType="constant" valueType="real" option="false" default="20">
-              <Dependency>
-                <Condition type="isEqual" target="write_flag" value="1"/>
-                <Action type="enable"/>
-              </Dependency>
-            </Definition>
-          </Item>
-          <Item name="outtime_tmp1" caption="Output time of temp file 1(iteration# or second)">
-            <Definition conditionType="constant" valueType="real" option="false" default="40">
-              <Dependency>
-                <Condition type="and">
-                  <Condition type="isEqual" target="write_flag" value="1"/>
-                  <Condition type="isGreaterThan" target="n_tempfile" value="0"/>
-                </Condition>
-                <Action type="enable"/>
-              </Dependency>
-            </Definition>
-          </Item>
-          <Item name="outtime_tmp2" caption="Output time of temp file 2(iteration# or second)">
-            <Definition conditionType="constant" valueType="real" option="false" default="60">
-              <Dependency>
-                <Condition type="and">
-                  <Condition type="isEqual" target="write_flag" value="1"/>
-                  <Condition type="isGreaterThan" target="n_tempfile" value="1"/>
-                </Condition>
-                <Action type="enable"/>
-              </Dependency>
-            </Definition>
-          </Item>
-          <Item name="outtime_tmp3" caption="Output time of temp file 3(iteration# or second)">
-            <Definition conditionType="constant" valueType="real" option="false" default="80">
-              <Dependency>
-                <Condition type="and">
-                  <Condition type="isEqual" target="write_flag" value="1"/>
-                  <Condition type="isGreaterThan" target="n_tempfile" value="2"/>
-                </Condition>
-                <Action type="enable"/>
-              </Dependency>
-            </Definition>
-          </Item>
-          <Item name="outtime_tmp4" caption="Output time of temp file 4(iteration# or second)">
-            <Definition conditionType="constant" valueType="real" option="false" default="100">
-              <Dependency>
-                <Condition type="and">
-                  <Condition type="isEqual" target="write_flag" value="1"/>
-                  <Condition type="isGreaterThan" target="n_tempfile" value="3"/>
-                </Condition>
-                <Action type="enable"/>
-              </Dependency>
-            </Definition>
-          </Item>
-          <Item name="outtime_tmp5" caption="Output time of temp file 5(iteration# or second)">
-            <Definition conditionType="constant" valueType="real" option="false" default="120">
-              <Dependency>
-                <Condition type="and">
-                  <Condition type="isEqual" target="write_flag" value="1"/>
-                  <Condition type="isGreaterThan" target="n_tempfile" value="4"/>
-                </Condition>
-                <Action type="enable"/>
-              </Dependency>
-            </Definition>
-          </Item>
-          <Item name="outtime_tmp6" caption="Output time of temp file 6(iteration# or second)">
-            <Definition conditionType="constant" valueType="real" option="false" default="140">
-              <Dependency>
-                <Condition type="and">
-                  <Condition type="isEqual" target="write_flag" value="1"/>
-                  <Condition type="isGreaterThan" target="n_tempfile" value="5"/>
-                </Condition>
-                <Action type="enable"/>
-              </Dependency>
-            </Definition>
-          </Item>
-          <Item name="outtime_tmp7" caption="Output time of temp file 7(iteration# or second)">
-            <Definition conditionType="constant" valueType="real" option="false" default="160">
-              <Dependency>
-                <Condition type="and">
-                  <Condition type="isEqual" target="write_flag" value="1"/>
-                  <Condition type="isGreaterThan" target="n_tempfile" value="6"/>
-                </Condition>
-                <Action type="enable"/>
-              </Dependency>
-            </Definition>
-          </Item>
-          <Item name="outtime_tmp8" caption="Output time of temp file 8(iteration# or second)">
-            <Definition conditionType="constant" valueType="real" option="false" default="180">
-              <Dependency>
-                <Condition type="and">
-                  <Condition type="isEqual" target="write_flag" value="1"/>
-                  <Condition type="isGreaterThan" target="n_tempfile" value="7"/>
-                </Condition>
-                <Action type="enable"/>
-              </Dependency>
-            </Definition>
-          </Item>
-          <Item name="outtime_tmp9" caption="Output time of temp file 9(iteration# or second)">
-            <Definition conditionType="constant" valueType="real" option="false" default="200">
-              <Dependency>
-                <Condition type="and">
-                  <Condition type="isEqual" target="write_flag" value="1"/>
-                  <Condition type="isGreaterThan" target="n_tempfile" value="8"/>
-                </Condition>
-                <Action type="enable"/>
-              </Dependency>
-            </Definition>
-          </Item>
-          <Item name="tmp_readfile" caption="Input Temporary File Name">
-            <Definition conditionType="constant" valueType="filename" option="false" default="Select File">
-              <Dependency>
-                <Condition type="isEqual" target="FM_HydAttWSType" value="3"/>
-                <Action type="enable"/>
-              </Dependency>
-            </Definition>
-          </Item>
 				</Items>
 			</Content>
 		</Tab>
@@ -1347,18 +1186,20 @@
 		<Item name="roughness" caption="Roughness">
 			<Definition position="node" valueType="real" default="0.003" option="false"/>
 		</Item>
-    <Item name="vegroughness" caption="Vegetation Roughness">
-      <Definition position="node" valueType="real" default="0.000" option="false"/>
-    </Item>
-    <!--<Item name="minelevation" caption="Minimum_Elevation">
+		<Item name="vegroughness" caption="Vegetation Roughness">
+			<Definition position="node" valueType="real" default="0.0" option="false"/>
+		</Item>
+<!--
+		<Item name="minelevation" caption="Minimum_Elevation">
 			<Definition position="node" valueType="real" default="0.002" option="false"/>
-		</Item>-->
-    <!--<Item name="depth" caption="Depth">
+		</Item>
+		<Item name="depth" caption="Depth">
 			<Definition position="node" valueType="real" default="0.002" option="false"/>
-		</Item>-->
-		<!--<Item name="grainsize" caption="Grainsize">
+		</Item>
+		<Item name="grainsize" caption="Grainsize">
 			<Definition position="node" valueType="real" default="0.002" option="false"/>
-		</Item>-->
+		</Item>
+-->
 		<Item name="sanddepth" caption="Sand_Depth">
 			<Definition position="node" valueType="real" default="0.003" option="false"/>
 		</Item>

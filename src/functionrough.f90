@@ -9,7 +9,9 @@
     ! Fs is the areal fraction of sand
 
 
+    IMPLICIT NONE                             ! SRC
     INTEGER, PARAMETER :: mp = KIND(1.0D0)
+    REAL(KIND=mp)  X0                         ! SRC  functionrough.f90(16)
     REAL(kind = mp) A1, A2, P
     REAL(kind = mp) FS
 

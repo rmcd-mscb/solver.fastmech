@@ -21,12 +21,23 @@
 
     contains
     subroutine AllocateTBC(ntbc)
+    IMPLICIT NONE                             ! SRC
+    INTEGER        NTBC                       ! SRC  Support.f90(23)
     ntsbc = ntbc
     allocate(tmsrbc(ntsbc,2))
     allocate(wtbc(ntsbc,nnd))
     end subroutine AllocateTBC
 
     subroutine AllocateSecs(nchs,nsmax,nsecs,npts,nonds,ndsmx,nbclocs)
+    IMPLICIT NONE                             ! SRC
+    INTEGER        NCHS                       ! SRC  Support.f90(29)
+    INTEGER        NSMAX                      ! SRC  Support.f90(29)
+    INTEGER        NSECS                      ! SRC  Support.f90(29)
+    INTEGER        NPTS                       ! SRC  Support.f90(29)
+    INTEGER        NONDS                      ! SRC  Support.f90(29)
+    INTEGER        NDSMX                      ! SRC  Support.f90(29)
+    INTEGER        NBCLOCS                    ! SRC  Support.f90(29)
+    INTEGER        MBW                        ! SRC  Support.f90(69)
     gg=9.8
     rtgg=sqrt(gg)
     etol=.2

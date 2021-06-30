@@ -1,5 +1,13 @@
     Subroutine Matinv()
     use support
+    IMPLICIT NONE                             ! SRC
+    INTEGER        NEQ                        ! SRC  xFMatInv.f90(4)
+    INTEGER        I                          ! SRC  xFMatInv.f90(5)
+    INTEGER        J                          ! SRC  xFMatInv.f90(7)
+    INTEGER        NPIV                       ! SRC  xFMatInv.f90(24)
+    INTEGER        K                          ! SRC  xFMatInv.f90(35)
+    INTEGER        KM                         ! SRC  xFMatInv.f90(59)
+    INTEGER        NLIM                       ! SRC  xFMatInv.f90(75)
     real(kind = mp2) rdum,cabs,cum,cnorm,cmult
     neq=2*nsc
     do i=1,neq

@@ -7,6 +7,24 @@ CONTAINS
 !* accessed sequentially in each consecutive pass.     *
 !*******************************************************
 SUBROUTINE MDIAN1(X,N,XMED)
+    IMPLICIT NONE                             ! SRC
+    INTEGER, PARAMETER :: mp = KIND(1.0D0)    ! SRC
+    REAL(KIND=mp)  XMED                       ! SRC  Median.f90(9)
+    INTEGER        N                          ! SRC  Median.f90(10)
+    REAL(KIND=mp)  A                          ! SRC  Median.f90(16)
+    REAL(KIND=mp)  EPS                        ! SRC  Median.f90(17)
+    REAL(KIND=mp)  AP                         ! SRC  Median.f90(18)
+    REAL(KIND=mp)  AM                         ! SRC  Median.f90(19)
+    REAL(KIND=mp)  SUM                        ! SRC  Median.f90(20)
+    REAL(KIND=mp)  SUMX                       ! SRC  Median.f90(21)
+    INTEGER        NP                         ! SRC  Median.f90(22)
+    INTEGER        NM                         ! SRC  Median.f90(23)
+    REAL(KIND=mp)  XP                         ! SRC  Median.f90(24)
+    REAL(KIND=mp)  XM                         ! SRC  Median.f90(25)
+    INTEGER        J                          ! SRC  Median.f90(26)
+    REAL(KIND=mp)  XX                         ! SRC  Median.f90(27)
+    REAL(KIND=mp)  DUM                        ! SRC  Median.f90(36)
+    REAL(KIND=mp)  AA                         ! SRC  Median.f90(44)
   real X(N)
   real, parameter :: BIG = 1.e30, AFAC=1.5, AMP=1.5
 ! Here, AMP is an overconvergence factor: on each iteration,
@@ -81,6 +99,11 @@ END SUBROUTINE
 !* sorted in ascending order.                          *
 !*******************************************************
 SUBROUTINE MDIAN(X,N,XMED)
+    IMPLICIT NONE                             ! SRC
+    INTEGER, PARAMETER :: mp = KIND(1.0D0)    ! SRC
+    REAL(KIND=mp)  XMED                       ! SRC  Median.f90(83)
+    INTEGER        N                          ! SRC  Median.f90(84)
+    INTEGER        N2                         ! SRC  Median.f90(86)
   real X(N)
   call hpsort(N,X)
   N2=N/2
@@ -107,6 +130,14 @@ END SUBROUTINE
 !*       and can be used for very large arrays.      *
 !*****************************************************         
 SUBROUTINE HPSORT(N,RA)
+    IMPLICIT NONE                             ! SRC
+    INTEGER, PARAMETER :: mp = KIND(1.0D0)    ! SRC
+    INTEGER        N                          ! SRC  Median.f90(110)
+    INTEGER        L                          ! SRC  Median.f90(111)
+    INTEGER        IR                         ! SRC  Median.f90(112)
+    REAL(KIND=mp)  RRA                        ! SRC  Median.f90(120)
+    INTEGER        I                          ! SRC  Median.f90(130)
+    INTEGER        J                          ! SRC  Median.f90(131)
   real RA(N)
   L=N/2+1
   IR=N

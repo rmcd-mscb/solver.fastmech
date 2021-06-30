@@ -1,6 +1,36 @@
     SUBROUTINE FAREA(ns,e)
     ! xk == conveyance, must be squared to => Sf
     use Support
+    IMPLICIT NONE                             ! SRC
+    INTEGER, PARAMETER :: mp = KIND(1.0D0)    ! SRC
+    INTEGER        NPS                        ! SRC  xFArea2.f90(4)
+    INTEGER        NS                         ! SRC  xFArea2.f90(5)
+    INTEGER        NPF                        ! SRC  xFArea2.f90(6)
+    REAL(KIND=mp)  A                          ! SRC  xFArea2.f90(7)
+    REAL(KIND=mp)  AM                         ! SRC  xFArea2.f90(8)
+    REAL(KIND=mp)  XK                         ! SRC  xFArea2.f90(9)
+    REAL(KIND=mp)  TW                         ! SRC  xFArea2.f90(10)
+    REAL(KIND=mp)  WP                         ! SRC  xFArea2.f90(11)
+    INTEGER        NFRST                      ! SRC  xFArea2.f90(12)
+    REAL(KIND=mp)  Y1                         ! SRC  xFArea2.f90(13)
+    REAL(KIND=mp)  YFRST                      ! SRC  xFArea2.f90(14)
+    REAL(KIND=mp)  Z1                         ! SRC  xFArea2.f90(15)
+    REAL(KIND=mp)  XN1                        ! SRC  xFArea2.f90(17)
+    REAL(KIND=mp)  E                          ! SRC  xFArea2.f90(19)
+    REAL(KIND=mp)  YLST                       ! SRC  xFArea2.f90(23)
+    INTEGER        I                          ! SRC  xFArea2.f90(24)
+    REAL(KIND=mp)  Y2                         ! SRC  xFArea2.f90(25)
+    REAL(KIND=mp)  Z2                         ! SRC  xFArea2.f90(26)
+    REAL(KIND=mp)  XN2                        ! SRC  xFArea2.f90(28)
+    REAL(KIND=mp)  TWI                        ! SRC  xFArea2.f90(38)
+    REAL(KIND=mp)  DA                         ! SRC  xFArea2.f90(39)
+    REAL(KIND=mp)  DZ                         ! SRC  xFArea2.f90(47)
+    REAL(KIND=mp)  DAT                        ! SRC  xFArea2.f90(52)
+    REAL(KIND=mp)  HR                         ! SRC  xFArea2.f90(108)
+    REAL(KIND=mp)  HD                         ! SRC  xFArea2.f90(109)
+    REAL(KIND=mp)  CTRD                       ! SRC  xFArea2.f90(119)
+    REAL(KIND=mp)  R                          ! SRC  xFArea2.f90(120)
+    REAL(KIND=mp)  RM                         ! SRC  xFArea2.f90(121)
     nps=1
     if(ns>1)nps=nscpte(ns-1)+1
     npf=nscpte(ns)
@@ -133,6 +163,26 @@
     SUBROUTINE AREAOnly(ns,e,a)
     ! xk == conveyance, must be squared to => Sf
     use Support
+    IMPLICIT NONE                             ! SRC
+    INTEGER, PARAMETER :: mp = KIND(1.0D0)    ! SRC
+    INTEGER        NPS                        ! SRC  xFArea2.f90(136)
+    INTEGER        NS                         ! SRC  xFArea2.f90(137)
+    INTEGER        NPF                        ! SRC  xFArea2.f90(138)
+    REAL(KIND=mp)  A                          ! SRC  xFArea2.f90(140)
+    REAL(KIND=mp)  Y1                         ! SRC  xFArea2.f90(141)
+    REAL(KIND=mp)  Z1                         ! SRC  xFArea2.f90(142)
+    REAL(KIND=mp)  XN1                        ! SRC  xFArea2.f90(144)
+    REAL(KIND=mp)  E                          ! SRC  xFArea2.f90(146)
+    INTEGER        I                          ! SRC  xFArea2.f90(150)
+    REAL(KIND=mp)  Y2                         ! SRC  xFArea2.f90(151)
+    REAL(KIND=mp)  Z2                         ! SRC  xFArea2.f90(152)
+    REAL(KIND=mp)  XN2                        ! SRC  xFArea2.f90(154)
+    REAL(KIND=mp)  TWI                        ! SRC  xFArea2.f90(164)
+    REAL(KIND=mp)  DA                         ! SRC  xFArea2.f90(165)
+    REAL(KIND=mp)  DZ                         ! SRC  xFArea2.f90(169)
+    REAL(KIND=mp)  DAT                        ! SRC  xFArea2.f90(174)
+    REAL(KIND=mp)  AM                         ! SRC  xFArea2.f90(176)
+    REAL(KIND=mp)  XK                         ! SRC  xFArea2.f90(178)
     nps=1
     if(ns>1)nps=nscpte(ns-1)+1
     npf=nscpte(ns)
@@ -203,6 +253,16 @@
     end SUBROUTINE AREAOnly
     SUBROUTINE FFindElev(ns,a,e)
     use Support
+    IMPLICIT NONE                             ! SRC
+    INTEGER, PARAMETER :: mp = KIND(1.0D0)    ! SRC
+    REAL(KIND=mp)  DZ                         ! SRC  xFArea2.f90(207)
+    REAL(KIND=mp)  E                          ! SRC  xFArea2.f90(208)
+    INTEGER        NS                         ! SRC  xFArea2.f90(208)
+    REAL(KIND=mp)  AS                         ! SRC  xFArea2.f90(209)
+    REAL(KIND=mp)  A                          ! SRC  xFArea2.f90(211)
+    REAL(KIND=mp)  FO                         ! SRC  xFArea2.f90(217)
+    REAL(KIND=mp)  F                          ! SRC  xFArea2.f90(218)
+    INTEGER        ITER                       ! SRC  xFArea2.f90(219)
     !	print *,xsloc(ns,5)
     dz=.1
     if(e<xsloc(ns,5)+.1.or.e>xsloc(ns,5)+5.)then
@@ -231,11 +291,21 @@
 
     SUBROUTINE dxc(ns,dx)
     use Support
+    IMPLICIT NONE                             ! SRC
+    INTEGER, PARAMETER :: mp = KIND(1.0D0)    ! SRC
+    REAL(KIND=mp)  DX                         ! SRC  xFArea2.f90(234)
+    INTEGER        NS                         ! SRC  xFArea2.f90(234)
     dx=sqrt((plnxsc(ns,1)-plnxsc(ns-1,1))**2+(plnxsc(ns,2)-plnxsc(ns-1,2))**2)
     end SUBROUTINE dxc
 
     SUBROUTINE CnvrtCD(n, e, xn1)
     use Support
+    IMPLICIT NONE                             ! SRC
+    INTEGER, PARAMETER :: mp = KIND(1.0D0)    ! SRC
+    REAL(KIND=mp)  XN1                        ! SRC  xFArea2.f90(239)
+    REAL(KIND=mp)  H                          ! SRC  xFArea2.f90(240)
+    REAL(KIND=mp)  E                          ! SRC  xFArea2.f90(240)
+    INTEGER        N                          ! SRC  xFArea2.f90(240)
     xn1 = 1.e6
     h = e - xspts(n,2)
     if(h > 0.001) then

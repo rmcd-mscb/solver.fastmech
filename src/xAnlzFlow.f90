@@ -8,6 +8,22 @@
     !	!    curxsc(ns,7)=discharge
     !  xsloc(i,5)=emin  ! xsloc( ,5) set to min ch elev
     use Support
+    IMPLICIT NONE                             ! SRC
+    INTEGER, PARAMETER :: mp = KIND(1.0D0)    ! SRC
+    INTEGER        IC                         ! SRC  xAnlzFlow.f90(12)
+    INTEGER        NUS                        ! SRC  xAnlzFlow.f90(12)
+    INTEGER        NDS                        ! SRC  xAnlzFlow.f90(12)
+    REAL(KIND=mp)  ADS                        ! SRC  xAnlzFlow.f90(15)
+    INTEGER        N                          ! SRC  xAnlzFlow.f90(17)
+    INTEGER        NS                         ! SRC  xAnlzFlow.f90(18)
+    REAL(KIND=mp)  FRD                        ! SRC  xAnlzFlow.f90(26)
+    REAL(KIND=mp)  Q                          ! SRC  xAnlzFlow.f90(27)
+    REAL(KIND=mp)  DX                         ! SRC  xAnlzFlow.f90(28)
+    REAL(KIND=mp)  SFDNOM                     ! SRC  xAnlzFlow.f90(29)
+    REAL(KIND=mp)  ATRM                       ! SRC  xAnlzFlow.f90(30)
+    REAL(KIND=mp)  ZDUM                       ! SRC  xAnlzFlow.f90(31)
+    REAL(KIND=mp)  ZC                         ! SRC  xAnlzFlow.f90(32)
+    REAL(KIND=mp)  FCRIT                      ! SRC  xAnlzFlow.f90(33)
     real(kind = mp2) kds
     call ChLims(ic,nus,nds)
     !	print *,nus,nds

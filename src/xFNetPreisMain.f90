@@ -25,6 +25,9 @@
     ENDSUBROUTINE
 
     SUBROUTINE NETPREIS2(ns, nn, topo, tx, ty, cd, q, stage, wse )
+    IMPLICIT NONE                             ! SRC
+    INTEGER, PARAMETER :: mp = KIND(1.0D0)    ! SRC
+    REAL(KIND=mp)  RSTRTSET                   ! SRC  xFNetPreisMain.f90(47)
     INTEGER, INTENT(IN) :: ns, nn
     REAL(kind = mp2), DIMENSION(:), INTENT(IN)  :: topo, tx, ty
     REAL(kind = mp2), INTENT(IN) :: cd, q, stage
@@ -120,6 +123,13 @@
     END SUBROUTINE NetPreis2
     Subroutine SetJctElevs()
     use Support
+    IMPLICIT NONE                             ! SRC
+    INTEGER        NN                         ! SRC  xFNetPreisMain.f90(123)
+    INTEGER        NJ                         ! SRC  xFNetPreisMain.f90(124)
+    INTEGER        J                          ! SRC  xFNetPreisMain.f90(125)
+    INTEGER        IC                         ! SRC  xFNetPreisMain.f90(126)
+    INTEGER        NUS                        ! SRC  xFNetPreisMain.f90(128)
+    INTEGER        NDS                        ! SRC  xFNetPreisMain.f90(128)
     do nn=1,nnd
         nj=nprjct(nn)
         do j=1,nj
@@ -134,6 +144,25 @@
     end Subroutine SetJctElevs
     Subroutine CheckFlowExist()
     use Support
+    IMPLICIT NONE                             ! SRC
+    INTEGER, PARAMETER :: mp = KIND(1.0D0)    ! SRC
+    INTEGER        IC                         ! SRC  xFNetPreisMain.f90(137)
+    INTEGER        NUS                        ! SRC  xFNetPreisMain.f90(138)
+    INTEGER        NDS                        ! SRC  xFNetPreisMain.f90(138)
+    INTEGER        N                          ! SRC  xFNetPreisMain.f90(140)
+    INTEGER        NN                         ! SRC  xFNetPreisMain.f90(147)
+    REAL(KIND=mp)  XT                         ! SRC  xFNetPreisMain.f90(157)
+    INTEGER        I                          ! SRC  xFNetPreisMain.f90(158)
+    REAL(KIND=mp)  DX                         ! SRC  xFNetPreisMain.f90(159)
+    REAL(KIND=mp)  X                          ! SRC  xFNetPreisMain.f90(162)
+    REAL(KIND=mp)  ELUS                       ! SRC  xFNetPreisMain.f90(163)
+    REAL(KIND=mp)  ELDS                       ! SRC  xFNetPreisMain.f90(164)
+    REAL(KIND=mp)  R                          ! SRC  xFNetPreisMain.f90(169)
+    REAL(KIND=mp)  EL                         ! SRC  xFNetPreisMain.f90(170)
+    INTEGER        IMIN                       ! SRC  xFNetPreisMain.f90(177)
+    REAL(KIND=mp)  AMIN                       ! SRC  xFNetPreisMain.f90(178)
+    REAL(KIND=mp)  SLP                        ! SRC  xFNetPreisMain.f90(200)
+    REAL(KIND=mp)  QCHNL                      ! SRC  xFNetPreisMain.f90(201)
     do ic=1,nch
         call CHLims(ic,nus,nds)
         if(flwexst(ic)>0)then  ! check to see if flow should be shut off
@@ -215,6 +244,16 @@
     end Subroutine CheckFlowExist
     Subroutine normq(i,s,q) ! determines normal dischrge for existing wselev and given s
     use Support
+    IMPLICIT NONE                             ! SRC
+    INTEGER, PARAMETER :: mp = KIND(1.0D0)    ! SRC
+    INTEGER        I                          ! SRC  xFNetPreisMain.f90(216)
+    REAL(KIND=mp)  S                          ! SRC  xFNetPreisMain.f90(216)
+    REAL(KIND=mp)  Q                          ! SRC  xFNetPreisMain.f90(216)
+    REAL(KIND=mp)  QS                         ! SRC  xFNetPreisMain.f90(219)
+    REAL(KIND=mp)  FO                         ! SRC  xFNetPreisMain.f90(220)
+    REAL(KIND=mp)  DQ                         ! SRC  xFNetPreisMain.f90(221)
+    INTEGER        ITER                       ! SRC  xFNetPreisMain.f90(222)
+    REAL(KIND=mp)  F                          ! SRC  xFNetPreisMain.f90(225)
     q=sign(1.,s)*curxsc(i,2)
     qs=q
     fo=q*abs(q)/curxsc(i,6)**2-s
@@ -230,6 +269,20 @@
     end Subroutine normq !(i,q)
     Subroutine SetFlowStruc(tdys)
     use Support
+    IMPLICIT NONE                             ! SRC
+    INTEGER, PARAMETER :: mp = KIND(1.0D0)    ! SRC
+    REAL(KIND=mp)  TDYS                       ! SRC  xFNetPreisMain.f90(231)
+    INTEGER        IC                         ! SRC  xFNetPreisMain.f90(234)
+    INTEGER        NUS                        ! SRC  xFNetPreisMain.f90(236)
+    INTEGER        NDS                        ! SRC  xFNetPreisMain.f90(236)
+    REAL(KIND=mp)  ZUS                        ! SRC  xFNetPreisMain.f90(237)
+    REAL(KIND=mp)  ZDS                        ! SRC  xFNetPreisMain.f90(237)
+    REAL(KIND=mp)  ELTRY                      ! SRC  xFNetPreisMain.f90(238)
+    INTEGER        N                          ! SRC  xFNetPreisMain.f90(245)
+    INTEGER        J                          ! SRC  xFNetPreisMain.f90(246)
+    INTEGER        NNNNN                      ! SRC  xFNetPreisMain.f90(251)
+    INTEGER        NFNL                       ! SRC  xFNetPreisMain.f90(251)
+    INTEGER        NS                         ! SRC  xFNetPreisMain.f90(260)
     !	write(2,*)flwexst
     do ic=1,nch
         if(chbc(ic,1)/=2.and.chbc(ic,2)/=2)then
@@ -273,6 +326,12 @@
     end Subroutine SetFlowStruc
     Subroutine FindChElBC(ic,tdys,zus,zds)
     use Support
+    IMPLICIT NONE                             ! SRC
+    INTEGER, PARAMETER :: mp = KIND(1.0D0)    ! SRC
+    INTEGER        IC                         ! SRC  xFNetPreisMain.f90(274)
+    REAL(KIND=mp)  TDYS                       ! SRC  xFNetPreisMain.f90(274)
+    REAL(KIND=mp)  ZUS                        ! SRC  xFNetPreisMain.f90(274)
+    REAL(KIND=mp)  ZDS                        ! SRC  xFNetPreisMain.f90(274)
     if(chbc(ic,1)==0)then
         zus=jctelev(nochjcts(ic,1))
     else  !chbc==1, q bc not allowed here
@@ -288,6 +347,16 @@
     end Subroutine FindChElBC
     Subroutine ReStart(ic,zus,zds,sq)
     use Support
+    IMPLICIT NONE                             ! SRC
+    INTEGER, PARAMETER :: mp = KIND(1.0D0)    ! SRC
+    INTEGER        IC                         ! SRC  xFNetPreisMain.f90(289)
+    REAL(KIND=mp)  ZUS                        ! SRC  xFNetPreisMain.f90(289)
+    REAL(KIND=mp)  ZDS                        ! SRC  xFNetPreisMain.f90(289)
+    REAL(KIND=mp)  SQ                         ! SRC  xFNetPreisMain.f90(289)
+    INTEGER        NUS                        ! SRC  xFNetPreisMain.f90(293)
+    INTEGER        NDS                        ! SRC  xFNetPreisMain.f90(293)
+    INTEGER        I                          ! SRC  xFNetPreisMain.f90(300)
+    INTEGER        J                          ! SRC  xFNetPreisMain.f90(301)
     ! 	print *,'restart',ic,zus,zds
     ! 	write(2,*)'restart',ic,zus,zds
     call ChLims(ic,nus,nds)

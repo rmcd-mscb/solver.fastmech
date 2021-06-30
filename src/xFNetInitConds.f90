@@ -1,11 +1,34 @@
     Subroutine ChLims(nc,ics,ice)
     use Support
+    IMPLICIT NONE                             ! SRC
+    INTEGER, PARAMETER :: mp = KIND(1.0D0)    ! SRC
+    INTEGER        ICS                        ! SRC  xFNetInitConds.f90(3)
+    INTEGER        NC                         ! SRC  xFNetInitConds.f90(4)
+    INTEGER        ICE                        ! SRC  xFNetInitConds.f90(5)
     ics=1
     if(nc>1)ics=nsce(nc-1)+1
     ice=nsce(nc)
     end Subroutine ChLims
     Subroutine NetInitCond(ti)
     use Support
+    IMPLICIT NONE                             ! SRC
+    INTEGER, PARAMETER :: mp = KIND(1.0D0)    ! SRC
+    INTEGER        NC                         ! SRC  xFNetInitConds.f90(14)
+    REAL(KIND=mp)  TI                         ! SRC  xFNetInitConds.f90(16)
+    REAL(KIND=mp)  QQ                         ! SRC  xFNetInitConds.f90(16)
+    REAL(KIND=mp)  ZZ                         ! SRC  xFNetInitConds.f90(17)
+    INTEGER        ICS                        ! SRC  xFNetInitConds.f90(18)
+    INTEGER        ICE                        ! SRC  xFNetInitConds.f90(18)
+    REAL(KIND=mp)  ZUS                        ! SRC  xFNetInitConds.f90(27)
+    REAL(KIND=mp)  ZDS                        ! SRC  xFNetInitConds.f90(28)
+    REAL(KIND=mp)  AVABSELDF                  ! SRC  xFNetInitConds.f90(37)
+    INTEGER        ITEROUT                    ! SRC  xFNetInitConds.f90(38)
+    INTEGER        NN                         ! SRC  xFNetInitConds.f90(42)
+    REAL(KIND=mp)  SQ                         ! SRC  xFNetInitConds.f90(45)
+    REAL(KIND=mp)  FO                         ! SRC  xFNetInitConds.f90(48)
+    REAL(KIND=mp)  DZ                         ! SRC  xFNetInitConds.f90(49)
+    INTEGER        ITER                       ! SRC  xFNetInitConds.f90(50)
+    REAL(KIND=mp)  F                          ! SRC  xFNetInitConds.f90(54)
     !	print *,nch,nnd,nsc
     flwexst=1  ! master index for flow in channels, set to -1 if depth at any section
     ! drops below etol from bottom
@@ -73,6 +96,21 @@
     ! calculates node balance q based on any jct elev and bc or
     ! jct elevs at other end of ch
     use Support
+    IMPLICIT NONE                             ! SRC
+    INTEGER, PARAMETER :: mp = KIND(1.0D0)    ! SRC
+    INTEGER        NJ                         ! SRC  xFNetInitConds.f90(76)
+    INTEGER        NN                         ! SRC  xFNetInitConds.f90(76)
+    REAL(KIND=mp)  SQ                         ! SRC  xFNetInitConds.f90(77)
+    INTEGER        I                          ! SRC  xFNetInitConds.f90(78)
+    INTEGER        IC                         ! SRC  xFNetInitConds.f90(79)
+    INTEGER        ICS                        ! SRC  xFNetInitConds.f90(81)
+    INTEGER        ICE                        ! SRC  xFNetInitConds.f90(81)
+    REAL(KIND=mp)  TI                         ! SRC  xFNetInitConds.f90(84)
+    REAL(KIND=mp)  QQ                         ! SRC  xFNetInitConds.f90(84)
+    REAL(KIND=mp)  E                          ! SRC  xFNetInitConds.f90(85)
+    INTEGER        ICRIT                      ! SRC  xFNetInitConds.f90(86)
+    REAL(KIND=mp)  ZUS                        ! SRC  xFNetInitConds.f90(92)
+    REAL(KIND=mp)  ZDS                        ! SRC  xFNetInitConds.f90(108)
     nj=nprjct(nn)
     sq=0.
     do i=1,nj  !do for all channels entering jct

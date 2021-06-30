@@ -8,6 +8,27 @@
     !	!    curxsc(ns,7)=discharge
     !  xsloc(i,5)=emin  ! xsloc( ,5) set to min ch elev
     use support
+    IMPLICIT NONE                             ! SRC
+    INTEGER, PARAMETER :: mp = KIND(1.0D0)    ! SRC
+    INTEGER        NUS                        ! SRC  xFlowSupport.F90(11)
+    INTEGER        ICH                        ! SRC  xFlowSupport.F90(12)
+    INTEGER        NDS                        ! SRC  xFlowSupport.F90(13)
+    INTEGER        ITP                        ! SRC  xFlowSupport.F90(14)
+    REAL(KIND=mp)  QUS                        ! SRC  xFlowSupport.F90(17)
+    REAL(KIND=mp)  ZDS                        ! SRC  xFlowSupport.F90(17)
+    REAL(KIND=mp)  USSTG                      ! SRC  xFlowSupport.F90(20)
+    INTEGER        I                          ! SRC  xFlowSupport.F90(22)
+    REAL(KIND=mp)  QCRIT                      ! SRC  xFlowSupport.F90(29)
+    INTEGER        INDRCN                     ! SRC  xFlowSupport.F90(30)
+    REAL(KIND=mp)  BCSTG                      ! SRC  xFlowSupport.F90(31)
+    REAL(KIND=mp)  STGFCT                     ! SRC  xFlowSupport.F90(32)
+    INTEGER        ISSTG                      ! SRC  xFlowSupport.F90(33)
+    REAL(KIND=mp)  QFCT                       ! SRC  xFlowSupport.F90(42)
+    REAL(KIND=mp)  TOL                        ! SRC  xFlowSupport.F90(43)
+    INTEGER        ITER                       ! SRC  xFlowSupport.F90(44)
+    REAL(KIND=mp)  FO                         ! SRC  xFlowSupport.F90(46)
+    REAL(KIND=mp)  DQ                         ! SRC  xFlowSupport.F90(47)
+    REAL(KIND=mp)  F                          ! SRC  xFlowSupport.F90(48)
     nus=1
     if(ich>1)nus=nsce(ich-1)+1
     nds=nsce(ich)
@@ -69,6 +90,32 @@
     !  if inddrcn==1, usual step bw, compute ds>>us
     !  if inddrcn==-1, ds wselev>us, compute us>>ds
     use support
+    IMPLICIT NONE                             ! SRC
+    INTEGER, PARAMETER :: mp = KIND(1.0D0)    ! SRC
+    INTEGER        NC                         ! SRC  xFlowSupport.F90(74)
+    INTEGER        NFRST                      ! SRC  xFlowSupport.F90(75)
+    INTEGER        NLST                       ! SRC  xFlowSupport.F90(77)
+    INTEGER        NUS                        ! SRC  xFlowSupport.F90(78)
+    INTEGER        NDS                        ! SRC  xFlowSupport.F90(79)
+    INTEGER        INSTP                      ! SRC  xFlowSupport.F90(80)
+    INTEGER        INDDRCN                    ! SRC  xFlowSupport.F90(81)
+    REAL(KIND=mp)  SFDNOM                     ! SRC  xFlowSupport.F90(86)
+    REAL(KIND=mp)  Q                          ! SRC  xFlowSupport.F90(86)
+    REAL(KIND=mp)  ATRM                       ! SRC  xFlowSupport.F90(87)
+    REAL(KIND=mp)  ZC                         ! SRC  xFlowSupport.F90(88)
+    REAL(KIND=mp)  ZDS                        ! SRC  xFlowSupport.F90(89)
+    REAL(KIND=mp)  ZS                         ! SRC  xFlowSupport.F90(96)
+    REAL(KIND=mp)  ADS                        ! SRC  xFlowSupport.F90(98)
+    INTEGER        NS                         ! SRC  xFlowSupport.F90(101)
+    INTEGER        NSP                        ! SRC  xFlowSupport.F90(102)
+    REAL(KIND=mp)  DZ                         ! SRC  xFlowSupport.F90(104)
+    REAL(KIND=mp)  DX                         ! SRC  xFlowSupport.F90(105)
+    REAL(KIND=mp)  FCRIT                      ! SRC  xFlowSupport.F90(108)
+    REAL(KIND=mp)  Z                          ! SRC  xFlowSupport.F90(111)
+    REAL(KIND=mp)  ZPREC                      ! SRC  xFlowSupport.F90(123)
+    REAL(KIND=mp)  FO                         ! SRC  xFlowSupport.F90(124)
+    INTEGER        ITER                       ! SRC  xFlowSupport.F90(125)
+    REAL(KIND=mp)  F                          ! SRC  xFlowSupport.F90(126)
     real(kind = mp2) kds,kus
 
     oflwcrtcl(nc)=1
@@ -147,6 +194,17 @@
     end subroutine StepBW
     subroutine zCrit(is,q,zc)
     use Support
+    IMPLICIT NONE                             ! SRC
+    INTEGER, PARAMETER :: mp = KIND(1.0D0)    ! SRC
+    REAL(KIND=mp)  ZSV                        ! SRC  xFlowSupport.F90(150)
+    INTEGER        IS                         ! SRC  xFlowSupport.F90(150)
+    REAL(KIND=mp)  QTOL                       ! SRC  xFlowSupport.F90(151)
+    REAL(KIND=mp)  Q                          ! SRC  xFlowSupport.F90(151)
+    REAL(KIND=mp)  ZC                         ! SRC  xFlowSupport.F90(153)
+    REAL(KIND=mp)  F                          ! SRC  xFlowSupport.F90(154)
+    REAL(KIND=mp)  DZ                         ! SRC  xFlowSupport.F90(155)
+    REAL(KIND=mp)  FO                         ! SRC  xFlowSupport.F90(166)
+    INTEGER        ITER                       ! SRC  xFlowSupport.F90(168)
     zsv=curxsc(is,1)
     qtol=.001*q
     qtol=min(qtol,.001)
@@ -186,6 +244,17 @@
     end subroutine zCrit
     subroutine MinCourTS(ich,tsmin)
     use support
+    IMPLICIT NONE                             ! SRC
+    INTEGER, PARAMETER :: mp = KIND(1.0D0)    ! SRC
+    INTEGER        ICH                        ! SRC  xFlowSupport.F90(189)
+    INTEGER        NUS                        ! SRC  xFlowSupport.F90(189)
+    INTEGER        NDS                        ! SRC  xFlowSupport.F90(189)
+    INTEGER        IFUCK                      ! SRC  xFlowSupport.F90(190)
+    INTEGER        I                          ! SRC  xFlowSupport.F90(191)
+    REAL(KIND=mp)  TSMIN                      ! SRC  xFlowSupport.F90(202)
+    REAL(KIND=mp)  DX                         ! SRC  xFlowSupport.F90(204)
+    REAL(KIND=mp)  VEL                        ! SRC  xFlowSupport.F90(205)
+    REAL(KIND=mp)  C                          ! SRC  xFlowSupport.F90(206)
     Call ChLims(ich,nus,nds)
     ifuck=0
     do i=nus,nds
@@ -210,6 +279,15 @@
     end subroutine MinCourTS
     subroutine CheckFlow(ich,elus,elds)
     use support
+    IMPLICIT NONE                             ! SRC
+    INTEGER, PARAMETER :: mp = KIND(1.0D0)    ! SRC
+    REAL(KIND=mp)  ELTRY                      ! SRC  xFlowSupport.F90(213)
+    INTEGER        ICH                        ! SRC  xFlowSupport.F90(213)
+    REAL(KIND=mp)  ELUS                       ! SRC  xFlowSupport.F90(214)
+    REAL(KIND=mp)  ELDS                       ! SRC  xFlowSupport.F90(214)
+    INTEGER        NUS                        ! SRC  xFlowSupport.F90(215)
+    INTEGER        NDS                        ! SRC  xFlowSupport.F90(215)
+    INTEGER        I                          ! SRC  xFlowSupport.F90(217)
     eltry=ellim(ich)+etol
     if( eltry<elus.or.eltry<elds)return
     call ChLims(ich,nus,nds)

@@ -268,6 +268,12 @@
     ! continuity subroutines
     Subroutine pbpy(j,py)
     use support
+    IMPLICIT NONE                             ! SRC
+    INTEGER, PARAMETER :: mp = KIND(1.0D0)    ! SRC
+    REAL(KIND=mp)  DZ                         ! SRC  xFChPreis.f90(271)
+    INTEGER        J                          ! SRC  xFChPreis.f90(271)
+    REAL(KIND=mp)  TW                         ! SRC  xFChPreis.f90(272)
+    REAL(KIND=mp)  PY                         ! SRC  xFChPreis.f90(274)
     dz=.05*curxsc(j,4)
     tw=curxsc(j,5)
     call Farea(j,curxsc(j,1)+dz)
@@ -277,10 +283,20 @@
     ! momentum subroutines
     Subroutine kbar(j,py)
     use support
+    IMPLICIT NONE                             ! SRC
+    INTEGER, PARAMETER :: mp = KIND(1.0D0)    ! SRC
+    REAL(KIND=mp)  PY                         ! SRC  xFChPreis.f90(280)
+    INTEGER        J                          ! SRC  xFChPreis.f90(280)
     py=.5*(thet*(curxsc(j,6)**2+curxsc(j-1,6)**2)+(1.-thet)*(oldxsc(j,6)**2+oldxsc(j-1,6)**2))
     end subroutine kbar
     Subroutine pkpy(j,py)
     use support
+    IMPLICIT NONE                             ! SRC
+    INTEGER, PARAMETER :: mp = KIND(1.0D0)    ! SRC
+    REAL(KIND=mp)  DZ                         ! SRC  xFChPreis.f90(284)
+    INTEGER        J                          ! SRC  xFChPreis.f90(284)
+    REAL(KIND=mp)  XK                         ! SRC  xFChPreis.f90(285)
+    REAL(KIND=mp)  PY                         ! SRC  xFChPreis.f90(287)
     dz=.05*curxsc(j,4)
     xk=curxsc(j,6)
     call Farea(j,curxsc(j,1)+dz)
@@ -289,6 +305,14 @@
     end subroutine pkpy
     Subroutine ActvLocs(ic,iend,indx,nfrst)  ! find sequence of active channels
     use Support
+    IMPLICIT NONE                             ! SRC
+    INTEGER        NJ                         ! SRC  xFChPreis.f90(292)
+    INTEGER        IC                         ! SRC  xFChPreis.f90(292)
+    INTEGER        IEND                       ! SRC  xFChPreis.f90(292)
+    INTEGER        INDX                       ! SRC  xFChPreis.f90(294)
+    INTEGER        NN                         ! SRC  xFChPreis.f90(295)
+    INTEGER        ICN                        ! SRC  xFChPreis.f90(296)
+    INTEGER        NFRST                      ! SRC  xFChPreis.f90(300)
     nj=jctsecs(ic,iend,1)
     iactv=0
     indx=0
@@ -304,6 +328,13 @@
     end  Subroutine ActvLocs   ! find sequence of active channels
     Subroutine CheckCrit(nus,nds,icrit)
     use Support
+    IMPLICIT NONE                             ! SRC
+    INTEGER, PARAMETER :: mp = KIND(1.0D0)    ! SRC
+    INTEGER        ICRIT                      ! SRC  xFChPreis.f90(307)
+    REAL(KIND=mp)  FRDMAX                     ! SRC  xFChPreis.f90(308)
+    INTEGER        IC                         ! SRC  xFChPreis.f90(309)
+    INTEGER        NUS                        ! SRC  xFChPreis.f90(309)
+    INTEGER        NDS                        ! SRC  xFChPreis.f90(309)
     icrit=0
     frdmax=0.
     do ic=nus,nds

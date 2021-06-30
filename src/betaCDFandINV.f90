@@ -64,6 +64,32 @@
     !
     !--- DEFINE MAXIMUM ITERATIONS AND MACHINE FLOATING POINT PRECISION
     !
+    IMPLICIT NONE                             ! SRC
+    INTEGER, PARAMETER :: mp = KIND(1.0D0)    ! SRC
+    INTEGER        ITMAX                      ! SRC  betaCDFandINV.f90(67)
+    REAL(KIND=mp)  EPS                        ! SRC  betaCDFandINV.f90(67)
+    INTEGER        IFLAG                      ! SRC  betaCDFandINV.f90(71)
+    REAL(KIND=mp)  PR                         ! SRC  betaCDFandINV.f90(72)
+    REAL(KIND=mp)  P                          ! SRC  betaCDFandINV.f90(77)
+    REAL(KIND=mp)  Q                          ! SRC  betaCDFandINV.f90(77)
+    REAL(KIND=mp)  TOL                        ! SRC  betaCDFandINV.f90(82)
+    REAL(KIND=mp)  A                          ! SRC  betaCDFandINV.f90(87)
+    REAL(KIND=mp)  B                          ! SRC  betaCDFandINV.f90(88)
+    REAL(KIND=mp)  FA                         ! SRC  betaCDFandINV.f90(89)
+    REAL(KIND=mp)  FB                         ! SRC  betaCDFandINV.f90(90)
+    REAL(KIND=mp)  FC                         ! SRC  betaCDFandINV.f90(99)
+    INTEGER        ITER                       ! SRC  betaCDFandINV.f90(100)
+    REAL(KIND=mp)  C                          ! SRC  betaCDFandINV.f90(105)
+    REAL(KIND=mp)  D                          ! SRC  betaCDFandINV.f90(107)
+    REAL(KIND=mp)  E                          ! SRC  betaCDFandINV.f90(108)
+    REAL(KIND=mp)  TOL1                       ! SRC  betaCDFandINV.f90(121)
+    REAL(KIND=mp)  XM                         ! SRC  betaCDFandINV.f90(122)
+    REAL(KIND=mp)  X                          ! SRC  betaCDFandINV.f90(124)
+    REAL(KIND=mp)  S                          ! SRC  betaCDFandINV.f90(132)
+    REAL(KIND=mp)  U                          ! SRC  betaCDFandINV.f90(134)
+    REAL(KIND=mp)  V                          ! SRC  betaCDFandINV.f90(135)
+    REAL(KIND=mp)  R                          ! SRC  betaCDFandINV.f90(138)
+    REAL(KIND=mp)  CDF                        ! SRC  betaCDFandINV.f90(180)
     DATA ITMAX,EPS / 50,1.0E-12 /
     !
     !--- CHECK VALIDITY OF INPUT ARGUMENTS
@@ -241,6 +267,27 @@
     !   * INDICATES PARAMETERS REQUIRING INPUT VALUES
     !-----------------------------------------------------------------------
     !
+    IMPLICIT NONE                             ! SRC
+    INTEGER, PARAMETER :: mp = KIND(1.0D0)    ! SRC
+    INTEGER        JMAX                       ! SRC  betaCDFandINV.f90(247)
+    REAL(KIND=mp)  W                          ! SRC  betaCDFandINV.f90(247)
+    REAL(KIND=mp)  UFLO                       ! SRC  betaCDFandINV.f90(247)
+    REAL(KIND=mp)  CDFX                       ! SRC  betaCDFandINV.f90(248)
+    REAL(KIND=mp)  P                          ! SRC  betaCDFandINV.f90(252)
+    REAL(KIND=mp)  Q                          ! SRC  betaCDFandINV.f90(252)
+    REAL(KIND=mp)  EPS                        ! SRC  betaCDFandINV.f90(252)
+    INTEGER        IFLAG                      ! SRC  betaCDFandINV.f90(253)
+    REAL(KIND=mp)  X                          ! SRC  betaCDFandINV.f90(260)
+    REAL(KIND=mp)  XY                         ! SRC  betaCDFandINV.f90(269)
+    REAL(KIND=mp)  YX                         ! SRC  betaCDFandINV.f90(270)
+    REAL(KIND=mp)  PQ                         ! SRC  betaCDFandINV.f90(271)
+    REAL(KIND=mp)  QP                         ! SRC  betaCDFandINV.f90(272)
+    REAL(KIND=mp)  PDFL                       ! SRC  betaCDFandINV.f90(284)
+    REAL(KIND=mp)  U                          ! SRC  betaCDFandINV.f90(287)
+    REAL(KIND=mp)  R                          ! SRC  betaCDFandINV.f90(288)
+    REAL(KIND=mp)  V                          ! SRC  betaCDFandINV.f90(299)
+    REAL(KIND=mp)  YXEPS                      ! SRC  betaCDFandINV.f90(300)
+    INTEGER        J                          ! SRC  betaCDFandINV.f90(304)
     LOGICAL LL
     DOUBLE PRECISION DP,DQ,DGAMLN
     !CCC DATA JMAX,W,UFLO / 5000,20.0,1E-100 /
@@ -360,6 +407,11 @@
     !      1986.
     !-----------------------------------------------------------------------
     !
+    IMPLICIT NONE                             ! SRC
+    INTEGER, PARAMETER :: mp = KIND(1.0D0)    ! SRC
+    REAL(KIND=mp)  X                          ! SRC  betaCDFandINV.f90(377)
+    INTEGER        N                          ! SRC  betaCDFandINV.f90(379)
+    INTEGER        I                          ! SRC  betaCDFandINV.f90(390)
     DOUBLE PRECISION ABSACC,B1,B2,B3,B4,B5,B6,B7,B8,C,DX,Q,R,XMIN,XN
     DATA XMIN,ABSACC / 6.894D0,1.0D-15 /
     DATA C / 0.918938533204672741780329736D0 /

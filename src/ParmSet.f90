@@ -18,7 +18,7 @@
     prmt(1,2)=.2 !dry-wet channel tolerance, m
     prmt(1,3)=.7  !theta, advanced time step weight in Preissman scheme
     prmt(1,4)=100.  !Number of points in time series plots, max=200
-    prmt(1,5)=1.e-5  !Mass concentration tolerance level
+    prmt(1,5)=1.d-5  !Mass concentration tolerance level
     prmt(1,6)=50.  !Maximum number iterations, preissman scheme
     prmt(1,7)=.4  !Relaxation coefficient--discharge, preissman scheme
     prmt(1,8)=.6  !Relaxation coefficient--stage, preissman scheme

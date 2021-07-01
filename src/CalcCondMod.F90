@@ -41,7 +41,7 @@
     INTEGER, PUBLIC :: nsext
     INTEGER :: ShowGridExt, vbcds
 
-    REAL :: nsextslope
+    REAL(KIND=mp) :: nsextslope               ! SRC
 
     !Wetting and Drying
     INTEGER :: dryType, hiterInterval, hiterstop

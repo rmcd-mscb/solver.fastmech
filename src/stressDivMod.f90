@@ -2,10 +2,10 @@
     use RivVarMod
     USE CalcCond
     IMPLICIT NONE
-    REAL, ALLOCATABLE, DIMENSION(:,:) :: DUM1
+    REAL(KIND=mp), ALLOCATABLE, DIMENSION(:,:) :: DUM1 ! SRC
     CONTAINS
     SUBROUTINE StressDiv()
-    REAL ::  SC, weight
+    REAL(KIND=mp) ::  SC, weight              ! SRC
     INTEGER :: I, J, ISMOO
     CALL alloc_StressDiv()
 

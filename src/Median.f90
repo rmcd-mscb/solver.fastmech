@@ -25,8 +25,8 @@ SUBROUTINE MDIAN1(X,N,XMED)
     REAL(KIND=mp)  XX                         ! SRC  Median.f90(27)
     REAL(KIND=mp)  DUM                        ! SRC  Median.f90(36)
     REAL(KIND=mp)  AA                         ! SRC  Median.f90(44)
-  real X(N)
-  real, parameter :: BIG = 1.d30, AFAC=1.5, AMP=1.5
+  real(KIND=mp) X(N)                          ! SRC
+  real(KIND=mp), parameter :: BIG = 1.d30, AFAC=1.5, AMP=1.5 ! SRC
 ! Here, AMP is an overconvergence factor: on each iteration,
 ! we move the guess by this factor. AFAC is a factor used to
 ! optimize the size of the "smoothing constant" EPS at each
@@ -104,7 +104,7 @@ SUBROUTINE MDIAN(X,N,XMED)
     REAL(KIND=mp)  XMED                       ! SRC  Median.f90(83)
     INTEGER        N                          ! SRC  Median.f90(84)
     INTEGER        N2                         ! SRC  Median.f90(86)
-  real X(N)
+  real(KIND=mp) X(N)                          ! SRC
   call hpsort(N,X)
   N2=N/2
   if (2*N2.eq.N) then
@@ -138,7 +138,7 @@ SUBROUTINE HPSORT(N,RA)
     REAL(KIND=mp)  RRA                        ! SRC  Median.f90(120)
     INTEGER        I                          ! SRC  Median.f90(130)
     INTEGER        J                          ! SRC  Median.f90(131)
-  real RA(N)
+  real(KIND=mp) RA(N)                         ! SRC
   L=N/2+1
   IR=N
   !The index L will be decremented from its initial value during the

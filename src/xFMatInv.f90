@@ -11,7 +11,7 @@
     real(kind = mp2) rdum,cabs,cum,cnorm,cmult
     neq=2*nsc
     do i=1,neq
-        cabs=-1.e9
+        cabs=-1.d9
         do j=1,ntbw
             cabs=max(cabs,abs(cm(i,j)))
         enddo

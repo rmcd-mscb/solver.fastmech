@@ -57,7 +57,7 @@
         endif
         return
     endif
-    AvAbsElDf=1.e9
+    AvAbsElDf=1.d9
     iterout=0
     do while (AvAbsElDf>.001.and.iterout<100)
         iterout=iterout+1
@@ -147,7 +147,7 @@
                 elseif(chbc(ic,1)==1)then
                     call tsbc(ic,2,ti,zds)
                 else !chbc(ic,1)==3
-                    zds=-1.e9  ! Step BW will handle setting ds bc at crit depth
+                    zds=-1.d9  ! Step BW will handle setting ds bc at crit depth
                 endif
                 !				print *,'3a ',ics,ice,sq,e,zds
                 call CheckFlow(ic,e,zds)

@@ -26,7 +26,7 @@ SUBROUTINE MDIAN1(X,N,XMED)
     REAL(KIND=mp)  DUM                        ! SRC  Median.f90(36)
     REAL(KIND=mp)  AA                         ! SRC  Median.f90(44)
   real X(N)
-  real, parameter :: BIG = 1.e30, AFAC=1.5, AMP=1.5
+  real, parameter :: BIG = 1.d30, AFAC=1.5, AMP=1.5
 ! Here, AMP is an overconvergence factor: on each iteration,
 ! we move the guess by this factor. AFAC is a factor used to
 ! optimize the size of the "smoothing constant" EPS at each

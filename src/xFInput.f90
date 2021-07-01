@@ -103,7 +103,7 @@
     call AllocateSecs(nchx,nscchmax,nsec,nspt,nonds,maxentrs,nbclocs)
     call AllocateTBC(ntbc)
     rewind(1)
-    ellim=-1.e9
+    ellim=-1.d9
     limsec=0
     read(1,*)nchx
     nss=1
@@ -127,7 +127,7 @@
             read(1,*) npt,ncd,nnpt
             npf=nps+npt-1
             nscpte(i)=npf
-            emin=1.e9
+            emin=1.d9
             if(ncd<1)then  !elevations are entered as offsets
                 read(1,*)gar,(dum(j),j=1,2*npt)
                 gar=gar+xsloc(i,5)

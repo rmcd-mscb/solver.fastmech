@@ -261,7 +261,7 @@
     CALL CG_IRIC_READ_INTEGER_F('FM_SolAttMaxInterIter', maxInterIterMult, ier)
 
     CALL cg_iRIC_Read_Real_F('FM_HydAttQ', q, ier)
-    q = q*1.e6
+    q = q*1.d6
     !NEXT TWO DEFINED IN RivVarTimeMod
     CALL CG_IRIC_READ_INTEGER_F('FM_HydAttVarDischType', VarDischType, ier)
     IF(VarDischType.eq.1)THEN

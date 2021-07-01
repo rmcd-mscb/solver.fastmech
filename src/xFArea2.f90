@@ -275,7 +275,7 @@
     endif
     call areaonly(ns,e,as)
     fo=a-as
-    f=1.e9
+    f=1.d9
     iter=0
     do while(abs(f)>.001*a.and.iter<100)
         iter=iter+1
@@ -306,7 +306,7 @@
     REAL(KIND=mp)  H                          ! SRC  xFArea2.f90(240)
     REAL(KIND=mp)  E                          ! SRC  xFArea2.f90(240)
     INTEGER        N                          ! SRC  xFArea2.f90(240)
-    xn1 = 1.e6
+    xn1 = 1.d6
     h = e - xspts(n,2)
     if(h > 0.001) then
         !			xn1 = (xspts(n,3)*xspts(n,3)*gg)/h**.33333

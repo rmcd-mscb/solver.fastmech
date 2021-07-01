@@ -204,7 +204,7 @@
             flwexst(ic)=1
             x=0.
             imin=nus
-            amin=1.e9
+            amin=1.d9
             do i=nus,nds
                 dx=0.
                 if(i>nus)call dxc(i,dx)
@@ -342,7 +342,7 @@
     elseif(chbc(ic,2)==1)then  !chbc==1, q bc not allowed here
         call tsbc(ic,2,tdys,zds)
     else  ! chbc==3
-        zds=-1.e9  !critical ds bc set in CompOnly
+        zds=-1.d9  !critical ds bc set in CompOnly
     endif
     end Subroutine FindChElBC
     Subroutine ReStart(ic,zus,zds,sq)

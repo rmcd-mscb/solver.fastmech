@@ -66,7 +66,7 @@
             call StepBw(indrcn,ich,qfct,bcstg)
             fo= curxsc(isstg,1)-stgfct
             dq=.01*qfct
-            f=1.e9
+            f=1.d9
             ! 	  write(2,*)indrcn,isstg,usstg,zds,stgfct,fo,qfct,dq
             do while(abs(f)>tol.and.iter<100)
                 iter=iter+1
@@ -170,7 +170,7 @@
         zprec=curxsc(ns,4)  !hd
         fo=zs-z+dx*sfdnom/(kds+curxsc(ns,6)**2)+atrm*(1./ads-1./curxsc(ns,2))/(ads+curxsc(ns,2))
         iter=0
-        f=1.e9
+        f=1.d9
         do while(abs(f)>.001*zprec.and.iter<100)
             iter=iter+1
             if(z+dz<zc)then
@@ -209,7 +209,7 @@
     qtol=.001*q
     qtol=min(qtol,.001)
     zc=xsloc(is,5)+.01 !etol
-    f=-1.e9
+    f=-1.d9
     dz=0.1
     do while (f<0.)
         zc=zc+dz
@@ -222,7 +222,7 @@
     enddo
     call Farea(is,zc)
     fo=rtgg*sqrt(curxsc(is,2)**3/curxsc(is,5))-q
-    f=1.e9
+    f=1.d9
     iter=0
     do while (abs(f)>qtol.and.iter<100)
         iter=iter+1
@@ -268,7 +268,7 @@
         enddo
         stop
     endif
-    tsmin=1.e9
+    tsmin=1.d9
     do i=nus+1,nds
         call dxc(i,dx)
         vel=abs(curxsc(i,7)/curxsc(i,2))

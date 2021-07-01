@@ -20,7 +20,7 @@
 
     CALL AllocateSecs(1, nsec, nsec, npts, 0, 0, 2)
     CALL AllocateTBC(2)
-    ellim = -1.e9
+    ellim = -1.d9
     nchx = 1
     ns = nsec
     chbc(1,1) = 2
@@ -44,7 +44,7 @@
         nnpt = nsecpts
         npf=nps+npt-1
         nscpte(i)=npf
-        emin=1.e9
+        emin=1.d9
         if(i==1)eav = 0
         do j = 1,npt
             countij = ((i-1)*nsecpts) + j

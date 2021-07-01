@@ -95,15 +95,15 @@
     REAL(KIND=mp) :: minx, maxx, miny, maxy
     INTEGER :: i,j
     Type(point) :: p1
-    minx = 1e12
-    miny = 1e12
-    maxx = -1e12
-    maxy = -1e12
+    minx = 1d12
+    miny = 1d12
+    maxx = -1d12
+    maxy = -1d12
     DO i = 1, getnumrc()
-        minx = 1e12
-        miny = 1e12
-        maxx = -1e12
-        maxy = -1e12
+        minx = 1d12
+        miny = 1d12
+        maxx = -1d12
+        maxy = -1d12
         Do j = 1, getRCNumPts(i)
             call getRCPt(i, j, p1)
             if(p1%x < minx) minx = p1%x
@@ -120,15 +120,15 @@
     REAL(KIND=mp) :: minx, maxx, miny, maxy
     INTEGER :: i,j
     Type(point) :: p1
-    minx = 1e12
-    miny = 1e12
-    maxx = -1e12
-    maxy = -1e12
+    minx = 1d12
+    miny = 1d12
+    maxx = -1d12
+    maxy = -1d12
     DO i = 1, getNumTS()
-        minx = 1e12
-        miny = 1e12
-        maxx = -1e12
-        maxy = -1e12
+        minx = 1d12
+        miny = 1d12
+        maxx = -1d12
+        maxy = -1d12
         Do j = 1, getTSNumPts(i)
             call getTSPt(i, j, p1)
             if(p1%x < minx) minx = p1%x

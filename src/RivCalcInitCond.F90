@@ -85,7 +85,7 @@
         if(varDischType == 1) then !Discharge Time Series
             CALL getInterpTimeSeriesValue(1, VarDischStartTime, tmpq)
         else
-            tmpq = q/1e6
+            tmpq = q/1d6
         endif
 
         if(varStageType == 1) then !Stage Time Series

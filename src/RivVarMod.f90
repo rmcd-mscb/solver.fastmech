@@ -6,7 +6,7 @@
     ! Machine precision:
     INTEGER, PARAMETER :: mp = KIND(1.0D0) ! = KIND(1.0D0) for double precision.
     integer,parameter :: strMax = 250
-    REAL(kind=mp) :: ElevOffset=1e12
+    REAL(kind=mp) :: ElevOffset=1d12
     REAL(kind=mp) :: ds,dn,mo,hwt
     REAL(kind=mp) :: fcos, fsin
     REAL(kind=mp) :: lbwse, rbwse, vdcds, vacds

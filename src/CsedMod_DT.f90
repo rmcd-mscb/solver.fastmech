@@ -902,8 +902,8 @@
 
     !     FIND MINIMUM TIME STEP TO SATISFY CRITERIA FOR MAXIMUM ELEVATION CHANGE
     !     AS A FUNTION OF DEPTH !9/24/06 - rmcd
-    mintdt = 1e12
-    maxtdt = -1e12
+    mintdt = 1d12
+    maxtdt = -1d12
     DO I = 1,ns
         DO J = 1, nn
             IF(ibc(i,j).ne.0.and.con(i,j).ne.0) THEN

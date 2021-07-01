@@ -82,7 +82,7 @@
     INTEGER :: i,j, status, max, maxindex
     INTEGER, ALLOCATABLE, DIMENSION(:) :: tmp
     ALLOCATE(tmp(nclusters), STAT = status)
-    max = -1e6
+    max = -1d6
     maxindex = 1
     tmp = 0
     nwetnodes = 0

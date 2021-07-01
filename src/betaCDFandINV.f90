@@ -90,7 +90,7 @@
     REAL(KIND=mp)  V                          ! SRC  betaCDFandINV.f90(135)
     REAL(KIND=mp)  R                          ! SRC  betaCDFandINV.f90(138)
     REAL(KIND=mp)  CDF                        ! SRC  betaCDFandINV.f90(180)
-    DATA ITMAX,EPS / 50,1.0E-12 /
+    DATA ITMAX,EPS / 50,1.0D-12 /
     !
     !--- CHECK VALIDITY OF INPUT ARGUMENTS
     !
@@ -105,7 +105,7 @@
         RETURN
         !
     ENDIF
-    IF (TOL.LT.1.0E-8) THEN
+    IF (TOL.LT.1.0D-8) THEN
         IFLAG = 5
         RETURN
         !
@@ -291,7 +291,7 @@
     LOGICAL LL
     DOUBLE PRECISION DP,DQ,DGAMLN
     !CCC DATA JMAX,W,UFLO / 5000,20.0,1E-100 /
-    DATA JMAX,W,UFLO / 5000,20.0,1E-30 /
+    DATA JMAX,W,UFLO / 5000,20.0,1D-30 /
     CDFX = 0.0
     !
     !--- CHECK FOR VALIDITY OF ARGUMENTS P, Q, AND EPS

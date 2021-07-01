@@ -94,9 +94,9 @@ CALL Calc_Area(x, y, xo, yo, nm, dn, harea)
 65  format(25f6.2)
 if(varDischType == 1) then !Discharge Time Series
     CALL getInterpTimeSeriesValue(1, VarDischStartTime, newDisch)
-    q = newDisch*1e6
+    q = newDisch*1d6
 else
-    newDisch = q/1e6
+    newDisch = q/1d6
 endif
 
 if(varStageType == 1) then !Stage Time Series
@@ -202,7 +202,7 @@ do while(totTime <= VarDischEndTime)
 
     if(varDischType == 1) then !Update Discharge
         CALL getInterpTimeSeriesValue(1, totTime, newDisch)
-        q = newDisch*1e6
+        q = newDisch*1d6
     endif
     dDisch = q-oldDisch
 
@@ -285,7 +285,7 @@ do while(totTime <= VarDischEndTime)
     ENDIF
 
     write(*,*)
-    write(*,*) 'Discharge', q/1e6, 'Change Discharge', dDisch/1e6
+    write(*,*) 'Discharge', q/1d6, 'Change Discharge', dDisch/1d6
     write(*,*) 'Stage', newStage/100.+elevoffset, 'Change Stage', dStage/100.
     write(*,*)
 

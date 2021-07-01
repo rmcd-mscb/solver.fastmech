@@ -213,18 +213,21 @@
     END SUBROUTINE VarDischUBInit
 
 
-    REAL FUNCTION GetDepth(i,j)
+    FUNCTION GetDepth(i,j)
+    REAL(kind = mp) GetDepth
     INTEGER, INTENT(IN)::i, j
     GetDepth = hav(i)-eta(i,j)
     END FUNCTION
 
-    REAL FUNCTION GetDepthWieght(i, j, depave)
+    FUNCTION GetDepthWieght(i, j, depave)
+    REAL(kind = mp) GetDepthWieght
     INTEGER, INTENT(IN):: i, j
     REAL(kind = mp), INTENT(IN)::depave
     GetDepthWieght = ((hav(i)-eta(i,j))**vdc)/depave
     END FUNCTION
 
-    REAL FUNCTION GetVelocityWieght(i,nn)
+    FUNCTION GetVelocityWieght(i,nn)
+    REAL(kind = mp) GetVelocityWieght
     INTEGER, INTENT(IN) :: i,nn
     INTEGER :: count
     REAL(kind = mp) :: val
@@ -240,7 +243,8 @@
     / (vbcdist(count+1)-vbcdist(count))))
     END FUNCTION
 
-    REAL FUNCTION GetAngleWieght(i,nn)
+    FUNCTION GetAngleWieght(i,nn)
+    REAL(kind = mp) GetAngleWieght
     INTEGER, INTENT(IN) :: i, nn
     INTEGER :: count
     REAL(kind = mp) :: val

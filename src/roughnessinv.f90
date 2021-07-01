@@ -1,4 +1,4 @@
-    real function roughnessinv(Droughmin, Dro,  P, Fs)
+    function roughnessinv(Droughmin, Dro,  P, Fs)
     !-----------------------------------------
     !	we used a logistic curve of shape y=(A1-A2)/(1+(x/x0)^P)+A2
     !	where A1 and A2 are the roughnesses for Fs=0 and Fs=1 respectively
@@ -14,6 +14,7 @@
 
     IMPLICIT NONE
     INTEGER, PARAMETER :: mp = KIND(1.0D0)
+    REAL(kind = mp) roughnessinv              ! SRC
     REAL(kind = mp) Droughmin, Dro, P
     REAL(kind = mp) FS, x0
 

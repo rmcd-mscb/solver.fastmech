@@ -1,4 +1,4 @@
-    real function roughness(A1, A2, P, FS)
+    function roughness(A1, A2, P, FS)
     !-----------------------------------------
     ! we used a logistic curve of shape y=(A1-A2)/(1+(x/x0)^P)+A2
     ! where A1 and A2 are the roughnesses for Fs=0 and Fs=1 respectively
@@ -11,6 +11,7 @@
 
     IMPLICIT NONE                             ! SRC
     INTEGER, PARAMETER :: mp = KIND(1.0D0)
+    REAL(KIND=mp)  roughness                  ! SRC
     REAL(KIND=mp)  X0                         ! SRC  functionrough.f90(16)
     REAL(kind = mp) A1, A2, P
     REAL(kind = mp) FS

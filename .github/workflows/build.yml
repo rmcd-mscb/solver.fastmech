@@ -19,7 +19,6 @@ env:
   INSTALL_DIR: INSTALL
 
   # Repos
-  IRICLIB_REPO: i-RIC/iriclib
   ONLINE_UPDATE_REPO: i-RIC/online_update
 
   # github API url
@@ -142,7 +141,7 @@ jobs:
     - name: Commit and push branch
       uses: actions-js/push@master
       with:
-        github_token: ${{secrets.WORKFLOW_PAT}}
+        github_token: ${{secrets.ONLINE_UPDATE_TOKEN}}
         repository: ${{env.ONLINE_UPDATE_REPO}}
         directory: online_update
         branch: __${{github.event.repository.name}}_${{github.run_number}}        # @todo remove branch

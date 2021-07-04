@@ -5,8 +5,8 @@ project(Fastmech Fortran)
 include(GNUInstallDirs)
 
 # set CMAKE_PREFIX_PATH to the directory containing iriclibConfig.cmake
-# ie -DCMAKE_PREFIX_PATH=c:/iricdev/lib/install/iriclib-0.2.9/lib/cmake/iriclib
-find_package(iriclib REQUIRED)
+# ie -DCMAKE_PREFIX_PATH=d:/Downloads/iriclib-artifacts/iricsdk/iriclib-4.0.0/lib/cmake/iriclib
+find_package(iriclib 4 REQUIRED)
 
 # Change this to ON if solver requires OpenMP
 option(IRIC_SOLVER_USE_OPENMP "Solver requires OpenMP" OFF)
@@ -28,7 +28,6 @@ add_executable(Fastmech
   src/CalcCondMod.F90
   src/GridCondMod.F90
   src/GridCoordMod.F90
-  src/iriclibf.f90
   src/ReadCGNS.F90
   src/WriteCGNS.F90
   src/ParmSet.f90

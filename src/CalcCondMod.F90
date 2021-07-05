@@ -223,21 +223,21 @@
 
     CALL cg_iRIC_Read_Integer(fid, 'FM_SolAttType', solType, ier)
 
-    CALL cg_iRIC_Read_Real('FM_SolAttERlx', erelax, ier)
-    CALL cg_iRIC_Read_Real('FM_SolAttURlx', urelax, ier)
-    CALL cg_iRIC_Read_Real('FM_SolAttARlx', arelax, ier)
+    CALL cg_iRIC_Read_Real(fid, 'FM_SolAttERlx', erelax, ier)
+    CALL cg_iRIC_Read_Real(fid, 'FM_SolAttURlx', urelax, ier)
+    CALL cg_iRIC_Read_Real(fid, 'FM_SolAttARlx', arelax, ier)
 
     CALL CG_IRIC_READ_INTEGER(fid, 'FM_SolAttItm', itm, ier)
 
-    CALL cg_iRIC_Read_Real('FM_SolAttDT', dt, ier)
+    CALL cg_iRIC_Read_Real(fid, 'FM_SolAttDT', dt, ier)
 
     CALL CG_IRIC_READ_INTEGER(fid, 'FM_SolAttInterItm', interitm, ier)
 
     CALL CG_IRIC_READ_INTEGER(fid, 'FM_SolAttPlinc', iplinc, ier)
 
     !NEXT TWO DEFINED IN RivVarTimeMod
-    CALL cg_iRIC_Read_Real('FM_SolAttVarDischSTime', vardischstarttime, ier)
-    CALL cg_iRIC_Read_Real('FM_SolAttVarDischETime', vardischendtime, ier)
+    CALL cg_iRIC_Read_Real(fid, 'FM_SolAttVarDischSTime', vardischstarttime, ier)
+    CALL cg_iRIC_Read_Real(fid, 'FM_SolAttVarDischETime', vardischendtime, ier)
 
     CALL CG_IRIC_READ_INTEGER(fid, 'FM_SolAttFlumeBndry', tmpint, ier)
     IF(tmpint == 1) THEN
@@ -260,7 +260,7 @@
 
     CALL CG_IRIC_READ_INTEGER(fid, 'FM_SolAttMaxInterIter', maxInterIterMult, ier)
 
-    CALL cg_iRIC_Read_Real('FM_HydAttQ', q, ier)
+    CALL cg_iRIC_Read_Real(fid, 'FM_HydAttQ', q, ier)
     q = q*1.e6
     !NEXT TWO DEFINED IN RivVarTimeMod
     CALL CG_IRIC_READ_INTEGER(fid, 'FM_HydAttVarDischType', VarDischType, ier)
@@ -329,8 +329,8 @@
 
     ENDIF
 
-    CALL cg_iRIC_Read_Real('FM_HydAttVelDepthCoef', vdc, ier)
-    CALL cg_iRIC_Read_Real('FM_HydAttVelAngleCoef', vac, ier)
+    CALL cg_iRIC_Read_Real(fid, 'FM_HydAttVelDepthCoef', vdc, ier)
+    CALL cg_iRIC_Read_Real(fid, 'FM_HydAttVelAngleCoef', vac, ier)
     CALL CG_IRIC_READ_INTEGER(fid, 'FM_HydAttVelBC', vbc, ier)
     IF(vbc == 1) THEN
         CALL CG_IRIC_READ_FUNCTIONALSIZE('FM_HydAttVarVelBC', tmpint, IER)
@@ -353,11 +353,11 @@
         DEALLOCATE(ztmp, STAT=ier)
     ENDIF
 
-    CALL cg_iRIC_Read_Real('FM_HydAttWS', wselev, ier)
+    CALL cg_iRIC_Read_Real(fid, 'FM_HydAttWS', wselev, ier)
     wselev=(wselev - elevoffset)*100.
-    CALL cg_iRIC_Read_Real('FM_HydAttWS2', wsupelev, ier)
+    CALL cg_iRIC_Read_Real(fid, 'FM_HydAttWS2', wsupelev, ier)
     wsupelev=(wsupelev - elevoffset)*100.
-    CALL cg_iRIC_Read_Real('FM_HydAttWSSlope', wsslope, ier)
+    CALL cg_iRIC_Read_Real(fid, 'FM_HydAttWSSlope', wsslope, ier)
     CALL CG_IRIC_READ_INTEGER(fid, 'FM_HydAttWSType', wstype, ier)
     IF(wstype == 3) THEN
         HotStart = .TRUE.
@@ -366,24 +366,24 @@
     ENDIF
 
     !CALL CG_IRIC_READ_INTEGER(fid, 'FM_HydAttHotStart', tmpint, ier)
-    CALL cg_iRIC_Read_Real('FM_HydAttWS1DCD', ONEDCD, ier)
+    CALL cg_iRIC_Read_Real(fid, 'FM_HydAttWS1DCD', ONEDCD, ier)
 
     CALL CG_IRIC_READ_STRING('FM_HydAttHSFile', CGNSHSFile, ier)
     CALL CG_IRIC_READ_INTEGER(fid, 'FM_HydAttSolIndex', SolnIndex, ier)
 
     CALL CG_IRIC_READ_INTEGER(fid, 'FM_HydAttRoughnessType', roughnesstype, ier)
     CALL CG_IRIC_READ_INTEGER(fid, 'FM_HydAttCDType', cdtype, ier)
-    CALL cg_iRIC_Read_Real('FM_HydAttCD', constcd, ier)
-    CALL cg_iRIC_Read_Real('FM_HydAttCDMin', cdmin, ier)
-    CALL cg_iRIC_Read_Real('FM_HydAttCDMax', cdmax, ier)
+    CALL cg_iRIC_Read_Real(fid, 'FM_HydAttCD', constcd, ier)
+    CALL cg_iRIC_Read_Real(fid, 'FM_HydAttCDMin', cdmin, ier)
+    CALL cg_iRIC_Read_Real(fid, 'FM_HydAttCDMax', cdmax, ier)
 
-    CALL cg_iRIC_Read_Real('FM_SolAttNSExtSlope', nsextslope, ier)
+    CALL cg_iRIC_Read_Real(fid, 'FM_SolAttNSExtSlope', nsextslope, ier)
     !CALL CG_IRIC_READ_INTEGER_F('FM_SolAttNSExtShow', ShowGridExt, ier)
     CALL CG_IRIC_READ_INTEGER(fid, 'FM_HydAttVelBCDS', vbcds, ier)
     CALL CG_IRIC_READ_INTEGER(fid, 'FM_HydAttDryType', dryType, ier)
-    CALL cg_iRIC_Read_Real('FM_HydAttDryMinDepth', hmin, ier)
+    CALL cg_iRIC_Read_Real(fid, 'FM_HydAttDryMinDepth', hmin, ier)
     hmin = hmin*100.
-    CALL cg_iRIC_Read_Real('FM_HydAttWetMinDepth', hwmin, ier)
+    CALL cg_iRIC_Read_Real(fid, 'FM_HydAttWetMinDepth', hwmin, ier)
     hwmin = hwmin*100.
     CALL CG_IRIC_READ_INTEGER(fid, 'FM_HydAttWetIterInterval', hiterInterval, ier)
     CALL CG_IRIC_READ_INTEGER(fid, 'FM_HydAttWetIterStop', hiterstop, ier)
@@ -398,11 +398,11 @@
     CALL CG_IRIC_READ_INTEGER(fid, 'FM_HydAttLEVChangeIter', LEVChangeIter, ier)
     CALL CG_IRIC_READ_INTEGER(fid, 'FM_LEVStartIter', LEVBegIter, ier)
     CALL CG_IRIC_READ_INTEGER(fid, 'FM_LEVEndIter', LEVEndIter, ier)
-    CALL cg_iRIC_Read_Real('FM_StartLEV', startLEV, ier)
+    CALL cg_iRIC_Read_Real(fid, 'FM_StartLEV', startLEV, ier)
     startLEV = startLEV*100*100
-    CALL cg_iRIC_Read_Real('FM_EndLEV', endLEV, ier)
+    CALL cg_iRIC_Read_Real(fid, 'FM_EndLEV', endLEV, ier)
     endLEV = endLEV*100*100
-    CALL cg_iRIC_Read_Real('FM_HydAttEVC', evc, ier)
+    CALL cg_iRIC_Read_Real(fid, 'FM_HydAttEVC', evc, ier)
     evc = evc*100.*100.
 
     CALL CG_IRIC_READ_INTEGER(fid, 'FM_Quasi3D', tmpint, ier)
@@ -420,7 +420,7 @@
         CALCQUASI3DRS = .FALSE.
     ENDIF
 
-    CALL cg_iRIC_Read_Real('FM_Quasi3D_MinRS', MinRS, ier)
+    CALL cg_iRIC_Read_Real(fid, 'FM_Quasi3D_MinRS', MinRS, ier)
     MinRs = MinRs * 100.
 
     CALL CG_IRIC_READ_INTEGER(fid, 'FM_SedTrans', tmpint, ier)
@@ -429,9 +429,9 @@
     ELSE
         CALCCSED = .FALSE.
     ENDIF
-    CALL cg_iRIC_Read_Real('FM_SedDuneH', HD, ier)
+    CALL cg_iRIC_Read_Real(fid, 'FM_SedDuneH', HD, ier)
     HD = HD * 100.
-    CALL cg_iRIC_Read_Real('FM_SedDuneWL', WD, ier)
+    CALL cg_iRIC_Read_Real(fid, 'FM_SedDuneWL', WD, ier)
     WD = WD * 100.
 
     !CALL CG_IRIC_READ_INTEGER_F('FM_RsSmoothLvl', RSSMOO, ier)
@@ -439,19 +439,19 @@
     CALL CG_IRIC_READ_INTEGER(fid, 'FM_SedSmoothWeight', SEDSMOOWGHT, ier)
 
     CALL CG_IRIC_READ_INTEGER(fid, 'FM_SedTrans_Type', TRANSEQTYPE, ier)
-    CALL cg_iRIC_Read_Real('FM_SedGrainSize', din, ier)
+    CALL cg_iRIC_Read_Real(fid, 'FM_SedGrainSize', din, ier)
     din = din*100.
     CALL CG_IRIC_READ_INTEGER(fid, 'FM_SedBCNode', SEDBCNODE, ier)
     CALL CG_IRIC_READ_INTEGER(fid, 'FM_SedBCFractionTaper', SEDEQNODE, ier)
     SEDEQNODE = SEDBCNODE+SEDEQNODE
-    CALL cg_iRIC_Read_Real('FM_SedBCFraction', BCFRACTION, ier)
+    CALL cg_iRIC_Read_Real(fid, 'FM_SedBCFraction', BCFRACTION, ier)
     !CALL cg_iRIC_Read_Real_F('FM_SedBCEquiMult', SEDEQMULT, ier)
 
     CALL CG_IRIC_READ_INTEGER(fid, 'FM_SedCalcGravCorr', CALCGRAVCORR, ier)
     CALL CG_IRIC_READ_INTEGER(fid, 'FM_SedGravCorrType', GRAVCORRTYPE, ier)
-    CALL cg_iRIC_Read_Real('FM_SedFlatBedCorrCoef', GRAVFLATBEDCORRCOEF, ier)
-    CALL cg_iRIC_Read_Real('FM_SedSAngleOfRepose', SUBANGLEOFREPOSE, ier)
-    CALL cg_iRIC_Read_Real('FM_SedTSFracDepth', TSFracDepth, ier)
+    CALL cg_iRIC_Read_Real(fid, 'FM_SedFlatBedCorrCoef', GRAVFLATBEDCORRCOEF, ier)
+    CALL cg_iRIC_Read_Real(fid, 'FM_SedSAngleOfRepose', SUBANGLEOFREPOSE, ier)
+    CALL cg_iRIC_Read_Real(fid, 'FM_SedTSFracDepth', TSFracDepth, ier)
 
     CALL CG_IRIC_READ_INTEGER(fid, 'FM_SedTransAuto', tmpint, ier)
     IF(tmpint == 1) THEN
@@ -462,33 +462,33 @@
 
     !! variables for DT Wilcock-Kenworthy transport function !! rmcd 5/2/07
 
-    CALL cg_iRIC_Read_Real('FM_Sed_WK_RG0', taustar_rg0, ier)
-    CALL cg_iRIC_Read_Real('FM_Sed_WK_RG1', taustar_rg1, ier)
-    CALL cg_iRIC_Read_Real('FM_Sed_WK_RS1', taustar_rs1, ier)
-    CALL cg_iRIC_Read_Real('FM_Sed_WK_Alpha', alpha, ier)
-    CALL cg_iRIC_Read_Real('FM_Sed_WK_AK', AK, ier)
-    CALL cg_iRIC_Read_Real('FM_Sed_WK_Chi', Chi, ier)
-    CALL cg_iRIC_Read_Real('FM_Sed_WK_PhiPrime', phi_prime, ier)
-    CALL cg_iRIC_Read_Real('FM_Sed_WK_HMax', tmphmax, ier)
+    CALL cg_iRIC_Read_Real(fid, 'FM_Sed_WK_RG0', taustar_rg0, ier)
+    CALL cg_iRIC_Read_Real(fid, 'FM_Sed_WK_RG1', taustar_rg1, ier)
+    CALL cg_iRIC_Read_Real(fid, 'FM_Sed_WK_RS1', taustar_rs1, ier)
+    CALL cg_iRIC_Read_Real(fid, 'FM_Sed_WK_Alpha', alpha, ier)
+    CALL cg_iRIC_Read_Real(fid, 'FM_Sed_WK_AK', AK, ier)
+    CALL cg_iRIC_Read_Real(fid, 'FM_Sed_WK_Chi', Chi, ier)
+    CALL cg_iRIC_Read_Real(fid, 'FM_Sed_WK_PhiPrime', phi_prime, ier)
+    CALL cg_iRIC_Read_Real(fid, 'FM_Sed_WK_HMax', tmphmax, ier)
     tmphmax = tmphmax * 100.
-    CALL cg_iRIC_Read_Real('FM_Sed_WK_ABH', tmpabh, ier)
-    CALL cg_iRIC_Read_Real('FM_Sed_WK_BBH', tmpbbh, ier)
-    CALL cg_iRIC_Read_Real('FM_Sed_WK_LSub', tmplsub, ier)
+    CALL cg_iRIC_Read_Real(fid, 'FM_Sed_WK_ABH', tmpabh, ier)
+    CALL cg_iRIC_Read_Real(fid, 'FM_Sed_WK_BBH', tmpbbh, ier)
+    CALL cg_iRIC_Read_Real(fid, 'FM_Sed_WK_LSub', tmplsub, ier)
     tmplsub = tmplsub*100.
-    CALL cg_iRIC_Read_Real('FM_Sed_WK_LSubActDepth', tmplsubactdepth, ier)
+    CALL cg_iRIC_Read_Real(fid, 'FM_Sed_WK_LSubActDepth', tmplsubactdepth, ier)
     tmplsubactdepth = tmplsubactdepth*100.
-    CALL cg_iRIC_Read_Real('FM_Sed_WK_DSand', Dsand, ier)
+    CALL cg_iRIC_Read_Real(fid, 'FM_Sed_WK_DSand', Dsand, ier)
     Dsand = Dsand *100.
-    CALL cg_iRIC_Read_Real('FM_Sed_WK_DGravel', Dg, ier)
+    CALL cg_iRIC_Read_Real(fid, 'FM_Sed_WK_DGravel', Dg, ier)
     Dg = Dg*100.
-    CALL cg_iRIC_Read_Real('FM_Sed_WK_Z0Min', Z0Min, ier)
+    CALL cg_iRIC_Read_Real(fid, 'FM_Sed_WK_Z0Min', Z0Min, ier)
     Z0Min = Z0Min*100.
-    CALL cg_iRIC_Read_Real('FM_Sed_WK_Z0Max', Z0Max, ier)
+    CALL cg_iRIC_Read_Real(fid, 'FM_Sed_WK_Z0Max', Z0Max, ier)
     Z0Max = Z0Max*100.
 
     CALL CG_IRIC_READ_INTEGER(fid, 'FM_Sed_WK_RoughType', WK_RoughType, ier)
-    CALL cg_iRIC_Read_Real('FM_Sed_WK_RoughShapeParam', WK_RoughShapeParam, ier)
-    CALL cg_iRIC_Read_Real('FM_Sed_WK_FsMin', Fsmin, ier)
+    CALL cg_iRIC_Read_Real(fid, 'FM_Sed_WK_RoughShapeParam', WK_RoughShapeParam, ier)
+    CALL cg_iRIC_Read_Real(fid, 'FM_Sed_WK_FsMin', Fsmin, ier)
     CALL CG_IRIC_READ_INTEGER(fid, 'FM_Sed_WK_ConstBndry', tmpint, ier)
     IF(tmpint == 1) THEN
         WKConstBndry = .TRUE.

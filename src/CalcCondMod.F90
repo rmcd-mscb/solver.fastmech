@@ -268,7 +268,7 @@
         !dischT and dischQ are allocated in _READ_FUNCTIONAL
         CALL CG_IRIC_READ_FUNCTIONALSIZE(fid, 'FM_HydAttVarDischarge', sizeDischTQ, IER)
         ALLOCATE(dischT(sizeDischTQ), dischQ(sizeDischTQ), STAT=IER)
-        CALL CG_IRIC_READ_FUNCTIONAL('FM_HydAttVarDischarge', dischT, dischQ, ier)
+        CALL CG_IRIC_READ_FUNCTIONAL(fid, 'FM_HydAttVarDischarge', dischT, dischQ, ier)
         tint(1) = sizeDischTQ
         CALL SetTimeSeriesNumPts(1, tint)
         ALLOCATE(treal(2*sizeDischTQ), STAT = ier)
@@ -290,7 +290,7 @@
     IF(VarStageType.eq.1)THEN
         CALL CG_IRIC_READ_FUNCTIONALSIZE(fid, 'FM_HydAttVarStageTS', sizeStageTQ, IER)
         ALLOCATE(stageT(sizeStageTQ), stageH(sizeStageTQ), STAT=IER)
-        CALL CG_IRIC_READ_FUNCTIONAL('FM_HydAttVarStageTS', stageT, stageH, ier)
+        CALL CG_IRIC_READ_FUNCTIONAL(fid, 'FM_HydAttVarStageTS', stageT, stageH, ier)
         tint(1) = sizeStageTQ
         CALL SetRatingCurveNumPts(1, tint)
         ALLOCATE(treal(2*sizeStageTQ), STAT = ier)
@@ -310,7 +310,7 @@
     ELSE IF(VarStageType.eq.2) THEN
         CALL CG_IRIC_READ_FUNCTIONALSIZE(fid, 'FM_HydAttVarStageRC', sizeStageHQ, IER)
         ALLOCATE(stageQ(sizeStageHQ), stageH(sizeStageHQ), STAT=IER)
-        CALL CG_IRIC_READ_FUNCTIONAL('FM_HydAttVarStageRC', stageQ, stageH, ier)
+        CALL CG_IRIC_READ_FUNCTIONAL(fid, 'FM_HydAttVarStageRC', stageQ, stageH, ier)
         tint(1) = sizeStageHQ
         CALL SetRatingCurveNumPts(1, tint)
         ALLOCATE(treal(2*sizeStageHQ), STAT = ier)

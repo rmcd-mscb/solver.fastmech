@@ -256,15 +256,15 @@
     call cg_iric_writegridcoord3d(tx, ty, tz, ier)
 
     Call GET3DVELOCITYOUT(tx, ty, tz)
-    call cg_iric_write_grid_real_node('VelocityX', tx, ier)
-    call cg_iric_write_grid_real_node('VelocityY', ty, ier)
-    call cg_iric_write_grid_real_node('VelocityZ', tz, ier)
+    call cg_iric_write_grid_real_node(fid, 'VelocityX', tx, ier)
+    call cg_iric_write_grid_real_node(fid, 'VelocityY', ty, ier)
+    call cg_iric_write_grid_real_node(fid, 'VelocityZ', tz, ier)
 
     CALL GET3DVELOCITYSMAGOUT(tx)
-    call cg_iric_write_grid_real_node('SVelocity', tx, ier)
+    call cg_iric_write_grid_real_node(fid, 'SVelocity', tx, ier)
 
     CALL GET3DVELOCITYNMAGOUT(tx)
-    call cg_iric_write_grid_real_node('NVelocity', tx, ier)
+    call cg_iric_write_grid_real_node(fid, 'NVelocity', tx, ier)
 
     DEALLOCATE(tx, ty, tz, STAT = ier)
 

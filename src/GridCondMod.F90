@@ -19,7 +19,7 @@
 
     ALLOCATE(tmpreal4(ns2*nn), STAT=IER)
 
-    CALL cg_iRIC_Read_Grid_Real_Node('Elevation', tmpreal4, IER)
+    CALL cg_iRIC_Read_Grid_Real_Node(fid, 'Elevation', tmpreal4, IER)
     DO I = 1, ns2*nn
         IF( tmpreal4(i) < elevoffset) THEN
             elevoffset = tmpreal4(i)
@@ -36,7 +36,7 @@
         ENDDO
     ENDDO
 
-    CALL cg_iRIC_Read_Grid_Real_Node('roughness', tmpreal4, IER)
+    CALL cg_iRIC_Read_Grid_Real_Node(fid, 'roughness', tmpreal4, IER)
     DO I= 1,ns2
         DO J=1,nn
             COUNT = ((I-1)*nn)+J
@@ -45,7 +45,7 @@
             znaught2(i,j) = tmpreal4(countji)*100.
         ENDDO
     ENDDO
-    CALL cg_iRIC_Read_Grid_Real_Node('vegroughness', tmpreal4, IER)
+    CALL cg_iRIC_Read_Grid_Real_Node(fid, 'vegroughness', tmpreal4, IER)
     DO I= 1,ns2
         DO J=1,nn
             COUNT = ((I-1)*nn)+J
@@ -64,7 +64,7 @@
     !    ENDDO
     !ENDDO
 
-    CALL cg_iRIC_Read_Grid_Real_Node('sandfraction', tmpreal4, IER)
+    CALL cg_iRIC_Read_Grid_Real_Node(fid, 'sandfraction', tmpreal4, IER)
     DO I= 1,ns2
         DO J=1,nn
             COUNT = ((I-1)*nn)+J
@@ -73,7 +73,7 @@
         ENDDO
     ENDDO
 
-    CALL cg_iRIC_Read_Grid_Real_Node('sanddepth', tmpreal4, IER)
+    CALL cg_iRIC_Read_Grid_Real_Node(fid, 'sanddepth', tmpreal4, IER)
     DO I= 1,ns2
         DO J=1,nn
             COUNT = ((I-1)*nn)+J

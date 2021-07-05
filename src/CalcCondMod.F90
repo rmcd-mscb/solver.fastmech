@@ -368,7 +368,7 @@
     !CALL CG_IRIC_READ_INTEGER(fid, 'FM_HydAttHotStart', tmpint, ier)
     CALL cg_iRIC_Read_Real(fid, 'FM_HydAttWS1DCD', ONEDCD, ier)
 
-    CALL CG_IRIC_READ_STRING('FM_HydAttHSFile', CGNSHSFile, ier)
+    CALL CG_IRIC_READ_STRING(fid, 'FM_HydAttHSFile', CGNSHSFile, ier)
     CALL CG_IRIC_READ_INTEGER(fid, 'FM_HydAttSolIndex', SolnIndex, ier)
 
     CALL CG_IRIC_READ_INTEGER(fid, 'FM_HydAttRoughnessType', roughnesstype, ier)
@@ -501,8 +501,8 @@
     CALL CG_IRIC_READ_INTEGER(fid, 'write_flag', i_re_flag_o, ier)
     !     CALL CG_IRIC_READ_INTEGER_F('read_flag', i_re_flag_i, ier)
     CALL CG_IRIC_READ_INTEGER(fid, 'n_tempfile', n_rest, ier)
-    CALL CG_IRIC_READ_STRING('tmp_readfile', tmp_file_i, ier)
-    CALL CG_IRIC_READ_STRING('tmp_pass', tmp_pass, ier)
+    CALL CG_IRIC_READ_STRING(fid, 'tmp_readfile', tmp_file_i, ier)
+    CALL CG_IRIC_READ_STRING(fid, 'tmp_pass', tmp_pass, ier)
 
     do ii=0,9
         CALL CG_IRIC_READ_REAL(tmp_caption(ii), opt_tmp(ii), ier)

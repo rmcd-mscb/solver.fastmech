@@ -6,6 +6,7 @@
     USE RivCalcInitCond
     USE CSedMod_DT_SUSP
     USE CSedMod
+    USE iric
     IMPLICIT NONE
     INTEGER :: FID, BID, ZID
 
@@ -18,9 +19,9 @@
 
     INTEGER :: IER, IRET
 
-    CALL cg_open_f(InputFile, CG_MODE_MODIFY, FID, IER)
+    CALL cg_open(InputFile, CG_MODE_MODIFY, FID, IER)
     IF(IER .NE. 0) THEN
-        call cg_error_print_f()
+        call cg_error_print()
         !pause
         return
     ENDIF
@@ -28,13 +29,13 @@
     !call iric_initoption_f(IRIC_OPTION_DIVIDESOLUTIONS, ier)
     !    if (ier /=0) STOP "*** Initialize option error***"
 
-    CALL cg_iric_init_f(fid, ier)
+    CALL cg_iric_init(fid, ier)
     IF(IER .NE. 0) THEN
-        call cg_error_print_f()
+        call cg_error_print()
         !pause
         return
     ENDIF
-    call iric_initoption_f(IRIC_OPTION_CANCEL, ier)
+    call iric_initoption(IRIC_OPTION_CANCEL, ier)
     if (ier /=0) STOP "*** Initialize option error***"
 
     !    CALL CGNS_Read_CalcCondtion_ForAlloc(FID, IER)

@@ -17,7 +17,7 @@
     REAL(kind = mp), ALLOCATABLE, DIMENSION(:,:) :: tmpx1, tmpy1
     !	REAL*8, ALLOCATABLE, DIMENSION(:) :: tmpx, tmpy
 
-    CALL CG_IRIC_GOTOGRIDCOORD2D_F(tmpns, tmpnn, IER)
+    CALL CG_IRIC_GOTOGRIDCOORD2D(tmpns, tmpnn, IER)
     ns2 = tmpns
     ns = tmpns+nsext
     nn = tmpnn
@@ -40,9 +40,9 @@
     !    write(*,*) 'after allocation1 \n %d', ier
     ALLOCATE(tmpy1(tmpns,tmpnn), STAT=IER)
     !	write(*,*) 'after allocation2\n %d', ier
-    CALL CG_IRIC_GETGRIDCOORD2D_F(tmpx1,tmpy1,IER)
+    CALL CG_IRIC_GETGRIDCOORD2D(tmpx1,tmpy1,IER)
     !	write(*,*) 'after iRIC CALL \n %d', ier
-    !	CALL CG_IRIC_GETGRIDCOORD2D_F(x,y,IER)
+    !	CALL CG_IRIC_GETGRIDCOORD2D(x,y,IER)
     ns2 = tmpns
     nn = tmpnn
     DO I=1,ns2

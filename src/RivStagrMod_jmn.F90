@@ -303,7 +303,7 @@ do while(totTime <= VarDischEndTime)
     if(itm /= 0) then
         ITER_LOOP: DO iter = 1,itm
             !       Check if user cancelled simulation and if so exit
-            CALL iric_check_cancel_f(errorcode)
+            CALL iric_check_cancel(errorcode)
             IF(errorcode.eq.1) THEN
                 CALL dealloc_all()
                 return
@@ -774,7 +774,7 @@ do while(totTime <= VarDischEndTime)
             if(nct == DbgTimeStep) then
                 if(DEBUGSTOP.eq.1.and.iter == DbgIterNum) then
                     solIndex = solIndex+1
-                    CALL CG_IRIC_WRITE_SOL_TIME_F(tottime, ier)
+                    CALL CG_IRIC_WRITE_SOL_TIME(tottime, ier)
 
                     CALL Write_CGNS2(tottime, q)
                     !			        CALL write_TimeStep_CGNS(STR_IN, nct, tottime)
@@ -838,7 +838,7 @@ do while(totTime <= VarDischEndTime)
                 enddo
 
                 solIndex = solIndex+1
-                CALL CG_IRIC_WRITE_SOL_TIME_F(tottime, ier)
+                CALL CG_IRIC_WRITE_SOL_TIME(tottime, ier)
                 CALL Write_CGNS2(tottime, q)
 
             ENDIF
@@ -946,7 +946,7 @@ do while(totTime <= VarDischEndTime)
         if(nct == 0) then
             solIndex = solIndex+1
             CALL Calc_Area(x, y, xo, yo, nm, dn, harea)
-            CALL CG_IRIC_WRITE_SOL_TIME_F(tottime, ier)
+            CALL CG_IRIC_WRITE_SOL_TIME(tottime, ier)
             CALL Write_CGNS2(tottime, q)
             !                IF(CALCQUASI3D.and.IO_3DOUTPUT) THEN
             !                    CAll Write_CGNS3D_Grid()
@@ -961,7 +961,7 @@ do while(totTime <= VarDischEndTime)
             if(tottime >= ptime)then
                 solIndex = solIndex+1
                 CALL Calc_Area(x, y, xo, yo, nm, dn, harea)
-                CALL CG_IRIC_WRITE_SOL_TIME_F(tottime, ier)
+                CALL CG_IRIC_WRITE_SOL_TIME(tottime, ier)
                 CALL Write_CGNS2(tottime, q)
                 IF(CALCQUASI3D.and.IO_3DOUTPUT) THEN
                     !                        CAll Write_CGNS3D_SolGrid()
@@ -1047,7 +1047,7 @@ else
     call dealloc_csed()
 endif
 IF(FID > 0) THEN
-    CALL cg_close_f(FID, errorcode)
+    CALL cg_close(FID, errorcode)
 ENDIF
 END SUBROUTINE dealloc_all
 

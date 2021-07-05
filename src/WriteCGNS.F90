@@ -4,6 +4,7 @@
     USE RivVarVertMod
     USE CalcCond
     USE READCGNS
+    USE iric
     IMPLICIT NONE
 
     INTEGER :: tmpnx, tmpny
@@ -29,96 +30,96 @@
     !
     !  END SUBROUTINE Write_CGNS3D_SolGrid
 
-    SUBROUTINE Write_CGNS3D_Grid()
-    IMPLICIT NONE
-    DOUBLE PRECISION, ALLOCATABLE, DIMENSION(:,:,:) :: tmpx3d, tmpy3d, tmpz3d
-    INTEGER, ALLOCATABLE, DIMENSION(:,:,:) :: tmpint
-    INTEGER :: ier
-    CHARACTER(LEN=250) :: ZONENAME, BASENAME, USERNAME, SOLNAME
-    INTEGER :: NUSER_DATA, USER_ITER, NZONES, ZONES_ITER
-    INTEGER :: NBASES, BASES_ITER
-    INTEGER :: BASE3DID, ZONE3DID
-    INTEGER :: NSOLs, SOL_ITER, sindex
-    INTEGER :: NGRIDS, GRIDS_ITER
-    INTEGER :: F2DSOL_ITER, F3DSOL_ITER, F1DSOL_ITER, F2DSOL_EXT_ITER, FSOL_ITER
-    INTEGER :: CELLDIM, PHYSDIM
-    INTEGER :: GIndex, CIndex
-    INTEGER, DIMENSION(3,3) :: isize
-    INTEGER, DIMENSION(3) :: irmin, irmax
-    CHARACTER(LEN = 250) :: name
-    INTEGER, DIMENSION(2) :: idata
-
-    ALLOCATE(tmpx3d(ns2, nn, nz), STAT = ier)
-    ALLOCATE(tmpy3d(ns2, nn, nz), STAT = ier)
-    ALLOCATE(tmpz3d(ns2, nn, nz), STAT = ier)
-
-    CALL GETXYZ3DOUT(tmpx3d, tmpy3d, tmpz3d)
-
-    CALL cg_nbases_f(FID, NBASES, IER)
-    IF(NBASES.EQ.1) THEN
-        celldim = 3
-        physdim = 3
-        isize(1,1) = ns2
-        isize(2,1) = nn
-        isize(3,1) = nz
-
-        isize(1,2) =  isize(1,1)-1
-        isize(2,2) = isize(2,1)-1
-        isize(3,2) = isize(3,1)-1
-
-        isize(1,3) = 0
-        isize(2,3) = 0
-        isize(3,3) = 0
-
-        CALL cg_base_write_f(FID, "iRIC3D", celldim, physdim, BASE3DID, ier )
-        CALL cg_zone_write_f(FID, BASE3DID, "iRICZone", isize, Structured, ZONE3DID , ier )
-
-        CALL cg_grid_write_f(FID, BASE3DID, ZONE3DID, "GridCoordinates", GIndex, ier);
-        CALL cg_coord_write_f(FID, BASE3DID, ZONE3DID, RealDouble, "CoordinateX", tmpx3d, CIndex, ier);
-        CALL cg_coord_write_f(FID, BASE3DID, ZONE3DID, RealDouble, "CoordinateY", tmpy3d, CIndex, ier);
-        CALL cg_coord_write_f(FID, BASE3DID, ZONE3DID, RealDouble, "CoordinateZ", tmpz3d, CIndex, ier);
-
-        CAll cg_biter_write_f(FID, BASE3DID, 'BaseIterativeData', 1, ier);
-
-    ELSE !iRIC3D already exists so delete BaseIterative, ZoneIterative and Solutions
-        IF(NBASES.ne.2) THEN
-            STOP 'Error in 3D CGNS FILE - Bases'
-            !PAUSE
-        ENDIF
-
-        BASES_ITER = 2 !Hardwired should be iRIC3D
-        ZONES_ITER = 1 !Hardwired should be iRICZone
-
-        CALL cg_goto_f(FID, 2, ier, 'END')
-        CALL cg_delete_node_f('BaseIterativeData', ier)
-        CALL cg_nzones_f(FID, BASES_ITER, NZONES, IER)
-        IF(NZONES.ne.1) THEN
-            STOP 'Error in 3D CGNS File - Zones'
-            !PAUSE
-        ENDIF
-        CALL cg_goto_f(FID, BASES_ITER, ier, 'Zone_t', ZONES_ITER, 'end')
-        !Delete existing solutions
-        CALL cg_nsols_F(FID, BASES_ITER, ZONES_ITER, nsols, ier);
-        DO SOL_ITER = 1,nsols
-            CALL cg_sol_info_f(FID, BASES_ITER, ZONES_ITER, 1, solname, sindex, ier)
-            CALL cg_delete_node_f(TRIM(solname), ier);
-        ENDDO
-        !Delete existing solution grids
-        CALL cg_ngrids_F(FID, BASES_ITER, ZONES_ITER, ngrids, ier);
-        DO GRIDS_ITER = 1,ngrids-1
-            CALL cg_grid_read_f(FID, BASES_ITER, ZONES_ITER, 2, solname, ier)
-            CALL cg_delete_node_F(TRIM(solname), ier);
-        ENDDO
-
-        !Delete ZoneIterative Node
-        CALL cg_goto_f(FID, BASES_ITER, ier, "Zone_t", ZONES_ITER, "end")
-        CALL cg_delete_node_f('ZoneIterativeData', ier)
-
-    ENDIF
-
-    DEALLOCATE(tmpx3d, tmpy3d, tmpz3d, STAT = ier)
-
-    END SUBROUTINE Write_CGNS3D_Grid
+    !SUBROUTINE Write_CGNS3D_Grid()
+    !IMPLICIT NONE
+    !DOUBLE PRECISION, ALLOCATABLE, DIMENSION(:,:,:) :: tmpx3d, tmpy3d, tmpz3d
+    !INTEGER, ALLOCATABLE, DIMENSION(:,:,:) :: tmpint
+    !INTEGER :: ier
+    !CHARACTER(LEN=250) :: ZONENAME, BASENAME, USERNAME, SOLNAME
+    !INTEGER :: NUSER_DATA, USER_ITER, NZONES, ZONES_ITER
+    !INTEGER :: NBASES, BASES_ITER
+    !INTEGER :: BASE3DID, ZONE3DID
+    !INTEGER :: NSOLs, SOL_ITER, sindex
+    !INTEGER :: NGRIDS, GRIDS_ITER
+    !INTEGER :: F2DSOL_ITER, F3DSOL_ITER, F1DSOL_ITER, F2DSOL_EXT_ITER, FSOL_ITER
+    !INTEGER :: CELLDIM, PHYSDIM
+    !INTEGER :: GIndex, CIndex
+    !INTEGER, DIMENSION(3,3) :: isize
+    !INTEGER, DIMENSION(3) :: irmin, irmax
+    !CHARACTER(LEN = 250) :: name
+    !INTEGER, DIMENSION(2) :: idata
+    !
+    !ALLOCATE(tmpx3d(ns2, nn, nz), STAT = ier)
+    !ALLOCATE(tmpy3d(ns2, nn, nz), STAT = ier)
+    !ALLOCATE(tmpz3d(ns2, nn, nz), STAT = ier)
+    !
+    !CALL GETXYZ3DOUT(tmpx3d, tmpy3d, tmpz3d)
+    !
+    !CALL cg_nbases_f(FID, NBASES, IER)
+    !IF(NBASES.EQ.1) THEN
+    !    celldim = 3
+    !    physdim = 3
+    !    isize(1,1) = ns2
+    !    isize(2,1) = nn
+    !    isize(3,1) = nz
+    !
+    !    isize(1,2) =  isize(1,1)-1
+    !    isize(2,2) = isize(2,1)-1
+    !    isize(3,2) = isize(3,1)-1
+    !
+    !    isize(1,3) = 0
+    !    isize(2,3) = 0
+    !    isize(3,3) = 0
+    !
+    !    CALL cg_base_write_f(FID, "iRIC3D", celldim, physdim, BASE3DID, ier )
+    !    CALL cg_zone_write_f(FID, BASE3DID, "iRICZone", isize, Structured, ZONE3DID , ier )
+    !
+    !    CALL cg_grid_write_f(FID, BASE3DID, ZONE3DID, "GridCoordinates", GIndex, ier);
+    !    CALL cg_coord_write_f(FID, BASE3DID, ZONE3DID, RealDouble, "CoordinateX", tmpx3d, CIndex, ier);
+    !    CALL cg_coord_write_f(FID, BASE3DID, ZONE3DID, RealDouble, "CoordinateY", tmpy3d, CIndex, ier);
+    !    CALL cg_coord_write_f(FID, BASE3DID, ZONE3DID, RealDouble, "CoordinateZ", tmpz3d, CIndex, ier);
+    !
+    !    CAll cg_biter_write_f(FID, BASE3DID, 'BaseIterativeData', 1, ier);
+    !
+    !ELSE !iRIC3D already exists so delete BaseIterative, ZoneIterative and Solutions
+    !    IF(NBASES.ne.2) THEN
+    !        STOP 'Error in 3D CGNS FILE - Bases'
+    !        !PAUSE
+    !    ENDIF
+    !
+    !    BASES_ITER = 2 !Hardwired should be iRIC3D
+    !    ZONES_ITER = 1 !Hardwired should be iRICZone
+    !
+    !    CALL cg_goto_f(FID, 2, ier, 'END')
+    !    CALL cg_delete_node_f('BaseIterativeData', ier)
+    !    CALL cg_nzones_f(FID, BASES_ITER, NZONES, IER)
+    !    IF(NZONES.ne.1) THEN
+    !        STOP 'Error in 3D CGNS File - Zones'
+    !        !PAUSE
+    !    ENDIF
+    !    CALL cg_goto_f(FID, BASES_ITER, ier, 'Zone_t', ZONES_ITER, 'end')
+    !    !Delete existing solutions
+    !    CALL cg_nsols_F(FID, BASES_ITER, ZONES_ITER, nsols, ier);
+    !    DO SOL_ITER = 1,nsols
+    !        CALL cg_sol_info_f(FID, BASES_ITER, ZONES_ITER, 1, solname, sindex, ier)
+    !        CALL cg_delete_node_f(TRIM(solname), ier);
+    !    ENDDO
+    !    !Delete existing solution grids
+    !    CALL cg_ngrids_F(FID, BASES_ITER, ZONES_ITER, ngrids, ier);
+    !    DO GRIDS_ITER = 1,ngrids-1
+    !        CALL cg_grid_read_f(FID, BASES_ITER, ZONES_ITER, 2, solname, ier)
+    !        CALL cg_delete_node_F(TRIM(solname), ier);
+    !    ENDDO
+    !
+    !    !Delete ZoneIterative Node
+    !    CALL cg_goto_f(FID, BASES_ITER, ier, "Zone_t", ZONES_ITER, "end")
+    !    CALL cg_delete_node_f('ZoneIterativeData', ier)
+    !
+    !ENDIF
+    !
+    !DEALLOCATE(tmpx3d, tmpy3d, tmpz3d, STAT = ier)
+    !
+    !END SUBROUTINE Write_CGNS3D_Grid
 
     SUBROUTINE Write_CGNS3D_FixedBed(solIndex, time, disch)
     IMPLICIT NONE
@@ -177,7 +178,7 @@
 
 
 
-    CALL cg_nbases_f(FID, NBASES, IER)
+    CALL cg_nbases(FID, NBASES, IER)
     IF(NBASES.ne.2) THEN
         STOP 'ERROR in 3D base node'
         !PAUSE
@@ -187,31 +188,31 @@
     ZONES_ITER = 1
 
     !write base iter time data
-    CALL cg_biter_write_f(FID, BASES_ITER, 'BaseIterativeData', solIndex, ier)
-    CALL cg_goto_f(FID, BASES_ITER, ier, 'BaseIterativeData_t', 1, "end")
-    CALL cg_array_write_f('TimeValues', RealDouble, 1, solindex, timeincrements, ier)
+    CALL cg_biter_write(FID, BASES_ITER, 'BaseIterativeData', solIndex, ier)
+    CALL cg_goto(FID, BASES_ITER, ier, 'BaseIterativeData_t', 1, "end")
+    CALL cg_array_write('TimeValues', RealDouble, 1, solindex, timeincrements, ier)
 
     CALL GETXYZ3DOUT(tx, ty, tz)
-    CALL cg_grid_write_f(FID, BASES_ITER, ZONES_ITER, tmp_gridsol3D, GIndex, ier)
-    CALL cg_goto_f(FID, BASES_ITER, ier, 'Zone_t', ZONES_ITER, 'GridCoordinates_t', solIndex+1, 'end')
+    CALL cg_grid_write(FID, BASES_ITER, ZONES_ITER, tmp_gridsol3D, GIndex, ier)
+    CALL cg_goto(FID, BASES_ITER, ier, 'Zone_t', ZONES_ITER, 'GridCoordinates_t', solIndex+1, 'end')
     dimvec(1) = ns2
     dimvec(2) = nn
     dimvec(3) = nz
-    CALL cg_array_write_f('CoordinateX', RealDouble, 3, dimVec, tx, ier)
-    CALL cg_array_write_f('CoordinateY', RealDouble, 3, dimVec, ty, ier)
-    CALL cg_array_write_f('CoordinateZ', RealDouble, 3, dimVec, tz, ier)
+    CALL cg_array_write('CoordinateX', RealDouble, 3, dimVec, tx, ier)
+    CALL cg_array_write('CoordinateY', RealDouble, 3, dimVec, ty, ier)
+    CALL cg_array_write('CoordinateZ', RealDouble, 3, dimVec, tz, ier)
 
     Call GET3DVELOCITYOUT(tx, ty, tz)
-    CALL cg_sol_write_f(FID, BASES_ITER, ZONES_ITER, tmp_flowsol3D, Vertex, F3DSOL_ITER, IER)
-    CALL cg_field_write_f(FID, BASES_ITER, ZONES_ITER, F3DSOL_ITER, RealDouble, 'VelocityX', tx, FSOL_ITER, IER)
-    CALL cg_field_write_f(FID, BASES_ITER, ZONES_ITER, F3DSOL_ITER, RealDouble, 'VelocityY', ty, FSOL_ITER, IER)
-    CALL cg_field_write_f(FID, BASES_ITER, ZONES_ITER, F3DSOL_ITER, RealDouble, 'VelocityZ', tz, FSOL_ITER, IER)
+    CALL cg_sol_write(FID, BASES_ITER, ZONES_ITER, tmp_flowsol3D, Vertex, F3DSOL_ITER, IER)
+    CALL cg_field_write(FID, BASES_ITER, ZONES_ITER, F3DSOL_ITER, RealDouble, 'VelocityX', tx, FSOL_ITER, IER)
+    CALL cg_field_write(FID, BASES_ITER, ZONES_ITER, F3DSOL_ITER, RealDouble, 'VelocityY', ty, FSOL_ITER, IER)
+    CALL cg_field_write(FID, BASES_ITER, ZONES_ITER, F3DSOL_ITER, RealDouble, 'VelocityZ', tz, FSOL_ITER, IER)
 
     CALL GET3DVELOCITYSMAGOUT(tx)
-    CALL cg_field_write_f(FID, BASES_ITER, ZONES_ITER, F3DSOL_ITER, RealDouble, 'SVelocity', tx, FSOL_ITER, IER)
+    CALL cg_field_write(FID, BASES_ITER, ZONES_ITER, F3DSOL_ITER, RealDouble, 'SVelocity', tx, FSOL_ITER, IER)
 
     CALL GET3DVELOCITYNMAGOUT(tx)
-    CALL cg_field_write_f(FID, BASES_ITER, ZONES_ITER, F3DSOL_ITER, RealDouble, 'NVelocity', tx, FSOL_ITER, IER)
+    CALL cg_field_write(FID, BASES_ITER, ZONES_ITER, F3DSOL_ITER, RealDouble, 'NVelocity', tx, FSOL_ITER, IER)
 
     DO i = 1,ns2
         DO j = 1,nn
@@ -224,14 +225,14 @@
             ENDDO
         ENDDO
     ENDDO
-    CALL cg_field_write_f(FID, BASES_ITER, ZONES_ITER, F3DSOL_ITER, INTEGER, 'IBC', tmpint, FSOL_ITER, IER)
+    CALL cg_field_write(FID, BASES_ITER, ZONES_ITER, F3DSOL_ITER, INTEGER, 'IBC', tmpint, FSOL_ITER, IER)
 
-    CALL cg_ziter_write_f(FID,BASES_ITER,ZONES_ITER,'ZoneIterativeData',ier)
-    call cg_goto_f(FID,BASES_ITER,ier,'Zone_t',ZONES_ITER,'ZoneIterativeData_t',1,'end')
+    CALL cg_ziter_write(FID,BASES_ITER,ZONES_ITER,'ZoneIterativeData',ier)
+    call cg_goto(FID,BASES_ITER,ier,'Zone_t',ZONES_ITER,'ZoneIterativeData_t',1,'end')
     idata(1)=32
     idata(2)=solIndex
-    call cg_array_write_f('FlowSolutionPointers',Character,2,idata,solnames3D,ier)
-    call cg_array_write_f('GridCoordinatesPointers', Character, 2, idata, gridnames3D, ier)
+    call cg_array_write('FlowSolutionPointers',Character,2,idata,solnames3D,ier)
+    call cg_array_write('GridCoordinatesPointers', Character, 2, idata, gridnames3D, ier)
 
     DEALLOCATE(tx, ty, tz, tmpint, STAT = ier)
     END SUBROUTINE Write_CGNS3D_FixedBed
@@ -249,21 +250,21 @@
     ALLOCATE(ty(ns2, nn, nz), STAT = ier)
     ALLOCATE(tz(ns2, nn, nz), STAT = ier)
 
-    call cg_iric_write_sol_time_f(time, ier);
+    call cg_iric_write_sol_time(time, ier);
 
     CALL GETXYZ3DOUT(tx, ty, tz)
-    call cg_iric_writegridcoord3d_f(tx, ty, tz, ier)
+    call cg_iric_writegridcoord3d(tx, ty, tz, ier)
 
     Call GET3DVELOCITYOUT(tx, ty, tz)
-    call cg_iric_write_grid_real_node_f('VelocityX', tx, ier)
-    call cg_iric_write_grid_real_node_f('VelocityY', ty, ier)
-    call cg_iric_write_grid_real_node_f('VelocityZ', tz, ier)
+    call cg_iric_write_grid_real_node('VelocityX', tx, ier)
+    call cg_iric_write_grid_real_node('VelocityY', ty, ier)
+    call cg_iric_write_grid_real_node('VelocityZ', tz, ier)
 
     CALL GET3DVELOCITYSMAGOUT(tx)
-    call cg_iric_write_grid_real_node_f('SVelocity', tx, ier)
+    call cg_iric_write_grid_real_node('SVelocity', tx, ier)
 
     CALL GET3DVELOCITYNMAGOUT(tx)
-    call cg_iric_write_grid_real_node_f('NVelocity', tx, ier)
+    call cg_iric_write_grid_real_node('NVelocity', tx, ier)
 
     DEALLOCATE(tx, ty, tz, STAT = ier)
 
@@ -287,94 +288,94 @@
 
     IF(CALCQUASI3D.and.IO_3DOUTPUT) THEN
         CALL getXYOut(tmpreal1, tmpreal2)
-        CALL CG_IRIC_WRITE_SOL_GRIDCOORD2D_F(tmpreal1,tmpreal2,IER)
+        CALL CG_IRIC_WRITE_SOL_GRIDCOORD2D(tmpreal1,tmpreal2,IER)
     ENDIF
 
     CALL GETIBCOUT(tmp2dint)
-    CALL cg_iRIC_Write_Sol_Integer_f("IBC", tmp2dint, IER)
+    CALL cg_iRIC_Write_Sol_Integer("IBC", tmp2dint, IER)
     CALL GETFMIBCOUT(tmp2dint)
-    CALL cg_iRIC_Write_Sol_Integer_f("FMIBC", tmp2dint, IER)
+    CALL cg_iRIC_Write_Sol_Integer("FMIBC", tmp2dint, IER)
 
     CALL getVelocityOut(tmpreal1, tmpreal2)
-    CALL cg_iRIC_Write_Sol_Real_f("VelocityX", tmpreal1, IER)
-    CALL cg_iRIC_Write_Sol_Real_f("VelocityY", tmpreal2, IER)
+    CALL cg_iRIC_Write_Sol_Real("VelocityX", tmpreal1, IER)
+    CALL cg_iRIC_Write_Sol_Real("VelocityY", tmpreal2, IER)
 
     CALL getDepthOut(tmpreal1)
-    CALL cg_iRIC_Write_Sol_Real_f("Depth", tmpreal1, IER)
+    CALL cg_iRIC_Write_Sol_Real("Depth", tmpreal1, IER)
 
     CALL getWSEOut(tmpreal1)
-    CALL cg_iRIC_Write_Sol_Real_f("WaterSurfaceElevation", tmpreal1, IER)
+    CALL cg_iRIC_Write_Sol_Real("WaterSurfaceElevation", tmpreal1, IER)
 
     CALL getElevationOut(tmpreal1)
-    CALL cg_iRIC_Write_Sol_Real_f("Elevation", tmpreal1, IER)
+    CALL cg_iRIC_Write_Sol_Real("Elevation", tmpreal1, IER)
 
     IF(IO_VelSN) THEN
         CALL GETVELOCITYSNOUT(tmpreal1, tmpreal2)
-        CALL cg_iRIC_Write_Sol_Real_f("VelocityS", tmpreal1, IER)
-        CALL cg_iRIC_Write_Sol_Real_f("VelocityN", tmpreal2, IER)
+        CALL cg_iRIC_Write_Sol_Real("VelocityS", tmpreal1, IER)
+        CALL cg_iRIC_Write_Sol_Real("VelocityN", tmpreal2, IER)
     ENDIF
 
     IF(IO_UnitDisch) THEN
         CALL getUnitDischOut(tmpreal1, tmpreal2)
-        CALL cg_iRIC_Write_Sol_Real_f("UnitDischargeX", tmpreal1, IER)
-        CALL cg_iRIC_Write_Sol_Real_f("UnitDischargeY", tmpreal2, IER)
+        CALL cg_iRIC_Write_Sol_Real("UnitDischargeX", tmpreal1, IER)
+        CALL cg_iRIC_Write_Sol_Real("UnitDischargeY", tmpreal2, IER)
     ENDIF
 
     IF(IO_HArea) THEN
         CALL getHAreaOut(tmpreal1)
-        CALL cg_iRIC_Write_Sol_Real_f("HabitatArea", tmpreal1, IER)
+        CALL cg_iRIC_Write_Sol_Real("HabitatArea", tmpreal1, IER)
     ENDIF
 
     IF(IO_InitVel) THEN
         CALL getInitVelOut(tmpreal1, tmpreal2)
-        CALL cg_iRIC_Write_Sol_Real_f("VelocityInitS", tmpreal1, IER)
-        CALL cg_iRIC_Write_Sol_Real_f("VelocityInitN", tmpreal2, IER)
+        CALL cg_iRIC_Write_Sol_Real("VelocityInitS", tmpreal1, IER)
+        CALL cg_iRIC_Write_Sol_Real("VelocityInitN", tmpreal2, IER)
     ENDIF
 
     IF(IO_ShearXY) THEN
         CALL GETSHEARSTRESSOUT(tmpreal1, tmpreal2)
-        CALL cg_iRIC_Write_Sol_Real_f("ShearStressX", tmpreal1, IER)
-        CALL cg_iRIC_Write_Sol_Real_f("ShearStressY", tmpreal2, IER)
+        CALL cg_iRIC_Write_Sol_Real("ShearStressX", tmpreal1, IER)
+        CALL cg_iRIC_Write_Sol_Real("ShearStressY", tmpreal2, IER)
     ENDIF
 
     IF(IO_ShearSN) THEN
         CALL GETSHEARSTRESSSNOUT(tmpreal1, tmpreal2)
-        CALL cg_iRIC_Write_Sol_Real_f("ShearStressS", tmpreal1, IER)
-        CALL cg_iRIC_Write_Sol_Real_f("ShearStressN", tmpreal2, IER)
+        CALL cg_iRIC_Write_Sol_Real("ShearStressS", tmpreal1, IER)
+        CALL cg_iRIC_Write_Sol_Real("ShearStressN", tmpreal2, IER)
     ENDIF
 
     IF(IO_CD) THEN
         CALL getCDOut(tmpreal1)
-        CALL cg_iRIC_Write_Sol_Real_f("Drag_Coefficient", tmpreal1, IER)
+        CALL cg_iRIC_Write_Sol_Real("Drag_Coefficient", tmpreal1, IER)
     ENDIF
 
     IF(CALCCSED) THEN
         IF(TRANSEQTYPE == 2) THEN
             CALL GETSANDDEPTHOUT(tmpreal1)
-            CALL cg_iRIC_Write_Sol_Real_f("Sand_Depth", tmpreal1, IER)
+            CALL cg_iRIC_Write_Sol_Real("Sand_Depth", tmpreal1, IER)
             CALL GETSANDFRACOUT(tmpreal1)
-            CALL cg_iRIC_Write_Sol_Real_f("Sand_Fraction", tmpreal1, IER)
+            CALL cg_iRIC_Write_Sol_Real("Sand_Fraction", tmpreal1, IER)
             CALL GETLSUBHOUT(tmpreal1)
-            CALL cg_iRIC_Write_Sol_Real_f("LSub", tmpreal1, IER)
+            CALL cg_iRIC_Write_Sol_Real("LSub", tmpreal1, IER)
 
         ENDIF
         CALL GetTransportRateOut(tmpreal1, tmpreal2)
-        CALL cg_iRIC_Write_Sol_Real_f("SedFluxX", tmpreal1, IER)
-        CALL cg_iRIC_Write_Sol_Real_f("SedFluxY", tmpreal2, IER)
+        CALL cg_iRIC_Write_Sol_Real("SedFluxX", tmpreal1, IER)
+        CALL cg_iRIC_Write_Sol_Real("SedFluxY", tmpreal2, IER)
     ENDIF
 
     IF(IO_StressDiv) THEN
         CALL GetStressDivOut(tmpreal1)
         IF(CALCCSED) THEN
-            CALL cg_iRIC_Write_Sol_Real_f("Erosion Rate", tmpreal1, IER)
+            CALL cg_iRIC_Write_Sol_Real("Erosion Rate", tmpreal1, IER)
         ELSE
-            CALL cg_iRIC_Write_Sol_Real_f("Shear Stress Divergence", tmpreal1, IER)
+            CALL cg_iRIC_Write_Sol_Real("Shear Stress Divergence", tmpreal1, IER)
         ENDIF
     ENDIF
 
     IF(CALCQUASI3D.and.IO_HELIX) THEN
         CALL getHelixOut(tmpreal1)
-        CALL cg_iRIC_Write_Sol_Real_f("Helix Strength", tmpreal1, IER)
+        CALL cg_iRIC_Write_Sol_Real("Helix Strength", tmpreal1, IER)
         !            CALL getRSOut(tmpreal1)
         !            CALL cg_iRIC_Write_Sol_Real_f("RS", tmpreal1, IER)
         !            CALL getThetaOut(tmpreal1)
@@ -1002,52 +1003,52 @@
     !			IF(IER .NE. 0) THEN
     !!				iret = MESSAGEBOX(0, "CGNS ERROR"C, "Error"C, MB_OK)
     !			ENDIF
-    CALL cg_open_f(OutputFile, MODE_MODIFY, FID, IER)
+    CALL cg_open(OutputFile, MODE_MODIFY, FID, IER)
     IF(IER .NE. 0) THEN
-        call cg_error_print_f()
+        call cg_error_print()
     ENDIF
     BID = 1
-    CALL cg_nbases_f(FID, NBASES, IER)
+    CALL cg_nbases(FID, NBASES, IER)
     DO BASES_ITER = 1, NBASES
-        CALL cg_base_read_f(FID, BASES_ITER, BASENAME, CELLDIM, PHYSDIM, IER)
+        CALL cg_base_read(FID, BASES_ITER, BASENAME, CELLDIM, PHYSDIM, IER)
 
         SELECT CASE(TRIM(BASENAME))
         CASE('iRIC')
-            CALL cg_nzones_f(FID, BASES_ITER, NZONES, IER)
+            CALL cg_nzones(FID, BASES_ITER, NZONES, IER)
             DO ZONES_ITER = 1, NZONES
-                CALL cg_zone_read_f(FID, BASES_ITER, ZONES_ITER, ZONENAME, isize, IER)
+                CALL cg_zone_read(FID, BASES_ITER, ZONES_ITER, ZONENAME, isize, IER)
 
                 SELECT CASE(TRIM(ZONENAME))
                 CASE('iRICZone')
-                    CALL cg_goto_f(FID, BASES_ITER, IER, 'Zone_t', ZONES_ITER, 'end')
-                    CALL cg_nuser_data_f(NUSER_DATA, IER)
+                    CALL cg_goto(FID, BASES_ITER, IER, 'Zone_t', ZONES_ITER, 'end')
+                    CALL cg_nuser_data(NUSER_DATA, IER)
                     DO USER_ITER = 1, NUSER_DATA
-                        CALL cg_user_data_read_f(USER_ITER, USERNAME, IER)
+                        CALL cg_user_data_read(USER_ITER, USERNAME, IER)
 
                         SELECT CASE(TRIM(USERNAME))
                         CASE('Error')
-                            call cg_goto_f(FID, BASES_ITER, IER, 'Zone_t', ZONES_ITER,'UserDefinedData_t', USER_ITER, 'end')
+                            call cg_goto(FID, BASES_ITER, IER, 'Zone_t', ZONES_ITER,'UserDefinedData_t', USER_ITER, 'end')
                             dimvals(1) = 1
-                            CALL cg_array_write_f('ErrorCode', Integer, 1, 1, errorcode, ier)
+                            CALL cg_array_write('ErrorCode', Integer, 1, 1, errorcode, ier)
                             SELECT CASE (errorcode)
                             CASE (-1)
                                 Write(errorstring, '(A70,I5)') 'Error: Parameters chosen do not result in convergence at iteration:', iter
                                 dimvals(1) = len(errorstring)
-                                CALL cg_array_write_f('ErrorString', Character, 1, dimvals, errorstring, ier)
+                                CALL cg_array_write('ErrorString', Character, 1, dimvals, errorstring, ier)
                             CASE (-10)
                                 !								status = NF_PUT_ATT_TEXT(NCID, NF_GLOBAL, "r2d_ErrorText",85,
                                 !						 +"At least one row of nodes are completely dry - check water surface
                                 !						 + boundary condition")
                                 Write(errorstring, '(A100)') 'Error: at least on row of nodes is dry'
                                 dimvals(1) = len(errorstring)
-                                CALL cg_array_write_f('ErrorString', Character, 1, dimvals, errorstring, ier)
+                                CALL cg_array_write('ErrorString', Character, 1, dimvals, errorstring, ier)
 
                                 CASE DEFAULT
                                 !								status = NF_PUT_ATT_TEXT(NCID, NF_GLOBAL, "r2d_ErrorText",
                                 !						 +		23, "An unkown error occured")
                                 Write(errorstring, '(A70)') 'An unkown error occured'
                                 dimvals(1) = len(errorstring)
-                                CALL cg_array_write_f('ErrorString', Character, 1, dimvals, errorstring, ier)
+                                CALL cg_array_write('ErrorString', Character, 1, dimvals, errorstring, ier)
                             END SELECT
                             !                                CALL cg_close_f(FID, IER)
                             return
@@ -1059,7 +1060,7 @@
         END SELECT
     ENDDO
 
-    CALL cg_close_f(FID, IER)
+    CALL cg_close(FID, IER)
 
     END SUBROUTINE
 

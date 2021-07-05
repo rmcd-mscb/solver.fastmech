@@ -338,9 +338,9 @@
         CALL ALLOC_VELBC(tmpint)
         !   CALL CG_IRIC_READ_FUNCTIONAL_F('FM_HydAttVarVelBC', xtmp, ytmp, ztmp, ier)
         !   CALL CG_IRIC_READ_FUNCTIONAL_F('FM_HydAttVarVelBC', xtmp, ytmp, ier)
-        CALL CG_IRIC_READ_FUNCTIONALWITHNAME("FM_HydAttVarVelBC","Normalized_Distance",xtmp,ier)
-        CALL CG_IRIC_READ_FUNCTIONALWITHNAME("FM_HydAttVarVelBC","Normalized_Velocity",ytmp,ier)
-        CALL CG_IRIC_READ_FUNCTIONALWITHNAME("FM_HydAttVarVelBC","Angle",ztmp,ier)
+        CALL CG_IRIC_READ_FUNCTIONALWITHNAME(fid, "FM_HydAttVarVelBC","Normalized_Distance",xtmp,ier)
+        CALL CG_IRIC_READ_FUNCTIONALWITHNAME(fid, "FM_HydAttVarVelBC","Normalized_Velocity",ytmp,ier)
+        CALL CG_IRIC_READ_FUNCTIONALWITHNAME(fid, "FM_HydAttVarVelBC","Angle",ztmp,ier)
         IF(ier.eq.0) THEN
             DO i = 1, tmpint
                 vbcdist(i) = xtmp(i)

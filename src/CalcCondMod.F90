@@ -266,7 +266,7 @@
     CALL CG_IRIC_READ_INTEGER(fid, 'FM_HydAttVarDischType', VarDischType, ier)
     IF(VarDischType.eq.1)THEN
         !dischT and dischQ are allocated in _READ_FUNCTIONAL
-        CALL CG_IRIC_READ_FUNCTIONALSIZE('FM_HydAttVarDischarge', sizeDischTQ, IER)
+        CALL CG_IRIC_READ_FUNCTIONALSIZE(fid, 'FM_HydAttVarDischarge', sizeDischTQ, IER)
         ALLOCATE(dischT(sizeDischTQ), dischQ(sizeDischTQ), STAT=IER)
         CALL CG_IRIC_READ_FUNCTIONAL('FM_HydAttVarDischarge', dischT, dischQ, ier)
         tint(1) = sizeDischTQ
@@ -288,7 +288,7 @@
 
     CALL CG_IRIC_READ_INTEGER(fid, 'FM_HydAttVarStgType', VarStageType, ier)
     IF(VarStageType.eq.1)THEN
-        CALL CG_IRIC_READ_FUNCTIONALSIZE('FM_HydAttVarStageTS', sizeStageTQ, IER)
+        CALL CG_IRIC_READ_FUNCTIONALSIZE(fid, 'FM_HydAttVarStageTS', sizeStageTQ, IER)
         ALLOCATE(stageT(sizeStageTQ), stageH(sizeStageTQ), STAT=IER)
         CALL CG_IRIC_READ_FUNCTIONAL('FM_HydAttVarStageTS', stageT, stageH, ier)
         tint(1) = sizeStageTQ
@@ -308,7 +308,7 @@
         DEALLOCATE(stageH, STAT = ier)
 
     ELSE IF(VarStageType.eq.2) THEN
-        CALL CG_IRIC_READ_FUNCTIONALSIZE('FM_HydAttVarStageRC', sizeStageHQ, IER)
+        CALL CG_IRIC_READ_FUNCTIONALSIZE(fid, 'FM_HydAttVarStageRC', sizeStageHQ, IER)
         ALLOCATE(stageQ(sizeStageHQ), stageH(sizeStageHQ), STAT=IER)
         CALL CG_IRIC_READ_FUNCTIONAL('FM_HydAttVarStageRC', stageQ, stageH, ier)
         tint(1) = sizeStageHQ
@@ -333,7 +333,7 @@
     CALL cg_iRIC_Read_Real(fid, 'FM_HydAttVelAngleCoef', vac, ier)
     CALL CG_IRIC_READ_INTEGER(fid, 'FM_HydAttVelBC', vbc, ier)
     IF(vbc == 1) THEN
-        CALL CG_IRIC_READ_FUNCTIONALSIZE('FM_HydAttVarVelBC', tmpint, IER)
+        CALL CG_IRIC_READ_FUNCTIONALSIZE(fid, 'FM_HydAttVarVelBC', tmpint, IER)
         Allocate(xtmp(tmpint), ytmp(tmpint), ztmp(tmpint), STAT=IER)
         CALL ALLOC_VELBC(tmpint)
         !   CALL CG_IRIC_READ_FUNCTIONAL_F('FM_HydAttVarVelBC', xtmp, ytmp, ztmp, ier)
@@ -505,7 +505,7 @@
     CALL CG_IRIC_READ_STRING(fid, 'tmp_pass', tmp_pass, ier)
 
     do ii=0,9
-        CALL CG_IRIC_READ_REAL(tmp_caption(ii), opt_tmp(ii), ier)
+        CALL CG_IRIC_READ_REAL(fid, 'mp_caption(ii), opt_tmp(ii), ier)
     end do
     !
     do iii=1,n_rest

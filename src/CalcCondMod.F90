@@ -105,10 +105,10 @@
     INTEGER, INTENT(OUT) :: IER
     INTEGER :: tmpint
 
-    CALL CG_IRIC_READ_INTEGER('FM_SolAttNSExt', nsext, ier)
-    CALL CG_IRIC_READ_INTEGER('FM_SolAttItm', itm, ier)
-    CALL CG_IRIC_READ_INTEGER('FM_Quasi3D_NZ', nz, ier)
-    CALL CG_IRIC_READ_INTEGER('FM_Quasi3D', tmpint, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_SolAttNSExt', nsext, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_SolAttItm', itm, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_Quasi3D_NZ', nz, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_Quasi3D', tmpint, ier)
     IF(tmpint == 1) THEN
         CALCQUASI3D = .TRUE.
     ELSE
@@ -151,61 +151,61 @@
     IO_DEPTH= .TRUE.
     IO_ELEV= .TRUE.
 
-    CALL CG_IRIC_READ_INTEGER('FM_SolWrtVelSN', tmpint, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_SolWrtVelSN', tmpint, ier)
     if(tmpint == 0) then
         IO_VELSN = .FALSE.
     else
         IO_VELSN = .TRUE.
     endif
-    CALL CG_IRIC_READ_INTEGER('FM_SolWrtShearXY', tmpint, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_SolWrtShearXY', tmpint, ier)
     if(tmpint == 0) then
         IO_SHEARXY = .FALSE.
     else
         IO_SHEARXY= .TRUE.
     endif
-    CALL CG_IRIC_READ_INTEGER('FM_SolWrtShearSN', tmpint, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_SolWrtShearSN', tmpint, ier)
     if(tmpint == 0) then
         IO_SHEARSN = .FALSE.
     else
         IO_SHEARSN= .TRUE.
     endif
-    CALL CG_IRIC_READ_INTEGER('FM_SolWrtShearDiv', tmpint, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_SolWrtShearDiv', tmpint, ier)
     if(tmpint == 0) then
         IO_STRESSDIV = .FALSE.
     else
         IO_STRESSDIV= .TRUE.
     endif
-    CALL CG_IRIC_READ_INTEGER('FM_SolWrtCD', tmpint, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_SolWrtCD', tmpint, ier)
     if(tmpint == 0) then
         IO_CD = .FALSE.
     else
         IO_CD= .TRUE.
     endif
-    CALL CG_IRIC_READ_INTEGER('FM_SolWrtUnitDischarge', tmpint, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_SolWrtUnitDischarge', tmpint, ier)
     if(tmpint == 0) then
         IO_UnitDisch = .FALSE.
     else
         IO_UnitDisch = .TRUE.
     endif
-    CALL CG_IRIC_READ_INTEGER('FM_SolWrtHArea', tmpint, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_SolWrtHArea', tmpint, ier)
     if(tmpint == 0) then
         IO_HArea = .FALSE.
     else
         IO_HArea = .TRUE.
     endif
-    CALL CG_IRIC_READ_INTEGER('FM_SolWrtInitVel', tmpint, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_SolWrtInitVel', tmpint, ier)
     if(tmpint == 0) then
         IO_InitVel = .FALSE.
     else
         IO_InitVel = .TRUE.
     endif
-    CALL CG_IRIC_READ_INTEGER('FM_SolWrt3DOutput', tmpint, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_SolWrt3DOutput', tmpint, ier)
     if(tmpint == 0) then
         IO_3DOUTPUT = .FALSE.
     else
         IO_3DOUTPUT = .TRUE.
     endif
-    CALL CG_IRIC_READ_INTEGER('FM_SolWrtHelix', tmpint, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_SolWrtHelix', tmpint, ier)
     if(tmpint == 0) then
         IO_HELIX = .FALSE.
     else
@@ -221,49 +221,49 @@
 
     !CALL CG_IRIC_GOTOCC_F(FID, IER)
 
-    CALL cg_iRIC_Read_Integer('FM_SolAttType', solType, ier)
+    CALL cg_iRIC_Read_Integer(fid, 'FM_SolAttType', solType, ier)
 
     CALL cg_iRIC_Read_Real('FM_SolAttERlx', erelax, ier)
     CALL cg_iRIC_Read_Real('FM_SolAttURlx', urelax, ier)
     CALL cg_iRIC_Read_Real('FM_SolAttARlx', arelax, ier)
 
-    CALL CG_IRIC_READ_INTEGER('FM_SolAttItm', itm, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_SolAttItm', itm, ier)
 
     CALL cg_iRIC_Read_Real('FM_SolAttDT', dt, ier)
 
-    CALL CG_IRIC_READ_INTEGER('FM_SolAttInterItm', interitm, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_SolAttInterItm', interitm, ier)
 
-    CALL CG_IRIC_READ_INTEGER('FM_SolAttPlinc', iplinc, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_SolAttPlinc', iplinc, ier)
 
     !NEXT TWO DEFINED IN RivVarTimeMod
     CALL cg_iRIC_Read_Real('FM_SolAttVarDischSTime', vardischstarttime, ier)
     CALL cg_iRIC_Read_Real('FM_SolAttVarDischETime', vardischendtime, ier)
 
-    CALL CG_IRIC_READ_INTEGER('FM_SolAttFlumeBndry', tmpint, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_SolAttFlumeBndry', tmpint, ier)
     IF(tmpint == 1) THEN
         FLUMEBNDRY = .TRUE.
     ELSE
         FLUMEBNDRY = .FALSE.
     ENDIF
 
-    CALL CG_IRIC_READ_INTEGER('FM_SolAttDbgStop', debugstop, ier)
-    CALL CG_IRIC_READ_INTEGER('FM_SolAttDbgTimeStep', DbgTimeStep, ier)
-    CALL CG_IRIC_READ_INTEGER('FM_SolAttDbgIterNum', DbgIterNum, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_SolAttDbgStop', debugstop, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_SolAttDbgTimeStep', DbgTimeStep, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_SolAttDbgIterNum', DbgIterNum, ier)
 
-    CALL CG_IRIC_READ_INTEGER('FM_SolAttIterOut', tmpint, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_SolAttIterOut', tmpint, ier)
     IF(tmpint == 1) THEN
         IterationOut = .TRUE.
     ELSE
         IterationOut = .FALSE.
     ENDIF
-    CALL CG_IRIC_READ_INTEGER('FM_SolAttIncPlOut', IterPlOut, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_SolAttIncPlOut', IterPlOut, ier)
 
-    CALL CG_IRIC_READ_INTEGER('FM_SolAttMaxInterIter', maxInterIterMult, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_SolAttMaxInterIter', maxInterIterMult, ier)
 
     CALL cg_iRIC_Read_Real('FM_HydAttQ', q, ier)
     q = q*1.e6
     !NEXT TWO DEFINED IN RivVarTimeMod
-    CALL CG_IRIC_READ_INTEGER('FM_HydAttVarDischType', VarDischType, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_HydAttVarDischType', VarDischType, ier)
     IF(VarDischType.eq.1)THEN
         !dischT and dischQ are allocated in _READ_FUNCTIONAL
         CALL CG_IRIC_READ_FUNCTIONALSIZE('FM_HydAttVarDischarge', sizeDischTQ, IER)
@@ -286,7 +286,7 @@
         DEALLOCATE(dischQ, STAT = ier)
     ENDIF
 
-    CALL CG_IRIC_READ_INTEGER('FM_HydAttVarStgType', VarStageType, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_HydAttVarStgType', VarStageType, ier)
     IF(VarStageType.eq.1)THEN
         CALL CG_IRIC_READ_FUNCTIONALSIZE('FM_HydAttVarStageTS', sizeStageTQ, IER)
         ALLOCATE(stageT(sizeStageTQ), stageH(sizeStageTQ), STAT=IER)
@@ -331,7 +331,7 @@
 
     CALL cg_iRIC_Read_Real('FM_HydAttVelDepthCoef', vdc, ier)
     CALL cg_iRIC_Read_Real('FM_HydAttVelAngleCoef', vac, ier)
-    CALL CG_IRIC_READ_INTEGER('FM_HydAttVelBC', vbc, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_HydAttVelBC', vbc, ier)
     IF(vbc == 1) THEN
         CALL CG_IRIC_READ_FUNCTIONALSIZE('FM_HydAttVarVelBC', tmpint, IER)
         Allocate(xtmp(tmpint), ytmp(tmpint), ztmp(tmpint), STAT=IER)
@@ -358,46 +358,46 @@
     CALL cg_iRIC_Read_Real('FM_HydAttWS2', wsupelev, ier)
     wsupelev=(wsupelev - elevoffset)*100.
     CALL cg_iRIC_Read_Real('FM_HydAttWSSlope', wsslope, ier)
-    CALL CG_IRIC_READ_INTEGER('FM_HydAttWSType', wstype, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_HydAttWSType', wstype, ier)
     IF(wstype == 3) THEN
         HotStart = .TRUE.
     ELSE
         HotStart = .FALSE.
     ENDIF
 
-    !CALL CG_IRIC_READ_INTEGER('FM_HydAttHotStart', tmpint, ier)
+    !CALL CG_IRIC_READ_INTEGER(fid, 'FM_HydAttHotStart', tmpint, ier)
     CALL cg_iRIC_Read_Real('FM_HydAttWS1DCD', ONEDCD, ier)
 
     CALL CG_IRIC_READ_STRING('FM_HydAttHSFile', CGNSHSFile, ier)
-    CALL CG_IRIC_READ_INTEGER('FM_HydAttSolIndex', SolnIndex, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_HydAttSolIndex', SolnIndex, ier)
 
-    CALL CG_IRIC_READ_INTEGER('FM_HydAttRoughnessType', roughnesstype, ier)
-    CALL CG_IRIC_READ_INTEGER('FM_HydAttCDType', cdtype, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_HydAttRoughnessType', roughnesstype, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_HydAttCDType', cdtype, ier)
     CALL cg_iRIC_Read_Real('FM_HydAttCD', constcd, ier)
     CALL cg_iRIC_Read_Real('FM_HydAttCDMin', cdmin, ier)
     CALL cg_iRIC_Read_Real('FM_HydAttCDMax', cdmax, ier)
 
     CALL cg_iRIC_Read_Real('FM_SolAttNSExtSlope', nsextslope, ier)
     !CALL CG_IRIC_READ_INTEGER_F('FM_SolAttNSExtShow', ShowGridExt, ier)
-    CALL CG_IRIC_READ_INTEGER('FM_HydAttVelBCDS', vbcds, ier)
-    CALL CG_IRIC_READ_INTEGER('FM_HydAttDryType', dryType, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_HydAttVelBCDS', vbcds, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_HydAttDryType', dryType, ier)
     CALL cg_iRIC_Read_Real('FM_HydAttDryMinDepth', hmin, ier)
     hmin = hmin*100.
     CALL cg_iRIC_Read_Real('FM_HydAttWetMinDepth', hwmin, ier)
     hwmin = hwmin*100.
-    CALL CG_IRIC_READ_INTEGER('FM_HydAttWetIterInterval', hiterInterval, ier)
-    CALL CG_IRIC_READ_INTEGER('FM_HydAttWetIterStop', hiterstop, ier)
-    CALL CG_IRIC_READ_INTEGER('FM_HydAttCalcWetting', tmpint, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_HydAttWetIterInterval', hiterInterval, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_HydAttWetIterStop', hiterstop, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_HydAttCalcWetting', tmpint, ier)
     IF(tmpint == 1) THEN
         hcalcwetting = .TRUE.
     ELSE
         hcalcwetting = .FALSE.
     ENDIF
 
-    CALL CG_IRIC_READ_INTEGER('FM_HydAttLEVType', LEVType, ier)
-    CALL CG_IRIC_READ_INTEGER('FM_HydAttLEVChangeIter', LEVChangeIter, ier)
-    CALL CG_IRIC_READ_INTEGER('FM_LEVStartIter', LEVBegIter, ier)
-    CALL CG_IRIC_READ_INTEGER('FM_LEVEndIter', LEVEndIter, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_HydAttLEVType', LEVType, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_HydAttLEVChangeIter', LEVChangeIter, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_LEVStartIter', LEVBegIter, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_LEVEndIter', LEVEndIter, ier)
     CALL cg_iRIC_Read_Real('FM_StartLEV', startLEV, ier)
     startLEV = startLEV*100*100
     CALL cg_iRIC_Read_Real('FM_EndLEV', endLEV, ier)
@@ -405,15 +405,15 @@
     CALL cg_iRIC_Read_Real('FM_HydAttEVC', evc, ier)
     evc = evc*100.*100.
 
-    CALL CG_IRIC_READ_INTEGER('FM_Quasi3D', tmpint, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_Quasi3D', tmpint, ier)
     IF(tmpint == 1) THEN
         CALCQUASI3D = .TRUE.
     ELSE
         CALCQUASI3D = .FALSE.
     ENDIF
 
-    CALL CG_IRIC_READ_INTEGER('FM_Quasi3D_NZ', nz, ier)
-    CALL CG_IRIC_READ_INTEGER('FM_Quasi3D_CalcRS', tmpint, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_Quasi3D_NZ', nz, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_Quasi3D_CalcRS', tmpint, ier)
     IF(tmpint == 1) THEN
         CALCQUASI3DRS = .TRUE.
     ELSE
@@ -423,7 +423,7 @@
     CALL cg_iRIC_Read_Real('FM_Quasi3D_MinRS', MinRS, ier)
     MinRs = MinRs * 100.
 
-    CALL CG_IRIC_READ_INTEGER('FM_SedTrans', tmpint, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_SedTrans', tmpint, ier)
     IF(tmpint == 1) THEN
         CALCCSED = .TRUE.
     ELSE
@@ -435,25 +435,25 @@
     WD = WD * 100.
 
     !CALL CG_IRIC_READ_INTEGER_F('FM_RsSmoothLvl', RSSMOO, ier)
-    CALL CG_IRIC_READ_INTEGER('FM_SedSmoothLvl', SEDSMOO, ier)
-    CALL CG_IRIC_READ_INTEGER('FM_SedSmoothWeight', SEDSMOOWGHT, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_SedSmoothLvl', SEDSMOO, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_SedSmoothWeight', SEDSMOOWGHT, ier)
 
-    CALL CG_IRIC_READ_INTEGER('FM_SedTrans_Type', TRANSEQTYPE, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_SedTrans_Type', TRANSEQTYPE, ier)
     CALL cg_iRIC_Read_Real('FM_SedGrainSize', din, ier)
     din = din*100.
-    CALL CG_IRIC_READ_INTEGER('FM_SedBCNode', SEDBCNODE, ier)
-    CALL CG_IRIC_READ_INTEGER('FM_SedBCFractionTaper', SEDEQNODE, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_SedBCNode', SEDBCNODE, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_SedBCFractionTaper', SEDEQNODE, ier)
     SEDEQNODE = SEDBCNODE+SEDEQNODE
     CALL cg_iRIC_Read_Real('FM_SedBCFraction', BCFRACTION, ier)
     !CALL cg_iRIC_Read_Real_F('FM_SedBCEquiMult', SEDEQMULT, ier)
 
-    CALL CG_IRIC_READ_INTEGER('FM_SedCalcGravCorr', CALCGRAVCORR, ier)
-    CALL CG_IRIC_READ_INTEGER('FM_SedGravCorrType', GRAVCORRTYPE, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_SedCalcGravCorr', CALCGRAVCORR, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_SedGravCorrType', GRAVCORRTYPE, ier)
     CALL cg_iRIC_Read_Real('FM_SedFlatBedCorrCoef', GRAVFLATBEDCORRCOEF, ier)
     CALL cg_iRIC_Read_Real('FM_SedSAngleOfRepose', SUBANGLEOFREPOSE, ier)
     CALL cg_iRIC_Read_Real('FM_SedTSFracDepth', TSFracDepth, ier)
 
-    CALL CG_IRIC_READ_INTEGER('FM_SedTransAuto', tmpint, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_SedTransAuto', tmpint, ier)
     IF(tmpint == 1) THEN
         CALCSEDAUTO = .TRUE.
     ELSE
@@ -486,10 +486,10 @@
     CALL cg_iRIC_Read_Real('FM_Sed_WK_Z0Max', Z0Max, ier)
     Z0Max = Z0Max*100.
 
-    CALL CG_IRIC_READ_INTEGER('FM_Sed_WK_RoughType', WK_RoughType, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_Sed_WK_RoughType', WK_RoughType, ier)
     CALL cg_iRIC_Read_Real('FM_Sed_WK_RoughShapeParam', WK_RoughShapeParam, ier)
     CALL cg_iRIC_Read_Real('FM_Sed_WK_FsMin', Fsmin, ier)
-    CALL CG_IRIC_READ_INTEGER('FM_Sed_WK_ConstBndry', tmpint, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'FM_Sed_WK_ConstBndry', tmpint, ier)
     IF(tmpint == 1) THEN
         WKConstBndry = .TRUE.
     ELSE
@@ -498,9 +498,9 @@
     !
     ! --- Parameters for Hot Start ---
     !
-    CALL CG_IRIC_READ_INTEGER('write_flag', i_re_flag_o, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'write_flag', i_re_flag_o, ier)
     !     CALL CG_IRIC_READ_INTEGER_F('read_flag', i_re_flag_i, ier)
-    CALL CG_IRIC_READ_INTEGER('n_tempfile', n_rest, ier)
+    CALL CG_IRIC_READ_INTEGER(fid, 'n_tempfile', n_rest, ier)
     CALL CG_IRIC_READ_STRING('tmp_readfile', tmp_file_i, ier)
     CALL CG_IRIC_READ_STRING('tmp_pass', tmp_pass, ier)
 

@@ -365,7 +365,7 @@
         HotStart = .FALSE.
     ENDIF
 
-    !CALL CG_IRIC_READ_INTEGER(fid, 'FM_HydAttHotStart', tmpint, ier)
+    !CALL CG_IRIC_READ_INTEGER('FM_HydAttHotStart', tmpint, ier)
     CALL cg_iRIC_Read_Real(fid, 'FM_HydAttWS1DCD', ONEDCD, ier)
 
     CALL CG_IRIC_READ_STRING(fid, 'FM_HydAttHSFile', CGNSHSFile, ier)

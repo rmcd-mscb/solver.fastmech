@@ -6,8 +6,6 @@
     CONTAINS
     SUBROUTINE CGNS2_Read_GridCondition(IER)
     IMPLICIT NONE
-    !	INCLUDE "cgnslib_f.h"
-    !    INCLUDE "cgnswin_f.h"
 
     INTEGER, INTENT(OUT) :: IER
     INTEGER :: status, i, j, count, countji, ierror

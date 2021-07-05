@@ -10,8 +10,6 @@
     CONTAINS
     SUBROUTINE CGNS2_READ_GRIDCOORD(IER)
     IMPLICIT NONE
-    !	INCLUDE "cgnslib_f.h"
-    !    INCLUDE "cgnswin_f.h"
 
     INTEGER, INTENT(OUT) :: IER
     INTEGER :: status, i, j, count, countji, ierror

@@ -13,9 +13,6 @@
 
     SUBROUTINE read_iRIC_CGNS(InputFile)
     IMPLICIT NONE
-    !INCLUDE "cgnswin_f.h"
-    INCLUDE "cgnslib_f.h"
-    INCLUDE "iriclib_f.h"
     CHARACTER(*), INTENT(IN) ::InputFile
     CHARACTER(250) :: ZONENAME, BASENAME, USERNAME
 

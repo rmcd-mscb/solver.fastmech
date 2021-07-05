@@ -31,8 +31,6 @@
 
     SUBROUTINE Write_CGNS3D_Grid()
     IMPLICIT NONE
-    INCLUDE "cgnslib_f.h"
-    !        INCLUDE "cgnswin_f.h"
     DOUBLE PRECISION, ALLOCATABLE, DIMENSION(:,:,:) :: tmpx3d, tmpy3d, tmpz3d
     INTEGER, ALLOCATABLE, DIMENSION(:,:,:) :: tmpint
     INTEGER :: ier
@@ -124,8 +122,6 @@
 
     SUBROUTINE Write_CGNS3D_FixedBed(solIndex, time, disch)
     IMPLICIT NONE
-    INCLUDE "cgnslib_f.h"
-    !        INCLUDE "cgnswin_f.h"
 
     INTEGER, INTENT(IN) :: solIndex
     REAL(KIND=mp), INTENT(IN) :: time, disch
@@ -985,8 +981,6 @@
     SUBROUTINE write_error_CGNS(OutputFile)
     !		USE USER32
     IMPLICIT NONE
-    !        INCLUDE "cgnswin_f.h"
-    INCLUDE "cgnslib_f.h"
 
     CHARACTER(*), INTENT(IN) :: OutputFile
     CHARACTER(250) :: ZONENAME, BASENAME, USERNAME

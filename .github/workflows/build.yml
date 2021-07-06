@@ -58,7 +58,7 @@ jobs:
         # see https://docs.github.com/en/rest/reference/repos#get-the-latest-release
         # see https://docs.github.com/ja/rest/reference/repos#get-the-latest-release
         $latest = (Invoke-WebRequest -Uri $env:IRICLIB_API_URL/releases/latest -Method GET).Content | ConvertFrom-Json
-        $url = ($latest.assets | Where-Object {$_.name -match "^iricsdk-(?<major>0|[1-9]\d*)\.(?<minor>[0|1-9]\d*)\.(?<patch>[0|1-9]\d*)\.zip$"}).browser_download_url
+        $url = ($latest.assets | Where-Object {$_.name -match "^iricsdk-(?<major>0|[1-9]\d*)\.(?<minor>[0|1-9]\d*)\.(?<patch>[0|1-9]\d*)\.7z$"}).browser_download_url
         curl -LO $url
         mkdir c:\iricdev\lib
         $zipfile = $matches[0]

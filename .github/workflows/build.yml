@@ -7,7 +7,7 @@ on:
 
 env:
   # online_update directory
-  PACKAGE_DATA_DIR: online_update\dev_src\packages\solver.fastmech\data
+  PACKAGE_DATA_DIR: online_update\yasu_src\packages\solver.fastmech\data
 
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
   BUILD_TYPE: RelWithDebInfo
@@ -21,7 +21,7 @@ env:
   ONLINE_UPDATE_REPO: i-RIC/online_update
 
   # github API url
-  IRICLIB_API_URL: ${{github.api_url}}/repos/i-RIC/iriclib
+  IRICLIB_API_URL: ${{github.api_url}}/repos/i-RIC/iriclib_v4
   IFW_API_URL: ${{github.api_url}}/repos/scharlton2/ifw
 
   # oneAPI

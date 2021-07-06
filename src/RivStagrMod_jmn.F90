@@ -774,7 +774,7 @@ do while(totTime <= VarDischEndTime)
             if(nct == DbgTimeStep) then
                 if(DEBUGSTOP.eq.1.and.iter == DbgIterNum) then
                     solIndex = solIndex+1
-                    CALL CG_IRIC_WRITE_SOL_TIME(tottime, ier)
+                    CALL CG_IRIC_WRITE_SOL_TIME(fid, tottime, ier)
 
                     CALL Write_CGNS2(tottime, q)
                     !			        CALL write_TimeStep_CGNS(STR_IN, nct, tottime)
@@ -838,7 +838,7 @@ do while(totTime <= VarDischEndTime)
                 enddo
 
                 solIndex = solIndex+1
-                CALL CG_IRIC_WRITE_SOL_TIME(tottime, ier)
+                CALL CG_IRIC_WRITE_SOL_TIME(fid, tottime, ier)
                 CALL Write_CGNS2(tottime, q)
 
             ENDIF
@@ -946,29 +946,33 @@ do while(totTime <= VarDischEndTime)
         if(nct == 0) then
             solIndex = solIndex+1
             CALL Calc_Area(x, y, xo, yo, nm, dn, harea)
-            CALL CG_IRIC_WRITE_SOL_TIME(tottime, ier)
+            CALL CG_IRIC_WRITE_SOL_TIME(fid, tottime, ier)
             CALL Write_CGNS2(tottime, q)
             !                IF(CALCQUASI3D.and.IO_3DOUTPUT) THEN
             !                    CAll Write_CGNS3D_Grid()
             !                ENDIF
+#if 0
             IF(CALCQUASI3D.and.IO_3DOUTPUT) THEN
                 CAll Write_CGNS3D_Grid()
                 !                    CAll Write_CGNS3D_SolGrid()
                 CALL Write_CGNS3D_FixedBed(solIndex, tottime, q)
             ENDIF
+#endif
 
         else
             if(tottime >= ptime)then
                 solIndex = solIndex+1
                 CALL Calc_Area(x, y, xo, yo, nm, dn, harea)
-                CALL CG_IRIC_WRITE_SOL_TIME(tottime, ier)
+                CALL CG_IRIC_WRITE_SOL_TIME(fid, tottime, ier)
                 CALL Write_CGNS2(tottime, q)
+#if 0
                 IF(CALCQUASI3D.and.IO_3DOUTPUT) THEN
                     !                        CAll Write_CGNS3D_SolGrid()
                     CAll Write_CGNS3D_FixedBed(solIndex, tottime, q)
                     !                    ELSEIF(CALCQUASI3D.and.IO_3DOUTPUT.and.CALCCSED) THEN
                     !!                        CALL Write_CGNS3D_MoveableBed(tottime, q)
                 ENDIF
+#endif
                 ptime = ptime+(iplinc*dt)
             endif
             IF(i_re_flag_o.eq.1.and.nct.ne.0) THEN
@@ -1047,7 +1051,7 @@ else
     call dealloc_csed()
 endif
 IF(FID > 0) THEN
-    CALL cg_close(FID, errorcode)
+    CALL cg_iric_close(FID, errorcode)
 ENDIF
 END SUBROUTINE dealloc_all
 

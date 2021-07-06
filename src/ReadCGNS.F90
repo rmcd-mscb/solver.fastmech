@@ -19,9 +19,9 @@
 
     INTEGER :: IER, IRET
 
-    CALL cg_open(InputFile, CG_MODE_MODIFY, FID, IER)
+    CALL cg_iric_open(InputFile, IRIC_MODE_MODIFY, FID, IER)
     IF(IER .NE. 0) THEN
-        call cg_error_print()
+        !SRC call cg_error_print()
         !pause
         return
     ENDIF
@@ -29,20 +29,14 @@
     !call iric_initoption_f(IRIC_OPTION_DIVIDESOLUTIONS, ier)
     !    if (ier /=0) STOP "*** Initialize option error***"
 
-    CALL cg_iric_init(fid, ier)
-    IF(IER .NE. 0) THEN
-        call cg_error_print()
-        !pause
-        return
-    ENDIF
     call iric_initoption(IRIC_OPTION_CANCEL, ier)
     if (ier /=0) STOP "*** Initialize option error***"
 
     !    CALL CGNS_Read_CalcCondtion_ForAlloc(FID, IER)
-    CALL CGNS2_Read_CC_ForAlloc(IER)
-    CALL CGNS2_READ_GRIDCOORD(IER)
-    CALL CGNS2_Read_GridCondition(IER)
-    CALL CGNS2_Read_CalcCondition(IER)
+    CALL CGNS2_Read_CC_ForAlloc(fid, IER)
+    CALL CGNS2_READ_GRIDCOORD(fid, IER)
+    CALL CGNS2_Read_GridCondition(fid, IER)
+    CALL CGNS2_Read_CalcCondition(fid, IER)
 
     if(TRANSEQTYPE == 2) then
         call alloc_csed_DT()

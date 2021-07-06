@@ -100,8 +100,10 @@
     END SUBROUTINE
 
 
-    SUBROUTINE CGNS2_Read_CC_ForAlloc(IER)
+    SUBROUTINE CGNS2_Read_CC_ForAlloc(FID, IER)
+    use iric
     IMPLICIT NONE
+    INTEGER, INTENT(IN) :: FID
     INTEGER, INTENT(OUT) :: IER
     INTEGER :: tmpint
 
@@ -118,8 +120,10 @@
 
     ENDSUBROUTINE
 
-    SUBROUTINE CGNS2_Read_CalcCondition(IER)
+    SUBROUTINE CGNS2_Read_CalcCondition(FID, IER)
+    use iric
     IMPLICIT NONE
+    INTEGER, INTENT(IN) :: FID
     INTEGER, INTENT(OUT) :: IER
 
     INTEGER :: status, i, j, count, ierror
@@ -505,7 +509,7 @@
     CALL CG_IRIC_READ_STRING(fid, 'tmp_pass', tmp_pass, ier)
 
     do ii=0,9
-        CALL CG_IRIC_READ_REAL(fid, 'mp_caption(ii), opt_tmp(ii), ier)
+        CALL CG_IRIC_READ_REAL(fid, tmp_caption(ii), opt_tmp(ii), ier)
     end do
     !
     do iii=1,n_rest

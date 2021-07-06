@@ -121,6 +121,7 @@
     !
     !END SUBROUTINE Write_CGNS3D_Grid
 
+#if 0
     SUBROUTINE Write_CGNS3D_FixedBed(solIndex, time, disch)
     IMPLICIT NONE
 
@@ -250,10 +251,10 @@
     ALLOCATE(ty(ns2, nn, nz), STAT = ier)
     ALLOCATE(tz(ns2, nn, nz), STAT = ier)
 
-    call cg_iric_write_sol_time(time, ier);
+    call cg_iric_write_sol_time(fid, time, ier);
 
     CALL GETXYZ3DOUT(tx, ty, tz)
-    call cg_iric_writegridcoord3d(tx, ty, tz, ier)
+    call cg_iRIC_Write_Grid3d_Coords(tx, ty, tz, ier)
 
     Call GET3DVELOCITYOUT(tx, ty, tz)
     call cg_iric_write_grid_real_node(fid, 'VelocityX', tx, ier)
@@ -269,6 +270,7 @@
     DEALLOCATE(tx, ty, tz, STAT = ier)
 
     END SUBROUTINE Write_CGNS3D_MoveableBed
+#endif
 
     SUBROUTINE Write_CGNS2(time, disch)
     IMPLICIT NONE
@@ -288,94 +290,94 @@
 
     IF(CALCQUASI3D.and.IO_3DOUTPUT) THEN
         CALL getXYOut(tmpreal1, tmpreal2)
-        CALL CG_IRIC_WRITE_SOL_GRIDCOORD2D(tmpreal1,tmpreal2,IER)
+        CALL cg_iRIC_Write_Sol_Grid2d_Coords(fid, tmpreal1,tmpreal2,IER)
     ENDIF
 
     CALL GETIBCOUT(tmp2dint)
-    CALL cg_iRIC_Write_Sol_Integer("IBC", tmp2dint, IER)
+    CALL cg_iRIC_Write_Sol_Node_Integer(fid, "IBC", tmp2dint, IER)
     CALL GETFMIBCOUT(tmp2dint)
-    CALL cg_iRIC_Write_Sol_Integer("FMIBC", tmp2dint, IER)
+    CALL cg_iRIC_Write_Sol_Node_Integer(fid, "FMIBC", tmp2dint, IER)
 
     CALL getVelocityOut(tmpreal1, tmpreal2)
-    CALL cg_iRIC_Write_Sol_Real("VelocityX", tmpreal1, IER)
-    CALL cg_iRIC_Write_Sol_Real("VelocityY", tmpreal2, IER)
+    CALL cg_iRIC_Write_Sol_Node_Real(fid, "VelocityX", tmpreal1, IER)
+    CALL cg_iRIC_Write_Sol_Node_Real(fid, "VelocityY", tmpreal2, IER)
 
     CALL getDepthOut(tmpreal1)
-    CALL cg_iRIC_Write_Sol_Real("Depth", tmpreal1, IER)
+    CALL cg_iRIC_Write_Sol_Node_Real(fid, "Depth", tmpreal1, IER)
 
     CALL getWSEOut(tmpreal1)
-    CALL cg_iRIC_Write_Sol_Real("WaterSurfaceElevation", tmpreal1, IER)
+    CALL cg_iRIC_Write_Sol_Node_Real(fid, "WaterSurfaceElevation", tmpreal1, IER)
 
     CALL getElevationOut(tmpreal1)
-    CALL cg_iRIC_Write_Sol_Real("Elevation", tmpreal1, IER)
+    CALL cg_iRIC_Write_Sol_Node_Real(fid, "Elevation", tmpreal1, IER)
 
     IF(IO_VelSN) THEN
         CALL GETVELOCITYSNOUT(tmpreal1, tmpreal2)
-        CALL cg_iRIC_Write_Sol_Real("VelocityS", tmpreal1, IER)
-        CALL cg_iRIC_Write_Sol_Real("VelocityN", tmpreal2, IER)
+        CALL cg_iRIC_Write_Sol_Node_Real(fid, "VelocityS", tmpreal1, IER)
+        CALL cg_iRIC_Write_Sol_Node_Real(fid, "VelocityN", tmpreal2, IER)
     ENDIF
 
     IF(IO_UnitDisch) THEN
         CALL getUnitDischOut(tmpreal1, tmpreal2)
-        CALL cg_iRIC_Write_Sol_Real("UnitDischargeX", tmpreal1, IER)
-        CALL cg_iRIC_Write_Sol_Real("UnitDischargeY", tmpreal2, IER)
+        CALL cg_iRIC_Write_Sol_Node_Real(fid, "UnitDischargeX", tmpreal1, IER)
+        CALL cg_iRIC_Write_Sol_Node_Real(fid, "UnitDischargeY", tmpreal2, IER)
     ENDIF
 
     IF(IO_HArea) THEN
         CALL getHAreaOut(tmpreal1)
-        CALL cg_iRIC_Write_Sol_Real("HabitatArea", tmpreal1, IER)
+        CALL cg_iRIC_Write_Sol_Node_Real(fid, "HabitatArea", tmpreal1, IER)
     ENDIF
 
     IF(IO_InitVel) THEN
         CALL getInitVelOut(tmpreal1, tmpreal2)
-        CALL cg_iRIC_Write_Sol_Real("VelocityInitS", tmpreal1, IER)
-        CALL cg_iRIC_Write_Sol_Real("VelocityInitN", tmpreal2, IER)
+        CALL cg_iRIC_Write_Sol_Node_Real(fid, "VelocityInitS", tmpreal1, IER)
+        CALL cg_iRIC_Write_Sol_Node_Real(fid, "VelocityInitN", tmpreal2, IER)
     ENDIF
 
     IF(IO_ShearXY) THEN
         CALL GETSHEARSTRESSOUT(tmpreal1, tmpreal2)
-        CALL cg_iRIC_Write_Sol_Real("ShearStressX", tmpreal1, IER)
-        CALL cg_iRIC_Write_Sol_Real("ShearStressY", tmpreal2, IER)
+        CALL cg_iRIC_Write_Sol_Node_Real(fid, "ShearStressX", tmpreal1, IER)
+        CALL cg_iRIC_Write_Sol_Node_Real(fid, "ShearStressY", tmpreal2, IER)
     ENDIF
 
     IF(IO_ShearSN) THEN
         CALL GETSHEARSTRESSSNOUT(tmpreal1, tmpreal2)
-        CALL cg_iRIC_Write_Sol_Real("ShearStressS", tmpreal1, IER)
-        CALL cg_iRIC_Write_Sol_Real("ShearStressN", tmpreal2, IER)
+        CALL cg_iRIC_Write_Sol_Node_Real(fid, "ShearStressS", tmpreal1, IER)
+        CALL cg_iRIC_Write_Sol_Node_Real(fid, "ShearStressN", tmpreal2, IER)
     ENDIF
 
     IF(IO_CD) THEN
         CALL getCDOut(tmpreal1)
-        CALL cg_iRIC_Write_Sol_Real("Drag_Coefficient", tmpreal1, IER)
+        CALL cg_iRIC_Write_Sol_Node_Real(fid, "Drag_Coefficient", tmpreal1, IER)
     ENDIF
 
     IF(CALCCSED) THEN
         IF(TRANSEQTYPE == 2) THEN
             CALL GETSANDDEPTHOUT(tmpreal1)
-            CALL cg_iRIC_Write_Sol_Real("Sand_Depth", tmpreal1, IER)
+            CALL cg_iRIC_Write_Sol_Node_Real(fid, "Sand_Depth", tmpreal1, IER)
             CALL GETSANDFRACOUT(tmpreal1)
-            CALL cg_iRIC_Write_Sol_Real("Sand_Fraction", tmpreal1, IER)
+            CALL cg_iRIC_Write_Sol_Node_Real(fid, "Sand_Fraction", tmpreal1, IER)
             CALL GETLSUBHOUT(tmpreal1)
-            CALL cg_iRIC_Write_Sol_Real("LSub", tmpreal1, IER)
+            CALL cg_iRIC_Write_Sol_Node_Real(fid, "LSub", tmpreal1, IER)
 
         ENDIF
         CALL GetTransportRateOut(tmpreal1, tmpreal2)
-        CALL cg_iRIC_Write_Sol_Real("SedFluxX", tmpreal1, IER)
-        CALL cg_iRIC_Write_Sol_Real("SedFluxY", tmpreal2, IER)
+        CALL cg_iRIC_Write_Sol_Node_Real(fid, "SedFluxX", tmpreal1, IER)
+        CALL cg_iRIC_Write_Sol_Node_Real(fid, "SedFluxY", tmpreal2, IER)
     ENDIF
 
     IF(IO_StressDiv) THEN
         CALL GetStressDivOut(tmpreal1)
         IF(CALCCSED) THEN
-            CALL cg_iRIC_Write_Sol_Real("Erosion Rate", tmpreal1, IER)
+            CALL cg_iRIC_Write_Sol_Node_Real(fid, "Erosion Rate", tmpreal1, IER)
         ELSE
-            CALL cg_iRIC_Write_Sol_Real("Shear Stress Divergence", tmpreal1, IER)
+            CALL cg_iRIC_Write_Sol_Node_Real(fid, "Shear Stress Divergence", tmpreal1, IER)
         ENDIF
     ENDIF
 
     IF(CALCQUASI3D.and.IO_HELIX) THEN
         CALL getHelixOut(tmpreal1)
-        CALL cg_iRIC_Write_Sol_Real("Helix Strength", tmpreal1, IER)
+        CALL cg_iRIC_Write_Sol_Node_Real(fid, "Helix Strength", tmpreal1, IER)
         !            CALL getRSOut(tmpreal1)
         !            CALL cg_iRIC_Write_Sol_Real_f("RS", tmpreal1, IER)
         !            CALL getThetaOut(tmpreal1)
@@ -979,6 +981,7 @@
     END DO
 
     END SUBROUTINE
+#if 0
     SUBROUTINE write_error_CGNS(OutputFile)
     !		USE USER32
     IMPLICIT NONE
@@ -1060,8 +1063,9 @@
         END SELECT
     ENDDO
 
-    CALL cg_close(FID, IER)
+    CALL cg_iric_close(FID, IER)
 
     END SUBROUTINE
+#endif
 
     END MODULE

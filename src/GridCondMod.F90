@@ -4,9 +4,11 @@
 
 
     CONTAINS
-    SUBROUTINE CGNS2_Read_GridCondition(IER)
+    SUBROUTINE CGNS2_Read_GridCondition(FID, IER)
+    USE iric
     IMPLICIT NONE
 
+    INTEGER, INTENT(IN) :: FID
     INTEGER, INTENT(OUT) :: IER
     INTEGER :: status, i, j, count, countji, ierror
     REAL(KIND=mp), ALLOCATABLE, DIMENSION(:) :: tmpreal4

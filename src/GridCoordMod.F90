@@ -8,16 +8,18 @@
     REAL(KIND=mp) :: stot, scals
 
     CONTAINS
-    SUBROUTINE CGNS2_READ_GRIDCOORD(IER)
+    SUBROUTINE CGNS2_READ_GRIDCOORD(FID, IER)
+    use iric
     IMPLICIT NONE
 
+    INTEGER, INTENT(IN) :: FID
     INTEGER, INTENT(OUT) :: IER
     INTEGER :: status, i, j, count, countji, ierror
     INTEGER :: tmpnn, tmpns
     REAL(kind = mp), ALLOCATABLE, DIMENSION(:,:) :: tmpx1, tmpy1
     !	REAL*8, ALLOCATABLE, DIMENSION(:) :: tmpx, tmpy
 
-    CALL CG_IRIC_GOTOGRIDCOORD2D(tmpns, tmpnn, IER)
+    CALL cg_iRIC_Read_Grid2d_Str_Size(fid, tmpns, tmpnn, IER)
     ns2 = tmpns
     ns = tmpns+nsext
     nn = tmpnn
@@ -40,7 +42,7 @@
     !    write(*,*) 'after allocation1 \n %d', ier
     ALLOCATE(tmpy1(tmpns,tmpnn), STAT=IER)
     !	write(*,*) 'after allocation2\n %d', ier
-    CALL CG_IRIC_GETGRIDCOORD2D(tmpx1,tmpy1,IER)
+    CALL cg_iRIC_Read_Grid2d_Coords(fid, tmpx1,tmpy1,IER)
     !	write(*,*) 'after iRIC CALL \n %d', ier
     !	CALL CG_IRIC_GETGRIDCOORD2D(x,y,IER)
     ns2 = tmpns

@@ -104,16 +104,16 @@ jobs:
     - name: Prepare solver package directories
       shell: pwsh
       run: |
-        if (-Not Test-Path .\${{env.ONLINE_UPDATE_SRC_DIR}}\${{env.PACKAGE_DIR}}\data) {
+        if (-Not (Test-Path .\${{env.ONLINE_UPDATE_SRC_DIR}}\${{env.PACKAGE_DIR}}\data)) {
           New-Item -Type Directory .\${{env.ONLINE_UPDATE_SRC_DIR}}\${{env.PACKAGE_DIR}}\data
         }
-        if (-Not Test-Path .\${{env.ONLINE_UPDATE_SRC_DIR}}\${{env.PACKAGE_DIR}}\meta) {
+        if (-Not (Test-Path .\${{env.ONLINE_UPDATE_SRC_DIR}}\${{env.PACKAGE_DIR}}\meta)) {
           New-Item -Type Directory .\${{env.ONLINE_UPDATE_SRC_DIR}}\${{env.PACKAGE_DIR}}\meta
         }
-        if (-Not Test-Path -Path .\${{env.ONLINE_UPDATE_SRC_DIR}}\${{env.PACKAGE_DIR}}\meta\package.xml) {
+        if (-Not (Test-Path -Path .\${{env.ONLINE_UPDATE_SRC_DIR}}\${{env.PACKAGE_DIR}}\meta\package.xml)) {
           Copy-Item .\${{env.ONLINE_UPDATE_SRC_DIR_DEFAULT}}\${{env.PACKAGE_DIR}}\meta\package.xml .\${{env.ONLINE_UPDATE_SRC_DIR}}\${{env.PACKAGE_DIR}}\meta\.
         }
-        if (-Not Test-Path -Path .\${{env.ONLINE_UPDATE_SRC_DIR}}\${{env.PACKAGE_DIR}}\meta\installscript.qs) {
+        if (-Not (Test-Path -Path .\${{env.ONLINE_UPDATE_SRC_DIR}}\${{env.PACKAGE_DIR}}\meta\installscript.qs)) {
           Copy-Item .\${{env.ONLINE_UPDATE_SRC_DIR_DEFAULT}}\${{env.PACKAGE_DIR}}\meta\installscript.qs .\${{env.ONLINE_UPDATE_SRC_DIR}}\${{env.PACKAGE_DIR}}\meta\.
         }
 

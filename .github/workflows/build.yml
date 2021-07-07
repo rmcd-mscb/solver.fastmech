@@ -7,7 +7,11 @@ on:
 
 env:
   # online_update directory
-  PACKAGE_DATA_DIR: online_update\yasu_src\packages\solver.fastmech\data
+  PACKAGE_DIR: packages\solver.fastmech    # @todo simplify to solver.fastmech ???
+
+  # online_update src directory
+  ONLINE_UPDATE_SRC_DIR: online_update\yasu_src                   # @todo simplify to yasu_src ???
+  ONLINE_UPDATE_SRC_DIR_DEFAULT: online_update\dev_src            # @todo simplify to dev_src ???
 
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
   BUILD_TYPE: RelWithDebInfo
@@ -51,10 +55,6 @@ jobs:
         persist-credentials: false                # required to commit with a Personal access token
         path: online_update
 
-    - name: Debug 1
-      shell: pwsh
-      run: Get-ChildItem -Recurse
-
     - name: Download latest iricsdk
       shell: pwsh
       run: |
@@ -64,7 +64,6 @@ jobs:
         $latest = (Invoke-WebRequest -Uri $env:IRICLIB_API_URL/releases/latest -Method GET).Content | ConvertFrom-Json
         $url = ($latest.assets | Where-Object {$_.name -match "^iricsdk-(?<major>0|[1-9]\d*)\.(?<minor>[0|1-9]\d*)\.(?<patch>[0|1-9]\d*)\.7z$"}).browser_download_url
         curl -LO $url
-        mkdir c:\iricdev\lib
         $7zfile = $matches[0]
         7z x $7zfile
         del $7zfile
@@ -81,15 +80,11 @@ jobs:
     - name: Configure CMake
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
       # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
-      run: cmake -S ${{github.workspace}}/${{env.SOURCE_DIR}} -B ${{github.workspace}}/${{env.BUILD_DIR}} -DCMAKE_PREFIX_PATH=${{github.workspace}}/iricsdk/iriclib-${{env.IRICLIB_VERSION}}/lib/cmake/iriclib -DCMAKE_INSTALL_PREFIX=${{github.workspace}}/${{env.INSTALL_DIR}}
+      run: cmake -S ${{github.workspace}}\${{env.SOURCE_DIR}} -B ${{github.workspace}}\${{env.BUILD_DIR}} -DCMAKE_PREFIX_PATH=${{github.workspace}}\iricsdk\iriclib-${{env.IRICLIB_VERSION}}\lib\cmake\iriclib -DCMAKE_INSTALL_PREFIX=${{github.workspace}}\${{env.INSTALL_DIR}}
 
     - name: Build
       # Build your program with the given configuration
-      run: cmake --build ${{github.workspace}}/${{env.BUILD_DIR}} --config ${{env.BUILD_TYPE}}
-
-    - name: Debug 2
-      shell: pwsh
-      run: Get-ChildItem -Recurse
+      run: cmake --build ${{github.workspace}}\${{env.BUILD_DIR}} --config ${{env.BUILD_TYPE}}
 
     # @todo
     # - name: Test
@@ -104,19 +99,35 @@ jobs:
 
     - name: Install
       # Build your program with the given configuration
-      run: cmake --build ${{github.workspace}}/${{env.BUILD_DIR}} --config ${{env.BUILD_TYPE}} --target install
+      run: cmake --build ${{github.workspace}}\${{env.BUILD_DIR}} --config ${{env.BUILD_TYPE}} --target install
+
+    - name: Prepare solver package directories
+      shell: pwsh
+      run: |
+        if (-Not Test-Path .\${{env.ONLINE_UPDATE_SRC_DIR}}\${{env.PACKAGE_DIR}}\data) {
+          New-Item -Type Directory .\${{env.ONLINE_UPDATE_SRC_DIR}}\${{env.PACKAGE_DIR}}\data
+        }
+        if (-Not Test-Path .\${{env.ONLINE_UPDATE_SRC_DIR}}\${{env.PACKAGE_DIR}}\meta) {
+          New-Item -Type Directory .\${{env.ONLINE_UPDATE_SRC_DIR}}\${{env.PACKAGE_DIR}}\meta
+        }
+        if (-Not Test-Path -Path .\${{env.ONLINE_UPDATE_SRC_DIR}}\${{env.PACKAGE_DIR}}\meta\package.xml) {
+          Copy-Item .\${{env.ONLINE_UPDATE_SRC_DIR_DEFAULT}}\${{env.PACKAGE_DIR}}\meta\package.xml .\${{env.ONLINE_UPDATE_SRC_DIR}}\${{env.PACKAGE_DIR}}\meta\.
+        }
+        if (-Not Test-Path -Path .\${{env.ONLINE_UPDATE_SRC_DIR}}\${{env.PACKAGE_DIR}}\meta\installscript.qs) {
+          Copy-Item .\${{env.ONLINE_UPDATE_SRC_DIR_DEFAULT}}\${{env.PACKAGE_DIR}}\meta\installscript.qs .\${{env.ONLINE_UPDATE_SRC_DIR}}\${{env.PACKAGE_DIR}}\meta\.
+        }
 
     - name: Copy to package data directory
       shell: pwsh
       run: |
-        Copy-Item .\${{env.INSTALL_DIR}}\bin\* .\${{env.PACKAGE_DATA_DIR}}\.
+        Copy-Item .\${{env.INSTALL_DIR}}\bin\* .\${{env.ONLINE_UPDATE_SRC_DIR}}\${{env.PACKAGE_DIR}}\data\.
         Set-Location online_update
         git status
 
     - name: Run copy_release_and_version.py
       shell: pwsh
       run: |
-        Set-Location online_update\dev_src && python .\copy_release_and_version.py
+        Set-Location .\${{env.ONLINE_UPDATE_SRC_DIR}}\. && python .\copy_release_and_version.py
         Set-Location ..
         git status
 
@@ -139,10 +150,11 @@ jobs:
     - name: Run build_update_repository.py
       shell: pwsh
       run: |
-        Set-Location online_update\dev_src
+        Set-Location .\${{env.ONLINE_UPDATE_SRC_DIR}}\.
         Write-Output "QT_IFW_PATH = 'C:\\Qt\\Tools\\QtInstallerFramework\\$env:IFW_VERSION'" > qt_ifw_path.py
         python .\build_update_repository.py
         Set-Location ..
+        git add -A
         git status
 
     - name: Commit and push branch

@@ -61,9 +61,9 @@ jobs:
         $url = ($latest.assets | Where-Object {$_.name -match "^iricsdk-(?<major>0|[1-9]\d*)\.(?<minor>[0|1-9]\d*)\.(?<patch>[0|1-9]\d*)\.7z$"}).browser_download_url
         curl -LO $url
         mkdir c:\iricdev\lib
-        $zipfile = $matches[0]
-        7z x -oC:\iricdev\lib $zipfile
-        del $zipfile
+        $7zfile = $matches[0]
+        7z x $7zfile
+        del $7zfile
         # export environment variable IRICLIB_VERSION for later steps
         Write-Output "IRICLIB_VERSION=$($matches.major).$($matches.minor).$($matches.patch)" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
 
@@ -77,7 +77,7 @@ jobs:
     - name: Configure CMake
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
       # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
-      run: cmake -S ${{github.workspace}}/${{env.SOURCE_DIR}} -B ${{github.workspace}}/${{env.BUILD_DIR}} -DCMAKE_PREFIX_PATH=C:/iricdev/lib/install/iriclib-${{env.IRICLIB_VERSION}}/lib/cmake/iriclib -DCMAKE_INSTALL_PREFIX=${{github.workspace}}/${{env.INSTALL_DIR}}
+      run: cmake -S ${{github.workspace}}/${{env.SOURCE_DIR}} -B ${{github.workspace}}/${{env.BUILD_DIR}} -DCMAKE_PREFIX_PATH=${{github.workspace}}/iricsdk/iriclib-${{env.IRICLIB_VERSION}}/lib/cmake/iriclib -DCMAKE_INSTALL_PREFIX=${{github.workspace}}/${{env.INSTALL_DIR}}
 
     - name: Build
       # Build your program with the given configuration

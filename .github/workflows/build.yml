@@ -73,9 +73,9 @@ jobs:
     - name: Install oneAPI Fortran
       shell: cmd
       run: |
-        curl -fSLo %WINDOWS_HPCKIT_FILE% %WINDOWS_HPCKIT_URL%
-        start /b /wait %WINDOWS_HPCKIT_FILE% -s -x -f hpckit_extracted --log hpckit_extracted.log
-        hpckit_extracted\bootstrapper.exe -s --action install --components=%WINDOWS_HPCKIT_COMPONENTS% --eula=accept --continue-with-optional-error=yes -p=NEED_VS2017_INTEGRATION=0 -p=NEED_VS2019_INTEGRATION=1 --log-dir=.
+        curl -fSLo ${{env.WINDOWS_HPCKIT_FILE}} ${{env.WINDOWS_HPCKIT_URL}}
+        start /b /wait ${{env.WINDOWS_HPCKIT_FILE}} -s -x -f hpckit_extracted --log hpckit_extracted.log
+        hpckit_extracted\bootstrapper.exe -s --action install --components=${{env.WINDOWS_HPCKIT_COMPONENTS}} --eula=accept --continue-with-optional-error=yes -p=NEED_VS2017_INTEGRATION=0 -p=NEED_VS2019_INTEGRATION=1 --log-dir=.
 
     - name: Configure CMake
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
@@ -137,7 +137,7 @@ jobs:
         # GET /repos/{owner}/{repo}/releases/latest
         # see https://docs.github.com/en/rest/reference/repos#get-the-latest-release
         # see https://docs.github.com/ja/rest/reference/repos#get-the-latest-release
-        $latest = (Invoke-WebRequest -Uri $env:IFW_API_URL/releases/latest -Method GET).Content | ConvertFrom-Json
+        $latest = (Invoke-WebRequest -Uri ${{env.IFW_API_URL}}/releases/latest -Method GET).Content | ConvertFrom-Json
         $url = ($latest.assets | Where-Object {$_.name -match "^ifw-(?<major>0|[1-9]\d*)\.(?<minor>[0|1-9]\d*)\.7z$"}).browser_download_url
         curl -LO $url
         mkdir c:\Qt\Tools\QtInstallerFramework
@@ -147,11 +147,11 @@ jobs:
         # export environment variable IFW_VERSION for later steps
         Write-Output "IFW_VERSION=$($matches.major).$($matches.minor)" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
 
-    - name: Run repogen.exe
+    - name: Run QtInstallerFramework repogen.exe
       shell: pwsh
       run: |
         Set-Location .\${{env.ONLINE_UPDATE_SRC_DIR}}\.
-        $cmd = "C:\Qt\Tools\QtInstallerFramework\$env:IFW_VERSION\bin\repogen.exe"
+        $cmd = "C:\Qt\Tools\QtInstallerFramework\${{env.IFW_VERSION}}\bin\repogen.exe"
         &($cmd) -p packages --update --include ${{env.PACKAGE_DIR}} ..\yasu
         Set-Location ..
         git add -A

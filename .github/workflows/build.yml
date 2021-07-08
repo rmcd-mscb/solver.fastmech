@@ -7,7 +7,7 @@ on:
 
 env:
   # online_update directory
-  PACKAGE_DIR: packages\solver.fastmech    # @todo simplify to solver.fastmech ???
+  PACKAGE_DIR: solver.fastmech
 
   # online_update src directory
   ONLINE_UPDATE_SRC_DIR: online_update\yasu_src                   # @todo simplify to yasu_src ???
@@ -104,23 +104,24 @@ jobs:
     - name: Prepare solver package directories
       shell: pwsh
       run: |
-        if (-Not (Test-Path .\${{env.ONLINE_UPDATE_SRC_DIR}}\${{env.PACKAGE_DIR}}\data)) {
-          New-Item -Type Directory .\${{env.ONLINE_UPDATE_SRC_DIR}}\${{env.PACKAGE_DIR}}\data
+        if (-Not (Test-Path .\${{env.ONLINE_UPDATE_SRC_DIR}}\packages\${{env.PACKAGE_DIR}}\data)) {
+          New-Item -Type Directory .\${{env.ONLINE_UPDATE_SRC_DIR}}\packages\${{env.PACKAGE_DIR}}\data
         }
-        if (-Not (Test-Path .\${{env.ONLINE_UPDATE_SRC_DIR}}\${{env.PACKAGE_DIR}}\meta)) {
-          New-Item -Type Directory .\${{env.ONLINE_UPDATE_SRC_DIR}}\${{env.PACKAGE_DIR}}\meta
+        if (-Not (Test-Path .\${{env.ONLINE_UPDATE_SRC_DIR}}\packages\${{env.PACKAGE_DIR}}\meta)) {
+          New-Item -Type Directory .\${{env.ONLINE_UPDATE_SRC_DIR}}\packages\${{env.PACKAGE_DIR}}\meta
         }
-        if (-Not (Test-Path -Path .\${{env.ONLINE_UPDATE_SRC_DIR}}\${{env.PACKAGE_DIR}}\meta\package.xml)) {
-          Copy-Item .\${{env.ONLINE_UPDATE_SRC_DIR_DEFAULT}}\${{env.PACKAGE_DIR}}\meta\package.xml .\${{env.ONLINE_UPDATE_SRC_DIR}}\${{env.PACKAGE_DIR}}\meta\.
+        if (-Not (Test-Path -Path .\${{env.ONLINE_UPDATE_SRC_DIR}}\packages\${{env.PACKAGE_DIR}}\meta\package.xml)) {
+          Copy-Item .\${{env.ONLINE_UPDATE_SRC_DIR_DEFAULT}}\packages\${{env.PACKAGE_DIR}}\meta\package.xml .\${{env.ONLINE_UPDATE_SRC_DIR}}\packages\${{env.PACKAGE_DIR}}\meta\.
         }
         if (-Not (Test-Path -Path .\${{env.ONLINE_UPDATE_SRC_DIR}}\${{env.PACKAGE_DIR}}\meta\installscript.qs)) {
-          Copy-Item .\${{env.ONLINE_UPDATE_SRC_DIR_DEFAULT}}\${{env.PACKAGE_DIR}}\meta\installscript.qs .\${{env.ONLINE_UPDATE_SRC_DIR}}\${{env.PACKAGE_DIR}}\meta\.
+          Copy-Item .\${{env.ONLINE_UPDATE_SRC_DIR_DEFAULT}}\packages\${{env.PACKAGE_DIR}}\meta\installscript.qs .\${{env.ONLINE_UPDATE_SRC_DIR}}\packages\${{env.PACKAGE_DIR}}\meta\.
         }
+
 
     - name: Copy to package data directory
       shell: pwsh
       run: |
-        Copy-Item .\${{env.INSTALL_DIR}}\bin\* .\${{env.ONLINE_UPDATE_SRC_DIR}}\${{env.PACKAGE_DIR}}\data\.
+        Copy-Item .\${{env.INSTALL_DIR}}\bin\* .\${{env.ONLINE_UPDATE_SRC_DIR}}\packages\${{env.PACKAGE_DIR}}\data\.
         Set-Location online_update
         git status
 
@@ -147,12 +148,12 @@ jobs:
         # export environment variable IFW_VERSION for later steps
         Write-Output "IFW_VERSION=$($matches.major).$($matches.minor)" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
 
-    - name: Run build_update_repository.py
+    - name: Run repogen.exe
       shell: pwsh
       run: |
         Set-Location .\${{env.ONLINE_UPDATE_SRC_DIR}}\.
-        Write-Output "QT_IFW_PATH = 'C:\\Qt\\Tools\\QtInstallerFramework\\$env:IFW_VERSION'" > qt_ifw_path.py
-        python .\build_update_repository.py
+        $cmd = "C:\Qt\Tools\QtInstallerFramework\$env:IFW_VERSION\bin\repogen.exe"
+        &($cmd) -p packages --update --include ${{env.PACKAGE_DIR}} ..\yasu
         Set-Location ..
         git add -A
         git status

@@ -95,3 +95,20 @@ install(FILES definition.xml DESTINATION "${CMAKE_INSTALL_BINDIR}")
 # include(CTest)
 
 # add_subdirectory(tests)
+
+# POST_BUILD
+if (WIN32)
+  # ie "-DCMAKE_PREFIX_PATH=d:/Downloads/iriclib-artifacts/iricsdk-4.0.9/iriclib-4.0.9/lib/cmake/iriclib;d:/Downloads/iriclib-artifacts/iricsdk-4.0.9/hdf5-1.8.21/cmake/hdf5;d:/Downloads/iriclib-artifacts/iricsdk-4.0.9/poco-1.9.4/lib/cmake/Poco"
+  find_package(HDF5 1.8 REQUIRED)
+  find_package(PocoFoundation REQUIRED)
+  # copy reqd dlls to test1 directory
+  add_custom_command(TARGET Fastmech POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different "$<TARGET_FILE:iriclib::iriclib>"   "$<TARGET_FILE_DIR:Fastmech>"
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different "$<TARGET_FILE:Poco::Foundation>"   "$<TARGET_FILE_DIR:Fastmech>"
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different "$<TARGET_FILE:hdf5::hdf5-shared>"  "$<TARGET_FILE_DIR:Fastmech>"
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different "$<TARGET_FILE:zlib-shared>"        "$<TARGET_FILE_DIR:Fastmech>"
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different "$<TARGET_FILE:szip-shared>"        "$<TARGET_FILE_DIR:Fastmech>"
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different "$ENV{IFORT_COMPILER21}\\redist\\intel64_win\\compiler\\$<IF:$<CONFIG:Release>,libifcoremd.dll,libifcoremdd.dll>" "$<TARGET_FILE_DIR:Fastmech>"
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different "$ENV{IFORT_COMPILER21}\\redist\\intel64_win\\compiler\\$<IF:$<CONFIG:Release>,libmmd.dll,libmmdd.dll>"           "$<TARGET_FILE_DIR:Fastmech>"
+    )
+endif()

@@ -30,96 +30,98 @@
     !
     !  END SUBROUTINE Write_CGNS3D_SolGrid
 
-    !SUBROUTINE Write_CGNS3D_Grid()
-    !IMPLICIT NONE
-    !DOUBLE PRECISION, ALLOCATABLE, DIMENSION(:,:,:) :: tmpx3d, tmpy3d, tmpz3d
-    !INTEGER, ALLOCATABLE, DIMENSION(:,:,:) :: tmpint
-    !INTEGER :: ier
-    !CHARACTER(LEN=250) :: ZONENAME, BASENAME, USERNAME, SOLNAME
-    !INTEGER :: NUSER_DATA, USER_ITER, NZONES, ZONES_ITER
-    !INTEGER :: NBASES, BASES_ITER
-    !INTEGER :: BASE3DID, ZONE3DID
-    !INTEGER :: NSOLs, SOL_ITER, sindex
-    !INTEGER :: NGRIDS, GRIDS_ITER
-    !INTEGER :: F2DSOL_ITER, F3DSOL_ITER, F1DSOL_ITER, F2DSOL_EXT_ITER, FSOL_ITER
-    !INTEGER :: CELLDIM, PHYSDIM
-    !INTEGER :: GIndex, CIndex
-    !INTEGER, DIMENSION(3,3) :: isize
-    !INTEGER, DIMENSION(3) :: irmin, irmax
-    !CHARACTER(LEN = 250) :: name
-    !INTEGER, DIMENSION(2) :: idata
-    !
-    !ALLOCATE(tmpx3d(ns2, nn, nz), STAT = ier)
-    !ALLOCATE(tmpy3d(ns2, nn, nz), STAT = ier)
-    !ALLOCATE(tmpz3d(ns2, nn, nz), STAT = ier)
-    !
-    !CALL GETXYZ3DOUT(tmpx3d, tmpy3d, tmpz3d)
-    !
-    !CALL cg_nbases_f(FID, NBASES, IER)
-    !IF(NBASES.EQ.1) THEN
-    !    celldim = 3
-    !    physdim = 3
-    !    isize(1,1) = ns2
-    !    isize(2,1) = nn
-    !    isize(3,1) = nz
-    !
-    !    isize(1,2) =  isize(1,1)-1
-    !    isize(2,2) = isize(2,1)-1
-    !    isize(3,2) = isize(3,1)-1
-    !
-    !    isize(1,3) = 0
-    !    isize(2,3) = 0
-    !    isize(3,3) = 0
-    !
-    !    CALL cg_base_write_f(FID, "iRIC3D", celldim, physdim, BASE3DID, ier )
-    !    CALL cg_zone_write_f(FID, BASE3DID, "iRICZone", isize, Structured, ZONE3DID , ier )
-    !
-    !    CALL cg_grid_write_f(FID, BASE3DID, ZONE3DID, "GridCoordinates", GIndex, ier);
-    !    CALL cg_coord_write_f(FID, BASE3DID, ZONE3DID, RealDouble, "CoordinateX", tmpx3d, CIndex, ier);
-    !    CALL cg_coord_write_f(FID, BASE3DID, ZONE3DID, RealDouble, "CoordinateY", tmpy3d, CIndex, ier);
-    !    CALL cg_coord_write_f(FID, BASE3DID, ZONE3DID, RealDouble, "CoordinateZ", tmpz3d, CIndex, ier);
-    !
-    !    CAll cg_biter_write_f(FID, BASE3DID, 'BaseIterativeData', 1, ier);
-    !
-    !ELSE !iRIC3D already exists so delete BaseIterative, ZoneIterative and Solutions
-    !    IF(NBASES.ne.2) THEN
-    !        STOP 'Error in 3D CGNS FILE - Bases'
-    !        !PAUSE
-    !    ENDIF
-    !
-    !    BASES_ITER = 2 !Hardwired should be iRIC3D
-    !    ZONES_ITER = 1 !Hardwired should be iRICZone
-    !
-    !    CALL cg_goto_f(FID, 2, ier, 'END')
-    !    CALL cg_delete_node_f('BaseIterativeData', ier)
-    !    CALL cg_nzones_f(FID, BASES_ITER, NZONES, IER)
-    !    IF(NZONES.ne.1) THEN
-    !        STOP 'Error in 3D CGNS File - Zones'
-    !        !PAUSE
-    !    ENDIF
-    !    CALL cg_goto_f(FID, BASES_ITER, ier, 'Zone_t', ZONES_ITER, 'end')
-    !    !Delete existing solutions
-    !    CALL cg_nsols_F(FID, BASES_ITER, ZONES_ITER, nsols, ier);
-    !    DO SOL_ITER = 1,nsols
-    !        CALL cg_sol_info_f(FID, BASES_ITER, ZONES_ITER, 1, solname, sindex, ier)
-    !        CALL cg_delete_node_f(TRIM(solname), ier);
-    !    ENDDO
-    !    !Delete existing solution grids
-    !    CALL cg_ngrids_F(FID, BASES_ITER, ZONES_ITER, ngrids, ier);
-    !    DO GRIDS_ITER = 1,ngrids-1
-    !        CALL cg_grid_read_f(FID, BASES_ITER, ZONES_ITER, 2, solname, ier)
-    !        CALL cg_delete_node_F(TRIM(solname), ier);
-    !    ENDDO
-    !
-    !    !Delete ZoneIterative Node
-    !    CALL cg_goto_f(FID, BASES_ITER, ier, "Zone_t", ZONES_ITER, "end")
-    !    CALL cg_delete_node_f('ZoneIterativeData', ier)
-    !
-    !ENDIF
-    !
-    !DEALLOCATE(tmpx3d, tmpy3d, tmpz3d, STAT = ier)
-    !
-    !END SUBROUTINE Write_CGNS3D_Grid
+#if 0
+    SUBROUTINE Write_CGNS3D_Grid()
+    IMPLICIT NONE
+    DOUBLE PRECISION, ALLOCATABLE, DIMENSION(:,:,:) :: tmpx3d, tmpy3d, tmpz3d
+    INTEGER, ALLOCATABLE, DIMENSION(:,:,:) :: tmpint
+    INTEGER :: ier
+    CHARACTER(LEN=250) :: ZONENAME, BASENAME, USERNAME, SOLNAME
+    INTEGER :: NUSER_DATA, USER_ITER, NZONES, ZONES_ITER
+    INTEGER :: NBASES, BASES_ITER
+    INTEGER :: BASE3DID, ZONE3DID
+    INTEGER :: NSOLs, SOL_ITER, sindex
+    INTEGER :: NGRIDS, GRIDS_ITER
+    INTEGER :: F2DSOL_ITER, F3DSOL_ITER, F1DSOL_ITER, F2DSOL_EXT_ITER, FSOL_ITER
+    INTEGER :: CELLDIM, PHYSDIM
+    INTEGER :: GIndex, CIndex
+    INTEGER, DIMENSION(3,3) :: isize
+    INTEGER, DIMENSION(3) :: irmin, irmax
+    CHARACTER(LEN = 250) :: name
+    INTEGER, DIMENSION(2) :: idata
+    
+    ALLOCATE(tmpx3d(ns2, nn, nz), STAT = ier)
+    ALLOCATE(tmpy3d(ns2, nn, nz), STAT = ier)
+    ALLOCATE(tmpz3d(ns2, nn, nz), STAT = ier)
+    
+    CALL GETXYZ3DOUT(tmpx3d, tmpy3d, tmpz3d)
+    
+    CALL cg_nbases_f(FID, NBASES, IER)
+    IF(NBASES.EQ.1) THEN
+        celldim = 3
+        physdim = 3
+        isize(1,1) = ns2
+        isize(2,1) = nn
+        isize(3,1) = nz
+    
+        isize(1,2) =  isize(1,1)-1
+        isize(2,2) = isize(2,1)-1
+        isize(3,2) = isize(3,1)-1
+    
+        isize(1,3) = 0
+        isize(2,3) = 0
+        isize(3,3) = 0
+    
+        CALL cg_base_write_f(FID, "iRIC3D", celldim, physdim, BASE3DID, ier )
+        CALL cg_zone_write_f(FID, BASE3DID, "iRICZone", isize, Structured, ZONE3DID , ier )
+    
+        CALL cg_grid_write_f(FID, BASE3DID, ZONE3DID, "GridCoordinates", GIndex, ier);
+        CALL cg_coord_write_f(FID, BASE3DID, ZONE3DID, RealDouble, "CoordinateX", tmpx3d, CIndex, ier);
+        CALL cg_coord_write_f(FID, BASE3DID, ZONE3DID, RealDouble, "CoordinateY", tmpy3d, CIndex, ier);
+        CALL cg_coord_write_f(FID, BASE3DID, ZONE3DID, RealDouble, "CoordinateZ", tmpz3d, CIndex, ier);
+    
+        CAll cg_biter_write_f(FID, BASE3DID, 'BaseIterativeData', 1, ier);
+    
+    ELSE !iRIC3D already exists so delete BaseIterative, ZoneIterative and Solutions
+        IF(NBASES.ne.2) THEN
+            STOP 'Error in 3D CGNS FILE - Bases'
+            !PAUSE
+        ENDIF
+    
+        BASES_ITER = 2 !Hardwired should be iRIC3D
+        ZONES_ITER = 1 !Hardwired should be iRICZone
+    
+        CALL cg_goto_f(FID, 2, ier, 'END')
+        CALL cg_delete_node_f('BaseIterativeData', ier)
+        CALL cg_nzones_f(FID, BASES_ITER, NZONES, IER)
+        IF(NZONES.ne.1) THEN
+            STOP 'Error in 3D CGNS File - Zones'
+            !PAUSE
+        ENDIF
+        CALL cg_goto_f(FID, BASES_ITER, ier, 'Zone_t', ZONES_ITER, 'end')
+        !Delete existing solutions
+        CALL cg_nsols_F(FID, BASES_ITER, ZONES_ITER, nsols, ier);
+        DO SOL_ITER = 1,nsols
+            CALL cg_sol_info_f(FID, BASES_ITER, ZONES_ITER, 1, solname, sindex, ier)
+            CALL cg_delete_node_f(TRIM(solname), ier);
+        ENDDO
+        !Delete existing solution grids
+        CALL cg_ngrids_F(FID, BASES_ITER, ZONES_ITER, ngrids, ier);
+        DO GRIDS_ITER = 1,ngrids-1
+            CALL cg_grid_read_f(FID, BASES_ITER, ZONES_ITER, 2, solname, ier)
+            CALL cg_delete_node_F(TRIM(solname), ier);
+        ENDDO
+    
+        !Delete ZoneIterative Node
+        CALL cg_goto_f(FID, BASES_ITER, ier, "Zone_t", ZONES_ITER, "end")
+        CALL cg_delete_node_f('ZoneIterativeData', ier)
+    
+    ENDIF
+    
+    DEALLOCATE(tmpx3d, tmpy3d, tmpz3d, STAT = ier)
+    
+    END SUBROUTINE Write_CGNS3D_Grid
+#endif
 
 #if 0
     SUBROUTINE Write_CGNS3D_FixedBed(solIndex, time, disch)

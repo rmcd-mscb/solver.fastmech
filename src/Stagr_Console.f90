@@ -14,17 +14,17 @@
 
     program Stagr_Console
     USE RivStagr4Mod_jmn
+    USE IRICMI
     implicit none
     INTEGER(4) count, num, i, status
     CHARACTER(LEN=250) buf
-    !      count = NARGS()
-
-    !      CALL GETARG(1, buf, status)
-    CALL GETARG(1, buf) !gnu fortran only take 2 args
-    !IF (status .lt. 0) THEN
-    !    WRITE (*,*) 'GETARG error - exiting'
-    !    !            EXIT
-    !END IF
+    count = COMMAND_ARGUMENT_COUNT()
+    IF(count.lt.1) then
+        buf='No CGNS file'
+        write(0,*) buf
+    else
+        CALL GET_COMMAND_ARGUMENT(1, buf)
+    END IF
     CALL STAGR4(buf)
 
     ! Variables

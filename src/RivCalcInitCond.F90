@@ -21,7 +21,7 @@
     INTEGER :: nx2, ny2,icount
 
     !Calc Init Water Surface Elevation
-
+    write(0,*) wstype
     IF(wsType.eq.0) THEN !Constant slope using upper water surface elevation
 
         tslope = (wsupelev-wselev)/(ns*scals)
@@ -67,6 +67,7 @@
                 ENDIF
             enddo
         enddo
+        write(0,*) 'through wstype 2 loop'
 
         !    DO i = 1,ns
         !        DO j = 1,nn
@@ -83,10 +84,13 @@
         !        ENDDO
         !    ENDDO
         if(varDischType == 1) then !Discharge Time Series
+            write(0,*) 'Entering getinterptimeseriesvalue'
             CALL getInterpTimeSeriesValue(1, VarDischStartTime, tmpq)
+            write(0,*) 'Leaving gitsv'
         else
             tmpq = q/1e6
         endif
+        write(0,*) tmpq, 'got q'
 
         if(varStageType == 1) then !Stage Time Series
             CALL getInterpRatingCurveValue(1, VarDischStartTime, tmpwselev)
@@ -99,6 +103,7 @@
         else
             tmpwselev = wselev/100
         endif
+        write(0,*) tmpwselev, 'got stage'
         !Check downstream Boundary, Jims 1D code will calculate a new wse if the given is too low
         !added code block below to exit if user defined boundary stage is lower than
         !downstream boundary elevation.  
@@ -126,7 +131,9 @@
         !    ENDIF
         !endif
         !    CALL NETPREIS2(ns, nn, ttopo, tx, ty, ONEDCD, tmpq/1e6, tmpwselev/100., hav )
+        write(0,*) 'Entering preisman'
         CALL NETPREIS2(ns, nn, ttopo, tx, ty, ONEDCD, tmpq, tmpwselev, hav )
+        write(0,*) 'leaving preisman'
         hav = hav*100
         DO I = 1,NS
             DO J = 1,NN

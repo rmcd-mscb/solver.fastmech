@@ -1,0 +1,6 @@
+C:\Users\jmn60\source\repos\Fastmech_iRIC_v3\src\ReadCGNS.F90(49): error #6305: An ELSE statement occurred without a corresponding IF THEN statement.
+    ELSE
+----^
+C:\Users\jmn60\source\repos\Fastmech_iRIC_v3\src\ReadCGNS.F90(51): error #6317: An ENDIF occurred without a corresponding IF THEN or ELSE statement.
+    ENDIF
+----^

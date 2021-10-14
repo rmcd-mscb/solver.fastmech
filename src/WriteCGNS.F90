@@ -4,6 +4,7 @@
     USE RivVarVertMod
     USE CalcCond
     USE READCGNS
+    USE IRICMI
     IMPLICIT NONE
 
     INTEGER :: tmpnx, tmpny
@@ -253,7 +254,7 @@
     ALLOCATE(ty(ns2, nn, nz), STAT = ier)
     ALLOCATE(tz(ns2, nn, nz), STAT = ier)
 
-    call cg_iric_write_sol_time_f(time, ier);
+    call cg_iric_write_sol_time_f(time, ier)
 
     CALL GETXYZ3DOUT(tx, ty, tz)
     call cg_iric_writegridcoord3d_f(tx, ty, tz, ier)
@@ -273,22 +274,53 @@
 
     END SUBROUTINE Write_CGNS3D_MoveableBed
 
-    SUBROUTINE Write_CGNS2(time, disch)
+    SUBROUTINE Write_CGNS2(time, disch, MIFLAG)
     IMPLICIT NONE
     REAL(KIND=mp), INTENT(IN) :: time, disch
+    INTEGER, INTENT(IN) :: MIFLAG
     INTEGER :: IER, iret
     INTEGER :: I,J
-    REAL(KIND=mp), ALLOCATABLE, DIMENSION(:,:) :: tmpreal1,  tmpreal2
-    REAL(KIND=mp), ALLOCATABLE, DIMENSION(:,:,:) :: tmpreal1a,  tmpreal2a, tmpreal3, tmpreal4, tmpreal5
+    REAL(KIND=mp), ALLOCATABLE, DIMENSION(:,:) :: tmpreal1, tmpreal2, tmpreal3, tmpreal4, tmpreal5
+    REAL(KIND=mp), ALLOCATABLE, DIMENSION(:,:) :: tmpreal6, tmpreal7, tmpreal8, tmpreal9, tmpreal10
+    REAL(KIND=mp), ALLOCATABLE, DIMENSION(:,:) :: tmpreal11, tmpreal12, tmpreal13, tmpreal14, tmpreal15
+    REAL(KIND=mp), ALLOCATABLE, DIMENSION(:,:) :: tmpreal16, tmpreal17, tmpreal18, tmpreal19, tmpreal20
+    REAL(KIND=mp), ALLOCATABLE, DIMENSION(:,:) :: tmpreal21, tmpreal22, tmpreal23,tmpreal24, tmpreal25
+    REAL(KIND=mp), ALLOCATABLE, DIMENSION(:,:) :: tmpreal26
+    REAL(KIND=mp), ALLOCATABLE, DIMENSION(:,:,:) :: tmpreal1a,  tmpreal2a
     REAL(KIND=mp), ALLOCATABLE, DIMENSION(:,:,:) :: tmpx3d, tmpy3d, tmpz3d
     INTEGER, ALLOCATABLE, DIMENSION(:,:,:) :: tmpint
-    INTEGER, ALLOCATABLE, DIMEnSION(:,:) :: tmp2dint
-    !		CALL CG_IRIC_WRITE_SOL_TIME_F(time, ier)
-
+    INTEGER, ALLOCATABLE, DIMEnSION(:,:) :: tmp2dint,tmp3dint
+   ! 		CALL CG_IRIC_WRITE_SOL_TIME_F(time, ier)
     ALLOCATE(tmpreal1(ns2, nn), STAT = ier)
     ALLOCATE(tmpreal2(ns2, nn), STAT = ier)
     ALLOCATE(tmp2dint(ns2, nn), STAT = ier)
-
+    ALLOCATE(tmp3dint(ns2, nn), STAT = ier)
+    ALLOCATE(tmpreal3(ns2, nn), STAT = ier)        
+    ALLOCATE(tmpreal4(ns2, nn), STAT = ier)
+    ALLOCATE(tmpreal5(ns2, nn), STAT = ier)        
+    ALLOCATE(tmpreal6(ns2, nn), STAT = ier) 
+    ALLOCATE(tmpreal7(ns2, nn), STAT = ier)
+    ALLOCATE(tmpreal8(ns2, nn), STAT = ier)
+    ALLOCATE(tmpreal9(ns2, nn), STAT = ier)
+    ALLOCATE(tmpreal10(ns2, nn), STAT = ier)
+    ALLOCATE(tmpreal11(ns2, nn), STAT = ier)
+    ALLOCATE(tmpreal12(ns2, nn), STAT = ier)
+    ALLOCATE(tmpreal13(ns2, nn), STAT = ier)
+    ALLOCATE(tmpreal14(ns2, nn), STAT = ier)
+    ALLOCATE(tmpreal15(ns2, nn), STAT = ier)
+    ALLOCATE(tmpreal16(ns2, nn), STAT = ier)
+    ALLOCATE(tmpreal17(ns2, nn), STAT = ier)
+    ALLOCATE(tmpreal18(ns2, nn), STAT = ier)
+    ALLOCATE(tmpreal19(ns2, nn), STAT = ier)
+    ALLOCATE(tmpreal20(ns2, nn), STAT = ier)
+    ALLOCATE(tmpreal21(ns2, nn), STAT = ier)
+    ALLOCATE(tmpreal22(ns2, nn), STAT = ier)
+    ALLOCATE(tmpreal23(ns2, nn), STAT = ier)
+    ALLOCATE(tmpreal24(ns2, nn), STAT = ier)
+    ALLOCATE(tmpreal25(ns2, nn), STAT = ier)
+    ALLOCATE(tmpreal26(ns2, nn), STAT = ier) 
+    Write(0,*)'Entering write_CGNS2, TIme, Discharge, MIFLAG=', time, disch, MIFLAG
+    IF(MIFLAG.eq.0) then 
     IF(CALCQUASI3D.and.IO_3DOUTPUT) THEN
         CALL getXYOut(tmpreal1, tmpreal2)
         CALL CG_IRIC_WRITE_SOL_GRIDCOORD2D_F(tmpreal1,tmpreal2,IER)
@@ -384,11 +416,137 @@
         !            CALL getThetaOut(tmpreal1)
         !            CALL cg_iRIC_Write_Sol_Real_f("Theta", tmpreal1, IER)
     ENDIF
+    Else
+        write(0,*) 'in mi write loop'
+        CALL IRICMI_ROUT_TIME(time,ier)
+        
+!        IF(CALCQUASI3D.and.IO_3DOUTPUT) THEN
+!        CALL getXYOut(tmpreal24, tmpreal25)
+!        CALL IRICMI_ROUT_GRID2D_REAL_NODE(tmpreal24,tmpreal25,IER)  use vals
+!        ENDIF
+        write(0,*) 'through xyout'
+        CALL GETIBCOUT(tmp2dint)
+        CALL IRICMI_ROUT_GRID2D_INTEGER_NODE("IBC", tmp2dint, IER)
+        write(0,*) 'through IBC'
+        CALL GETFMIBCOUT(tmp3dint)
+        CALL IRICMI_ROUT_GRID2D_INTEGER_NODE("FMIBC", tmp3dint, IER)
+        write(0,*) 'through FMIBC'
+        
+        CALL getVelocityOut(tmpreal1, tmpreal2)
+        CALL iRICMI_ROUT_GRID2D_REAL_NODE("VelocityX", tmpreal1, IER)
+        CALL iRICMI_ROUT_GRID2D_REAL_NODE("VelocityY", tmpreal2, IER)
 
+        CALL getDepthOut(tmpreal3)
+        CALL IRICMI_ROUT_GRID2D_REAL_NODE("Depth", tmpreal3, IER)
 
+        CALL getWSEOut(tmpreal26)
+        CALL IRICMI_ROUT_GRID2D_REAL_NODE("WaterSurfaceElevation", tmpreal26, IER)
+
+        CALL getElevationOut(tmpreal4)
+        CALL iRICMI_ROUT_GRID2D_REAL_NODE("Elevation", tmpreal4, IER)
+
+    IF(IO_VelSN) THEN
+        CALL GETVELOCITYSNOUT(tmpreal5, tmpreal6)
+        CALL iRICMI_ROUT_GRID2D_REAL_NODE("VelocityS", tmpreal5, IER)
+        CALL iRICMI_ROUT_GRID2D_REAL_NODE("VelocityN", tmpreal6, IER)
+    ENDIF
+
+    IF(IO_UnitDisch) THEN
+        CALL getUnitDischOut(tmpreal7, tmpreal8)
+        CALL iRICMI_ROUT_GRID2D_REAL_NODE("UnitDischargeX", tmpreal7, IER)
+        CALL iRICMI_ROUT_GRID2D_REAL_NODE("UnitDischargeY", tmpreal8, IER)
+    ENDIF
+
+    IF(IO_HArea) THEN
+        CALL getHAreaOut(tmpreal9)
+        CALL iRICMI_ROUT_GRID2D_REAL_NODE("HabitatArea", tmpreal9, IER)
+    ENDIF
+
+    IF(IO_InitVel) THEN
+        CALL getInitVelOut(tmpreal10, tmpreal11)
+        CALL iRICMI_ROUT_GRID2D_REAL_NODE("VelocityInitS", tmpreal10, IER)
+        CALL iRICMI_ROUT_GRID2D_REAL_NODE("VelocityInitN", tmpreal11, IER)
+    ENDIF
+
+    IF(IO_ShearXY) THEN
+        CALL GETSHEARSTRESSOUT(tmpreal12, tmpreal13)
+        CALL iRICMI_ROUT_GRID2D_REAL_NODE("ShearStressX", tmpreal12, IER)
+        CALL iRICMI_ROUT_GRID2D_REAL_NODE("ShearStressY", tmpreal13, IER)
+    ENDIF
+
+    IF(IO_ShearSN) THEN
+        CALL GETSHEARSTRESSSNOUT(tmpreal14, tmpreal15)
+        CALL iRICMI_ROUT_GRID2D_REAL_NODE("ShearStressS", tmpreal14, IER)
+        CALL iRICMI_ROUT_GRID2D_REAL_NODE("ShearStressN", tmpreal15, IER)
+    ENDIF
+
+    IF(IO_CD) THEN
+        CALL getCDOut(tmpreal16)
+        CALL iRICMI_ROUT_GRID2D_REAL_NODE("Drag_Coefficient", tmpreal16, IER)
+    ENDIF
+
+    IF(CALCCSED) THEN
+        IF(TRANSEQTYPE == 2) THEN
+            CALL GETSANDDEPTHOUT(tmpreal17)
+            CALL iRICMI_ROUT_GRID2D_REAL_NODE("Sand_Depth", tmpreal17, IER)
+            CALL GETSANDFRACOUT(tmpreal18)
+            CALL iRICMI_ROUT_GRID2D_REAL_NODE("Sand_Fraction", tmpreal18, IER)
+            CALL GETLSUBHOUT(tmpreal19)
+            CALL iRICMI_ROUT_GRID2D_REAL_NODE("LSub", tmpreal19, IER)
+
+        ENDIF
+        CALL GetTransportRateOut(tmpreal20, tmpreal21)
+        CALL iRICMI_ROUT_GRID2D_REAL_NODE("SedFluxX", tmpreal20, IER)
+        CALL iRICMI_ROUT_GRID2D_REAL_NODE("SedFluxY", tmpreal21, IER)
+    ENDIF
+
+    IF(IO_StressDiv) THEN
+        CALL GetStressDivOut(tmpreal22)
+        IF(CALCCSED) THEN
+            CALL iRICMI_ROUT_GRID2D_REAL_NODE("Erosion Rate", tmpreal22, IER)
+        ELSE
+            CALL iRICMI_ROUT_GRID2D_REAL_NODE("Shear Stress Divergence", tmpreal22, IER)
+        ENDIF
+    ENDIF
+
+    IF(CALCQUASI3D.and.IO_HELIX) THEN
+        CALL getHelixOut(tmpreal23)
+        CALL iRICMI_ROUT_GRID2D_REAL_NODE("Helix Strength", tmpreal23, IER)
+        !            CALL getRSOut(tmpreal1)
+        !            CALL cg_iRIC_Write_Sol_Real_f("RS", tmpreal1, IER)
+        !            CALL getThetaOut(tmpreal1)
+        !            CALL cg_iRIC_Write_Sol_Real_f("Theta", tmpreal1, IER)
+    ENDIF
+    CALL IRICMI_MODEL_DUMP(ier)
+    ENDIF
+    write(0,*) 'Leaving write_CGNS2'
     DEALLOCATE(tmpreal1, STAT=ier)
     DEALLOCATE(tmpreal2, STAT=ier)
     DEALLOCATE(tmp2dint, STAT=ier)
+    DEALLOCATE(tmpreal3, STAT=ier)
+    DEALLOCATE(tmpreal4, STAT=ier)
+    DEALLOCATE(tmpreal5, STAT=ier)
+    DEALLOCATE(tmpreal6, STAT=ier)
+    DEALLOCATE(tmpreal7, STAT=ier)
+    DEALLOCATE(tmpreal8, STAT=ier)
+    DEALLOCATE(tmpreal9, STAT=ier)
+    DEALLOCATE(tmpreal10, STAT=ier)
+    DEALLOCATE(tmpreal11, STAT=ier)
+    DEALLOCATE(tmpreal12, STAT=ier)
+    DEALLOCATE(tmpreal13, STAT=ier)
+    DEALLOCATE(tmpreal14, STAT=ier)
+    DEALLOCATE(tmpreal15, STAT=ier)
+    DEALLOCATE(tmpreal16, STAT=ier)
+    DEALLOCATE(tmpreal17, STAT=ier)
+    DEALLOCATE(tmpreal18, STAT=ier)
+    DEALLOCATE(tmpreal19, STAT=ier)
+    DEALLOCATE(tmpreal20, STAT=ier)
+    DEALLOCATE(tmpreal21, STAT=ier)
+    DEALLOCATE(tmpreal22, STAT=ier)
+    DEALLOCATE(tmpreal23, STAT=ier)
+    DEALLOCATE(tmpreal24, STAT=ier)
+    DEALLOCATE(tmpreal25, STAT=ier)
+    DEALLOCATE(tmpreal26, STAT=ier)
     !        IF(NZ.GT.0) THEN
     !!            CALL CG_IRIC_CREATE_3DBASEZONE_F(FID, NS, NN, NZ, X, Y, ZZ, IER)
     !!            CALL CG_IRIC_CREATE_3DFLOWSOL_F(FID, INDEX, NS, NN, NZ, IER)

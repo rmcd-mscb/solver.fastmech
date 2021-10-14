@@ -82,8 +82,8 @@
                     u(i,j) = 0.
                     v(i,j) = 0.
                 endif
-            else
-                e(i,j) = eta(i,j)
+!            else
+!                e(i,j) = eta(i,j)
             endif
 
         enddo
@@ -116,10 +116,10 @@
     REAL(KIND=mp), DIMENSION(ns, nn), INTENT(IN) :: eta
     REAL(KIND=mp), INTENT(in) :: dsstage
     INTEGER :: I, J, IM, JP, JM, IP
-    INTEGER :: change = -1
+    INTEGER :: change
     change = -1
     do while (change == -1)  !CURRENTLY FORCED TO PASS ONLY ONCE THROUGH LOOP
-        change = 1
+        change = 1 
         do  i=ns,1,-1
             do  j=2,nn-1
                 IF(i.EQ.1) THEN
@@ -143,8 +143,8 @@
                         u(im,j) = 0.
                         v(im,j) = 0.
                         change = -1
-                        !                        endif
-                    elseif(ibc(im,jp).eq.0.and.e(i,j).gt.eta(im,jp)+hwmin.and.i.gt.1)then
+                        endif
+                    if(ibc(im,jp).eq.0.and.e(i,j).gt.eta(im,jp)+hwmin.and.i.gt.1)then
                         if(jp < nn) then
                             hl(im,jp)=e(i,j)-eta(im,jp)
                             e(im,jp)=e(i,j)
@@ -153,8 +153,8 @@
                             v(im,jp) = 0.
                             change = -1
                         endif
-                        !                        endif
-                    elseif(ibc(im,jm).eq.0.and.e(i,j).gt.eta(im,jm)+hwmin.and.i.gt.1)then
+                        endif
+                    if(ibc(im,jm).eq.0.and.e(i,j).gt.eta(im,jm)+hwmin.and.i.gt.1)then
                         if(jm > 1) then
                             hl(im,jm)=e(i,j)-eta(im,jm)
                             e(im,jm)=e(i,j)
@@ -163,8 +163,8 @@
                             v(im,jm) = 0.
                             change = -1
                         endif
-                        !                        endif
-                    elseif(ibc(i,jp).eq.0.and.e(i,j).gt.eta(i,jp)+hwmin.and.i.le.ns.and.i.gt.1)then
+                    endif
+                    if(ibc(i,jp).eq.0.and.e(i,j).gt.eta(i,jp)+hwmin.and.i.le.ns.and.i.gt.1)then
                         if(jp < nn) then
                             hl(i,jp)=e(i,j)-eta(i,jp)
                             e(i,jp)=e(i,j)
@@ -173,8 +173,8 @@
                             v(i,jp) = 0.
                             change = -1
                         endif
-                        !                        endif
-                    elseif(ibc(i,jm).eq.0.and.e(i,j).gt.eta(i,jm)+hwmin.and.i.le.ns.and.i.gt.1)then
+                    endif
+                    if(ibc(i,jm).eq.0.and.e(i,j).gt.eta(i,jm)+hwmin.and.i.le.ns.and.i.gt.1)then
                         if(jm > 1) then
                             hl(i,jm)=e(i,j)-eta(i,jm)
                             e(i,jm)=e(i,j)
@@ -183,8 +183,8 @@
                             v(i,jm) = 0.
                             change = -1
                         endif
-                        !                        endif
-                    elseif(ibc(ip,jp).eq.0.and.e(i,j).gt.eta(ip,jp)+hwmin.AND.i .le. ns-2)then
+                    endif
+                    if(ibc(ip,jp).eq.0.and.e(i,j).gt.eta(ip,jp)+hwmin.AND.i .le. ns-2)then
                         if(jp < nn) then
                             hl(ip,jp)=(e(i,j)-eta(ip,jp))
                             !                            e(ip,jp)=hl(ip,jp)+eta(ip,jp)
@@ -198,8 +198,8 @@
                             v(ip,jp) = 0.
                             change = -1
                         endif
-                        !                        endif
-                    elseif(ibc(ip,j).eq.0.and.e(i,j).gt.eta(ip,j)+hwmin .AND.i .le. ns-2)then
+                    endif
+                    if(ibc(ip,j).eq.0.and.e(i,j).gt.eta(ip,j)+hwmin .AND.i .le. ns-2)then
                         hl(ip,j)=(e(i,j)-eta(ip,j))
                         !                            e(ip,j)=hl(ip,j)+eta(ip,j)
                         !                            e(ip,j)=e(i,j)
@@ -212,9 +212,8 @@
                         u(ip,j) = 0.
                         v(ip,j) = 0.
                         change = -1
-
-                        !                        endif
-                    elseif(ibc(ip,jm).eq.0.and.e(i,j).gt.eta(ip,jm)+hwmin .and.i .le. ns-2)then
+                    endif
+                    if(ibc(ip,jm).eq.0.and.e(i,j).gt.eta(ip,jm)+hwmin .and.i .le. ns-2)then
                         if(jm > 1) then
                             hl(ip,jm)=(e(i,j)-eta(ip,jm))
                             !                           e(ip,jm)=hl(ip,jm)+eta(ip,jm)
@@ -234,7 +233,7 @@
                 endif
             ENDDO
         ENDDO
-        change = 1
+        change = 1 
     ENDDO
     END SUBROUTINE UpdateWETTING
 

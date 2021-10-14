@@ -11,18 +11,18 @@ USE RivVarVertMod
 USE WriteCGNS
 USE RivVertMod
 USE StressDivMod
-!	USE CSedMod
 USE UInitMod
 USE TRIDIAG
-
 USE RivRoughnessMod
 USE RivVarTimeMod
 USE RivConnectivityMod
+
+USE IRICMI
 IMPLICIT NONE
 
 CONTAINS
 
-SUBROUTINE STAGR4(STR_IN )
+SUBROUTINE STAGR4(STR_IN)
 IMPLICIT NONE
 INCLUDE "iriclib_f.h"
 CHARACTER(LEN=*), INTENT(IN) :: STR_IN
@@ -41,7 +41,7 @@ REAL(KIND=mp) :: dube
 REAL(KIND=mp) :: sumqpdiff
 INTEGER, PARAMETER :: num_string = 4
 INTEGER :: i, j, nct, jswi, j1, j2, j3
-REAL(KIND=mp) :: plinc
+REAL(KIND=mp) :: plinc, synctime
 LOGICAL :: lwet, doagain
 
 !	output vars
@@ -60,8 +60,8 @@ INTEGER :: nclusters, nwetnodes, noldwetnodes
 REAL(KIND=mp) :: nodechange
 REAL(KIND=mp) :: dDisch, dStage, newStage, oldStage, newDisch, oldDisch, dsstage
 !   tmpVars
-REAL(KIND=mp) :: tmpLEV, tmpvardt
-INTEGER :: ier
+REAL(KIND=mp) :: tmpLEV, tmpvardt, dumpinterval, q_ups
+INTEGER :: ier, MIFLAG
 
 CHARACTER(20) text
 INTEGER(4) iret
@@ -77,8 +77,15 @@ rho=1.
 vkc=0.40
 solIndex = 0
 CALL WELCOME
-CALL read_iRIC_CGNS(STR_IN)
-
+IF(STR_IN.eq."No CGNS file") then
+    MIFLAG=1
+    Call IRICMI_Model_Init(ier)
+    Else
+    MIFLAG=0
+Endif
+Call read_iRIC_CGNS(STR_IN, MIFLAG)
+write(0,*) MIFLAG, baseflow, 'miflag  ', 'Baseflow'
+write(0,*) VarDischStartTime, VarDischType, newDisch
 imod = hiterinterval
 if(hcalcwetting) then
     iwetdry = 1
@@ -91,26 +98,33 @@ endif
 CALL Calc_Area(x, y, xo, yo, nm, dn, harea)
 
 !pause
-65  format(25f6.2)
-if(varDischType == 1) then !Discharge Time Series
+65 format(25f6.2)
+IF(miflag.eq.0) then
+  if(varDischType == 1) then !Discharge Time Series
     CALL getInterpTimeSeriesValue(1, VarDischStartTime, newDisch)
+    write(*,*) 'newDisch', newDisch
     q = newDisch*1e6
-else
+  else
     newDisch = q/1e6
-endif
-
+  endif
+else
+    newDisch=baseflow
+    q=newDisch*1e6
+Endif
+write(*,*) q, newDisch, varStageType, varDischType, 'initial values'
 if(varStageType == 1) then !Stage Time Series
     !in this case the times series is stored in the rating curve
     CALL getInterpRatingCurveValue(1, VarDischStartTime, newStage)
     !        newStage = (newStage-elevoffset) * 100.
 else if (varStageType == 2) then !Stage Rating Curve
+    write(*,*) newDisch
     Call getInterpRatingCurveValue(1, newDisch, newStage)
-    !        newStage = (newStage-elevoffset) * 100.
+   !        newStage = (newStage-elevoffset) * 100.
 endif
-
+write(*,*) newStage, 'initial stage'
 !    if(cdtype == 1) then !variable roughness
 !        CALL setRoughness(ns, nn, roughnessType, newDisch, cd, znaught)
-!    endif
+!    
 
 !    CALL Label_clusters(-1, ibc, nclusters, icon)
 !    CALL Delete_clusters(ibc, icon, nclusters, nwetnodes)
@@ -166,9 +180,27 @@ newStage = oldStage
 oldDisch = q
 nct = -1
 totTime = VarDischStartTime
-ptime = totTime+iplinc*dt
-
+plinc=iplinc*dt
+ptime = totTime+plinc
+write(0,*) 'plottime=', ptime
+IF(MIFLAG.NE.0) then
+     write(0,*) imodcoupling, dt, 'imodcoupling and dt'
+     synctime=imodcoupling*dt
+     dumpinterval=-1.
+     write(0,*) totTime,'tottime'
+     CALL IRICMI_ROUT_TIME(totTime, ier)
+     write(0,*) synctime, 'synctime'
+     CAll IRICMI_ROUT_EXCHANGE_INTERVAL(synctime,ier)
+     CALL IRICMI_ROUT_DUMP_INTERVAL(dumpinterval,ier)
+     call IRICMI_RIN_REAL('VarDischarge', q_ups, ier)
+!     q_ups=0.
+     q=(baseflow+q_ups)*1e6
+     call IRICMI_MODEL_SYNC(ier)
+     write(0,*) 'called rinreal and sync, q, q_ups and ier= ', q, q_ups, ier
+endif
+     write(0,*) 'initial discharge= ', q
 do while(totTime <= VarDischEndTime)
+    write(0,*) totTime, 'Total Time'
     nct = nct+1
 
     if(nct > 0.and.solType == 0) then
@@ -190,21 +222,27 @@ do while(totTime <= VarDischEndTime)
         vardt = dt
     endif
 
-    oldDisch = q
-    oldStage = newStage
-
     if(nct > 0) then
         totTime = totTime+vardt
         if(totTime > VarDischEndTime) then
-            RETURN
+            GO to 1000
         endif
-    endif
-
-    if(varDischType == 1) then !Update Discharge
-        CALL getInterpTimeSeriesValue(1, totTime, newDisch)
-        q = newDisch*1e6
-    endif
-    dDisch = q-oldDisch
+        oldDisch = q/1e6
+        oldStage = newStage
+      IF(MIFLAG.eq.0) then
+        if(varDischType == 1) then !Update Discharge
+          CALL getInterpTimeSeriesValue(1, totTime, newDisch)
+          q = newDisch*1e6
+          write(0,*) newDisch, 'newdisch within time loop', totTime, 'Time'
+        endif
+      ELSE
+        Call iricmi_model_sync(ier)
+        newdisch=(baseflow+q_ups)
+        q=newdisch*1e6
+        write(0,*) 'Time, Q, QUPS, baseflow, IER= ', totTime, q, q_ups, baseflow, ier
+      ENDIF
+    Endif
+    dDisch = (q/1e6)-oldDisch
 
     if(varStageType == 1) then !Stage Time Series
         CALL getInterpRatingCurveValue(1, totTime, newStage)
@@ -213,8 +251,9 @@ do while(totTime <= VarDischEndTime)
         Call getInterpRatingCurveValue(1, newDisch, newStage)
         !            newStage = newStage * 100.
     endif
-
+    write(0,*) newStage, oldStage, 'stages new and old'
     dStage = newStage-oldStage
+    write(0,*) dstage, 'stage change'
 
     !        if(cdtype == 1) then !variable roughness
     !            CALL setRoughness(ns, nn, roughnessType, newDisch, cd, znaught)
@@ -245,7 +284,7 @@ do while(totTime <= VarDischEndTime)
     !!  CHECK FOR IBC == 6 OR IBC == 4  !!
     CALL updateIBC()
 
-    !!  IF GRID EXTENSION THEN RESET EXTENSION TOPOTRAPHY !!
+    !!  IF GRID EXTENSION THEN RESET EXTENSION TOPOGRAPHY !!
     !        if(nct > 1) then
     !            CALL RESETGRIDEXTENSION()
     !        endif
@@ -259,9 +298,9 @@ do while(totTime <= VarDischEndTime)
         write(*,*)
     ENDDO
     tmpvardt = 0
-    Write(*,*) 'Variabledt', tmpvardt, 'DT', dt
-    write(*,*) 'TIME STEP', nct, 'TIME', tottime, 'PrintTime', ptime
-    write(*,*)
+    Write(0,*) 'Variabledt', vardt, 'DT', dt
+    write(0,*) 'TIME STEP', nct, 'TIME', tottime, 'PrintTime', ptime
+    write(0,*)
     IF(CALCQUASI3D) THEN
         write(*,*) 'Quasi-3D Calculation is on'
         if(CALCQUASI3DRS) then
@@ -285,8 +324,8 @@ do while(totTime <= VarDischEndTime)
     ENDIF
 
     write(*,*)
-    write(*,*) 'Discharge', q/1e6, 'Change Discharge', dDisch/1e6
-    write(*,*) 'Stage', newStage/100.+elevoffset, 'Change Stage', dStage/100.
+    write(0,*) 'Discharge', q/1e6, 'Change Discharge', dDisch
+    write(0,*) 'Stage', newStage/100.+elevoffset, 'Change Stage', dStage/100.
     write(*,*)
 
     if(nct.ge.1) then
@@ -304,9 +343,14 @@ do while(totTime <= VarDischEndTime)
     if(itm /= 0) then
         ITER_LOOP: DO iter = 1,itm
             !       Check if user cancelled simulation and if so exit
-            CALL iric_check_cancel_f(errorcode)
+            if(miflag.eq.0) then
+              CALL iric_check_cancel_f(errorcode)
+            else
+              Call iricmi_check_cancel(errorcode,ier)
+            endif
             IF(errorcode.eq.1) THEN
-                CALL dealloc_all()
+                write(0,*) 'USER CANCEL'
+                CALL dealloc_all(MIFLAG)
                 return
             ENDIF
 
@@ -610,7 +654,7 @@ do while(totTime <= VarDischEndTime)
                             ENDIF
                         endif
                         CALL dealloc_working()
-                        WRITE(6,*) 'Error at dqs', 'i = ', i
+                        WRITE(*,*) 'Error at dqs', 'i = ', i
 
                         !pause
                         return
@@ -663,7 +707,7 @@ do while(totTime <= VarDischEndTime)
                             ENDIF
                         endif
                         CALL dealloc_working()
-                        WRITE(6,*) 'Error at dqn'
+                        WRITE(*,*) 'Error at dqn'
 
                         !pause
                         return
@@ -734,12 +778,12 @@ do while(totTime <= VarDischEndTime)
                 dea(i)=dea(i+1)+dinc
                 do  j=1,nn
                     !! code change by rmcd !!
-                    if(ibc(i,j).ne.0)then
+                if(ibc(i,j).ne.0)then
 600                         e(i,j)=e(i,j)+dea(i)
                         !                else
                         !                    e(i,j) = eav(i)+dea(i) !! added so that e(i,j) in dry nodes follows
                         !                                           !! average eav(i) during time-dependent runs
-                    endif
+                endif
                     !! end code change by rmcd !!
                 enddo
             enddo
@@ -754,7 +798,7 @@ do while(totTime <= VarDischEndTime)
             if(isnan(qprms(iter))) then
                 errorcode=-1
                 !call write_error_CGNS(STR_IN)
-                !			call dealloc_all()
+                !			call dealloc_all(MIFLAG)
                 CALL dealloc_common2d()
                 if(vbc == 1) then
                     CALL DEALLOC_VELBC()
@@ -767,7 +811,7 @@ do while(totTime <= VarDischEndTime)
                     ENDIF
                 endif
                 CALL dealloc_working()
-                WRITE(6,*) 'Error at qprms'
+                WRITE(*,*) 'Error at qprms'
                 !pause
                 return
             endif
@@ -777,17 +821,17 @@ do while(totTime <= VarDischEndTime)
                     solIndex = solIndex+1
                     CALL CG_IRIC_WRITE_SOL_TIME_F(tottime, ier)
 
-                    CALL Write_CGNS2(tottime, q)
+                    CALL Write_CGNS2(tottime, q, MIFLAG)
                     !			        CALL write_TimeStep_CGNS(STR_IN, nct, tottime)
                     !			        CALL write_timeiter_cgns(STR_IN)
-                    CALL dealloc_all()
+                    CALL dealloc_all(MIFLAG)
                     !pause
 
                     return
                 endif
             endif
             IF(LEVType == 0) THEN
-                WRITE(*,*) 'Iteration: ', iter,' Mean Error on Discharge:', qprms(iter)
+                WRITE(0,*) 'Iteration: ', iter,' Mean Error on Discharge:', qprms(iter)
             ELSE
                 WRITE(*,*)'Iteration:', iter, ' LEV:', tmpLEV,' Mean Error on Discharge: ', qprms(iter)
             ENDIF
@@ -839,8 +883,8 @@ do while(totTime <= VarDischEndTime)
                 enddo
 
                 solIndex = solIndex+1
-                CALL CG_IRIC_WRITE_SOL_TIME_F(tottime, ier)
-                CALL Write_CGNS2(tottime, q)
+       !         CALL CG_IRIC_WRITE_SOL_TIME_F(tottime, ier)
+                CALL Write_CGNS2(tottime, q, MIFLAG)
 
             ENDIF
 
@@ -947,8 +991,10 @@ do while(totTime <= VarDischEndTime)
         if(nct == 0) then
             solIndex = solIndex+1
             CALL Calc_Area(x, y, xo, yo, nm, dn, harea)
+            IF(MIFLAG.eq.0) then
             CALL CG_IRIC_WRITE_SOL_TIME_F(tottime, ier)
-            CALL Write_CGNS2(tottime, q)
+            ENDIF
+            CALL Write_CGNS2(tottime, q, MIFLAG)
             !                IF(CALCQUASI3D.and.IO_3DOUTPUT) THEN
             !                    CAll Write_CGNS3D_Grid()
             !                ENDIF
@@ -962,8 +1008,10 @@ do while(totTime <= VarDischEndTime)
             if(tottime >= ptime)then
                 solIndex = solIndex+1
                 CALL Calc_Area(x, y, xo, yo, nm, dn, harea)
+                IF(MIFLAG.EQ.0) then
                 CALL CG_IRIC_WRITE_SOL_TIME_F(tottime, ier)
-                CALL Write_CGNS2(tottime, q)
+                ENDIF
+                CALL Write_CGNS2(tottime, q, MIFLAG)
                 IF(CALCQUASI3D.and.IO_3DOUTPUT) THEN
                     !                        CAll Write_CGNS3D_SolGrid()
                     CAll Write_CGNS3D_FixedBed(solIndex, tottime, q)
@@ -996,29 +1044,22 @@ do while(totTime <= VarDischEndTime)
                     ENDIF
                 ENDIF
             ENDIF
-        endif
-    !endif
-ENDDO
-!       close(11)
-805 format(2f11.2,6f8.2)
-!        write(3,3) runid
-!        write(3,*) taus,taun
-!        write(3,*) u,vout
-!        write(3,*) e
-CALL dealloc_all()
-!IF(FID > 0) THEN
-!    CALL cg_close_f(FID, IER)
-!ENDIF
+           endif
+        !endif
+1000   ENDDO
 
-!	close(2)
-!	close(4)
-!close(9)
-!        write(3,*) uz,vz
-
+      !!!!CALL dealloc_all(MIFLAG)Moved to below iricmi terminate 3/20/21
+     IF(miflag.eq.0) then
+         call cg_close_f(FID,ier)
+     ELSE
+         CALL IRICMI_MODEL_TERMINATE(ier)
+     ENDIF
+     CALL dealloc_all(MIFLAG)
 END SUBROUTINE STAGR4
 
-SUBROUTINE dealloc_all()
+SUBROUTINE dealloc_all(MIFLAG)
 IMPLICIT NONE
+INTEGER :: MIFLAG
 CALL dealloc_working()
 CALL dealloc_common2d()
 if(vbc == 1) then
@@ -1047,9 +1088,12 @@ if(TRANSEQTYPE == 2) then
 else
     call dealloc_csed()
 endif
-IF(FID > 0) THEN
-    CALL cg_close_f(FID, errorcode)
-ENDIF
+!!IF(FID > 0) THEN
+!!    CALL cg_close_f(FID, errorcode)
+!     if(MIFLAG.ne.0) then
+!     CALL iricmi_model_terminate(errorcode)
+!     endif
+!!ENDIF
 END SUBROUTINE dealloc_all
 
 SUBROUTINE updateIBC()

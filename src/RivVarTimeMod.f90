@@ -252,21 +252,25 @@
     p1(2) = RCBBx(index)%ymin
     pnt%x = position
     pnt%y = RCBBx(index)%ymin
-
     p2(1) = position
     p2(2) = RCBBx(index)%ymax
-
+    if(p1(2)==p2(2)) then
+        p1(2)=p2(2)-1
+    endif
     DO i = 1,getRCNumSegments(index)
         CALL getRCSegment(index, i, seg)
+        write(0,*) index,i,seg,'index,i, segment values time rating curve'
         CALL inSegment(pnt, seg, retval)
         if(retval == 1) then
             q1(1) = seg%p1%x
             q1(2) = seg%p1%y
             q2(1) = seg%p2%x
             q2(2) = seg%p2%y
+            write(*,*) q1(1), q1(2), q2(1), q2(2), 'interpvalues'
             call lines_exp_int_2d ( p1, p2, q1, q2, retval, v )
             if(retval == 1) then
                 value = v(2)
+                write(*,*) value
                 exit
             else if(retval == 2) then
                 value = (seg%p2%y - seg%p1%y)/2.
@@ -289,23 +293,33 @@
     TYPE(Segment) :: seg
     TYPE(Point) :: pnt
     INTEGER :: retval
+    write(0,*) index, position
+    write(0,*) point(0,0)
     seg = segment(point(0,0), point(0,0))
+    write(0,*) seg
     p1(1) = position
+    write(0,*) p1(1)
     p1(2) = TSBBx(index)%ymin
+    write(0,*) p1
     pnt%x = position
     pnt%y = TSBBx(index)%ymin
-
     p2(1) = position
     p2(2) = TSBBx(index)%ymax
-
+    write(0,*) p2
+    if(p1(2)==p2(2)) then
+        p1(2)=p2(2)-1.
+    endif
+    write(0,*) p1,p2, 'lines'
     DO i = 1,getTSNumSegments(index)
         CALL getTSSegment(index, i, seg)
+        write(0,*) index,i,seg,'index,i, segment values time series'
         CALL inSegment(pnt, seg, retval)
         if(retval == 1) then
             q1(1) = seg%p1%x
             q1(2) = seg%p1%y
             q2(1) = seg%p2%x
             q2(2) = seg%p2%y
+            write(0,*) p1,p2,q1,q2,'line segment end point for interpolation'
             call lines_exp_int_2d ( p1, p2, q1, q2, retval, v )
             if(retval == 1) then
                 value = v(2)

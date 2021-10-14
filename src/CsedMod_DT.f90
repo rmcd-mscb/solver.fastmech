@@ -259,6 +259,7 @@
     !			VSTRESS(I,J)=VSTRESS(I,J)+(TAUG*(DHDN(I,J)/DUM))
     !			ENDIF
     !612			CONTINUE
+    GRAVCORRTYPE=0.
     DO I=1,ns
         DO J=1,nn
             IF(I.EQ.1) THEN

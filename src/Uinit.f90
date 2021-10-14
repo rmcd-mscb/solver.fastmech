@@ -74,7 +74,7 @@
     return
     END SUBROUTINE uinit
 
-    subroutine VarDischUInit(u,v,w,eta,e,ibc, q, stageChange)
+    subroutine VarDischUInit(u,v,w,eta,e,ibc,q,stageChange)
     IMPLICIT NONE
     REAL(kind = mp), DIMENSION(ns, nn), INTENT(INOUT) :: u, v, e
     REAL(kind = mp), DIMENSION(ns), INTENT(IN) ::w
@@ -86,7 +86,7 @@
     INTEGER :: i, j, ibtot, count
     REAL(kind = mp) :: deln, depave, twidth, ubar, qpred, depth
 
-    do 30 i=1,1
+    do 30 i=1,1 
         deln=w(i)/(nn-1)
         depave=0.
         ibtot=0
@@ -99,7 +99,7 @@
                 ibc(i,j) = -1
             else
                 ibc(i,j) = 0
-            endif
+           endif
             if(ibc(i,j).ne.0) then
                 ibtot=ibtot+1
                 depave=depave+depth
@@ -125,9 +125,6 @@
             else
                 u(i,j)=0.
             endif
-            !        if(i.eq.1) then
-            !           v(1,j)=-1.*u(1,j)*tand(30.)
-            !        else
             v(i,j)=0.
             !        endif
 27      continue

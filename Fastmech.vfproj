@@ -25,8 +25,8 @@
 				<Tool Name="VFPostBuildEventTool"/>
 				<Tool Name="VFManifestTool" SuppressStartupBanner="true"/></Configuration>
 		<Configuration Name="Debug|x64" DeleteExtensionsOnClean="*.obj;*.mod;*.pdb;*.asm;*.map;*.dyn;*.dpi;*.tmp;*.log;*.ilk;*.exe;$(TargetPath)">
-				<Tool Name="VFFortranCompilerTool" SuppressStartupBanner="true" DebugInformationFormat="debugEnabled" Optimization="optimizeDisabled" AdditionalIncludeDirectories="libs_06_07_18\." EnableRecursion="true" ReentrantCode="reentrancyThreaded" EmitDiagnosticsToFile="true" RealKIND="realKIND8" ModulePath="$(INTDIR)/" ObjectFile="$(INTDIR)/" RuntimeLibrary="rtMultiThreadedDebugDLL"/>
-				<Tool Name="VFLinkerTool" OutputFile="$(OUTDIR)/Fastmech.exe" ShowProgress="linkProgressAll" LinkIncremental="linkIncrementalYes" SuppressStartupBanner="true" AdditionalLibraryDirectories="libs_06_07_18\." GenerateDebugInformation="true" ProgramDatabaseFile="$(OUTDIR)/Stagr_Console.pdb" SubSystem="subSystemConsole" HeapReserveSize="100000000" HeapCommitSize="100000000" StackReserveSize="1000000000" StackCommitSize="1000000000" AdditionalDependencies="cgnsdll_x64_ifort.lib iriclib_x64_ifort.lib"/>
+				<Tool Name="VFFortranCompilerTool" SuppressStartupBanner="true" DebugInformationFormat="debugEnabled" Optimization="optimizeDisabled" AdditionalIncludeDirectories="libs_06_07_18\." EnableRecursion="true" ReentrantCode="reentrancyThreaded" RealKIND="realKIND8" ModulePath="$(INTDIR)/" ObjectFile="$(INTDIR)/" RuntimeLibrary="rtMultiThreadedDebugDLL"/>
+				<Tool Name="VFLinkerTool" OutputFile="$(OUTDIR)/Fastmech.exe" ShowProgress="linkProgressLibs" LinkIncremental="linkIncrementalYes" SuppressStartupBanner="true" AdditionalLibraryDirectories="libs_06_07_18\." GenerateDebugInformation="true" ProgramDatabaseFile="$(OUTDIR)/Stagr_Console.pdb" SubSystem="subSystemConsole" HeapReserveSize="100000000" HeapCommitSize="100000000" StackReserveSize="1000000000" StackCommitSize="1000000000" AdditionalDependencies="cgnsdll_x64_ifort.lib iriclib_x64_ifort.lib iricmi.lib iricmi_f.lib"/>
 				<Tool Name="VFResourceCompilerTool"/>
 				<Tool Name="VFMidlTool" SuppressStartupBanner="true" TargetEnvironment="midlTargetAMD64" HeaderFileName="$(InputName).h" TypeLibraryName="$(IntDir)/$(InputName).tlb"/>
 				<Tool Name="VFCustomBuildTool"/>
@@ -36,7 +36,7 @@
 				<Tool Name="VFManifestTool" SuppressStartupBanner="true"/></Configuration>
 		<Configuration Name="Release|x64" DeleteExtensionsOnClean="*.obj;*.mod;*.pdb;*.asm;*.map;*.dyn;*.dpi;*.tmp;*.log;*.ilk;*.exe;$(TargetPath)">
 				<Tool Name="VFFortranCompilerTool" SuppressStartupBanner="true" AdditionalIncludeDirectories="libs_06_07_18\." EnableRecursion="true" ReentrantCode="reentrancyThreaded" RealKIND="realKIND8" ModulePath="$(INTDIR)/" ObjectFile="$(INTDIR)/" BuildDependencies="true" EmitBuildDependencies="true" Traceback="true" OutputCarriageControl="outputCCFortran" RuntimeLibrary="rtMultiThreadedDLL"/>
-				<Tool Name="VFLinkerTool" OutputFile="$(OUTDIR)/Fastmech.exe" LinkIncremental="linkIncrementalYes" SuppressStartupBanner="true" AdditionalLibraryDirectories="libs_06_07_18\." SubSystem="subSystemConsole" HeapReserveSize="100000000" HeapCommitSize="100000000" StackReserveSize="1000000000" StackCommitSize="1000000000" AdditionalDependencies="cgnsdll_x64_ifort.lib iriclib_x64_ifort.lib"/>
+				<Tool Name="VFLinkerTool" OutputFile="$(OUTDIR)/Fastmech.exe" LinkIncremental="linkIncrementalYes" SuppressStartupBanner="true" AdditionalLibraryDirectories="libs_06_07_18\." SubSystem="subSystemConsole" HeapReserveSize="100000000" HeapCommitSize="100000000" StackReserveSize="1000000000" StackCommitSize="1000000000" AdditionalDependencies="cgnsdll_x64_ifort.lib iriclib_x64_ifort.lib iricmi.lib iricmi_f.lib"/>
 				<Tool Name="VFResourceCompilerTool"/>
 				<Tool Name="VFMidlTool" SuppressStartupBanner="true" TargetEnvironment="midlTargetAMD64" HeaderFileName="$(InputName).h" TypeLibraryName="$(IntDir)/$(InputName).tlb"/>
 				<Tool Name="VFCustomBuildTool"/>
@@ -182,6 +182,7 @@
 		<File RelativePath=".\src\initHdt.f90"/>
 		<File RelativePath=".\src\initimeta.f90"/>
 		<File RelativePath=".\src\iriclibf.f90"/>
+		<File RelativePath=".\src\iricmi.f90"/>
 		<File RelativePath=".\src\Median.f90"/>
 		<File RelativePath=".\src\ParmSet.f90"/>
 		<File RelativePath=".\src\ReadCGNS.F90"/>

@@ -1,16 +1,17 @@
     MODULE GridCond
     USE RivVarMod
+    USE IRICMI
     IMPLICIT NONE
 
 
     CONTAINS
-    SUBROUTINE CGNS2_Read_GridCondition(IER)
+    SUBROUTINE CGNS2_Read_GridCondition(MIFLAG, IER)
     IMPLICIT NONE
     !	INCLUDE "cgnslib_f.h"
     !    INCLUDE "cgnswin_f.h"
 
     INTEGER, INTENT(OUT) :: IER
-    INTEGER :: status, i, j, count, countji, ierror
+    INTEGER :: status, i, j, count, countji, ierror, MIFLAG
     REAL(KIND=mp), ALLOCATABLE, DIMENSION(:) :: tmpreal4
 
 
@@ -20,7 +21,9 @@
 
 
     ALLOCATE(tmpreal4(ns2*nn), STAT=IER)
-
+    !start of dual read for mi no or mi yes 
+    ier=0
+    IF(MIFLAG.eq.0) then
     CALL cg_iRIC_Read_Grid_Real_Node_F('Elevation', tmpreal4, IER)
     DO I = 1, ns2*nn
         IF( tmpreal4(i) < elevoffset) THEN
@@ -30,6 +33,7 @@
             elevoffset = 0
         ENDIF
     ENDDO
+    write(*,*) 'elevoffset is ', elevoffset
     DO I= 1,ns2
         DO J=1,nn
             COUNT = ((I-1)*nn)+J
@@ -83,7 +87,72 @@
             hfine(i,j) = tmpreal4(countji)*100. !Convert to cm
         ENDDO
     ENDDO
+    ! MI reads below
+    ELSE
+        CALL iRICMI_Read_Grid2D_Real_Node('Elevation', tmpreal4, IER)
+    DO I = 1, ns2*nn
+        IF( tmpreal4(i) < elevoffset) THEN
+            elevoffset = tmpreal4(i)
+        ENDIF
+        IF(elevoffset < 0) THEN
+            elevoffset = 0
+        ENDIF
+    ENDDO
+    write(*,*) 'elevoffset in mi is', elevoffset
+    DO I= 1,ns2
+        DO J=1,nn
+            COUNT = ((I-1)*nn)+J
+            countji = ((j-1)*ns2)+i
+            eta2(I,J) = (tmpreal4(countji) - elevoffset)*100.
+        ENDDO
+    ENDDO
 
+    CALL iRICMI_Read_Grid2d_Real_Node('roughness', tmpreal4, IER)
+    DO I= 1,ns2
+        DO J=1,nn
+            COUNT = ((I-1)*nn)+J
+            countji = ((j-1)*ns2)+i
+            cd2(i,j) = tmpreal4(countji)
+            znaught2(i,j) = tmpreal4(countji)*100.
+        ENDDO
+    ENDDO
+    CALL iRICMI_Read_Grid2d_Real_Node('vegroughness', tmpreal4, IER)
+    DO I= 1,ns2
+        DO J=1,nn
+            COUNT = ((I-1)*nn)+J
+            countji = ((j-1)*ns2)+i
+            cdv2(i,j) = tmpreal4(countji)
+            !cdv2(i,j) = 0
+        ENDDO
+    ENDDO
+
+    !CALL cg_iRIC_Read_Grid_Real_Node_F('minelevation', tmpreal4, IER)
+    !DO I= 1,ns2
+    !    DO J=1,nn
+    !        COUNT = ((I-1)*nn)+J
+    !        countji = ((j-1)*ns2)+i
+    !        mineta2(I,J) = (tmpreal4(countji) - elevoffset)*100.
+    !    ENDDO
+    !ENDDO
+
+    CALL iRICMI_Read_Grid2d_Real_Node('sandfraction', tmpreal4, IER)
+    DO I= 1,ns2
+        DO J=1,nn
+            COUNT = ((I-1)*nn)+J
+            countji = ((j-1)*ns2)+i
+            Fracs(i,j) = tmpreal4(countji)
+        ENDDO
+    ENDDO
+
+    CALL iRICMI_Read_Grid2d_Real_Node('sanddepth', tmpreal4, IER)
+    DO I= 1,ns2
+        DO J=1,nn
+            COUNT = ((I-1)*nn)+J
+            countji = ((j-1)*ns2)+i
+            hfine(i,j) = tmpreal4(countji)*100. !Convert to cm
+        ENDDO
+    ENDDO    
+    Endif
     !    CALL CG_IRIC_READ_GRIDREALNODE('FixedBedElevation', tmpreal4, IER)
     !    DO I= 1,NX
     !        DO J=1,NY
@@ -110,7 +179,7 @@
     !            Vegeh(I,J) = tmpreal4(countji)
     !        ENDDO
     !    ENDDO
-
+    deallocate (tmpreal4)
     END SUBROUTINE CGNS2_Read_GridCondition
 
 

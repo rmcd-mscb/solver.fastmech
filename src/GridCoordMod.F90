@@ -3,22 +3,25 @@
     USE RivVarWMod
     USE CSedMod_DT_SUSP
     USE CalcCond
+    USE IRICMI
     IMPLICIT NONE
 
     REAL(KIND=mp) :: stot, scals
 
     CONTAINS
-    SUBROUTINE CGNS2_READ_GRIDCOORD(IER)
+    SUBROUTINE CGNS2_READ_GRIDCOORD(MIFLAG, IER)
     IMPLICIT NONE
     !	INCLUDE "cgnslib_f.h"
     !    INCLUDE "cgnswin_f.h"
 
     INTEGER, INTENT(OUT) :: IER
-    INTEGER :: status, i, j, count, countji, ierror
+    INTEGER :: status, i, j, count, countji, ierror, MIFLAG
     INTEGER :: tmpnn, tmpns
     REAL(kind = mp), ALLOCATABLE, DIMENSION(:,:) :: tmpx1, tmpy1
     !	REAL*8, ALLOCATABLE, DIMENSION(:) :: tmpx, tmpy
-
+    !Read coords for non-MI
+    ier=0
+    if(MIFLAG.eq.0) then
     CALL CG_IRIC_GOTOGRIDCOORD2D_F(tmpns, tmpnn, IER)
     ns2 = tmpns
     ns = tmpns+nsext
@@ -61,7 +64,53 @@
     !    y = y*100.
 
     CALL CalcGridMetrics()
+    
+    ELSE
+    !begin read coords for MI
+            CALL IRICMI_READ_GRID2d_str_size(tmpns, tmpnn, IER)
+    ns2 = tmpns
+    ns = tmpns+nsext
+    nn = tmpnn
 
+    write(*,*) tmpns, nsext, tmpnn
+    CALL alloc_common2D(tmpns, nsext, tmpnn)
+    ! CALL ALLOC_INIT2D(ns2, nn)
+    !	call alloc_csed_DT()
+    CALL alloc_working()
+
+    !	IF(CALCQUASI3D) THEN
+    !	    CALL ALLOC_COMMON3D(ns2, nn, nz)
+    !	    IF(TRANSEQTYPE == 2) THEN
+    !		    CALL alloc_csed3d_dt() !array for Daniele Tonina Wilcock-Kenworthy
+    !		ENDIF
+    !    ENDIF
+
+    !    write(*,*) 'before allocation \n'
+    ALLOCATE(tmpx1(tmpns,tmpnn), STAT=IER)
+    !    write(*,*) 'after allocation1 \n %d', ier
+    ALLOCATE(tmpy1(tmpns,tmpnn), STAT=IER)
+    !	write(*,*) 'after allocation2\n %d', ier
+    CALL IRICMI_READ_GRID2D_coords(tmpx1,tmpy1,IER)
+    !	write(*,*) 'after iRIC CALL \n %d', ier
+    !	CALL CG_IRIC_GETGRIDCOORD2D_F(x,y,IER)
+    ns2 = tmpns
+    nn = tmpnn
+    DO I=1,ns2
+        DO J=1,nn
+            !	        COUNT = ((I-1)*nn)+J
+            !	        countji = ((j-1)*ns2)+i
+            !	        X(I,J) = tmpx(COUNTji)*100.
+            !	        Y(I,J) = tmpy(COUNTji)*100.
+            X(I,J) = tmpx1(i,j)*100.
+            Y(I,J) = tmpy1(i,j)*100.
+        ENDDO
+    ENDDO
+    !    x = x*100.
+    !    y = y*100.
+
+    CALL CalcGridMetrics()
+    
+    ENDIF
     DEALLOCATE(tmpx1, STAT = IER)
     DEALLOCATE(tmpy1, STAT = IER)
     END SUBROUTINE CGNS2_READ_GRIDCOORD

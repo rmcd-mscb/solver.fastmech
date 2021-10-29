@@ -82,8 +82,9 @@
                     u(i,j) = 0.
                     v(i,j) = 0.
                 endif
-            else
-                e(i,j) = eta(i,j)
+            ! from FastmechMI
+            !else
+            !    e(i,j) = eta(i,j)
             endif
 
         enddo

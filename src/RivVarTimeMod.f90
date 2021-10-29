@@ -256,6 +256,10 @@
     p2(1) = position
     p2(2) = RCBBx(index)%ymax
 
+    ! from FastmechMI -- fixes interpolation bug
+    if(p1(2)==p2(2)) then
+        p1(2)=p2(2)-1.
+    endif
     DO i = 1,getRCNumSegments(index)
         CALL getRCSegment(index, i, seg)
         CALL inSegment(pnt, seg, retval)
@@ -298,6 +302,10 @@
     p2(1) = position
     p2(2) = TSBBx(index)%ymax
 
+    ! from FastmechMI -- fixes interpolation bug
+    if(p1(2)==p2(2)) then
+        p1(2)=p2(2)-1.
+    endif
     DO i = 1,getTSNumSegments(index)
         CALL getTSSegment(index, i, seg)
         CALL inSegment(pnt, seg, retval)

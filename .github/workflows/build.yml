@@ -80,6 +80,22 @@ jobs:
         start /b /wait ${{env.WINDOWS_HPCKIT_FILE}} -s -x -f hpckit_extracted --log hpckit_extracted.log
         hpckit_extracted\bootstrapper.exe -s --action install --components=${{env.WINDOWS_HPCKIT_COMPONENTS}} --eula=accept --continue-with-optional-error=yes -p=NEED_VS2017_INTEGRATION=0 -p=NEED_VS2019_INTEGRATION=1 --log-dir=.
 
+    - name: Export POCO version
+      run: |
+        Get-ChildItem ${{github.workspace}}\iricsdk | Where-Object {
+            $_.name -match 'poco-(?<version>.*)'
+          }
+        }
+        Write-Output "POCO_VER=$($matches.version)" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+
+    - name: Export HDF5 version
+      run: |
+        Get-ChildItem ${{github.workspace}}\iricsdk | Where-Object {
+            $_.name -match 'hdf5-(?<version>.*)'
+          }
+        }
+        Write-Output "HDF5_VER=$($matches.version)" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+
     - name: Configure CMake
       env:
       # paths for find_package(iriclib, HDF5, PocoFoundation)

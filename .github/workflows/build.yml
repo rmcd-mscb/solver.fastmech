@@ -6,9 +6,6 @@ on:
       - main_v4
 
 env:
-  # paths for find_package(iriclib, HDF5, PocoFoundation)
-  CMAKE_PREFIX_PATH: ${{github.workspace}}\iricsdk\iriclib-${{env.IRICLIB_VERSION}}\lib\cmake\iriclib;${{github.workspace}}\iricsdk\hdf5-${{env.HDF5_VER}}\cmake\hdf5;${{github.workspace}}\iricsdk\poco-${{env.POCO_VER}}\lib\cmake\Poco
-  
   # online_update directory
   PACKAGE_DIR: solver.fastmech
 
@@ -84,6 +81,9 @@ jobs:
         hpckit_extracted\bootstrapper.exe -s --action install --components=${{env.WINDOWS_HPCKIT_COMPONENTS}} --eula=accept --continue-with-optional-error=yes -p=NEED_VS2017_INTEGRATION=0 -p=NEED_VS2019_INTEGRATION=1 --log-dir=.
 
     - name: Configure CMake
+      env:
+      # paths for find_package(iriclib, HDF5, PocoFoundation)
+        CMAKE_PREFIX_PATH: ${{github.workspace}}\iricsdk\iriclib-${{env.IRICLIB_VERSION}}\lib\cmake\iriclib;${{github.workspace}}\iricsdk\hdf5-${{env.HDF5_VER}}\cmake\hdf5;${{github.workspace}}\iricsdk\poco-${{env.POCO_VER}}\lib\cmake\Poco
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
       # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
       run: cmake -S ${{github.workspace}}\${{env.SOURCE_DIR}} -B ${{github.workspace}}\${{env.BUILD_DIR}} -DCMAKE_INSTALL_PREFIX=${{github.workspace}}\${{env.INSTALL_DIR}}

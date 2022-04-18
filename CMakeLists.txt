@@ -92,10 +92,6 @@ install(TARGETS Fastmech DESTINATION "${CMAKE_INSTALL_BINDIR}")
 
 install(FILES definition.xml DESTINATION "${CMAKE_INSTALL_BINDIR}")
 
-# include(CTest)
-
-# add_subdirectory(tests)
-
 # POST_BUILD
 if (WIN32)
   # ie "-DCMAKE_PREFIX_PATH=d:/Downloads/iriclib-artifacts/iricsdk-4.0.9/iriclib-4.0.9/lib/cmake/iriclib;d:/Downloads/iriclib-artifacts/iricsdk-4.0.9/hdf5-1.8.21/cmake/hdf5;d:/Downloads/iriclib-artifacts/iricsdk-4.0.9/poco-1.9.4/lib/cmake/Poco"
@@ -112,3 +108,7 @@ if (WIN32)
     COMMAND ${CMAKE_COMMAND} -E copy_if_different "C:\\Program Files (x86)\\Intel\\oneAPI\\compiler\\2021.2.0\\windows\\redist\\intel64_win\\compiler\\$<IF:$<CONFIG:Release>,libmmd.dll,libmmdd.dll>"           "$<TARGET_FILE_DIR:Fastmech>"
     )
 endif()
+
+include(CTest)
+
+add_subdirectory(tests)

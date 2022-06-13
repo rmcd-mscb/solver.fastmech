@@ -160,6 +160,16 @@ jobs:
       shell: pwsh
       run: ${{env.SOURCE_DIR}}\.github\workflows\install_qt_fast_windows.ps1
 
+    - name: Verify QtInstallerFramework 4.3
+      shell: pwsh
+      run: |
+        Get-ChildItem C:\
+        Get-ChildItem C:\Qt
+        Get-ChildItem C:\Qt\Tools
+        Get-ChildItem C:\Qt\Tools\QtInstallerFramework
+        Get-ChildItem C:\Qt\Tools\QtInstallerFramework\${{env.IFW_VERSION}}
+        Get-ChildItem C:\Qt\Tools\QtInstallerFramework\${{env.IFW_VERSION}}\bin
+
     - name: Run QtInstallerFramework repogen.exe
       shell: pwsh
       run: |

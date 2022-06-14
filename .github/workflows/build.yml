@@ -32,7 +32,6 @@ env:
 
   # QtInstallerFramework version
   # IFW_VERSION: 4.3
-  IFW_VERSION: 2.0
 
   # oneAPI
   # Based on https://github.com/oneapi-src/oneapi-ci/blob/master/.github/workflows/build_all.yml
@@ -161,12 +160,12 @@ jobs:
     #   shell: pwsh
     #   run: ${{env.SOURCE_DIR}}\.github\workflows\install_qt_fast_windows.ps1
 
-    - name: Cache QtInstallerFramework 2.0
-      id: cache-qtif
-      uses: actions/cache@v2
-      with:
-        path: C:\Qt
-        key: ${{runner.os}}-qtif-${{env.IFW_VERSION}}
+    # - name: Cache QtInstallerFramework 2.0
+    #   id: cache-qtif
+    #   uses: actions/cache@v2
+    #   with:
+    #     path: C:\Qt
+    #     key: ${{runner.os}}-qtif-${{env.IFW_VERSION}}
 
     - name: Download QtInstallerFramework 2.0
       if: steps.cache-qtif.outputs.cache-hit != 'true'

@@ -31,7 +31,7 @@ env:
   IFW_API_URL: ${{github.api_url}}/repos/scharlton2/ifw
 
   # QtInstallerFramework version
-  IFW_VERSION: 4.3
+  # IFW_VERSION: 4.3
 
   # oneAPI
   # Based on https://github.com/oneapi-src/oneapi-ci/blob/master/.github/workflows/build_all.yml
@@ -108,16 +108,11 @@ jobs:
       # Build your program with the given configuration
       run: cmake --build ${{github.workspace}}\${{env.BUILD_DIR}} --config ${{env.BUILD_TYPE}}
 
-    # @todo
-    # - name: Test
-    #   working-directory: ${{github.workspace}}/${{env.BUILD_DIR}}
-    #   # Execute tests defined by the CMake configuration.
-    #   # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
-    #   # set paths for dlls
-    #   run: |
-    #     C:\iricdev\lib\setvars.bat  @todo
-    #     "C:\Program Files (x86)\Intel\oneAPI\setvars.bat" intel64 vs2019
-    #     ctest -C ${{env.BUILD_TYPE}}
+    - name: Test
+      working-directory: ${{github.workspace}}/${{env.BUILD_DIR}}
+      # Execute tests defined by the CMake configuration.
+      # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
+      run: ctest -C ${{env.BUILD_TYPE}}
 
     - name: Install
       # Build your program with the given configuration
@@ -153,17 +148,51 @@ jobs:
         Set-Location ..
         git status
 
-    - name: Cache QtInstallerFramework 4.3
-      id: cache-qtif
-      uses: actions/cache@v2
-      with:
-        path: C:\Qt
-        key: ${{runner.os}}-qtif-${{env.IFW_VERSION}}
+    # - name: Cache QtInstallerFramework 4.3
+    #   id: cache-qtif
+    #   uses: actions/cache@v2
+    #   with:
+    #     path: C:\Qt
+    #     key: ${{runner.os}}-qtif-${{env.IFW_VERSION}}
 
-    - name: Download QtInstallerFramework 4.3
+    # - name: Download QtInstallerFramework 4.3
+    #   if: steps.cache-qtif.outputs.cache-hit != 'true'
+    #   shell: pwsh
+    #   run: ${{env.SOURCE_DIR}}\.github\workflows\install_qt_fast_windows.ps1
+
+    # - name: Cache QtInstallerFramework 2.0
+    #   id: cache-qtif
+    #   uses: actions/cache@v2
+    #   with:
+    #     path: C:\Qt
+    #     key: ${{runner.os}}-qtif-${{env.IFW_VERSION}}
+
+    - name: Download QtInstallerFramework 2.0
       if: steps.cache-qtif.outputs.cache-hit != 'true'
       shell: pwsh
-      run: ${{env.SOURCE_DIR}}\.github\workflows\install_qt_fast_windows.ps1
+      run: |
+        # GET /repos/{owner}/{repo}/releases/latest
+        # see https://docs.github.com/en/rest/reference/repos#get-the-latest-release
+        # see https://docs.github.com/ja/rest/reference/repos#get-the-latest-release
+        $latest = (Invoke-WebRequest -Uri $env:IFW_API_URL/releases/latest -Method GET).Content | ConvertFrom-Json
+        $url = ($latest.assets | Where-Object {$_.name -match "^ifw-(?<major>0|[1-9]\d*)\.(?<minor>[0|1-9]\d*)\.7z$"}).browser_download_url
+        curl -LO $url
+        mkdir c:\Qt\Tools\QtInstallerFramework
+        $7zfile = $matches[0]
+        7z x -oc:\Qt\Tools\QtInstallerFramework $7zfile
+        del $7zfile
+        # export environment variable IFW_VERSION for later steps
+        Write-Output "IFW_VERSION=$($matches.major).$($matches.minor)" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+
+    - name: Verify QtInstallerFramework
+      shell: pwsh
+      run: |
+        Get-ChildItem C:\
+        Get-ChildItem C:\Qt
+        Get-ChildItem C:\Qt\Tools
+        Get-ChildItem C:\Qt\Tools\QtInstallerFramework
+        Get-ChildItem C:\Qt\Tools\QtInstallerFramework\${{env.IFW_VERSION}}
+        Get-ChildItem C:\Qt\Tools\QtInstallerFramework\${{env.IFW_VERSION}}\bin
 
     - name: Run QtInstallerFramework repogen.exe
       shell: pwsh
@@ -176,6 +205,7 @@ jobs:
         git status
 
     - name: Commit and push branch
+      if: (github.repository == 'i-RIC/solver.fastmech' && github.ref_name == 'main_v4' && github.ref_type == 'branch')
       uses: actions-js/push@master
       with:
         github_token: ${{secrets.ONLINE_UPDATE_TOKEN}}

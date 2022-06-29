@@ -61,6 +61,7 @@ add_executable(Fastmech
   src/stressDivMod.f90
   src/tridag.f90
   src/Uinit.f90
+  src/UnlinkHDF5Mod.f90
   src/Welcome.f90
 )
 
@@ -92,14 +93,22 @@ install(TARGETS Fastmech DESTINATION "${CMAKE_INSTALL_BINDIR}")
 
 install(FILES definition.xml DESTINATION "${CMAKE_INSTALL_BINDIR}")
 
-# include(CTest)
+set(HDF5_USE_STATIC_LIBRARIES ON)
+find_package(HDF5 1.8 REQUIRED COMPONENTS Fortran HL)
+target_link_libraries(Fastmech PRIVATE hdf5::hdf5_fortran-static)
+# Don't think this should be necessary
+set_target_properties (hdf5::hdf5_fortran-static
+  PROPERTIES
+    INTERFACE_INCLUDE_DIRECTORIES ${HDF5_INCLUDE_DIRS}/static
+)
 
-# add_subdirectory(tests)
+include(CTest)
+
+add_subdirectory(tests)
 
 # POST_BUILD
 if (WIN32)
   # ie "-DCMAKE_PREFIX_PATH=d:/Downloads/iriclib-artifacts/iricsdk-4.0.9/iriclib-4.0.9/lib/cmake/iriclib;d:/Downloads/iriclib-artifacts/iricsdk-4.0.9/hdf5-1.8.21/cmake/hdf5;d:/Downloads/iriclib-artifacts/iricsdk-4.0.9/poco-1.9.4/lib/cmake/Poco"
-  find_package(HDF5 1.8 REQUIRED)
   find_package(PocoFoundation REQUIRED)
   # copy reqd dlls to test1 directory
   add_custom_command(TARGET Fastmech POST_BUILD
@@ -112,3 +121,10 @@ if (WIN32)
     COMMAND ${CMAKE_COMMAND} -E copy_if_different "C:\\Program Files (x86)\\Intel\\oneAPI\\compiler\\2021.2.0\\windows\\redist\\intel64_win\\compiler\\$<IF:$<CONFIG:Release>,libmmd.dll,libmmdd.dll>"           "$<TARGET_FILE_DIR:Fastmech>"
     )
 endif()
+
+# message(STATUS "HDF5_Fortran_INCLUDE_DIR = ${HDF5_Fortran_INCLUDE_DIR}")
+# message(STATUS "HDF5_Fortran_LIBRARIES = ${HDF5_Fortran_LIBRARIES}")
+# message(STATUS "HDF5_Fortran_HL_LIBRARIES = ${HDF5_Fortran_HL_LIBRARIES}")
+# message(STATUS "CMAKE_Fortran_MODULE_DIRECTORY = ${CMAKE_Fortran_MODULE_DIRECTORY}")
+# message(STATUS "HDF5_INCLUDE_DIRS = ${HDF5_INCLUDE_DIRS}")
+# message(STATUS "hdf5::h5diff = $<TARGET_FILE_DIR:hdf5::h5diff>")

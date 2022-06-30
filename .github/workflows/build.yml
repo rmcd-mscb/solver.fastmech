@@ -12,8 +12,8 @@ env:
   PACKAGE_DIR: solver.fastmech
 
   # online_update_v4 src directory
-  ONLINE_UPDATE_SRC_DIR: online_update_v4\dev_v4                     # @todo simplify to dev_v4 ???
-  ONLINE_UPDATE_SRC_DIR_DEFAULT: online_update_v4\prod_v4            # @todo simplify to prod_v4 ???
+  ONLINE_UPDATE_SRC_DIR: online_update_v4\dev_v4_src                 # @todo simplify to dev_v4 ???
+  ONLINE_UPDATE_SRC_DIR_DEFAULT: online_update_v4\prod_v4_src        # @todo simplify to prod_v4 ???
 
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
   BUILD_TYPE: Release

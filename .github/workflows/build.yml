@@ -12,8 +12,8 @@ env:
   PACKAGE_DIR: solver.fastmech
 
   # online_update_v4 src directory
-  ONLINE_UPDATE_SRC_DIR: online_update_v4\dev_v4_src                 # @todo simplify to dev_v4 ???
-  ONLINE_UPDATE_SRC_DIR_DEFAULT: online_update_v4\prod_v4_src        # @todo simplify to prod_v4 ???
+  ONLINE_UPDATE_SRC_DIR: online_update_v4\dev_v4_src
+  ONLINE_UPDATE_SRC_DIR_DEFAULT: online_update_v4\prod_v4_src
 
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
   BUILD_TYPE: Release
@@ -199,7 +199,7 @@ jobs:
       run: |
         Set-Location .\${{env.ONLINE_UPDATE_SRC_DIR}}\.
         Write-Output "QT_IFW_PATH = 'C:\\Qt\\Tools\\QtInstallerFramework\\$env:IFW_VERSION'" > qt_ifw_path.py
-        &C:\Qt\Tools\QtInstallerFramework\$env:IFW_VERSION\bin\repogen.exe -p packages --update --include $env:PACKAGE_DIR ..\yasu
+        &C:\Qt\Tools\QtInstallerFramework\$env:IFW_VERSION\bin\repogen.exe -p packages --update --include $env:PACKAGE_DIR ..\dev_v4
         Set-Location ..
         git add -A
         git status
@@ -211,4 +211,4 @@ jobs:
         github_token: ${{secrets.ONLINE_UPDATE_TOKEN}}
         repository: ${{env.ONLINE_UPDATE_REPO}}
         directory: online_update_v4
-        branch: master
+        branch: main

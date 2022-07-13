@@ -13,7 +13,6 @@
     CONTAINS
 
     SUBROUTINE read_iRIC_CGNS(InputFile)
-    USE unlink_hdf5
     IMPLICIT NONE
     CHARACTER(*), INTENT(IN) ::InputFile
     CHARACTER(250) :: ZONENAME, BASENAME, USERNAME
@@ -30,7 +29,6 @@
     !call iric_initoption_f(IRIC_OPTION_DIVIDESOLUTIONS, ier)
     !    if (ier /=0) STOP "*** Initialize option error***"
 
-    call unlink_solutions(fid, ier)
     call iric_initoption(IRIC_OPTION_CANCEL, ier)
     if (ier /= 0) STOP "*** Initialize option error***"
 

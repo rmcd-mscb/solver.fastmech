@@ -61,7 +61,6 @@ add_executable(Fastmech
   src/stressDivMod.f90
   src/tridag.f90
   src/Uinit.f90
-  src/UnlinkHDF5Mod.f90
   src/Welcome.f90
 )
 
@@ -93,15 +92,6 @@ install(TARGETS Fastmech DESTINATION "${CMAKE_INSTALL_BINDIR}")
 
 install(FILES definition.xml DESTINATION "${CMAKE_INSTALL_BINDIR}")
 
-set(HDF5_USE_STATIC_LIBRARIES ON)
-find_package(HDF5 1.8 REQUIRED COMPONENTS Fortran HL)
-target_link_libraries(Fastmech PRIVATE hdf5::hdf5_fortran-static)
-# Don't think this should be necessary
-set_target_properties (hdf5::hdf5_fortran-static
-  PROPERTIES
-    INTERFACE_INCLUDE_DIRECTORIES ${HDF5_INCLUDE_DIRS}/static
-)
-
 include(CTest)
 
 add_subdirectory(tests)
@@ -109,6 +99,7 @@ add_subdirectory(tests)
 # POST_BUILD
 if (WIN32)
   # ie "-DCMAKE_PREFIX_PATH=d:/Downloads/iriclib-artifacts/iricsdk-4.0.9/iriclib-4.0.9/lib/cmake/iriclib;d:/Downloads/iriclib-artifacts/iricsdk-4.0.9/hdf5-1.8.21/cmake/hdf5;d:/Downloads/iriclib-artifacts/iricsdk-4.0.9/poco-1.9.4/lib/cmake/Poco"
+  find_package(HDF5 1.8 REQUIRED)
   find_package(PocoFoundation REQUIRED)
   # copy reqd dlls to test1 directory
   add_custom_command(TARGET Fastmech POST_BUILD
